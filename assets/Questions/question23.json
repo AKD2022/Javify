@@ -1,0 +1,214 @@
+{
+  "lessonId": 23,
+  "title": "String Immutability and Methods like substring(), length()",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What does String immutability mean?",
+      "options": [
+        { "type": "text", "value": "Once created, a String object's content cannot be changed" },
+        { "type": "text", "value": "Strings can only store numbers" },
+        { "type": "text", "value": "Strings cannot be compared" },
+        { "type": "text", "value": "Strings use less memory" }
+      ],
+      "answer": 0,
+      "explanation": "String immutability means that once a String object is created, its content cannot be modified. Operations create new String objects."
+    },
+    {
+      "id": 2,
+      "type": "code",
+      "question": "After this code executes, what does 'original' contain?\nString original = \"Hello\";\nString modified = original + \" World\";",
+      "options": [
+        { "type": "text", "value": "\"Hello World\"" },
+        { "type": "text", "value": "\"Hello\"" },
+        { "type": "text", "value": "\"World\"" },
+        { "type": "text", "value": "null" }
+      ],
+      "answer": 1,
+      "explanation": "Due to String immutability, the original String remains unchanged. Concatenation creates a new String object."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What does \"Programming\".length() return?",
+      "options": [
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "9" },
+        { "type": "text", "value": "11" },
+        { "type": "text", "value": "12" }
+      ],
+      "answer": 2,
+      "explanation": "The length() method counts all characters. \"Programming\" has 11 characters: P-r-o-g-r-a-m-m-i-n-g."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "What does \"Java\".substring(2) return?",
+      "options": [
+        { "type": "text", "value": "\"Ja\"" },
+        { "type": "text", "value": "\"av\"" },
+        { "type": "text", "value": "\"va\"" },
+        { "type": "text", "value": "\"Java\"" }
+      ],
+      "answer": 3,
+      "explanation": "substring(2) returns characters from index 2 to the end. Starting from index 2 ('v'), we get \"va\"."
+    },
+    {
+      "id": 5,
+      "type": "code",
+      "question": "What does \"Computer\".substring(1, 4) return?",
+      "options": [
+        { "type": "text", "value": "\"omp\"" },
+        { "type": "text", "value": "\"Com\"" },
+        { "type": "text", "value": "\"ompu\"" },
+        { "type": "text", "value": "\"Comp\"" }
+      ],
+      "answer": 0,
+      "explanation": "substring(1, 4) returns characters from index 1 up to (not including) index 4: 'o'-'m'-'p'."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What happens when String methods like toUpperCase() are called?",
+      "options": [
+        { "type": "text", "value": "The original string is modified in place" },
+        { "type": "text", "value": "A new String object is created with the modified content" },
+        { "type": "text", "value": "The string becomes null" },
+        { "type": "text", "value": "An error occurs" }
+      ],
+      "answer": 1,
+      "explanation": "Due to immutability, String methods create and return new String objects rather than modifying the original."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "What does \"   \".length() return (three spaces)?",
+      "options": [
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "3" }
+      ],
+      "answer": 3,
+      "explanation": "The length() method counts all characters, including spaces. Three spaces give a length of 3."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "In substring(startIndex, endIndex), which index is included in the result?",
+      "options": [
+        { "type": "text", "value": "Both startIndex and endIndex" },
+        { "type": "text", "value": "Only startIndex (endIndex is exclusive)" },
+        { "type": "text", "value": "Only endIndex (startIndex is exclusive)" },
+        { "type": "text", "value": "Neither index is included" }
+      ],
+      "answer": 1,
+      "explanation": "In substring(start, end), the start index is inclusive but the end index is exclusive (not included)."
+    },
+    {
+      "id": 9,
+      "type": "code",
+      "question": "How do you safely extract the last 3 characters from a string?",
+      "options": [
+        { "type": "code", "value": "str.substring(str.length() - 3)" },
+        { "type": "code", "value": "str.substring(3)" },
+        { "type": "code", "value": "str.substring(0, 3)" },
+        { "type": "code", "value": "str.substring(-3)" }
+      ],
+      "answer": 0,
+      "explanation": "To get the last 3 characters, start from (length - 3) and go to the end: str.substring(str.length() - 3)."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "Why must you assign the result of string methods to a variable?",
+      "options": [
+        { "type": "text", "value": "Because strings are immutable and methods create new objects" },
+        { "type": "text", "value": "Because of Java syntax rules" },
+        { "type": "text", "value": "Because strings use more memory" },
+        { "type": "text", "value": "Because methods are slower" }
+      ],
+      "answer": 0,
+      "explanation": "Since strings are immutable, methods return new String objects. You must assign the result to use the modified version."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "What does \"\".length() return (empty string)?",
+      "options": [
+        { "type": "text", "value": "-1" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "null" }
+      ],
+      "answer": 1,
+      "explanation": "An empty string has no characters, so its length is 0."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What happens if you use invalid indices with substring()?",
+      "options": [
+        { "type": "text", "value": "Returns null" },
+        { "type": "text", "value": "Returns empty string" },
+        { "type": "text", "value": "StringIndexOutOfBoundsException is thrown" },
+        { "type": "text", "value": "The program continues normally" }
+      ],
+      "answer": 2,
+      "explanation": "Using invalid indices with substring() throws a StringIndexOutOfBoundsException at runtime."
+    },
+    {
+      "id": 13,
+      "type": "code",
+      "question": "What's wrong with this code? str.trim(); (assuming str needs trimming)",
+      "options": [
+        { "type": "text", "value": "The result is not assigned to a variable" },
+        { "type": "text", "value": "Wrong method name" },
+        { "type": "text", "value": "Missing parameters" },
+        { "type": "text", "value": "Nothing is wrong" }
+      ],
+      "answer": 0,
+      "explanation": "Since strings are immutable, trim() creates a new String. You must assign the result: str = str.trim();"
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What is the performance concern with string concatenation in loops?",
+      "options": [
+        { "type": "text", "value": "Each concatenation creates a new String object" },
+        { "type": "text", "value": "Loops don't work with strings" },
+        { "type": "text", "value": "Strings become too long" },
+        { "type": "text", "value": "Memory is automatically freed" }
+      ],
+      "answer": 0,
+      "explanation": "Due to immutability, each concatenation creates a new String object, which can be inefficient in loops."
+    },
+    {
+      "id": 15,
+      "type": "code",
+      "question": "What does \"Hello\".substring(0, 0) return?",
+      "options": [
+        { "type": "text", "value": "\"H\"" },
+        { "type": "text", "value": "\"\"" },
+        { "type": "text", "value": "\"Hello\"" },
+        { "type": "text", "value": "Error" }
+      ],
+      "answer": 1,
+      "explanation": "substring(0, 0) starts at index 0 but excludes index 0, resulting in an empty string \"\"."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What is string pooling in relation to immutability?",
+      "options": [
+        { "type": "text", "value": "A way to modify strings" },
+        { "type": "text", "value": "A method to delete strings" },
+        { "type": "text", "value": "A performance feature where strings can be shared" },
+        { "type": "text", "value": "An optimization that shares identical string literals in memory" }
+      ],
+      "answer": 3,
+      "explanation": "String pooling is a Java optimization where identical string literals share the same memory location, enabled by immutability."
+    }
+  ]
+}

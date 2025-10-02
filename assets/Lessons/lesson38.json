@@ -1,0 +1,430 @@
+{
+  "lessonId": 38,
+  "title": "Logical Operators (&&, ||, !)",
+  "content": [
+    {
+      "type": "text",
+      "value": "Logical operators allow you to combine multiple boolean expressions into more complex conditions. While relational operators compare individual values, logical operators work with "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " expressions themselves, combining or modifying them to create sophisticated decision-making logic."
+    },
+    {
+      "type": "text",
+      "value": "Java provides three logical operators: AND ("
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": "), OR ("
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": "), and NOT ("
+    },
+    {
+      "type": "code",
+      "value": "!"
+    },
+    {
+      "type": "text",
+      "value": "). Each operator combines or modifies boolean values in a specific way to produce a new "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " result."
+    },
+    {
+      "type": "code",
+      "value": "// The three logical operators:\n// &&  AND (both conditions must be true)\n// ||  OR (at least one condition must be true)\n// !   NOT (reverses the boolean value)"
+    },
+    {
+      "type": "text",
+      "value": "The AND operator "
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": " combines two boolean expressions and returns "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " only if both expressions are "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". If either expression is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", the entire expression evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "int age = 25;\nboolean hasLicense = true;\n\n// Both conditions must be true\nboolean canDrive = (age >= 16) && (hasLicense);\n// age >= 16 is true AND hasLicense is true → true\n\nSystem.out.println(canDrive);  // true"
+    },
+    {
+      "type": "text",
+      "value": "The AND operator requires both conditions to be satisfied. Think of it as checking multiple requirements that must all be met."
+    },
+    {
+      "type": "code",
+      "value": "int score = 85;\nint attendance = 90;\n\n// Both conditions required for honor roll\nboolean honorRoll = (score >= 80) && (attendance >= 85);\n// score >= 80 is true AND attendance >= 85 is true → true\n\nSystem.out.println(honorRoll);  // true\n\n// Example where one condition fails\nint lowScore = 75;\nboolean stillHonorRoll = (lowScore >= 80) && (attendance >= 85);\n// lowScore >= 80 is false AND attendance >= 85 is true → false\n\nSystem.out.println(stillHonorRoll);  // false"
+    },
+    {
+      "type": "text",
+      "value": "The OR operator "
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": " combines two boolean expressions and returns "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " if at least one expression is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". It only returns "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " if both expressions are "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "int temperature = 75;\nboolean isWeekend = true;\n\n// At least one condition must be true\nboolean canGoOutside = (temperature > 70) || (isWeekend);\n// temperature > 70 is true OR isWeekend is true → true\n\nSystem.out.println(canGoOutside);  // true"
+    },
+    {
+      "type": "text",
+      "value": "The OR operator checks if any of the conditions are satisfied. Think of it as having multiple options where meeting any one is sufficient."
+    },
+    {
+      "type": "code",
+      "value": "char grade = 'A';\nboolean isPassingGrade = (grade == 'A') || (grade == 'B') || (grade == 'C');\n// grade == 'A' is true OR ... → true (stops checking after first true)\n\nSystem.out.println(isPassingGrade);  // true\n\n// Example where both conditions are false\nchar failingGrade = 'F';\nboolean stillPassing = (failingGrade == 'A') || (failingGrade == 'B');\n// failingGrade == 'A' is false AND failingGrade == 'B' is false → false\n\nSystem.out.println(stillPassing);  // false"
+    },
+    {
+      "type": "text",
+      "value": "The NOT operator "
+    },
+    {
+      "type": "code",
+      "value": "!"
+    },
+    {
+      "type": "text",
+      "value": " is a unary operator that reverses a boolean value. It converts "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "boolean isRaining = false;\nboolean canGoOutside = !isRaining;  // !false → true\n\nSystem.out.println(canGoOutside);  // true\n\nboolean isSunny = true;\nboolean needUmbrella = !isSunny;   // !true → false\n\nSystem.out.println(needUmbrella);  // false"
+    },
+    {
+      "type": "text",
+      "value": "The NOT operator is useful for expressing negative conditions or checking when something is not true."
+    },
+    {
+      "type": "code",
+      "value": "int age = 15;\nboolean isMinor = !(age >= 18);     // !(15 >= 18) → !(false) → true\n\nSystem.out.println(isMinor);  // true\n\nboolean isOpen = true;\nboolean isClosed = !isOpen;         // !true → false\n\nSystem.out.println(isClosed);  // false"
+    },
+    {
+      "type": "text",
+      "value": "You can combine multiple logical operators to create complex conditions. Use parentheses to make the order of evaluation clear and to ensure correct logic."
+    },
+    {
+      "type": "code",
+      "value": "int age = 20;\nboolean hasTicket = true;\nboolean hasID = true;\n\n// Complex condition: age AND (ticket OR ID)\nboolean canEnter = (age >= 18) && (hasTicket || hasID);\n// age >= 18 is true AND (hasTicket || hasID) is true → true\n\nSystem.out.println(canEnter);  // true"
+    },
+    {
+      "type": "text",
+      "value": "Logical operators follow an order of precedence: NOT ("
+    },
+    {
+      "type": "code",
+      "value": "!"
+    },
+    {
+      "type": "text",
+      "value": ") is evaluated first, then AND ("
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": "), then OR ("
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": "). However, it's best practice to use parentheses to make your intentions clear."
+    },
+    {
+      "type": "code",
+      "value": "boolean a = true;\nboolean b = false;\nboolean c = true;\n\n// Without parentheses (follows precedence: ! then && then ||)\nboolean result1 = a || b && c;      // true || (false && true) → true\n\n// With parentheses (more readable)\nboolean result2 = a || (b && c);    // true || (false && true) → true\nboolean result3 = (a || b) && c;    // (true || false) && true → true\n\nSystem.out.println(result1);  // true\nSystem.out.println(result3);  // true"
+    },
+    {
+      "type": "text",
+      "value": "Logical operators use short-circuit evaluation. For AND ("
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": "), if the first condition is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", the second condition isn't evaluated because the result must be "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". For OR ("
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": "), if the first condition is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", the second condition isn't evaluated because the result must be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "int x = 0;\n\n// Short-circuit with AND\nboolean test1 = (x != 0) && (10 / x > 1);\n// x != 0 is false, so (10 / x > 1) is never evaluated\n// This prevents division by zero!\n\nSystem.out.println(test1);  // false\n\n// Short-circuit with OR\nint age = 25;\nboolean test2 = (age >= 18) || (age >= 21);\n// age >= 18 is true, so (age >= 21) is never evaluated\n\nSystem.out.println(test2);  // true"
+    },
+    {
+      "type": "text",
+      "value": "Combining AND and OR operators allows you to check ranges and multiple conditions effectively."
+    },
+    {
+      "type": "code",
+      "value": "int temperature = 72;\n\n// Check if temperature is comfortable (between 65 and 80)\nboolean isComfortable = (temperature >= 65) && (temperature <= 80);\n\nSystem.out.println(isComfortable);  // true\n\nint score = 85;\n\n// Check if score earns A or B grade\nboolean goodGrade = (score >= 90) || (score >= 80 && score < 90);\n\nSystem.out.println(goodGrade);  // true"
+    },
+    {
+      "type": "text",
+      "value": "The NOT operator can be combined with other logical operators to create inverted logic."
+    },
+    {
+      "type": "code",
+      "value": "int age = 16;\nboolean hasPermit = false;\n\n// Cannot drive if either condition is false\nboolean cannotDrive = !(age >= 18) || !(hasPermit);\n// !(16 >= 18) OR !(false) → true OR true → true\n\nSystem.out.println(cannotDrive);  // true\n\nboolean isWeekday = true;\nboolean hasHomework = true;\n\n// Free time only if it's NOT a weekday OR NOT homework\nboolean hasFreeTime = !isWeekday || !hasHomework;\n// !true OR !true → false OR false → false\n\nSystem.out.println(hasFreeTime);  // false"
+    },
+    {
+      "type": "text",
+      "value": "Logical operators are essential in conditional statements for making decisions based on multiple criteria."
+    },
+    {
+      "type": "code",
+      "value": "int age = 20;\nboolean hasID = true;\nint tickets = 2;\n\nif ((age >= 18) && (hasID) && (tickets > 0)) {\n    System.out.println(\"Can enter the concert\");\n}\n\nint temperature = 85;\nboolean isRaining = false;\n\nif ((temperature > 80) || (isRaining)) {\n    System.out.println(\"Stay inside today\");\n}\n\nboolean isHoliday = false;\nboolean isWeekend = true;\n\nif (!isHoliday && !isWeekend) {\n    System.out.println(\"It's a work day\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Truth tables show all possible combinations of boolean values and their results. For AND, the result is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " only when both are "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". For OR, the result is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " only when both are "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "// AND truth table\n// true && true   → true\n// true && false  → false\n// false && true  → false\n// false && false → false\n\n// OR truth table\n// true || true   → true\n// true || false  → true\n// false || true  → true\n// false || false → false\n\n// NOT truth table\n// !true  → false\n// !false → true"
+    },
+    {
+      "type": "text",
+      "value": "Common mistakes with logical operators include confusing "
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": " with "
+    },
+    {
+      "type": "code",
+      "value": "&"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": " with "
+    },
+    {
+      "type": "code",
+      "value": "|"
+    },
+    {
+      "type": "text",
+      "value": ", forgetting parentheses in complex expressions, and creating overly complicated conditions that are hard to read."
+    },
+    {
+      "type": "code",
+      "value": "// WRONG - using single & or |\n// boolean result = (x > 5) & (y < 10);  // Works but doesn't short-circuit\n\n// CORRECT - using double && or ||\nint x = 10;\nint y = 5;\nboolean result = (x > 5) && (y < 10);\n\nSystem.out.println(result);  // true\n\n// WRONG - unclear without parentheses\n// boolean complex = a || b && c;  // Hard to understand intent\n\n// CORRECT - clear with parentheses\nboolean a = true;\nboolean b = false;\nboolean c = true;\nboolean complex = a || (b && c);\n\nSystem.out.println(complex);  // true"
+    },
+    {
+      "type": "text",
+      "value": "Understanding logical operators is essential for creating sophisticated conditional logic in your programs. In the next lesson, you'll learn how to combine boolean expressions in even more complex ways and explore common patterns for decision-making in programming."
+    }
+  ]
+}

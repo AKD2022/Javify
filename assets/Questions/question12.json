@@ -1,0 +1,214 @@
+{
+  "lessonId": 12,
+  "title": "Input and Output Basics (System.out, Scanner intro)",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "Which method prints text and moves to the next line?",
+      "options": [
+        { "type": "text", "value": "System.out.println()" },
+        { "type": "text", "value": "System.out.print()" },
+        { "type": "text", "value": "System.out.write()" },
+        { "type": "text", "value": "System.out.display()" }
+      ],
+      "answer": 0,
+      "explanation": "System.out.println() prints text and automatically moves the cursor to the next line."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "Which method prints text without moving to the next line?",
+      "options": [
+        { "type": "text", "value": "System.out.println()" },
+        { "type": "text", "value": "System.out.print()" },
+        { "type": "text", "value": "System.out.line()" },
+        { "type": "text", "value": "System.out.show()" }
+      ],
+      "answer": 1,
+      "explanation": "System.out.print() prints text without adding a newline, allowing subsequent output on the same line."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What import statement is needed to use Scanner?",
+      "options": [
+        { "type": "text", "value": "import java.io.Scanner;" },
+        { "type": "text", "value": "import java.lang.Scanner;" },
+        { "type": "text", "value": "import java.util.Scanner;" },
+        { "type": "text", "value": "import javax.Scanner;" }
+      ],
+      "answer": 2,
+      "explanation": "Scanner is located in the java.util package, so you need: import java.util.Scanner;"
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "How do you create a Scanner for keyboard input?",
+      "options": [
+        { "type": "code", "value": "Scanner input = new Scanner();" },
+        { "type": "code", "value": "Scanner input = new Scanner(keyboard);" },
+        { "type": "code", "value": "Scanner input = new Scanner(System.out);" },
+        { "type": "code", "value": "Scanner input = new Scanner(System.in);" }
+      ],
+      "answer": 3,
+      "explanation": "System.in represents keyboard input, so you create: Scanner input = new Scanner(System.in);"
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Which Scanner method reads an entire line of text?",
+      "options": [
+        { "type": "text", "value": "nextLine()" },
+        { "type": "text", "value": "next()" },
+        { "type": "text", "value": "readLine()" },
+        { "type": "text", "value": "getLine()" }
+      ],
+      "answer": 0,
+      "explanation": "nextLine() reads an entire line of text, including spaces, until the user presses Enter."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "Which Scanner method reads only the next word?",
+      "options": [
+        { "type": "text", "value": "nextLine()" },
+        { "type": "text", "value": "next()" },
+        { "type": "text", "value": "nextWord()" },
+        { "type": "text", "value": "readWord()" }
+      ],
+      "answer": 1,
+      "explanation": "next() reads the next word (token), stopping at whitespace like spaces or tabs."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "Which Scanner method reads an integer?",
+      "options": [
+        { "type": "text", "value": "nextNumber()" },
+        { "type": "text", "value": "readInt()" },
+        { "type": "text", "value": "nextInt()" },
+        { "type": "text", "value": "getInt()" }
+      ],
+      "answer": 2,
+      "explanation": "nextInt() reads the next integer value from the input stream."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What does this code output?\nSystem.out.print(\"Hello \");\nSystem.out.print(\"World!\");",
+      "options": [
+        { "type": "text", "value": "Hello\nWorld!" },
+        { "type": "text", "value": "Hello World!" },
+        { "type": "text", "value": "HelloWorld!" },
+        { "type": "text", "value": "Hello  World!" }
+      ],
+      "answer": 1,
+      "explanation": "print() doesn't add newlines, so both strings appear on the same line: \"Hello World!\""
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Which Scanner method reads a decimal number?",
+      "options": [
+        { "type": "text", "value": "nextFloat()" },
+        { "type": "text", "value": "nextDouble()" },
+        { "type": "text", "value": "nextDecimal()" },
+        { "type": "text", "value": "nextNumber()" }
+      ],
+      "answer": 1,
+      "explanation": "nextDouble() reads decimal numbers (floating-point values) from the input."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What combines text and variables in output?",
+      "options": [
+        { "type": "text", "value": "String concatenation with +" },
+        { "type": "text", "value": "String multiplication with *" },
+        { "type": "text", "value": "String division with /" },
+        { "type": "text", "value": "String subtraction with -" }
+      ],
+      "answer": 0,
+      "explanation": "The + operator concatenates strings and converts variables to strings for display."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Which Scanner method reads true/false values?",
+      "options": [
+        { "type": "text", "value": "nextBool()" },
+        { "type": "text", "value": "nextBoolean()" },
+        { "type": "text", "value": "readBoolean()" },
+        { "type": "text", "value": "getBool()" }
+      ],
+      "answer": 1,
+      "explanation": "nextBoolean() reads boolean values (true or false) from the input."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What should you do after nextInt() before using nextLine()?",
+      "options": [
+        { "type": "text", "value": "Nothing special" },
+        { "type": "text", "value": "Call nextLine() to consume the newline" },
+        { "type": "text", "value": "Wait 1 second" },
+        { "type": "text", "value": "Reset the Scanner" }
+      ],
+      "answer": 1,
+      "explanation": "After nextInt(), call nextLine() to consume the remaining newline character before reading text."
+    },
+    {
+      "id": 13,
+      "type": "code",
+      "question": "What does System.out.println(5 + 3) display?",
+      "options": [
+        { "type": "text", "value": "8" },
+        { "type": "text", "value": "53" },
+        { "type": "text", "value": "5 + 3" },
+        { "type": "text", "value": "5+3" }
+      ],
+      "answer": 0,
+      "explanation": "The expression 5 + 3 is evaluated first, resulting in 8, which is then displayed."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What's a good practice when finished with a Scanner?",
+      "options": [
+        { "type": "text", "value": "Delete it" },
+        { "type": "text", "value": "Close it with close()" },
+        { "type": "text", "value": "Reset it" },
+        { "type": "text", "value": "Nothing needed" }
+      ],
+      "answer": 1,
+      "explanation": "It's good practice to call close() on Scanner objects when finished to free system resources."
+    },
+    {
+      "id": 15,
+      "type": "code",
+      "question": "What does \"Enter your age: \" represent in a program?",
+      "options": [
+        { "type": "text", "value": "Variable name" },
+        { "type": "text", "value": "Method call" },
+        { "type": "text", "value": "User prompt" },
+        { "type": "text", "value": "Error message" }
+      ],
+      "answer": 2,
+      "explanation": "\"Enter your age: \" is a user prompt that tells the user what type of input is expected."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "What does this create: Scanner input = new Scanner(System.in);",
+      "options": [
+        { "type": "text", "value": "A file reader" },
+        { "type": "text", "value": "An output stream" },
+        { "type": "text", "value": "A keyboard input reader" },
+        { "type": "text", "value": "A network connection" }
+      ],
+      "answer": 2,
+      "explanation": "This creates a Scanner object that reads input from the keyboard (System.in)."
+    }
+  ]
+}

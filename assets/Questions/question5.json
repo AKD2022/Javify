@@ -1,0 +1,214 @@
+{
+  "lessonId": 5,
+  "title": "double Data Type and Floating-Point Operations",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What does 'double precision' mean for the double data type?",
+      "options": [
+        { "type": "text", "value": "It provides twice the precision of the float data type" },
+        { "type": "text", "value": "It stores two numbers at once" },
+        { "type": "text", "value": "It performs calculations twice as fast" },
+        { "type": "text", "value": "It uses double the memory of int" }
+      ],
+      "answer": 0,
+      "explanation": "Double precision means the double data type provides twice the precision of the single-precision float type."
+    },
+    {
+      "id": 2,
+      "type": "code",
+      "question": "What is the result of: 7.0 / 2.0",
+      "options": [
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "3.5" },
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "3.0" }
+      ],
+      "answer": 1,
+      "explanation": "Floating-point division preserves decimal precision: 7.0 / 2.0 = 3.5."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What is the result of: 17.5 % 5.0",
+      "options": [
+        { "type": "text", "value": "3.5" },
+        { "type": "text", "value": "12.5" },
+        { "type": "text", "value": "2.5" },
+        { "type": "text", "value": "0.5" }
+      ],
+      "answer": 2,
+      "explanation": "17.5 ÷ 5.0 = 3 remainder 2.5, so 17.5 % 5.0 = 2.5."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What happens when you mix int and double in calculations?",
+      "options": [
+        { "type": "text", "value": "Compilation error occurs" },
+        { "type": "text", "value": "The double becomes an int" },
+        { "type": "text", "value": "Both values become strings" },
+        { "type": "text", "value": "The int is promoted to double" }
+      ],
+      "answer": 3,
+      "explanation": "When mixing int and double, Java automatically promotes the int to double for the calculation."
+    },
+    {
+      "id": 5,
+      "type": "code",
+      "question": "If double x = 10.5; and x += 2.5; what is x?",
+      "options": [
+        { "type": "text", "value": "13.0" },
+        { "type": "text", "value": "10.5" },
+        { "type": "text", "value": "12.5" },
+        { "type": "text", "value": "8.0" }
+      ],
+      "answer": 0,
+      "explanation": "The += operator adds 2.5 to x: x = 10.5 + 2.5 = 13.0."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What is the result of: 25 / 100.0",
+      "options": [
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "0.25" },
+        { "type": "text", "value": "25" },
+        { "type": "text", "value": "4" }
+      ],
+      "answer": 1,
+      "explanation": "The int 25 is promoted to double, so 25.0 / 100.0 = 0.25."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "What is 1.23e2 in standard notation?",
+      "options": [
+        { "type": "text", "value": "12.3" },
+        { "type": "text", "value": "1.232" },
+        { "type": "text", "value": "123.0" },
+        { "type": "text", "value": "0.123" }
+      ],
+      "answer": 2,
+      "explanation": "Scientific notation 1.23e2 means 1.23 × 10² = 1.23 × 100 = 123.0."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What happens to double y = 5.7; after y++?",
+      "options": [
+        { "type": "text", "value": "y becomes 6.7" },
+        { "type": "text", "value": "y becomes 5.8" },
+        { "type": "text", "value": "y stays 5.7" },
+        { "type": "text", "value": "y becomes 4.7" }
+      ],
+      "answer": 0,
+      "explanation": "The increment operator adds 1.0 to double values: 5.7 + 1.0 = 6.7."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What can cause small precision errors in double calculations?",
+      "options": [
+        { "type": "text", "value": "How computers represent decimal numbers in binary" },
+        { "type": "text", "value": "Using too many decimal places" },
+        { "type": "text", "value": "Mixing with integers" },
+        { "type": "text", "value": "Using scientific notation" }
+      ],
+      "answer": 0,
+      "explanation": "Precision errors occur because computers represent decimal numbers in binary, which can't exactly represent all decimal fractions."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What is the result of: 10.0 / 3.0",
+      "options": [
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "3.333333333333333" },
+        { "type": "text", "value": "3.0" },
+        { "type": "text", "value": "10" }
+      ],
+      "answer": 1,
+      "explanation": "Floating-point division gives the precise decimal result: 10.0 / 3.0 ≈ 3.333333333333333."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What does NaN stand for in floating-point arithmetic?",
+      "options": [
+        { "type": "text", "value": "New Advanced Number" },
+        { "type": "text", "value": "Not a Number" },
+        { "type": "text", "value": "Null and None" },
+        { "type": "text", "value": "Negative Abstract Number" }
+      ],
+      "answer": 2,
+      "explanation": "NaN stands for 'Not a Number' and results from undefined operations like 0.0/0.0."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What is the result of: 8.0 % 2.5",
+      "options": [
+        { "type": "text", "value": "3.2" },
+        { "type": "text", "value": "5.5" },
+        { "type": "text", "value": "0.5" },
+        { "type": "text", "value": "0.5" }
+      ],
+      "answer": 3,
+      "explanation": "8.0 ÷ 2.5 = 3 remainder 0.5, so 8.0 % 2.5 = 0.5."
+    },
+    {
+      "id": 13,
+      "type": "code",
+      "question": "If double balance = 50.0; and balance *= 1.1; what is balance?",
+      "options": [
+        { "type": "text", "value": "55.0" },
+        { "type": "text", "value": "51.1" },
+        { "type": "text", "value": "50.0" },
+        { "type": "text", "value": "61.0" }
+      ],
+      "answer": 0,
+      "explanation": "The *= operator multiplies balance by 1.1: 50.0 * 1.1 = 55.0."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "Which operation can result in positive infinity?",
+      "options": [
+        { "type": "text", "value": "Dividing a positive number by zero" },
+        { "type": "text", "value": "Adding two large numbers" },
+        { "type": "text", "value": "Multiplying by negative one" },
+        { "type": "text", "value": "Subtracting a small number" }
+      ],
+      "answer": 0,
+      "explanation": "Dividing a positive double by 0.0 results in positive infinity in Java."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "How many bits does a double use in Java?",
+      "options": [
+        { "type": "text", "value": "32 bits" },
+        { "type": "text", "value": "16 bits" },
+        { "type": "text", "value": "64 bits" },
+        { "type": "text", "value": "128 bits" }
+      ],
+      "answer": 2,
+      "explanation": "A double in Java is a 64-bit floating-point number, providing double the precision of a 32-bit float."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "What does double count = 3.3; count--; result in?",
+      "options": [
+        { "type": "text", "value": "count = 4.3" },
+        { "type": "text", "value": "count = 3.2" },
+        { "type": "text", "value": "count = 3.3" },
+        { "type": "text", "value": "count = 2.3" }
+      ],
+      "answer": 3,
+      "explanation": "The decrement operator subtracts 1.0 from double values: 3.3 - 1.0 = 2.3."
+    }
+  ]
+}

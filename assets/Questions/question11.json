@@ -1,0 +1,214 @@
+{
+  "lessonId": 11,
+  "title": "Using Constants (final keyword)",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What keyword is used to create constants in Java?",
+      "options": [
+        { "type": "text", "value": "final" },
+        { "type": "text", "value": "const" },
+        { "type": "text", "value": "constant" },
+        { "type": "text", "value": "static" }
+      ],
+      "answer": 0,
+      "explanation": "The final keyword is used to create constants in Java, preventing the variable from being reassigned."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What naming convention is used for constants in Java?",
+      "options": [
+        { "type": "text", "value": "camelCase" },
+        { "type": "text", "value": "ALL_UPPERCASE_WITH_UNDERSCORES" },
+        { "type": "text", "value": "lowercase" },
+        { "type": "text", "value": "PascalCase" }
+      ],
+      "answer": 1,
+      "explanation": "Constants use ALL_UPPERCASE letters with underscores separating words, making them easily identifiable."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What happens if you try to reassign a final variable?",
+      "options": [
+        { "type": "text", "value": "Runtime error" },
+        { "type": "text", "value": "Warning message" },
+        { "type": "text", "value": "Compilation error" },
+        { "type": "text", "value": "Value changes successfully" }
+      ],
+      "answer": 2,
+      "explanation": "Attempting to reassign a final variable results in a compilation error, preventing the code from compiling."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "Which declaration is correct for a constant?",
+      "options": [
+        { "type": "code", "value": "final int max_score = 100;" },
+        { "type": "code", "value": "final int MAX_SCORE = 100;" },
+        { "type": "code", "value": "final int maxScore = 100;" },
+        { "type": "code", "value": "const int MAX_SCORE = 100;" }
+      ],
+      "answer": 1,
+      "explanation": "Constants should use the final keyword with ALL_UPPERCASE naming convention."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "When must a final variable be initialized?",
+      "options": [
+        { "type": "text", "value": "At declaration or in constructor" },
+        { "type": "text", "value": "Only in the main method" },
+        { "type": "text", "value": "Anytime before first use" },
+        { "type": "text", "value": "It can remain uninitialized" }
+      ],
+      "answer": 0,
+      "explanation": "Final variables must be initialized either at declaration or in the constructor - they cannot remain uninitialized."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What are class-level constants typically declared as?",
+      "options": [
+        { "type": "text", "value": "final only" },
+        { "type": "text", "value": "static final" },
+        { "type": "text", "value": "public only" },
+        { "type": "text", "value": "private final" }
+      ],
+      "answer": 1,
+      "explanation": "Class-level constants are typically declared as static final, making them belong to the class and shared by all instances."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What is a 'magic number' in programming?",
+      "options": [
+        { "type": "text", "value": "A randomly generated number" },
+        { "type": "text", "value": "A literal value without clear meaning in code" },
+        { "type": "text", "value": "A mathematical constant" },
+        { "type": "text", "value": "A number that changes automatically" }
+      ],
+      "answer": 1,
+      "explanation": "Magic numbers are literal values scattered in code without clear meaning - constants help eliminate them."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "Which is a valid use of a final array?",
+      "options": [
+        { "type": "code", "value": "final int[] nums = {1,2,3}; nums[0] = 5;" },
+        { "type": "code", "value": "final int[] nums = {1,2,3}; nums = new int[5];" },
+        { "type": "code", "value": "int[] final nums = {1,2,3};" },
+        { "type": "code", "value": "final nums[] = {1,2,3};" }
+      ],
+      "answer": 0,
+      "explanation": "You can modify array contents but cannot reassign the array reference when declared as final."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What is the main benefit of using constants?",
+      "options": [
+        { "type": "text", "value": "Faster program execution" },
+        { "type": "text", "value": "Improved code readability and maintainability" },
+        { "type": "text", "value": "Reduced memory usage" },
+        { "type": "text", "value": "Automatic error detection" }
+      ],
+      "answer": 1,
+      "explanation": "Constants improve code readability by giving meaningful names to values and make maintenance easier."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "Which Math constant represents pi?",
+      "options": [
+        { "type": "code", "value": "Math.PI" },
+        { "type": "code", "value": "Math.pi" },
+        { "type": "code", "value": "Math.PIE" },
+        { "type": "code", "value": "MATH.PI" }
+      ],
+      "answer": 0,
+      "explanation": "Math.PI is the built-in constant in Java's Math class that represents the value of pi."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Can local constants be declared within methods?",
+      "options": [
+        { "type": "text", "value": "No, only at class level" },
+        { "type": "text", "value": "Yes, for method-scoped constants" },
+        { "type": "text", "value": "Only in static methods" },
+        { "type": "text", "value": "Only in constructors" }
+      ],
+      "answer": 1,
+      "explanation": "Local constants can be declared within methods and have method scope, useful for values that don't change during method execution."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What's wrong with: final int VALUE;",
+      "options": [
+        { "type": "text", "value": "Wrong keyword" },
+        { "type": "text", "value": "Wrong naming convention" },
+        { "type": "text", "value": "Missing semicolon" },
+        { "type": "text", "value": "Not initialized" }
+      ],
+      "answer": 3,
+      "explanation": "Final variables must be initialized - you cannot declare a final variable without giving it a value."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "Where should class constants typically be placed?",
+      "options": [
+        { "type": "text", "value": "At the top of the class" },
+        { "type": "text", "value": "At the bottom of the class" },
+        { "type": "text", "value": "Inside methods" },
+        { "type": "text", "value": "In a separate file" }
+      ],
+      "answer": 0,
+      "explanation": "Class constants should be placed at the top of the class for visibility and easy reference."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What does this create: public static final String NAME = \"App\";",
+      "options": [
+        { "type": "text", "value": "A class-level constant accessible to all instances" },
+        { "type": "text", "value": "A private variable" },
+        { "type": "text", "value": "A method parameter" },
+        { "type": "text", "value": "A local variable" }
+      ],
+      "answer": 0,
+      "explanation": "This creates a public class-level constant that is accessible to all instances and external classes."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "Why are constants helpful for maintenance?",
+      "options": [
+        { "type": "text", "value": "They run faster" },
+        { "type": "text", "value": "They use less memory" },
+        { "type": "text", "value": "Changes only need to be made in one place" },
+        { "type": "text", "value": "They prevent all bugs" }
+      ],
+      "answer": 2,
+      "explanation": "Constants centralize important values, so changes only need to be made in the constant declaration rather than throughout the code."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "Which creates an unchangeable reference to an array?",
+      "options": [
+        { "type": "code", "value": "static int[] array = {1,2,3};" },
+        { "type": "code", "value": "const int[] array = {1,2,3};" },
+        { "type": "code", "value": "int[] final array = {1,2,3};" },
+        { "type": "code", "value": "final int[] array = {1,2,3};" }
+      ],
+      "answer": 3,
+      "explanation": "final int[] creates an unchangeable reference to the array, though the array contents can still be modified."
+    }
+  ]
+}

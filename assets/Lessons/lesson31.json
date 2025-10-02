@@ -1,0 +1,250 @@
+{
+  "lessonId": 31,
+  "title": "Creating Simple Objects and Constructors",
+  "content": [
+    {
+      "type": "text",
+      "value": "Objects are instances of classes that combine data and behavior into a single unit. While you've been using objects from the Java Standard Library like "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "Scanner"
+    },
+    {
+      "type": "text",
+      "value": ", now you'll learn how to create your own objects from custom classes. Understanding object creation and constructors is fundamental to object-oriented programming."
+    },
+    {
+      "type": "text",
+      "value": "To create an object, you use the "
+    },
+    {
+      "type": "code",
+      "value": "new"
+    },
+    {
+      "type": "text",
+      "value": " keyword followed by a constructor call. A constructor is a special method that initializes a new object when it's created. The constructor has the same name as the class and doesn't have a return type."
+    },
+    {
+      "type": "code",
+      "value": "// Creating objects using the new keyword\nString message = new String(\"Hello\");\nScanner input = new Scanner(System.in);\nRandom generator = new Random();"
+    },
+    {
+      "type": "text",
+      "value": "Let's create a simple class to represent a student. A class serves as a blueprint that defines what data each student object will store and what actions it can perform."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    // Instance variables (data)\n    String name;\n    int age;\n    double gpa;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Instance variables are declared inside the class but outside any method. These variables belong to each individual object created from the class. Each "
+    },
+    {
+      "type": "code",
+      "value": "Student"
+    },
+    {
+      "type": "text",
+      "value": " object will have its own "
+    },
+    {
+      "type": "code",
+      "value": "name"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "age"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "gpa"
+    },
+    {
+      "type": "text",
+      "value": " values."
+    },
+    {
+      "type": "text",
+      "value": "A constructor is a special method that runs when you create a new object. If you don't write a constructor, Java provides a default constructor that takes no parameters and initializes instance variables to default values ("
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " for numbers, "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " for "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " for objects)."
+    },
+    {
+      "type": "code",
+      "value": "// Using the default constructor (provided by Java)\nStudent student1 = new Student();\nSystem.out.println(student1.name);  // null\nSystem.out.println(student1.age);   // 0\nSystem.out.println(student1.gpa);   // 0.0"
+    },
+    {
+      "type": "text",
+      "value": "You can write your own constructor to initialize instance variables with specific values when an object is created. A constructor has the same name as the class and no return type (not even "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": ")."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    String name;\n    int age;\n    double gpa;\n    \n    // Constructor\n    public Student(String studentName, int studentAge, double studentGPA) {\n        name = studentName;\n        age = studentAge;\n        gpa = studentGPA;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Now when you create a "
+    },
+    {
+      "type": "code",
+      "value": "Student"
+    },
+    {
+      "type": "text",
+      "value": " object, you must provide the required parameters. The constructor sets the instance variables to the values you pass in."
+    },
+    {
+      "type": "code",
+      "value": "// Creating Student objects with the constructor\nStudent alice = new Student(\"Alice Johnson\", 16, 3.8);\nStudent bob = new Student(\"Bob Smith\", 17, 3.5);\n\nSystem.out.println(alice.name);  // \"Alice Johnson\"\nSystem.out.println(bob.age);     // 17"
+    },
+    {
+      "type": "text",
+      "value": "Constructor parameters act as temporary variables that exist only during object creation. They're used to pass initial values into the constructor, which then assigns these values to the instance variables."
+    },
+    {
+      "type": "code",
+      "value": "public class Book {\n    String title;\n    String author;\n    int pages;\n    \n    public Book(String bookTitle, String bookAuthor, int numPages) {\n        title = bookTitle;\n        author = bookAuthor;\n        pages = numPages;\n    }\n}\n\n// Creating Book objects\nBook book1 = new Book(\"Java Programming\", \"John Doe\", 500);\nBook book2 = new Book(\"Data Structures\", \"Jane Smith\", 450);"
+    },
+    {
+      "type": "text",
+      "value": "Classes can have multiple constructors with different parameter lists. This is constructor overloading, similar to method overloading you learned earlier. Each constructor provides a different way to create objects."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    String name;\n    int age;\n    double gpa;\n    \n    // Constructor with all parameters\n    public Student(String studentName, int studentAge, double studentGPA) {\n        name = studentName;\n        age = studentAge;\n        gpa = studentGPA;\n    }\n    \n    // Constructor with only name and age\n    public Student(String studentName, int studentAge) {\n        name = studentName;\n        age = studentAge;\n        gpa = 0.0;  // Default value\n    }\n    \n    // Constructor with only name\n    public Student(String studentName) {\n        name = studentName;\n        age = 0;\n        gpa = 0.0;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "With multiple constructors, you can create objects in different ways depending on what information is available."
+    },
+    {
+      "type": "code",
+      "value": "// Using different constructors\nStudent student1 = new Student(\"Alice Johnson\", 16, 3.8);\nStudent student2 = new Student(\"Bob Smith\", 17);\nStudent student3 = new Student(\"Charlie Brown\");\n\nSystem.out.println(student2.gpa);  // 0.0 (default value)\nSystem.out.println(student3.age);  // 0 (default value)"
+    },
+    {
+      "type": "text",
+      "value": "Once an object is created, you can access its instance variables using dot notation. The dot operator connects the object reference to the variable or method you want to access."
+    },
+    {
+      "type": "code",
+      "value": "Student alice = new Student(\"Alice Johnson\", 16, 3.8);\n\n// Accessing instance variables\nString studentName = alice.name;     // \"Alice Johnson\"\nint studentAge = alice.age;          // 16\ndouble studentGPA = alice.gpa;       // 3.8\n\n// Modifying instance variables\nalice.gpa = 3.9;\nalice.age = 17;\nSystem.out.println(alice.gpa);       // 3.9"
+    },
+    {
+      "type": "text",
+      "value": "Constructors can include validation logic to ensure objects are created with valid data. This helps prevent errors and maintains data integrity."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    String name;\n    int age;\n    double gpa;\n    \n    public Student(String studentName, int studentAge, double studentGPA) {\n        name = studentName;\n        \n        // Validate age\n        if (studentAge >= 0 && studentAge <= 120) {\n            age = studentAge;\n        } else {\n            age = 0;  // Default for invalid age\n        }\n        \n        // Validate GPA\n        if (studentGPA >= 0.0 && studentGPA <= 4.0) {\n            gpa = studentGPA;\n        } else {\n            gpa = 0.0;  // Default for invalid GPA\n        }\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "You can create methods within a class that work with the instance variables. These methods define the behaviors that objects of the class can perform."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    String name;\n    int age;\n    double gpa;\n    \n    public Student(String studentName, int studentAge, double studentGPA) {\n        name = studentName;\n        age = studentAge;\n        gpa = studentGPA;\n    }\n    \n    // Method to display student information\n    public void displayInfo() {\n        System.out.println(\"Name: \" + name);\n        System.out.println(\"Age: \" + age);\n        System.out.println(\"GPA: \" + gpa);\n    }\n}\n\n// Using the method\nStudent alice = new Student(\"Alice Johnson\", 16, 3.8);\nalice.displayInfo();"
+    },
+    {
+      "type": "text",
+      "value": "Each object created from a class is independent and has its own set of instance variables. Changing one object's variables doesn't affect other objects."
+    },
+    {
+      "type": "code",
+      "value": "Student student1 = new Student(\"Alice\", 16, 3.8);\nStudent student2 = new Student(\"Bob\", 17, 3.5);\n\n// Modify student1\nstudent1.gpa = 4.0;\n\n// student2 is unchanged\nSystem.out.println(student1.gpa);  // 4.0\nSystem.out.println(student2.gpa);  // 3.5 (still original value)"
+    },
+    {
+      "type": "text",
+      "value": "Constructors are essential for ensuring objects start with valid, meaningful data. Without constructors, you'd have to manually set every instance variable after creating an object, which is error-prone and inefficient."
+    },
+    {
+      "type": "code",
+      "value": "// Without constructor (tedious and error-prone)\nStudent student = new Student();\nstudent.name = \"Alice Johnson\";\nstudent.age = 16;\nstudent.gpa = 3.8;\n\n// With constructor (clean and efficient)\nStudent student = new Student(\"Alice Johnson\", 16, 3.8);"
+    },
+    {
+      "type": "text",
+      "value": "Common mistakes when working with constructors include forgetting the "
+    },
+    {
+      "type": "code",
+      "value": "new"
+    },
+    {
+      "type": "text",
+      "value": " keyword, adding a return type to the constructor (which makes it a regular method instead), and not providing required parameters when creating objects."
+    },
+    {
+      "type": "code",
+      "value": "// INCORRECT - missing new keyword\n// Student alice = Student(\"Alice\", 16, 3.8);  // Error!\n\n// INCORRECT - constructor with return type\n// public void Student(String name) { }  // This is a method, not a constructor!\n\n// CORRECT\nStudent alice = new Student(\"Alice\", 16, 3.8);"
+    },
+    {
+      "type": "text",
+      "value": "Understanding objects and constructors is fundamental to object-oriented programming. You'll use these concepts constantly as you build more complex programs. In upcoming lessons, you'll learn about object references, memory management, and the "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " keyword for working with instance variables more effectively."
+    }
+  ]
+}

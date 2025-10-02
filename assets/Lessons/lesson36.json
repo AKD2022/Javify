@@ -1,0 +1,294 @@
+{
+  "lessonId": 36,
+  "title": "Introduction to Boolean Expressions",
+  "content": [
+    {
+      "type": "text",
+      "value": "Welcome to Unit 3, where you'll learn about control structures - the mechanisms that allow your programs to make decisions and execute different code based on conditions. At the heart of all decision-making in programming are boolean expressions, which evaluate to either "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "A boolean expression is any expression that evaluates to a "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " value - either "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". These expressions are fundamental to controlling program flow because they determine which code executes and which code is skipped."
+    },
+    {
+      "type": "code",
+      "value": "// Simple boolean values\nboolean isRaining = true;\nboolean isSunny = false;\n\n// Boolean expressions\nboolean result1 = (5 > 3);        // true\nboolean result2 = (10 == 20);     // false\nboolean result3 = (7 <= 7);       // true"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " primitive type stores only two possible values: "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". Unlike other programming languages where numbers like 0 and 1 might represent false and true, Java uses the explicit keywords "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "boolean hasLicense = true;\nboolean isMinor = false;\nboolean isPassing = true;\n\nSystem.out.println(hasLicense);    // true\nSystem.out.println(isMinor);       // false"
+    },
+    {
+      "type": "text",
+      "value": "Boolean expressions become especially powerful when they involve comparisons. These comparisons use relational operators to compare values and produce "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " results."
+    },
+    {
+      "type": "code",
+      "value": "int age = 16;\nint drivingAge = 16;\n\n// Creating boolean expressions through comparisons\nboolean canDrive = (age >= drivingAge);     // true\nboolean isTooYoung = (age < drivingAge);    // false\nboolean isExactAge = (age == drivingAge);   // true"
+    },
+    {
+      "type": "text",
+      "value": "Boolean expressions are used extensively in conditional statements to control which code executes. When a boolean expression evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", certain code runs. When it evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", different code runs or the code is skipped entirely."
+    },
+    {
+      "type": "code",
+      "value": "int score = 85;\nboolean isPassing = (score >= 60);\n\nif (isPassing) {\n    System.out.println(\"You passed!\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "You can store the result of a boolean expression in a "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " variable, or you can use the expression directly in conditional statements. Both approaches work, but storing in a variable can make your code more readable."
+    },
+    {
+      "type": "code",
+      "value": "int temperature = 75;\n\n// Storing in a variable first\nboolean isComfortable = (temperature >= 65 && temperature <= 80);\nif (isComfortable) {\n    System.out.println(\"Perfect temperature!\");\n}\n\n// Using the expression directly\nif (temperature >= 65 && temperature <= 80) {\n    System.out.println(\"Perfect temperature!\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Boolean expressions can be simple comparisons or complex combinations of multiple conditions. Simple expressions compare two values, while complex expressions combine multiple comparisons using logical operators (which you'll learn about in upcoming lessons)."
+    },
+    {
+      "type": "code",
+      "value": "// Simple boolean expressions\nboolean isPositive = (10 > 0);              // true\nboolean isEqual = (5 == 5);                 // true\nboolean isNegative = (-3 < 0);              // true\n\n// These will be combined in later lessons\nint grade = 85;\nboolean isHighGrade = (grade >= 90);        // false\nboolean isPassingGrade = (grade >= 60);     // true"
+    },
+    {
+      "type": "text",
+      "value": "Boolean expressions evaluate completely before being used. Java computes the entire expression and determines whether it's "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", then uses that result to make decisions."
+    },
+    {
+      "type": "code",
+      "value": "int x = 10;\nint y = 20;\n\n// Expression evaluates first, then result is used\nboolean comparison = (x + 5 < y - 3);\n// Step 1: x + 5 = 15\n// Step 2: y - 3 = 17\n// Step 3: 15 < 17 = true\n\nSystem.out.println(comparison);  // true"
+    },
+    {
+      "type": "text",
+      "value": "The order of operations applies to boolean expressions just as it does to arithmetic expressions. Arithmetic operations are performed before comparisons."
+    },
+    {
+      "type": "code",
+      "value": "int a = 5;\nint b = 3;\nint c = 8;\n\n// Arithmetic happens first, then comparison\nboolean result = (a * b > c + 2);\n// Step 1: a * b = 15\n// Step 2: c + 2 = 10\n// Step 3: 15 > 10 = true\n\nSystem.out.println(result);  // true"
+    },
+    {
+      "type": "text",
+      "value": "Boolean variables can be reassigned new values just like any other variable. The value can change throughout your program based on conditions and calculations."
+    },
+    {
+      "type": "code",
+      "value": "boolean isGameOver = false;\nint lives = 3;\n\nSystem.out.println(isGameOver);  // false\n\nlives = 0;\nisGameOver = (lives == 0);\n\nSystem.out.println(isGameOver);  // true"
+    },
+    {
+      "type": "text",
+      "value": "Boolean expressions are essential for validation and checking conditions. They help determine if data meets certain requirements or if specific conditions are met."
+    },
+    {
+      "type": "code",
+      "value": "int age = 15;\nint minAge = 13;\nint maxAge = 19;\n\n// Validation checks\nboolean isTeenager = (age >= minAge);\nboolean isValidAge = (age >= 0);\nboolean isInRange = (age >= minAge);\n\nSystem.out.println(\"Is teenager: \" + isTeenager);      // true\nSystem.out.println(\"Is valid age: \" + isValidAge);     // true\nSystem.out.println(\"Is in range: \" + isInRange);       // true"
+    },
+    {
+      "type": "text",
+      "value": "Methods can return "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " values, making them useful for encapsulating condition checks. These methods often have names that start with \"is\" or \"has\" to indicate they return true or false."
+    },
+    {
+      "type": "code",
+      "value": "public static boolean isEven(int number) {\n    return (number % 2 == 0);\n}\n\npublic static boolean isPositive(int number) {\n    return (number > 0);\n}\n\n// Using boolean methods\nint value = 8;\nboolean evenCheck = isEven(value);      // true\nboolean positiveCheck = isPositive(value);  // true"
+    },
+    {
+      "type": "text",
+      "value": "Understanding that boolean expressions represent yes-or-no questions helps you think about program logic. Every boolean expression asks a question that has a definitive answer: true (yes) or false (no)."
+    },
+    {
+      "type": "code",
+      "value": "int score = 95;\nint passingScore = 60;\nint perfectScore = 100;\n\n// Questions answered by boolean expressions\nboolean didPass = (score >= passingScore);        // \"Did they pass?\" - true\nboolean isPerfect = (score == perfectScore);      // \"Is it perfect?\" - false\nboolean needsImprovement = (score < passingScore); // \"Needs improvement?\" - false"
+    },
+    {
+      "type": "text",
+      "value": "Boolean expressions are the foundation for all decision-making in programming. Every "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statement, every "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loop, and every conditional structure relies on boolean expressions to determine what code should execute."
+    },
+    {
+      "type": "code",
+      "value": "int inventory = 5;\nint minStock = 10;\n\nboolean needsRestock = (inventory < minStock);  // true\n\n// This boolean expression controls the if statement\nif (needsRestock) {\n    System.out.println(\"Order more inventory!\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Common mistakes with boolean expressions include using assignment "
+    },
+    {
+      "type": "code",
+      "value": "="
+    },
+    {
+      "type": "text",
+      "value": " instead of comparison "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": ", comparing values of different types incorrectly, and creating overly complex expressions that are hard to understand."
+    },
+    {
+      "type": "code",
+      "value": "int x = 5;\n\n// WRONG - assignment instead of comparison\n// if (x = 5) { }  // This assigns 5 to x, doesn't compare!\n\n// CORRECT - comparison\nif (x == 5) {\n    System.out.println(\"x equals 5\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "In the next lessons, you'll learn about relational operators for making detailed comparisons, logical operators for combining conditions, and conditional statements for making your programs responsive and intelligent. Boolean expressions are the key that unlocks all of these powerful programming concepts."
+    }
+  ]
+}

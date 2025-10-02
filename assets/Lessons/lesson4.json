@@ -1,0 +1,265 @@
+{
+  "lessonId": 4,
+  "title": "int Data Type and Integer Operations",
+  "content": [
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " data type is Java's most commonly used numeric type for storing whole numbers (integers). Understanding "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " operations is fundamental to Java programming because integers appear in counting, indexing arrays, loop control, and mathematical calculations throughout your programs. "
+    },
+    {
+      "type": "text",
+      "value": "An "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " in Java is a 32-bit signed integer, meaning it can store values from -2,147,483,648 to 2,147,483,647. This range covers most practical counting and calculation needs in typical programming scenarios."
+    },
+    {
+      "type": "code",
+      "value": "int minValue = -2147483648;\nint maxValue = 2147483647;\nint studentCount = 25;\nint temperature = -10;"
+    },
+    {
+      "type": "text",
+      "value": "Integer literals (constant values) can be written as simple numbers without decimal points. Positive numbers don't require a plus sign, but negative numbers must have a minus sign. You cannot include commas or spaces in integer literals."
+    },{
+      "type": "code",
+      "value": "int score = 95;        // Positive integer\nint deficit = -50;     // Negative integer\nint zero = 0;          // Zero\n// int invalid = 1,000;   // Error - no commas allowed"
+    },
+    {
+      "type": "text",
+      "value": "Java supports standard arithmetic operations with integers: addition ("
+    },
+    {
+      "type": "code",
+      "value": "+"
+    },
+    {
+      "type": "text",
+      "value": "), subtraction ("
+    },
+    {
+      "type": "code",
+      "value": "-"
+    },
+    {
+      "type": "text",
+      "value": "), multiplication ("
+    },
+    {
+      "type": "code",
+      "value": "*"
+    },
+    {
+      "type": "text",
+      "value": "), division ("
+    },
+    {
+      "type": "code",
+      "value": "/"
+    },
+    {
+      "type": "text",
+      "value": "), and modulus ("
+    },
+    {
+      "type": "code",
+      "value": "%"
+    },
+    {
+      "type": "text",
+      "value": "). These operations follow mathematical precedence rules, with multiplication, division, and modulus performed before addition and subtraction."
+    },
+    {
+      "type": "code",
+      "value": "int a = 10;\nint b = 3;\n\nint sum = a + b;        // 13\nint difference = a - b; // 7\nint product = a * b;    // 30\nint quotient = a / b;   // 3 (integer division)\nint remainder = a % b;  // 1"
+    },
+    {
+      "type": "text",
+      "value": "Integer division truncates (cuts off) the decimal portion of the result, always rounding toward zero. This is different from mathematical division and can surprise new programmers. When both operands are integers, the result is always an integer."
+    },
+    {
+      "type": "code",
+      "value": "int result1 = 7 / 2;    // 3, not 3.5\nint result2 = 9 / 4;    // 2, not 2.25\nint result3 = -7 / 2;   // -3, not -3.5"
+    },
+    {
+      "type": "text",
+      "value": "The modulus operator ("
+    },
+    {
+      "type": "code",
+      "value": "%"
+    },
+    {
+      "type": "text",
+      "value": ") returns the remainder after integer division. This operator is useful for determining if numbers are even or odd, cycling through ranges, and many algorithmic problems."
+    },
+    {
+      "type": "code",
+      "value": "int remainder1 = 17 % 5;  // 2 (17 ÷ 5 = 3 remainder 2)\nint remainder2 = 20 % 4;  // 0 (20 ÷ 4 = 5 remainder 0)\nint remainder3 = 7 % 10;  // 7 (7 ÷ 10 = 0 remainder 7)"
+    },
+    {
+      "type": "text",
+      "value": "Parentheses can override the default operator precedence. Operations inside parentheses are performed first, just like in mathematics. Use parentheses to make complex expressions clear and ensure correct calculation order."
+    },
+    {
+      "type": "code",
+      "value": "int result1 = 2 + 3 * 4;      // 14 (multiplication first)\nint result2 = (2 + 3) * 4;    // 20 (parentheses first)\nint result3 = 10 - 6 / 2;     // 7 (division first)\nint result4 = (10 - 6) / 2;   // 2 (parentheses first)"
+    },
+    {
+      "type": "text",
+      "value": "Integer overflow occurs when a calculation result exceeds the maximum value an "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " can store. Instead of generating an error, Java wraps the value around to the negative range. This can cause unexpected results in programs."
+    },
+    {
+      "type": "code",
+      "value": "int maxInt = 2147483647;\nint overflow = maxInt + 1;  // -2147483648 (wraps around)\n\n// Be careful with large calculations\nint million = 1000000;\nint product = million * million;  // May overflow"
+    },
+    {
+      "type": "text",
+      "value": "You can combine arithmetic operations with assignment using compound operators: "
+    },
+    {
+      "type": "code",
+      "value": "+="
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "-="
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "*="
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "/="
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "%="
+    },
+    {
+      "type": "text",
+      "value": ". These operators perform the arithmetic operation and assign the result back to the variable."
+    },
+    {
+      "type": "code",
+      "value": "int score = 85;\nscore += 10;    // score = score + 10; now 95\nscore -= 5;     // score = score - 5; now 90\nscore *= 2;     // score = score * 2; now 180\nscore /= 3;     // score = score / 3; now 60"
+    },
+    {
+      "type": "text",
+      "value": "The increment ("
+    },
+    {
+      "type": "code",
+      "value": "++"
+    },
+    {
+      "type": "text",
+      "value": ") and decrement ("
+    },
+    {
+      "type": "code",
+      "value": "--"
+    },
+    {
+      "type": "text",
+      "value": ") operators provide shortcuts for adding or subtracting 1 from a variable. These operators can be used as prefix (before the variable) or postfix (after the variable), though the difference matters in complex expressions."
+    },
+    {
+      "type": "code",
+      "value": "int counter = 5;\ncounter++;      // counter = 6 (same as counter += 1)\n++counter;      // counter = 7\ncounter--;      // counter = 6 (same as counter -= 1)\n--counter;      // counter = 5"
+    },
+    {
+      "type": "text",
+      "value": "When mixing "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " operations with other numeric types, Java follows promotion rules. Integer operations with other integers always produce integers, but mixing with floating-point types like "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " produces floating-point results."
+    },
+    {
+      "type": "text",
+      "value": "Common programming patterns with integers include counting in loops, calculating array indices, performing mathematical formulas, and handling user input. Understanding integer arithmetic is essential for algorithm implementation and problem-solving."
+    },
+    {
+      "type": "code",
+      "value": "// Common integer usage patterns\nint totalItems = itemCount * 2 + bonusItems;\nint middleIndex = arrayLength / 2;\nint isEven = number % 2;  // 0 if even, 1 if odd\nint daysInWeeks = totalDays / 7;"
+    },
+    {
+      "type": "text",
+      "value": "Mastering "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " operations prepares you for more advanced topics like array manipulation, loop control, and algorithm implementation. In the next lesson, we'll explore the "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " data type and floating-point arithmetic for handling decimal calculations."
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "lessonId": 14,
+  "title": "Common Syntax Errors and Debugging",
+  "content": [
+    {
+      "type": "text",
+      "value": "Syntax errors are mistakes in the structure or grammar of your Java code that prevent the program from compiling. Learning to identify and fix these errors quickly is essential for efficient programming. Understanding common error patterns helps you write cleaner code and become a more effective programmer."
+    },
+    {
+      "type": "text",
+      "value": "Missing semicolons are among the most frequent syntax errors in Java. Every statement must end with a semicolon ("
+    },
+    {
+      "type": "code",
+      "value": ";"
+    },
+    {
+      "type": "text",
+      "value": "), and forgetting this simple punctuation mark will cause compilation to fail with clear error messages."
+    },
+    {
+      "type": "code",
+      "value": "// Incorrect - missing semicolon\nint score = 85\nSystem.out.println(score)\n\n// Correct - with semicolons\nint score = 85;\nSystem.out.println(score);"
+    },
+    {
+      "type": "text",
+      "value": "Mismatched braces are another common problem that occurs when opening braces ("
+    },
+    {
+      "type": "code",
+      "value": "{"
+    },
+    {
+      "type": "text",
+      "value": ") don't have corresponding closing braces ("
+    },
+    {
+      "type": "code",
+      "value": "}"
+    },
+    {
+      "type": "text",
+      "value": "). This error often happens in methods, classes, and control structures."
+    },
+    {
+      "type": "code",
+      "value": "// Incorrect - missing closing brace\npublic class Example {\n    public static void main(String[] args) {\n        System.out.println(\"Hello\");\n    // Missing closing brace for main method\n// Missing closing brace for class\n\n// Correct - balanced braces\npublic class Example {\n    public static void main(String[] args) {\n        System.out.println(\"Hello\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Incorrect variable declarations often involve using reserved keywords as variable names, starting variable names with digits, or forgetting to specify the data type."
+    },
+    {
+      "type": "code",
+      "value": "// Incorrect declarations\nclass studentName = \"Alice\";      // 'class' is reserved keyword\nint 2ndScore = 90;                // Cannot start with digit\nstudentAge = 16;                  // Missing data type\n\n// Correct declarations\nString studentName = \"Alice\";\nint secondScore = 90;\nint studentAge = 16;"
+    },
+    {
+      "type": "text",
+      "value": "String literal errors occur when you forget closing quotes, mix single and double quotes incorrectly, or fail to escape special characters properly."
+    },
+    {
+      "type": "code",
+      "value": "// Incorrect string literals\nString message = \"Hello World;     // Missing closing quote\nString name = 'Alice Johnson';     // Single quotes for String\nString path = \"C:\\Users\\Bob\";      // Unescaped backslashes\n\n// Correct string literals\nString message = \"Hello World\";\nString name = \"Alice Johnson\";\nString path = \"C:\\\\Users\\\\Bob\";"
+    },
+    {
+      "type": "text",
+      "value": "Method call errors include incorrect method names, wrong number of parameters, or calling methods on inappropriate objects. The compiler will indicate when method signatures don't match."
+    },
+    {
+      "type": "code",
+      "value": "// Incorrect method calls\nString text = \"Hello\";\nint length = text.lenght();        // Misspelled method name\nSystem.out.println();              // Missing required parameter for meaningful output\n\n// Correct method calls\nString text = \"Hello\";\nint length = text.length();\nSystem.out.println(\"Hello World\");"
+    },
+    {
+      "type": "text",
+      "value": "Type mismatch errors occur when you try to assign values of incompatible types without proper casting or when method parameters don't match expected types."
+    },
+    {
+      "type": "code",
+      "value": "// Incorrect type assignments\nint number = \"123\";                // String assigned to int\ndouble decimal = true;             // boolean assigned to double\nchar letter = \"A\";                 // String assigned to char\n\n// Correct type assignments\nint number = 123;\ndouble decimal = 123.45;\nchar letter = 'A';"
+    },
+    {
+      "type": "text",
+      "value": "Case sensitivity errors happen because Java distinguishes between uppercase and lowercase letters. Variable names, method names, and keywords must match exactly."
+    },
+    {
+      "type": "code",
+      "value": "// Incorrect - case sensitivity issues\nString Name = \"Bob\";               // Different from 'name'\nSystem.Out.Println(\"Hello\");       // Should be 'out' and 'println'\nInt age = 25;                      // Should be 'int'\n\n// Correct - proper case\nString name = \"Bob\";\nSystem.out.println(\"Hello\");\nint age = 25;"
+    },
+    {
+      "type": "text",
+      "value": "Parentheses errors include mismatched parentheses in expressions, missing parentheses in method calls, or incorrect grouping in mathematical expressions."
+    },
+    {
+      "type": "code",
+      "value": "// Incorrect parentheses usage\nint result = (10 + 5 * 2;          // Missing closing parenthesis\nSystem.out.println \"Hello\";        // Missing parentheses for method call\nint calc = 10 + (5 * 2));          // Extra closing parenthesis\n\n// Correct parentheses usage\nint result = (10 + 5) * 2;\nSystem.out.println(\"Hello\");\nint calc = 10 + (5 * 2);"
+    },
+    {
+      "type": "text",
+      "value": "Import statement errors occur when you forget to import required classes or use incorrect package names. "
+    },
+    {
+      "type": "code",
+      "value": "Scanner"
+    },
+    {
+      "type": "text",
+      "value": " is a common example where the import is frequently forgotten."
+    },
+    {
+      "type": "code",
+      "value": "// Incorrect - missing import\npublic class Example {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in); // Error: Scanner not found\n    }\n}\n\n// Correct - with proper import\nimport java.util.Scanner;\n\npublic class Example {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Reading compiler error messages effectively is crucial for debugging. Error messages typically include the line number, error type, and a description of what went wrong. The actual error might be on the line indicated or nearby."
+    },
+    {
+      "type": "code",
+      "value": "// Example error message:\n// Example.java:5: error: ';' expected\n// int score = 85\n//               ^\n// This tells you:\n// - File: Example.java\n// - Line: 5\n// - Problem: missing semicolon\n// - Location: after '85'"
+    },
+    {
+      "type": "text",
+      "value": "Debugging strategies include reading error messages carefully, checking the line mentioned and surrounding lines, using proper indentation to see code structure, and testing small sections of code independently."
+    },
+    {
+      "type": "code",
+      "value": "// Good debugging practices:\n// 1. Read the entire error message\n// 2. Check line numbers carefully\n// 3. Look for obvious syntax issues first\n// 4. Use consistent indentation\n// 5. Test simple cases first\n\npublic class DebuggingExample {\n    public static void main(String[] args) {\n        // Start with simple, working code\n        System.out.println(\"Program starting\");\n        \n        // Add complexity gradually\n        int testValue = 42;\n        System.out.println(\"Test value: \" + testValue);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Common logical patterns for finding errors include working backwards from the error message, commenting out suspicious code sections, and comparing working code with non-working code to identify differences."
+    },
+    {
+      "type": "text",
+      "value": "IDE (Integrated Development Environment) tools help catch syntax errors as you type through features like syntax highlighting, error underlining, and auto-completion. These tools can prevent many errors before you even compile."
+    },
+    {
+      "type": "text",
+      "value": "Prevention strategies include writing code incrementally, testing frequently, using meaningful variable names, maintaining consistent formatting, and following Java naming conventions consistently throughout your programs."
+    },
+    {
+      "type": "code",
+      "value": "// Prevention example - clear, well-structured code\npublic class StudentGradeCalculator {\n    public static void main(String[] args) {\n        // Clear variable names\n        int mathScore = 85;\n        int englishScore = 92;\n        int scienceScore = 78;\n        \n        // Simple, clear calculations\n        int totalPoints = mathScore + englishScore + scienceScore;\n        double averageGrade = totalPoints / 3.0;\n        \n        // Clear output\n        System.out.println(\"Average grade: \" + averageGrade);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "When encountering multiple errors, fix them one at a time starting with the first error message. Often, fixing early errors will resolve later ones automatically, as many errors cascade from initial problems."
+    },
+    {
+      "type": "text",
+      "value": "Understanding syntax errors and developing debugging skills makes you a more efficient programmer. These skills become increasingly important as your programs grow more complex and you work with larger codebases."
+    },
+    {
+      "type": "text",
+      "value": "Mastering error identification and debugging techniques is essential for productive Java programming. In the next lesson, we'll explore comments and code style to make your programs more readable and maintainable."
+    }
+  ]
+}

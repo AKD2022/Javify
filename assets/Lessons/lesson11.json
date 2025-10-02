@@ -1,0 +1,226 @@
+{
+  "lessonId": 11,
+  "title": "Using Constants (final keyword)",
+  "content": [
+    {
+      "type": "text",
+      "value": "Constants are unchangeable values that remain the same throughout your program's execution. The "
+    },
+    {
+      "type": "code",
+      "value": "final"
+    },
+    {
+      "type": "text",
+      "value": " keyword in Java creates constants by preventing variables from being reassigned after their initial value is set. Understanding constants is essential for creating reliable, maintainable code with well-defined values."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "final"
+    },
+    {
+      "type": "text",
+      "value": " keyword can be applied to variables, making them constants. Once a "
+    },
+    {
+      "type": "code",
+      "value": "final"
+    },
+    {
+      "type": "text",
+      "value": " variable is initialized, its value cannot be changed. This prevents accidental modification of important values and makes your code more predictable."
+    },
+    {
+      "type": "code",
+      "value": "final int MAX_SCORE = 100;\nfinal double PI = 3.14159;\nfinal String SCHOOL_NAME = \"Jefferson High\";\nfinal boolean DEBUG_MODE = true;"
+    },
+    {
+      "type": "text",
+      "value": "Constants follow a specific naming convention in Java: they use ALL_UPPERCASE letters with underscores separating words. This convention makes constants easily identifiable in your code and follows established Java style guidelines."
+    },
+    {
+      "type": "code",
+      "value": "final int DAYS_PER_WEEK = 7;\nfinal double SALES_TAX_RATE = 0.0825;\nfinal char GRADE_A = 'A';\nfinal int MIN_PASSWORD_LENGTH = 8;"
+    },
+    {
+      "type": "text",
+      "value": "Attempting to reassign a "
+    },
+    {
+      "type": "code",
+      "value": "final"
+    },
+    {
+      "type": "text",
+      "value": " variable results in a compilation error. This compile-time protection helps prevent bugs that could occur from accidentally changing critical values in your program."
+    },
+    {
+      "type": "code",
+      "value": "final int MAXIMUM_ATTEMPTS = 3;\n// MAXIMUM_ATTEMPTS = 5;  // Compilation error!\n\nfinal double INTEREST_RATE = 0.05;\n// INTEREST_RATE = 0.06;  // Compilation error!"
+    },
+    {
+      "type": "text",
+      "value": "Constants must be initialized either at declaration or in the constructor (for instance constants). You cannot declare a "
+    },
+    {
+      "type": "code",
+      "value": "final"
+    },
+    {
+      "type": "text",
+      "value": " variable without giving it a value, as there would be no opportunity to assign it later."
+    },
+    {
+      "type": "code",
+      "value": "final int VALID_CONSTANT = 50;        // Initialized at declaration\n\n// final int INVALID_CONSTANT;         // Compilation error - no value!\n\nfinal double CALCULATED_VALUE = Math.sqrt(25); // Can use expressions"
+    },
+    {
+      "type": "text",
+      "value": "Class-level constants are typically declared as "
+    },
+    {
+      "type": "code",
+      "value": "static final"
+    },
+    {
+      "type": "text",
+      "value": ", making them belong to the class rather than individual instances. This allows all objects of the class to share the same constant values efficiently."
+    },
+    {
+      "type": "code",
+      "value": "public class GameSettings {\n    public static final int MAX_LIVES = 3;\n    public static final double GRAVITY = 9.8;\n    public static final String VERSION = \"1.2.0\";\n    \n    // Can be accessed as GameSettings.MAX_LIVES\n}"
+    },
+    {
+      "type": "text",
+      "value": "Constants improve code readability by replacing magic numbers and strings with meaningful names. Instead of scattered literal values throughout your code, constants provide descriptive names that explain the purpose of each value."
+    },
+    {
+      "type": "code",
+      "value": "// Without constants (unclear)\nif (score >= 90) {\n    grade = 'A';\n}\ndouble area = 3.14159 * radius * radius;\n\n// With constants (clear purpose)\nfinal int A_GRADE_THRESHOLD = 90;\nfinal double PI = 3.14159;\n\nif (score >= A_GRADE_THRESHOLD) {\n    grade = 'A';\n}\ndouble area = PI * radius * radius;"
+    },
+    {
+      "type": "text",
+      "value": "Constants also make maintenance easier by centralizing important values. When you need to change a value used throughout your program, you only need to update the constant declaration rather than finding every occurrence of the literal value."
+    },
+    {
+      "type": "code",
+      "value": "public class TaxCalculator {\n    private static final double TAX_RATE = 0.08;\n    \n    public static double calculateTax(double amount) {\n        return amount * TAX_RATE;\n    }\n    \n    public static double getTotalWithTax(double amount) {\n        return amount + (amount * TAX_RATE);\n    }\n    // If tax rate changes, only update TAX_RATE constant\n}"
+    },
+    {
+      "type": "text",
+      "value": "Local constants can be declared within methods for values that don't change during method execution. These constants have method scope and can improve code clarity for complex calculations with multiple steps."
+    },
+    {
+      "type": "code",
+      "value": "public static double calculateCircleArea(double radius) {\n    final double PI = 3.14159;\n    final double RADIUS_SQUARED = radius * radius;\n    \n    return PI * RADIUS_SQUARED;\n}\n\npublic static int calculateGrade(int points, int totalPoints) {\n    final double PERCENTAGE = (double) points / totalPoints;\n    final double HUNDRED_PERCENT = 100.0;\n    \n    return (int) (PERCENTAGE * HUNDRED_PERCENT);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Mathematical constants are common uses of the "
+    },
+    {
+      "type": "code",
+      "value": "final"
+    },
+    {
+      "type": "text",
+      "value": " keyword. Java's "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class provides predefined constants like "
+    },
+    {
+      "type": "code",
+      "value": "Math.PI"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "Math.E"
+    },
+    {
+      "type": "text",
+      "value": ", but you can create your own for application-specific values."
+    },
+    {
+      "type": "code",
+      "value": "// Using built-in constants\ndouble circumference = 2 * Math.PI * radius;\n\n// Creating custom mathematical constants\nfinal double GOLDEN_RATIO = 1.618;\nfinal double SPEED_OF_LIGHT = 299792458; // meters per second\nfinal int ABSOLUTE_ZERO = -273; // Celsius"
+    },
+    {
+      "type": "text",
+      "value": "Configuration constants help manage program behavior and settings. These constants can control features, limits, and operational parameters without hardcoding values throughout your application."
+    },
+    {
+      "type": "code",
+      "value": "public class AppConfig {\n    public static final int MAX_LOGIN_ATTEMPTS = 3;\n    public static final int SESSION_TIMEOUT_MINUTES = 30;\n    public static final String DEFAULT_LANGUAGE = \"English\";\n    public static final boolean LOGGING_ENABLED = true;\n    public static final int MAX_FILE_SIZE_MB = 10;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Arrays can also be declared as "
+    },
+    {
+      "type": "code",
+      "value": "final"
+    },
+    {
+      "type": "text",
+      "value": ", but this only prevents reassignment of the array reference. The contents of the array can still be modified unless additional measures are taken to ensure immutability."
+    },
+    {
+      "type": "code",
+      "value": "final int[] LUCKY_NUMBERS = {7, 13, 21, 42};\n// LUCKY_NUMBERS = new int[]{1, 2, 3}; // Error - can't reassign\n\nLUCKY_NUMBERS[0] = 777; // Legal - can modify contents\n\n// To make truly immutable, use Collections.unmodifiableList() for Lists"
+    },
+    {
+      "type": "text",
+      "value": "Best practices for constants include using meaningful names, grouping related constants together, placing them at the top of the class for visibility, and documenting their purpose when the name alone isn't sufficient."
+    },
+    {
+      "type": "code",
+      "value": "public class GameConstants {\n    // Player limits\n    public static final int MAX_HEALTH = 100;\n    public static final int MAX_INVENTORY_SIZE = 50;\n    \n    // Game mechanics\n    public static final double JUMP_HEIGHT = 2.5;\n    public static final int RESPAWN_TIME_SECONDS = 5;\n    \n    // Visual settings\n    public static final int SCREEN_WIDTH = 1920;\n    public static final int SCREEN_HEIGHT = 1080;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Understanding constants with the "
+    },
+    {
+      "type": "code",
+      "value": "final"
+    },
+    {
+      "type": "text",
+      "value": " keyword helps you write more maintainable, readable, and reliable code. Constants prevent accidental changes to critical values and make your programs easier to understand and modify."
+    },
+    {
+      "type": "text",
+      "value": "Mastering constants is essential for professional Java programming and prepares you for more advanced topics like class design and object-oriented principles. In the next lesson, we'll explore input and output basics with "
+    },
+    {
+      "type": "code",
+      "value": "System.out"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "Scanner"
+    },
+    {
+      "type": "text",
+      "value": "."
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "lessonId": 15,
+  "title": "Comments and Code Style",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What symbol starts a single-line comment in Java?",
+      "options": [
+        { "type": "text", "value": "//" },
+        { "type": "text", "value": "/*" },
+        { "type": "text", "value": "#" },
+        { "type": "text", "value": "--" }
+      ],
+      "answer": 0,
+      "explanation": "Single-line comments in Java begin with // and extend to the end of the line."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "How do multi-line comments begin and end?",
+      "options": [
+        { "type": "text", "value": "Start with // and end with //" },
+        { "type": "text", "value": "Start with /* and end with */" },
+        { "type": "text", "value": "Start with # and end with #" },
+        { "type": "text", "value": "Start with <!-- and end with -->" }
+      ],
+      "answer": 1,
+      "explanation": "Multi-line comments start with /* and end with */, allowing comments to span multiple lines."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What naming convention is used for Java class names?",
+      "options": [
+        { "type": "text", "value": "camelCase" },
+        { "type": "text", "value": "snake_case" },
+        { "type": "text", "value": "PascalCase" },
+        { "type": "text", "value": "ALL_UPPERCASE" }
+      ],
+      "answer": 2,
+      "explanation": "Java class names use PascalCase, where each word starts with a capital letter (e.g., StudentRecord)."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What naming convention is used for Java variable names?",
+      "options": [
+        { "type": "text", "value": "PascalCase" },
+        { "type": "text", "value": "camelCase" },
+        { "type": "text", "value": "ALL_UPPERCASE" },
+        { "type": "text", "value": "snake_case" }
+      ],
+      "answer": 1,
+      "explanation": "Java variable names use camelCase, starting with lowercase and capitalizing subsequent words (e.g., studentName)."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What naming convention is used for Java constants?",
+      "options": [
+        { "type": "text", "value": "camelCase" },
+        { "type": "text", "value": "PascalCase" },
+        { "type": "text", "value": "lowercase" },
+        { "type": "text", "value": "ALL_UPPERCASE_WITH_UNDERSCORES" }
+      ],
+      "answer": 3,
+      "explanation": "Java constants use ALL_UPPERCASE letters with underscores separating words (e.g., MAX_SCORE)."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "How much indentation is conventionally used for each level in Java?",
+      "options": [
+        { "type": "text", "value": "2 spaces" },
+        { "type": "text", "value": "4 spaces or 1 tab" },
+        { "type": "text", "value": "8 spaces" },
+        { "type": "text", "value": "No indentation needed" }
+      ],
+      "answer": 1,
+      "explanation": "Java conventionally uses 4 spaces or 1 tab for each level of indentation to show code structure."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What do Javadoc comments start with?",
+      "options": [
+        { "type": "text", "value": "//" },
+        { "type": "text", "value": "/*" },
+        { "type": "text", "value": "/**" },
+        { "type": "text", "value": "///" }
+      ],
+      "answer": 2,
+      "explanation": "Javadoc comments start with /** and can be processed to generate professional documentation."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What makes a good comment?",
+      "options": [
+        { "type": "text", "value": "Explains what the code does" },
+        { "type": "text", "value": "Explains why the code does something" },
+        { "type": "text", "value": "Repeats the code in English" },
+        { "type": "text", "value": "Makes the code longer" }
+      ],
+      "answer": 1,
+      "explanation": "Good comments explain why code does something, providing context and reasoning rather than just restating what's obvious."
+    },
+    {
+      "id": 9,
+      "type": "code",
+      "question": "Which variable name follows Java conventions?",
+      "options": [
+        { "type": "code", "value": "student_name" },
+        { "type": "code", "value": "StudentName" },
+        { "type": "code", "value": "STUDENTNAME" },
+        { "type": "code", "value": "studentName" }
+      ],
+      "answer": 3,
+      "explanation": "Java variables use camelCase: studentName starts lowercase with subsequent words capitalized."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "Where should spaces be placed around operators?",
+      "options": [
+        { "type": "text", "value": "No spaces needed" },
+        { "type": "text", "value": "Spaces around binary operators like + and =" },
+        { "type": "text", "value": "Spaces only before operators" },
+        { "type": "text", "value": "Spaces only after operators" }
+      ],
+      "answer": 1,
+      "explanation": "Java style includes spaces around binary operators for readability: a + b, x = 5."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What should you avoid in comments?",
+      "options": [
+        { "type": "text", "value": "Explaining complex logic" },
+        { "type": "text", "value": "Stating the obvious" },
+        { "type": "text", "value": "Providing context" },
+        { "type": "text", "value": "Warning about potential issues" }
+      ],
+      "answer": 1,
+      "explanation": "Avoid comments that state the obvious, like 'x = 5; // Set x to 5'. Focus on explaining why, not what."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What is the recommended maximum line length?",
+      "options": [
+        { "type": "text", "value": "50 characters" },
+        { "type": "text", "value": "No limit" },
+        { "type": "text", "value": "200 characters" },
+        { "type": "text", "value": "80-120 characters" }
+      ],
+      "answer": 3,
+      "explanation": "Lines should generally not exceed 80-120 characters for readability across different screen sizes."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "Where do opening braces typically go in Java style?",
+      "options": [
+        { "type": "text", "value": "At the end of the line that starts the block" },
+        { "type": "text", "value": "On their own line" },
+        { "type": "text", "value": "At the beginning of the file" },
+        { "type": "text", "value": "Wherever you want" }
+      ],
+      "answer": 0,
+      "explanation": "Java convention places opening braces at the end of the line that starts the block: if (condition) {"
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What should header comments include?",
+      "options": [
+        { "type": "text", "value": "Only the author's name" },
+        { "type": "text", "value": "File name, author, date, and purpose" },
+        { "type": "text", "value": "Only the date" },
+        { "type": "text", "value": "Only the file name" }
+      ],
+      "answer": 1,
+      "explanation": "Header comments should include file name, author, date, purpose, and other relevant information for context."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "Why are blank lines important in code?",
+      "options": [
+        { "type": "text", "value": "They make the file larger" },
+        { "type": "text", "value": "They separate logical sections for readability" },
+        { "type": "text", "value": "They are required by the compiler" },
+        { "type": "text", "value": "They slow down execution" }
+      ],
+      "answer": 1,
+      "explanation": "Blank lines organize code into logical sections, making it easier to read and understand the structure."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "Why is consistent code style important?",
+      "options": [
+        { "type": "text", "value": "It makes programs run faster" },
+        { "type": "text", "value": "It makes code look professional and easier to understand" },
+        { "type": "text", "value": "It reduces memory usage" },
+        { "type": "text", "value": "It prevents all bugs" }
+      ],
+      "answer": 1,
+      "explanation": "Consistent code style makes programs look professional and helps other programmers understand your code quickly."
+    }
+  ]
+}

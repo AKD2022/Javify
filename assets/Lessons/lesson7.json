@@ -1,0 +1,314 @@
+{
+  "lessonId": 7,
+  "title": "char Data Type and Characters in Java",
+  "content": [
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " data type stores a single character in Java. While "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " handles text of any length, "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " is perfect for individual letters, digits, symbols, and special characters. Understanding "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " is essential for text processing and character-based operations."
+    },
+    {
+      "type": "text",
+      "value": "A "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " variable holds exactly one character and uses 16 bits of memory. Java uses Unicode encoding, which means "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " can represent characters from many different languages and writing systems, not just English letters."
+    },
+    {
+      "type": "code",
+      "value": "char letter = 'A';\nchar digit = '7';\nchar symbol = '$';\nchar space = ' ';"
+    },
+    {
+      "type": "text",
+      "value": "Character literals must be enclosed in single quotes, unlike "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " literals which use double quotes. This distinction is crucial - "
+    },
+    {
+      "type": "code",
+      "value": "'A'"
+    },
+    {
+      "type": "text",
+      "value": " is a "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": ", while "
+    },
+    {
+      "type": "code",
+      "value": "\"A\""
+    },
+    {
+      "type": "text",
+      "value": " is a "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " containing one character."
+    },
+    {
+      "type": "code",
+      "value": "char singleChar = 'X';        // char literal\nString singleString = \"X\";     // String literal\n\n// char invalid = \"X\";         // Error - wrong quote type\n// char tooLong = 'AB';        // Error - too many characters"
+    },
+    {
+      "type": "text",
+      "value": "Characters can represent letters (uppercase and lowercase), digits, punctuation marks, and special symbols. Each character has a unique numeric code in the Unicode system, allowing computers to store and process text consistently."
+    },
+    {
+      "type": "code",
+      "value": "char upperCase = 'Z';\nchar lowerCase = 'z';\nchar numericChar = '9';\nchar punctuation = '!';\nchar mathSymbol = '+';"
+    },
+    {
+      "type": "text",
+      "value": "Escape sequences allow you to represent special characters that would be difficult or impossible to type directly. These sequences start with a backslash ("
+    },
+    {
+      "type": "code",
+      "value": "\\"
+    },
+    {
+      "type": "text",
+      "value": ") followed by a specific character."
+    },
+    {
+      "type": "code",
+      "value": "char newline = '\\n';      // New line character\nchar tab = '\\t';          // Tab character\nchar backslash = '\\\\';   // Backslash character\nchar singleQuote = '\\''; // Single quote character\nchar doubleQuote = '\\\"'; // Double quote character"
+    },
+    {
+      "type": "text",
+      "value": "Behind the scenes, Java stores each "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " as a numeric Unicode value. You can work with these numeric values directly, which enables interesting character manipulations and conversions."
+    },
+    {
+      "type": "code",
+      "value": "char letterA = 'A';       // Unicode value 65\nchar letterB = 'B';       // Unicode value 66\nchar digit0 = '0';        // Unicode value 48\nchar digit1 = '1';        // Unicode value 49"
+    },
+    {
+      "type": "text",
+      "value": "You can assign Unicode values directly to "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " variables using numeric literals or Unicode escape sequences. This is useful for generating characters programmatically or working with characters from different languages."
+    },
+    {
+      "type": "code",
+      "value": "char fromNumber = 65;        // Same as 'A'\nchar fromUnicode = '\\u0041'; // Also 'A' in Unicode\nchar heart = '\\u2665';       // Unicode heart symbol ♥"
+    },
+    {
+      "type": "text",
+      "value": "Character arithmetic is possible because "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " values are stored as numbers. You can add or subtract from characters to get different characters, which is useful for alphabet manipulation and simple encryption."
+    },
+    {
+      "type": "code",
+      "value": "char start = 'A';\nchar next = (char)(start + 1);    // 'B'\nchar previous = (char)(start - 1); // '@' (character before A)\n\nchar digit = '5';\nint digitValue = digit - '0';     // Converts '5' to integer 5"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Character"
+    },
+    {
+      "type": "text",
+      "value": " class provides useful methods for working with characters. These methods can test character properties and perform case conversions without requiring complex Unicode value calculations."
+    },
+    {
+      "type": "code",
+      "value": "char testChar = 'M';\n\nboolean isLetter = Character.isLetter(testChar);      // true\nboolean isDigit = Character.isDigit(testChar);        // false\nboolean isUpperCase = Character.isUpperCase(testChar); // true\nchar lowerCase = Character.toLowerCase(testChar);     // 'm'"
+    },
+    {
+      "type": "text",
+      "value": "Converting between "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " requires explicit casting when going from "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": ". However, "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " automatically promotes to "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " in arithmetic operations."
+    },
+    {
+      "type": "code",
+      "value": "char letter = 'C';\nint letterCode = letter;          // Automatic promotion to 67\nchar backToChar = (char)letterCode; // Explicit cast required\n\nint sum = 'A' + 'B';             // 65 + 66 = 131 (int result)"
+    },
+    {
+      "type": "text",
+      "value": "Common patterns with "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " include checking for specific character types, converting between uppercase and lowercase, and iterating through alphabet ranges. These operations form the basis of text processing and validation."
+    },
+    {
+      "type": "code",
+      "value": "char grade = 'B';\nboolean isPassing = (grade >= 'A') && (grade <= 'D');\n\nchar userInput = 'y';\nboolean isYes = (userInput == 'y') || (userInput == 'Y');\n\n// Generate alphabet letters\nfor (char c = 'A'; c <= 'Z'; c++) {\n    System.out.print(c + \" \");\n}"
+    },
+    {
+      "type": "text",
+      "value": "When comparing "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " values, Java compares their Unicode numeric values. This means 'A' is less than 'B', and uppercase letters come before lowercase letters in the Unicode ordering."
+    },
+    {
+      "type": "code",
+      "value": "boolean isEarlier = ('A' < 'B');        // true\nboolean upperFirst = ('A' < 'a');       // true (65 < 97)\nboolean isVowel = (ch == 'a') || (ch == 'e') || (ch == 'i') || (ch == 'o') || (ch == 'u');"
+    },
+    {
+      "type": "text",
+      "value": "Understanding "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " operations prepares you for string manipulation, input validation, and text processing algorithms. Characters serve as building blocks for more complex text operations you'll encounter in advanced programming."
+    },
+    {
+      "type": "text",
+      "value": "Mastering the "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " data type provides essential skills for handling individual characters in Java programs. In the next lesson, we'll explore type casting and conversion between different data types."
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "lessonId": 8,
+  "title": "Type Casting and Conversion",
+  "content": [
+    {
+      "type": "text",
+      "value": "Type casting and conversion allow you to transform values from one data type to another in Java. Understanding when and how to convert between types is essential for mathematical operations, data processing, and working with different numeric formats in your programs."
+    },
+    {
+      "type": "text",
+      "value": "Java performs two types of conversions: implicit (automatic) conversions called widening conversions, and explicit conversions called narrowing conversions that require casting. The direction of conversion depends on the range and precision of the data types involved."
+    },
+    {
+      "type": "text",
+      "value": "Widening conversions happen automatically when you assign a smaller type to a larger type. Java can safely convert "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " because "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " can hold all "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " values without losing information."
+    },
+    {
+      "type": "code",
+      "value": "int wholeNumber = 42;\ndouble decimal = wholeNumber;  // Automatic widening: 42.0\n\nchar letter = 'A';\nint letterCode = letter;       // Automatic widening: 65"
+    },
+    {
+      "type": "text",
+      "value": "The widening conversion hierarchy follows this order: "
+    },
+    {
+      "type": "code",
+      "value": "byte"
+    },
+    {
+      "type": "text",
+      "value": " → "
+    },
+    {
+      "type": "code",
+      "value": "short"
+    },
+    {
+      "type": "text",
+      "value": " → "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " → "
+    },
+    {
+      "type": "code",
+      "value": "long"
+    },
+    {
+      "type": "text",
+      "value": " → "
+    },
+    {
+      "type": "code",
+      "value": "float"
+    },
+    {
+      "type": "text",
+      "value": " → "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ". Additionally, "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " can widen to "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " and beyond."
+    },
+    {
+      "type": "code",
+      "value": "byte smallNum = 10;\nshort mediumNum = smallNum;    // byte → short\nint regularNum = mediumNum;    // short → int\nlong bigNum = regularNum;      // int → long\nfloat floatNum = bigNum;       // long → float\ndouble doubleNum = floatNum;   // float → double"
+    },
+    {
+      "type": "text",
+      "value": "Narrowing conversions require explicit casting because they can potentially lose information or precision. When converting from "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", the decimal portion is truncated (cut off), not rounded."
+    },
+    {
+      "type": "code",
+      "value": "double decimal = 3.89;\nint whole = (int) decimal;     // Explicit cast: 3 (not 4)\n\ndouble negative = -7.99;\nint negWhole = (int) negative; // -7 (truncates toward zero)"
+    },
+    {
+      "type": "text",
+      "value": "The casting syntax uses parentheses with the target type: "
+    },
+    {
+      "type": "code",
+      "value": "(targetType) value"
+    },
+    {
+      "type": "text",
+      "value": ". This explicit syntax makes it clear that you understand potential data loss and accept the conversion."
+    },
+    {
+      "type": "code",
+      "value": "long bigNumber = 100000L;\nint smaller = (int) bigNumber;  // long → int\n\nfloat floatValue = 12.34f;\nint intValue = (int) floatValue; // 12 (decimal lost)"
+    },
+    {
+      "type": "text",
+      "value": "Converting between "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " and numeric types uses Unicode values. You can cast numbers to "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " to get the corresponding character, or cast "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " to numbers to get Unicode values."
+    },
+    {
+      "type": "code",
+      "value": "int code = 97;\nchar letter = (char) code;      // 'a'\n\nchar symbol = '#';\nint symbolCode = symbol;        // 35 (automatic widening)\nchar nextChar = (char)(symbol + 1); // '$' (requires cast for arithmetic)"
+    },
+    {
+      "type": "text",
+      "value": "Mixed-type arithmetic automatically promotes operands to a common type before performing operations. When you mix "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ", the "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " for the calculation."
+    },
+    {
+      "type": "code",
+      "value": "int count = 5;\ndouble rate = 2.5;\ndouble result = count * rate;   // 5.0 * 2.5 = 12.5\n\n// To keep as int, cast the result\nint intResult = (int)(count * rate); // 12"
+    },
+    {
+      "type": "text",
+      "value": "When casting larger types to smaller ones, values outside the target range cause overflow or unexpected results. This is particularly important when casting from "
+    },
+    {
+      "type": "code",
+      "value": "long"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "long huge = 3000000000L;        // Larger than int max\nint overflow = (int) huge;       // Unexpected negative number\n\ndouble tooLarge = 1e20;\nint maxed = (int) tooLarge;      // Integer.MAX_VALUE"
+    },
+    {
+      "type": "text",
+      "value": "Converting between different numeric families requires understanding precision loss. Converting "
+    },
+    {
+      "type": "code",
+      "value": "long"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "float"
+    },
+    {
+      "type": "text",
+      "value": " might lose precision even though "
+    },
+    {
+      "type": "code",
+      "value": "float"
+    },
+    {
+      "type": "text",
+      "value": " can represent larger numbers."
+    },
+    {
+      "type": "code",
+      "value": "long precise = 123456789012345L;\nfloat lessPrecsise = precise;     // Automatic, but may lose precision\nlong backToLong = (long) lessPrecsise; // May not equal original"
+    },
+    {
+      "type": "text",
+      "value": "String conversion to primitive types requires special methods since "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " is not a primitive type. Wrapper classes provide parsing methods for this conversion."
+    },
+    {
+      "type": "code",
+      "value": "String numberText = \"42\";\nint parsed = Integer.parseInt(numberText);    // 42\n\nString decimalText = \"3.14\";\ndouble parsedDouble = Double.parseDouble(decimalText); // 3.14"
+    },
+    {
+      "type": "text",
+      "value": "Converting primitive types to "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " can be done through string concatenation or using wrapper class methods."
+    },
+    {
+      "type": "code",
+      "value": "int number = 100;\nString numberString = number + \"\";        // \"100\" via concatenation\nString betterWay = String.valueOf(number); // \"100\" explicit conversion\n\ndouble pi = 3.14159;\nString piString = String.valueOf(pi);      // \"3.14159\""
+    },
+    {
+      "type": "text",
+      "value": "Common casting patterns include ensuring integer division becomes floating-point division, converting user input from strings to numbers, and preparing values for method calls that expect specific types."
+    },
+    {
+      "type": "code",
+      "value": "// Force floating-point division\nint numerator = 7;\nint denominator = 2;\ndouble result = (double) numerator / denominator; // 3.5\n\n// Prepare for method calls\nint roundedValue = Math.round((float) someDouble);\nchar upperChar = Character.toUpperCase((char) someInt);"
+    },
+    {
+      "type": "text",
+      "value": "Understanding type casting enables precise control over numeric operations and data transformations. Proper casting prevents compilation errors and ensures your calculations produce the expected types and precision for your program's requirements."
+    },
+    {
+      "type": "text",
+      "value": "Mastering type conversion is essential for working with mixed data types and preparing for more complex programming scenarios. In the next lesson, we'll explore arithmetic operators and expressions in greater detail."
+    }
+  ]
+}

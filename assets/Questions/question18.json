@@ -1,0 +1,214 @@
+{
+  "lessonId": 18,
+  "title": "Introduction to Methods: Definition and Calling",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is a method in Java?",
+      "options": [
+        { "type": "text", "value": "A reusable block of code that performs a specific task" },
+        { "type": "text", "value": "A type of variable" },
+        { "type": "text", "value": "A way to store data" },
+        { "type": "text", "value": "A kind of loop" }
+      ],
+      "answer": 0,
+      "explanation": "A method is a reusable block of code that performs a specific task, helping organize and structure programs."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What does the 'static' keyword mean in method declarations?",
+      "options": [
+        { "type": "text", "value": "The method cannot be changed" },
+        { "type": "text", "value": "The method belongs to the class, not individual objects" },
+        { "type": "text", "value": "The method is private" },
+        { "type": "text", "value": "The method runs slowly" }
+      ],
+      "answer": 1,
+      "explanation": "The 'static' keyword means the method belongs to the class itself, allowing it to be called without creating an object instance."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What naming convention should method names follow?",
+      "options": [
+        { "type": "text", "value": "ALL_UPPERCASE" },
+        { "type": "text", "value": "snake_case" },
+        { "type": "text", "value": "camelCase" },
+        { "type": "text", "value": "PascalCase" }
+      ],
+      "answer": 2,
+      "explanation": "Method names should follow camelCase convention, starting with lowercase and capitalizing subsequent words."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "How do you call a method named 'displayMessage'?",
+      "options": [
+        { "type": "code", "value": "call displayMessage;" },
+        { "type": "code", "value": "displayMessage[];" },
+        { "type": "code", "value": "run displayMessage;" },
+        { "type": "code", "value": "displayMessage();" }
+      ],
+      "answer": 3,
+      "explanation": "Methods are called using the method name followed by parentheses: displayMessage();"
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What are parameters in a method?",
+      "options": [
+        { "type": "text", "value": "Data that can be passed into the method" },
+        { "type": "text", "value": "The method's return value" },
+        { "type": "text", "value": "The method's name" },
+        { "type": "text", "value": "Variables outside the method" }
+      ],
+      "answer": 0,
+      "explanation": "Parameters are data that can be passed into a method, allowing the method to work with different values."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What does 'void' mean as a return type?",
+      "options": [
+        { "type": "text", "value": "The method returns a number" },
+        { "type": "text", "value": "The method returns nothing" },
+        { "type": "text", "value": "The method returns a string" },
+        { "type": "text", "value": "The method returns true or false" }
+      ],
+      "answer": 1,
+      "explanation": "The 'void' return type means the method performs actions but does not return any value."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "Which method declaration is correct?",
+      "options": [
+        { "type": "code", "value": "void public static printHello()" },
+        { "type": "code", "value": "public void static printHello()" },
+        { "type": "code", "value": "static public void printHello()" },
+        { "type": "code", "value": "public static void printHello()" }
+      ],
+      "answer": 3,
+      "explanation": "The correct order is: public static void methodName(). Access modifier, then static, then return type."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "Where do local variables in a method exist?",
+      "options": [
+        { "type": "text", "value": "Throughout the entire program" },
+        { "type": "text", "value": "Only within that method" },
+        { "type": "text", "value": "In all methods of the class" },
+        { "type": "text", "value": "In the main method only" }
+      ],
+      "answer": 1,
+      "explanation": "Local variables declared inside a method only exist within that method (method scope)."
+    },
+    {
+      "id": 9,
+      "type": "code",
+      "question": "How do you call a method with parameters: printName(String name)?",
+      "options": [
+        { "type": "code", "value": "printName(String \"Alice\");" },
+        { "type": "code", "value": "printName(\"Alice\");" },
+        { "type": "code", "value": "printName[\"Alice\"];" },
+        { "type": "code", "value": "printName{\"Alice\"};" }
+      ],
+      "answer": 1,
+      "explanation": "When calling methods with parameters, provide the actual values (arguments) in parentheses: printName(\"Alice\");"
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What should method names typically start with?",
+      "options": [
+        { "type": "text", "value": "A noun" },
+        { "type": "text", "value": "A verb describing the action" },
+        { "type": "text", "value": "A number" },
+        { "type": "text", "value": "An adjective" }
+      ],
+      "answer": 1,
+      "explanation": "Method names should typically start with a verb that describes what the method does (e.g., calculateGrade, displayResults)."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Can you call the same method multiple times?",
+      "options": [
+        { "type": "text", "value": "No, methods can only be called once" },
+        { "type": "text", "value": "Yes, methods can be called multiple times" },
+        { "type": "text", "value": "Only if it has parameters" },
+        { "type": "text", "value": "Only static methods" }
+      ],
+      "answer": 1,
+      "explanation": "Methods can be called multiple times throughout your program, which is one of the main benefits of using methods."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What's wrong with this method call: displayMessage;",
+      "options": [
+        { "type": "text", "value": "Wrong method name" },
+        { "type": "text", "value": "Missing semicolon" },
+        { "type": "text", "value": "Missing parentheses" },
+        { "type": "text", "value": "Missing parentheses" }
+      ],
+      "answer": 3,
+      "explanation": "Method calls require parentheses, even if there are no parameters: displayMessage();"
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What is the benefit of using methods?",
+      "options": [
+        { "type": "text", "value": "Code organization and reusability" },
+        { "type": "text", "value": "Programs run faster" },
+        { "type": "text", "value": "Uses less memory" },
+        { "type": "text", "value": "Prevents all errors" }
+      ],
+      "answer": 0,
+      "explanation": "Methods help organize code into logical units and allow code reusability, making programs easier to read and maintain."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What happens when you call a method?",
+      "options": [
+        { "type": "text", "value": "The program ends" },
+        { "type": "text", "value": "The code inside the method executes" },
+        { "type": "text", "value": "A new program starts" },
+        { "type": "text", "value": "Variables are deleted" }
+      ],
+      "answer": 1,
+      "explanation": "When you call a method, the program jumps to that method and executes the code inside it."
+    },
+    {
+      "id": 15,
+      "type": "code",
+      "question": "Which method has correct parameter syntax?",
+      "options": [
+        { "type": "code", "value": "public static void test(int number, String name)" },
+        { "type": "code", "value": "public static void test(number int, name String)" },
+        { "type": "code", "value": "public static void test[int number, String name]" },
+        { "type": "code", "value": "public static void test{int number; String name}" }
+      ],
+      "answer": 0,
+      "explanation": "Parameters are declared as: dataType parameterName, separated by commas in parentheses."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What makes a method 'reusable'?",
+      "options": [
+        { "type": "text", "value": "It's written in uppercase" },
+        { "type": "text", "value": "It's very long" },
+        { "type": "text", "value": "It uses loops" },
+        { "type": "text", "value": "It can be called multiple times from different parts of the program" }
+      ],
+      "answer": 3,
+      "explanation": "Methods are reusable because they can be called multiple times from different parts of the program, avoiding code duplication."
+    }
+  ]
+}

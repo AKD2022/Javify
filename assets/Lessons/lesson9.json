@@ -1,0 +1,266 @@
+{
+  "lessonId": 9,
+  "title": "Arithmetic Operators and Expressions",
+  "content": [
+    {
+      "type": "text",
+      "value": "Arithmetic operators are the foundation of mathematical calculations in Java. These operators allow you to perform basic mathematical operations like addition, subtraction, multiplication, and division, as well as more specialized operations like finding remainders and handling complex expressions."
+    },
+    {
+      "type": "text",
+      "value": "Java provides five basic arithmetic operators: addition ("
+    },
+    {
+      "type": "code",
+      "value": "+"
+    },
+    {
+      "type": "text",
+      "value": "), subtraction ("
+    },
+    {
+      "type": "code",
+      "value": "-"
+    },
+    {
+      "type": "text",
+      "value": "), multiplication ("
+    },
+    {
+      "type": "code",
+      "value": "*"
+    },
+    {
+      "type": "text",
+      "value": "), division ("
+    },
+    {
+      "type": "code",
+      "value": "/"
+    },
+    {
+      "type": "text",
+      "value": "), and modulus ("
+    },
+    {
+      "type": "code",
+      "value": "%"
+    },
+    {
+      "type": "text",
+      "value": "). Each operator behaves differently depending on the data types of the operands involved."
+    },
+    {
+      "type": "code",
+      "value": "int a = 15;\nint b = 4;\n\nint sum = a + b;        // 19\nint difference = a - b; // 11\nint product = a * b;    // 60\nint quotient = a / b;   // 3 (integer division)\nint remainder = a % b;  // 3"
+    },
+    {
+      "type": "text",
+      "value": "The addition operator ("
+    },
+    {
+      "type": "code",
+      "value": "+"
+    },
+    {
+      "type": "text",
+      "value": ") adds two numeric values together. It works with all numeric types and automatically handles type promotion when necessary. When used with "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " operands, it performs concatenation instead of arithmetic addition."
+    },
+    {
+      "type": "code",
+      "value": "int intSum = 25 + 17;           // 42\ndouble mixedSum = 25 + 17.5;    // 42.5 (int promoted to double)\nString text = \"Score: \" + 95;   // \"Score: 95\" (concatenation)\nString combined = 10 + 5 + \" points\"; // \"15 points\""
+    },
+    {
+      "type": "text",
+      "value": "The subtraction operator ("
+    },
+    {
+      "type": "code",
+      "value": "-"
+    },
+    {
+      "type": "text",
+      "value": ") subtracts the second operand from the first. It can also serve as a unary minus operator to negate values. Subtraction with mixed types follows the same promotion rules as addition."
+    },
+    {
+      "type": "code",
+      "value": "int difference = 50 - 23;      // 27\ndouble result = 10.5 - 3;       // 7.5\nint negative = -42;             // Unary minus\nint calculation = -(10 + 5);    // -15"
+    },
+    {
+      "type": "text",
+      "value": "The multiplication operator ("
+    },
+    {
+      "type": "code",
+      "value": "*"
+    },
+    {
+      "type": "text",
+      "value": ") multiplies two values. Be careful with large integer multiplications as they can cause overflow, wrapping around to unexpected negative values."
+    },
+    {
+      "type": "code",
+      "value": "int area = 12 * 8;              // 96\ndouble volume = 3.5 * 2.0 * 4.0; // 28.0\nlong large = 1000000L * 1000000L; // 1000000000000 (uses long to prevent overflow)"
+    },
+    {
+      "type": "text",
+      "value": "The division operator ("
+    },
+    {
+      "type": "code",
+      "value": "/"
+    },
+    {
+      "type": "text",
+      "value": ") behaves differently based on operand types. Integer division truncates the decimal portion, while floating-point division preserves decimal precision. Division by zero causes runtime errors for integers and special values for floating-point types."
+    },
+    {
+      "type": "code",
+      "value": "int intDivision = 17 / 5;       // 3 (truncated)\ndouble floatDivision = 17.0 / 5; // 3.4 (precise)\ndouble average = (85 + 92 + 78) / 3.0; // 85.0 (force floating-point)\n\n// double infinity = 1.0 / 0.0;  // Positive infinity (no error)"
+    },
+    {
+      "type": "text",
+      "value": "The modulus operator ("
+    },
+    {
+      "type": "code",
+      "value": "%"
+    },
+    {
+      "type": "text",
+      "value": ") returns the remainder after division. This operator is particularly useful for determining divisibility, cycling through ranges, and extracting digits from numbers."
+    },
+    {
+      "type": "code",
+      "value": "int remainder = 23 % 7;         // 2 (23 = 7*3 + 2)\nboolean isEven = (number % 2 == 0); // Check if even\nint lastDigit = 1234 % 10;      // 4 (extract last digit)\nint dayOfWeek = (dayNumber % 7); // Cycle through 0-6"
+    },
+    {
+      "type": "text",
+      "value": "Operator precedence determines the order of operations in complex expressions. Java follows mathematical conventions: parentheses have highest precedence, followed by unary operators, then multiplication/division/modulus, and finally addition/subtraction."
+    },
+    {
+      "type": "code",
+      "value": "int result1 = 2 + 3 * 4;        // 14 (not 20)\nint result2 = (2 + 3) * 4;      // 20\nint result3 = 10 - 4 / 2;       // 8 (not 3)\nint result4 = (10 - 4) / 2;     // 3"
+    },
+    {
+      "type": "text",
+      "value": "When operators have equal precedence, Java evaluates them from left to right (left-associative). This matters for operations like subtraction and division where order affects the result."
+    },
+    {
+      "type": "code",
+      "value": "int leftToRight = 20 - 8 - 3;   // (20 - 8) - 3 = 9\nint division = 24 / 4 / 2;      // (24 / 4) / 2 = 3\ndouble chained = 100.0 / 5.0 / 2.0; // ((100.0 / 5.0) / 2.0) = 10.0"
+    },
+    {
+      "type": "text",
+      "value": "Compound assignment operators combine arithmetic operations with assignment. These operators ("
+    },
+    {
+      "type": "code",
+      "value": "+="
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "-="
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "*="
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "/="
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "%="
+    },
+    {
+      "type": "text",
+      "value": ") provide convenient shortcuts for modifying variables."
+    },
+    {
+      "type": "code",
+      "value": "int score = 100;\nscore += 25;    // score = score + 25; now 125\nscore -= 10;    // score = score - 10; now 115\nscore *= 2;     // score = score * 2; now 230\nscore /= 5;     // score = score / 5; now 46\nscore %= 10;    // score = score % 10; now 6"
+    },
+    {
+      "type": "text",
+      "value": "Increment ("
+    },
+    {
+      "type": "code",
+      "value": "++"
+    },
+    {
+      "type": "text",
+      "value": ") and decrement ("
+    },
+    {
+      "type": "code",
+      "value": "--"
+    },
+    {
+      "type": "text",
+      "value": ") operators provide shortcuts for adding or subtracting 1. They can be used as prefix or postfix operators, with subtle differences in complex expressions."
+    },
+    {
+      "type": "code",
+      "value": "int counter = 5;\nint a = ++counter;  // Pre-increment: counter becomes 6, a gets 6\nint b = counter++;  // Post-increment: b gets 6, then counter becomes 7\nint c = --counter;  // Pre-decrement: counter becomes 6, c gets 6\nint d = counter--;  // Post-decrement: d gets 6, then counter becomes 5"
+    },
+    {
+      "type": "text",
+      "value": "Mixed-type arithmetic follows promotion rules to ensure precision is maintained. The result type is determined by the \"highest\" type in the expression hierarchy."
+    },
+    {
+      "type": "code",
+      "value": "int intValue = 10;\ndouble doubleValue = 3.5;\nfloat floatValue = 2.5f;\n\ndouble result1 = intValue + doubleValue;    // int promoted to double\nfloat result2 = intValue + floatValue;      // int promoted to float\ndouble result3 = floatValue + doubleValue;  // float promoted to double"
+    },
+    {
+      "type": "text",
+      "value": "Complex expressions require careful attention to operator precedence and data types. Use parentheses liberally to make your intentions clear and avoid subtle bugs."
+    },
+    {
+      "type": "code",
+      "value": "// Calculate compound interest: A = P(1 + r/n)^nt\ndouble principal = 1000.0;\ndouble rate = 0.05;\nint compoundingPeriods = 12;\nint years = 10;\n\n// Break complex expressions into steps for clarity\ndouble ratePerPeriod = rate / compoundingPeriods;\nint totalPeriods = compoundingPeriods * years;\ndouble amount = principal * Math.pow(1 + ratePerPeriod, totalPeriods);"
+    },
+    {
+      "type": "text",
+      "value": "Common arithmetic patterns include calculating averages, converting between units, implementing mathematical formulas, and performing range checks. Understanding operator behavior helps you write accurate and efficient calculations."
+    },
+    {
+      "type": "code",
+      "value": "// Common patterns\ndouble average = (score1 + score2 + score3) / 3.0;\nint celsius = (fahrenheit - 32) * 5 / 9;\nboolean inRange = (value >= min) && (value <= max);\nint totalSeconds = hours * 3600 + minutes * 60 + seconds;"
+    },
+    {
+      "type": "text",
+      "value": "Mastering arithmetic operators and expressions is essential for implementing algorithms, performing calculations, and solving computational problems. These fundamental operations form the building blocks for more complex mathematical and logical operations in Java programming."
+    },
+    {
+      "type": "text",
+      "value": "Understanding arithmetic operators prepares you for more advanced topics like loops and conditional statements. In the next lesson, we'll explore operator precedence and parentheses in greater detail."
+    }
+  ]
+}

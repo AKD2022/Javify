@@ -1,0 +1,214 @@
+{
+  "lessonId": 16,
+  "title": "Naming Conventions and Reserved Keywords",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What characters can Java identifiers start with?",
+      "options": [
+        { "type": "text", "value": "Letter, underscore, or dollar sign" },
+        { "type": "text", "value": "Only letters" },
+        { "type": "text", "value": "Any character" },
+        { "type": "text", "value": "Numbers only" }
+      ],
+      "answer": 0,
+      "explanation": "Java identifiers must start with a letter, underscore (_), or dollar sign ($), but cannot start with digits."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What naming convention do Java variables use?",
+      "options": [
+        { "type": "text", "value": "PascalCase" },
+        { "type": "text", "value": "camelCase" },
+        { "type": "text", "value": "snake_case" },
+        { "type": "text", "value": "ALL_UPPERCASE" }
+      ],
+      "answer": 1,
+      "explanation": "Java variables use camelCase: start with lowercase, capitalize subsequent words (e.g., studentName)."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What naming convention do Java classes use?",
+      "options": [
+        { "type": "text", "value": "camelCase" },
+        { "type": "text", "value": "snake_case" },
+        { "type": "text", "value": "PascalCase" },
+        { "type": "text", "value": "ALL_UPPERCASE" }
+      ],
+      "answer": 2,
+      "explanation": "Java classes use PascalCase: every word starts with a capital letter (e.g., StudentRecord)."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "Which variable name follows Java conventions?",
+      "options": [
+        { "type": "code", "value": "STUDENT_AGE" },
+        { "type": "code", "value": "Student_Age" },
+        { "type": "code", "value": "student_age" },
+        { "type": "code", "value": "studentAge" }
+      ],
+      "answer": 3,
+      "explanation": "Variables should use camelCase: studentAge starts lowercase with subsequent words capitalized."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What naming convention do Java constants use?",
+      "options": [
+        { "type": "text", "value": "ALL_UPPERCASE_WITH_UNDERSCORES" },
+        { "type": "text", "value": "camelCase" },
+        { "type": "text", "value": "PascalCase" },
+        { "type": "text", "value": "lowercase" }
+      ],
+      "answer": 0,
+      "explanation": "Constants use ALL_UPPERCASE letters with underscores separating words (e.g., MAX_SCORE)."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "Which of these is a Java reserved keyword?",
+      "options": [
+        { "type": "text", "value": "main" },
+        { "type": "text", "value": "class" },
+        { "type": "text", "value": "length" },
+        { "type": "text", "value": "String" }
+      ],
+      "answer": 1,
+      "explanation": "The word 'class' is a reserved keyword used to define classes. 'main' is just a method name."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "Which identifier is invalid?",
+      "options": [
+        { "type": "code", "value": "_value" },
+        { "type": "code", "value": "$amount" },
+        { "type": "code", "value": "2ndPlace" },
+        { "type": "code", "value": "score123" }
+      ],
+      "answer": 2,
+      "explanation": "Identifiers cannot start with a digit. '2ndPlace' is invalid because it starts with '2'."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What case convention do package names use?",
+      "options": [
+        { "type": "text", "value": "PascalCase" },
+        { "type": "text", "value": "camelCase" },
+        { "type": "text", "value": "ALL_UPPERCASE" },
+        { "type": "text", "value": "all lowercase" }
+      ],
+      "answer": 3,
+      "explanation": "Package names use all lowercase letters, often based on reversed domain names."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Which is NOT a primitive data type keyword?",
+      "options": [
+        { "type": "text", "value": "String" },
+        { "type": "text", "value": "int" },
+        { "type": "text", "value": "boolean" },
+        { "type": "text", "value": "double" }
+      ],
+      "answer": 0,
+      "explanation": "String is a class (reference type), not a primitive data type keyword like int, boolean, or double."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "Which keyword controls method visibility?",
+      "options": [
+        { "type": "text", "value": "static" },
+        { "type": "text", "value": "public" },
+        { "type": "text", "value": "final" },
+        { "type": "text", "value": "void" }
+      ],
+      "answer": 1,
+      "explanation": "The 'public' keyword is an access modifier that controls the visibility of methods and variables."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Which keyword is used for inheritance?",
+      "options": [
+        { "type": "text", "value": "implements" },
+        { "type": "text", "value": "extends" },
+        { "type": "text", "value": "inherits" },
+        { "type": "text", "value": "super" }
+      ],
+      "answer": 2,
+      "explanation": "The 'extends' keyword is used to create inheritance relationships between classes."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "Which class name follows Java conventions?",
+      "options": [
+        { "type": "code", "value": "bankAccount" },
+        { "type": "code", "value": "bank_account" },
+        { "type": "code", "value": "BANKACCOUNT" },
+        { "type": "code", "value": "BankAccount" }
+      ],
+      "answer": 3,
+      "explanation": "Class names should use PascalCase: BankAccount with each word starting with a capital letter."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What makes a good variable name?",
+      "options": [
+        { "type": "text", "value": "It's descriptive and explains the variable's purpose" },
+        { "type": "text", "value": "It's as short as possible" },
+        { "type": "text", "value": "It uses numbers" },
+        { "type": "text", "value": "It's in all capitals" }
+      ],
+      "answer": 0,
+      "explanation": "Good variable names are descriptive and clearly explain what the variable represents or contains."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "Which constant declaration follows Java conventions?",
+      "options": [
+        { "type": "code", "value": "final int maxScore = 100;" },
+        { "type": "code", "value": "final int MAX_SCORE = 100;" },
+        { "type": "code", "value": "final int Max_Score = 100;" },
+        { "type": "code", "value": "final int MaxScore = 100;" }
+      ],
+      "answer": 1,
+      "explanation": "Constants should be declared with ALL_UPPERCASE letters and underscores: MAX_SCORE."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "Which keyword handles exceptions?",
+      "options": [
+        { "type": "text", "value": "handle" },
+        { "type": "text", "value": "error" },
+        { "type": "text", "value": "catch" },
+        { "type": "text", "value": "exception" }
+      ],
+      "answer": 2,
+      "explanation": "The 'catch' keyword is used in exception handling to catch and handle exceptions that occur."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "Why should you avoid using reserved keywords as identifiers?",
+      "options": [
+        { "type": "text", "value": "They make programs run slowly" },
+        { "type": "text", "value": "They use extra memory" },
+        { "type": "text", "value": "They make code hard to read" },
+        { "type": "text", "value": "They cause compilation errors" }
+      ],
+      "answer": 3,
+      "explanation": "Reserved keywords have special meanings in Java and cannot be used as identifiers - this causes compilation errors."
+    }
+  ]
+}

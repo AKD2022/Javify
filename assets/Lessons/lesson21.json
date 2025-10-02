@@ -1,0 +1,194 @@
+{
+  "lessonId": 21,
+  "title": "What are Objects?",
+  "content": [
+    {
+      "type": "text",
+      "value": "Objects are the fundamental building blocks of Java programming and the core concept of object-oriented programming. An object represents a real-world entity or concept that has both characteristics (data) and behaviors (actions). Understanding objects is essential for mastering Java and creating complex, organized programs."
+    },
+    {
+      "type": "text",
+      "value": "In the real world, objects are everywhere around you. A car is an object with characteristics like color, model, and year, and behaviors like starting, stopping, and accelerating. Similarly, a student is an object with characteristics like name, age, and grade level, and behaviors like studying, taking tests, and attending classes."
+    },
+    {
+      "type": "text",
+      "value": "In Java, objects are instances of classes. A class serves as a blueprint or template that defines what data an object will store and what actions it can perform. Think of a class as an architectural blueprint - it describes the structure, but you need to build actual houses (objects) based on that blueprint."
+    },
+    {
+      "type": "code",
+      "value": "// Class definition - the blueprint\npublic class Student {\n    // Data (attributes/fields)\n    String name;\n    int age;\n    double gpa;\n    \n    // Behaviors (methods)\n    public void study() {\n        System.out.println(name + \" is studying.\");\n    }\n    \n    public void takeTest() {\n        System.out.println(name + \" is taking a test.\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Objects are created from classes using the "
+    },
+    {
+      "type": "code",
+      "value": "new"
+    },
+    {
+      "type": "text",
+      "value": " keyword. Each object is a separate instance with its own copy of the data defined in the class. Multiple objects can be created from the same class, and each object maintains its own unique data values."
+    },
+    {
+      "type": "code",
+      "value": "// Creating objects from the Student class\nStudent student1 = new Student();\nStudent student2 = new Student();\nStudent student3 = new Student();\n\n// Each object has its own data\nstudent1.name = \"Alice\";\nstudent1.age = 17;\nstudent1.gpa = 3.8;\n\nstudent2.name = \"Bob\";\nstudent2.age = 16;\nstudent2.gpa = 3.2;"
+    },
+    {
+      "type": "text",
+      "value": "Object attributes (also called fields or instance variables) store the data that makes each object unique. These attributes can be different primitive types like "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": ", or reference types like "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " and other objects."
+    },
+    {
+      "type": "code",
+      "value": "public class Car {\n    // Object attributes (instance variables)\n    String brand;           // Reference type\n    String model;           // Reference type\n    int year;              // Primitive type\n    double price;          // Primitive type\n    boolean isRunning;     // Primitive type\n    String color;          // Reference type\n}"
+    },
+    {
+      "type": "text",
+      "value": "Accessing object attributes and calling object methods uses dot notation. The dot ("
+    },
+    {
+      "type": "code",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": ") operator connects the object reference to the specific attribute or method you want to access or call."
+    },
+    {
+      "type": "code",
+      "value": "// Create a Car object\nCar myCar = new Car();\n\n// Access and set attributes using dot notation\nmyCar.brand = \"Toyota\";\nmyCar.model = \"Camry\";\nmyCar.year = 2023;\nmyCar.price = 28000.0;\nmyCar.isRunning = false;\n\n// Access attributes to read their values\nSystem.out.println(\"Car: \" + myCar.brand + \" \" + myCar.model);\nSystem.out.println(\"Year: \" + myCar.year);\nSystem.out.println(\"Price: $\" + myCar.price);"
+    },
+    {
+      "type": "text",
+      "value": "Object methods define the behaviors or actions that objects can perform. These methods can access and modify the object's attributes, allowing objects to change their state or perform calculations based on their current data."
+    },
+    {
+      "type": "code",
+      "value": "public class BankAccount {\n    String accountHolder;\n    double balance;\n    int accountNumber;\n    \n    // Method to deposit money\n    public void deposit(double amount) {\n        balance = balance + amount;\n        System.out.println(\"Deposited $\" + amount);\n        System.out.println(\"New balance: $\" + balance);\n    }\n    \n    // Method to withdraw money\n    public void withdraw(double amount) {\n        if (amount <= balance) {\n            balance = balance - amount;\n            System.out.println(\"Withdrew $\" + amount);\n        } else {\n            System.out.println(\"Insufficient funds\");\n        }\n    }\n    \n    // Method to display account information\n    public void displayInfo() {\n        System.out.println(\"Account Holder: \" + accountHolder);\n        System.out.println(\"Account Number: \" + accountNumber);\n        System.out.println(\"Balance: $\" + balance);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Calling object methods also uses dot notation. When you call a method on an object, that method has access to all of the object's attributes and can modify them as needed."
+    },
+    {
+      "type": "code",
+      "value": "// Create and use a BankAccount object\nBankAccount account = new BankAccount();\n\n// Set initial attributes\naccount.accountHolder = \"Alice Johnson\";\naccount.accountNumber = 12345;\naccount.balance = 1000.0;\n\n// Call methods on the object\naccount.displayInfo();        // Display current information\naccount.deposit(250.0);       // Add money to account\naccount.withdraw(100.0);      // Remove money from account\naccount.displayInfo();        // Display updated information"
+    },
+    {
+      "type": "text",
+      "value": "Each object maintains its own separate copy of the attributes defined in the class. Changing the attributes of one object does not affect the attributes of other objects, even if they were created from the same class."
+    },
+    {
+      "type": "code",
+      "value": "// Create two separate BankAccount objects\nBankAccount aliceAccount = new BankAccount();\nBankAccount bobAccount = new BankAccount();\n\n// Set different data for each object\naliceAccount.accountHolder = \"Alice\";\naliceAccount.balance = 1500.0;\n\nbobAccount.accountHolder = \"Bob\";\nbobAccount.balance = 800.0;\n\n// Operations on one object don't affect the other\naliceAccount.deposit(200.0);  // Only affects Alice's account\nbobAccount.withdraw(50.0);    // Only affects Bob's account\n\n// Each object maintains its own data\nSystem.out.println(\"Alice's balance: $\" + aliceAccount.balance);  // $1700.0\nSystem.out.println(\"Bob's balance: $\" + bobAccount.balance);      // $750.0"
+    },
+    {
+      "type": "text",
+      "value": "Object references are variables that store the memory location of an object, not the object itself. When you create an object, the "
+    },
+    {
+      "type": "code",
+      "value": "new"
+    },
+    {
+      "type": "text",
+      "value": " keyword allocates memory for the object, and the reference variable stores the address of that memory location."
+    },
+    {
+      "type": "code",
+      "value": "// Creating object references\nStudent student1 = new Student();  // student1 references a Student object\nStudent student2 = student1;       // student2 references the same object\n\n// Both references point to the same object\nstudent1.name = \"Charlie\";\nSystem.out.println(student2.name);  // Prints \"Charlie\"\n\n// Creating a new object\nstudent2 = new Student();           // student2 now references a different object\nstudent2.name = \"Diana\";\nSystem.out.println(student1.name);  // Still prints \"Charlie\""
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " value represents the absence of an object reference. A reference variable that contains "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " does not point to any object, and attempting to use it will cause a "
+    },
+    {
+      "type": "code",
+      "value": "NullPointerException"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "Student student = null;              // Reference points to nothing\n\n// This would cause a NullPointerException:\n// student.name = \"Error\";             // Cannot access attributes of null\n// student.study();                    // Cannot call methods on null\n\n// Always check for null before using references\nif (student != null) {\n    student.name = \"Safe to use\";\n} else {\n    System.out.println(\"Student reference is null\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Objects enable you to model real-world entities and organize related data and behavior together. This organization makes programs more intuitive, maintainable, and easier to understand because the code structure mirrors the problem domain."
+    },
+    {
+      "type": "code",
+      "value": "// Example: Modeling a simple game character\npublic class GameCharacter {\n    String name;\n    int health;\n    int level;\n    int experience;\n    \n    public void takeDamage(int damage) {\n        health = health - damage;\n        System.out.println(name + \" takes \" + damage + \" damage!\");\n        if (health <= 0) {\n            System.out.println(name + \" has been defeated!\");\n        }\n    }\n    \n    public void gainExperience(int exp) {\n        experience = experience + exp;\n        System.out.println(name + \" gains \" + exp + \" experience!\");\n        if (experience >= level * 100) {\n            levelUp();\n        }\n    }\n    \n    public void levelUp() {\n        level = level + 1;\n        health = health + 20;\n        System.out.println(name + \" levels up to level \" + level + \"!\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Understanding objects prepares you for more advanced object-oriented concepts like constructors, encapsulation, inheritance, and polymorphism. Objects are the foundation of Java programming and enable you to create complex, well-organized applications."
+    },
+    {
+      "type": "text",
+      "value": "Objects represent a fundamental shift from procedural programming to object-oriented programming, where data and the methods that operate on that data are combined into cohesive units. This approach leads to more modular, reusable, and maintainable code."
+    },
+    {
+      "type": "text",
+      "value": "Mastering objects is essential for success in Java programming and forms the foundation for all advanced topics in AP Computer Science A. In the next lesson, we'll explore the "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " class and its common methods in detail."
+    }
+  ]
+}

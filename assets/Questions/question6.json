@@ -1,0 +1,214 @@
+{
+  "lessonId": 6,
+  "title": "boolean Data Type and Logical Values",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What are the only two values a boolean variable can store?",
+      "options": [
+        { "type": "text", "value": "true and false" },
+        { "type": "text", "value": "0 and 1" },
+        { "type": "text", "value": "yes and no" },
+        { "type": "text", "value": "on and off" }
+      ],
+      "answer": 0,
+      "explanation": "Boolean variables can only store the literal values true and false (lowercase) in Java."
+    },
+    {
+      "id": 2,
+      "type": "code",
+      "question": "What is the result of: 5 == 5",
+      "options": [
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "equal" }
+      ],
+      "answer": 1,
+      "explanation": "The equality operator (==) compares two values and returns true when they are equal."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What is the result of: 7 > 10",
+      "options": [
+        { "type": "text", "value": "7" },
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "-3" }
+      ],
+      "answer": 2,
+      "explanation": "7 is not greater than 10, so the comparison 7 > 10 evaluates to false."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "What is the result of: !true",
+      "options": [
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "false" }
+      ],
+      "answer": 3,
+      "explanation": "The logical NOT operator (!) flips the boolean value, so !true becomes false."
+    },
+    {
+      "id": 5,
+      "type": "code",
+      "question": "What is the result of: true && false",
+      "options": [
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 0,
+      "explanation": "The logical AND (&&) operator returns true only when both operands are true. Since one is false, the result is false."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What is the result of: true || false",
+      "options": [
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 1,
+      "explanation": "The logical OR (||) operator returns true when at least one operand is true."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "What is the result of: 15 >= 15",
+      "options": [
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "15" },
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "0" }
+      ],
+      "answer": 2,
+      "explanation": "The >= operator returns true when the left value is greater than OR equal to the right value. 15 equals 15."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What is the result of: 8 != 8",
+      "options": [
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "8" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "false" }
+      ],
+      "answer": 3,
+      "explanation": "The != operator checks if values are NOT equal. Since 8 equals 8, the result is false."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Which operator should be used to compare String content?",
+      "options": [
+        { "type": "text", "value": "equals()" },
+        { "type": "text", "value": "==" },
+        { "type": "text", "value": "!=" },
+        { "type": "text", "value": "compare()" }
+      ],
+      "answer": 0,
+      "explanation": "Use equals() method to compare String content. The == operator compares object references, not content."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What is the result of: false && true",
+      "options": [
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 1,
+      "explanation": "The AND operator (&&) requires both operands to be true. Since the first is false, the result is false."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "What is the result of: false || false",
+      "options": [
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 2,
+      "explanation": "The OR operator (||) returns true when at least one operand is true. Both are false, so result is false."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What is short-circuit evaluation?",
+      "options": [
+        { "type": "text", "value": "Faster boolean operations" },
+        { "type": "text", "value": "Shorter variable names" },
+        { "type": "text", "value": "Reduced memory usage" },
+        { "type": "text", "value": "Skipping evaluation of second operand when result is determined" }
+      ],
+      "answer": 3,
+      "explanation": "Short-circuit evaluation stops evaluating the second operand when the result is already determined by the first."
+    },
+    {
+      "id": 13,
+      "type": "code",
+      "question": "What is the result of: !false",
+      "options": [
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 0,
+      "explanation": "The NOT operator (!) flips the boolean value, so !false becomes true."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What is the result of: 12 < 20",
+      "options": [
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "12" },
+        { "type": "text", "value": "20" }
+      ],
+      "answer": 1,
+      "explanation": "12 is less than 20, so the comparison 12 < 20 evaluates to true."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "Who is the boolean data type named after?",
+      "options": [
+        { "type": "text", "value": "James Boolean" },
+        { "type": "text", "value": "George Boole" },
+        { "type": "text", "value": "Alan Turing" },
+        { "type": "text", "value": "Ada Lovelace" }
+      ],
+      "answer": 2,
+      "explanation": "The boolean data type is named after George Boole, who developed Boolean algebra."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "What is the result of: true && true",
+      "options": [
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "error" },
+        { "type": "text", "value": "true" }
+      ],
+      "answer": 3,
+      "explanation": "The AND operator (&&) returns true when both operands are true, which is the case here."
+    }
+  ]
+}

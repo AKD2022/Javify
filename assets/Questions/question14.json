@@ -1,0 +1,214 @@
+{
+  "lessonId": 14,
+  "title": "Common Syntax Errors and Debugging",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What punctuation mark must end every Java statement?",
+      "options": [
+        { "type": "text", "value": "Semicolon (;)" },
+        { "type": "text", "value": "Comma (,)" },
+        { "type": "text", "value": "Period (.)" },
+        { "type": "text", "value": "Colon (:)" }
+      ],
+      "answer": 0,
+      "explanation": "Every Java statement must end with a semicolon (;). This is a fundamental syntax requirement."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What happens when opening and closing braces don't match?",
+      "options": [
+        { "type": "text", "value": "Runtime error" },
+        { "type": "text", "value": "Compilation error" },
+        { "type": "text", "value": "Warning message" },
+        { "type": "text", "value": "Program runs normally" }
+      ],
+      "answer": 1,
+      "explanation": "Mismatched braces cause compilation errors because the compiler cannot determine the code structure."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What's wrong with: int 2score = 95;",
+      "options": [
+        { "type": "text", "value": "Missing semicolon" },
+        { "type": "text", "value": "Wrong data type" },
+        { "type": "text", "value": "Variable name starts with digit" },
+        { "type": "text", "value": "Nothing is wrong" }
+      ],
+      "answer": 2,
+      "explanation": "Variable names cannot start with a digit. They must begin with a letter, underscore, or dollar sign."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "What's wrong with: String message = \"Hello World;",
+      "options": [
+        { "type": "text", "value": "Wrong variable name" },
+        { "type": "text", "value": "Missing closing quote" },
+        { "type": "text", "value": "Wrong data type" },
+        { "type": "text", "value": "Missing semicolon" }
+      ],
+      "answer": 1,
+      "explanation": "The string literal is missing its closing double quote. It should be \"Hello World\"."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Is Java case-sensitive?",
+      "options": [
+        { "type": "text", "value": "Yes, System and system are different" },
+        { "type": "text", "value": "No, all letters are treated the same" },
+        { "type": "text", "value": "Only for variable names" },
+        { "type": "text", "value": "Only for class names" }
+      ],
+      "answer": 0,
+      "explanation": "Java is case-sensitive throughout. System and system are completely different identifiers."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What's wrong with: String name = 'Alice';",
+      "options": [
+        { "type": "text", "value": "Wrong variable name" },
+        { "type": "text", "value": "Single quotes instead of double quotes for String" },
+        { "type": "text", "value": "Missing semicolon" },
+        { "type": "text", "value": "Wrong assignment operator" }
+      ],
+      "answer": 1,
+      "explanation": "String literals must use double quotes. Single quotes are for char literals: char letter = 'A'."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "What's wrong with: class student = \"Bob\";",
+      "options": [
+        { "type": "text", "value": "Missing semicolon" },
+        { "type": "text", "value": "Wrong quotes" },
+        { "type": "text", "value": "'class' is a reserved keyword" },
+        { "type": "text", "value": "Nothing is wrong" }
+      ],
+      "answer": 2,
+      "explanation": "The word 'class' is a reserved keyword in Java and cannot be used as a variable name."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What's missing in: System.out.println \"Hello\";",
+      "options": [
+        { "type": "text", "value": "Parentheses around the parameter" },
+        { "type": "text", "value": "Semicolon" },
+        { "type": "text", "value": "Double quotes" },
+        { "type": "text", "value": "Import statement" }
+      ],
+      "answer": 0,
+      "explanation": "Method calls require parentheses around parameters: System.out.println(\"Hello\");"
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What import is needed to use Scanner?",
+      "options": [
+        { "type": "text", "value": "import java.lang.Scanner;" },
+        { "type": "text", "value": "import java.util.Scanner;" },
+        { "type": "text", "value": "import java.io.Scanner;" },
+        { "type": "text", "value": "No import needed" }
+      ],
+      "answer": 1,
+      "explanation": "Scanner is in the java.util package, so you need: import java.util.Scanner;"
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What's wrong with: int age = \"17\";",
+      "options": [
+        { "type": "text", "value": "Type mismatch - String assigned to int" },
+        { "type": "text", "value": "Missing semicolon" },
+        { "type": "text", "value": "Wrong variable name" },
+        { "type": "text", "value": "Wrong quotes" }
+      ],
+      "answer": 0,
+      "explanation": "You cannot assign a String (\"17\") to an int variable. Use: int age = 17; without quotes."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Where do compiler error messages usually point you?",
+      "options": [
+        { "type": "text", "value": "The end of the program" },
+        { "type": "text", "value": "The line number where the error occurs" },
+        { "type": "text", "value": "The beginning of the program" },
+        { "type": "text", "value": "Random locations" }
+      ],
+      "answer": 1,
+      "explanation": "Compiler error messages include line numbers to help you locate the problem in your code."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What's wrong with: System.Out.Println(\"Hi\");",
+      "options": [
+        { "type": "text", "value": "Missing semicolon" },
+        { "type": "text", "value": "Wrong quotes" },
+        { "type": "text", "value": "Incorrect capitalization - should be 'out' and 'println'" },
+        { "type": "text", "value": "Missing import" }
+      ],
+      "answer": 2,
+      "explanation": "Java is case-sensitive. It should be System.out.println() with lowercase 'o' and 'p'."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What's a good debugging strategy when you have multiple errors?",
+      "options": [
+        { "type": "text", "value": "Fix the last error first" },
+        { "type": "text", "value": "Fix all errors at once" },
+        { "type": "text", "value": "Fix the first error first" },
+        { "type": "text", "value": "Ignore the error messages" }
+      ],
+      "answer": 2,
+      "explanation": "Fix the first error first, as later errors often cascade from earlier ones and may resolve automatically."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What's wrong with: int result = (10 + 5 * 2;",
+      "options": [
+        { "type": "text", "value": "Missing closing parenthesis" },
+        { "type": "text", "value": "Wrong operator" },
+        { "type": "text", "value": "Missing semicolon" },
+        { "type": "text", "value": "Wrong variable name" }
+      ],
+      "answer": 0,
+      "explanation": "The expression is missing a closing parenthesis: int result = (10 + 5) * 2;"
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What do IDEs help with regarding syntax errors?",
+      "options": [
+        { "type": "text", "value": "They fix errors automatically" },
+        { "type": "text", "value": "They highlight errors as you type" },
+        { "type": "text", "value": "They prevent all errors" },
+        { "type": "text", "value": "They hide error messages" }
+      ],
+      "answer": 1,
+      "explanation": "IDEs help by highlighting syntax errors as you type, often before you compile the program."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "Why is it important to fix syntax errors?",
+      "options": [
+        { "type": "text", "value": "They make programs run slowly" },
+        { "type": "text", "value": "They use extra memory" },
+        { "type": "text", "value": "They make code look messy" },
+        { "type": "text", "value": "They prevent the program from compiling" }
+      ],
+      "answer": 3,
+      "explanation": "Syntax errors prevent compilation, so your program cannot run until all syntax errors are fixed."
+    }
+  ]
+}

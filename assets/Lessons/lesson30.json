@@ -1,0 +1,510 @@
+{
+  "lessonId": 30,
+  "title": "Wrapper Classes (Integer, Double, Boolean) Intro",
+  "content": [
+    {
+      "type": "text",
+      "value": "Wrapper classes provide object versions of Java's primitive data types. While primitive types like "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " are efficient for storing simple values, sometimes you need objects that can hold these values. Wrapper classes serve this purpose and also provide useful utility methods for working with primitive values."
+    },
+    {
+      "type": "text",
+      "value": "Each primitive type has a corresponding wrapper class. The "
+    },
+    {
+      "type": "code",
+      "value": "Integer"
+    },
+    {
+      "type": "text",
+      "value": " class wraps "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " values, "
+    },
+    {
+      "type": "code",
+      "value": "Double"
+    },
+    {
+      "type": "text",
+      "value": " wraps "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " values, "
+    },
+    {
+      "type": "code",
+      "value": "Boolean"
+    },
+    {
+      "type": "text",
+      "value": " wraps "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " values, "
+    },
+    {
+      "type": "code",
+      "value": "Character"
+    },
+    {
+      "type": "text",
+      "value": " wraps "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " values, and so on. Notice that wrapper class names start with capital letters, following Java's naming convention for classes."
+    },
+    {
+      "type": "code",
+      "value": "// Primitive types and their wrapper classes\nint primitiveInt = 42;              // primitive\nInteger wrappedInt = 42;            // wrapper object\n\ndouble primitiveDouble = 3.14;      // primitive\nDouble wrappedDouble = 3.14;        // wrapper object\n\nboolean primitiveBool = true;       // primitive\nBoolean wrappedBool = true;         // wrapper object"
+    },
+    {
+      "type": "text",
+      "value": "Java provides automatic conversion between primitive types and their wrapper classes through a process called autoboxing and unboxing. Autoboxing automatically converts a primitive value to its wrapper object, while unboxing converts a wrapper object back to its primitive value."
+    },
+    {
+      "type": "code",
+      "value": "// Autoboxing - automatic conversion from primitive to wrapper\nInteger num1 = 100;                 // int 100 is autoboxed to Integer\nDouble num2 = 3.14;                 // double 3.14 is autoboxed to Double\n\n// Unboxing - automatic conversion from wrapper to primitive\nint primitive = num1;               // Integer is unboxed to int\ndouble doublePrim = num2;           // Double is unboxed to double\n\n// Works in method calls too\nint sum = num1 + 50;                // num1 is unboxed, then addition happens"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Integer"
+    },
+    {
+      "type": "text",
+      "value": " class provides several useful methods for working with integer values. One of the most important is "
+    },
+    {
+      "type": "code",
+      "value": "parseInt()"
+    },
+    {
+      "type": "text",
+      "value": ", which converts a "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " representation of a number into an "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " value."
+    },
+    {
+      "type": "code",
+      "value": "// Converting String to int\nString numString = \"123\";\nint number = Integer.parseInt(numString);       // 123\n\nString ageStr = \"25\";\nint age = Integer.parseInt(ageStr);             // 25\n\n// Useful for processing user input\nString userInput = \"42\";\nint value = Integer.parseInt(userInput);\nint doubled = value * 2;                        // 84"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Integer"
+    },
+    {
+      "type": "text",
+      "value": " class also provides constants for the maximum and minimum values an "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " can hold. These constants are useful for initialization and boundary checking."
+    },
+    {
+      "type": "code",
+      "value": "// Integer constants\nint maxInt = Integer.MAX_VALUE;                 // 2147483647\nint minInt = Integer.MIN_VALUE;                 // -2147483648\n\n// Useful for finding maximum in an array\nint[] numbers = {45, 23, 67, 12, 89};\nint max = Integer.MIN_VALUE;\nfor (int num : numbers) {\n    if (num > max) {\n        max = num;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "toString()"
+    },
+    {
+      "type": "text",
+      "value": " method converts an "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " value to a "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": ". This is the opposite of "
+    },
+    {
+      "type": "code",
+      "value": "parseInt()"
+    },
+    {
+      "type": "text",
+      "value": " and is useful when you need to convert numbers to text for display or concatenation."
+    },
+    {
+      "type": "code",
+      "value": "// Converting int to String\nint score = 95;\nString scoreText = Integer.toString(score);     // \"95\"\n\nint year = 2024;\nString yearStr = Integer.toString(year);        // \"2024\"\n\n// Can also use String concatenation (simpler way)\nString message = \"Score: \" + score;             // \"Score: 95\""
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Integer"
+    },
+    {
+      "type": "text",
+      "value": " class provides "
+    },
+    {
+      "type": "code",
+      "value": "compare()"
+    },
+    {
+      "type": "text",
+      "value": " method to compare two integer values. It returns a negative number if the first value is less, zero if they're equal, and a positive number if the first value is greater."
+    },
+    {
+      "type": "code",
+      "value": "// Comparing integers\nint result1 = Integer.compare(10, 20);          // negative (10 < 20)\nint result2 = Integer.compare(30, 30);          // 0 (equal)\nint result3 = Integer.compare(50, 25);          // positive (50 > 25)\n\n// Useful in sorting or comparison logic\nif (Integer.compare(score1, score2) > 0) {\n    System.out.println(\"First score is higher\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Double"
+    },
+    {
+      "type": "text",
+      "value": " class works similarly to "
+    },
+    {
+      "type": "code",
+      "value": "Integer"
+    },
+    {
+      "type": "text",
+      "value": " but handles "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " values. The "
+    },
+    {
+      "type": "code",
+      "value": "parseDouble()"
+    },
+    {
+      "type": "text",
+      "value": " method converts a "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " to a "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " value."
+    },
+    {
+      "type": "code",
+      "value": "// Converting String to double\nString priceStr = \"19.99\";\ndouble price = Double.parseDouble(priceStr);    // 19.99\n\nString gpaStr = \"3.75\";\ndouble gpa = Double.parseDouble(gpaStr);        // 3.75\n\n// Processing decimal input\nString input = \"98.6\";\ndouble temperature = Double.parseDouble(input);\nSystem.out.println(\"Temperature: \" + temperature + \"°F\");"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Double"
+    },
+    {
+      "type": "text",
+      "value": " class also has maximum and minimum value constants, as well as special constants for infinity and Not-a-Number (NaN)."
+    },
+    {
+      "type": "code",
+      "value": "// Double constants\ndouble maxDouble = Double.MAX_VALUE;            // 1.7976931348623157E308\ndouble minDouble = Double.MIN_VALUE;            // 4.9E-324 (smallest positive)\n\n// Special values\ndouble positiveInf = Double.POSITIVE_INFINITY;\ndouble negativeInf = Double.NEGATIVE_INFINITY;\ndouble notANumber = Double.NaN;\n\n// Check for special values\nboolean isInfinite = Double.isInfinite(positiveInf);  // true\nboolean isNaN = Double.isNaN(notANumber);             // true"
+    },
+    {
+      "type": "text",
+      "value": "Like "
+    },
+    {
+      "type": "code",
+      "value": "Integer"
+    },
+    {
+      "type": "text",
+      "value": ", the "
+    },
+    {
+      "type": "code",
+      "value": "Double"
+    },
+    {
+      "type": "text",
+      "value": " class provides "
+    },
+    {
+      "type": "code",
+      "value": "toString()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "compare()"
+    },
+    {
+      "type": "text",
+      "value": " methods for converting to strings and comparing values."
+    },
+    {
+      "type": "code",
+      "value": "// Converting double to String\ndouble pi = 3.14159;\nString piStr = Double.toString(pi);             // \"3.14159\"\n\n// Comparing doubles\nint comparison = Double.compare(3.14, 2.71);    // positive (3.14 > 2.71)\n\n// Check if finite\nboolean isFinite = Double.isFinite(3.14);       // true\nboolean isFinite2 = Double.isFinite(Double.POSITIVE_INFINITY);  // false"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Boolean"
+    },
+    {
+      "type": "text",
+      "value": " class wraps "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " values and provides methods for parsing and converting boolean values. The "
+    },
+    {
+      "type": "code",
+      "value": "parseBoolean()"
+    },
+    {
+      "type": "text",
+      "value": " method converts a "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " to a "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " value."
+    },
+    {
+      "type": "code",
+      "value": "// Converting String to boolean\nString trueStr = \"true\";\nboolean isTrue = Boolean.parseBoolean(trueStr);         // true\n\nString falseStr = \"false\";\nboolean isFalse = Boolean.parseBoolean(falseStr);       // false\n\n// Case-insensitive: only \"true\" (any case) returns true\nboolean result1 = Boolean.parseBoolean(\"TRUE\");         // true\nboolean result2 = Boolean.parseBoolean(\"True\");         // true\nboolean result3 = Boolean.parseBoolean(\"yes\");          // false (not \"true\")"
+    },
+    {
+      "type": "text",
+      "value": "Important note: "
+    },
+    {
+      "type": "code",
+      "value": "Boolean.parseBoolean()"
+    },
+    {
+      "type": "text",
+      "value": " only returns "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " if the string is \"true\" (case-insensitive). Any other string, including \"yes\", \"1\", or anything else, returns "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "// Boolean parsing behavior\nboolean b1 = Boolean.parseBoolean(\"true\");      // true\nboolean b2 = Boolean.parseBoolean(\"TRUE\");      // true\nboolean b3 = Boolean.parseBoolean(\"false\");     // false\nboolean b4 = Boolean.parseBoolean(\"anything\");  // false\nboolean b5 = Boolean.parseBoolean(\"\");          // false"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Boolean"
+    },
+    {
+      "type": "text",
+      "value": " class also provides "
+    },
+    {
+      "type": "code",
+      "value": "toString()"
+    },
+    {
+      "type": "text",
+      "value": " method and "
+    },
+    {
+      "type": "code",
+      "value": "compare()"
+    },
+    {
+      "type": "text",
+      "value": " method for working with boolean values."
+    },
+    {
+      "type": "code",
+      "value": "// Converting boolean to String\nboolean flag = true;\nString flagStr = Boolean.toString(flag);        // \"true\"\n\n// Comparing booleans (false < true)\nint comp1 = Boolean.compare(false, true);       // negative (false < true)\nint comp2 = Boolean.compare(true, false);       // positive (true > false)\nint comp3 = Boolean.compare(true, true);        // 0 (equal)"
+    },
+    {
+      "type": "text",
+      "value": "Wrapper classes are essential when working with collections (which we'll learn about later) because collections can only store objects, not primitive types. They're also useful for converting between strings and numbers, accessing useful constants, and utilizing utility methods."
+    },
+    {
+      "type": "code",
+      "value": "// Practical example: Processing user input\nString scoreInput = \"85\";\nString gpaInput = \"3.67\";\nString enrolledInput = \"true\";\n\n// Convert all inputs to appropriate types\nint score = Integer.parseInt(scoreInput);\ndouble gpa = Double.parseDouble(gpaInput);\nboolean enrolled = Boolean.parseBoolean(enrolledInput);\n\nSystem.out.println(\"Score: \" + score);\nSystem.out.println(\"GPA: \" + gpa);\nSystem.out.println(\"Enrolled: \" + enrolled);"
+    },
+    {
+      "type": "text",
+      "value": "Common errors when using wrapper classes include trying to parse invalid strings (which causes "
+    },
+    {
+      "type": "code",
+      "value": "NumberFormatException"
+    },
+    {
+      "type": "text",
+      "value": "), attempting to unbox "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " values (which causes "
+    },
+    {
+      "type": "code",
+      "value": "NullPointerException"
+    },
+    {
+      "type": "text",
+      "value": "), and confusing wrapper classes with their primitive equivalents."
+    },
+    {
+      "type": "code",
+      "value": "// This will cause NumberFormatException\n// int invalid = Integer.parseInt(\"abc\");\n\n// This will cause NullPointerException\n// Integer nullValue = null;\n// int primitive = nullValue;  // Can't unbox null!\n\n// Safe way to check\nInteger value = null;\nif (value != null) {\n    int safe = value;  // Only unbox if not null\n}"
+    },
+    {
+      "type": "text",
+      "value": "Understanding wrapper classes is fundamental to working with Java's collections and advanced features. They bridge the gap between primitive types and objects, providing the best of both worlds: the efficiency of primitives with the flexibility of objects. In upcoming lessons, you'll see how wrapper classes are used with data structures and learn about creating your own classes with constructors."
+    }
+  ]
+}

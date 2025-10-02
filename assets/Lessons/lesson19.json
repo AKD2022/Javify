@@ -1,0 +1,178 @@
+{
+  "lessonId": 19,
+  "title": "Return Types and Parameters",
+  "content": [
+    {
+      "type": "text",
+      "value": "Return types and parameters are essential components of methods that enable data flow into and out of methods. Understanding how to use return values and parameters effectively allows you to create methods that can process input data and provide results back to the calling code."
+    },
+    {
+      "type": "text",
+      "value": "A return type specifies what kind of data a method will send back to the code that called it. The return type is declared before the method name and can be any valid Java data type, including primitives like "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ", or reference types like "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "// Method that returns an integer\npublic static int addNumbers(int a, int b) {\n    int sum = a + b;\n    return sum;  // Return statement sends value back\n}\n\n// Method that returns a double\npublic static double calculateAverage(int score1, int score2, int score3) {\n    double average = (score1 + score2 + score3) / 3.0;\n    return average;\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "return"
+    },
+    {
+      "type": "text",
+      "value": " statement is used to send a value back from a method. The returned value must match the declared return type, and the "
+    },
+    {
+      "type": "code",
+      "value": "return"
+    },
+    {
+      "type": "text",
+      "value": " statement immediately ends the method execution."
+    },
+    {
+      "type": "code",
+      "value": "public static String getLetterGrade(int score) {\n    if (score >= 90) {\n        return \"A\";      // Return immediately, method ends here\n    } else if (score >= 80) {\n        return \"B\";\n    } else if (score >= 70) {\n        return \"C\";\n    } else {\n        return \"F\";\n    }\n    // No code after return statements will execute\n}"
+    },
+    {
+      "type": "text",
+      "value": "When calling a method that returns a value, you can store the returned value in a variable, use it directly in expressions, or pass it to other methods. The method call is replaced by the returned value."
+    },
+    {
+      "type": "code",
+      "value": "public static void main(String[] args) {\n    // Store return value in a variable\n    int result = addNumbers(15, 25);        // result = 50\n    \n    // Use return value directly in expressions\n    int total = addNumbers(10, 5) + addNumbers(20, 30);  // total = 65\n    \n    // Pass return value to another method\n    System.out.println(\"Sum: \" + addNumbers(7, 8));     // Prints: Sum: 15\n    \n    // Use in calculations\n    double avg = calculateAverage(85, 90, 95);          // avg = 90.0\n}"
+    },
+    {
+      "type": "text",
+      "value": "Methods can return different types of data depending on their purpose. Mathematical methods often return numbers, validation methods typically return "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " values, and text processing methods usually return "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " values."
+    },
+    {
+      "type": "code",
+      "value": "// Mathematical method returning double\npublic static double calculateCircleArea(double radius) {\n    return Math.PI * radius * radius;\n}\n\n// Validation method returning boolean\npublic static boolean isValidAge(int age) {\n    return age >= 0 && age <= 120;\n}\n\n// Text processing method returning String\npublic static String formatStudentName(String firstName, String lastName) {\n    return lastName + \", \" + firstName;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Parameters act as input variables for methods, allowing the same method to work with different data each time it's called. Parameters are declared in the method header with their data type and name."
+    },
+    {
+      "type": "code",
+      "value": "// Method with multiple parameters of different types\npublic static String createStudentReport(String name, int age, double gpa, boolean isHonors) {\n    String report = \"Student: \" + name + \"\\n\";\n    report += \"Age: \" + age + \"\\n\";\n    report += \"GPA: \" + gpa + \"\\n\";\n    report += \"Honor Student: \" + (isHonors ? \"Yes\" : \"No\");\n    return report;\n}"
+    },
+    {
+      "type": "text",
+      "value": "When calling methods with parameters, you must provide arguments (actual values) in the correct order and of the correct types. The arguments are copied into the parameter variables when the method executes."
+    },
+    {
+      "type": "code",
+      "value": "public static void main(String[] args) {\n    // Call method with correct arguments\n    String report = createStudentReport(\"Alice Johnson\", 17, 3.8, true);\n    System.out.println(report);\n    \n    // Variables can be used as arguments\n    String studentName = \"Bob Smith\";\n    int studentAge = 16;\n    double studentGPA = 3.2;\n    boolean honorStatus = false;\n    \n    String anotherReport = createStudentReport(studentName, studentAge, studentGPA, honorStatus);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Parameter passing in Java uses \"pass by value,\" which means the method receives copies of the argument values. Changes to parameter values inside the method do not affect the original variables used as arguments."
+    },
+    {
+      "type": "code",
+      "value": "public static int doubleValue(int number) {\n    number = number * 2;  // This changes the copy, not the original\n    return number;\n}\n\npublic static void main(String[] args) {\n    int originalValue = 10;\n    int result = doubleValue(originalValue);\n    \n    System.out.println(\"Original: \" + originalValue);  // Still 10\n    System.out.println(\"Result: \" + result);          // 20\n}"
+    },
+    {
+      "type": "text",
+      "value": "Methods can have multiple "
+    },
+    {
+      "type": "code",
+      "value": "return"
+    },
+    {
+      "type": "text",
+      "value": " statements, but only one will execute per method call. This is useful for conditional logic where different paths return different values."
+    },
+    {
+      "type": "code",
+      "value": "public static String determineGradeStatus(double gpa) {\n    if (gpa >= 3.5) {\n        return \"Honor Roll\";     // Method ends here if condition is true\n    } else if (gpa >= 2.0) {\n        return \"Good Standing\";\n    } else {\n        return \"Academic Warning\";\n    }\n}\n\npublic static int findMaximum(int a, int b, int c) {\n    if (a >= b && a >= c) {\n        return a;\n    } else if (b >= a && b >= c) {\n        return b;\n    } else {\n        return c;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Helper methods are small, focused methods that perform specific tasks and return values used by other methods. This approach promotes code reuse and makes complex operations easier to understand."
+    },
+    {
+      "type": "code",
+      "value": "// Helper method that calculates and returns a percentage\npublic static double calculatePercentage(int earned, int total) {\n    return (double) earned / total * 100.0;\n}\n\n// Main method that uses the helper method\npublic static String generateGradeReport(String subject, int earned, int total) {\n    double percentage = calculatePercentage(earned, total);  // Use helper method\n    String letterGrade = getLetterGrade((int) percentage);   // Use another helper\n    \n    return subject + \": \" + earned + \"/\" + total + \" (\" + percentage + \"% - \" + letterGrade + \")\";\n}"
+    },
+    {
+      "type": "text",
+      "value": "Chaining method calls allows you to use the return value of one method as an argument for another method, creating compact and readable code for sequential operations."
+    },
+    {
+      "type": "code",
+      "value": "// Method chaining examples\npublic static void main(String[] args) {\n    // Chain method calls together\n    String grade = getLetterGrade(calculateAverage(85, 90, 88));\n    \n    // Equivalent to:\n    // int avg = calculateAverage(85, 90, 88);\n    // String grade = getLetterGrade(avg);\n    \n    // More complex chaining\n    double circleArea = Math.round(calculateCircleArea(Math.sqrt(16)) * 100.0) / 100.0;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Error handling in methods with return types often involves returning special values to indicate problems, such as -1 for invalid indices or empty strings for failed operations."
+    },
+    {
+      "type": "code",
+      "value": "public static int findDivisor(int dividend, int divisor) {\n    if (divisor == 0) {\n        return -1;  // Return special value to indicate error\n    }\n    return dividend / divisor;\n}\n\npublic static String getStudentName(int studentId) {\n    if (studentId < 1 || studentId > 1000) {\n        return \"\";  // Return empty string for invalid ID\n    }\n    // In real programs, this would look up the student\n    return \"Student \" + studentId;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Best practices for return types and parameters include using descriptive parameter names, keeping parameter lists reasonable in length, returning meaningful values, and ensuring all code paths in non-void methods have return statements."
+    },
+    {
+      "type": "code",
+      "value": "// Good practice - descriptive names and clear purpose\npublic static double convertCelsiusToFahrenheit(double celsiusTemp) {\n    return celsiusTemp * 9.0 / 5.0 + 32.0;\n}\n\n// Good practice - all paths return values\npublic static String classifyTemperature(double fahrenheit) {\n    if (fahrenheit < 32) {\n        return \"Freezing\";\n    } else if (fahrenheit < 80) {\n        return \"Cool\";\n    } else {\n        return \"Warm\";\n    }\n    // All possible paths have return statements\n}"
+    },
+    {
+      "type": "text",
+      "value": "Understanding return types and parameters enables you to create methods that can communicate effectively with the rest of your program, process input data, and provide useful results for further computation or display."
+    },
+    {
+      "type": "text",
+      "value": "Mastering return types and parameters is essential for writing modular, reusable code that can handle data processing and computation tasks effectively. In the next lesson, we'll explore the final topic of Unit 1 with a comprehensive recap and mini quiz."
+    }
+  ]
+}

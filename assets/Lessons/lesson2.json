@@ -1,0 +1,346 @@
+{
+  "lessonId": 2,
+  "title": "Setting Up Development Environment & Hello World",
+  "content": [
+    {
+      "type": "text",
+      "value": "Now that you understand Java's fundamental concepts, it's time to set up your development environment and write your first program. A proper development setup includes the Java Development Kit ("
+    },
+    {
+      "type": "code",
+      "value": "JDK"
+    },
+    {
+      "type": "text",
+      "value": ") and an Integrated Development Environment (IDE) to make coding efficient and enjoyable."
+    },
+    {
+      "type": "text",
+      "value": "The Java Development Kit ("
+    },
+    {
+      "type": "code",
+      "value": "JDK"
+    },
+    {
+      "type": "text",
+      "value": ") contains all the tools needed to develop Java applications. It includes the Java compiler ("
+    },
+    {
+      "type": "code",
+      "value": "javac"
+    },
+    {
+      "type": "text",
+      "value": "), which converts your source code into bytecode, and the Java Runtime Environment ("
+    },
+    {
+      "type": "code",
+      "value": "JRE"
+    },
+    {
+      "type": "text",
+      "value": "), which runs your compiled programs. Without the "
+    },
+    {
+      "type": "code",
+      "value": "JDK"
+    },
+    {
+      "type": "text",
+      "value": ", you cannot compile or run Java programs."
+    },
+    {
+      "type": "text",
+      "value": "Popular IDEs for Java development include Eclipse, IntelliJ IDEA, and Visual Studio Code. These tools provide syntax highlighting, error detection, code completion, and debugging features that make programming much easier than using a simple text editor."
+    },
+    {
+      "type": "text",
+      "value": "Let's create your first Java program - the traditional \"Hello World\" application. This simple program demonstrates the basic structure every Java application must follow and introduces you to fundamental syntax elements."
+    },
+    {
+      "type": "code",
+      "value": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Every element in this program serves a specific purpose. The "
+    },
+    {
+      "type": "code",
+      "value": "public"
+    },
+    {
+      "type": "text",
+      "value": " keyword makes the class accessible from anywhere in your program. The "
+    },
+    {
+      "type": "code",
+      "value": "class"
+    },
+    {
+      "type": "text",
+      "value": " keyword defines a new class, and "
+    },
+    {
+      "type": "code",
+      "value": "HelloWorld"
+    },
+    {
+      "type": "text",
+      "value": " is the class name - notice it matches the filename exactly."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "main"
+    },
+    {
+      "type": "text",
+      "value": " method is where program execution begins. The "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": " keyword means this method belongs to the class itself, not to individual objects. The "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " return type indicates this method doesn't return any value."
+    },
+    {
+      "type": "text",
+      "value": "The parameter "
+    },
+    {
+      "type": "code",
+      "value": "String[] args"
+    },
+    {
+      "type": "text",
+      "value": " allows your program to receive command-line arguments. Even if you don't use command-line arguments, this parameter must be present for the "
+    },
+    {
+      "type": "code",
+      "value": "main"
+    },
+    {
+      "type": "text",
+      "value": " method to function as the entry point."
+    },
+    {
+      "type": "code",
+      "value": "System.out.println()"
+    },
+    {
+      "type": "text",
+      "value": " is Java's standard way to print text to the console. "
+    },
+    {
+      "type": "code",
+      "value": "System"
+    },
+    {
+      "type": "text",
+      "value": " is a built-in class, "
+    },
+    {
+      "type": "code",
+      "value": "out"
+    },
+    {
+      "type": "text",
+      "value": " is a static field representing standard output, and "
+    },
+    {
+      "type": "code",
+      "value": "println"
+    },
+    {
+      "type": "text",
+      "value": " is a method that prints text followed by a new line."
+    },
+    {
+      "type": "text",
+      "value": "Java syntax requires careful attention to detail. Every statement must end with a semicolon, and curly braces "
+    },
+    {
+      "type": "code",
+      "value": "{}"
+    },
+    {
+      "type": "text",
+      "value": " define code blocks. Proper indentation, while not required by the compiler, makes your code readable and professional."
+    },
+    {
+      "type": "code",
+      "value": "public class WelcomeMessage {\n    public static void main(String[] args) {\n        System.out.println(\"Welcome to AP Computer Science A!\");\n        System.out.println(\"Let's learn Java together!\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Notice how multiple "
+    },
+    {
+      "type": "code",
+      "value": "println"
+    },
+    {
+      "type": "text",
+      "value": " statements create separate lines of output. Each statement executes in sequence, demonstrating the linear flow of program execution from top to bottom within the "
+    },
+    {
+      "type": "code",
+      "value": "main"
+    },
+    {
+      "type": "text",
+      "value": " method."
+    },
+    {
+      "type": "text",
+      "value": "Java is case-sensitive, meaning "
+    },
+    {
+      "type": "code",
+      "value": "System"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "system"
+    },
+    {
+      "type": "text",
+      "value": " are completely different. The class name must exactly match the filename - if your class is named "
+    },
+    {
+      "type": "code",
+      "value": "HelloWorld"
+    },
+    {
+      "type": "text",
+      "value": ", your file must be named "
+    },
+    {
+      "type": "code",
+      "value": "HelloWorld.java"
+    },
+    {
+      "type": "text",
+      "value": ", not "
+    },
+    {
+      "type": "code",
+      "value": "helloworld.java"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "HELLOWORLD.java"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "When you compile a Java program, the compiler checks for syntax errors and creates a "
+    },
+    {
+      "type": "code",
+      "value": ".class"
+    },
+    {
+      "type": "text",
+      "value": " file containing bytecode. If there are any errors in your syntax - missing semicolons, unmatched braces, or typos in keywords - the compilation will fail and display error messages."
+    },
+    {
+      "type": "code",
+      "value": "public class ErrorExample {\n    public static void main(String[] args) {\n        System.out.println(\"This line has proper syntax\");\n        // System.out.println(\"This would cause an error without semicolon\")\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Comments are essential for documenting your code. Use single-line comments ("
+    },
+    {
+      "type": "code",
+      "value": "//"
+    },
+    {
+      "type": "text",
+      "value": ") for brief explanations and multi-line comments ("
+    },
+    {
+      "type": "code",
+      "value": "/* */"
+    },
+    {
+      "type": "text",
+      "value": ") for longer descriptions. Good comments explain why you wrote the code, not just what it does."
+    },
+    {
+      "type": "text",
+      "value": "To run your program, first compile the "
+    },
+    {
+      "type": "code",
+      "value": ".java"
+    },
+    {
+      "type": "text",
+      "value": " file using "
+    },
+    {
+      "type": "code",
+      "value": "javac HelloWorld.java"
+    },
+    {
+      "type": "text",
+      "value": ", which creates "
+    },
+    {
+      "type": "code",
+      "value": "HelloWorld.class"
+    },
+    {
+      "type": "text",
+      "value": ". Then execute the bytecode using "
+    },
+    {
+      "type": "code",
+      "value": "java HelloWorld"
+    },
+    {
+      "type": "text",
+      "value": ". Most IDEs handle this compilation and execution process automatically when you click \"Run.\""
+    },
+    {
+      "type": "text",
+      "value": "Understanding this basic program structure is crucial because every Java application you write will follow this same pattern: a class definition containing a "
+    },
+    {
+      "type": "code",
+      "value": "main"
+    },
+    {
+      "type": "text",
+      "value": " method where execution begins. In the next lesson, we'll explore variables and data types to make our programs store and manipulate information."
+    }
+  ]
+}

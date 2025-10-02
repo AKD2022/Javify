@@ -1,0 +1,214 @@
+{
+  "lessonId": 24,
+  "title": "Calling Methods and Method Signatures",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What components make up a method signature?",
+      "options": [
+        { "type": "text", "value": "Method name and parameter list (types, number, order)" },
+        { "type": "text", "value": "Method name and return type" },
+        { "type": "text", "value": "Return type and parameters" },
+        { "type": "text", "value": "Method name only" }
+      ],
+      "answer": 0,
+      "explanation": "A method signature consists of the method name and parameter list (number, types, and order of parameters)."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "Is the return type part of the method signature?",
+      "options": [
+        { "type": "text", "value": "Yes, it's always included" },
+        { "type": "text", "value": "No, only the method name and parameters" },
+        { "type": "text", "value": "Only for void methods" },
+        { "type": "text", "value": "Only for non-void methods" }
+      ],
+      "answer": 1,
+      "explanation": "The return type is NOT part of the method signature. Only the method name and parameter list (types, number, order) form the signature."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What is method overloading?",
+      "options": [
+        { "type": "text", "value": "Using too many methods" },
+        { "type": "text", "value": "Methods that run too slowly" },
+        { "type": "text", "value": "Multiple methods with the same name but different signatures" },
+        { "type": "text", "value": "Methods with the same parameters" }
+      ],
+      "answer": 2,
+      "explanation": "Method overloading allows multiple methods with the same name but different signatures (different parameter lists) in the same class."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "Which method call is correct for: public static void print(String msg, int count)",
+      "options": [
+        { "type": "code", "value": "print(5, \"Hello\");" },
+        { "type": "code", "value": "print(\"Hello\", \"5\");" },
+        { "type": "code", "value": "print(\"Hello\");" },
+        { "type": "code", "value": "print(\"Hello\", 5);" }
+      ],
+      "answer": 3,
+      "explanation": "Arguments must match parameter types and order: String first, then int. So print(\"Hello\", 5) is correct."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "How does Java determine which overloaded method to call?",
+      "options": [
+        { "type": "text", "value": "Based on the arguments provided at the call site" },
+        { "type": "text", "value": "Based on the return type needed" },
+        { "type": "text", "value": "Based on the method name only" },
+        { "type": "text", "value": "Randomly selects one" }
+      ],
+      "answer": 0,
+      "explanation": "Java determines which overloaded method to call by matching the arguments provided to the parameter signatures."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "Can you use the result of one method call as an argument to another method?",
+      "options": [
+        { "type": "text", "value": "No, this is not allowed" },
+        { "type": "text", "value": "Yes, this is called method chaining" },
+        { "type": "text", "value": "Only with void methods" },
+        { "type": "text", "value": "Only with static methods" }
+      ],
+      "answer": 1,
+      "explanation": "Yes, you can use the return value of one method as an argument for another method. This is called method chaining."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "What's wrong with this method call? Math.sqrt(\"25\")",
+      "options": [
+        { "type": "text", "value": "Nothing is wrong" },
+        { "type": "text", "value": "Missing semicolon" },
+        { "type": "text", "value": "Wrong argument type - sqrt expects double, not String" },
+        { "type": "text", "value": "Too many arguments" }
+      ],
+      "answer": 2,
+      "explanation": "Math.sqrt() expects a double argument, but \"25\" is a String. The argument type doesn't match the parameter type."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "How are arguments matched to parameters when calling methods?",
+      "options": [
+        { "type": "text", "value": "By name" },
+        { "type": "text", "value": "By position (order)" },
+        { "type": "text", "value": "By type only" },
+        { "type": "text", "value": "Randomly" }
+      ],
+      "answer": 1,
+      "explanation": "Arguments are matched to parameters by position (order), not by name. The first argument goes to the first parameter, etc."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What happens if you provide the wrong number of arguments to a method?",
+      "options": [
+        { "type": "text", "value": "Runtime error" },
+        { "type": "text", "value": "Compilation error" },
+        { "type": "text", "value": "The program uses default values" },
+        { "type": "text", "value": "The program continues normally" }
+      ],
+      "answer": 1,
+      "explanation": "Providing the wrong number of arguments causes a compilation error because no method signature matches."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "Can two methods have the same signature but different return types?",
+      "options": [
+        { "type": "text", "value": "Yes, this is method overloading" },
+        { "type": "text", "value": "No, this causes a compilation error" },
+        { "type": "text", "value": "Only if one is static" },
+        { "type": "text", "value": "Only if one is void" }
+      ],
+      "answer": 1,
+      "explanation": "No, two methods cannot have the same signature (name and parameters) even with different return types. This causes compilation errors."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "What does this method call do? System.out.println(Math.max(5, 8));",
+      "options": [
+        { "type": "text", "value": "Prints 13" },
+        { "type": "text", "value": "Prints 8" },
+        { "type": "text", "value": "Prints 5" },
+        { "type": "text", "value": "Causes an error" }
+      ],
+      "answer": 2,
+      "explanation": "Math.max(5, 8) returns 8 (the larger value), which is then printed by System.out.println()."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "How do you call static methods from within the same class?",
+      "options": [
+        { "type": "text", "value": "Must use class name" },
+        { "type": "text", "value": "Cannot call static methods" },
+        { "type": "text", "value": "Must create an object first" },
+        { "type": "text", "value": "Can call directly by method name" }
+      ],
+      "answer": 3,
+      "explanation": "Within the same class, static methods can be called directly by name without the class name prefix."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What's the difference between calling void and non-void methods?",
+      "options": [
+        { "type": "text", "value": "Void methods are called as complete statements, non-void can be used in expressions" },
+        { "type": "text", "value": "No difference in calling syntax" },
+        { "type": "text", "value": "Void methods are faster" },
+        { "type": "text", "value": "Non-void methods require more arguments" }
+      ],
+      "answer": 0,
+      "explanation": "Void methods are called as complete statements since they return nothing. Non-void methods return values that can be used in expressions."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "Which overloaded method would be called? display(42.0)",
+      "options": [
+        { "type": "code", "value": "display(int n)" },
+        { "type": "code", "value": "display(double n)" },
+        { "type": "code", "value": "display(String s)" },
+        { "type": "code", "value": "Compilation error" }
+      ],
+      "answer": 1,
+      "explanation": "42.0 is a double literal, so it matches the display(double n) method signature exactly."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What is argument type promotion?",
+      "options": [
+        { "type": "text", "value": "Making arguments more important" },
+        { "type": "text", "value": "Automatic conversion of compatible types (like int to double)" },
+        { "type": "text", "value": "Changing the order of arguments" },
+        { "type": "text", "value": "Adding more arguments" }
+      ],
+      "answer": 2,
+      "explanation": "Argument type promotion is Java's automatic conversion of compatible types, such as promoting int to double when needed."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What happens if you try to assign a void method's result to a variable?",
+      "options": [
+        { "type": "text", "value": "The variable becomes null" },
+        { "type": "text", "value": "The variable becomes 0" },
+        { "type": "text", "value": "Runtime error" },
+        { "type": "text", "value": "Compilation error" }
+      ],
+      "answer": 3,
+      "explanation": "Trying to assign a void method's result causes a compilation error because void methods don't return values."
+    }
+  ]
+}

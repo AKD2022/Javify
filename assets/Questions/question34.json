@@ -1,0 +1,214 @@
+{
+  "lessonId": 34,
+  "title": "Static vs Instance Methods and Variables",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is the key difference between instance and static variables?",
+      "options": [
+        { "type": "text", "value": "Instance variables belong to individual objects, static variables are shared by all objects" },
+        { "type": "text", "value": "Instance variables are faster" },
+        { "type": "text", "value": "Static variables are private" },
+        { "type": "text", "value": "Instance variables can't be changed" }
+      ],
+      "answer": 0,
+      "explanation": "Instance variables belong to individual objects (each object has its own copy), while static variables are shared by all objects of the class (only one copy exists)."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "How do you declare a static variable?",
+      "options": [
+        { "type": "text", "value": "Using the const keyword" },
+        { "type": "text", "value": "Using the static keyword" },
+        { "type": "text", "value": "Using the shared keyword" },
+        { "type": "text", "value": "Using the class keyword" }
+      ],
+      "answer": 1,
+      "explanation": "Static variables are declared with the static keyword, indicating that the variable belongs to the class rather than to individual objects."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What happens when you change a static variable?",
+      "options": [
+        { "type": "text", "value": "Only the current object sees the change" },
+        { "type": "text", "value": "An error occurs" },
+        { "type": "text", "value": "All objects see the change because they share the same variable" },
+        { "type": "text", "value": "The variable becomes an instance variable" }
+      ],
+      "answer": 2,
+      "explanation": "When you change a static variable, all objects see the change because they all share the same variable in memory."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "How should you access static variables?",
+      "options": [
+        { "type": "text", "value": "Through an object only" },
+        { "type": "text", "value": "Using the new keyword" },
+        { "type": "text", "value": "Through the this keyword" },
+        { "type": "text", "value": "Using the class name" }
+      ],
+      "answer": 3,
+      "explanation": "Static variables should be accessed using the class name to make it clear that the variable is static, not through an object reference."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Can instance methods access static variables?",
+      "options": [
+        { "type": "text", "value": "Yes, instance methods can access both instance and static variables" },
+        { "type": "text", "value": "No, never" },
+        { "type": "text", "value": "Only with special keywords" },
+        { "type": "text", "value": "Only in constructors" }
+      ],
+      "answer": 0,
+      "explanation": "Instance methods can access both instance variables and static variables because they belong to an object which has access to class-level data."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "Can static methods directly access instance variables?",
+      "options": [
+        { "type": "text", "value": "Yes, always" },
+        { "type": "text", "value": "No, they can only access static variables and other static methods" },
+        { "type": "text", "value": "Only with the this keyword" },
+        { "type": "text", "value": "Only in the main method" }
+      ],
+      "answer": 1,
+      "explanation": "Static methods can only directly access static variables and other static methods because they belong to the class, not to any specific object."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "How are static methods called?",
+      "options": [
+        { "type": "text", "value": "Through an object only" },
+        { "type": "text", "value": "Through the this keyword" },
+        { "type": "text", "value": "Using the class name" },
+        { "type": "text", "value": "They cannot be called" }
+      ],
+      "answer": 2,
+      "explanation": "Static methods are called using the class name (like ClassName.methodName()) because they belong to the class rather than to any specific object."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "Why is the main() method static?",
+      "options": [
+        { "type": "text", "value": "To make it faster" },
+        { "type": "text", "value": "To save memory" },
+        { "type": "text", "value": "To make it private" },
+        { "type": "text", "value": "Because Java needs to call it before any objects are created" }
+      ],
+      "answer": 3,
+      "explanation": "The main() method is static because Java needs to call it to start the program before any objects have been created."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Can static methods use the this keyword?",
+      "options": [
+        { "type": "text", "value": "No, because this refers to an object and static methods don't belong to any object" },
+        { "type": "text", "value": "Yes, always" },
+        { "type": "text", "value": "Only in constructors" },
+        { "type": "text", "value": "Only for static variables" }
+      ],
+      "answer": 0,
+      "explanation": "Static methods cannot use the this keyword because this refers to the current object, and static methods don't belong to any specific object."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "If a static method needs to work with instance variables, how can it do so?",
+      "options": [
+        { "type": "text", "value": "It can't" },
+        { "type": "text", "value": "It must receive an object as a parameter" },
+        { "type": "text", "value": "By using the this keyword" },
+        { "type": "text", "value": "By making the variables static" }
+      ],
+      "answer": 1,
+      "explanation": "If a static method needs to work with instance variables, it must receive an object as a parameter and then access the instance variables through that object."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Which methods in the Math class are static?",
+      "options": [
+        { "type": "text", "value": "None of them" },
+        { "type": "text", "value": "Only sqrt()" },
+        { "type": "text", "value": "All of them" },
+        { "type": "text", "value": "Only the trigonometric functions" }
+      ],
+      "answer": 2,
+      "explanation": "All methods in the Math class are static, which is why you call them using Math.methodName() rather than creating a Math object."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "When should you use static variables?",
+      "options": [
+        { "type": "text", "value": "Always" },
+        { "type": "text", "value": "Never" },
+        { "type": "text", "value": "For variables unique to each object" },
+        { "type": "text", "value": "When you need data shared across all objects of a class" }
+      ],
+      "answer": 3,
+      "explanation": "Use static variables when you need data that's shared across all objects of a class, such as counters, constants, or configuration values."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "How are constants typically declared in Java?",
+      "options": [
+        { "type": "text", "value": "static final" },
+        { "type": "text", "value": "const" },
+        { "type": "text", "value": "constant" },
+        { "type": "text", "value": "readonly" }
+      ],
+      "answer": 0,
+      "explanation": "Constants in Java are typically declared as static final variables. The final keyword means the value cannot be changed, and static means all objects share the same value."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "Can instance methods call static methods?",
+      "options": [
+        { "type": "text", "value": "No, never" },
+        { "type": "text", "value": "Yes, instance methods can call both instance and static methods" },
+        { "type": "text", "value": "Only with special permissions" },
+        { "type": "text", "value": "Only in constructors" }
+      ],
+      "answer": 1,
+      "explanation": "Instance methods can call both instance methods and static methods because they have access to both instance-level and class-level functionality."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "When should you use static methods?",
+      "options": [
+        { "type": "text", "value": "Always" },
+        { "type": "text", "value": "Never" },
+        { "type": "text", "value": "For methods that work with instance variables" },
+        { "type": "text", "value": "When the method doesn't need to access instance variables or performs a utility operation" }
+      ],
+      "answer": 3,
+      "explanation": "Use static methods when the method doesn't need to access instance variables or when it performs a utility operation that doesn't depend on object state."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What is a common mistake when working with static methods?",
+      "options": [
+        { "type": "text", "value": "Trying to access instance variables from static methods" },
+        { "type": "text", "value": "Calling them on objects" },
+        { "type": "text", "value": "Making them public" },
+        { "type": "text", "value": "Using parameters" }
+      ],
+      "answer": 0,
+      "explanation": "A common mistake is trying to access instance variables from static methods, which causes a compilation error because static methods don't belong to any specific object."
+    }
+  ]
+}

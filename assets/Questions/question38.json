@@ -1,0 +1,214 @@
+{
+  "lessonId": 38,
+  "title": "Logical Operators (&&, ||, !)",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What do logical operators do?",
+      "options": [
+        { "type": "text", "value": "Combine or modify boolean expressions to create complex conditions" },
+        { "type": "text", "value": "Compare numbers" },
+        { "type": "text", "value": "Perform arithmetic" },
+        { "type": "text", "value": "Create loops" }
+      ],
+      "answer": 0,
+      "explanation": "Logical operators allow you to combine multiple boolean expressions or modify them to create more complex conditional logic."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "How many logical operators does Java provide?",
+      "options": [
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "5" }
+      ],
+      "answer": 1,
+      "explanation": "Java provides three logical operators: && (AND), || (OR), and ! (NOT)."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "When does the AND (&&) operator return true?",
+      "options": [
+        { "type": "text", "value": "When at least one expression is true" },
+        { "type": "text", "value": "Never" },
+        { "type": "text", "value": "Only when both expressions are true" },
+        { "type": "text", "value": "When either expression is false" }
+      ],
+      "answer": 2,
+      "explanation": "The AND operator (&&) returns true only if both boolean expressions are true. If either is false, the result is false."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "When does the OR (||) operator return true?",
+      "options": [
+        { "type": "text", "value": "Only when both are true" },
+        { "type": "text", "value": "Only when both are false" },
+        { "type": "text", "value": "Never" },
+        { "type": "text", "value": "When at least one expression is true" }
+      ],
+      "answer": 3,
+      "explanation": "The OR operator (||) returns true if at least one expression is true. It only returns false if both expressions are false."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What does the NOT (!) operator do?",
+      "options": [
+        { "type": "text", "value": "Reverses a boolean value (true becomes false, false becomes true)" },
+        { "type": "text", "value": "Combines two expressions" },
+        { "type": "text", "value": "Compares two values" },
+        { "type": "text", "value": "Creates a loop" }
+      ],
+      "answer": 0,
+      "explanation": "The NOT operator (!) is a unary operator that reverses a boolean value, converting true to false and false to true."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What does !true evaluate to?",
+      "options": [
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "0" }
+      ],
+      "answer": 1,
+      "explanation": "The NOT operator reverses the boolean value, so !true evaluates to false."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What is the order of precedence for logical operators?",
+      "options": [
+        { "type": "text", "value": "||, &&, !" },
+        { "type": "text", "value": "&&, ||, !" },
+        { "type": "text", "value": "!, &&, ||" },
+        { "type": "text", "value": "They have equal precedence" }
+      ],
+      "answer": 2,
+      "explanation": "Logical operators follow this precedence: NOT (!) is evaluated first, then AND (&&), then OR (||)."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What is short-circuit evaluation?",
+      "options": [
+        { "type": "text", "value": "Evaluating all conditions quickly" },
+        { "type": "text", "value": "Skipping loops" },
+        { "type": "text", "value": "Using shorter variable names" },
+        { "type": "text", "value": "Stopping evaluation once the result is determined" }
+      ],
+      "answer": 3,
+      "explanation": "Short-circuit evaluation means that for && if the first condition is false, or for || if the first condition is true, the second condition isn't evaluated because the result is already determined."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What does (true && false) evaluate to?",
+      "options": [
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 0,
+      "explanation": "The AND operator requires both conditions to be true. Since one is false, the result is false."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What does (false || true) evaluate to?",
+      "options": [
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 1,
+      "explanation": "The OR operator returns true if at least one expression is true. Since one is true, the result is true."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What does (false && false) evaluate to?",
+      "options": [
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 2,
+      "explanation": "The AND operator returns true only when both expressions are true. Since both are false, the result is false."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What does (true || false) evaluate to?",
+      "options": [
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "error" },
+        { "type": "text", "value": "true" }
+      ],
+      "answer": 3,
+      "explanation": "The OR operator returns true if at least one expression is true. Since one is true, the result is true."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "Why is it best practice to use parentheses in complex logical expressions?",
+      "options": [
+        { "type": "text", "value": "To make intentions clear and ensure correct logic" },
+        { "type": "text", "value": "To make code slower" },
+        { "type": "text", "value": "To use more memory" },
+        { "type": "text", "value": "It's required by Java" }
+      ],
+      "answer": 0,
+      "explanation": "Using parentheses in complex logical expressions makes your intentions clear and ensures the order of evaluation is what you intend."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "Can logical operators be combined to create complex conditions?",
+      "options": [
+        { "type": "text", "value": "No, only one per expression" },
+        { "type": "text", "value": "Yes, multiple logical operators can be combined" },
+        { "type": "text", "value": "Only && and ||" },
+        { "type": "text", "value": "Only in loops" }
+      ],
+      "answer": 1,
+      "explanation": "You can combine multiple logical operators to create complex conditions, using parentheses to make the order of evaluation clear."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What is a common mistake with logical operators?",
+      "options": [
+        { "type": "text", "value": "Using them too often" },
+        { "type": "text", "value": "Using them in methods" },
+        { "type": "text", "value": "Making expressions too short" },
+        { "type": "text", "value": "Confusing && with & or || with |" }
+      ],
+      "answer": 3,
+      "explanation": "A common mistake is confusing && with & or || with |. While single versions work, they don't short-circuit and are typically used for bitwise operations."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "Where are logical operators essential?",
+      "options": [
+        { "type": "text", "value": "In conditional statements for making decisions based on multiple criteria" },
+        { "type": "text", "value": "Only in loops" },
+        { "type": "text", "value": "Only in methods" },
+        { "type": "text", "value": "Only with integers" }
+      ],
+      "answer": 0,
+      "explanation": "Logical operators are essential in conditional statements for making decisions based on multiple criteria, combining various conditions into complex logic."
+    }
+  ]
+}

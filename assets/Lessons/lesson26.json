@@ -1,0 +1,326 @@
+{
+  "lessonId": 26,
+  "title": "Return Values and void Methods",
+  "content": [
+    {
+      "type": "text",
+      "value": "Methods in Java can be classified into two main categories based on what they produce: methods that return a value and "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " methods that perform actions without returning anything. Understanding this distinction is crucial for effective method design and usage."
+    },
+    {
+      "type": "text",
+      "value": "A method with a return value produces a result that can be used by the calling code. When you call such a method, it gives you back a piece of data that you can store in a variable, use in calculations, or pass to other methods."
+    },
+    {
+      "type": "code",
+      "value": "public static int addNumbers(int a, int b) {\n    int sum = a + b;\n    return sum;\n}"
+    },
+    {
+      "type": "text",
+      "value": "In this example, "
+    },
+    {
+      "type": "code",
+      "value": "addNumbers()"
+    },
+    {
+      "type": "text",
+      "value": " is a method that returns an "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " value. The "
+    },
+    {
+      "type": "code",
+      "value": "return"
+    },
+    {
+      "type": "text",
+      "value": " keyword is used to send the result back to whoever called the method. The return type "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " in the method signature tells us what type of data this method will give back."
+    },
+    {
+      "type": "text",
+      "value": "When you call a method that returns a value, you typically capture that returned value in a variable or use it directly in an expression."
+    },
+    {
+      "type": "code",
+      "value": "int result = addNumbers(5, 3);\nSystem.out.println(\"The sum is: \" + result);\n\n// Or use it directly\nSystem.out.println(\"Double the sum: \" + (addNumbers(5, 3) * 2));"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "return"
+    },
+    {
+      "type": "text",
+      "value": " statement immediately exits the method and sends the specified value back to the caller. Once a "
+    },
+    {
+      "type": "code",
+      "value": "return"
+    },
+    {
+      "type": "text",
+      "value": " statement executes, no code after it in the same method will run."
+    },
+    {
+      "type": "code",
+      "value": "public static double calculateAverage(double score1, double score2, double score3) {\n    double total = score1 + score2 + score3;\n    return total / 3.0;\n    // This line would never execute\n    System.out.println(\"This won't print\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "In contrast, "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " methods perform actions but don't return any value. The "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " keyword indicates that the method returns nothing. These methods are typically used for tasks like printing output, modifying variables, or performing operations that don't need to give back a result."
+    },
+    {
+      "type": "code",
+      "value": "public static void printWelcomeMessage(String name) {\n    System.out.println(\"Welcome to Java programming, \" + name + \"!\");\n    System.out.println(\"Let's start coding!\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "When you call a "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " method, you simply invoke it without expecting anything back. You cannot assign the result of a "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " method to a variable because there is no result to assign."
+    },
+    {
+      "type": "code",
+      "value": "printWelcomeMessage(\"Alice\");\n\n// This would cause an error:\n// String message = printWelcomeMessage(\"Bob\");"
+    },
+    {
+      "type": "text",
+      "value": " "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " methods can still use the "
+    },
+    {
+      "type": "code",
+      "value": "return"
+    },
+    {
+      "type": "text",
+      "value": " statement, but without any value after it. This is useful for exiting the method early based on certain conditions."
+    },
+    {
+      "type": "code",
+      "value": "public static void printPositiveNumber(int number) {\n    if (number <= 0) {\n        System.out.println(\"Number must be positive\");\n        return; // Exit early\n    }\n    System.out.println(\"The positive number is: \" + number);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Methods can return any data type that exists in Java, including primitive types ("
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": ") and reference types (like "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " and other objects we'll learn about soon)."
+    },
+    {
+      "type": "code",
+      "value": "public static boolean isEven(int number) {\n    return number % 2 == 0;\n}\n\npublic static String createGreeting(String name) {\n    return \"Hello, \" + name + \"! Nice to meet you.\";\n}\n\npublic static char getFirstLetter(String word) {\n    return word.charAt(0);\n}"
+    },
+    {
+      "type": "text",
+      "value": "The return type must match what the method actually returns. If a method is declared to return an "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", it must return an "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " value. The compiler will check this and give you an error if there's a mismatch."
+    },
+    {
+      "type": "code",
+      "value": "public static int multiply(int x, int y) {\n    // return \"error\"; // This would cause a compiler error\n    return x * y; // Correct: returns an int\n}"
+    },
+    {
+      "type": "text",
+      "value": "Every path through a non-"
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " method must have a "
+    },
+    {
+      "type": "code",
+      "value": "return"
+    },
+    {
+      "type": "text",
+      "value": " statement. If there's any way the method could finish executing without encountering a "
+    },
+    {
+      "type": "code",
+      "value": "return"
+    },
+    {
+      "type": "text",
+      "value": ", the compiler will report an error."
+    },
+    {
+      "type": "code",
+      "value": "public static int getAbsoluteValue(int number) {\n    if (number >= 0) {\n        return number;\n    } else {\n        return -number;\n    }\n    // Both paths have returns, so this is valid\n}"
+    },
+    {
+      "type": "text",
+      "value": "You can have multiple "
+    },
+    {
+      "type": "code",
+      "value": "return"
+    },
+    {
+      "type": "text",
+      "value": " statements in a method, but only one will execute during any single method call. This is useful for handling different cases or conditions."
+    },
+    {
+      "type": "code",
+      "value": "public static String getLetterGrade(int score) {\n    if (score >= 90) {\n        return \"A\";\n    } else if (score >= 80) {\n        return \"B\";\n    } else if (score >= 70) {\n        return \"C\";\n    } else if (score >= 60) {\n        return \"D\";\n    } else {\n        return \"F\";\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "When designing methods, consider whether the method should return a value or be "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": ". If the method calculates something, finds information, or produces data that other parts of your program need, it should return a value. If the method primarily performs actions like printing or updating variables, it's often better as a "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " method."
+    },
+    {
+      "type": "text",
+      "value": "Understanding return values and "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " methods is essential for organizing your code into reusable, logical pieces. Methods that return values can be combined and used in expressions, while "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " methods handle the action-oriented tasks in your programs. In upcoming lessons, you'll learn about method overloading and explore more advanced method concepts."
+    }
+  ]
+}

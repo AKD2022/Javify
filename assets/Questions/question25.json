@@ -1,0 +1,214 @@
+{
+  "lessonId": 25,
+  "title": "Passing Parameters to Methods",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What parameter passing mechanism does Java use?",
+      "options": [
+        { "type": "text", "value": "Pass-by-value for all parameter types" },
+        { "type": "text", "value": "Pass-by-reference for all parameter types" },
+        { "type": "text", "value": "Pass-by-value for primitives, pass-by-reference for objects" },
+        { "type": "text", "value": "Pass-by-name" }
+      ],
+      "answer": 0,
+      "explanation": "Java uses pass-by-value for all parameter passing. Methods receive copies of argument values, not the original variables."
+    },
+    {
+      "id": 2,
+      "type": "code",
+      "question": "After this code runs, what is the value of 'x'?\nint x = 10;\nmodifyValue(x);  // method sets parameter to 20\nSystem.out.println(x);",
+      "options": [
+        { "type": "text", "value": "20" },
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "30" }
+      ],
+      "answer": 1,
+      "explanation": "Due to pass-by-value, the method receives a copy of x's value. Changes to the parameter don't affect the original variable x."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What are parameters within a method?",
+      "options": [
+        { "type": "text", "value": "Global variables" },
+        { "type": "text", "value": "Constants that cannot change" },
+        { "type": "text", "value": "Local variables that exist only during method execution" },
+        { "type": "text", "value": "References to the original variables" }
+      ],
+      "answer": 2,
+      "explanation": "Parameters act as local variables within the method scope, existing only during method execution and destroyed when the method completes."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "How should methods communicate results back to calling code?",
+      "options": [
+        { "type": "text", "value": "By modifying the parameters" },
+        { "type": "text", "value": "By printing the results" },
+        { "type": "text", "value": "By using global variables" },
+        { "type": "text", "value": "By using return statements" }
+      ],
+      "answer": 3,
+      "explanation": "Methods should use return statements to communicate results back to calling code, not by trying to modify parameters."
+    },
+    {
+      "id": 5,
+      "type": "code",
+      "question": "What gets passed to the method in this call? calculate(5 + 3)",
+      "options": [
+        { "type": "text", "value": "The value 8" },
+        { "type": "text", "value": "The expression \"5 + 3\"" },
+        { "type": "text", "value": "The variables 5 and 3" },
+        { "type": "text", "value": "A reference to the calculation" }
+      ],
+      "answer": 0,
+      "explanation": "Java evaluates expressions before passing arguments. The method receives the value 8, not the expression that produced it."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "Can parameter names be the same as variable names in the calling method?",
+      "options": [
+        { "type": "text", "value": "No, this causes a name conflict" },
+        { "type": "text", "value": "Yes, they are in different scopes" },
+        { "type": "text", "value": "Only if they have different types" },
+        { "type": "text", "value": "Only for primitive types" }
+      ],
+      "answer": 1,
+      "explanation": "Parameter names can match variable names in calling code because they exist in different scopes without causing conflicts."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What happens to parameters when a method finishes executing?",
+      "options": [
+        { "type": "text", "value": "They remain in memory permanently" },
+        { "type": "text", "value": "They are returned to the calling method" },
+        { "type": "text", "value": "They become global variables" },
+        { "type": "text", "value": "They are destroyed and memory is freed" }
+      ],
+      "answer": 3,
+      "explanation": "Parameters are local variables that are destroyed when the method completes, freeing their memory."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "In this method call order matters: createAccount(name, age, email). What determines the order?",
+      "options": [
+        { "type": "text", "value": "Alphabetical order of parameter names" },
+        { "type": "text", "value": "The method signature's parameter sequence" },
+        { "type": "text", "value": "Data type priority" },
+        { "type": "text", "value": "The order doesn't matter" }
+      ],
+      "answer": 1,
+      "explanation": "Arguments must be provided in the same order as parameters are declared in the method signature."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Why can't methods modify primitive parameters permanently?",
+      "options": [
+        { "type": "text", "value": "Primitives are read-only" },
+        { "type": "text", "value": "Java doesn't allow primitive modification" },
+        { "type": "text", "value": "Methods receive copies of primitive values, not the originals" },
+        { "type": "text", "value": "Primitives are stored differently" }
+      ],
+      "answer": 2,
+      "explanation": "Due to pass-by-value, methods receive copies of primitive values. Modifying the copy doesn't affect the original variable."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What is a good practice for parameter validation?",
+      "options": [
+        { "type": "text", "value": "Never check parameter values" },
+        { "type": "text", "value": "Check for invalid values and handle them appropriately" },
+        { "type": "text", "value": "Always modify invalid parameters" },
+        { "type": "text", "value": "Assume all parameters are valid" }
+      ],
+      "answer": 1,
+      "explanation": "Good practice includes validating parameters and handling invalid input to prevent errors and unexpected behavior."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "What happens with String parameters due to immutability?",
+      "options": [
+        { "type": "text", "value": "Methods can modify the original String" },
+        { "type": "text", "value": "String operations create new objects, original reference unchanged" },
+        { "type": "text", "value": "Strings cannot be passed as parameters" },
+        { "type": "text", "value": "String parameters work differently than primitives" }
+      ],
+      "answer": 2,
+      "explanation": "Due to String immutability and pass-by-value, String operations in methods create new objects without affecting the original reference."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "How many values can a method return through parameters?",
+      "options": [
+        { "type": "text", "value": "As many as there are parameters" },
+        { "type": "text", "value": "One value per parameter" },
+        { "type": "text", "value": "Zero - parameters cannot return values" },
+        { "type": "text", "value": "Unlimited" }
+      ],
+      "answer": 2,
+      "explanation": "Parameters cannot return values due to pass-by-value. Methods must use return statements to send values back."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What scope do parameters have?",
+      "options": [
+        { "type": "text", "value": "Method scope - local to the method" },
+        { "type": "text", "value": "Class scope - accessible throughout the class" },
+        { "type": "text", "value": "Global scope - accessible everywhere" },
+        { "type": "text", "value": "Package scope - accessible in the package" }
+      ],
+      "answer": 0,
+      "explanation": "Parameters have method scope, meaning they are local variables accessible only within the method where they're declared."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "If a method needs to return multiple values, what should you do?",
+      "options": [
+        { "type": "text", "value": "Modify multiple parameters" },
+        { "type": "text", "value": "Create separate methods for each value" },
+        { "type": "text", "value": "Use global variables" },
+        { "type": "text", "value": "Use arrays or objects (covered in later units)" }
+      ],
+      "answer": 3,
+      "explanation": "Since methods can only return one value and can't modify parameters, multiple return values require arrays or objects (covered in later units)."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What makes pass-by-value safe for program design?",
+      "options": [
+        { "type": "text", "value": "Methods run faster" },
+        { "type": "text", "value": "Original data is protected from unintended modification" },
+        { "type": "text", "value": "Methods use less memory" },
+        { "type": "text", "value": "Parameters are automatically validated" }
+      ],
+      "answer": 1,
+      "explanation": "Pass-by-value protects original data from unintended modification, making programs more predictable and safer."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "When designing method parameters, what should you prioritize?",
+      "options": [
+        { "type": "text", "value": "Having as many parameters as possible" },
+        { "type": "text", "value": "Using single-letter parameter names" },
+        { "type": "text", "value": "Making all parameters the same type" },
+        { "type": "text", "value": "Using descriptive names and logical organization" }
+      ],
+      "answer": 3,
+      "explanation": "Good method design uses descriptive parameter names and logical organization to make code readable and maintainable."
+    }
+  ]
+}

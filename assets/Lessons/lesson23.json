@@ -1,0 +1,282 @@
+{
+  "lessonId": 23,
+  "title": "String Immutability and Methods like substring(), length()",
+  "content": [
+    {
+      "type": "text",
+      "value": "String immutability is a fundamental concept in Java that affects how "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " objects behave in memory and how string operations work. Understanding immutability helps you write more efficient code and avoid common programming mistakes related to string manipulation."
+    },
+    {
+      "type": "text",
+      "value": "Immutability means that once a "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " object is created, its content cannot be changed. Any operation that appears to modify a string actually creates a new "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " object with the desired content, leaving the original string unchanged."
+    },
+    {
+      "type": "code",
+      "value": "String original = \"Hello\";\nString modified = original + \" World\";  // Creates a new String object\n\nSystem.out.println(original);  // Still prints \"Hello\"\nSystem.out.println(modified);  // Prints \"Hello World\"\n\n// The original String object is unchanged\n// A new String object \"Hello World\" was created"
+    },
+    {
+      "type": "text",
+      "value": "This immutability applies to all "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " methods that seem to modify the string. Methods like "
+    },
+    {
+      "type": "code",
+      "value": "toUpperCase()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "toLowerCase()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "trim()"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "replace()"
+    },
+    {
+      "type": "text",
+      "value": " all return new "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " objects rather than modifying the original."
+    },
+    {
+      "type": "code",
+      "value": "String text = \"  Java Programming  \";\nString trimmed = text.trim();           // Creates new String \"Java Programming\"\nString upper = text.toUpperCase();      // Creates new String \"  JAVA PROGRAMMING  \"\nString replaced = text.replace(\"Java\", \"Python\"); // Creates new String\n\n// Original string is unchanged\nSystem.out.println(text);               // \"  Java Programming  \"\nSystem.out.println(trimmed);            // \"Java Programming\"\nSystem.out.println(upper);              // \"  JAVA PROGRAMMING  \""
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "length()"
+    },
+    {
+      "type": "text",
+      "value": " method returns the number of characters in a string, including spaces, punctuation, and special characters. This method is essential for bounds checking, validation, and iteration."
+    },
+    {
+      "type": "code",
+      "value": "String message = \"Hello, World!\";\nint totalLength = message.length();     // 13 characters\n\nString empty = \"\";\nint emptyLength = empty.length();       // 0 characters\n\nString spaces = \"   \";\nint spaceLength = spaces.length();      // 3 characters (spaces count)\n\n// Using length for validation\nString password = \"mySecret123\";\nif (password.length() >= 8) {\n    System.out.println(\"Password meets minimum length requirement\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "substring()"
+    },
+    {
+      "type": "text",
+      "value": " method creates a new "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " containing a portion of the original string. It has two overloaded forms: one that takes only a starting index and another that takes both starting and ending indices."
+    },
+    {
+      "type": "code",
+      "value": "String fullText = \"Java Programming Language\";\n\n// substring(startIndex) - from start index to end of string\nString fromIndex = fullText.substring(5);        // \"Programming Language\"\n\n// substring(startIndex, endIndex) - from start up to (not including) end\nString portion = fullText.substring(5, 16);     // \"Programming\"\nString firstWord = fullText.substring(0, 4);    // \"Java\"\n\n// Extract last few characters\nString lastFour = fullText.substring(fullText.length() - 4);  // \"uage\""
+    },
+    {
+      "type": "text",
+      "value": "When using "
+    },
+    {
+      "type": "code",
+      "value": "substring()"
+    },
+    {
+      "type": "text",
+      "value": " with two parameters, the ending index is exclusive, meaning the character at that index is not included in the result. This follows the common programming convention of inclusive start and exclusive end."
+    },
+    {
+      "type": "code",
+      "value": "String alphabet = \"ABCDEFGH\";\n\n// Extract characters from index 2 up to (but not including) index 5\nString middle = alphabet.substring(2, 5);   // \"CDE\" (indices 2, 3, 4)\n\n// Common pattern: extract single character\nString singleChar = alphabet.substring(3, 4);  // \"D\"\n\n// This is equivalent to using charAt for single characters\nchar charAtIndex = alphabet.charAt(3);          // 'D'"
+    },
+    {
+      "type": "text",
+      "value": "Combining "
+    },
+    {
+      "type": "code",
+      "value": "length()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "substring()"
+    },
+    {
+      "type": "text",
+      "value": " enables dynamic text extraction based on string size rather than fixed positions. This makes your code more flexible and less prone to index errors."
+    },
+    {
+      "type": "code",
+      "value": "String fileName = \"document.pdf\";\n\n// Extract file extension using length()\nint dotIndex = fileName.indexOf('.');\nif (dotIndex != -1) {\n    String extension = fileName.substring(dotIndex);  // \".pdf\"\n    String nameOnly = fileName.substring(0, dotIndex);  // \"document\"\n}\n\n// Extract last 3 characters safely\nString text = \"Programming\";\nif (text.length() >= 3) {\n    String lastThree = text.substring(text.length() - 3);  // \"ing\"\n}"
+    },
+    {
+      "type": "text",
+      "value": "String immutability has performance implications when concatenating multiple strings in loops. Each concatenation creates a new object, which can be inefficient for large operations."
+    },
+    {
+      "type": "code",
+      "value": "// Inefficient approach (creates many temporary String objects)\nString result = \"\";\nfor (int i = 0; i < 1000; i++) {\n    result = result + \"a\";  // Creates new String object each iteration\n}\n\n// More efficient for simple cases\nString efficient = \"\";\nString[] words = {\"Hello\", \" \", \"World\", \"!\"};\nfor (String word : words) {\n    efficient = efficient + word;  // Fewer concatenations\n}\n// Result: \"Hello World!\""
+    },
+    {
+      "type": "text",
+      "value": "Understanding immutability helps explain why you must assign the result of string methods to a variable if you want to use the modified version. The original string remains unchanged."
+    },
+    {
+      "type": "code",
+      "value": "String messy = \"  hello world  \";\n\n// Wrong - this doesn't change messy\nmessy.trim().toUpperCase();  // Creates new objects but doesn't store them\nSystem.out.println(messy);   // Still prints \"  hello world  \"\n\n// Correct - store the result\nString clean = messy.trim().toUpperCase();\nSystem.out.println(clean);   // Prints \"HELLO WORLD\"\n\n// Or reassign to same variable\nmessy = messy.trim().toUpperCase();\nSystem.out.println(messy);   // Now prints \"HELLO WORLD\""
+    },
+    {
+      "type": "text",
+      "value": "Practical applications of "
+    },
+    {
+      "type": "code",
+      "value": "substring()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "length()"
+    },
+    {
+      "type": "text",
+      "value": " include parsing structured data, extracting information from formatted text, and implementing text processing algorithms."
+    },
+    {
+      "type": "code",
+      "value": "// Parse a formatted date string \"2024-03-15\"\nString dateString = \"2024-03-15\";\nif (dateString.length() == 10 && dateString.charAt(4) == '-' && dateString.charAt(7) == '-') {\n    String year = dateString.substring(0, 4);    // \"2024\"\n    String month = dateString.substring(5, 7);   // \"03\"\n    String day = dateString.substring(8, 10);    // \"15\"\n    \n    System.out.println(\"Year: \" + year + \", Month: \" + month + \", Day: \" + day);\n}\n\n// Extract username from email address\nString email = \"student@university.edu\";\nint atIndex = email.indexOf('@');\nif (atIndex > 0) {\n    String username = email.substring(0, atIndex);  // \"student\"\n    String domain = email.substring(atIndex + 1);   // \"university.edu\"\n}"
+    },
+    {
+      "type": "text",
+      "value": "Error prevention with "
+    },
+    {
+      "type": "code",
+      "value": "substring()"
+    },
+    {
+      "type": "text",
+      "value": " involves checking string length and index bounds before extraction. Invalid indices throw "
+    },
+    {
+      "type": "code",
+      "value": "StringIndexOutOfBoundsException"
+    },
+    {
+      "type": "text",
+      "value": " at runtime."
+    },
+    {
+      "type": "code",
+      "value": "String text = \"Short\";\n\n// Safe substring operations\nif (text.length() >= 10) {\n    String firstTen = text.substring(0, 10);  // Safe\n} else {\n    System.out.println(\"Text too short for extraction\");\n}\n\n// Bounds checking for dynamic extraction\nint startIndex = 2;\nint endIndex = 8;\nif (startIndex < text.length() && endIndex <= text.length() && startIndex < endIndex) {\n    String safe = text.substring(startIndex, endIndex);\n} else {\n    System.out.println(\"Invalid indices for substring\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "String pooling is a Java optimization related to immutability. String literals with the same content share the same memory location, but this doesn't affect the immutability principle."
+    },
+    {
+      "type": "code",
+      "value": "// These string literals reference the same object in memory\nString str1 = \"Hello\";\nString str2 = \"Hello\";\nString str3 = \"Hello\";\n\n// But any operation creates new objects\nString str4 = str1.toUpperCase();  // New object \"HELLO\"\nString str5 = str1 + \" World\";     // New object \"Hello World\"\n\n// Original strings remain unchanged and still reference same object\nSystem.out.println(str1);  // \"Hello\"\nSystem.out.println(str2);  // \"Hello\"\nSystem.out.println(str3);  // \"Hello\""
+    },
+    {
+      "type": "text",
+      "value": "Common patterns with immutable strings include chaining operations, creating processed versions of input data, and building formatted output while preserving original data."
+    },
+    {
+      "type": "code",
+      "value": "// Process user input while keeping original\nString userInput = \"  ALICE JOHNSON  \";\nString original = userInput;  // Keep reference to original\nString processed = userInput.trim()              // Remove whitespace\n                           .toLowerCase()        // Convert to lowercase\n                           .replace(\" \", \".\");   // Replace spaces\n\nSystem.out.println(\"Original: '\" + original + \"'\");    // \"  ALICE JOHNSON  \"\nSystem.out.println(\"Processed: '\" + processed + \"'\");  // \"alice.johnson\"\n\n// Create multiple versions from same source\nString source = \"Java Programming\";\nString upper = source.toUpperCase();     // \"JAVA PROGRAMMING\"\nString lower = source.toLowerCase();     // \"java programming\"\nString initials = source.charAt(0) + \"\" + source.charAt(5);  // \"JP\""
+    },
+    {
+      "type": "text",
+      "value": "Understanding string immutability and mastering methods like "
+    },
+    {
+      "type": "code",
+      "value": "substring()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "length()"
+    },
+    {
+      "type": "text",
+      "value": " enables efficient text processing, safer string manipulation, and better memory management in your Java programs."
+    },
+    {
+      "type": "text",
+      "value": "Mastering string immutability and advanced string methods prepares you for complex text processing tasks and helps you write more efficient, reliable code. In the next lesson, we'll explore calling methods and method signatures in greater detail."
+    }
+  ]
+}

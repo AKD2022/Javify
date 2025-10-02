@@ -1,0 +1,394 @@
+{
+  "lessonId": 20,
+  "title": "Recap and Mini Quiz on Unit 1 Concepts",
+  "content": [
+    {
+      "type": "text",
+      "value": "Congratulations on completing Unit 1 of AP Computer Science A! This lesson reviews all the fundamental concepts you've learned, from basic Java syntax to method creation. Understanding these foundational topics is crucial for success in the remaining units of the course."
+    },
+    {
+      "type": "text",
+      "value": "Java is a high-level, object-oriented programming language that runs on the Java Virtual Machine ("
+    },
+    {
+      "type": "code",
+      "value": "JVM"
+    },
+    {
+      "type": "text",
+      "value": "). Every Java program begins execution from the "
+    },
+    {
+      "type": "code",
+      "value": "main()"
+    },
+    {
+      "type": "text",
+      "value": " method, which serves as the entry point. Java is strongly typed, case-sensitive, and follows specific naming conventions that make code readable and professional."
+    },
+    {
+      "type": "code",
+      "value": "// Basic Java program structure\npublic class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, AP Computer Science A!\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Java's primitive data types store basic values directly in memory. The four main types covered in Unit 1 are "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " for whole numbers, "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " for decimal numbers, "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " for true/false values, and "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " for single characters. Each type has specific uses and memory requirements."
+    },
+    {
+      "type": "code",
+      "value": "// Primitive data types examples\nint studentCount = 30;          // Whole numbers\ndouble averageGPA = 3.75;       // Decimal numbers\nboolean isPassing = true;       // True or false values\nchar letterGrade = 'A';         // Single characters"
+    },
+    {
+      "type": "text",
+      "value": "Variables are containers that store data values, and they must be declared with a specific type before use. Java uses camelCase for variable names, PascalCase for class names, and ALL_UPPERCASE for constants declared with the "
+    },
+    {
+      "type": "code",
+      "value": "final"
+    },
+    {
+      "type": "text",
+      "value": " keyword."
+    },
+    {
+      "type": "code",
+      "value": "// Variable naming conventions\nint studentAge = 17;                    // camelCase for variables\nString firstName = \"Alice\";             // camelCase for variables\nfinal int MAX_SCORE = 100;             // ALL_UPPERCASE for constants\n// Class names use PascalCase: StudentRecord"
+    },
+    {
+      "type": "text",
+      "value": "Type casting and conversion allow you to transform values between different data types. Widening conversions happen automatically ("
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": "), while narrowing conversions require explicit casting and may lose precision."
+    },
+    {
+      "type": "code",
+      "value": "// Type conversion examples\nint wholeNumber = 42;\ndouble decimal = wholeNumber;       // Automatic widening\ndouble precise = 7.8;\nint truncated = (int) precise;      // Explicit casting: 7 (loses decimal)"
+    },
+    {
+      "type": "text",
+      "value": "Arithmetic operators perform mathematical calculations: addition ("
+    },
+    {
+      "type": "code",
+      "value": "+"
+    },
+    {
+      "type": "text",
+      "value": "), subtraction ("
+    },
+    {
+      "type": "code",
+      "value": "-"
+    },
+    {
+      "type": "text",
+      "value": "), multiplication ("
+    },
+    {
+      "type": "code",
+      "value": "*"
+    },
+    {
+      "type": "text",
+      "value": "), division ("
+    },
+    {
+      "type": "code",
+      "value": "/"
+    },
+    {
+      "type": "text",
+      "value": "), and modulus ("
+    },
+    {
+      "type": "code",
+      "value": "%"
+    },
+    {
+      "type": "text",
+      "value": "). Understanding operator precedence is crucial for complex expressions."
+    },
+    {
+      "type": "code",
+      "value": "// Arithmetic operations and precedence\nint result1 = 10 + 5 * 2;           // 20 (multiplication first)\nint result2 = (10 + 5) * 2;         // 30 (parentheses override precedence)\nint remainder = 17 % 5;             // 2 (modulus gives remainder)\nint intDivision = 7 / 2;            // 3 (integer division truncates)\ndouble floatDivision = 7.0 / 2;     // 3.5 (floating-point division)"
+    },
+    {
+      "type": "text",
+      "value": "String concatenation combines text and variables using the "
+    },
+    {
+      "type": "code",
+      "value": "+"
+    },
+    {
+      "type": "text",
+      "value": " operator. When at least one operand is a "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": ", Java performs concatenation instead of arithmetic. Understanding the order of operations is important when mixing arithmetic and concatenation."
+    },
+    {
+      "type": "code",
+      "value": "// String concatenation examples\nString name = \"Alice\";\nint score = 95;\nString message = \"Student: \" + name + \", Score: \" + score;  // Concatenation\nString calculation = \"Result: \" + (10 + 5);                  // Parentheses force addition\nString leftToRight = \"Total: \" + 4 + 5;                      // \"Total: 45\" (left-to-right)"
+    },
+    {
+      "type": "text",
+      "value": "Input and output operations allow programs to interact with users. "
+    },
+    {
+      "type": "code",
+      "value": "System.out.println()"
+    },
+    {
+      "type": "text",
+      "value": " displays output with a new line, while "
+    },
+    {
+      "type": "code",
+      "value": "System.out.print()"
+    },
+    {
+      "type": "text",
+      "value": " displays output without a new line. The "
+    },
+    {
+      "type": "code",
+      "value": "Scanner"
+    },
+    {
+      "type": "text",
+      "value": " class enables reading user input from the keyboard."
+    },
+    {
+      "type": "code",
+      "value": "// Input and output examples\nSystem.out.println(\"Welcome to Java!\");     // Output with new line\nSystem.out.print(\"Enter your name: \");       // Output without new line\n\n// Scanner for input (requires import java.util.Scanner;)\nScanner input = new Scanner(System.in);\nString name = input.nextLine();              // Read entire line\nint age = input.nextInt();                   // Read integer"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class provides essential mathematical functions and constants. All "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " methods are static, meaning you call them using the class name without creating objects."
+    },
+    {
+      "type": "code",
+      "value": "// Math class examples\ndouble squareRoot = Math.sqrt(25);          // 5.0\ndouble power = Math.pow(2, 3);              // 8.0 (2 cubed)\nint absolute = Math.abs(-15);               // 15\nint maximum = Math.max(10, 7);              // 10\ndouble pi = Math.PI;                        // 3.141592653589793\ndouble randomValue = Math.random();          // 0.0 to 1.0 (exclusive)"
+    },
+    {
+      "type": "text",
+      "value": "Methods are reusable blocks of code that perform specific tasks. They help organize code, eliminate repetition, and create modular programs. Methods can accept parameters (input data) and return values (output data) to communicate with other parts of the program."
+    },
+    {
+      "type": "code",
+      "value": "// Method examples\npublic static void displayWelcome() {           // Void method (no return)\n    System.out.println(\"Welcome to our program!\");\n}\n\npublic static int addNumbers(int a, int b) {    // Method with return value\n    return a + b;\n}\n\npublic static double calculateAverage(int score1, int score2, int score3) {\n    return (score1 + score2 + score3) / 3.0;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Comments improve code readability and documentation. Single-line comments use "
+    },
+    {
+      "type": "code",
+      "value": "//"
+    },
+    {
+      "type": "text",
+      "value": ", multi-line comments use "
+    },
+    {
+      "type": "code",
+      "value": "/* */"
+    },
+    {
+      "type": "text",
+      "value": ", and Javadoc comments use "
+    },
+    {
+      "type": "code",
+      "value": "/** */"
+    },
+    {
+      "type": "text",
+      "value": ". Good comments explain why code does something, not just what it does."
+    },
+    {
+      "type": "code",
+      "value": "// Single-line comment explaining purpose\nint maxAttempts = 3;  // Limit login attempts for security\n\n/* Multi-line comment for longer explanations\n   This algorithm calculates compound interest\n   using the standard financial formula */\ndouble amount = principal * Math.pow(1 + rate, years);\n\n/**\n * Javadoc comment for method documentation\n * @param radius the radius of the circle\n * @return the area of the circle\n */\npublic static double calculateArea(double radius) {\n    return Math.PI * radius * radius;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Proper code style includes consistent indentation (4 spaces per level), meaningful variable names, appropriate spacing around operators, and following Java naming conventions. Clean, well-formatted code is easier to read, debug, and maintain."
+    },
+    {
+      "type": "text",
+      "value": "Syntax errors prevent compilation and must be fixed before programs can run. Common errors include missing semicolons, mismatched braces, incorrect variable names, and type mismatches. Reading compiler error messages carefully helps identify and fix these issues quickly."
+    },
+    {
+      "type": "text",
+      "value": "Reserved keywords are special words with predefined meanings in Java that cannot be used as variable names. Examples include data type keywords ("
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": "), access modifiers ("
+    },
+    {
+      "type": "code",
+      "value": "public"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "text",
+      "value": "), and control flow keywords ("
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "return"
+    },
+    {
+      "type": "text",
+      "value": ")."
+    },
+    {
+      "type": "text",
+      "value": "Key programming concepts from Unit 1 include understanding that Java is platform-independent through the "
+    },
+    {
+      "type": "code",
+      "value": "JVM"
+    },
+    {
+      "type": "text",
+      "value": ", recognizing that "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " is a reference type (not primitive), knowing that integer division truncates decimal portions, and understanding that constants prevent accidental value changes."
+    },
+    {
+      "type": "text",
+      "value": "Problem-solving strategies include breaking complex tasks into smaller methods, using meaningful variable names to make code self-documenting, testing code incrementally to catch errors early, and using constants to avoid magic numbers in your programs."
+    },
+    {
+      "type": "text",
+      "value": "Looking ahead to Unit 2, you'll learn about using objects and methods from existing classes, working with the "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " class in depth, understanding method signatures and overloading, and exploring the Java Standard Library for additional functionality."
+    },
+    {
+      "type": "text",
+      "value": "Unit 1 has provided you with the essential foundation for Java programming. You now understand basic syntax, data types, operators, input/output, mathematical operations, and method creation. These skills prepare you for more advanced topics like object-oriented programming, control structures, and complex data manipulation."
+    },
+    {
+      "type": "text",
+      "value": "Practice applying these concepts through coding exercises, review the topics you find challenging, and prepare for Unit 2 where you'll expand your knowledge to work with objects, advanced string manipulation, and more sophisticated programming techniques."
+    }
+  ]
+}

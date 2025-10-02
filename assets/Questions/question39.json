@@ -1,0 +1,214 @@
+{
+  "lessonId": 39,
+  "title": "Combining Boolean Expressions",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "How do you combine boolean expressions?",
+      "options": [
+        { "type": "text", "value": "Use relational operators for comparisons, then connect with logical operators" },
+        { "type": "text", "value": "Only use relational operators" },
+        { "type": "text", "value": "Only use logical operators" },
+        { "type": "text", "value": "Use arithmetic operators" }
+      ],
+      "answer": 0,
+      "explanation": "Combining boolean expressions involves using relational operators to create simple comparisons, then connecting those comparisons with logical operators."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "When checking if a value falls within a range, which logical operator do you use?",
+      "options": [
+        { "type": "text", "value": "OR (||)" },
+        { "type": "text", "value": "AND (&&)" },
+        { "type": "text", "value": "NOT (!)" },
+        { "type": "text", "value": "XOR" }
+      ],
+      "answer": 1,
+      "explanation": "When checking if a value falls within a range, you use the AND operator (&&) because both the lower bound and upper bound conditions must be true."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "When checking if a value is outside a range, which logical operator do you use?",
+      "options": [
+        { "type": "text", "value": "AND (&&)" },
+        { "type": "text", "value": "NOT (!)" },
+        { "type": "text", "value": "OR (||)" },
+        { "type": "text", "value": "XOR" }
+      ],
+      "answer": 2,
+      "explanation": "When checking if a value is outside a range, you use the OR operator (||) because either the value is below the minimum or above the maximum."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "When checking multiple discrete values, which logical operator is typically used?",
+      "options": [
+        { "type": "text", "value": "NOT (!)" },
+        { "type": "text", "value": "AND (&&)" },
+        { "type": "text", "value": "XOR" },
+        { "type": "text", "value": "OR (||)" }
+      ],
+      "answer": 3,
+      "explanation": "When checking multiple discrete values, the OR operator (||) is typically used because any one of several specific conditions is acceptable."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Why are parentheses important in complex boolean expressions?",
+      "options": [
+        { "type": "text", "value": "To group conditions and ensure correct order of evaluation" },
+        { "type": "text", "value": "They aren't important" },
+        { "type": "text", "value": "To make code slower" },
+        { "type": "text", "value": "Only for style" }
+      ],
+      "answer": 0,
+      "explanation": "Parentheses are crucial for grouping conditions and ensuring the correct order of evaluation, making the logic clear and matching your intent."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What does the NOT operator do in complex expressions?",
+      "options": [
+        { "type": "text", "value": "Combines conditions" },
+        { "type": "text", "value": "Inverts entire conditions" },
+        { "type": "text", "value": "Compares values" },
+        { "type": "text", "value": "Creates loops" }
+      ],
+      "answer": 1,
+      "explanation": "The NOT operator can be combined with complex expressions to invert entire conditions, which is useful for expressing negative requirements."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "In expressions with arithmetic, relational, and logical operators, what is evaluated first?",
+      "options": [
+        { "type": "text", "value": "Logical operators" },
+        { "type": "text", "value": "Relational operators" },
+        { "type": "text", "value": "Arithmetic operations" },
+        { "type": "text", "value": "They're all equal" }
+      ],
+      "answer": 2,
+      "explanation": "Arithmetic operations are evaluated first, then comparisons (relational operators), then logical operators."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What does DeMorgan's Law state about !(A && B)?",
+      "options": [
+        { "type": "text", "value": "It equals (A || B)" },
+        { "type": "text", "value": "It equals (!A && !B)" },
+        { "type": "text", "value": "It equals (A && B)" },
+        { "type": "text", "value": "It equals (!A || !B)" }
+      ],
+      "answer": 3,
+      "explanation": "DeMorgan's Law states that !(A && B) equals (!A || !B). The NOT distributes and the AND becomes OR."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What does DeMorgan's Law state about !(A || B)?",
+      "options": [
+        { "type": "text", "value": "It equals (!A && !B)" },
+        { "type": "text", "value": "It equals (!A || !B)" },
+        { "type": "text", "value": "It equals (A && B)" },
+        { "type": "text", "value": "It equals (A || B)" }
+      ],
+      "answer": 0,
+      "explanation": "DeMorgan's Law states that !(A || B) equals (!A && !B). The NOT distributes and the OR becomes AND."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What is a best practice for handling complex boolean expressions?",
+      "options": [
+        { "type": "text", "value": "Make them as long as possible" },
+        { "type": "text", "value": "Break them into intermediate boolean variables for readability" },
+        { "type": "text", "value": "Never use parentheses" },
+        { "type": "text", "value": "Always avoid using variables" }
+      ],
+      "answer": 1,
+      "explanation": "Breaking complex expressions into intermediate boolean variables improves readability and makes debugging easier."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What are combined boolean expressions essential for?",
+      "options": [
+        { "type": "text", "value": "Creating classes" },
+        { "type": "text", "value": "Declaring variables" },
+        { "type": "text", "value": "Real-world validation logic like form validation and access control" },
+        { "type": "text", "value": "Printing output" }
+      ],
+      "answer": 2,
+      "explanation": "Combined boolean expressions are essential for real-world validation logic, such as form validation, access control, and business rule enforcement."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What should you do to ensure your boolean logic is correct?",
+      "options": [
+        { "type": "text", "value": "Never test it" },
+        { "type": "text", "value": "Only test typical cases" },
+        { "type": "text", "value": "Avoid edge cases" },
+        { "type": "text", "value": "Test boundary values, typical cases, and edge cases" }
+      ],
+      "answer": 3,
+      "explanation": "Testing combined boolean expressions requires checking boundary values, typical cases, and edge cases to ensure your logic is correct."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What is a common mistake when combining boolean expressions?",
+      "options": [
+        { "type": "text", "value": "Forgetting parentheses and creating unclear expressions" },
+        { "type": "text", "value": "Using too many variables" },
+        { "type": "text", "value": "Testing too much" },
+        { "type": "text", "value": "Making expressions too short" }
+      ],
+      "answer": 0,
+      "explanation": "A common mistake is forgetting parentheses, which makes expressions unclear and can lead to incorrect evaluation order."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What should you avoid when writing boolean expressions?",
+      "options": [
+        { "type": "text", "value": "Using parentheses" },
+        { "type": "text", "value": "Creating overly complex conditions and redundant logic" },
+        { "type": "text", "value": "Testing edge cases" },
+        { "type": "text", "value": "Using variables" }
+      ],
+      "answer": 1,
+      "explanation": "You should avoid creating overly complex conditions and redundant logic. Keep expressions as simple as possible while maintaining correctness."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "How can you check if a temperature is comfortable (between 65 and 80)?",
+      "options": [
+        { "type": "text", "value": "(temp > 65) || (temp < 80)" },
+        { "type": "text", "value": "(temp == 65) && (temp == 80)" },
+        { "type": "text", "value": "!(temp < 65 || temp > 80)" },
+        { "type": "text", "value": "(temp >= 65) && (temp <= 80)" }
+      ],
+      "answer": 3,
+      "explanation": "To check if temperature is between 65 and 80 (inclusive), use (temp >= 65) && (temp <= 80) - both conditions must be true."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "Where will you immediately apply combined boolean expressions?",
+      "options": [
+        { "type": "text", "value": "In conditional statements to control program flow" },
+        { "type": "text", "value": "Only in loops" },
+        { "type": "text", "value": "Only in methods" },
+        { "type": "text", "value": "Only in classes" }
+      ],
+      "answer": 0,
+      "explanation": "Combined boolean expressions will be immediately applied in conditional statements (like if statements) to control program flow based on complex conditions."
+    }
+  ]
+}

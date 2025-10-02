@@ -1,0 +1,214 @@
+{
+  "lessonId": 17,
+  "title": "Using the Math Class (Math.sqrt, Math.pow)",
+  "questions": [
+    {
+      "id": 1,
+      "type": "code",
+      "question": "What is the result of: Math.sqrt(16)",
+      "options": [
+        { "type": "text", "value": "4.0" },
+        { "type": "text", "value": "8.0" },
+        { "type": "text", "value": "256.0" },
+        { "type": "text", "value": "2.0" }
+      ],
+      "answer": 0,
+      "explanation": "Math.sqrt(16) calculates the square root of 16, which is 4.0."
+    },
+    {
+      "id": 2,
+      "type": "code",
+      "question": "What is the result of: Math.pow(2, 3)",
+      "options": [
+        { "type": "text", "value": "6.0" },
+        { "type": "text", "value": "8.0" },
+        { "type": "text", "value": "9.0" },
+        { "type": "text", "value": "5.0" }
+      ],
+      "answer": 1,
+      "explanation": "Math.pow(2, 3) calculates 2 raised to the power of 3, which is 2³ = 8.0."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What is the result of: Math.abs(-15)",
+      "options": [
+        { "type": "text", "value": "-15" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "15" },
+        { "type": "text", "value": "30" }
+      ],
+      "answer": 2,
+      "explanation": "Math.abs(-15) returns the absolute value of -15, which removes the negative sign to give 15."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "What is the result of: Math.max(25, 17)",
+      "options": [
+        { "type": "text", "value": "17" },
+        { "type": "text", "value": "8" },
+        { "type": "text", "value": "42" },
+        { "type": "text", "value": "25" }
+      ],
+      "answer": 3,
+      "explanation": "Math.max(25, 17) returns the larger of the two values, which is 25."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What constant represents the value of pi?",
+      "options": [
+        { "type": "text", "value": "Math.PI" },
+        { "type": "text", "value": "Math.pi" },
+        { "type": "text", "value": "Math.PIE" },
+        { "type": "text", "value": "PI" }
+      ],
+      "answer": 0,
+      "explanation": "Math.PI is the constant that represents the mathematical value of pi (approximately 3.14159)."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What is the result of: Math.min(8, 12)",
+      "options": [
+        { "type": "text", "value": "20" },
+        { "type": "text", "value": "8" },
+        { "type": "text", "value": "12" },
+        { "type": "text", "value": "4" }
+      ],
+      "answer": 1,
+      "explanation": "Math.min(8, 12) returns the smaller of the two values, which is 8."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "What does Math.round(7.6) return?",
+      "options": [
+        { "type": "text", "value": "7" },
+        { "type": "text", "value": "7.0" },
+        { "type": "text", "value": "8" },
+        { "type": "text", "value": "8.0" }
+      ],
+      "answer": 2,
+      "explanation": "Math.round(7.6) rounds to the nearest integer, so 7.6 rounds up to 8 (returns long, but converts to int)."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What range does Math.random() return values in?",
+      "options": [
+        { "type": "text", "value": "0 to 10" },
+        { "type": "text", "value": "1 to 100" },
+        { "type": "text", "value": "-1 to 1" },
+        { "type": "text", "value": "0.0 to 1.0 (exclusive of 1.0)" }
+      ],
+      "answer": 3,
+      "explanation": "Math.random() returns a double value between 0.0 (inclusive) and 1.0 (exclusive)."
+    },
+    {
+      "id": 9,
+      "type": "code",
+      "question": "What is the result of: Math.pow(5, 2)",
+      "options": [
+        { "type": "text", "value": "25.0" },
+        { "type": "text", "value": "10.0" },
+        { "type": "text", "value": "7.0" },
+        { "type": "text", "value": "32.0" }
+      ],
+      "answer": 0,
+      "explanation": "Math.pow(5, 2) calculates 5 squared (5²), which equals 25.0."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What does Math.ceil(7.1) return?",
+      "options": [
+        { "type": "text", "value": "7.0" },
+        { "type": "text", "value": "8.0" },
+        { "type": "text", "value": "7" },
+        { "type": "text", "value": "8" }
+      ],
+      "answer": 1,
+      "explanation": "Math.ceil(7.1) rounds UP to the nearest integer, so 7.1 becomes 8.0."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "What does Math.floor(7.9) return?",
+      "options": [
+        { "type": "text", "value": "8.0" },
+        { "type": "text", "value": "7.0" },
+        { "type": "text", "value": "8" },
+        { "type": "text", "value": "7" }
+      ],
+      "answer": 2,
+      "explanation": "Math.floor(7.9) rounds DOWN to the nearest integer, so 7.9 becomes 7.0."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "Are Math class methods static or instance methods?",
+      "options": [
+        { "type": "text", "value": "Instance methods - need to create Math object" },
+        { "type": "text", "value": "Both static and instance methods" },
+        { "type": "text", "value": "Neither static nor instance" },
+        { "type": "text", "value": "Static methods - called using Math.methodName()" }
+      ],
+      "answer": 3,
+      "explanation": "All Math class methods are static, so you call them using the class name: Math.sqrt(), Math.pow(), etc."
+    },
+    {
+      "id": 13,
+      "type": "code",
+      "question": "What is the result of: Math.sqrt(25)",
+      "options": [
+        { "type": "text", "value": "5.0" },
+        { "type": "text", "value": "625.0" },
+        { "type": "text", "value": "12.5" },
+        { "type": "text", "value": "50.0" }
+      ],
+      "answer": 0,
+      "explanation": "Math.sqrt(25) calculates the square root of 25, which is 5.0."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What happens when you call Math.sqrt() with a negative number?",
+      "options": [
+        { "type": "text", "value": "Returns the negative square root" },
+        { "type": "text", "value": "Returns NaN (Not a Number)" },
+        { "type": "text", "value": "Throws an exception" },
+        { "type": "text", "value": "Returns 0" }
+      ],
+      "answer": 1,
+      "explanation": "Math.sqrt() of a negative number returns NaN (Not a Number) since square roots of negative numbers are not real numbers in standard math."
+    },
+    {
+      "id": 15,
+      "type": "code",
+      "question": "Which is more efficient for squaring a number?",
+      "options": [
+        { "type": "text", "value": "Math.pow(x, 2)" },
+        { "type": "text", "value": "Math.sqrt(x)" },
+        { "type": "text", "value": "x * x" },
+        { "type": "text", "value": "Math.abs(x)" }
+      ],
+      "answer": 2,
+      "explanation": "For simple operations like squaring, x * x is more efficient than Math.pow(x, 2) because it avoids the overhead of the power function."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "What is the result of: Math.pow(8, 1.0/3.0)",
+      "options": [
+        { "type": "text", "value": "8.0" },
+        { "type": "text", "value": "24.0" },
+        { "type": "text", "value": "2.67" },
+        { "type": "text", "value": "2.0" }
+      ],
+      "answer": 3,
+      "explanation": "Math.pow(8, 1.0/3.0) calculates the cube root of 8 (8^(1/3)), which equals 2.0."
+    }
+  ]
+}

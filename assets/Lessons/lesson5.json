@@ -1,0 +1,342 @@
+{
+  "lessonId": 5,
+  "title": "double Data Type and Floating-Point Operations",
+  "content": [
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " data type stores decimal numbers (floating-point values) with high precision. While "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " handles whole numbers, "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " is essential for calculations involving measurements, percentages, scientific data, and any scenario requiring fractional values."
+    },
+    {
+      "type": "text",
+      "value": "A "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " in Java is a 64-bit floating-point number that can represent values from approximately 4.9e-324 to 1.8e+308. The name \"double\" comes from \"double precision,\" indicating it provides twice the precision of the "
+    },
+    {
+      "type": "code",
+      "value": "float"
+    },
+    {
+      "type": "text",
+      "value": " data type."
+    },
+    {
+      "type": "code",
+      "value": "double price = 29.99;\ndouble temperature = -15.5;\ndouble pi = 3.14159;\ndouble average = 87.6;"
+    },
+    {
+      "type": "text",
+      "value": "Floating-point literals can be written with or without decimal points, but including the decimal point makes your intent clear. You can also use scientific notation for very large or very small numbers."
+    },
+    {
+      "type": "code",
+      "value": "double regularNumber = 123.45;\ndouble wholeAsDouble = 100.0;    // Explicitly double\ndouble scientific = 1.23e5;      // 123000.0\ndouble small = 4.56e-3;          // 0.00456"
+    },
+    {
+      "type": "text",
+      "value": "Arithmetic operations with "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " values work similarly to integer operations, but the results maintain decimal precision. Addition ("
+    },
+    {
+      "type": "code",
+      "value": "+"
+    },
+    {
+      "type": "text",
+      "value": "), subtraction ("
+    },
+    {
+      "type": "code",
+      "value": "-"
+    },
+    {
+      "type": "text",
+      "value": "), multiplication ("
+    },
+    {
+      "type": "code",
+      "value": "*"
+    },
+    {
+      "type": "text",
+      "value": "), division ("
+    },
+    {
+      "type": "code",
+      "value": "/"
+    },
+    {
+      "type": "text",
+      "value": "), and modulus ("
+    },
+    {
+      "type": "code",
+      "value": "%"
+    },
+    {
+      "type": "text",
+      "value": ") all work with floating-point numbers."
+    },
+    {
+      "type": "code",
+      "value": "double a = 10.5;\ndouble b = 3.2;\n\ndouble sum = a + b;        // 13.7\ndouble difference = a - b; // 7.3\ndouble product = a * b;    // 33.6\ndouble quotient = a / b;   // 3.28125"
+    },
+    {
+      "type": "text",
+      "value": "Unlike integer division, floating-point division preserves the decimal portion of the result. When at least one operand is a "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ", the entire expression becomes a floating-point calculation."
+    },
+    {
+      "type": "code",
+      "value": "double result1 = 7.0 / 2.0;   // 3.5\ndouble result2 = 7 / 2.0;     // 3.5 (mixed operation)\ndouble result3 = 7.0 / 2;     // 3.5 (mixed operation)\nint result4 = 7 / 2;          // 3 (both integers)"
+    },
+    {
+      "type": "text",
+      "value": "The modulus operator ("
+    },
+    {
+      "type": "code",
+      "value": "%"
+    },
+    {
+      "type": "text",
+      "value": ") works with floating-point numbers, returning the floating-point remainder after division. This is less commonly used than with integers but can be useful in certain mathematical calculations."
+    },
+    {
+      "type": "code",
+      "value": "double remainder1 = 17.5 % 5.0;  // 2.5\ndouble remainder2 = 10.7 % 3.0;  // 1.7\ndouble remainder3 = 8.0 % 2.5;   // 0.5"
+    },
+    {
+      "type": "text",
+      "value": "Floating-point arithmetic can introduce small precision errors due to how computers represent decimal numbers in binary. These tiny inaccuracies are usually insignificant but can accumulate in complex calculations."
+    },
+    {
+      "type": "code",
+      "value": "double value1 = 0.1 + 0.2;        // Might be 0.30000000000000004\ndouble value2 = 1.0 - 0.9;        // Might be 0.09999999999999998\n\n// For exact calculations, be aware of precision limits"
+    },
+    {
+      "type": "text",
+      "value": "When mixing "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " in calculations, Java automatically promotes the "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " for the operation. This ensures no precision is lost, but you should be aware of the type conversion."
+    },
+    {
+      "type": "code",
+      "value": "int count = 25;\ndouble average = 87.5;\ndouble total = count * average;   // 2187.5 (int promoted to double)\n\nint students = 30;\ndouble percentage = students / 100.0; // 0.3 (students promoted)"
+    },
+    {
+      "type": "text",
+      "value": "Compound assignment operators work with "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " values just like with integers: "
+    },
+    {
+      "type": "code",
+      "value": "+="
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "-="
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "*="
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "/="
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "%="
+    },
+    {
+      "type": "text",
+      "value": ". These operators perform the arithmetic operation and assign the result back to the variable."
+    },
+    {
+      "type": "code",
+      "value": "double balance = 100.50;\nbalance += 25.25;    // balance = 125.75\nbalance -= 10.0;     // balance = 115.75\nbalance *= 1.05;     // balance = 121.5375 (5% increase)\nbalance /= 2.0;      // balance = 60.76875"
+    },
+    {
+      "type": "text",
+      "value": "The increment ("
+    },
+    {
+      "type": "code",
+      "value": "++"
+    },
+    {
+      "type": "text",
+      "value": ") and decrement ("
+    },
+    {
+      "type": "code",
+      "value": "--"
+    },
+    {
+      "type": "text",
+      "value": ") operators also work with "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " variables, adding or subtracting exactly 1.0 to the current value."
+    },
+    {
+      "type": "code",
+      "value": "double counter = 5.7;\ncounter++;      // counter = 6.7\n++counter;      // counter = 7.7\ncounter--;      // counter = 6.7\n--counter;      // counter = 5.7"
+    },
+    {
+      "type": "text",
+      "value": "Special "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " values include positive infinity, negative infinity, and NaN (Not a Number). These values result from operations like dividing by zero or taking the square root of negative numbers."
+    },
+    {
+      "type": "code",
+      "value": "double positiveInfinity = 1.0 / 0.0;\ndouble negativeInfinity = -1.0 / 0.0;\ndouble notANumber = 0.0 / 0.0;\n\n// These special values have specific behaviors in calculations"
+    },
+    {
+      "type": "text",
+      "value": "Common uses of "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " include calculating averages, handling money (though with precision considerations), measuring distances, storing scientific data, and performing mathematical formulas that require decimal precision."
+    },
+    {
+      "type": "code",
+      "value": "// Common double usage patterns\ndouble average = totalPoints / numberOfTests;\ndouble distance = Math.sqrt(x*x + y*y);\ndouble discount = originalPrice * 0.15;\ndouble celsius = (fahrenheit - 32.0) * 5.0 / 9.0;"
+    },
+    {
+      "type": "text",
+      "value": "Understanding "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " arithmetic is essential for scientific calculations, statistical analysis, and any application requiring decimal precision. In the next lesson, we'll explore the "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " data type and logical operations for controlling program flow."
+    }
+  ]
+}

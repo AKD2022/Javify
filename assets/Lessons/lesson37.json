@@ -1,0 +1,414 @@
+{
+  "lessonId": 37,
+  "title": "Relational Operators (==, !=, >, <, >=, <=)",
+  "content": [
+    {
+      "type": "text",
+      "value": "Relational operators are used to compare two values and produce a "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " result. These operators form the foundation of conditional logic in programming, allowing you to test relationships between values and make decisions based on those comparisons."
+    },
+    {
+      "type": "text",
+      "value": "Java provides six relational operators for comparing values. Each operator compares two operands and returns either "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " depending on whether the relationship holds."
+    },
+    {
+      "type": "code",
+      "value": "// The six relational operators:\n// ==  equal to\n// !=  not equal to\n// >   greater than\n// <   less than\n// >=  greater than or equal to\n// <=  less than or equal to"
+    },
+    {
+      "type": "text",
+      "value": "The equality operator "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " checks if two values are equal. It returns "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " if the values are the same and "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " if they're different. Note that this is two equal signs, not one."
+    },
+    {
+      "type": "code",
+      "value": "int x = 10;\nint y = 10;\nint z = 20;\n\nboolean result1 = (x == y);  // true (10 equals 10)\nboolean result2 = (x == z);  // false (10 does not equal 20)\nboolean result3 = (5 == 5);  // true (5 equals 5)\n\nSystem.out.println(x == y);  // true\nSystem.out.println(x == z);  // false"
+    },
+    {
+      "type": "text",
+      "value": "It's crucial to distinguish between the assignment operator "
+    },
+    {
+      "type": "code",
+      "value": "="
+    },
+    {
+      "type": "text",
+      "value": " (one equal sign) and the equality operator "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " (two equal signs). The assignment operator assigns a value to a variable, while the equality operator compares two values."
+    },
+    {
+      "type": "code",
+      "value": "int age = 16;        // Assignment: sets age to 16\nboolean check = (age == 16);  // Comparison: checks if age equals 16\n\n// WRONG - assignment instead of comparison\n// if (age = 16) { }  // This assigns 16 to age!\n\n// CORRECT - comparison\nif (age == 16) {\n    System.out.println(\"Age is 16\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The inequality operator "
+    },
+    {
+      "type": "code",
+      "value": "!="
+    },
+    {
+      "type": "text",
+      "value": " checks if two values are not equal. It returns "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " if the values are different and "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " if they're the same."
+    },
+    {
+      "type": "code",
+      "value": "int score1 = 85;\nint score2 = 90;\nint score3 = 85;\n\nboolean different1 = (score1 != score2);  // true (85 is not equal to 90)\nboolean different2 = (score1 != score3);  // false (85 equals 85)\nboolean different3 = (10 != 5);           // true (10 is not equal to 5)\n\nSystem.out.println(score1 != score2);     // true\nSystem.out.println(score1 != score3);     // false"
+    },
+    {
+      "type": "text",
+      "value": "The greater than operator "
+    },
+    {
+      "type": "code",
+      "value": ">"
+    },
+    {
+      "type": "text",
+      "value": " checks if the left value is strictly greater than the right value. It returns "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " only if the left side is larger."
+    },
+    {
+      "type": "code",
+      "value": "int a = 15;\nint b = 10;\nint c = 15;\n\nboolean greater1 = (a > b);   // true (15 is greater than 10)\nboolean greater2 = (a > c);   // false (15 is not greater than 15)\nboolean greater3 = (b > a);   // false (10 is not greater than 15)\nboolean greater4 = (20 > 5);  // true (20 is greater than 5)\n\nSystem.out.println(a > b);    // true\nSystem.out.println(a > c);    // false"
+    },
+    {
+      "type": "text",
+      "value": "The less than operator "
+    },
+    {
+      "type": "code",
+      "value": "<"
+    },
+    {
+      "type": "text",
+      "value": " checks if the left value is strictly less than the right value. It returns "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " only if the left side is smaller."
+    },
+    {
+      "type": "code",
+      "value": "int x = 8;\nint y = 12;\nint z = 8;\n\nboolean less1 = (x < y);    // true (8 is less than 12)\nboolean less2 = (x < z);    // false (8 is not less than 8)\nboolean less3 = (y < x);    // false (12 is not less than 8)\nboolean less4 = (3 < 10);   // true (3 is less than 10)\n\nSystem.out.println(x < y);  // true\nSystem.out.println(x < z);  // false"
+    },
+    {
+      "type": "text",
+      "value": "The greater than or equal to operator "
+    },
+    {
+      "type": "code",
+      "value": ">="
+    },
+    {
+      "type": "text",
+      "value": " checks if the left value is greater than or equal to the right value. It returns "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " if the left side is larger or if both sides are equal."
+    },
+    {
+      "type": "code",
+      "value": "int age = 18;\nint minAge = 18;\nint youngerAge = 16;\n\nboolean canVote1 = (age >= minAge);        // true (18 >= 18)\nboolean canVote2 = (youngerAge >= minAge); // false (16 >= 18)\nboolean check1 = (20 >= 15);               // true (20 >= 15)\nboolean check2 = (10 >= 10);               // true (10 >= 10)\n\nSystem.out.println(age >= minAge);         // true\nSystem.out.println(youngerAge >= minAge);  // false"
+    },
+    {
+      "type": "text",
+      "value": "The less than or equal to operator "
+    },
+    {
+      "type": "code",
+      "value": "<="
+    },
+    {
+      "type": "text",
+      "value": " checks if the left value is less than or equal to the right value. It returns "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " if the left side is smaller or if both sides are equal."
+    },
+    {
+      "type": "code",
+      "value": "int score = 75;\nint maxScore = 100;\nint passingScore = 60;\n\nboolean withinMax = (score <= maxScore);       // true (75 <= 100)\nboolean meetsMin = (score <= passingScore);    // false (75 <= 60)\nboolean check1 = (5 <= 10);                    // true (5 <= 10)\nboolean check2 = (8 <= 8);                     // true (8 <= 8)\n\nSystem.out.println(score <= maxScore);         // true\nSystem.out.println(score <= passingScore);     // false"
+    },
+    {
+      "type": "text",
+      "value": "Relational operators work with all numeric types including "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "float"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "long"
+    },
+    {
+      "type": "text",
+      "value": ". You can also compare values of different numeric types, and Java will automatically convert them for comparison."
+    },
+    {
+      "type": "code",
+      "value": "int wholeNumber = 10;\ndouble decimalNumber = 10.5;\n\nboolean compare1 = (wholeNumber < decimalNumber);  // true (10 < 10.5)\nboolean compare2 = (wholeNumber == decimalNumber); // false (10 != 10.5)\n\ndouble price1 = 19.99;\ndouble price2 = 24.99;\nboolean cheaper = (price1 < price2);               // true\n\nSystem.out.println(wholeNumber < decimalNumber);   // true"
+    },
+    {
+      "type": "text",
+      "value": "You can compare the results of arithmetic expressions using relational operators. The arithmetic operations are evaluated first, then the comparison is performed."
+    },
+    {
+      "type": "code",
+      "value": "int x = 5;\nint y = 3;\nint z = 8;\n\n// Arithmetic happens first, then comparison\nboolean result1 = (x + y > z);       // (5 + 3) > 8 → 8 > 8 → false\nboolean result2 = (x * 2 == y + 7);  // (5 * 2) == (3 + 7) → 10 == 10 → true\nboolean result3 = (z - 2 <= x);      // (8 - 2) <= 5 → 6 <= 5 → false\n\nSystem.out.println(x + y > z);       // false\nSystem.out.println(x * 2 == y + 7);  // true"
+    },
+    {
+      "type": "text",
+      "value": "For "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " values, relational operators compare based on their Unicode values. Characters are ordered alphabetically, with uppercase letters coming before lowercase letters."
+    },
+    {
+      "type": "code",
+      "value": "char letter1 = 'A';\nchar letter2 = 'B';\nchar letter3 = 'a';\n\nboolean compare1 = (letter1 < letter2);   // true ('A' comes before 'B')\nboolean compare2 = (letter1 == letter3);  // false ('A' != 'a')\nboolean compare3 = (letter1 < letter3);   // true (uppercase < lowercase)\n\nSystem.out.println(letter1 < letter2);    // true\nSystem.out.println('Z' > 'A');            // true"
+    },
+    {
+      "type": "text",
+      "value": "Important: For "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " objects, you should NOT use "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "!="
+    },
+    {
+      "type": "text",
+      "value": " to compare content. These operators compare object references, not the actual text. Use the "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " method instead."
+    },
+    {
+      "type": "code",
+      "value": "String str1 = new String(\"Hello\");\nString str2 = new String(\"Hello\");\nString str3 = str1;\n\n// WRONG for String content comparison\nboolean same1 = (str1 == str2);        // false (different objects)\nboolean same2 = (str1 == str3);        // true (same object)\n\n// CORRECT for String content comparison\nboolean contentMatch1 = str1.equals(str2);  // true (same content)\nboolean contentMatch2 = str1.equals(str3);  // true (same content)"
+    },
+    {
+      "type": "text",
+      "value": "Relational operators are commonly used in conditional statements to control program flow. They help determine which code should execute based on value comparisons."
+    },
+    {
+      "type": "code",
+      "value": "int temperature = 75;\n\nif (temperature > 80) {\n    System.out.println(\"It's hot!\");\n}\n\nif (temperature >= 65 && temperature <= 75) {\n    System.out.println(\"Perfect weather!\");\n}\n\nint score = 85;\nif (score >= 90) {\n    System.out.println(\"Grade: A\");\n} else if (score >= 80) {\n    System.out.println(\"Grade: B\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "You can chain relational operators with variables to create readable condition checks. This is especially useful for range validation."
+    },
+    {
+      "type": "code",
+      "value": "int age = 25;\nint minAge = 18;\nint maxAge = 65;\n\n// Checking if age is within a range\nboolean isAdult = (age >= minAge);\nboolean isSenior = (age >= 65);\nboolean isWorkingAge = (age >= minAge);\n\nint grade = 85;\nboolean isPassing = (grade >= 60);\nboolean isHonorRoll = (grade >= 90);\n\nSystem.out.println(\"Is adult: \" + isAdult);              // true\nSystem.out.println(\"Is passing: \" + isPassing);          // true\nSystem.out.println(\"Is honor roll: \" + isHonorRoll);     // false"
+    },
+    {
+      "type": "text",
+      "value": "Common mistakes with relational operators include using "
+    },
+    {
+      "type": "code",
+      "value": "="
+    },
+    {
+      "type": "text",
+      "value": " instead of "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": ", comparing "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " objects with "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " instead of "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": ", and confusing the direction of "
+    },
+    {
+      "type": "code",
+      "value": ">"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "<"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "// Common mistakes\n\n// WRONG - assignment instead of comparison\n// if (x = 5) { }  // Assigns 5 to x\n\n// CORRECT\nif (x == 5) {\n    System.out.println(\"x equals 5\");\n}\n\n// WRONG - comparing String objects with ==\nString name = \"Alice\";\n// if (name == \"Alice\") { }  // Compares references\n\n// CORRECT\nif (name.equals(\"Alice\")) {\n    System.out.println(\"Name is Alice\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Understanding relational operators is essential for creating conditional logic in your programs. In the next lesson, you'll learn about logical operators that allow you to combine multiple relational expressions to create more complex conditions."
+    }
+  ]
+}

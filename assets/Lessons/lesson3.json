@@ -1,0 +1,298 @@
+{
+  "lessonId": 3,
+  "title": "Variables and Data Types Overview",
+  "content": [
+    {
+      "type": "text",
+      "value": "Variables are containers that store data values in your Java programs. Think of a variable as a labeled box that holds information - you can put data into the box, look at what's inside, and even replace the contents with new data. Every variable in Java must have a specific data type that determines what kind of information it can store."
+    },
+    {
+      "type": "text",
+      "value": "Java uses two main categories of data types: primitive types and reference types. Primitive types store simple values directly in memory and are built into the Java language. Reference types store references (addresses) to objects that contain the actual data, and "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " is the most commonly used reference type."
+    },
+    {
+      "type": "text",
+      "value": "The eight primitive data types in Java are "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "byte"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "short"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "long"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "float"
+    },
+    {
+      "type": "text",
+      "value": ". Each primitive type has a specific purpose, memory size, and range of values it can store. Understanding these types helps you choose the right one for your data needs."
+    },
+    {
+      "type": "text",
+      "value": "Variable declaration tells Java to create a variable with a specific name and type. The basic syntax follows the pattern: "
+    },
+    {
+      "type": "code",
+      "value": "dataType variableName;"
+    },
+    {
+      "type": "text",
+      "value": ". Once declared, you can assign a value using the assignment operator "
+    },
+    {
+      "type": "code",
+      "value": "="
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "int age;\nage = 16;\n\n// Declaration and initialization in one line\nint grade = 95;"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " type stores whole numbers (integers) within a specific range. It's the most commonly used numeric type for counting, indexing, and mathematical operations that don't require decimal values."
+    },
+    {
+      "type": "code",
+      "value": "int students = 30;\nint temperature = -5;\nint maxScore = 100;"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " type stores decimal numbers (floating-point values) with high precision. Use "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " when you need to work with measurements, percentages, or any calculations requiring fractional values."
+    },
+    {
+      "type": "code",
+      "value": "double price = 29.99;\ndouble average = 87.5;\ndouble pi = 3.14159;"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " type stores only two possible values: "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". Boolean variables are essential for controlling program flow and making decisions in your code."
+    },
+    {
+      "type": "code",
+      "value": "boolean isComplete = true;\nboolean hasPermission = false;\nboolean isValid = true;"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " type stores a single character enclosed in single quotes. Characters include letters, digits, symbols, and special characters like spaces and newlines."
+    },
+    {
+      "type": "code",
+      "value": "char firstLetter = 'A';\nchar grade = 'B';\nchar symbol = '$';"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " type (note the capital S) stores text of any length. Unlike primitive types, "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " is a reference type (class) that provides many useful methods for text manipulation. String literals are enclosed in double quotes."
+    },
+    {
+      "type": "code",
+      "value": "String name = \"Alice Johnson\";\nString course = \"AP Computer Science A\";\nString message = \"Hello, World!\";"
+    },
+    {
+      "type": "text",
+      "value": "Variable names (identifiers) must follow specific rules: they must start with a letter, underscore, or dollar sign, cannot start with a digit, cannot contain spaces, and cannot be Java keywords. Good variable names are descriptive and follow camelCase convention."
+    },
+    {
+      "type": "code",
+      "value": "// Good variable names\nint studentCount = 25;\ndouble averageGPA = 3.7;\nboolean isEnrolled = true;\n\n// Poor variable names (but valid)\nint x = 25;\ndouble d = 3.7;\nboolean b = true;"
+    },
+    {
+      "type": "text",
+      "value": "Java is statically typed, meaning once you declare a variable with a specific type, you cannot change its type. However, you can change the value stored in the variable as long as it matches the declared type."
+    },
+    {
+      "type": "code",
+      "value": "int score = 85;\nscore = 92;  // Valid - both are integers\n// score = \"A\";  // Error - cannot assign String to int"
+    },
+    {
+      "type": "text",
+      "value": "Default values are automatically assigned to instance variables if you don't initialize them explicitly. Numeric types default to zero, "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " defaults to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " defaults to null character, and reference types default to "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Local variables (declared inside methods) must be initialized before use, unlike instance variables. The compiler will generate an error if you try to use an uninitialized local variable."
+    },
+    {
+      "type": "code",
+      "value": "public static void main(String[] args) {\n    int localVar;  // Declared but not initialized\n    // System.out.println(localVar);  // Error - must initialize first\n    localVar = 10;\n    System.out.println(localVar);  // Now it's valid\n}"
+    },
+    {
+      "type": "text",
+      "value": "Understanding variables and data types is fundamental to Java programming. Every piece of data your program works with must be stored in appropriately typed variables. In the next lesson, we'll focus specifically on the "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " data type and explore integer operations in detail."
+    }
+  ]
+}

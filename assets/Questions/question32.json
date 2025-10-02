@@ -1,0 +1,214 @@
+{
+  "lessonId": 32,
+  "title": "Object References and Memory",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What does an object variable store?",
+      "options": [
+        { "type": "text", "value": "A reference to the object's location in memory, not the object itself" },
+        { "type": "text", "value": "The actual object data" },
+        { "type": "text", "value": "A copy of the object" },
+        { "type": "text", "value": "The object's class name" }
+      ],
+      "answer": 0,
+      "explanation": "Unlike primitive types that store actual values, object variables store references (memory addresses) that point to where the object's data is located."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What happens when you assign one object variable to another?",
+      "options": [
+        { "type": "text", "value": "The object is deleted" },
+        { "type": "text", "value": "You copy the reference, so both variables point to the same object" },
+        { "type": "text", "value": "A new object is created" },
+        { "type": "text", "value": "The first variable becomes null" }
+      ],
+      "answer": 1,
+      "explanation": "When you assign one object variable to another, you copy the reference, not the object. Both variables now point to the same object in memory."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What does null represent?",
+      "options": [
+        { "type": "text", "value": "Zero" },
+        { "type": "text", "value": "An empty string" },
+        { "type": "text", "value": "A reference that doesn't point to any object" },
+        { "type": "text", "value": "A deleted object" }
+      ],
+      "answer": 2,
+      "explanation": "null is a special reference value that means the variable doesn't point to any object. It's like an empty reference that points to nothing."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What does == check when comparing object variables?",
+      "options": [
+        { "type": "text", "value": "If the objects have the same content" },
+        { "type": "text", "value": "If the objects are the same type" },
+        { "type": "text", "value": "If the objects have the same methods" },
+        { "type": "text", "value": "If two references point to the same object in memory" }
+      ],
+      "answer": 3,
+      "explanation": "The == operator checks if two references point to the same object in memory, not if the objects have the same content."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Which method should you use to compare String content?",
+      "options": [
+        { "type": "text", "value": "equals()" },
+        { "type": "text", "value": "==" },
+        { "type": "text", "value": "compare()" },
+        { "type": "text", "value": "same()" }
+      ],
+      "answer": 0,
+      "explanation": "You should always use the equals() method to compare String content, not == which compares references."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "When you pass an object to a method, what does the method receive?",
+      "options": [
+        { "type": "text", "value": "A copy of the object" },
+        { "type": "text", "value": "A copy of the reference to the same object" },
+        { "type": "text", "value": "Nothing" },
+        { "type": "text", "value": "The original reference" }
+      ],
+      "answer": 1,
+      "explanation": "When you pass an object to a method, you're passing a copy of the reference. The method receives a reference to the same object."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "If you modify an object inside a method, does it affect the original object?",
+      "options": [
+        { "type": "text", "value": "No, never" },
+        { "type": "text", "value": "Only for primitive types" },
+        { "type": "text", "value": "Yes, because the method has a reference to the same object" },
+        { "type": "text", "value": "Only if you return it" }
+      ],
+      "answer": 2,
+      "explanation": "Changes made to an object inside a method affect the original object because the method receives a reference to the same object in memory."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What happens when an object has no references pointing to it?",
+      "options": [
+        { "type": "text", "value": "It causes an error" },
+        { "type": "text", "value": "It stays in memory forever" },
+        { "type": "text", "value": "It must be manually deleted" },
+        { "type": "text", "value": "It becomes eligible for garbage collection" }
+      ],
+      "answer": 3,
+      "explanation": "When an object has no references pointing to it, it becomes eligible for garbage collection. Java's garbage collector automatically frees up the memory."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What exception occurs when you try to use a null reference?",
+      "options": [
+        { "type": "text", "value": "NullPointerException" },
+        { "type": "text", "value": "NullReferenceException" },
+        { "type": "text", "value": "EmptyObjectException" },
+        { "type": "text", "value": "InvalidReferenceException" }
+      ],
+      "answer": 0,
+      "explanation": "A NullPointerException occurs when you try to access methods or variables on a null reference (a reference that doesn't point to any object)."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "If multiple references point to the same object and you modify it through one reference, what happens?",
+      "options": [
+        { "type": "text", "value": "Only that reference sees the change" },
+        { "type": "text", "value": "All references see the change because they point to the same object" },
+        { "type": "text", "value": "The other references become null" },
+        { "type": "text", "value": "An error occurs" }
+      ],
+      "answer": 1,
+      "explanation": "When multiple references point to the same object, modifying the object through any reference affects all references because they all point to the same object in memory."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What do array elements contain when you create an array of objects?",
+      "options": [
+        { "type": "text", "value": "The actual objects" },
+        { "type": "text", "value": "Copies of objects" },
+        { "type": "text", "value": "References to objects" },
+        { "type": "text", "value": "Class definitions" }
+      ],
+      "answer": 2,
+      "explanation": "Arrays of objects store references to objects, not the objects themselves. Each array element contains a reference that points to an object."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What is the initial value of array elements in an uninitialized object array?",
+      "options": [
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "Empty objects" },
+        { "type": "text", "value": "Default constructors" },
+        { "type": "text", "value": "null" }
+      ],
+      "answer": 3,
+      "explanation": "When you create an array of objects without initializing the elements, each element contains null until you assign an object to it."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "How do primitive variable assignments differ from object variable assignments?",
+      "options": [
+        { "type": "text", "value": "Primitives copy values, objects copy references" },
+        { "type": "text", "value": "They work the same way" },
+        { "type": "text", "value": "Primitives copy references, objects copy values" },
+        { "type": "text", "value": "Primitives use more memory" }
+      ],
+      "answer": 0,
+      "explanation": "Primitive assignments copy the actual value creating independent variables, while object assignments copy the reference so both variables point to the same object."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "If you reassign a parameter inside a method to a new object, does it affect the original reference?",
+      "options": [
+        { "type": "text", "value": "Yes, always" },
+        { "type": "text", "value": "No, the original reference outside the method is unchanged" },
+        { "type": "text", "value": "Only for String objects" },
+        { "type": "text", "value": "Only if you return it" }
+      ],
+      "answer": 1,
+      "explanation": "If you reassign a parameter inside a method to point to a new object, it only changes the local reference. The original reference outside the method is unchanged."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What is the safest way to avoid NullPointerException?",
+      "options": [
+        { "type": "text", "value": "Never use objects" },
+        { "type": "text", "value": "Always use primitive types" },
+        { "type": "text", "value": "Initialize all objects in constructors" },
+        { "type": "text", "value": "Check if a reference is not null before using it" }
+      ],
+      "answer": 3,
+      "explanation": "The safest way to avoid NullPointerException is to check if a reference is not null before attempting to access its methods or variables."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What does the new keyword do?",
+      "options": [
+        { "type": "text", "value": "Allocates memory for an object and returns a reference to that memory" },
+        { "type": "text", "value": "Creates a primitive variable" },
+        { "type": "text", "value": "Copies an existing object" },
+        { "type": "text", "value": "Deletes old objects" }
+      ],
+      "answer": 0,
+      "explanation": "The new keyword allocates memory for the object and returns a reference to that memory location, which gets stored in the object variable."
+    }
+  ]
+}

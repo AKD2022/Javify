@@ -1,0 +1,530 @@
+{
+  "lessonId": 29,
+  "title": "Using the Math Class in Depth",
+  "content": [
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class is part of the "
+    },
+    {
+      "type": "code",
+      "value": "java.lang"
+    },
+    {
+      "type": "text",
+      "value": " package and provides a comprehensive collection of methods for performing mathematical operations. All methods in the "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class are "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": ", meaning you call them directly on the class name without creating an object. Understanding the "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class is essential for scientific calculations, game development, and solving complex problems."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class provides two important mathematical constants: "
+    },
+    {
+      "type": "code",
+      "value": "Math.PI"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "Math.E"
+    },
+    {
+      "type": "text",
+      "value": ". These constants are used frequently in mathematical and scientific calculations."
+    },
+    {
+      "type": "code",
+      "value": "// Mathematical constants\ndouble pi = Math.PI;        // 3.141592653589793\ndouble e = Math.E;          // 2.718281828459045\n\n// Calculate circumference of a circle\ndouble radius = 5.0;\ndouble circumference = 2 * Math.PI * radius;  // 31.41592653589793\n\n// Calculate area of a circle\ndouble area = Math.PI * radius * radius;      // 78.53981633974483"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math.abs()"
+    },
+    {
+      "type": "text",
+      "value": " method returns the absolute value of a number, removing any negative sign. This method is overloaded to work with "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "long"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "float"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " types."
+    },
+    {
+      "type": "code",
+      "value": "int distance = Math.abs(-15);           // 15\ndouble temperature = Math.abs(-3.5);    // 3.5\nint positive = Math.abs(10);            // 10 (already positive)\n\n// Calculate distance between two points on a number line\nint point1 = 8;\nint point2 = 3;\nint distance = Math.abs(point1 - point2);  // 5"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math.pow()"
+    },
+    {
+      "type": "text",
+      "value": " method raises a number to a specified power. It takes two "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " parameters: the base and the exponent, and returns a "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " result."
+    },
+    {
+      "type": "code",
+      "value": "double squared = Math.pow(5, 2);        // 25.0 (5^2)\ndouble cubed = Math.pow(3, 3);          // 27.0 (3^3)\ndouble result = Math.pow(2, 10);        // 1024.0 (2^10)\n\n// Calculate compound interest\ndouble principal = 1000.0;\ndouble rate = 0.05;  // 5% interest\nint years = 3;\ndouble amount = principal * Math.pow(1 + rate, years);  // 1157.625"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math.sqrt()"
+    },
+    {
+      "type": "text",
+      "value": " method calculates the square root of a number. It takes a "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " parameter and returns a "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " result."
+    },
+    {
+      "type": "code",
+      "value": "double root = Math.sqrt(25);            // 5.0\ndouble root2 = Math.sqrt(2);            // 1.4142135623730951\ndouble root3 = Math.sqrt(100);          // 10.0\n\n// Calculate hypotenuse using Pythagorean theorem\ndouble side1 = 3.0;\ndouble side2 = 4.0;\ndouble hypotenuse = Math.sqrt(side1 * side1 + side2 * side2);  // 5.0"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math.max()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "Math.min()"
+    },
+    {
+      "type": "text",
+      "value": " methods return the larger or smaller of two values, respectively. These methods are overloaded to work with "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "long"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "float"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " types."
+    },
+    {
+      "type": "code",
+      "value": "int maximum = Math.max(10, 20);         // 20\nint minimum = Math.min(10, 20);         // 10\n\ndouble maxTemp = Math.max(72.5, 68.3);  // 72.5\ndouble minTemp = Math.min(72.5, 68.3);  // 68.3\n\n// Find maximum of three numbers\nint a = 15, b = 23, c = 19;\nint maxOfThree = Math.max(a, Math.max(b, c));  // 23"
+    },
+    {
+      "type": "text",
+      "value": "The rounding methods "
+    },
+    {
+      "type": "code",
+      "value": "Math.ceil()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Math.floor()"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "Math.round()"
+    },
+    {
+      "type": "text",
+      "value": " provide different ways to round decimal numbers. "
+    },
+    {
+      "type": "code",
+      "value": "Math.ceil()"
+    },
+    {
+      "type": "text",
+      "value": " rounds up to the nearest integer, "
+    },
+    {
+      "type": "code",
+      "value": "Math.floor()"
+    },
+    {
+      "type": "text",
+      "value": " rounds down, and "
+    },
+    {
+      "type": "code",
+      "value": "Math.round()"
+    },
+    {
+      "type": "text",
+      "value": " rounds to the nearest integer."
+    },
+    {
+      "type": "code",
+      "value": "// Math.ceil() - rounds up\ndouble ceiling1 = Math.ceil(4.3);       // 5.0\ndouble ceiling2 = Math.ceil(4.7);       // 5.0\ndouble ceiling3 = Math.ceil(-4.3);      // -4.0\n\n// Math.floor() - rounds down\ndouble floor1 = Math.floor(4.3);        // 4.0\ndouble floor2 = Math.floor(4.7);        // 4.0\ndouble floor3 = Math.floor(-4.3);       // -5.0\n\n// Math.round() - rounds to nearest\nlong rounded1 = Math.round(4.3);        // 4\nlong rounded2 = Math.round(4.7);        // 5\nlong rounded3 = Math.round(4.5);        // 5"
+    },
+    {
+      "type": "text",
+      "value": "Note that "
+    },
+    {
+      "type": "code",
+      "value": "Math.ceil()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "Math.floor()"
+    },
+    {
+      "type": "text",
+      "value": " return "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " values, while "
+    },
+    {
+      "type": "code",
+      "value": "Math.round()"
+    },
+    {
+      "type": "text",
+      "value": " returns a "
+    },
+    {
+      "type": "code",
+      "value": "long"
+    },
+    {
+      "type": "text",
+      "value": " value. When working with negative numbers, pay attention to the direction of rounding."
+    },
+    {
+      "type": "code",
+      "value": "// Practical example: Calculate number of pages needed\nint totalItems = 47;\nint itemsPerPage = 10;\nint pagesNeeded = (int) Math.ceil((double) totalItems / itemsPerPage);  // 5"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math.random()"
+    },
+    {
+      "type": "text",
+      "value": " method generates a random "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " value greater than or equal to 0.0 and less than 1.0. You can manipulate this value to generate random numbers in different ranges."
+    },
+    {
+      "type": "code",
+      "value": "// Generate random double between 0.0 and 1.0\ndouble random1 = Math.random();  // Example: 0.7234567890123456\n\n// Generate random int from 0 to 9\nint randomDigit = (int) (Math.random() * 10);\n\n// Generate random int from 1 to 6 (like a dice)\nint diceRoll = (int) (Math.random() * 6) + 1;\n\n// Generate random int from 50 to 100\nint randomScore = (int) (Math.random() * 51) + 50;"
+    },
+    {
+      "type": "text",
+      "value": "To generate a random integer in a specific range, use the formula: "
+    },
+    {
+      "type": "code",
+      "value": "(int) (Math.random() * range) + min"
+    },
+    {
+      "type": "text",
+      "value": ", where range is the number of possible values and min is the minimum value you want."
+    },
+    {
+      "type": "code",
+      "value": "// Formula breakdown for random int from min to max (inclusive)\n// range = max - min + 1\n// result = (int) (Math.random() * range) + min\n\n// Example: Random int from 10 to 20\nint min = 10;\nint max = 20;\nint range = max - min + 1;  // 11\nint randomNumber = (int) (Math.random() * range) + min;"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class also includes trigonometric functions like "
+    },
+    {
+      "type": "code",
+      "value": "Math.sin()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Math.cos()"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "Math.tan()"
+    },
+    {
+      "type": "text",
+      "value": ". These methods work with angles measured in radians, not degrees."
+    },
+    {
+      "type": "code",
+      "value": "// Trigonometric functions (angles in radians)\ndouble sine = Math.sin(Math.PI / 2);        // 1.0 (sin of 90 degrees)\ndouble cosine = Math.cos(0);                // 1.0 (cos of 0 degrees)\n\n// Convert degrees to radians\ndouble degrees = 45;\ndouble radians = Math.toRadians(degrees);\ndouble sinOf45 = Math.sin(radians);         // 0.7071067811865475\n\n// Convert radians to degrees\ndouble angle = Math.PI / 4;  // 45 degrees in radians\ndouble converted = Math.toDegrees(angle);   // 45.0"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math.log()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "Math.log10()"
+    },
+    {
+      "type": "text",
+      "value": " methods calculate natural logarithms (base e) and base-10 logarithms, respectively. The "
+    },
+    {
+      "type": "code",
+      "value": "Math.exp()"
+    },
+    {
+      "type": "text",
+      "value": " method calculates e raised to a power."
+    },
+    {
+      "type": "code",
+      "value": "// Logarithmic functions\ndouble naturalLog = Math.log(Math.E);       // 1.0 (ln(e) = 1)\ndouble log10 = Math.log10(100);             // 2.0 (log base 10 of 100)\ndouble logValue = Math.log(10);             // 2.302585092994046\n\n// Exponential function\ndouble exponential = Math.exp(1);           // 2.718281828459045 (e^1)\ndouble expValue = Math.exp(2);              // 7.38905609893065 (e^2)"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math.cbrt()"
+    },
+    {
+      "type": "text",
+      "value": " method calculates the cube root of a number, similar to how "
+    },
+    {
+      "type": "code",
+      "value": "Math.sqrt()"
+    },
+    {
+      "type": "text",
+      "value": " calculates the square root."
+    },
+    {
+      "type": "code",
+      "value": "double cubeRoot = Math.cbrt(27);            // 3.0\ndouble cubeRoot2 = Math.cbrt(8);            // 2.0\ndouble cubeRoot3 = Math.cbrt(125);          // 5.0\n\n// Find side length of a cube given its volume\ndouble volume = 64;\ndouble sideLength = Math.cbrt(volume);      // 4.0"
+    },
+    {
+      "type": "text",
+      "value": "Understanding when to use each "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " method is crucial for solving real-world problems. Combining multiple methods can solve complex mathematical problems efficiently."
+    },
+    {
+      "type": "code",
+      "value": "// Calculate distance between two points (x1, y1) and (x2, y2)\npublic static double calculateDistance(double x1, double y1, double x2, double y2) {\n    double deltaX = x2 - x1;\n    double deltaY = y2 - y1;\n    return Math.sqrt(deltaX * deltaX + deltaY * deltaY);\n}\n\n// Calculate area of a triangle using Heron's formula\npublic static double triangleArea(double a, double b, double c) {\n    double s = (a + b + c) / 2;  // semi-perimeter\n    return Math.sqrt(s * (s - a) * (s - b) * (s - c));\n}"
+    },
+    {
+      "type": "text",
+      "value": "Common mistakes when using the "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class include forgetting to cast the result when needed, confusing radians and degrees in trigonometric functions, and incorrect random number range calculations. Always verify your formulas and test edge cases."
+    },
+    {
+      "type": "text",
+      "value": "Mastering the "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class expands your problem-solving toolkit significantly. These methods are essential for game development, scientific calculations, graphics programming, and algorithm implementation. In upcoming lessons, you'll explore wrapper classes and learn about more specialized utilities in the Java Standard Library."
+    }
+  ]
+}

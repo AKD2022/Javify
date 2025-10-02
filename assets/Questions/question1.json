@@ -1,0 +1,214 @@
+{
+  "lessonId": 1,
+  "title": "Introduction to APCSA & Java",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What does APCSA stand for?",
+      "options": [
+        { "type": "text", "value": "AP Computer Science A" },
+        { "type": "text", "value": "Advanced Programming Concepts and Systems Analysis" },
+        { "type": "text", "value": "Applied Physics and Computer Science Applications" },
+        { "type": "text", "value": "Automated Programming and Computational System Architecture" }
+      ],
+      "answer": 0,
+      "explanation": "APCSA stands for AP Computer Science A, the College Board's introductory computer science course focusing on Java programming."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "Which programming language is used in APCSA?",
+      "options": [
+        { "type": "text", "value": "Python" },
+        { "type": "text", "value": "Java" },
+        { "type": "text", "value": "C++" },
+        { "type": "text", "value": "JavaScript" }
+      ],
+      "answer": 1,
+      "explanation": "Java is the programming language used throughout the AP Computer Science A curriculum."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What does JVM stand for?",
+      "options": [
+        { "type": "text", "value": "Java Variable Manager" },
+        { "type": "text", "value": "Java Verification Module" },
+        { "type": "text", "value": "Java Virtual Machine" },
+        { "type": "text", "value": "Java Version Manager" }
+      ],
+      "answer": 2,
+      "explanation": "JVM stands for Java Virtual Machine, which executes Java bytecode and enables platform independence."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What is the entry point of a Java program?",
+      "options": [
+        { "type": "text", "value": "start() method" },
+        { "type": "text", "value": "run() method" },
+        { "type": "text", "value": "execute() method" },
+        { "type": "text", "value": "main() method" }
+      ],
+      "answer": 3,
+      "explanation": "The main() method serves as the entry point where Java programs begin execution."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What is a class in Java?",
+      "options": [
+        { "type": "text", "value": "A blueprint that defines the structure and behavior of objects" },
+        { "type": "text", "value": "A method that performs calculations" },
+        { "type": "text", "value": "A type of variable" },
+        { "type": "text", "value": "A comment block" }
+      ],
+      "answer": 0,
+      "explanation": "A class serves as a blueprint that defines what data objects will store and what behaviors they can perform."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "Which of these is a primitive data type in Java?",
+      "options": [
+        { "type": "text", "value": "String" },
+        { "type": "text", "value": "int" },
+        { "type": "text", "value": "ArrayList" },
+        { "type": "text", "value": "Scanner" }
+      ],
+      "answer": 1,
+      "explanation": "int is a primitive data type used to store whole numbers. String is a reference type (class)."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "Which symbol starts a single-line comment in Java?",
+      "options": [
+        { "type": "text", "value": "#" },
+        { "type": "text", "value": "--" },
+        { "type": "text", "value": "//" },
+        { "type": "text", "value": "/*" }
+      ],
+      "answer": 2,
+      "explanation": "Single-line comments in Java begin with // and continue to the end of the line."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "Which file extension is used for Java source files?",
+      "options": [
+        { "type": "text", "value": ".class" },
+        { "type": "text", "value": ".exe" },
+        { "type": "text", "value": ".txt" },
+        { "type": "text", "value": ".java" }
+      ],
+      "answer": 3,
+      "explanation": "Java source code files use the .java extension, while compiled bytecode uses .class."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Which of the following is NOT a valid Java identifier?",
+      "options": [
+        { "type": "text", "value": "2variable" },
+        { "type": "text", "value": "_variable" },
+        { "type": "text", "value": "variable2" },
+        { "type": "text", "value": "$variable" }
+      ],
+      "answer": 0,
+      "explanation": "Java identifiers cannot start with a digit. They must begin with a letter, underscore, or dollar sign."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What type is String in Java?",
+      "options": [
+        { "type": "text", "value": "Primitive type" },
+        { "type": "text", "value": "Reference type (class)" },
+        { "type": "text", "value": "Keyword" },
+        { "type": "text", "value": "Operator" }
+      ],
+      "answer": 1,
+      "explanation": "String is a reference type (class) in Java, not a primitive type like int or boolean."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Which of these symbols starts a multi-line comment?",
+      "options": [
+        { "type": "text", "value": "//" },
+        { "type": "text", "value": "#" },
+        { "type": "text", "value": "/*" },
+        { "type": "text", "value": "--" }
+      ],
+      "answer": 2,
+      "explanation": "Multi-line comments in Java start with /* and end with */, allowing comments to span multiple lines."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "Which IDE is commonly used for Java development?",
+      "options": [
+        { "type": "text", "value": "IDLE" },
+        { "type": "text", "value": "Xcode" },
+        { "type": "text", "value": "Thonny" },
+        { "type": "text", "value": "Eclipse" }
+      ],
+      "answer": 3,
+      "explanation": "Eclipse is a popular IDE specifically designed for Java development, along with IntelliJ IDEA and Visual Studio Code."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "Which primitive data type stores decimal numbers?",
+      "options": [
+        { "type": "text", "value": "double" },
+        { "type": "text", "value": "int" },
+        { "type": "text", "value": "boolean" },
+        { "type": "text", "value": "char" }
+      ],
+      "answer": 0,
+      "explanation": "The double primitive type stores decimal (floating-point) numbers in Java."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What does \"platform independence\" mean for Java?",
+      "options": [
+        { "type": "text", "value": "Java only runs on Windows" },
+        { "type": "text", "value": "Java programs can run on any OS with a JVM" },
+        { "type": "text", "value": "Java doesn't need to be compiled" },
+        { "type": "text", "value": "Java programs run faster on all systems" }
+      ],
+      "answer": 1,
+      "explanation": "Platform independence means Java programs can run on any operating system that has a JVM installed."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "Which of these is a Java reserved keyword?",
+      "options": [
+        { "type": "text", "value": "function" },
+        { "type": "text", "value": "method" },
+        { "type": "text", "value": "public" },
+        { "type": "text", "value": "variable" }
+      ],
+      "answer": 2,
+      "explanation": "public is a reserved keyword in Java used to specify access levels. function is not a Java keyword."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What is strongly typed programming?",
+      "options": [
+        { "type": "text", "value": "Variables can change types freely" },
+        { "type": "text", "value": "Types don't need to be declared" },
+        { "type": "text", "value": "Programming with bold text" },
+        { "type": "text", "value": "Every variable must have its type declared before use" }
+      ],
+      "answer": 3,
+      "explanation": "Strongly typed means every variable must have its data type explicitly declared, helping prevent type-related errors."
+    }
+  ]
+}

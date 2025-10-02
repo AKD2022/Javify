@@ -1,0 +1,530 @@
+{
+  "lessonId": 35,
+  "title": "Recap and Mini Quiz on Unit 2 Concepts",
+  "content": [
+    {
+      "type": "text",
+      "value": "Congratulations on completing Unit 2! You've learned fundamental concepts about objects, methods, and how to work with classes in Java. This recap lesson will review the key topics you've covered and help solidify your understanding before moving forward."
+    },
+    {
+      "type": "text",
+      "value": "Unit 2 began with understanding what objects are. Objects are instances of classes that combine data (instance variables) and behavior (methods) into a single unit. You learned that a class serves as a blueprint for creating objects."
+    },
+    {
+      "type": "code",
+      "value": "// Class as a blueprint\npublic class Student {\n    String name;\n    int age;\n    double gpa;\n    \n    public void study() {\n        System.out.println(name + \" is studying\");\n    }\n}\n\n// Creating objects from the blueprint\nStudent alice = new Student();\nStudent bob = new Student();"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " class is one of the most important classes in Java. You explored essential "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " methods including "
+    },
+    {
+      "type": "code",
+      "value": "length()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "substring()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "indexOf()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "charAt()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "toLowerCase()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "toUpperCase()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "trim()"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "replace()"
+    },
+    {
+      "type": "text",
+      "value": ". Remember that strings are immutable - these methods return new "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " objects rather than modifying the original."
+    },
+    {
+      "type": "code",
+      "value": "String text = \"  Hello World  \";\nint len = text.length();              // 15\nString sub = text.substring(2, 7);    // \"Hello\"\nString trimmed = text.trim();         // \"Hello World\"\nboolean match = text.equals(\"test\"); // false"
+    },
+    {
+      "type": "text",
+      "value": "You learned about calling methods with different signatures. Methods can take parameters and return values. A method signature includes the method name and its parameter list. Method overloading allows multiple methods with the same name but different parameter lists."
+    },
+    {
+      "type": "code",
+      "value": "// Method with parameters and return value\npublic static int add(int a, int b) {\n    return a + b;\n}\n\n// Method overloading - same name, different parameters\npublic static double add(double a, double b) {\n    return a + b;\n}\n\npublic static int add(int a, int b, int c) {\n    return a + b + c;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Return values and "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " methods are crucial concepts. Methods that return values produce a result using the "
+    },
+    {
+      "type": "code",
+      "value": "return"
+    },
+    {
+      "type": "text",
+      "value": " keyword. Methods declared as "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " perform actions but don't return any value."
+    },
+    {
+      "type": "code",
+      "value": "// Method with return value\npublic static int multiply(int x, int y) {\n    return x * y;\n}\n\n// void method - no return value\npublic static void printMessage(String msg) {\n    System.out.println(msg);\n}"
+    },
+    {
+      "type": "text",
+      "value": "The Java Standard Library provides pre-written classes and methods. You explored the "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class in depth, learning methods like "
+    },
+    {
+      "type": "code",
+      "value": "Math.sqrt()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Math.pow()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Math.abs()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Math.max()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Math.min()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Math.ceil()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Math.floor()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Math.round()"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "Math.random()"
+    },
+    {
+      "type": "text",
+      "value": ". All "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " methods are "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "double squareRoot = Math.sqrt(25);        // 5.0\ndouble power = Math.pow(2, 3);            // 8.0\nint absolute = Math.abs(-10);             // 10\nint maximum = Math.max(15, 20);           // 20\ndouble ceiling = Math.ceil(4.3);          // 5.0\ndouble random = Math.random();            // 0.0 to 1.0"
+    },
+    {
+      "type": "text",
+      "value": "Wrapper classes provide object versions of primitive types. "
+    },
+    {
+      "type": "code",
+      "value": "Integer"
+    },
+    {
+      "type": "text",
+      "value": " wraps "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Double"
+    },
+    {
+      "type": "text",
+      "value": " wraps "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "Boolean"
+    },
+    {
+      "type": "text",
+      "value": " wraps "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": ". Key methods include "
+    },
+    {
+      "type": "code",
+      "value": "Integer.parseInt()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Double.parseDouble()"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "Boolean.parseBoolean()"
+    },
+    {
+      "type": "text",
+      "value": ". Autoboxing and unboxing allow automatic conversion between primitives and their wrapper objects."
+    },
+    {
+      "type": "code",
+      "value": "// Converting strings to numbers\nint num = Integer.parseInt(\"123\");\ndouble decimal = Double.parseDouble(\"3.14\");\nboolean flag = Boolean.parseBoolean(\"true\");\n\n// Autoboxing and unboxing\nInteger wrapped = 42;         // Autoboxing: int to Integer\nint primitive = wrapped;      // Unboxing: Integer to int"
+    },
+    {
+      "type": "text",
+      "value": "Constructors are special methods that initialize objects when they're created. Constructors have the same name as the class and no return type. You can have multiple constructors through constructor overloading."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    String name;\n    int age;\n    double gpa;\n    \n    // Constructor with all parameters\n    public Student(String name, int age, double gpa) {\n        this.name = name;\n        this.age = age;\n        this.gpa = gpa;\n    }\n    \n    // Constructor with fewer parameters\n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n        this.gpa = 0.0;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Object references are crucial to understand. Object variables store references (memory addresses) to objects, not the objects themselves. When you assign one object variable to another, you copy the reference, so both variables point to the same object. The "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " value represents a reference that doesn't point to any object."
+    },
+    {
+      "type": "code",
+      "value": "Student alice = new Student(\"Alice\", 16, 3.8);\nStudent sameStudent = alice;  // Both point to the same object\n\nsameStudent.gpa = 4.0;\nSystem.out.println(alice.gpa);  // 4.0 (changed!)\n\nStudent nobody = null;  // No object, empty reference"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " keyword refers to the current object. It's most commonly used to distinguish between instance variables and parameters with the same name. You can also use "
+    },
+    {
+      "type": "code",
+      "value": "this()"
+    },
+    {
+      "type": "text",
+      "value": " to call other constructors in the same class."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    String name;\n    int age;\n    \n    public Student(String name, int age) {\n        this.name = name;  // this.name is instance variable\n        this.age = age;    // age is parameter\n    }\n    \n    public Student(String name) {\n        this(name, 0);  // Calls other constructor\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Static members belong to the class rather than to individual objects. "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": " variables are shared by all objects, while instance variables are unique to each object. "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": " methods can only access "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": " variables and other "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": " methods, while instance methods can access both."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    String name;              // Instance variable\n    static int studentCount;  // Static variable (shared)\n    \n    public Student(String name) {\n        this.name = name;\n        studentCount++;  // Increment shared counter\n    }\n    \n    public void displayName() {\n        System.out.println(name);  // Instance method\n    }\n    \n    public static int getCount() {\n        return studentCount;  // Static method\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Key takeaways from Unit 2 include understanding that objects combine data and behavior, methods can be overloaded to provide flexibility, constructors initialize objects, object references point to memory locations, the "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " keyword refers to the current object, and "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": " members belong to the class while instance members belong to objects."
+    },
+    {
+      "type": "code",
+      "value": "// Comprehensive example combining Unit 2 concepts\npublic class BankAccount {\n    // Instance variables\n    private String accountNumber;\n    private double balance;\n    private String owner;\n    \n    // Static variable\n    private static int totalAccounts = 0;\n    \n    // Constructor\n    public BankAccount(String accountNumber, String owner, double balance) {\n        this.accountNumber = accountNumber;\n        this.owner = owner;\n        this.balance = balance;\n        totalAccounts++;\n    }\n    \n    // Constructor overloading\n    public BankAccount(String accountNumber, String owner) {\n        this(accountNumber, owner, 0.0);\n    }\n    \n    // Instance method\n    public void deposit(double amount) {\n        this.balance += amount;\n    }\n    \n    // Instance method with return value\n    public double getBalance() {\n        return this.balance;\n    }\n    \n    // Static method\n    public static int getTotalAccounts() {\n        return totalAccounts;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Common mistakes to avoid include forgetting to use "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " when parameters match instance variables, trying to access instance variables from "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": " methods, comparing objects with "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " instead of "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": ", forgetting the "
+    },
+    {
+      "type": "code",
+      "value": "new"
+    },
+    {
+      "type": "text",
+      "value": " keyword when creating objects, and not checking for "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " before accessing object members."
+    },
+    {
+      "type": "code",
+      "value": "// Common mistakes\n\n// WRONG: Not using 'this'\npublic Student(String name) {\n    name = name;  // Parameter assigned to itself!\n}\n\n// CORRECT: Using 'this'\npublic Student(String name) {\n    this.name = name;\n}\n\n// WRONG: Comparing strings with ==\nif (str1 == str2) { }\n\n// CORRECT: Using equals()\nif (str1.equals(str2)) { }"
+    },
+    {
+      "type": "text",
+      "value": "You're now ready to move forward to Unit 3, where you'll learn about control structures including conditional statements and decision-making in your programs. The foundation you've built in Unit 2 with objects and methods will be essential as you continue your Java programming journey."
+    },
+    {
+      "type": "text",
+      "value": "Take the mini quiz to test your understanding of Unit 2 concepts. Review any topics where you're uncertain, and make sure you feel comfortable with objects, methods, constructors, references, and the difference between "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": " and instance members before proceeding to the next unit."
+    }
+  ]
+}

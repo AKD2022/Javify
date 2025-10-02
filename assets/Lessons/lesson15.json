@@ -1,0 +1,174 @@
+{
+  "lessonId": 15,
+  "title": "Comments and Code Style",
+  "content": [
+    {
+      "type": "text",
+      "value": "Comments and proper code style are essential aspects of professional programming that make your code readable, maintainable, and understandable to other developers and your future self. Good commenting and styling practices are as important as writing correct code."
+    },
+    {
+      "type": "text",
+      "value": "Java supports two main types of comments: single-line comments that begin with "
+    },
+    {
+      "type": "code",
+      "value": "//"
+    },
+    {
+      "type": "text",
+      "value": " and extend to the end of the line, and multi-line comments that start with "
+    },
+    {
+      "type": "code",
+      "value": "/*"
+    },
+    {
+      "type": "text",
+      "value": " and end with "
+    },
+    {
+      "type": "code",
+      "value": "*/"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "// This is a single-line comment\nint score = 95;\n\n/* This is a multi-line comment\n   that can span multiple lines\n   and provide detailed explanations */\ndouble average = 87.5;"
+    },
+    {
+      "type": "text",
+      "value": "Single-line comments are perfect for brief explanations, clarifying complex logic, or providing context for specific lines of code. Use them to explain why something is done, not just what is being done."
+    },
+    {
+      "type": "code",
+      "value": "int maxAttempts = 3;        // Limit login attempts for security\ndouble taxRate = 0.0825;    // Current sales tax rate for California\n\n// Convert temperature from Celsius to Fahrenheit\ndouble fahrenheit = celsius * 9.0 / 5.0 + 32;\n\n// Check if student qualifies for honor roll\nboolean honorRoll = (gpa >= 3.5) && (credits >= 12);"
+    },
+    {
+      "type": "text",
+      "value": "Multi-line comments are ideal for longer explanations, algorithm descriptions, copyright notices, or temporarily disabling blocks of code during development and testing."
+    },
+    {
+      "type": "code",
+      "value": "/*\n * Calculate compound interest using the formula:\n * A = P(1 + r/n)^(nt)\n * Where:\n * A = final amount\n * P = principal amount\n * r = annual interest rate\n * n = number of times interest is compounded per year\n * t = number of years\n */\ndouble amount = principal * Math.pow(1 + rate/periods, periods * years);"
+    },
+    {
+      "type": "text",
+      "value": "Effective comments explain the reasoning behind code decisions, provide context for complex algorithms, warn about potential issues, and document assumptions or constraints. Avoid comments that simply restate what the code obviously does."
+    },
+    {
+      "type": "code",
+      "value": "// Poor comment - states the obvious\nint x = 10;                 // Set x to 10\n\n// Good comment - explains why\nint maxConnections = 10;    // Limit concurrent connections to prevent server overload\n\n// Poor comment - redundant\ncount++;                    // Increment count by 1\n\n// Good comment - provides context\ncount++;                    // Track number of valid responses for statistics"
+    },
+    {
+      "type": "text",
+      "value": "Java documentation comments, also known as Javadoc comments, start with "
+    },
+    {
+      "type": "code",
+      "value": "/**"
+    },
+    {
+      "type": "text",
+      "value": " and end with "
+    },
+    {
+      "type": "code",
+      "value": "*/"
+    },
+    {
+      "type": "text",
+      "value": ". These special comments can be processed by tools to generate professional documentation for your classes and methods."
+    },
+    {
+      "type": "code",
+      "value": "/**\n * Calculates the area of a circle given its radius.\n * @param radius the radius of the circle (must be positive)\n * @return the area of the circle\n */\npublic static double calculateCircleArea(double radius) {\n    return Math.PI * radius * radius;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Proper indentation is crucial for code readability. Java conventionally uses 4 spaces (or 1 tab) for each level of indentation. Consistent indentation shows the structure and hierarchy of your code blocks."
+    },
+    {
+      "type": "code",
+      "value": "public class IndentationExample {\n    public static void main(String[] args) {\n        int score = 85;\n        \n        if (score >= 90) {\n            System.out.println(\"Excellent work!\");\n            char grade = 'A';\n        } else if (score >= 80) {\n            System.out.println(\"Good job!\");\n            char grade = 'B';\n        }\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Naming conventions in Java follow specific patterns that make code more professional and readable. Class names use PascalCase, variable and method names use camelCase, and constants use ALL_UPPERCASE with underscores."
+    },
+    {
+      "type": "code",
+      "value": "public class StudentGradeCalculator {        // Class: PascalCase\n    public static final int MAX_SCORE = 100;    // Constant: ALL_UPPERCASE\n    \n    private String studentName;                  // Variable: camelCase\n    private int currentGrade;                    // Variable: camelCase\n    \n    public void calculateFinalGrade() {          // Method: camelCase\n        // Method implementation\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Meaningful variable names are essential for self-documenting code. Choose names that clearly indicate the purpose and content of the variable, avoiding abbreviations and single letters except for loop counters."
+    },
+    {
+      "type": "code",
+      "value": "// Poor variable names\nint x = 25;                 // Unclear purpose\ndouble calc = 87.5;         // Vague abbreviation\nString s = \"Alice\";          // Too generic\n\n// Good variable names\nint studentCount = 25;\ndouble averageGrade = 87.5;\nString studentName = \"Alice\";\n\n// Acceptable short names for limited scope\nfor (int i = 0; i < 10; i++) {    // 'i' is conventional for loop counters\n    System.out.println(\"Number: \" + i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Consistent spacing around operators and after commas improves code readability. Add spaces around binary operators and after commas in parameter lists."
+    },
+    {
+      "type": "code",
+      "value": "// Poor spacing\nint result=a+b*c;\ndouble average=total/count;\nSystem.out.println(name+\", age: \"+age);\n\n// Good spacing\nint result = a + b * c;\ndouble average = total / count;\nSystem.out.println(name + \", age: \" + age);"
+    },
+    {
+      "type": "text",
+      "value": "Blank lines help organize code into logical sections, making it easier to read and understand. Use blank lines to separate different concepts or groups of related statements."
+    },
+    {
+      "type": "code",
+      "value": "public class StudentRecord {\n    // Student information\n    private String name;\n    private int age;\n    private String studentId;\n    \n    // Grade information\n    private double mathGrade;\n    private double englishGrade;\n    private double scienceGrade;\n    \n    // Calculate and display results\n    public void generateReport() {\n        double average = (mathGrade + englishGrade + scienceGrade) / 3.0;\n        \n        System.out.println(\"Student: \" + name);\n        System.out.println(\"Average: \" + average);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Brace placement styles vary, but the most common Java convention places the opening brace at the end of the line that starts the block. Be consistent throughout your program."
+    },
+    {
+      "type": "code",
+      "value": "// Java conventional style - opening brace on same line\npublic class Example {\n    public static void main(String[] args) {\n        if (condition) {\n            // Code here\n        } else {\n            // Alternative code\n        }\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Line length should generally not exceed 80-120 characters. When lines become too long, break them at logical points and indent continuation lines appropriately."
+    },
+    {
+      "type": "code",
+      "value": "// Too long - hard to read\nString message = \"This is a very long string that contains a lot of information and exceeds reasonable line length\";\n\n// Better - broken into multiple lines\nString message = \"This is a very long string that contains \" +\n                \"a lot of information and maintains readability\";\n\n// Complex method call broken across lines\ndouble result = calculateComplexValue(firstParameter, secondParameter,\n                                     thirdParameter, fourthParameter);"
+    },
+    {
+      "type": "text",
+      "value": "Header comments at the top of files should include important information about the program, author, date, and purpose. This provides essential context for anyone reading your code."
+    },
+    {
+      "type": "code",
+      "value": "/*\n * File: StudentGradeCalculator.java\n * Author: Your Name\n * Date: October 15, 2024\n * Purpose: Calculate and display student grade averages\n * Course: AP Computer Science A\n */\n\npublic class StudentGradeCalculator {\n    // Class implementation\n}"
+    },
+    {
+      "type": "text",
+      "value": "Avoid over-commenting obvious code, but don't under-comment complex logic. Strike a balance where your comments add value without cluttering the code unnecessarily."
+    },
+    {
+      "type": "code",
+      "value": "// Over-commented (too obvious)\nint sum = 0;           // Initialize sum to zero\nsum = a + b;          // Add a and b and store in sum\nSystem.out.println(sum); // Print the sum\n\n// Well-commented (adds value)\nint sum = 0;\n// Calculate total of test scores\nsum = mathTest + englishTest + scienceTest;\nSystem.out.println(\"Total points: \" + sum);"
+    },
+    {
+      "type": "text",
+      "value": "Consistent code style makes your programs look professional and helps other programmers understand your code quickly. Many development teams and companies have specific style guides that all programmers follow."
+    },
+    {
+      "type": "text",
+      "value": "Learning good commenting and style practices early in your programming education will serve you well throughout your career. Clean, well-documented code is easier to debug, modify, and maintain."
+    },
+    {
+      "type": "text",
+      "value": "Mastering comments and code style creates a foundation for professional programming practices. In the next lesson, we'll explore naming conventions and reserved keywords in greater detail."
+    }
+  ]
+}

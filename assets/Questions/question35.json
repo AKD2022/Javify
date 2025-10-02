@@ -1,0 +1,214 @@
+{
+  "lessonId": 35,
+  "title": "Recap and Mini Quiz on Unit 2 Concepts",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is a class in Java?",
+      "options": [
+        { "type": "text", "value": "A blueprint for creating objects that defines structure and behavior" },
+        { "type": "text", "value": "A type of variable" },
+        { "type": "text", "value": "A loop structure" },
+        { "type": "text", "value": "A mathematical function" }
+      ],
+      "answer": 0,
+      "explanation": "A class serves as a blueprint for creating objects, defining what data (instance variables) and behaviors (methods) objects will have."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "Are strings mutable or immutable in Java?",
+      "options": [
+        { "type": "text", "value": "Mutable" },
+        { "type": "text", "value": "Immutable - String methods return new String objects" },
+        { "type": "text", "value": "It depends on how they're created" },
+        { "type": "text", "value": "They can be either" }
+      ],
+      "answer": 1,
+      "explanation": "Strings are immutable in Java. String methods like substring(), trim(), and replace() return new String objects rather than modifying the original."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What is method overloading?",
+      "options": [
+        { "type": "text", "value": "Making methods too long" },
+        { "type": "text", "value": "Calling methods too many times" },
+        { "type": "text", "value": "Having multiple methods with the same name but different parameter lists" },
+        { "type": "text", "value": "Using too many methods" }
+      ],
+      "answer": 2,
+      "explanation": "Method overloading allows multiple methods with the same name but different parameter lists, providing flexibility in how methods can be called."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What does a void method return?",
+      "options": [
+        { "type": "text", "value": "Zero" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "Nothing - void methods don't return any value" }
+      ],
+      "answer": 3,
+      "explanation": "Methods declared as void perform actions but don't return any value. They execute code but produce no result to be captured."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What does Math.ceil(4.3) return?",
+      "options": [
+        { "type": "text", "value": "5.0" },
+        { "type": "text", "value": "4.0" },
+        { "type": "text", "value": "4.3" },
+        { "type": "text", "value": "4" }
+      ],
+      "answer": 0,
+      "explanation": "Math.ceil() rounds up to the nearest integer, so Math.ceil(4.3) returns 5.0 (the ceiling value)."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "Which method converts a String to an int?",
+      "options": [
+        { "type": "text", "value": "String.toInt()" },
+        { "type": "text", "value": "Integer.parseInt()" },
+        { "type": "text", "value": "convert()" },
+        { "type": "text", "value": "toInteger()" }
+      ],
+      "answer": 1,
+      "explanation": "Integer.parseInt() is the method used to convert a String representation of a number into an int primitive value."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What is autoboxing?",
+      "options": [
+        { "type": "text", "value": "Compressing data" },
+        { "type": "text", "value": "Creating boxes" },
+        { "type": "text", "value": "Automatic conversion from primitive to wrapper object" },
+        { "type": "text", "value": "Deleting objects" }
+      ],
+      "answer": 2,
+      "explanation": "Autoboxing is the automatic conversion from a primitive value to its wrapper object, like converting int to Integer automatically."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What is a constructor?",
+      "options": [
+        { "type": "text", "value": "A type of loop" },
+        { "type": "text", "value": "A variable" },
+        { "type": "text", "value": "A comment" },
+        { "type": "text", "value": "A special method that initializes objects when they're created" }
+      ],
+      "answer": 3,
+      "explanation": "A constructor is a special method with the same name as the class and no return type that initializes objects when they're created using the new keyword."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What do object variables store?",
+      "options": [
+        { "type": "text", "value": "References to objects' locations in memory, not the objects themselves" },
+        { "type": "text", "value": "The actual object data" },
+        { "type": "text", "value": "Copies of objects" },
+        { "type": "text", "value": "Class names" }
+      ],
+      "answer": 0,
+      "explanation": "Object variables store references (memory addresses) to where objects are located in memory, not the objects themselves."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What does null represent?",
+      "options": [
+        { "type": "text", "value": "Zero" },
+        { "type": "text", "value": "A reference that doesn't point to any object" },
+        { "type": "text", "value": "An empty string" },
+        { "type": "text", "value": "False" }
+      ],
+      "answer": 1,
+      "explanation": "null is a special reference value that means the variable doesn't point to any object. It's like an empty reference pointing to nothing."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What does the this keyword refer to?",
+      "options": [
+        { "type": "text", "value": "The class" },
+        { "type": "text", "value": "A static variable" },
+        { "type": "text", "value": "The current object whose method or constructor is being called" },
+        { "type": "text", "value": "The previous object" }
+      ],
+      "answer": 2,
+      "explanation": "The this keyword is a special reference that refers to the current object - the object whose method or constructor is being called."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "When should you use this in constructors?",
+      "options": [
+        { "type": "text", "value": "Never" },
+        { "type": "text", "value": "Always" },
+        { "type": "text", "value": "Only for static variables" },
+        { "type": "text", "value": "To distinguish between instance variables and parameters with the same name" }
+      ],
+      "answer": 3,
+      "explanation": "The most common use of this is to distinguish between instance variables and parameters that have the same name, particularly in constructors."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What is the difference between static and instance variables?",
+      "options": [
+        { "type": "text", "value": "Static variables belong to the class and are shared, instance variables belong to individual objects" },
+        { "type": "text", "value": "Static variables are faster" },
+        { "type": "text", "value": "Instance variables are public" },
+        { "type": "text", "value": "There is no difference" }
+      ],
+      "answer": 0,
+      "explanation": "Static variables belong to the class and are shared by all objects, while instance variables belong to individual objects and each object has its own copy."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "Can static methods access instance variables?",
+      "options": [
+        { "type": "text", "value": "Yes, always" },
+        { "type": "text", "value": "No, they can only access static variables" },
+        { "type": "text", "value": "Only with this keyword" },
+        { "type": "text", "value": "Only in constructors" }
+      ],
+      "answer": 1,
+      "explanation": "Static methods can only directly access static variables and other static methods because they belong to the class, not to any specific object."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "Which is correct for comparing String content?",
+      "options": [
+        { "type": "text", "value": "str1 == str2" },
+        { "type": "text", "value": "str1.compare(str2)" },
+        { "type": "text", "value": "str1.same(str2)" },
+        { "type": "text", "value": "str1.equals(str2)" }
+      ],
+      "answer": 3,
+      "explanation": "You should always use the equals() method to compare String content, not == which compares references to see if they point to the same object."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What keyword is required to create a new object?",
+      "options": [
+        { "type": "text", "value": "new" },
+        { "type": "text", "value": "create" },
+        { "type": "text", "value": "make" },
+        { "type": "text", "value": "object" }
+      ],
+      "answer": 0,
+      "explanation": "The new keyword is required to create a new object, allocating memory and calling the constructor to initialize the object."
+    }
+  ]
+}

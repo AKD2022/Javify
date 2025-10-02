@@ -1,0 +1,214 @@
+{
+  "lessonId": 36,
+  "title": "Introduction to Boolean Expressions",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is a boolean expression?",
+      "options": [
+        { "type": "text", "value": "Any expression that evaluates to true or false" },
+        { "type": "text", "value": "A mathematical equation" },
+        { "type": "text", "value": "A type of loop" },
+        { "type": "text", "value": "A string comparison" }
+      ],
+      "answer": 0,
+      "explanation": "A boolean expression is any expression that evaluates to a boolean value - either true or false. These expressions are fundamental to decision-making in programs."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What are the two possible values of the boolean primitive type?",
+      "options": [
+        { "type": "text", "value": "0 and 1" },
+        { "type": "text", "value": "true and false" },
+        { "type": "text", "value": "yes and no" },
+        { "type": "text", "value": "on and off" }
+      ],
+      "answer": 1,
+      "explanation": "The boolean primitive type stores only two possible values: true or false. Java uses these explicit keywords, not numbers."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What does the expression (5 > 3) evaluate to?",
+      "options": [
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "2" }
+      ],
+      "answer": 2,
+      "explanation": "The expression (5 > 3) is a boolean expression that evaluates to true because 5 is indeed greater than 3."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What are boolean expressions used for in programming?",
+      "options": [
+        { "type": "text", "value": "Storing large numbers" },
+        { "type": "text", "value": "Creating loops only" },
+        { "type": "text", "value": "Printing output" },
+        { "type": "text", "value": "Controlling program flow and making decisions" }
+      ],
+      "answer": 3,
+      "explanation": "Boolean expressions are used to control program flow because they determine which code executes and which code is skipped based on conditions."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Can you store the result of a boolean expression in a variable?",
+      "options": [
+        { "type": "text", "value": "Yes, in a boolean variable" },
+        { "type": "text", "value": "No, never" },
+        { "type": "text", "value": "Only in String variables" },
+        { "type": "text", "value": "Only in int variables" }
+      ],
+      "answer": 0,
+      "explanation": "You can store the result of a boolean expression in a boolean variable, which can make your code more readable and reusable."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "When does a boolean expression evaluate?",
+      "options": [
+        { "type": "text", "value": "Never" },
+        { "type": "text", "value": "Completely before being used" },
+        { "type": "text", "value": "After the program ends" },
+        { "type": "text", "value": "Only when printed" }
+      ],
+      "answer": 1,
+      "explanation": "Boolean expressions evaluate completely before being used. Java computes the entire expression and determines whether it's true or false, then uses that result."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "In boolean expressions, which operations are performed first?",
+      "options": [
+        { "type": "text", "value": "Comparisons" },
+        { "type": "text", "value": "Boolean operations" },
+        { "type": "text", "value": "Arithmetic operations" },
+        { "type": "text", "value": "String operations" }
+      ],
+      "answer": 2,
+      "explanation": "The order of operations applies to boolean expressions - arithmetic operations are performed before comparisons."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "Can boolean variables be reassigned new values?",
+      "options": [
+        { "type": "text", "value": "No, they're constants" },
+        { "type": "text", "value": "Only once" },
+        { "type": "text", "value": "Only to false" },
+        { "type": "text", "value": "Yes, just like any other variable" }
+      ],
+      "answer": 3,
+      "explanation": "Boolean variables can be reassigned new values just like any other variable. The value can change throughout your program based on conditions."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What are boolean expressions essential for?",
+      "options": [
+        { "type": "text", "value": "Validation and checking conditions" },
+        { "type": "text", "value": "Creating classes" },
+        { "type": "text", "value": "Declaring variables" },
+        { "type": "text", "value": "Importing packages" }
+      ],
+      "answer": 0,
+      "explanation": "Boolean expressions are essential for validation and checking conditions, helping determine if data meets requirements or if specific conditions are met."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What naming convention is often used for methods that return boolean values?",
+      "options": [
+        { "type": "text", "value": "Starting with \"get\"" },
+        { "type": "text", "value": "Starting with \"is\" or \"has\"" },
+        { "type": "text", "value": "Ending with \"Method\"" },
+        { "type": "text", "value": "All uppercase" }
+      ],
+      "answer": 1,
+      "explanation": "Boolean methods often have names that start with \"is\" or \"has\" to indicate they return true or false, making the code more readable."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What kind of questions do boolean expressions represent?",
+      "options": [
+        { "type": "text", "value": "Open-ended questions" },
+        { "type": "text", "value": "Multiple choice questions" },
+        { "type": "text", "value": "Yes-or-no questions with definitive answers" },
+        { "type": "text", "value": "Math problems" }
+      ],
+      "answer": 2,
+      "explanation": "Boolean expressions represent yes-or-no questions that have a definitive answer: true (yes) or false (no)."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What programming structures rely on boolean expressions?",
+      "options": [
+        { "type": "text", "value": "Only if statements" },
+        { "type": "text", "value": "Only loops" },
+        { "type": "text", "value": "Only methods" },
+        { "type": "text", "value": "All conditional structures including if statements and loops" }
+      ],
+      "answer": 3,
+      "explanation": "Every if statement, while loop, and conditional structure relies on boolean expressions to determine what code should execute."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What is a common mistake with boolean expressions?",
+      "options": [
+        { "type": "text", "value": "Using assignment = instead of comparison ==" },
+        { "type": "text", "value": "Using too many variables" },
+        { "type": "text", "value": "Making them too short" },
+        { "type": "text", "value": "Using parentheses" }
+      ],
+      "answer": 0,
+      "explanation": "A common mistake is using assignment (=) instead of comparison (==), which assigns a value instead of comparing it."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What does the expression (10 == 20) evaluate to?",
+      "options": [
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "20" },
+        { "type": "text", "value": "30" }
+      ],
+      "answer": 1,
+      "explanation": "The expression (10 == 20) evaluates to false because 10 is not equal to 20."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "Can you use boolean expressions directly in conditional statements?",
+      "options": [
+        { "type": "text", "value": "No, you must store them in variables first" },
+        { "type": "text", "value": "Only with certain operators" },
+        { "type": "text", "value": "Only in loops" },
+        { "type": "text", "value": "Yes, or you can store them in variables first" }
+      ],
+      "answer": 3,
+      "explanation": "You can use boolean expressions directly in conditional statements or store them in variables first. Both approaches work depending on readability needs."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What makes boolean expressions fundamental to programming?",
+      "options": [
+        { "type": "text", "value": "They are the foundation for all decision-making in programs" },
+        { "type": "text", "value": "They make programs run faster" },
+        { "type": "text", "value": "They reduce memory usage" },
+        { "type": "text", "value": "They simplify variable names" }
+      ],
+      "answer": 0,
+      "explanation": "Boolean expressions are the foundation for all decision-making in programming, enabling programs to respond to conditions and make intelligent choices."
+    }
+  ]
+}

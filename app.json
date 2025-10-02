@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "APCSA_REACT_NEW",
-    "slug": "APCSA_REACT_NEW",
+    "name": "APCSA_REACT",
+    "slug": "APCSA_REACT",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "scheme": "apcsareact",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
@@ -13,17 +14,27 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.APCSA-REACT"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.anonymous.APCSA_REACT"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a98e2f50-7ede-4f3b-a5a3-6cbd0e927b1b"
+      }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }

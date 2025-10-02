@@ -1,0 +1,106 @@
+{
+  "lessonId": 24,
+  "title": "Calling Methods and Method Signatures",
+  "content": [
+    {
+      "type": "text",
+      "value": "Method signatures and method calling are fundamental concepts that define how methods are identified, invoked, and used in Java programs. Understanding method signatures helps you choose the correct method to call, while mastering method calling syntax enables you to use existing methods effectively and create robust programs."
+    },
+    {
+      "type": "text",
+      "value": "A method signature consists of the method name and the parameter list (the number, types, and order of parameters). The method signature uniquely identifies a method within a class, allowing Java to distinguish between methods with the same name but different parameters."
+    },
+    {
+      "type": "code",
+      "value": "// Method signature: calculateArea(double)\npublic static double calculateArea(double radius) {\n    return Math.PI * radius * radius;\n}\n\n// Method signature: calculateArea(double, double)\npublic static double calculateArea(double length, double width) {\n    return length * width;\n}\n\n// Method signature: calculateArea()\npublic static void calculateArea() {\n    System.out.println(\"Please provide dimensions\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The return type is not part of the method signature, although it's part of the complete method declaration. Two methods cannot have the same signature even if they have different return types - this would cause a compilation error."
+    },
+    {
+      "type": "code",
+      "value": "// Valid - different signatures due to different parameters\npublic static int getValue(String text) { return 42; }\npublic static double getValue(int number) { return 3.14; }\n\n// Invalid - same signature with different return types\n// public static int process(String data) { return 1; }\n// public static double process(String data) { return 1.0; }  // Compilation error!"
+    },
+    {
+      "type": "text",
+      "value": "Method calling requires matching the method signature exactly. You must provide arguments that match the parameter types in the correct order. Java performs automatic type promotion when compatible types are used."
+    },
+    {
+      "type": "code",
+      "value": "// Method definitions\npublic static void printInfo(String name, int age, double gpa) {\n    System.out.println(name + \" is \" + age + \" years old with GPA \" + gpa);\n}\n\npublic static int add(int a, int b) {\n    return a + b;\n}\n\n// Method calls - arguments must match parameter types and order\npublic static void main(String[] args) {\n    printInfo(\"Alice\", 17, 3.8);        // Exact match\n    printInfo(\"Bob\", 16, 3);            // int 3 promoted to double 3.0\n    \n    int result = add(10, 5);            // Correct types\n    int sum = add(7, 8);                // Variables as arguments\n}"
+    },
+    {
+      "type": "text",
+      "value": "Method overloading allows multiple methods with the same name but different signatures to coexist in the same class. Java determines which method to call based on the arguments provided at the call site."
+    },
+    {
+      "type": "code",
+      "value": "// Overloaded methods - same name, different signatures\npublic static void display(int number) {\n    System.out.println(\"Integer: \" + number);\n}\n\npublic static void display(double number) {\n    System.out.println(\"Double: \" + number);\n}\n\npublic static void display(String text) {\n    System.out.println(\"String: \" + text);\n}\n\npublic static void display(int number, String label) {\n    System.out.println(label + \": \" + number);\n}\n\n// Java selects the appropriate method based on arguments\ndisplay(42);           // Calls display(int)\ndisplay(3.14);         // Calls display(double)\ndisplay(\"Hello\");      // Calls display(String)\ndisplay(100, \"Score\"); // Calls display(int, String)"
+    },
+    {
+      "type": "text",
+      "value": "When calling methods, you can use variables, literals, expressions, and even the results of other method calls as arguments. The arguments are evaluated before being passed to the method."
+    },
+    {
+      "type": "code",
+      "value": "public static int multiply(int x, int y) {\n    return x * y;\n}\n\npublic static int square(int n) {\n    return n * n;\n}\n\npublic static void main(String[] args) {\n    // Using literals\n    int result1 = multiply(5, 3);           // 15\n    \n    // Using variables\n    int a = 4, b = 7;\n    int result2 = multiply(a, b);           // 28\n    \n    // Using expressions\n    int result3 = multiply(2 + 3, 4 - 1);   // multiply(5, 3) = 15\n    \n    // Using method call results\n    int result4 = multiply(square(3), 2);   // multiply(9, 2) = 18\n}"
+    },
+    {
+      "type": "text",
+      "value": "Parameter names in method definitions are local to the method and don't affect method calling. When calling a method, you provide arguments that correspond to parameters by position, not by name."
+    },
+    {
+      "type": "code",
+      "value": "// Method definition with parameter names\npublic static void createAccount(String userName, String emailAddress, int userAge) {\n    System.out.println(\"Account created for \" + userName);\n    System.out.println(\"Email: \" + emailAddress);\n    System.out.println(\"Age: \" + userAge);\n}\n\n// Method calls - arguments match by position, not name\nString name = \"Alice\";\nString email = \"alice@email.com\";\nint age = 17;\n\ncreateAccount(name, email, age);         // Position 0, 1, 2\ncreateAccount(\"Bob\", \"bob@email.com\", 16); // Direct values\n// createAccount(age, name, email);      // Wrong - types don't match positions"
+    },
+    {
+      "type": "text",
+      "value": "Object method calling uses dot notation with the object reference, while static method calling uses the class name or can be called directly within the same class."
+    },
+    {
+      "type": "code",
+      "value": "// Static method calls\nMath.sqrt(25);                          // Class name required\nSystem.out.println(\"Hello\");            // Class name required\n\n// Within the same class, static methods can be called directly\npublic class Calculator {\n    public static int add(int a, int b) {\n        return a + b;\n    }\n    \n    public static void main(String[] args) {\n        int sum = add(5, 3);            // No class name needed\n        int result = Calculator.add(5, 3); // Class name optional but valid\n    }\n}\n\n// Object method calls (will be covered more in later lessons)\nString text = \"Hello\";\nint length = text.length();             // Called on object reference"
+    },
+    {
+      "type": "text",
+      "value": "Method chaining occurs when you use the return value of one method as an argument for another method call. This creates concise code for sequential operations."
+    },
+    {
+      "type": "code",
+      "value": "public static int doubleValue(int n) {\n    return n * 2;\n}\n\npublic static int addTen(int n) {\n    return n + 10;\n}\n\npublic static void displayResult(int value) {\n    System.out.println(\"Result: \" + value);\n}\n\n// Method chaining examples\nint x = 5;\ndisplayResult(addTen(doubleValue(x)));  // Chain: double 5 → 10, add 10 → 20, display 20\n\n// Equivalent step-by-step approach\nint doubled = doubleValue(x);           // 10\nint increased = addTen(doubled);        // 20\ndisplayResult(increased);               // Display 20"
+    },
+    {
+      "type": "text",
+      "value": "Void methods are called as complete statements since they don't return values. Non-void methods can be called as expressions or their return values can be ignored (though this is often wasteful)."
+    },
+    {
+      "type": "code",
+      "value": "public static void printMessage(String msg) {\n    System.out.println(\"Message: \" + msg);\n}\n\npublic static int calculateSum(int a, int b) {\n    return a + b;\n}\n\n// Void method calls - complete statements\nprintMessage(\"Hello World\");            // Correct usage\n\n// Non-void method calls\nint total = calculateSum(10, 15);       // Store return value\nSystem.out.println(calculateSum(5, 7)); // Use return value directly\ncalculateSum(3, 4);                     // Ignore return value (wasteful but legal)"
+    },
+    {
+      "type": "text",
+      "value": "Common method calling errors include argument count mismatch, type incompatibility, wrong argument order, and attempting to use void method returns in expressions."
+    },
+    {
+      "type": "code",
+      "value": "public static void demonstrateErrors() {\n    // Correct method call\n    Math.pow(2, 3);                     // Two double arguments required\n    \n    // Common errors (these would cause compilation errors):\n    // Math.pow(2);                     // Too few arguments\n    // Math.pow(2, 3, 4);               // Too many arguments\n    // Math.pow(\"2\", \"3\");              // Wrong argument types\n    // int x = System.out.println(\"Hi\");// void method can't be assigned\n}"
+    },
+    {
+      "type": "text",
+      "value": "Best practices for method calling include using descriptive variable names for arguments, ensuring argument order matches parameter expectations, checking method documentation for parameter requirements, and handling return values appropriately."
+    },
+    {
+      "type": "code",
+      "value": "// Good method calling practices\npublic static double calculateCircleArea(double radius) {\n    return Math.PI * Math.pow(radius, 2);\n}\n\npublic static void main(String[] args) {\n    // Use descriptive variable names\n    double circleRadius = 5.0;\n    double area = calculateCircleArea(circleRadius);\n    \n    // Check return values when needed\n    String text = \"Hello World\";\n    int spaceIndex = text.indexOf(' ');\n    if (spaceIndex != -1) {\n        String firstWord = text.substring(0, spaceIndex);\n        System.out.println(\"First word: \" + firstWord);\n    }\n    \n    // Use method chaining thoughtfully\n    String processed = text.trim().toLowerCase().replace(' ', '_');\n}"
+    },
+    {
+      "type": "text",
+      "value": "Understanding method signatures enables you to read Java documentation, use library methods effectively, and create your own overloaded methods. Method calling skills are essential for using existing functionality and building complex programs from simpler components."
+    },
+    {
+      "type": "text",
+      "value": "Mastering method signatures and calling syntax prepares you for working with object-oriented programming, using Java's standard library, and creating sophisticated applications that leverage existing functionality effectively. In the next lesson, we'll explore passing parameters to methods and return values in greater detail."
+    }
+  ]
+}

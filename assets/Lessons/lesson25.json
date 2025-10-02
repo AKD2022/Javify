@@ -1,0 +1,154 @@
+{
+  "lessonId": 25,
+  "title": "Passing Parameters to Methods",
+  "content": [
+    {
+      "type": "text",
+      "value": "Parameter passing is the mechanism by which data is transferred from calling code to methods. Understanding how Java passes parameters is crucial for predicting method behavior, avoiding common programming errors, and designing methods that work correctly with different types of data."
+    },
+    {
+      "type": "text",
+      "value": "Java uses pass-by-value for all parameter passing, which means methods receive copies of the argument values, not the original variables themselves. This fundamental concept affects how methods can interact with the data they receive and determines what changes persist after method execution."
+    },
+    {
+      "type": "code",
+      "value": "public static void modifyValue(int number) {\n    number = number * 2;  // Changes the copy, not the original\n    System.out.println(\"Inside method: \" + number);\n}\n\npublic static void main(String[] args) {\n    int originalValue = 10;\n    modifyValue(originalValue);\n    System.out.println(\"After method: \" + originalValue);  // Still 10\n    \n    // Output:\n    // Inside method: 20\n    // After method: 10\n}"
+    },
+    {
+      "type": "text",
+      "value": "With primitive types ("
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": "), pass-by-value means the method receives a copy of the actual value. Any changes made to the parameter inside the method do not affect the original variable in the calling code."
+    },
+    {
+      "type": "code",
+      "value": "public static void demonstratePrimitivePassByValue() {\n    int a = 5;\n    double b = 3.14;\n    boolean c = true;\n    char d = 'X';\n    \n    modifyPrimitives(a, b, c, d);\n    \n    // All original values remain unchanged\n    System.out.println(\"a = \" + a);        // 5\n    System.out.println(\"b = \" + b);        // 3.14\n    System.out.println(\"c = \" + c);        // true\n    System.out.println(\"d = \" + d);        // X\n}\n\npublic static void modifyPrimitives(int x, double y, boolean z, char w) {\n    x = 100;        // Changes only the copy\n    y = 99.99;      // Changes only the copy\n    z = false;      // Changes only the copy\n    w = 'Y';        // Changes only the copy\n}"
+    },
+    {
+      "type": "text",
+      "value": "Parameters act as local variables within the method scope. They exist only during method execution and are destroyed when the method completes. Parameter names can be the same as variables in the calling code without causing conflicts."
+    },
+    {
+      "type": "code",
+      "value": "public static void calculateArea(double length, double width) {\n    double area = length * width;  // Parameters used as local variables\n    System.out.println(\"Area: \" + area);\n    \n    // length, width, and area exist only within this method\n}\n\npublic static void main(String[] args) {\n    double length = 10.0;  // Different variable with same name\n    double width = 5.0;    // Different variable with same name\n    \n    calculateArea(length, width);  // Pass values, not variable names\n    \n    // The local variables 'length' and 'width' in main are unchanged\n}"
+    },
+    {
+      "type": "text",
+      "value": "Multiple parameters are passed independently, each following pass-by-value semantics. The order of arguments must match the order of parameters in the method signature."
+    },
+    {
+      "type": "code",
+      "value": "public static void processStudentData(String name, int age, double gpa, boolean isEnrolled) {\n    System.out.println(\"Processing: \" + name);\n    System.out.println(\"Age: \" + age);\n    System.out.println(\"GPA: \" + gpa);\n    System.out.println(\"Enrolled: \" + isEnrolled);\n    \n    // Each parameter is a copy of the corresponding argument\n    age = age + 1;           // Only changes the copy\n    gpa = gpa + 0.1;         // Only changes the copy\n    isEnrolled = false;      // Only changes the copy\n}\n\npublic static void main(String[] args) {\n    String studentName = \"Alice\";\n    int studentAge = 17;\n    double studentGPA = 3.8;\n    boolean enrolled = true;\n    \n    processStudentData(studentName, studentAge, studentGPA, enrolled);\n    \n    // All original values remain unchanged after method call\n}"
+    },
+    {
+      "type": "text",
+      "value": "When passing expressions as arguments, Java evaluates the expression first, then passes the resulting value to the method. This demonstrates that methods receive values, not the expressions that produced them."
+    },
+    {
+      "type": "code",
+      "value": "public static void displayCalculation(int result) {\n    System.out.println(\"Calculation result: \" + result);\n    result = 0;  // Changes only the copy\n}\n\npublic static void main(String[] args) {\n    int x = 10;\n    int y = 5;\n    \n    // Expression is evaluated, then result (15) is passed\n    displayCalculation(x + y);\n    \n    // Original variables x and y are unchanged\n    System.out.println(\"x = \" + x + \", y = \" + y);  // x = 10, y = 5\n    \n    // Method calls can also be arguments\n    displayCalculation(Math.abs(-25));  // Passes 25\n}"
+    },
+    {
+      "type": "text",
+      "value": "Reference types like "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " still follow pass-by-value, but the value being passed is a reference (memory address) to the object, not the object itself. However, due to "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " immutability, this distinction often doesn't affect behavior."
+    },
+    {
+      "type": "code",
+      "value": "public static void modifyString(String text) {\n    System.out.println(\"Original parameter: \" + text);\n    text = text.toUpperCase();  // Creates new String, assigns to copy of reference\n    System.out.println(\"Modified parameter: \" + text);\n}\n\npublic static void main(String[] args) {\n    String message = \"hello world\";\n    modifyString(message);\n    System.out.println(\"After method: \" + message);  // Still \"hello world\"\n    \n    // The original reference 'message' still points to \"hello world\"\n    // The method worked with a copy of the reference\n}"
+    },
+    {
+      "type": "text",
+      "value": "To return modified values from methods, use return statements rather than trying to modify parameters. This is the correct way to communicate results back to calling code."
+    },
+    {
+      "type": "code",
+      "value": "// Incorrect approach - trying to modify parameter\npublic static void doubleValueWrong(int number) {\n    number = number * 2;  // Only changes the copy\n}\n\n// Correct approach - return the modified value\npublic static int doubleValueCorrect(int number) {\n    return number * 2;    // Return the result\n}\n\npublic static void main(String[] args) {\n    int value = 10;\n    \n    doubleValueWrong(value);\n    System.out.println(value);  // Still 10 - unchanged\n    \n    value = doubleValueCorrect(value);\n    System.out.println(value);  // Now 20 - updated with returned value\n    \n    // Or use without reassigning\n    int doubled = doubleValueCorrect(15);\n    System.out.println(doubled);  // 30\n}"
+    },
+    {
+      "type": "text",
+      "value": "Methods can accept multiple parameters and return a single value, enabling complex data processing. Design methods to take input parameters and return computed results rather than trying to modify the input parameters."
+    },
+    {
+      "type": "code",
+      "value": "public static double calculateGPA(int totalPoints, int totalCredits) {\n    if (totalCredits == 0) {\n        return 0.0;  // Avoid division by zero\n    }\n    return (double) totalPoints / totalCredits;\n}\n\npublic static String formatGrade(double gpa) {\n    if (gpa >= 3.5) {\n        return \"Honor Roll\";\n    } else if (gpa >= 2.0) {\n        return \"Good Standing\";\n    } else {\n        return \"Needs Improvement\";\n    }\n}\n\npublic static void main(String[] args) {\n    int points = 340;\n    int credits = 100;\n    \n    double studentGPA = calculateGPA(points, credits);  // 3.4\n    String status = formatGrade(studentGPA);\n    \n    System.out.println(\"GPA: \" + studentGPA);\n    System.out.println(\"Status: \" + status);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Parameter validation is important for creating robust methods. Check parameter values and handle invalid input appropriately to prevent errors and unexpected behavior."
+    },
+    {
+      "type": "code",
+      "value": "public static double calculateCircleArea(double radius) {\n    if (radius < 0) {\n        System.out.println(\"Error: Radius cannot be negative\");\n        return -1;  // Return special value to indicate error\n    }\n    return Math.PI * radius * radius;\n}\n\npublic static int divide(int dividend, int divisor) {\n    if (divisor == 0) {\n        System.out.println(\"Error: Cannot divide by zero\");\n        return 0;  // Return safe default value\n    }\n    return dividend / divisor;\n}\n\npublic static void displayMessage(String message) {\n    if (message == null || message.isEmpty()) {\n        System.out.println(\"No message to display\");\n        return;  // Early return for invalid input\n    }\n    System.out.println(\"Message: \" + message);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Common patterns for parameter passing include using descriptive parameter names, organizing parameters logically, keeping parameter lists reasonable in length, and using helper methods to avoid overly complex parameter sets."
+    },
+    {
+      "type": "code",
+      "value": "// Good parameter organization\npublic static void createStudentRecord(String firstName, String lastName, \n                                     int age, double gpa) {\n    System.out.println(\"Creating record for: \" + firstName + \" \" + lastName);\n    System.out.println(\"Age: \" + age + \", GPA: \" + gpa);\n}\n\n// Helper method to reduce parameter complexity\npublic static void processTestScores(int math, int english, int science) {\n    double average = calculateAverage(math, english, science);\n    String grade = determineGrade(average);\n    displayResults(average, grade);\n}\n\nprivate static double calculateAverage(int score1, int score2, int score3) {\n    return (score1 + score2 + score3) / 3.0;\n}\n\nprivate static String determineGrade(double average) {\n    if (average >= 90) return \"A\";\n    if (average >= 80) return \"B\";\n    if (average >= 70) return \"C\";\n    return \"F\";\n}\n\nprivate static void displayResults(double average, String grade) {\n    System.out.println(\"Average: \" + average + \", Grade: \" + grade);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Understanding parameter passing helps you predict method behavior, design effective method interfaces, and avoid common errors related to expecting methods to modify their parameters. This knowledge is fundamental to writing correct and maintainable Java programs."
+    },
+    {
+      "type": "text",
+      "value": "Mastering parameter passing prepares you for more advanced topics like working with arrays and objects, where pass-by-value behavior becomes more nuanced. In the next lesson, we'll explore return values and "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " methods in greater detail."
+    }
+  ]
+}

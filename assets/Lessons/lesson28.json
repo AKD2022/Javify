@@ -1,0 +1,362 @@
+{
+  "lessonId": 28,
+  "title": "Introduction to the Java Standard Library",
+  "content": [
+    {
+      "type": "text",
+      "value": "The Java Standard Library is a vast collection of pre-written classes and methods that come built-in with Java. Instead of writing every piece of functionality from scratch, you can use these ready-made tools to perform common tasks efficiently. Understanding how to use the Java Standard Library is essential for becoming a productive Java programmer."
+    },
+    {
+      "type": "text",
+      "value": "The Java Standard Library is organized into packages, which are groups of related classes. A package is like a folder that contains classes with similar purposes. For example, the "
+    },
+    {
+      "type": "code",
+      "value": "java.lang"
+    },
+    {
+      "type": "text",
+      "value": " package contains fundamental classes like "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "System"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "java.lang"
+    },
+    {
+      "type": "text",
+      "value": " package is automatically imported into every Java program, which is why you can use classes like "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " without any special import statements."
+    },
+    {
+      "type": "code",
+      "value": "// These classes are from java.lang (no import needed)\nString name = \"Alice\";\nint maxValue = Math.max(10, 20);\nSystem.out.println(\"Hello, World!\");"
+    },
+    {
+      "type": "text",
+      "value": "For classes in other packages, you need to use an "
+    },
+    {
+      "type": "code",
+      "value": "import"
+    },
+    {
+      "type": "text",
+      "value": " statement at the top of your program. The "
+    },
+    {
+      "type": "code",
+      "value": "import"
+    },
+    {
+      "type": "text",
+      "value": " statement tells Java which classes you want to use from other packages."
+    },
+    {
+      "type": "code",
+      "value": "import java.util.Scanner;\nimport java.util.ArrayList;\nimport java.util.Random;\n\npublic class MyProgram {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n        ArrayList<String> names = new ArrayList<>();\n        Random rand = new Random();\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "You can also import all classes from a package using the asterisk wildcard. However, it's generally better practice to import only the specific classes you need for clarity."
+    },
+    {
+      "type": "code",
+      "value": "// Import all classes from java.util\nimport java.util.*;\n\n// Better practice: import specific classes\nimport java.util.Scanner;\nimport java.util.ArrayList;"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "java.util"
+    },
+    {
+      "type": "text",
+      "value": " package contains utility classes that are extremely useful for everyday programming. This includes classes like "
+    },
+    {
+      "type": "code",
+      "value": "Scanner"
+    },
+    {
+      "type": "text",
+      "value": " for reading input, "
+    },
+    {
+      "type": "code",
+      "value": "ArrayList"
+    },
+    {
+      "type": "text",
+      "value": " for dynamic lists, and "
+    },
+    {
+      "type": "code",
+      "value": "Random"
+    },
+    {
+      "type": "text",
+      "value": " for generating random numbers."
+    },
+    {
+      "type": "code",
+      "value": "import java.util.Random;\n\npublic class RandomExample {\n    public static void main(String[] args) {\n        Random generator = new Random();\n        \n        // Generate random integer\n        int randomNum = generator.nextInt(100);  // 0 to 99\n        \n        // Generate random double\n        double randomDouble = generator.nextDouble();  // 0.0 to 1.0\n        \n        System.out.println(\"Random number: \" + randomNum);\n        System.out.println(\"Random double: \" + randomDouble);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class from "
+    },
+    {
+      "type": "code",
+      "value": "java.lang"
+    },
+    {
+      "type": "text",
+      "value": " provides mathematical functions and constants. All methods in the "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class are "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": ", meaning you call them directly on the class name without creating an object."
+    },
+    {
+      "type": "code",
+      "value": "// Common Math methods\ndouble squareRoot = Math.sqrt(25);           // 5.0\ndouble power = Math.pow(2, 3);              // 8.0 (2^3)\nint absolute = Math.abs(-15);               // 15\ndouble ceiling = Math.ceil(4.3);            // 5.0\ndouble floor = Math.floor(4.7);             // 4.0\n\n// Math constants\ndouble pi = Math.PI;                        // 3.141592653589793\ndouble e = Math.E;                          // 2.718281828459045"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "System"
+    },
+    {
+      "type": "text",
+      "value": " class provides access to system resources and standard input/output. You've already been using "
+    },
+    {
+      "type": "code",
+      "value": "System.out.println()"
+    },
+    {
+      "type": "text",
+      "value": " to print output to the console."
+    },
+    {
+      "type": "code",
+      "value": "// Printing to console\nSystem.out.println(\"This prints with a new line\");\nSystem.out.print(\"This prints without a new line\");\nSystem.out.print(\" and continues on the same line\\n\");\n\n// Get current time in milliseconds\nlong currentTime = System.currentTimeMillis();\nSystem.out.println(\"Current time: \" + currentTime);"
+    },
+    {
+      "type": "text",
+      "value": "Wrapper classes in "
+    },
+    {
+      "type": "code",
+      "value": "java.lang"
+    },
+    {
+      "type": "text",
+      "value": " provide object versions of primitive types. These include "
+    },
+    {
+      "type": "code",
+      "value": "Integer"
+    },
+    {
+      "type": "text",
+      "value": " for "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Double"
+    },
+    {
+      "type": "text",
+      "value": " for "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Boolean"
+    },
+    {
+      "type": "text",
+      "value": " for "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "Character"
+    },
+    {
+      "type": "text",
+      "value": " for "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": ". Wrapper classes provide useful methods for working with these types."
+    },
+    {
+      "type": "code",
+      "value": "// Converting strings to numbers\nString numStr = \"123\";\nint number = Integer.parseInt(numStr);           // 123\n\nString doubleStr = \"3.14\";\ndouble decimal = Double.parseDouble(doubleStr);  // 3.14\n\n// Getting min/max values\nint maxInt = Integer.MAX_VALUE;                  // 2147483647\nint minInt = Integer.MIN_VALUE;                  // -2147483648\n\n// Converting numbers to strings\nString intString = Integer.toString(456);        // \"456\"\nString doubleString = Double.toString(7.89);     // \"7.89\""
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Character"
+    },
+    {
+      "type": "text",
+      "value": " class provides methods for working with individual characters, such as checking if a character is a letter, digit, or whitespace."
+    },
+    {
+      "type": "code",
+      "value": "char letter = 'A';\nchar digit = '5';\nchar space = ' ';\n\nboolean isLetter = Character.isLetter(letter);        // true\nboolean isDigit = Character.isDigit(digit);           // true\nboolean isWhitespace = Character.isWhitespace(space); // true\n\n// Case conversion\nchar lower = Character.toLowerCase('A');              // 'a'\nchar upper = Character.toUpperCase('z');              // 'Z'"
+    },
+    {
+      "type": "text",
+      "value": "The Java Standard Library also includes specialized packages for specific tasks. The "
+    },
+    {
+      "type": "code",
+      "value": "java.io"
+    },
+    {
+      "type": "text",
+      "value": " package handles input and output operations with files, and the "
+    },
+    {
+      "type": "code",
+      "value": "java.text"
+    },
+    {
+      "type": "text",
+      "value": " package provides formatting and parsing utilities."
+    },
+    {
+      "type": "code",
+      "value": "import java.text.DecimalFormat;\n\npublic class FormattingExample {\n    public static void main(String[] args) {\n        DecimalFormat df = new DecimalFormat(\"#.##\");\n        \n        double number = 3.14159;\n        String formatted = df.format(number);  // \"3.14\"\n        \n        System.out.println(\"Formatted: \" + formatted);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Using the Java Standard Library effectively means learning which classes and methods are available for common tasks. Instead of reinventing the wheel, you can leverage tested and optimized code that's already part of Java."
+    },
+    {
+      "type": "code",
+      "value": "// Using Arrays class for array operations\nimport java.util.Arrays;\n\npublic class ArrayExample {\n    public static void main(String[] args) {\n        int[] numbers = {5, 2, 8, 1, 9};\n        \n        // Sort array\n        Arrays.sort(numbers);\n        \n        // Print array\n        System.out.println(Arrays.toString(numbers));  // [1, 2, 5, 8, 9]\n        \n        // Search for value\n        int index = Arrays.binarySearch(numbers, 5);   // 2\n        System.out.println(\"Index of 5: \" + index);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Documentation is your best friend when working with the Java Standard Library. Oracle provides comprehensive documentation at docs.oracle.com that describes every class, method, and package in detail. Learning to read this documentation is an essential skill for Java programmers."
+    },
+    {
+      "type": "text",
+      "value": "When you encounter a new problem, check if there's already a class or method in the Java Standard Library that can help. Common tasks like sorting, searching, formatting, and mathematical operations often have built-in solutions that are more efficient than writing your own."
+    },
+    {
+      "type": "text",
+      "value": "Understanding the Java Standard Library makes you a more efficient programmer by reducing development time and improving code quality. In upcoming lessons, you'll dive deeper into specific classes like "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " and explore wrapper classes in greater detail. The Java Standard Library is a powerful toolkit that continues to expand your programming capabilities."
+    }
+  ]
+}

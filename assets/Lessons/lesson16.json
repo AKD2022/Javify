@@ -1,0 +1,202 @@
+{
+  "lessonId": 16,
+  "title": "Naming Conventions and Reserved Keywords",
+  "content": [
+    {
+      "type": "text",
+      "value": "Proper naming conventions and understanding reserved keywords are fundamental to writing professional Java code. Following established naming patterns makes your code readable and consistent with industry standards, while avoiding reserved keywords prevents compilation errors."
+    },
+    {
+      "type": "text",
+      "value": "Java identifiers are names given to variables, methods, classes, and other program elements. Valid identifiers must start with a letter, underscore ("
+    },
+    {
+      "type": "code",
+      "value": "_"
+    },
+    {
+      "type": "text",
+      "value": "), or dollar sign ("
+    },
+    {
+      "type": "code",
+      "value": "$"
+    },
+    {
+      "type": "text",
+      "value": "). Subsequent characters can include letters, digits, underscores, or dollar signs, but no spaces or special symbols."
+    },
+    {
+      "type": "code",
+      "value": "// Valid identifiers\nint age;\nString studentName;\ndouble _temperature;\nchar $symbol;\nint value123;\n\n// Invalid identifiers\n// int 2ndScore;     // Cannot start with digit\n// String first-name; // Hyphen not allowed\n// double my score;   // Space not allowed"
+    },
+    {
+      "type": "text",
+      "value": "Variable names should use camelCase convention, starting with a lowercase letter and capitalizing the first letter of each subsequent word. This convention makes variables easily distinguishable from classes and enhances code readability."
+    },
+    {
+      "type": "code",
+      "value": "// Good variable names (camelCase)\nint studentCount = 25;\nString firstName = \"Alice\";\ndouble averageTemperature = 72.5;\nboolean isComplete = true;\nchar currentGrade = 'A';\n\n// Poor variable names\nint studentcount;     // Missing camelCase\nString first_name;    // Using underscore\ndouble AVGTEMP;       // All caps (reserved for constants)"
+    },
+    {
+      "type": "text",
+      "value": "Method names follow the same camelCase convention as variables, typically starting with a verb that describes what the method does. Method names should clearly indicate the action being performed."
+    },
+    {
+      "type": "code",
+      "value": "// Good method names (camelCase, descriptive)\npublic void calculateGrade() { }\npublic int getStudentAge() { }\npublic boolean isEligible() { }\npublic void displayResults() { }\npublic double findAverage() { }\n\n// Poor method names\npublic void calc() { }        // Too abbreviated\npublic void DoSomething() { } // Wrong capitalization\npublic void method1() { }     // Not descriptive"
+    },
+    {
+      "type": "text",
+      "value": "Class names use PascalCase (also called UpperCamelCase), where every word begins with a capital letter, including the first word. Class names should be nouns that clearly describe what the class represents."
+    },
+    {
+      "type": "code",
+      "value": "// Good class names (PascalCase)\npublic class Student { }\npublic class GradeCalculator { }\npublic class BankAccount { }\npublic class GameController { }\npublic class MathUtilities { }\n\n// Poor class names\npublic class student { }      // Should start with capital\npublic class grade_calc { }   // Using underscore\npublic class myClass { }      // Should start with capital"
+    },
+    {
+      "type": "text",
+      "value": "Constants use ALL_UPPERCASE letters with underscores separating words. Constants are typically declared with the "
+    },
+    {
+      "type": "code",
+      "value": "final"
+    },
+    {
+      "type": "text",
+      "value": " keyword and often "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": " for class-level constants."
+    },
+    {
+      "type": "code",
+      "value": "// Good constant names (ALL_UPPERCASE)\npublic static final int MAX_STUDENTS = 30;\npublic static final double PI = 3.14159;\npublic static final String SCHOOL_NAME = \"Jefferson High\";\npublic static final boolean DEBUG_MODE = true;\n\n// Poor constant names\nfinal int maxStudents = 30;   // Should be ALL_UPPERCASE\nfinal double pi = 3.14159;    // Missing underscore convention"
+    },
+    {
+      "type": "text",
+      "value": "Package names use all lowercase letters, often reflecting the organization's domain name in reverse order. Package names help organize related classes and prevent naming conflicts."
+    },
+    {
+      "type": "code",
+      "value": "// Good package names (lowercase)\npackage com.school.gradebook;\npackage edu.university.math;\npackage org.example.utilities;\n\n// Poor package names\n// package Com.School.GradeBook;  // Should be lowercase\n// package grade_book;            // Avoid underscores"
+    },
+    {
+      "type": "text",
+      "value": "Reserved keywords are special words that have predefined meanings in Java and cannot be used as identifiers. These keywords control program structure, data types, access modifiers, and flow control."
+    },
+    {
+      "type": "text",
+      "value": "Data type keywords include the primitive types and void. These keywords define the fundamental data types available in Java for storing different kinds of information."
+    },
+    {
+      "type": "code",
+      "value": "// Data type keywords (cannot be used as variable names)\n// int, double, boolean, char, byte, short, long, float, void\n\nint number = 42;           // 'int' is a keyword\ndouble decimal = 3.14;     // 'double' is a keyword\nboolean flag = true;       // 'boolean' is a keyword\nchar letter = 'A';         // 'char' is a keyword"
+    },
+    {
+      "type": "text",
+      "value": "Access modifier keywords control the visibility and accessibility of classes, methods, and variables. Understanding these keywords is essential for proper encapsulation and class design."
+    },
+    {
+      "type": "code",
+      "value": "// Access modifier keywords\npublic class Example {          // 'public' keyword\n    private int value;          // 'private' keyword\n    protected String name;      // 'protected' keyword\n    \n    public void method() { }    // 'public' keyword\n    private void helper() { }   // 'private' keyword\n}"
+    },
+    {
+      "type": "text",
+      "value": "Control flow keywords manage program execution, including conditionals, loops, and method control. These keywords form the backbone of program logic and decision-making."
+    },
+    {
+      "type": "code",
+      "value": "// Control flow keywords\nif (condition) {              // 'if' keyword\n    return value;             // 'return' keyword\n} else {                      // 'else' keyword\n    break;                    // 'break' keyword\n}\n\nfor (int i = 0; i < 10; i++) { // 'for' keyword\n    continue;                 // 'continue' keyword\n}\n\nwhile (running) {             // 'while' keyword\n    // loop body\n}"
+    },
+    {
+      "type": "text",
+      "value": "Class and object-related keywords define class structure, inheritance, and object creation. These keywords are fundamental to object-oriented programming in Java."
+    },
+    {
+      "type": "code",
+      "value": "// Class-related keywords\npublic class Student extends Person {  // 'class', 'extends' keywords\n    static int count;                   // 'static' keyword\n    final String id;                    // 'final' keyword\n    \n    public Student() {                  // Constructor\n        super();                        // 'super' keyword\n        this.id = generateId();         // 'this' keyword\n    }\n    \n    public void study() {\n        new Assignment();               // 'new' keyword\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Exception handling keywords manage error conditions and program robustness. These keywords allow programs to handle unexpected situations gracefully."
+    },
+    {
+      "type": "code",
+      "value": "// Exception handling keywords\ntry {                           // 'try' keyword\n    int result = divide(a, b);\n} catch (Exception e) {         // 'catch' keyword\n    System.out.println(\"Error occurred\");\n} finally {                     // 'finally' keyword\n    cleanup();\n}\n\npublic void riskyMethod() throws Exception {  // 'throws' keyword\n    throw new Exception(\"Something went wrong\"); // 'throw' keyword\n}"
+    },
+    {
+      "type": "text",
+      "value": "Other important keywords include "
+    },
+    {
+      "type": "code",
+      "value": "import"
+    },
+    {
+      "type": "text",
+      "value": " for including external classes, "
+    },
+    {
+      "type": "code",
+      "value": "package"
+    },
+    {
+      "type": "text",
+      "value": " for organizing code, and "
+    },
+    {
+      "type": "code",
+      "value": "interface"
+    },
+    {
+      "type": "text",
+      "value": " for defining contracts between classes."
+    },
+    {
+      "type": "code",
+      "value": "// Other keywords\nimport java.util.Scanner;      // 'import' keyword\npackage com.school.app;        // 'package' keyword\n\npublic interface Drawable {     // 'interface' keyword\n    void draw();\n}\n\npublic abstract class Shape {   // 'abstract' keyword\n    abstract void calculateArea();\n}"
+    },
+    {
+      "type": "text",
+      "value": "Some words look like they might be keywords but are not reserved in Java. These contextual keywords or identifiers can be used as variable names, though it's often confusing to do so."
+    },
+    {
+      "type": "code",
+      "value": "// These are NOT keywords (but avoid using them as names)\nString String = \"confusing\";   // Legal but confusing\nint length = 10;               // 'length' is not a keyword\nboolean main = true;           // 'main' is not a keyword (but confusing)"
+    },
+    {
+      "type": "text",
+      "value": "Best practices for naming include using descriptive names that explain purpose, avoiding abbreviations unless they're widely understood, being consistent within your codebase, and following team or organizational standards."
+    },
+    {
+      "type": "code",
+      "value": "// Good naming practices\nString customerFirstName = \"John\";      // Clear and descriptive\nint totalStudentCount = 150;            // Explains what the number represents\ndouble monthlyInterestRate = 0.025;     // Clear financial context\nboolean isAccountActive = true;         // Boolean naming convention\n\n// Poor naming practices\nString n = \"John\";                      // Too abbreviated\nint num = 150;                          // Vague purpose\ndouble rate = 0.025;                    // Ambiguous meaning"
+    },
+    {
+      "type": "text",
+      "value": "Common naming mistakes include using reserved keywords as identifiers, inconsistent capitalization, overly abbreviated names, and names that don't reflect the variable's purpose or content."
+    },
+    {
+      "type": "text",
+      "value": "Understanding naming conventions and reserved keywords helps you write professional, readable code that follows Java standards. These practices become increasingly important as you work on larger projects and collaborate with other developers."
+    },
+    {
+      "type": "text",
+      "value": "Mastering proper naming and keyword usage prepares you for more advanced Java concepts and professional development practices. In the next lesson, we'll explore the "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class and its useful mathematical functions."
+    }
+  ]
+}

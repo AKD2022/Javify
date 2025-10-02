@@ -1,0 +1,230 @@
+{
+  "lessonId": 13,
+  "title": "String Basics and String Concatenation",
+  "content": [
+    {
+      "type": "text",
+      "value": "Strings are fundamental to Java programming, representing sequences of characters used for text processing, user interaction, and data manipulation. Unlike primitive types, "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " is a reference type (class) that provides powerful methods for working with text data."
+    },
+    {
+      "type": "text",
+      "value": "A "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " in Java is an object that stores a sequence of characters. String literals are enclosed in double quotes, distinguishing them from "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " literals which use single quotes. Strings can contain letters, numbers, symbols, and whitespace."
+    },
+    {
+      "type": "code",
+      "value": "String greeting = \"Hello, World!\";\nString studentName = \"Alice Johnson\";\nString course = \"AP Computer Science A\";\nString empty = \"\";           // Empty string\nString spaces = \"   \";       // String with only spaces"
+    },
+    {
+      "type": "text",
+      "value": "String concatenation combines multiple strings or values into a single string using the "
+    },
+    {
+      "type": "code",
+      "value": "+"
+    },
+    {
+      "type": "text",
+      "value": " operator. When at least one operand is a "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": ", Java performs string concatenation instead of arithmetic addition."
+    },
+    {
+      "type": "code",
+      "value": "String firstName = \"John\";\nString lastName = \"Smith\";\nString fullName = firstName + \" \" + lastName;  // \"John Smith\"\n\nString message = \"Hello, \" + firstName + \"!\";      // \"Hello, John!\"\nString info = \"Age: \" + 17 + \" years\";             // \"Age: 17 years\""
+    },
+    {
+      "type": "text",
+      "value": "When concatenating with non-string values, Java automatically converts them to their string representations. This process works with all primitive types and objects that have meaningful "
+    },
+    {
+      "type": "code",
+      "value": "toString()"
+    },
+    {
+      "type": "text",
+      "value": " methods."
+    },
+    {
+      "type": "code",
+      "value": "int score = 95;\ndouble gpa = 3.75;\nboolean honor = true;\nchar grade = 'A';\n\nString report = \"Score: \" + score;           // \"Score: 95\"\nString gpaInfo = \"GPA: \" + gpa;              // \"GPA: 3.75\"\nString status = \"Honor roll: \" + honor;      // \"Honor roll: true\"\nString letterGrade = \"Grade: \" + grade;      // \"Grade: A\""
+    },
+    {
+      "type": "text",
+      "value": "The order of operations matters when mixing arithmetic and string concatenation. Arithmetic operations are performed first, then concatenation occurs from left to right."
+    },
+    {
+      "type": "code",
+      "value": "int a = 10;\nint b = 5;\n\nString result1 = a + b + \" total\";          // \"15 total\" (arithmetic first)\nString result2 = \"Total: \" + a + b;         // \"Total: 105\" (concatenation left-to-right)\nString result3 = \"Total: \" + (a + b);       // \"Total: 15\" (parentheses force arithmetic)\nString result4 = a + \" + \" + b + \" = \" + (a + b); // \"10 + 5 = 15\""
+    },
+    {
+      "type": "text",
+      "value": "Strings in Java are immutable, meaning once created, their content cannot be changed. String operations that appear to modify a string actually create new "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " objects."
+    },
+    {
+      "type": "code",
+      "value": "String original = \"Hello\";\nString modified = original + \" World\";\n\n// 'original' still contains \"Hello\"\n// 'modified' contains \"Hello World\"\n// Two separate String objects exist in memory"
+    },
+    {
+      "type": "text",
+      "value": "Escape sequences allow you to include special characters in strings that would otherwise be difficult or impossible to type directly. Common escape sequences include newline ("
+    },
+    {
+      "type": "code",
+      "value": "\\n"
+    },
+    {
+      "type": "text",
+      "value": "), tab ("
+    },
+    {
+      "type": "code",
+      "value": "\\t"
+    },
+    {
+      "type": "text",
+      "value": "), and quotes."
+    },
+    {
+      "type": "code",
+      "value": "String multiline = \"First line\\nSecond line\\nThird line\";\nString tabbed = \"Name:\\tAlice\\nAge:\\t17\";\nString quoted = \"She said, \\\"Hello there!\\\"\";\nString backslash = \"File path: C:\\\\Users\\\\Documents\";\nString apostrophe = \"It\\'s a beautiful day!\";"
+    },
+    {
+      "type": "text",
+      "value": "The compound assignment operator ("
+    },
+    {
+      "type": "code",
+      "value": "+="
+    },
+    {
+      "type": "text",
+      "value": ") provides a shortcut for string concatenation when you want to append text to an existing string variable."
+    },
+    {
+      "type": "code",
+      "value": "String message = \"Welcome\";\nmessage += \" to Java\";        // message becomes \"Welcome to Java\"\nmessage += \" programming!\";   // message becomes \"Welcome to Java programming!\"\n\nString report = \"Student: \";\nreport += \"Alice Johnson\";\nreport += \"\\nGrade: A\";\nreport += \"\\nGPA: 3.9\";\n// Final report contains all information"
+    },
+    {
+      "type": "text",
+      "value": "Building complex strings often involves combining multiple variables and literal text. This technique is essential for creating formatted output, reports, and user messages."
+    },
+    {
+      "type": "code",
+      "value": "String studentName = \"Bob Wilson\";\nint mathScore = 88;\nint englishScore = 92;\nint scienceScore = 85;\n\ndouble average = (mathScore + englishScore + scienceScore) / 3.0;\n\nString transcript = \"Student: \" + studentName + \"\\n\" +\n                   \"Math: \" + mathScore + \"\\n\" +\n                   \"English: \" + englishScore + \"\\n\" +\n                   \"Science: \" + scienceScore + \"\\n\" +\n                   \"Average: \" + average;"
+    },
+    {
+      "type": "text",
+      "value": "When working with user input, string concatenation helps create meaningful prompts and responses. This makes programs more user-friendly and professional."
+    },
+    {
+      "type": "code",
+      "value": "Scanner input = new Scanner(System.in);\n\nSystem.out.print(\"Enter your first name: \");\nString firstName = input.nextLine();\n\nSystem.out.print(\"Enter your age: \");\nint age = input.nextInt();\n\nString greeting = \"Hello, \" + firstName + \"! \";\nString ageMessage = \"You are \" + age + \" years old.\";\nString combined = greeting + ageMessage;\n\nSystem.out.println(combined);"
+    },
+    {
+      "type": "text",
+      "value": "String concatenation is crucial for formatting mathematical results and calculations in readable forms. This helps users understand program output and results."
+    },
+    {
+      "type": "code",
+      "value": "double principal = 1000.0;\ndouble rate = 0.05;\nint years = 10;\n\ndouble interest = principal * rate * years;\ndouble total = principal + interest;\n\nString calculation = \"Principal: $\" + principal + \"\\n\" +\n                    \"Rate: \" + (rate * 100) + \"%\\n\" +\n                    \"Time: \" + years + \" years\\n\" +\n                    \"Interest: $\" + interest + \"\\n\" +\n                    \"Total: $\" + total;\n\nSystem.out.println(calculation);"
+    },
+    {
+      "type": "text",
+      "value": "Empty strings and null values require special handling in string operations. An empty string ("
+    },
+    {
+      "type": "code",
+      "value": "\"\""
+    },
+    {
+      "type": "text",
+      "value": ") is a valid "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " object with zero characters, while "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " means no object exists."
+    },
+    {
+      "type": "code",
+      "value": "String empty = \"\";\nString notNull = empty + \"Hello\";     // \"Hello\"\nString withEmpty = \"Hi\" + empty;      // \"Hi\"\n\n// String nullString = null;\n// String error = nullString + \"Hi\";   // NullPointerException!"
+    },
+    {
+      "type": "text",
+      "value": "Best practices for string concatenation include using meaningful variable names, breaking long concatenations into multiple lines for readability, and being mindful of performance when building very large strings."
+    },
+    {
+      "type": "code",
+      "value": "// Clear and readable concatenation\nString studentInfo = \"Name: \" + name + \n                    \", Grade: \" + grade + \n                    \", GPA: \" + gpa;\n\n// Building strings step by step\nString header = \"=== Student Report ===\";\nString body = \"Student: \" + name + \"\\nGPA: \" + gpa;\nString footer = \"End of Report\";\nString fullReport = header + \"\\n\" + body + \"\\n\" + footer;"
+    },
+    {
+      "type": "text",
+      "value": "Common string concatenation patterns include creating formatted output, building file paths, constructing URLs, generating reports, and creating user interface messages that adapt to different data values."
+    },
+    {
+      "type": "text",
+      "value": "Understanding "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " basics and concatenation is essential for creating interactive programs, processing text data, and building user-friendly applications. These skills form the foundation for more advanced string manipulation techniques."
+    },
+    {
+      "type": "text",
+      "value": "Mastering string concatenation prepares you for working with more complex text processing and prepares you for upcoming lessons on control structures and program logic. In the next lesson, we'll explore common syntax errors and debugging techniques to help you write error-free code."
+    }
+  ]
+}

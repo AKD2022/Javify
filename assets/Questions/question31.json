@@ -1,0 +1,214 @@
+{
+  "lessonId": 31,
+  "title": "Creating Simple Objects and Constructors",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What keyword is used to create a new object?",
+      "options": [
+        { "type": "text", "value": "new" },
+        { "type": "text", "value": "create" },
+        { "type": "text", "value": "make" },
+        { "type": "text", "value": "object" }
+      ],
+      "answer": 0,
+      "explanation": "The new keyword is used to create a new object, followed by a constructor call to initialize the object."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What is a constructor?",
+      "options": [
+        { "type": "text", "value": "A type of variable" },
+        { "type": "text", "value": "A special method that initializes a new object when it's created" },
+        { "type": "text", "value": "A loop structure" },
+        { "type": "text", "value": "A data type" }
+      ],
+      "answer": 1,
+      "explanation": "A constructor is a special method that runs when you create a new object, initializing its instance variables with specific values."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What is true about a constructor's name?",
+      "options": [
+        { "type": "text", "value": "It can be anything" },
+        { "type": "text", "value": "It must start with \"construct\"" },
+        { "type": "text", "value": "It must be the same name as the class" },
+        { "type": "text", "value": "It must be lowercase" }
+      ],
+      "answer": 2,
+      "explanation": "A constructor must have the same name as the class it belongs to, which is how Java identifies it as a constructor."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "Does a constructor have a return type?",
+      "options": [
+        { "type": "text", "value": "Yes, it returns the class type" },
+        { "type": "text", "value": "Yes, it returns void" },
+        { "type": "text", "value": "Yes, it returns int" },
+        { "type": "text", "value": "No, constructors don't have a return type" }
+      ],
+      "answer": 3,
+      "explanation": "Constructors don't have a return type, not even void. Adding a return type would make it a regular method instead of a constructor."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What are instance variables?",
+      "options": [
+        { "type": "text", "value": "Variables declared inside a class but outside methods that belong to each object" },
+        { "type": "text", "value": "Variables inside methods" },
+        { "type": "text", "value": "Constants" },
+        { "type": "text", "value": "Static variables" }
+      ],
+      "answer": 0,
+      "explanation": "Instance variables are declared inside the class but outside any method, and each object created from the class has its own copy of these variables."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "If you don't write a constructor, what does Java provide?",
+      "options": [
+        { "type": "text", "value": "Nothing, the class won't compile" },
+        { "type": "text", "value": "A default constructor that takes no parameters" },
+        { "type": "text", "value": "An error message" },
+        { "type": "text", "value": "A main method" }
+      ],
+      "answer": 1,
+      "explanation": "If you don't write a constructor, Java automatically provides a default constructor with no parameters that initializes variables to default values."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What are the default values for instance variables if not initialized?",
+      "options": [
+        { "type": "text", "value": "1 for numbers, true for boolean, empty string for objects" },
+        { "type": "text", "value": "-1 for all types" },
+        { "type": "text", "value": "0 for numbers, false for boolean, null for objects" },
+        { "type": "text", "value": "Random values" }
+      ],
+      "answer": 2,
+      "explanation": "Default values are 0 for numeric types, false for boolean, and null for object references when instance variables are not explicitly initialized."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "Can a class have multiple constructors?",
+      "options": [
+        { "type": "text", "value": "No, only one constructor allowed" },
+        { "type": "text", "value": "Only if they have different names" },
+        { "type": "text", "value": "Only static classes" },
+        { "type": "text", "value": "Yes, through constructor overloading with different parameter lists" }
+      ],
+      "answer": 3,
+      "explanation": "A class can have multiple constructors with different parameter lists, which is called constructor overloading, providing different ways to create objects."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "How do you access an object's instance variable?",
+      "options": [
+        { "type": "text", "value": "Using dot notation: objectName.variableName" },
+        { "type": "text", "value": "Using brackets: objectName[variableName]" },
+        { "type": "text", "value": "Using parentheses: objectName(variableName)" },
+        { "type": "text", "value": "Using arrow: objectName->variableName" }
+      ],
+      "answer": 0,
+      "explanation": "You access an object's instance variables using dot notation, where the dot operator connects the object reference to the variable name."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What is the purpose of constructor parameters?",
+      "options": [
+        { "type": "text", "value": "To create methods" },
+        { "type": "text", "value": "To pass initial values into the constructor for setting instance variables" },
+        { "type": "text", "value": "To define the class name" },
+        { "type": "text", "value": "To declare static variables" }
+      ],
+      "answer": 1,
+      "explanation": "Constructor parameters are temporary variables used to pass initial values into the constructor, which then assigns these values to instance variables."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Are objects created from the same class independent of each other?",
+      "options": [
+        { "type": "text", "value": "No, they share all variables" },
+        { "type": "text", "value": "Only if marked as static" },
+        { "type": "text", "value": "Yes, each object has its own set of instance variables" },
+        { "type": "text", "value": "Only for primitive types" }
+      ],
+      "answer": 2,
+      "explanation": "Each object created from a class is independent and has its own set of instance variables. Changing one object's variables doesn't affect other objects."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What happens if you forget the new keyword when creating an object?",
+      "options": [
+        { "type": "text", "value": "The object is created anyway" },
+        { "type": "text", "value": "A default object is used" },
+        { "type": "text", "value": "The program runs slower" },
+        { "type": "text", "value": "You get a compilation error" }
+      ],
+      "answer": 3,
+      "explanation": "Forgetting the new keyword when creating an object results in a compilation error because Java requires new to allocate memory for the object."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "Can constructors include validation logic?",
+      "options": [
+        { "type": "text", "value": "Yes, to ensure objects are created with valid data" },
+        { "type": "text", "value": "No, validation must be in separate methods" },
+        { "type": "text", "value": "Only for numeric values" },
+        { "type": "text", "value": "Only in static constructors" }
+      ],
+      "answer": 0,
+      "explanation": "Constructors can include validation logic to check parameters and ensure objects are created with valid data, helping prevent errors and maintain data integrity."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What is constructor overloading?",
+      "options": [
+        { "type": "text", "value": "Making constructors too large" },
+        { "type": "text", "value": "Having multiple constructors with different parameter lists" },
+        { "type": "text", "value": "Calling constructors multiple times" },
+        { "type": "text", "value": "Creating too many objects" }
+      ],
+      "answer": 1,
+      "explanation": "Constructor overloading is having multiple constructors in a class with different parameter lists, allowing objects to be created in different ways."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What is the benefit of using constructors over manually setting variables?",
+      "options": [
+        { "type": "text", "value": "Constructors are faster" },
+        { "type": "text", "value": "Constructors use less memory" },
+        { "type": "text", "value": "Constructors are optional" },
+        { "type": "text", "value": "Constructors ensure objects start with valid data in a clean, efficient way" }
+      ],
+      "answer": 3,
+      "explanation": "Constructors ensure objects are initialized with valid, meaningful data in one step, which is cleaner and more efficient than manually setting each variable separately."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "Where are instance variables declared?",
+      "options": [
+        { "type": "text", "value": "Inside the class but outside any method" },
+        { "type": "text", "value": "Inside the main method" },
+        { "type": "text", "value": "Inside constructors only" },
+        { "type": "text", "value": "Outside the class" }
+      ],
+      "answer": 0,
+      "explanation": "Instance variables are declared inside the class but outside any method, making them accessible to all methods in the class and unique to each object."
+    }
+  ]
+}

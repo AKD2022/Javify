@@ -1,0 +1,412 @@
+[
+  {
+    "unitId": "unit1",
+    "questions": [
+      {
+        "id": 1,
+        "type": "text",
+        "question": "Which of these is a valid primitive type in Java?",
+        "options": [
+          {"type": "text", "value": "int"},
+          {"type": "text", "value": "String"},
+          {"type": "text", "value": "Array"},
+          {"type": "text", "value": "Class"}
+        ],
+        "answer": 0
+      },
+      {
+        "id": 2,
+        "type": "code",
+        "question": "What will this print?\n\n\nSystem.out.println(5 + 3);\n",
+        "options": [
+          {"type": "text", "value": "8"},
+          {"type": "text", "value": "53"},
+          {"type": "text", "value": "Error"},
+          {"type": "text", "value": "5+3"}
+        ],
+        "answer": 0
+      },
+      {
+        "id": 3,
+        "type": "text",
+        "question": "Which operator is used for logical AND in Java?",
+        "options": [
+          {"type": "text", "value": "&"},
+          {"type": "text", "value": "&&"},
+          {"type": "text", "value": "||"},
+          {"type": "text", "value": "|"}
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "unitId": "unit2",
+    "questions": [
+      {
+        "id": 4,
+        "type": "text",
+        "question": "Which of these is a valid way to create an object in Java?",
+        "options": [
+          {"type": "text", "value": "MyClass obj = new MyClass();"},
+          {"type": "text", "value": "MyClass obj();"},
+          {"type": "text", "value": "new MyClass obj;"},
+          {"type": "text", "value": "obj = MyClass();"}
+        ],
+        "answer": 0
+      },
+      {
+        "id": 5,
+        "type": "code",
+        "question": "What does this code print?\n\n\nString s = \"Java\";\nSystem.out.println(s.length());\n",
+        "options": [
+          {"type": "text", "value": "4"},
+          {"type": "text", "value": "5"},
+          {"type": "text", "value": "Error"},
+          {"type": "text", "value": "0"}
+        ],
+        "answer": 0
+      },
+      {
+        "id": 6,
+        "type": "text",
+        "question": "Which keyword is used to inherit a class in Java?",
+        "options": [
+          {"type": "text", "value": "implements"},
+          {"type": "text", "value": "extends"},
+          {"type": "text", "value": "inherits"},
+          {"type": "text", "value": "super"}
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "unitId": "unit3",
+    "questions": [
+      {
+        "id": 7,
+        "type": "text",
+        "question": "Which loop will always execute at least once?",
+        "options": [
+          {"type": "text", "value": "for"},
+          {"type": "text", "value": "while"},
+          {"type": "text", "value": "do-while"},
+          {"type": "text", "value": "if"}
+        ],
+        "answer": 2
+      },
+      {
+        "id": 8,
+        "type": "code",
+        "question": "What will this print?\n\n\nint x = 0;\ndo { x++; } while(x < 3);\nSystem.out.println(x);\n",
+        "options": [
+          {"type": "text", "value": "0"},
+          {"type": "text", "value": "3"},
+          {"type": "text", "value": "1"},
+          {"type": "text", "value": "Error"}
+        ],
+        "answer": 1
+      },
+      {
+        "id": 9,
+        "type": "text",
+        "question": "Which statement exits a loop immediately?",
+        "options": [
+          {"type": "text", "value": "continue"},
+          {"type": "text", "value": "exit"},
+          {"type": "text", "value": "break"},
+          {"type": "text", "value": "stop"}
+        ],
+        "answer": 2
+      }
+    ]
+  },
+  {
+    "unitId": "unit4",
+    "questions": [
+      {
+        "id": 10,
+        "type": "text",
+        "question": "Which of the following is the correct way to declare an array of integers?",
+        "options": [
+          {"type": "text", "value": "int arr[];"},
+          {"type": "text", "value": "array arr;"},
+          {"type": "text", "value": "int arr;"},
+          {"type": "text", "value": "int[] arr = new array();"}
+        ],
+        "answer": 0
+      },
+      {
+        "id": 11,
+        "type": "code",
+        "question": "What does this print?\n\n\nint[] arr = {1,2,3};\nSystem.out.println(arr[1]);\n",
+        "options": [
+          {"type": "text", "value": "1"},
+          {"type": "text", "value": "2"},
+          {"type": "text", "value": "3"},
+          {"type": "text", "value": "Error"}
+        ],
+        "answer": 1
+      },
+      {
+        "id": 12,
+        "type": "text",
+        "question": "What is the default value of an int array in Java?",
+        "options": [
+          {"type": "text", "value": "0"},
+          {"type": "text", "value": "null"},
+          {"type": "text", "value": "1"},
+          {"type": "text", "value": "undefined"}
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "unitId": "unit5",
+    "questions": [
+      {
+        "id": 13,
+        "type": "text",
+        "question": "Which is a valid way to declare an ArrayList of Strings?",
+        "options": [
+          {"type": "text", "value": "ArrayList<String> list = new ArrayList<>();"},
+          {"type": "text", "value": "ArrayList list = new ArrayList<String>();"},
+          {"type": "text", "value": "ArrayList<String> list;"},
+          {"type": "text", "value": "String list = new ArrayList<>();"}
+        ],
+        "answer": 0
+      },
+      {
+        "id": 14,
+        "type": "code",
+        "question": "What will this code print?\n\n\nArrayList<Integer> nums = new ArrayList<>();\nnums.add(5);\nSystem.out.println(nums.get(0));\n",
+        "options": [
+          {"type": "text", "value": "0"},
+          {"type": "text", "value": "5"},
+          {"type": "text", "value": "Error"},
+          {"type": "text", "value": "null"}
+        ],
+        "answer": 1
+      },
+      {
+        "id": 15,
+        "type": "text",
+        "question": "Which method adds an element to an ArrayList?",
+        "options": [
+          {"type": "text", "value": "append()"},
+          {"type": "text", "value": "add()"},
+          {"type": "text", "value": "insert()"},
+          {"type": "text", "value": "push()"}
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "unitId": "unit6",
+    "questions": [
+      {
+        "id": 16,
+        "type": "text",
+        "question": "Which of these keywords is used for method overriding?",
+        "options": [
+          {"type": "text", "value": "super"},
+          {"type": "text", "value": "override"},
+          {"type": "text", "value": "@Override"},
+          {"type": "text", "value": "extends"}
+        ],
+        "answer": 2
+      },
+      {
+        "id": 17,
+        "type": "code",
+        "question": "What does this code print?\n\n\nclass Test {\n  void display() { System.out.println(\"Hello\"); }\n}\nTest t = new Test();\nt.display();\n",
+        "options": [
+          {"type": "text", "value": "Hello"},
+          {"type": "text", "value": "Error"},
+          {"type": "text", "value": "null"},
+          {"type": "text", "value": "Test"}
+        ],
+        "answer": 0
+      },
+      {
+        "id": 18,
+        "type": "text",
+        "question": "Which keyword is used to prevent a class from being inherited?",
+        "options": [
+          {"type": "text", "value": "final"},
+          {"type": "text", "value": "static"},
+          {"type": "text", "value": "abstract"},
+          {"type": "text", "value": "private"}
+        ],
+        "answer": 0
+      }
+    ]
+  },
+  {
+    "unitId": "unit7",
+    "questions": [
+      {
+        "id": 19,
+        "type": "text",
+        "question": "Which is true about inheritance in Java?",
+        "options": [
+          {"type": "text", "value": "A class can inherit multiple classes directly"},
+          {"type": "text", "value": "A class can inherit only one class directly"},
+          {"type": "text", "value": "Interfaces cannot be implemented"},
+          {"type": "text", "value": "Private members are inherited"}
+        ],
+        "answer": 1
+      },
+      {
+        "id": 20,
+        "type": "code",
+        "question": "What will this print?\n\n\nclass A {}\nclass B extends A {}\nB obj = new B();\nSystem.out.println(obj instanceof A);\n",
+        "options": [
+          {"type": "text", "value": "true"},
+          {"type": "text", "value": "false"},
+          {"type": "text", "value": "Error"},
+          {"type": "text", "value": "null"}
+        ],
+        "answer": 0
+      },
+      {
+        "id": 21,
+        "type": "text",
+        "question": "Which type of inheritance is not allowed in Java?",
+        "options": [
+          {"type": "text", "value": "Single"},
+          {"type": "text", "value": "Multiple class inheritance"},
+          {"type": "text", "value": "Multilevel"},
+          {"type": "text", "value": "Hierarchical"}
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "unitId": "unit8",
+    "questions": [
+      {
+        "id": 22,
+        "type": "text",
+        "question": "Which sorting algorithm repeatedly swaps adjacent elements if they are in wrong order?",
+        "options": [
+          {"type": "text", "value": "Selection Sort"},
+          {"type": "text", "value": "Bubble Sort"},
+          {"type": "text", "value": "Insertion Sort"},
+          {"type": "text", "value": "Merge Sort"}
+        ],
+        "answer": 1
+      },
+      {
+        "id": 23,
+        "type": "code",
+        "question": "What does this recursive method return?\n\n\nint factorial(int n) { if(n==0) return 1; else return n*factorial(n-1); }\nfactorial(3);\n",
+        "options": [
+          {"type": "text", "value": "3"},
+          {"type": "text", "value": "6"},
+          {"type": "text", "value": "0"},
+          {"type": "text", "value": "Error"}
+        ],
+        "answer": 1
+      },
+      {
+        "id": 24,
+        "type": "text",
+        "question": "Which searching algorithm works on a sorted array?",
+        "options": [
+          {"type": "text", "value": "Linear Search"},
+          {"type": "text", "value": "Binary Search"},
+          {"type": "text", "value": "Random Search"},
+          {"type": "text", "value": "Jump Search"}
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "unitId": "unit9",
+    "questions": [
+      {
+        "id": 25,
+        "type": "text",
+        "question": "Which of these is a property of recursion?",
+        "options": [
+          {"type": "text", "value": "Base case"},
+          {"type": "text", "value": "Infinite loop"},
+          {"type": "text", "value": "Interface"},
+          {"type": "text", "value": "Constructor"}
+        ],
+        "answer": 0
+      },
+      {
+        "id": 26,
+        "type": "code",
+        "question": "What will this print?\n\n\nint[] arr = {3,1,2};\nArrays.sort(arr);\nSystem.out.println(arr[0]);\n",
+        "options": [
+          {"type": "text", "value": "1"},
+          {"type": "text", "value": "2"},
+          {"type": "text", "value": "3"},
+          {"type": "text", "value": "Error"}
+        ],
+        "answer": 0
+      },
+      {
+        "id": 27,
+        "type": "text",
+        "question": "Which algorithm is used to search in a sorted array efficiently?",
+        "options": [
+          {"type": "text", "value": "Linear Search"},
+          {"type": "text", "value": "Binary Search"},
+          {"type": "text", "value": "Depth First Search"},
+          {"type": "text", "value": "Breadth First Search"}
+        ],
+        "answer": 1
+      }
+    ]
+  },
+  {
+    "unitId": "unit10",
+    "questions": [
+      {
+        "id": 28,
+        "type": "text",
+        "question": "Which of the following best describes encapsulation?",
+        "options": [
+          {"type": "text", "value": "Hiding data and providing access through methods"},
+          {"type": "text", "value": "Inheriting classes"},
+          {"type": "text", "value": "Overloading methods"},
+          {"type": "text", "value": "Sorting arrays"}
+        ],
+        "answer": 0
+      },
+      {
+        "id": 29,
+        "type": "code",
+        "question": "What does this code print?\n\n\npublic class Test {\n  private int x = 5;\n  public int getX() { return x; }\n}\nTest t = new Test();\nSystem.out.println(t.getX());\n",
+        "options": [
+          {"type": "text", "value": "5"},
+          {"type": "text", "value": "0"},
+          {"type": "text", "value": "Error"},
+          {"type": "text", "value": "null"}
+        ],
+        "answer": 0
+      },
+      {
+        "id": 30,
+        "type": "text",
+        "question": "What is the purpose of the AP CSA exam review unit?",
+        "options": [
+          {"type": "text", "value": "Introduce new topics"},
+          {"type": "text", "value": "Review all units for the exam"},
+          {"type": "text", "value": "Practice only recursion"},
+          {"type": "text", "value": "Practice only arrays"}
+        ],
+        "answer": 1
+      }
+    ]
+  }
+]

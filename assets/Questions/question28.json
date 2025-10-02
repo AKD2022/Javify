@@ -1,0 +1,214 @@
+{
+  "lessonId": 28,
+  "title": "Introduction to the Java Standard Library",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is the Java Standard Library?",
+      "options": [
+        { "type": "text", "value": "A collection of pre-written classes and methods that come built-in with Java" },
+        { "type": "text", "value": "A website for downloading Java" },
+        { "type": "text", "value": "A book about Java programming" },
+        { "type": "text", "value": "A code editor for Java" }
+      ],
+      "answer": 0,
+      "explanation": "The Java Standard Library is a vast collection of pre-written classes and methods built into Java that you can use to perform common tasks efficiently."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What is a package in Java?",
+      "options": [
+        { "type": "text", "value": "A compressed file" },
+        { "type": "text", "value": "A group of related classes organized together" },
+        { "type": "text", "value": "A type of variable" },
+        { "type": "text", "value": "A loop structure" }
+      ],
+      "answer": 1,
+      "explanation": "A package is like a folder that contains groups of related classes with similar purposes, helping to organize the Java Standard Library."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "Which package is automatically imported into every Java program?",
+      "options": [
+        { "type": "text", "value": "java.util" },
+        { "type": "text", "value": "java.io" },
+        { "type": "text", "value": "java.lang" },
+        { "type": "text", "value": "java.text" }
+      ],
+      "answer": 2,
+      "explanation": "The java.lang package is automatically imported into every Java program, which is why you can use classes like String, Math, and System without import statements."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What keyword is used to make classes from other packages available in your program?",
+      "options": [
+        { "type": "text", "value": "include" },
+        { "type": "text", "value": "using" },
+        { "type": "text", "value": "require" },
+        { "type": "text", "value": "import" }
+      ],
+      "answer": 3,
+      "explanation": "The import statement at the top of your program tells Java which classes you want to use from packages other than java.lang."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Which package contains utility classes like Scanner, ArrayList, and Random?",
+      "options": [
+        { "type": "text", "value": "java.util" },
+        { "type": "text", "value": "java.lang" },
+        { "type": "text", "value": "java.io" },
+        { "type": "text", "value": "java.text" }
+      ],
+      "answer": 0,
+      "explanation": "The java.util package contains utility classes that are extremely useful for everyday programming, including Scanner, ArrayList, and Random."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "How do you call methods in the Math class?",
+      "options": [
+        { "type": "text", "value": "Create a Math object first" },
+        { "type": "text", "value": "Call them directly on the class name because they are static" },
+        { "type": "text", "value": "Import them individually" },
+        { "type": "text", "value": "Use the new keyword" }
+      ],
+      "answer": 1,
+      "explanation": "All methods in the Math class are static, meaning you call them directly on the class name (like Math.sqrt()) without creating an object."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What is the purpose of wrapper classes like Integer and Double?",
+      "options": [
+        { "type": "text", "value": "To make programs run faster" },
+        { "type": "text", "value": "To compress data" },
+        { "type": "text", "value": "To provide object versions of primitive types with useful methods" },
+        { "type": "text", "value": "To import packages" }
+      ],
+      "answer": 2,
+      "explanation": "Wrapper classes provide object versions of primitive types (like Integer for int, Double for double) and include useful methods for working with these types."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "Which method converts a String to an int?",
+      "options": [
+        { "type": "text", "value": "String.toInt()" },
+        { "type": "text", "value": "convert()" },
+        { "type": "text", "value": "toInteger()" },
+        { "type": "text", "value": "Integer.parseInt()" }
+      ],
+      "answer": 3,
+      "explanation": "Integer.parseInt() is the method used to convert a String representation of a number into an int value."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What does Math.pow(2, 3) return?",
+      "options": [
+        { "type": "text", "value": "8.0" },
+        { "type": "text", "value": "6.0" },
+        { "type": "text", "value": "5.0" },
+        { "type": "text", "value": "9.0" }
+      ],
+      "answer": 0,
+      "explanation": "Math.pow(2, 3) calculates 2 raised to the power of 3, which equals 8.0 (2 × 2 × 2)."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "Which Character class method checks if a character is a digit?",
+      "options": [
+        { "type": "text", "value": "checkDigit()" },
+        { "type": "text", "value": "isDigit()" },
+        { "type": "text", "value": "digitCheck()" },
+        { "type": "text", "value": "isNumber()" }
+      ],
+      "answer": 1,
+      "explanation": "Character.isDigit() checks if a character is a digit and returns a boolean value (true if it's a digit, false otherwise)."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What symbol can be used to import all classes from a package?",
+      "options": [
+        { "type": "text", "value": "#" },
+        { "type": "text", "value": "&" },
+        { "type": "text", "value": "*" },
+        { "type": "text", "value": "+" }
+      ],
+      "answer": 2,
+      "explanation": "The asterisk (*) wildcard can be used to import all classes from a package, though importing specific classes is generally better practice."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What does System.currentTimeMillis() return?",
+      "options": [
+        { "type": "text", "value": "The current date as a String" },
+        { "type": "text", "value": "The current hour" },
+        { "type": "text", "value": "The program execution time" },
+        { "type": "text", "value": "The current time in milliseconds" }
+      ],
+      "answer": 3,
+      "explanation": "System.currentTimeMillis() returns the current time in milliseconds, which is useful for timing operations and timestamps."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What does Math.ceil(4.3) return?",
+      "options": [
+        { "type": "text", "value": "5.0" },
+        { "type": "text", "value": "4.0" },
+        { "type": "text", "value": "4.3" },
+        { "type": "text", "value": "4.5" }
+      ],
+      "answer": 0,
+      "explanation": "Math.ceil() returns the smallest integer greater than or equal to the given number, so ceil(4.3) returns 5.0 (rounding up)."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "Which method would you use to sort an array?",
+      "options": [
+        { "type": "text", "value": "Array.organize()" },
+        { "type": "text", "value": "Arrays.sort()" },
+        { "type": "text", "value": "System.sort()" },
+        { "type": "text", "value": "Math.sort()" }
+      ],
+      "answer": 1,
+      "explanation": "Arrays.sort() from the java.util.Arrays class is used to sort arrays in ascending order."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What is the benefit of using the Java Standard Library?",
+      "options": [
+        { "type": "text", "value": "It makes programs larger" },
+        { "type": "text", "value": "It requires more code" },
+        { "type": "text", "value": "It makes Java slower" },
+        { "type": "text", "value": "It reduces development time by providing tested, optimized code" }
+      ],
+      "answer": 3,
+      "explanation": "Using the Java Standard Library reduces development time and improves code quality by leveraging tested and optimized code instead of writing everything from scratch."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "Where can you find comprehensive documentation for the Java Standard Library?",
+      "options": [
+        { "type": "text", "value": "docs.oracle.com" },
+        { "type": "text", "value": "wikipedia.org" },
+        { "type": "text", "value": "github.com" },
+        { "type": "text", "value": "stackoverflow.com" }
+      ],
+      "answer": 0,
+      "explanation": "Oracle provides comprehensive documentation at docs.oracle.com that describes every class, method, and package in the Java Standard Library in detail."
+    }
+  ]
+}

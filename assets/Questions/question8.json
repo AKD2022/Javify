@@ -1,0 +1,214 @@
+{
+  "lessonId": 8,
+  "title": "Type Casting and Conversion",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What type of conversion happens automatically in Java?",
+      "options": [
+        { "type": "text", "value": "Widening conversion" },
+        { "type": "text", "value": "Narrowing conversion" },
+        { "type": "text", "value": "String conversion" },
+        { "type": "text", "value": "Character conversion" }
+      ],
+      "answer": 0,
+      "explanation": "Widening conversions happen automatically when assigning smaller types to larger types, like int to double."
+    },
+    {
+      "id": 2,
+      "type": "code",
+      "question": "What is the result of: (int) 7.9",
+      "options": [
+        { "type": "text", "value": "8" },
+        { "type": "text", "value": "7" },
+        { "type": "text", "value": "7.9" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 1,
+      "explanation": "Casting double to int truncates the decimal portion, so 7.9 becomes 7, not rounded to 8."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What happens with: int x = 5; double y = x;",
+      "options": [
+        { "type": "text", "value": "Compilation error" },
+        { "type": "text", "value": "y becomes 5" },
+        { "type": "text", "value": "y becomes 5.0" },
+        { "type": "text", "value": "Runtime error" }
+      ],
+      "answer": 2,
+      "explanation": "This is automatic widening conversion from int to double, so y becomes 5.0."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "What does (char) 66 produce?",
+      "options": [
+        { "type": "text", "value": "'A'" },
+        { "type": "text", "value": "'66'" },
+        { "type": "text", "value": "66" },
+        { "type": "text", "value": "'B'" }
+      ],
+      "answer": 3,
+      "explanation": "Casting 66 to char gives 'B' since 66 is the Unicode value for uppercase B."
+    },
+    {
+      "id": 5,
+      "type": "code",
+      "question": "What is the result of: 5 / 2.0",
+      "options": [
+        { "type": "text", "value": "2.5" },
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "2.0" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 0,
+      "explanation": "The int 5 is promoted to double due to the 2.0, resulting in floating-point division: 2.5."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What type of conversion requires explicit casting?",
+      "options": [
+        { "type": "text", "value": "int to double" },
+        { "type": "text", "value": "double to int" },
+        { "type": "text", "value": "char to int" },
+        { "type": "text", "value": "byte to short" }
+      ],
+      "answer": 1,
+      "explanation": "Narrowing conversions like double to int require explicit casting because data can be lost."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "What is the result of: (int) -3.8",
+      "options": [
+        { "type": "text", "value": "-4" },
+        { "type": "text", "value": "-3" },
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "4" }
+      ],
+      "answer": 1,
+      "explanation": "Casting truncates toward zero, so -3.8 becomes -3, not -4."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What does 'A' + 1 equal?",
+      "options": [
+        { "type": "text", "value": "'B'" },
+        { "type": "text", "value": "'A1'" },
+        { "type": "text", "value": "A1" },
+        { "type": "text", "value": "66" }
+      ],
+      "answer": 3,
+      "explanation": "Character arithmetic promotes to int: 'A' (65) + 1 = 66. To get 'B', cast back to char."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Which method converts String to int?",
+      "options": [
+        { "type": "text", "value": "Integer.parseInt()" },
+        { "type": "text", "value": "String.toInt()" },
+        { "type": "text", "value": "Integer.valueOf()" },
+        { "type": "text", "value": "String.parseInt()" }
+      ],
+      "answer": 0,
+      "explanation": "Integer.parseInt() converts String representations of numbers to int values."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What happens with: double d = 10;",
+      "options": [
+        { "type": "text", "value": "d becomes 10.0" },
+        { "type": "text", "value": "Compilation error" },
+        { "type": "text", "value": "d becomes 10" },
+        { "type": "text", "value": "Runtime error" }
+      ],
+      "answer": 0,
+      "explanation": "Automatic widening conversion from int literal 10 to double results in 10.0."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "What does String.valueOf(42) return?",
+      "options": [
+        { "type": "text", "value": "42" },
+        { "type": "text", "value": "\"42\"" },
+        { "type": "text", "value": "'42'" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 2,
+      "explanation": "String.valueOf() converts the int 42 to the String \"42\"."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What is required for: char c = 65 + 1;",
+      "options": [
+        { "type": "text", "value": "Nothing, it works as-is" },
+        { "type": "text", "value": "Cast the addition to char" },
+        { "type": "text", "value": "Use double instead" },
+        { "type": "text", "value": "Use String instead" }
+      ],
+      "answer": 1,
+      "explanation": "Arithmetic operations produce int results, so you need: char c = (char)(65 + 1);"
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What happens when casting a value outside the target type's range?",
+      "options": [
+        { "type": "text", "value": "Overflow or unexpected results" },
+        { "type": "text", "value": "Compilation error" },
+        { "type": "text", "value": "Value is rounded" },
+        { "type": "text", "value": "Value becomes zero" }
+      ],
+      "answer": 0,
+      "explanation": "Values outside the target range cause overflow, producing unexpected (often negative) results."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What does (double) 7 / 2 equal?",
+      "options": [
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "3.5" },
+        { "type": "text", "value": "3.0" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 1,
+      "explanation": "Casting 7 to double makes the division floating-point: 7.0 / 2 promotes 2 to 2.0, giving 3.5."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What is the widening conversion order for integer types?",
+      "options": [
+        { "type": "text", "value": "int → short → byte → long" },
+        { "type": "text", "value": "byte → short → int → long" },
+        { "type": "text", "value": "long → int → short → byte" },
+        { "type": "text", "value": "short → byte → long → int" }
+      ],
+      "answer": 2,
+      "explanation": "The widening order is byte → short → int → long, from smallest to largest capacity."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "What converts int to String using concatenation?",
+      "options": [
+        { "type": "text", "value": "int + String" },
+        { "type": "text", "value": "String + int" },
+        { "type": "text", "value": "int + \"\"" },
+        { "type": "text", "value": "int + \"\"" }
+      ],
+      "answer": 3,
+      "explanation": "Adding an empty string to any primitive type converts it to String: int + \"\" produces a String."
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "lessonId": 12,
+  "title": "Input and Output Basics (System.out, Scanner intro)",
+  "content": [
+    {
+      "type": "text",
+      "value": "Input and output operations allow your Java programs to communicate with users by displaying information and receiving data. Understanding how to output text to the console and read user input is fundamental for creating interactive programs that respond to user actions."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "System.out"
+    },
+    {
+      "type": "text",
+      "value": " object provides methods for displaying output to the console. This is your primary tool for showing results, messages, and debugging information to users or developers running your program."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "System.out.println()"
+    },
+    {
+      "type": "text",
+      "value": " method prints text to the console and automatically moves to the next line. This method is perfect for displaying complete messages or results where each output should appear on a separate line."
+    },
+    {
+      "type": "code",
+      "value": "System.out.println(\"Welcome to Java Programming!\");\nSystem.out.println(\"Today's lesson covers input and output.\");\nSystem.out.println(\"Let's learn together!\");\n\n// Output:\n// Welcome to Java Programming!\n// Today's lesson covers input and output.\n// Let's learn together!"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "System.out.print()"
+    },
+    {
+      "type": "text",
+      "value": " method prints text without adding a new line, allowing subsequent output to continue on the same line. This method is useful when you want to build output across multiple statements or create formatted displays."
+    },
+    {
+      "type": "code",
+      "value": "System.out.print(\"Hello, \");\nSystem.out.print(\"World! \");\nSystem.out.print(\"How are you?\");\n\n// Output: Hello, World! How are you?"
+    },
+    {
+      "type": "text",
+      "value": "You can print variables and expressions directly by passing them to the output methods. Java automatically converts different data types to their string representations for display."
+    },
+    {
+      "type": "code",
+      "value": "int score = 95;\ndouble average = 87.5;\nboolean passed = true;\nchar grade = 'A';\n\nSystem.out.println(score);     // 95\nSystem.out.println(average);   // 87.5\nSystem.out.println(passed);    // true\nSystem.out.println(grade);     // A"
+    },
+    {
+      "type": "text",
+      "value": "String concatenation with the "
+    },
+    {
+      "type": "code",
+      "value": "+"
+    },
+    {
+      "type": "text",
+      "value": " operator allows you to combine text with variables in output statements. This creates more meaningful and informative messages for users."
+    },
+    {
+      "type": "code",
+      "value": "String name = \"Alice\";\nint age = 16;\ndouble gpa = 3.8;\n\nSystem.out.println(\"Student: \" + name);\nSystem.out.println(\"Age: \" + age + \" years old\");\nSystem.out.println(name + \" has a GPA of \" + gpa);\nSystem.out.println(\"Grade level: \" + (age - 5));"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Scanner"
+    },
+    {
+      "type": "text",
+      "value": " class enables reading input from various sources, most commonly from the keyboard through "
+    },
+    {
+      "type": "code",
+      "value": "System.in"
+    },
+    {
+      "type": "text",
+      "value": ". To use "
+    },
+    {
+      "type": "code",
+      "value": "Scanner"
+    },
+    {
+      "type": "text",
+      "value": ", you must import it at the top of your program and create a "
+    },
+    {
+      "type": "code",
+      "value": "Scanner"
+    },
+    {
+      "type": "text",
+      "value": " object."
+    },
+    {
+      "type": "code",
+      "value": "import java.util.Scanner;\n\npublic class InputExample {\n    public static void main(String[] args) {\n        Scanner input = new Scanner(System.in);\n        \n        System.out.println(\"Scanner ready for input!\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Scanner"
+    },
+    {
+      "type": "text",
+      "value": " class provides different methods for reading various types of input. The "
+    },
+    {
+      "type": "code",
+      "value": "nextLine()"
+    },
+    {
+      "type": "text",
+      "value": " method reads an entire line of text, including spaces, until the user presses Enter."
+    },
+    {
+      "type": "code",
+      "value": "Scanner input = new Scanner(System.in);\n\nSystem.out.print(\"Enter your full name: \");\nString fullName = input.nextLine();\n\nSystem.out.print(\"Enter your favorite quote: \");\nString quote = input.nextLine();\n\nSystem.out.println(\"Hello, \" + fullName + \"!\");\nSystem.out.println(\"Your quote: \\\"\" + quote + \"\\\"\");"
+    },
+    {
+      "type": "text",
+      "value": "For reading individual words (tokens separated by whitespace), use the "
+    },
+    {
+      "type": "code",
+      "value": "next()"
+    },
+    {
+      "type": "text",
+      "value": " method. This method stops reading at the first space, tab, or newline character."
+    },
+    {
+      "type": "code",
+      "value": "Scanner input = new Scanner(System.in);\n\nSystem.out.print(\"Enter your first and last name: \");\nString firstName = input.next();  // Reads until space\nString lastName = input.next();   // Reads next word\n\nSystem.out.println(\"First: \" + firstName);\nSystem.out.println(\"Last: \" + lastName);"
+    },
+    {
+      "type": "text",
+      "value": "Reading numeric input requires specific methods for different data types. Use "
+    },
+    {
+      "type": "code",
+      "value": "nextInt()"
+    },
+    {
+      "type": "text",
+      "value": " for integers and "
+    },
+    {
+      "type": "code",
+      "value": "nextDouble()"
+    },
+    {
+      "type": "text",
+      "value": " for decimal numbers."
+    },
+    {
+      "type": "code",
+      "value": "Scanner input = new Scanner(System.in);\n\nSystem.out.print(\"Enter your age: \");\nint age = input.nextInt();\n\nSystem.out.print(\"Enter your GPA: \");\ndouble gpa = input.nextDouble();\n\nSystem.out.println(\"You are \" + age + \" years old.\");\nSystem.out.println(\"Your GPA is \" + gpa);"
+    },
+    {
+      "type": "text",
+      "value": "Creating interactive programs involves prompting the user for input, processing that input, and displaying meaningful results. This pattern forms the basis of many useful applications."
+    },
+    {
+      "type": "code",
+      "value": "Scanner input = new Scanner(System.in);\n\nSystem.out.print(\"Enter the temperature in Celsius: \");\ndouble celsius = input.nextDouble();\n\n// Convert to Fahrenheit\ndouble fahrenheit = (celsius * 9.0 / 5.0) + 32;\n\nSystem.out.println(celsius + \"°C equals \" + fahrenheit + \"°F\");"
+    },
+    {
+      "type": "text",
+      "value": "You can read boolean values using "
+    },
+    {
+      "type": "code",
+      "value": "nextBoolean()"
+    },
+    {
+      "type": "text",
+      "value": ", which accepts "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " as input. This is useful for yes/no questions or configuration settings in your programs."
+    },
+    {
+      "type": "code",
+      "value": "Scanner input = new Scanner(System.in);\n\nSystem.out.print(\"Are you a student? (true/false): \");\nboolean isStudent = input.nextBoolean();\n\nif (isStudent) {\n    System.out.println(\"Welcome, student!\");\n} else {\n    System.out.println(\"Welcome, visitor!\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Mixing different input methods requires careful attention to how "
+    },
+    {
+      "type": "code",
+      "value": "Scanner"
+    },
+    {
+      "type": "text",
+      "value": " handles newline characters. After using methods like "
+    },
+    {
+      "type": "code",
+      "value": "nextInt()"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "nextDouble()"
+    },
+    {
+      "type": "text",
+      "value": ", you may need to consume the remaining newline character before using "
+    },
+    {
+      "type": "code",
+      "value": "nextLine()"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "Scanner input = new Scanner(System.in);\n\nSystem.out.print(\"Enter your age: \");\nint age = input.nextInt();\ninput.nextLine(); // Consume the newline character\n\nSystem.out.print(\"Enter your name: \");\nString name = input.nextLine();\n\nSystem.out.println(name + \" is \" + age + \" years old.\");"
+    },
+    {
+      "type": "text",
+      "value": "Good practices for input and output include providing clear prompts, validating input when possible, and formatting output in a readable manner. Always let users know what type of input you expect."
+    },
+    {
+      "type": "code",
+      "value": "Scanner input = new Scanner(System.in);\n\n// Clear prompts\nSystem.out.print(\"Enter your score (0-100): \");\nint score = input.nextInt();\n\n// Formatted output\nSystem.out.println(\"Score: \" + score + \"/100\");\nSystem.out.println(\"Percentage: \" + score + \"%\");\n\n// Closing scanner (good practice)\ninput.close();"
+    },
+    {
+      "type": "text",
+      "value": "Common patterns include reading multiple values, performing calculations with user input, and creating simple interactive menus or calculators that respond to user choices."
+    },
+    {
+      "type": "code",
+      "value": "Scanner input = new Scanner(System.in);\n\nSystem.out.println(\"Simple Calculator\");\nSystem.out.print(\"Enter first number: \");\ndouble num1 = input.nextDouble();\n\nSystem.out.print(\"Enter second number: \");\ndouble num2 = input.nextDouble();\n\nSystem.out.println(\"Sum: \" + (num1 + num2));\nSystem.out.println(\"Difference: \" + (num1 - num2));\nSystem.out.println(\"Product: \" + (num1 * num2));\nSystem.out.println(\"Quotient: \" + (num1 / num2));"
+    },
+    {
+      "type": "text",
+      "value": "Understanding input and output basics enables you to create interactive programs that engage users and solve real-world problems. These fundamental skills are essential for building more complex applications and user interfaces."
+    },
+    {
+      "type": "text",
+      "value": "Mastering "
+    },
+    {
+      "type": "code",
+      "value": "System.out"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "Scanner"
+    },
+    {
+      "type": "text",
+      "value": " prepares you for more advanced topics like loops, conditional statements, and complex program logic. In the next lesson, we'll explore "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " basics and string concatenation techniques."
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "lessonId": 27,
+  "title": "Method Overloading Intro",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is method overloading?",
+      "options": [
+        { "type": "text", "value": "Creating multiple methods with the same name but different parameters" },
+        { "type": "text", "value": "Calling a method too many times" },
+        { "type": "text", "value": "Making a method too long" },
+        { "type": "text", "value": "Using too many variables in a method" }
+      ],
+      "answer": 0,
+      "explanation": "Method overloading allows you to create multiple methods with the same name but different parameter lists, providing flexibility in how the method can be called."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "How does the compiler determine which overloaded method to call?",
+      "options": [
+        { "type": "text", "value": "By the method name only" },
+        { "type": "text", "value": "By matching the arguments with the method's parameter list" },
+        { "type": "text", "value": "By the return type" },
+        { "type": "text", "value": "By the order methods are defined in the code" }
+      ],
+      "answer": 1,
+      "explanation": "The compiler uses method resolution to automatically select the appropriate overloaded method by matching the arguments you provide with the method's parameter list."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What must be different for methods to be properly overloaded?",
+      "options": [
+        { "type": "text", "value": "The method name" },
+        { "type": "text", "value": "The return type" },
+        { "type": "text", "value": "The parameter list (number, types, or order)" },
+        { "type": "text", "value": "The access modifier" }
+      ],
+      "answer": 2,
+      "explanation": "For methods to be properly overloaded, they must differ in their parameter lists through number of parameters, types of parameters, or order of parameter types."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "Can two methods differ only by their return types and still be overloaded?",
+      "options": [
+        { "type": "text", "value": "Yes, always" },
+        { "type": "text", "value": "Yes, but only for void methods" },
+        { "type": "text", "value": "Only if they're static" },
+        { "type": "text", "value": "No, they must have different parameter lists" }
+      ],
+      "answer": 3,
+      "explanation": "Return type alone is NOT enough to overload methods. Two methods cannot differ only by return types - they must have different parameter lists."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Which of these is valid method overloading?",
+      "options": [
+        { "type": "text", "value": "Methods with the same name and same parameters but different return types" },
+        { "type": "text", "value": "Methods with different names but same parameters" },
+        { "type": "text", "value": "Methods with the same name but different variable names in parameters" },
+        { "type": "text", "value": "Methods with the same name but different number of parameters" }
+      ],
+      "answer": 0,
+      "explanation": "Valid overloading occurs when methods have the same name but different parameter lists, which can include different numbers of parameters."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "Can methods be overloaded by having different parameter types with the same number of parameters?",
+      "options": [
+        { "type": "text", "value": "No, they must have different numbers of parameters" },
+        { "type": "text", "value": "Yes, different parameter types is valid overloading" },
+        { "type": "text", "value": "Only if the return type is also different" },
+        { "type": "text", "value": "Only for primitive types" }
+      ],
+      "answer": 1,
+      "explanation": "Methods can be overloaded by having different parameter types even if the number of parameters is the same. The type difference is enough to distinguish them."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "Does the order of parameter types matter for method overloading?",
+      "options": [
+        { "type": "text", "value": "No, order doesn't matter" },
+        { "type": "text", "value": "Only for primitive types" },
+        { "type": "text", "value": "Yes, methods with same types in different orders are considered different" },
+        { "type": "text", "value": "Only if there are more than three parameters" }
+      ],
+      "answer": 2,
+      "explanation": "The order of parameter types matters for overloading. Methods with the same types in different orders are considered different and valid overloads."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "Which standard Java method is commonly overloaded to accept many different types?",
+      "options": [
+        { "type": "text", "value": "main()" },
+        { "type": "text", "value": "equals()" },
+        { "type": "text", "value": "length()" },
+        { "type": "text", "value": "System.out.println()" }
+      ],
+      "answer": 3,
+      "explanation": "System.out.println() is overloaded to accept many different types of arguments including int, double, String, boolean, and char."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What is the main benefit of method overloading?",
+      "options": [
+        { "type": "text", "value": "It provides flexibility by allowing the same operation to work with different types of data" },
+        { "type": "text", "value": "It makes programs run faster" },
+        { "type": "text", "value": "It reduces memory usage" },
+        { "type": "text", "value": "It prevents errors" }
+      ],
+      "answer": 0,
+      "explanation": "Method overloading provides flexibility and convenience, allowing the same method name to work with different types or amounts of data without remembering different names."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What happens if there's no exact match for an overloaded method call?",
+      "options": [
+        { "type": "text", "value": "The program crashes" },
+        { "type": "text", "value": "The compiler may perform automatic type conversion to find a compatible method" },
+        { "type": "text", "value": "The first method defined is always used" },
+        { "type": "text", "value": "A random overloaded method is selected" }
+      ],
+      "answer": 1,
+      "explanation": "If there's no exact match, the compiler may perform automatic type conversion to find a compatible overloaded method to call."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What is another name for a method's parameter list?",
+      "options": [
+        { "type": "text", "value": "Return specification" },
+        { "type": "text", "value": "Method declaration" },
+        { "type": "text", "value": "Method signature" },
+        { "type": "text", "value": "Parameter definition" }
+      ],
+      "answer": 2,
+      "explanation": "The parameter list is also called the method's signature, which is what the compiler uses to distinguish between overloaded methods."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "When designing overloaded methods, what should each version do?",
+      "options": [
+        { "type": "text", "value": "Completely different tasks" },
+        { "type": "text", "value": "Return different types" },
+        { "type": "text", "value": "Have different names" },
+        { "type": "text", "value": "Perform a similar task but adapt to different input types or amounts" }
+      ],
+      "answer": 3,
+      "explanation": "When designing overloaded methods, each version should perform a similar task but adapt to different input types or amounts to maintain consistency."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "How can method overloading provide default values for parameters?",
+      "options": [
+        { "type": "text", "value": "By creating a version with fewer parameters that calls the full version with defaults" },
+        { "type": "text", "value": "By using the default keyword" },
+        { "type": "text", "value": "By setting parameters to null" },
+        { "type": "text", "value": "Default values aren't possible with overloading" }
+      ],
+      "answer": 0,
+      "explanation": "Method overloading can provide default values by creating a version with fewer parameters that calls the fuller version with default values for the missing parameters."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "Can parameter variable names alone distinguish overloaded methods?",
+      "options": [
+        { "type": "text", "value": "Yes, different variable names create different methods" },
+        { "type": "text", "value": "No, only parameter types, number, or order matter" },
+        { "type": "text", "value": "Only if they're static methods" },
+        { "type": "text", "value": "Only in certain cases" }
+      ],
+      "answer": 1,
+      "explanation": "Parameter variable names do not distinguish overloaded methods. Only the parameter types, number of parameters, or order of types matter for overloading."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What process does the compiler use to select the appropriate overloaded method?",
+      "options": [
+        { "type": "text", "value": "Method execution" },
+        { "type": "text", "value": "Method compilation" },
+        { "type": "text", "value": "Method initialization" },
+        { "type": "text", "value": "Method resolution" }
+      ],
+      "answer": 3,
+      "explanation": "The compiler uses method resolution to automatically select the appropriate overloaded method by matching the provided arguments with parameter lists."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "Why is method overloading important in object-oriented programming?",
+      "options": [
+        { "type": "text", "value": "It makes code more flexible and user-friendly by allowing the same operation to work with different data" },
+        { "type": "text", "value": "It's required by Java syntax" },
+        { "type": "text", "value": "It improves performance" },
+        { "type": "text", "value": "It reduces the number of classes needed" }
+      ],
+      "answer": 0,
+      "explanation": "Method overloading is essential in object-oriented programming because it makes code more flexible and intuitive by allowing the same operation to work with different types of data."
+    }
+  ]
+}

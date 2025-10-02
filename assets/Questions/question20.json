@@ -1,0 +1,214 @@
+{
+  "lessonId": 20,
+  "title": "Recap and Mini Quiz on Unit 1 Concepts",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What does JVM stand for?",
+      "options": [
+        { "type": "text", "value": "Java Virtual Machine" },
+        { "type": "text", "value": "Java Variable Manager" },
+        { "type": "text", "value": "Java Version Manager" },
+        { "type": "text", "value": "Java Verification Module" }
+      ],
+      "answer": 0,
+      "explanation": "JVM stands for Java Virtual Machine, which executes Java bytecode and enables platform independence."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "Which primitive type stores decimal numbers?",
+      "options": [
+        { "type": "text", "value": "int" },
+        { "type": "text", "value": "double" },
+        { "type": "text", "value": "boolean" },
+        { "type": "text", "value": "char" }
+      ],
+      "answer": 1,
+      "explanation": "The double primitive type stores decimal (floating-point) numbers with high precision."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What is the result of: 15 / 4 (integer division)",
+      "options": [
+        { "type": "text", "value": "3.75" },
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "3.0" }
+      ],
+      "answer": 2,
+      "explanation": "Integer division truncates the decimal portion: 15 / 4 = 3, not 3.75."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What keyword creates constants in Java?",
+      "options": [
+        { "type": "text", "value": "const" },
+        { "type": "text", "value": "constant" },
+        { "type": "text", "value": "static" },
+        { "type": "text", "value": "final" }
+      ],
+      "answer": 3,
+      "explanation": "The final keyword creates constants in Java, preventing variables from being reassigned after initialization."
+    },
+    {
+      "id": 5,
+      "type": "code",
+      "question": "What is the result of: Math.pow(3, 2)",
+      "options": [
+        { "type": "text", "value": "9.0" },
+        { "type": "text", "value": "6.0" },
+        { "type": "text", "value": "5.0" },
+        { "type": "text", "value": "8.0" }
+      ],
+      "answer": 0,
+      "explanation": "Math.pow(3, 2) calculates 3 raised to the power of 2, which is 3² = 9.0."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What does the return keyword do?",
+      "options": [
+        { "type": "text", "value": "Starts the program over" },
+        { "type": "text", "value": "Sends a value back from a method and ends method execution" },
+        { "type": "text", "value": "Creates a new variable" },
+        { "type": "text", "value": "Prints output to the console" }
+      ],
+      "answer": 1,
+      "explanation": "The return keyword sends a value back from a method to the calling code and immediately ends the method execution."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "What is the result of: \"Score: \" + 4 + 5",
+      "options": [
+        { "type": "text", "value": "Score: 9" },
+        { "type": "text", "value": "Score: 45" },
+        { "type": "text", "value": "Score: 4 + 5" },
+        { "type": "text", "value": "9 Score:" }
+      ],
+      "answer": 2,
+      "explanation": "String concatenation proceeds left-to-right: \"Score: \" + 4 = \"Score: 4\", then \"Score: 4\" + 5 = \"Score: 45\"."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What naming convention do Java variables use?",
+      "options": [
+        { "type": "text", "value": "PascalCase" },
+        { "type": "text", "value": "snake_case" },
+        { "type": "text", "value": "ALL_UPPERCASE" },
+        { "type": "text", "value": "camelCase" }
+      ],
+      "answer": 3,
+      "explanation": "Java variables use camelCase: start with lowercase, capitalize subsequent words (e.g., studentName)."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What type is String in Java?",
+      "options": [
+        { "type": "text", "value": "Reference type (class)" },
+        { "type": "text", "value": "Primitive type" },
+        { "type": "text", "value": "Keyword" },
+        { "type": "text", "value": "Operator" }
+      ],
+      "answer": 0,
+      "explanation": "String is a reference type (class) in Java, not a primitive type like int or boolean."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What symbol starts single-line comments?",
+      "options": [
+        { "type": "text", "value": "#" },
+        { "type": "text", "value": "//" },
+        { "type": "text", "value": "/*" },
+        { "type": "text", "value": "--" }
+      ],
+      "answer": 1,
+      "explanation": "Single-line comments in Java start with // and continue to the end of the line."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "What does Math.sqrt(36) return?",
+      "options": [
+        { "type": "text", "value": "18.0" },
+        { "type": "text", "value": "6.0" },
+        { "type": "text", "value": "1296.0" },
+        { "type": "text", "value": "72.0" }
+      ],
+      "answer": 2,
+      "explanation": "Math.sqrt(36) calculates the square root of 36, which is 6.0."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What happens with explicit type casting from double to int?",
+      "options": [
+        { "type": "text", "value": "Compilation error" },
+        { "type": "text", "value": "The number rounds to nearest integer" },
+        { "type": "text", "value": "The number rounds up" },
+        { "type": "text", "value": "The decimal portion is truncated (cut off)" }
+      ],
+      "answer": 3,
+      "explanation": "When casting double to int, the decimal portion is truncated (cut off), always rounding toward zero."
+    },
+    {
+      "id": 13,
+      "type": "code",
+      "question": "What is the result of: 20 % 6",
+      "options": [
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "3.33" },
+        { "type": "text", "value": "14" },
+        { "type": "text", "value": "120" }
+      ],
+      "answer": 0,
+      "explanation": "The modulus operator returns the remainder: 20 ÷ 6 = 3 remainder 2, so 20 % 6 = 2."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What does void mean as a return type?",
+      "options": [
+        { "type": "text", "value": "The method returns nothing" },
+        { "type": "text", "value": "The method returns zero" },
+        { "type": "text", "value": "The method returns a string" },
+        { "type": "text", "value": "The method is broken" }
+      ],
+      "answer": 0,
+      "explanation": "The void return type means the method performs actions but does not return any value to the calling code."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What are parameters in a method?",
+      "options": [
+        { "type": "text", "value": "The method's output" },
+        { "type": "text", "value": "Input variables that receive data when the method is called" },
+        { "type": "text", "value": "The method's name" },
+        { "type": "text", "value": "Variables outside the method" }
+      ],
+      "answer": 2,
+      "explanation": "Parameters are input variables that receive data (arguments) when the method is called, allowing methods to work with different values."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What is the entry point of a Java program?",
+      "options": [
+        { "type": "text", "value": "start() method" },
+        { "type": "text", "value": "begin() method" },
+        { "type": "text", "value": "run() method" },
+        { "type": "text", "value": "main() method" }
+      ],
+      "answer": 3,
+      "explanation": "The main() method serves as the entry point where Java programs begin execution."
+    }
+  ]
+}

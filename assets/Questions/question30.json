@@ -1,0 +1,214 @@
+{
+  "lessonId": 30,
+  "title": "Wrapper Classes (Integer, Double, Boolean) Intro",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is the purpose of wrapper classes in Java?",
+      "options": [
+        { "type": "text", "value": "To provide object versions of primitive types with utility methods" },
+        { "type": "text", "value": "To make primitives run faster" },
+        { "type": "text", "value": "To compress data" },
+        { "type": "text", "value": "To replace all primitive types" }
+      ],
+      "answer": 0,
+      "explanation": "Wrapper classes provide object versions of primitive types (like Integer for int, Double for double) and include useful utility methods for working with these values."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What is the wrapper class for the int primitive type?",
+      "options": [
+        { "type": "text", "value": "Int" },
+        { "type": "text", "value": "Integer" },
+        { "type": "text", "value": "IntObject" },
+        { "type": "text", "value": "Number" }
+      ],
+      "answer": 1,
+      "explanation": "The Integer class is the wrapper class for the int primitive type, providing object-based functionality for integer values."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What is autoboxing in Java?",
+      "options": [
+        { "type": "text", "value": "Compressing variables" },
+        { "type": "text", "value": "Creating boxes in memory" },
+        { "type": "text", "value": "Automatic conversion from primitive to wrapper object" },
+        { "type": "text", "value": "Automatic deletion of unused objects" }
+      ],
+      "answer": 2,
+      "explanation": "Autoboxing is the automatic conversion from a primitive value to its wrapper object, like converting int to Integer automatically."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "Which method converts a String to an int?",
+      "options": [
+        { "type": "text", "value": "String.toInt()" },
+        { "type": "text", "value": "convert()" },
+        { "type": "text", "value": "toInteger()" },
+        { "type": "text", "value": "Integer.parseInt()" }
+      ],
+      "answer": 3,
+      "explanation": "Integer.parseInt() is the method used to convert a String representation of a number into an int primitive value."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What is the value of Integer.MAX_VALUE?",
+      "options": [
+        { "type": "text", "value": "2147483647" },
+        { "type": "text", "value": "999999999" },
+        { "type": "text", "value": "1000000000" },
+        { "type": "text", "value": "2000000000" }
+      ],
+      "answer": 0,
+      "explanation": "Integer.MAX_VALUE is a constant representing the maximum value an int can hold, which is 2147483647."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "Which method converts an int to a String?",
+      "options": [
+        { "type": "text", "value": "int.toString()" },
+        { "type": "text", "value": "Integer.toString()" },
+        { "type": "text", "value": "String.fromInt()" },
+        { "type": "text", "value": "convert()" }
+      ],
+      "answer": 1,
+      "explanation": "Integer.toString() converts an int value to a String representation, like converting 95 to \"95\"."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What does Integer.compare(10, 20) return?",
+      "options": [
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "20" },
+        { "type": "text", "value": "A negative number" },
+        { "type": "text", "value": "0" }
+      ],
+      "answer": 2,
+      "explanation": "Integer.compare() returns a negative number when the first value is less than the second (10 < 20), zero if equal, and positive if greater."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "Which method converts a String to a double?",
+      "options": [
+        { "type": "text", "value": "String.toDouble()" },
+        { "type": "text", "value": "convert()" },
+        { "type": "text", "value": "Double.toDouble()" },
+        { "type": "text", "value": "Double.parseDouble()" }
+      ],
+      "answer": 3,
+      "explanation": "Double.parseDouble() converts a String representation of a decimal number into a double primitive value."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What special value does Double.NaN represent?",
+      "options": [
+        { "type": "text", "value": "Not-a-Number" },
+        { "type": "text", "value": "Null-and-Negative" },
+        { "type": "text", "value": "New-and-Null" },
+        { "type": "text", "value": "Negative-Number" }
+      ],
+      "answer": 0,
+      "explanation": "Double.NaN is a special constant representing Not-a-Number, used for undefined or unrepresentable mathematical results."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "Which method checks if a double value is infinite?",
+      "options": [
+        { "type": "text", "value": "Double.checkInfinite()" },
+        { "type": "text", "value": "Double.isInfinite()" },
+        { "type": "text", "value": "Double.infinite()" },
+        { "type": "text", "value": "Double.checkValue()" }
+      ],
+      "answer": 1,
+      "explanation": "Double.isInfinite() checks if a double value is positive or negative infinity and returns a boolean result."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What does Boolean.parseBoolean(\"yes\") return?",
+      "options": [
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "An error" }
+      ],
+      "answer": 2,
+      "explanation": "Boolean.parseBoolean() only returns true if the string is \"true\" (case-insensitive). Any other string, including \"yes\", returns false."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What does Boolean.parseBoolean(\"TRUE\") return?",
+      "options": [
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "An error" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "true" }
+      ],
+      "answer": 3,
+      "explanation": "Boolean.parseBoolean() is case-insensitive, so \"TRUE\", \"True\", or \"true\" all return true."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What is unboxing in Java?",
+      "options": [
+        { "type": "text", "value": "Automatic conversion from wrapper object to primitive value" },
+        { "type": "text", "value": "Removing objects from memory" },
+        { "type": "text", "value": "Opening compressed files" },
+        { "type": "text", "value": "Creating new objects" }
+      ],
+      "answer": 0,
+      "explanation": "Unboxing is the automatic conversion from a wrapper object back to its primitive value, like converting Integer to int."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What exception occurs when trying to parse an invalid string like \"abc\" to an int?",
+      "options": [
+        { "type": "text", "value": "NullPointerException" },
+        { "type": "text", "value": "NumberFormatException" },
+        { "type": "text", "value": "IllegalArgumentException" },
+        { "type": "text", "value": "ParseException" }
+      ],
+      "answer": 1,
+      "explanation": "NumberFormatException is thrown when trying to parse a string that doesn't represent a valid number, like Integer.parseInt(\"abc\")."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "Why are wrapper classes essential for collections?",
+      "options": [
+        { "type": "text", "value": "Collections are faster with wrappers" },
+        { "type": "text", "value": "Collections require less memory with wrappers" },
+        { "type": "text", "value": "Wrappers make collections private" },
+        { "type": "text", "value": "Collections can only store objects, not primitive types" }
+      ],
+      "answer": 3,
+      "explanation": "Collections can only store objects, not primitive types, so wrapper classes are essential for storing primitive values in collections."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What happens if you try to unbox a null wrapper object?",
+      "options": [
+        { "type": "text", "value": "NullPointerException is thrown" },
+        { "type": "text", "value": "It returns 0" },
+        { "type": "text", "value": "It returns false" },
+        { "type": "text", "value": "Nothing, it works fine" }
+      ],
+      "answer": 0,
+      "explanation": "Attempting to unbox a null wrapper object (converting null to a primitive) causes a NullPointerException because null cannot be converted to a primitive value."
+    }
+  ]
+}

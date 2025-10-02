@@ -1,0 +1,214 @@
+{
+  "lessonId": 22,
+  "title": "Using the String Class and Common Methods",
+  "questions": [
+    {
+      "id": 1,
+      "type": "code",
+      "question": "What does \"Hello\".length() return?",
+      "options": [
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "6" },
+        { "type": "text", "value": "0" }
+      ],
+      "answer": 0,
+      "explanation": "The length() method returns the number of characters in the string. \"Hello\" has 5 characters: H-e-l-l-o."
+    },
+    {
+      "id": 2,
+      "type": "code",
+      "question": "What does \"Java\".charAt(1) return?",
+      "options": [
+        { "type": "text", "value": "'J'" },
+        { "type": "text", "value": "'a'" },
+        { "type": "text", "value": "'v'" },
+        { "type": "text", "value": "'r'" }
+      ],
+      "answer": 1,
+      "explanation": "charAt(1) returns the character at index 1. String indexing starts at 0, so index 1 is the second character 'a'."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "Which method should be used to compare String content?",
+      "options": [
+        { "type": "text", "value": "==" },
+        { "type": "text", "value": "!=" },
+        { "type": "text", "value": "equals()" },
+        { "type": "text", "value": "compare()" }
+      ],
+      "answer": 2,
+      "explanation": "The equals() method compares the actual content of strings. Never use == with strings as it compares references."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "What does \"Computer\".substring(3, 6) return?",
+      "options": [
+        { "type": "text", "value": "Com\"" },
+        { "type": "text", "value": "put\"" },
+        { "type": "text", "value": "ute\"" },
+        { "type": "text", "value": "ter\"" }
+      ],
+      "answer": 3,
+      "explanation": "substring(3, 6) returns characters from index 3 up to (but not including) index 6: 'p'-'u'-'t'."
+    },
+    {
+      "id": 5,
+      "type": "code",
+      "question": "What does \"Hello World\".indexOf('o') return?",
+      "options": [
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "7" },
+        { "type": "text", "value": "-1" },
+        { "type": "text", "value": "2" }
+      ],
+      "answer": 0,
+      "explanation": "indexOf() returns the index of the first occurrence of the character. The first 'o' in \"Hello World\" is at index 4."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What does \"JAVA\".toLowerCase() return?",
+      "options": [
+        { "type": "text", "value": "JAVA" },
+        { "type": "text", "value": "java" },
+        { "type": "text", "value": "Java" },
+        { "type": "text", "value": "jAVA" }
+      ],
+      "answer": 1,
+      "explanation": "The toLowerCase() method converts all uppercase letters to lowercase, returning \"java\"."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "What does \"  hello  \".trim() return?",
+      "options": [
+        { "type": "text", "value": "\"  hello  \"" },
+        { "type": "text", "value": "\"hello\"" },
+        { "type": "text", "value": "\" hello \"" },
+        { "type": "text", "value": "\"hello  \"" }
+      ],
+      "answer": 2,
+      "explanation": "The trim() method removes whitespace from both the beginning and end of the string, leaving \"hello\"."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What does \"Java\".equalsIgnoreCase(\"JAVA\") return?",
+      "options": [
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 0,
+      "explanation": "equalsIgnoreCase() compares strings while ignoring case differences, so \"Java\" equals \"JAVA\" returns true."
+    },
+    {
+      "id": 9,
+      "type": "code",
+      "question": "What does \"test.java\".endsWith(\".java\") return?",
+      "options": [
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 1,
+      "explanation": "endsWith() checks if the string ends with the specified suffix. \"test.java\" does end with \".java\"."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What does \"\".isEmpty() return?",
+      "options": [
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "null" }
+      ],
+      "answer": 1,
+      "explanation": "isEmpty() returns true when a string has no characters (length is 0). An empty string \"\" has length 0."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "What does \"Java Programming\".contains(\"gram\") return?",
+      "options": [
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "-1" },
+        { "type": "text", "value": "5" }
+      ],
+      "answer": 2,
+      "explanation": "contains() checks if the string contains the specified substring. \"Java Programming\" contains \"gram\" in \"Programming\"."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What does \"hello\".replace('l', 'x') return?",
+      "options": [
+        { "type": "text", "value": "\"hexlo\"" },
+        { "type": "text", "value": "\"helxo\"" },
+        { "type": "text", "value": "\"hexxo\"" },
+        { "type": "text", "value": "\"xello\"" }
+      ],
+      "answer": 3,
+      "explanation": "replace() replaces ALL occurrences of the specified character. Both 'l' characters become 'x', giving \"hexxo\"."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What happens if you search for a character that doesn't exist using indexOf()?",
+      "options": [
+        { "type": "text", "value": "Returns -1" },
+        { "type": "text", "value": "Returns 0" },
+        { "type": "text", "value": "Throws an exception" },
+        { "type": "text", "value": "Returns null" }
+      ],
+      "answer": 0,
+      "explanation": "indexOf() returns -1 when the character or substring is not found in the string."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What is String in Java?",
+      "options": [
+        { "type": "text", "value": "A reference type (class)" },
+        { "type": "text", "value": "A primitive type" },
+        { "type": "text", "value": "A keyword" },
+        { "type": "text", "value": "An operator" }
+      ],
+      "answer": 0,
+      "explanation": "String is a reference type (class) in Java that provides methods for text manipulation, not a primitive type."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What does string indexing start with in Java?",
+      "options": [
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "-1" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "null" }
+      ],
+      "answer": 2,
+      "explanation": "String indexing in Java starts with 0. The first character is at index 0, second at index 1, etc."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "What does \"https://example.com\".startsWith(\"https\") return?",
+      "options": [
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "-1" },
+        { "type": "text", "value": "true" }
+      ],
+      "answer": 3,
+      "explanation": "startsWith() checks if the string begins with the specified prefix. \"https://example.com\" does start with \"https\"."
+    }
+  ]
+}

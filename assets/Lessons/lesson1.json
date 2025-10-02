@@ -1,0 +1,314 @@
+{
+  "lessonId": 1,
+  "title": "Introduction to APCSA & Java",
+  "content": [
+    {
+      "type": "text",
+      "value": "Welcome to AP Computer Science A! This course introduces you to programming using Java, one of the world's most popular and versatile programming languages. APCSA focuses on object-oriented programming concepts, problem-solving techniques, and algorithmic thinking that will prepare you for college-level computer science."
+    },
+    {
+      "type": "text",
+      "value": "Java is a high-level, object-oriented programming language designed for platform independence. This means Java programs can run on any operating system that has a Java Virtual Machine ("
+    },
+    {
+      "type": "code",
+      "value": "JVM"
+    },
+    {
+      "type": "text",
+      "value": ") installed. The "
+    },
+    {
+      "type": "code",
+      "value": "JVM"
+    },
+    {
+      "type": "text",
+      "value": " acts as an intermediary between your Java code and the operating system, making Java truly \"write once, run anywhere.\""
+    },
+    {
+      "type": "text",
+      "value": "At its core, Java is built around the concept of classes and objects. A class serves as a blueprint that defines the structure and behavior of objects. Think of a class like an architectural blueprint for a house - it defines what rooms exist and their functions, but it's not the actual house itself."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    String name;\n    int grade;\n    \n    public void study() {\n        System.out.println(name + \" is studying hard!\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "In this example, "
+    },
+    {
+      "type": "code",
+      "value": "Student"
+    },
+    {
+      "type": "text",
+      "value": " is the class name. The variables "
+    },
+    {
+      "type": "code",
+      "value": "name"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "grade"
+    },
+    {
+      "type": "text",
+      "value": " are instance variables (also called fields) that store information about each student object. The method "
+    },
+    {
+      "type": "code",
+      "value": "study()"
+    },
+    {
+      "type": "text",
+      "value": " defines a behavior that student objects can perform."
+    },
+    {
+      "type": "text",
+      "value": "Every Java program begins execution from the "
+    },
+    {
+      "type": "code",
+      "value": "main()"
+    },
+    {
+      "type": "text",
+      "value": " method. This special method serves as the entry point where the "
+    },
+    {
+      "type": "code",
+      "value": "JVM"
+    },
+    {
+      "type": "text",
+      "value": " starts running your program. Without a "
+    },
+    {
+      "type": "code",
+      "value": "main()"
+    },
+    {
+      "type": "text",
+      "value": " method, your Java program cannot execute independently."
+    },
+    {
+      "type": "code",
+      "value": "public class HelloWorld {\n    public static void main(String[] args) {\n        System.out.println(\"Welcome to Java programming!\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This classic \"Hello World\" program demonstrates the basic structure every Java program follows: a class definition containing the "
+    },
+    {
+      "type": "code",
+      "value": "main()"
+    },
+    {
+      "type": "text",
+      "value": " method. The "
+    },
+    {
+      "type": "code",
+      "value": "System.out.println()"
+    },
+    {
+      "type": "text",
+      "value": " method prints text to the console, allowing your program to display output to users."
+    },
+    {
+      "type": "text",
+      "value": "Java uses several primitive data types to store basic information efficiently. The "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " type stores whole numbers, "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " handles decimal numbers, "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " represents true or false values, and "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " holds single characters. These primitive types are the building blocks of data manipulation in Java."
+    },
+    {
+      "type": "code",
+      "value": "int studentCount = 25;\ndouble averageGPA = 3.7;\nboolean isEnrolled = true;\nchar letterGrade = 'A';"
+    },
+    {
+      "type": "text",
+      "value": "Java also includes reference types, with "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " being the most commonly used. Unlike primitive types, "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " is actually a class that provides methods for text manipulation. Notice that "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " starts with a capital letter, following Java's naming convention for classes."
+    },
+    {
+      "type": "code",
+      "value": "String courseName = \"AP Computer Science A\";\nString teacher = \"Ms. Johnson\";"
+    },
+    {
+      "type": "text",
+      "value": "Java is strongly typed, meaning every variable must have its type declared before use. This helps prevent many common programming errors by catching type mismatches during compilation rather than runtime."
+    },
+    {
+      "type": "text",
+      "value": "Comments are essential for code readability and documentation. Single-line comments begin with "
+    },
+    {
+      "type": "code",
+      "value": "//"
+    },
+    {
+      "type": "text",
+      "value": " and extend to the end of the line. Multi-line comments start with "
+    },
+    {
+      "type": "code",
+      "value": "/*"
+    },
+    {
+      "type": "text",
+      "value": " and end with "
+    },
+    {
+      "type": "code",
+      "value": "*/"
+    },
+    {
+      "type": "text",
+      "value": ", allowing you to comment across multiple lines."
+    },
+    {
+      "type": "code",
+      "value": "// This is a single-line comment\n\n/* This is a\n   multi-line comment\n   spanning several lines */"
+    },
+    {
+      "type": "text",
+      "value": "Java has reserved keywords that serve specific purposes in the language syntax. Words like "
+    },
+    {
+      "type": "code",
+      "value": "public"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "class"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " cannot be used as variable names or identifiers. When naming variables and methods, you must start with a letter, underscore, or dollar sign - never with a number."
+    },
+    {
+      "type": "text",
+      "value": "Java development typically happens in Integrated Development Environments (IDEs) such as Eclipse, IntelliJ IDEA, or Visual Studio Code. These tools provide features like syntax highlighting, error detection, and debugging capabilities that make programming more efficient."
+    },
+    {
+      "type": "text",
+      "value": "Java source code is saved in files with the "
+    },
+    {
+      "type": "code",
+      "value": ".java"
+    },
+    {
+      "type": "text",
+      "value": " extension. When you compile these files, the Java compiler creates bytecode files with a "
+    },
+    {
+      "type": "code",
+      "value": ".class"
+    },
+    {
+      "type": "text",
+      "value": " extension. This bytecode runs on the "
+    },
+    {
+      "type": "code",
+      "value": "JVM"
+    },
+    {
+      "type": "text",
+      "value": ", enabling Java's platform independence."
+    },
+    {
+      "type": "text",
+      "value": "Understanding these fundamental concepts - classes as blueprints, objects as instances, the "
+    },
+    {
+      "type": "code",
+      "value": "main()"
+    },
+    {
+      "type": "text",
+      "value": " method as the entry point, primitive and reference types, and Java's compilation process - provides the foundation for everything you'll learn in AP Computer Science A. In the next lesson, you'll set up your development environment and write your first Java program."
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "lessonId": 4,
+  "title": "int Data Type and Integer Operations",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is the range of values that an int can store in Java?",
+      "options": [
+        { "type": "text", "value": "-2,147,483,648 to 2,147,483,647" },
+        { "type": "text", "value": "0 to 4,294,967,295" },
+        { "type": "text", "value": "-32,768 to 32,767" },
+        { "type": "text", "value": "0 to 2,147,483,647" }
+      ],
+      "answer": 0,
+      "explanation": "Java int is a 32-bit signed integer with range from -2,147,483,648 to 2,147,483,647."
+    },
+    {
+      "id": 2,
+      "type": "code",
+      "question": "What is the result of: 15 / 4",
+      "options": [
+        { "type": "text", "value": "3.75" },
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "3.0" }
+      ],
+      "answer": 1,
+      "explanation": "Integer division truncates the decimal portion, so 15 / 4 = 3, not 3.75."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What is the result of: 17 % 5",
+      "options": [
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "12" },
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "0" }
+      ],
+      "answer": 2,
+      "explanation": "The modulus operator returns the remainder: 17 ÷ 5 = 3 remainder 2, so 17 % 5 = 2."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "What is the result of: 2 + 3 * 4",
+      "options": [
+        { "type": "text", "value": "20" },
+        { "type": "text", "value": "24" },
+        { "type": "text", "value": "9" },
+        { "type": "text", "value": "14" }
+      ],
+      "answer": 3,
+      "explanation": "Multiplication has higher precedence: 3 * 4 = 12, then 2 + 12 = 14."
+    },
+    {
+      "id": 5,
+      "type": "code",
+      "question": "If int x = 10; and x += 5; what is the value of x?",
+      "options": [
+        { "type": "text", "value": "15" },
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "50" }
+      ],
+      "answer": 0,
+      "explanation": "The += operator adds 5 to x: x = x + 5 = 10 + 5 = 15."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What happens to int x = 7; after x++?",
+      "options": [
+        { "type": "text", "value": "x becomes 6" },
+        { "type": "text", "value": "x becomes 8" },
+        { "type": "text", "value": "x stays 7" },
+        { "type": "text", "value": "x becomes 14" }
+      ],
+      "answer": 1,
+      "explanation": "The increment operator (++) adds 1 to the variable, so x becomes 8."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "What is the result of: (10 - 6) / 2",
+      "options": [
+        { "type": "text", "value": "7" },
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "4" }
+      ],
+      "answer": 2,
+      "explanation": "Parentheses first: (10 - 6) = 4, then 4 / 2 = 2."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What does integer division do with the decimal portion?",
+      "options": [
+        { "type": "text", "value": "Rounds to nearest integer" },
+        { "type": "text", "value": "Rounds up" },
+        { "type": "text", "value": "Rounds down" },
+        { "type": "text", "value": "Truncates (cuts off) the decimal portion" }
+      ],
+      "answer": 3,
+      "explanation": "Integer division truncates the decimal portion, always rounding toward zero."
+    },
+    {
+      "id": 9,
+      "type": "code",
+      "question": "What is the result of: 20 % 4",
+      "options": [
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "1" }
+      ],
+      "answer": 0,
+      "explanation": "20 divides evenly by 4 (20 ÷ 4 = 5 remainder 0), so 20 % 4 = 0."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "Which operator has higher precedence?",
+      "options": [
+        { "type": "text", "value": "Addition (+)" },
+        { "type": "text", "value": "Multiplication (*)" },
+        { "type": "text", "value": "Subtraction (-)" },
+        { "type": "text", "value": "All have equal precedence" }
+      ],
+      "answer": 1,
+      "explanation": "Multiplication (*) has higher precedence than addition (+) and subtraction (-)."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "What is the result of: 7 % 10",
+      "options": [
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "7" },
+        { "type": "text", "value": "1" }
+      ],
+      "answer": 2,
+      "explanation": "When the dividend is smaller than divisor, the result is the dividend: 7 ÷ 10 = 0 remainder 7."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What happens when an int calculation exceeds the maximum value?",
+      "options": [
+        { "type": "text", "value": "Java throws an error" },
+        { "type": "text", "value": "The program crashes" },
+        { "type": "text", "value": "The result becomes infinity" },
+        { "type": "text", "value": "Integer overflow occurs and wraps around" }
+      ],
+      "answer": 3,
+      "explanation": "Integer overflow causes the value to wrap around to the negative range without error."
+    },
+    {
+      "id": 13,
+      "type": "code",
+      "question": "If int y = 12; and y -= 4; what is y?",
+      "options": [
+        { "type": "text", "value": "8" },
+        { "type": "text", "value": "16" },
+        { "type": "text", "value": "12" },
+        { "type": "text", "value": "4" }
+      ],
+      "answer": 0,
+      "explanation": "The -= operator subtracts 4 from y: y = y - 4 = 12 - 4 = 8."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What is the result of: -7 / 2",
+      "options": [
+        { "type": "text", "value": "-4" },
+        { "type": "text", "value": "-3" },
+        { "type": "text", "value": "-3.5" },
+        { "type": "text", "value": "3" }
+      ],
+      "answer": 1,
+      "explanation": "Integer division truncates toward zero: -7 / 2 = -3 (not -4)."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "Which symbol represents the modulus operator?",
+      "options": [
+        { "type": "text", "value": "/" },
+        { "type": "text", "value": "*" },
+        { "type": "text", "value": "%" },
+        { "type": "text", "value": "//" }
+      ],
+      "answer": 2,
+      "explanation": "The percent symbol (%) is the modulus operator that returns the remainder of division."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "What does int count = 5; count--; result in?",
+      "options": [
+        { "type": "text", "value": "count = 6" },
+        { "type": "text", "value": "count = 5" },
+        { "type": "text", "value": "count = 0" },
+        { "type": "text", "value": "count = 4" }
+      ],
+      "answer": 3,
+      "explanation": "The decrement operator (--) subtracts 1 from the variable, so count becomes 4."
+    }
+  ]
+}

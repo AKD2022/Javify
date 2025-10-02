@@ -1,0 +1,214 @@
+{
+  "lessonId": 21,
+  "title": "What are Objects?",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is an object in Java?",
+      "options": [
+        { "type": "text", "value": "An instance of a class that has both data and behaviors" },
+        { "type": "text", "value": "A type of variable" },
+        { "type": "text", "value": "A method that returns a value" },
+        { "type": "text", "value": "A primitive data type" }
+      ],
+      "answer": 0,
+      "explanation": "An object is an instance of a class that combines data (attributes) and behaviors (methods) into a single unit."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What is the relationship between a class and an object?",
+      "options": [
+        { "type": "text", "value": "They are the same thing" },
+        { "type": "text", "value": "A class is a blueprint, an object is an instance created from that blueprint" },
+        { "type": "text", "value": "An object is a blueprint, a class is an instance" },
+        { "type": "text", "value": "Classes and objects are unrelated" }
+      ],
+      "answer": 1,
+      "explanation": "A class serves as a blueprint or template, while an object is a specific instance created from that class blueprint."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What keyword is used to create objects in Java?",
+      "options": [
+        { "type": "text", "value": "create" },
+        { "type": "text", "value": "make" },
+        { "type": "text", "value": "new" },
+        { "type": "text", "value": "object" }
+      ],
+      "answer": 2,
+      "explanation": "The 'new' keyword is used to create objects in Java: Student s = new Student();"
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What operator is used to access object attributes and methods?",
+      "options": [
+        { "type": "text", "value": "Arrow (->)" },
+        { "type": "text", "value": "Colon (:)" },
+        { "type": "text", "value": "Semicolon (;)" },
+        { "type": "text", "value": "Dot (.)" }
+      ],
+      "answer": 3,
+      "explanation": "The dot (.) operator is used to access object attributes and call object methods: object.attribute or object.method()."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What are object attributes?",
+      "options": [
+        { "type": "text", "value": "Data or characteristics that objects store" },
+        { "type": "text", "value": "Methods that objects can call" },
+        { "type": "text", "value": "The object's name" },
+        { "type": "text", "value": "The object's type" }
+      ],
+      "answer": 0,
+      "explanation": "Object attributes (also called fields or instance variables) are the data or characteristics that each object stores."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What are object methods?",
+      "options": [
+        { "type": "text", "value": "Data stored in the object" },
+        { "type": "text", "value": "Behaviors or actions that objects can perform" },
+        { "type": "text", "value": "Ways to create objects" },
+        { "type": "text", "value": "Types of classes" }
+      ],
+      "answer": 1,
+      "explanation": "Object methods define the behaviors or actions that objects can perform, often using or modifying the object's attributes."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "If you create two objects from the same class, do they share the same attribute values?",
+      "options": [
+        { "type": "text", "value": "Yes, they share all attribute values" },
+        { "type": "text", "value": "No, each object has its own separate copy of the attributes" },
+        { "type": "text", "value": "Only if the attributes are static" },
+        { "type": "text", "value": "Only primitive attributes are shared" }
+      ],
+      "answer": 1,
+      "explanation": "Each object maintains its own separate copy of the attributes defined in the class. Changes to one object don't affect others."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What does null represent in Java?",
+      "options": [
+        { "type": "text", "value": "Zero" },
+        { "type": "text", "value": "Empty string" },
+        { "type": "text", "value": "False" },
+        { "type": "text", "value": "The absence of an object reference" }
+      ],
+      "answer": 3,
+      "explanation": "The null value represents the absence of an object reference - it means the reference variable doesn't point to any object."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What happens if you try to use a null reference?",
+      "options": [
+        { "type": "text", "value": "NullPointerException" },
+        { "type": "text", "value": "The program continues normally" },
+        { "type": "text", "value": "A new object is automatically created" },
+        { "type": "text", "value": "The reference becomes empty string" }
+      ],
+      "answer": 0,
+      "explanation": "Attempting to access attributes or call methods on a null reference causes a NullPointerException at runtime."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What do object references store?",
+      "options": [
+        { "type": "text", "value": "The actual object data" },
+        { "type": "text", "value": "The memory address (location) of an object" },
+        { "type": "text", "value": "The class name" },
+        { "type": "text", "value": "The object's methods" }
+      ],
+      "answer": 1,
+      "explanation": "Object references store the memory address (location) of an object, not the object itself."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "What happens with: Student s1 = new Student(); Student s2 = s1;",
+      "options": [
+        { "type": "text", "value": "Two separate objects are created" },
+        { "type": "text", "value": "Both references point to the same object" },
+        { "type": "text", "value": "An error occurs" },
+        { "type": "text", "value": "s2 becomes null" }
+      ],
+      "answer": 2,
+      "explanation": "Both s1 and s2 reference the same object. Changes made through either reference affect the same object."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What advantage do objects provide in programming?",
+      "options": [
+        { "type": "text", "value": "Faster execution speed" },
+        { "type": "text", "value": "Less memory usage" },
+        { "type": "text", "value": "Organization of related data and behavior together" },
+        { "type": "text", "value": "Automatic error correction" }
+      ],
+      "answer": 3,
+      "explanation": "Objects organize related data and behavior together, making programs more intuitive, maintainable, and easier to understand."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "Can objects contain both primitive and reference type attributes?",
+      "options": [
+        { "type": "text", "value": "Yes, objects can contain both primitive and reference type attributes" },
+        { "type": "text", "value": "No, only primitive types" },
+        { "type": "text", "value": "No, only reference types" },
+        { "type": "text", "value": "Only if declared as static" }
+      ],
+      "answer": 0,
+      "explanation": "Objects can contain attributes of both primitive types (int, double, boolean) and reference types (String, other objects)."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What is object-oriented programming based on?",
+      "options": [
+        { "type": "text", "value": "Functions and procedures" },
+        { "type": "text", "value": "Objects that combine data and behavior" },
+        { "type": "text", "value": "Mathematical formulas" },
+        { "type": "text", "value": "Linear code execution" }
+      ],
+      "answer": 1,
+      "explanation": "Object-oriented programming is based on objects that combine data (attributes) and behavior (methods) into cohesive units."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "How many objects can be created from a single class?",
+      "options": [
+        { "type": "text", "value": "Only one" },
+        { "type": "text", "value": "Exactly two" },
+        { "type": "text", "value": "Up to ten" },
+        { "type": "text", "value": "As many as needed (limited only by memory)" }
+      ],
+      "answer": 3,
+      "explanation": "You can create as many objects as needed from a single class, limited only by available memory."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What makes objects different from primitive variables?",
+      "options": [
+        { "type": "text", "value": "Objects use more memory" },
+        { "type": "text", "value": "Objects are slower" },
+        { "type": "text", "value": "Objects are created with new keyword" },
+        { "type": "text", "value": "Objects combine multiple data elements and behaviors together" }
+      ],
+      "answer": 3,
+      "explanation": "Unlike primitive variables that store single values, objects combine multiple data elements (attributes) and behaviors (methods) together."
+    }
+  ]
+}

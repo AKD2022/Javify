@@ -1,0 +1,230 @@
+{
+  "lessonId": 32,
+  "title": "Object References and Memory",
+  "content": [
+    {
+      "type": "text",
+      "value": "Understanding how objects are stored in memory is crucial for writing effective Java programs. Unlike primitive types that store actual values, object variables store references (memory addresses) that point to where the object's data is actually located. This fundamental difference affects how objects behave when assigned, compared, and passed to methods."
+    },
+    {
+      "type": "text",
+      "value": "When you create a primitive variable, it directly stores the value. When you create an object variable, it stores a reference to the object's location in memory, not the object itself."
+    },
+    {
+      "type": "code",
+      "value": "// Primitive variable stores the actual value\nint number = 42;        // The variable 'number' contains 42\n\n// Object variable stores a reference (memory address)\nStudent alice = new Student(\"Alice\", 16, 3.8);\n// The variable 'alice' contains a reference to where the Student object is stored"
+    },
+    {
+      "type": "text",
+      "value": "When you use the "
+    },
+    {
+      "type": "code",
+      "value": "new"
+    },
+    {
+      "type": "text",
+      "value": " keyword, Java allocates memory for the object and returns a reference to that memory location. This reference is what gets stored in the object variable."
+    },
+    {
+      "type": "code",
+      "value": "Student student1 = new Student(\"Bob\", 17, 3.5);\n// 'student1' holds a reference to the Student object in memory\n// The actual Student object data is stored elsewhere in memory"
+    },
+    {
+      "type": "text",
+      "value": "When you assign one object variable to another, you're copying the reference, not the object itself. Both variables now point to the same object in memory."
+    },
+    {
+      "type": "code",
+      "value": "Student alice = new Student(\"Alice\", 16, 3.8);\nStudent anotherReference = alice;\n\n// Both 'alice' and 'anotherReference' point to the same object\nanotherReference.gpa = 4.0;\n\nSystem.out.println(alice.gpa);            // 4.0 (changed!)\nSystem.out.println(anotherReference.gpa); // 4.0 (same object)"
+    },
+    {
+      "type": "text",
+      "value": "This is very different from how primitive types work. When you assign one primitive variable to another, you copy the actual value, creating two independent variables."
+    },
+    {
+      "type": "code",
+      "value": "// Primitive assignment - values are copied\nint x = 10;\nint y = x;     // y gets a copy of x's value\ny = 20;        // Changing y doesn't affect x\n\nSystem.out.println(x);  // 10 (unchanged)\nSystem.out.println(y);  // 20 (changed)\n\n// Object assignment - references are copied\nStudent student1 = new Student(\"Alice\", 16, 3.8);\nStudent student2 = student1;  // student2 gets a copy of the reference\nstudent2.gpa = 4.0;           // Modifies the shared object\n\nSystem.out.println(student1.gpa);  // 4.0 (changed!)\nSystem.out.println(student2.gpa);  // 4.0 (same object)"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " value is a special reference that means the variable doesn't point to any object. It's like an empty reference that points to nothing."
+    },
+    {
+      "type": "code",
+      "value": "Student student = null;  // No object, just an empty reference\n\n// This will cause a NullPointerException\n// System.out.println(student.name);  // Error! Can't access methods/variables on null\n\n// Safe way to check\nif (student != null) {\n    System.out.println(student.name);  // Only access if not null\n}"
+    },
+    {
+      "type": "text",
+      "value": "When comparing objects, the "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " operator checks if two references point to the same object in memory, not if the objects have the same content."
+    },
+    {
+      "type": "code",
+      "value": "Student alice1 = new Student(\"Alice\", 16, 3.8);\nStudent alice2 = new Student(\"Alice\", 16, 3.8);\nStudent alice3 = alice1;\n\n// Different objects with same data\nboolean sameObject1 = (alice1 == alice2);  // false (different objects)\n\n// Same object, different references\nboolean sameObject2 = (alice1 == alice3);  // true (same object)"
+    },
+    {
+      "type": "text",
+      "value": "For "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " objects, you should always use the "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " method to compare content, not "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " which compares references."
+    },
+    {
+      "type": "code",
+      "value": "String str1 = new String(\"Hello\");\nString str2 = new String(\"Hello\");\nString str3 = str1;\n\n// Comparing references\nboolean sameReference1 = (str1 == str2);  // false (different objects)\nboolean sameReference2 = (str1 == str3);  // true (same object)\n\n// Comparing content (correct way)\nboolean sameContent1 = str1.equals(str2); // true (same content)\nboolean sameContent2 = str1.equals(str3); // true (same content)"
+    },
+    {
+      "type": "text",
+      "value": "When you pass an object to a method, you're passing a copy of the reference. The method receives a reference to the same object, so any changes made to the object inside the method affect the original object."
+    },
+    {
+      "type": "code",
+      "value": "public static void updateGPA(Student s, double newGPA) {\n    s.gpa = newGPA;  // Modifies the object that s refers to\n}\n\npublic static void main(String[] args) {\n    Student alice = new Student(\"Alice\", 16, 3.8);\n    System.out.println(alice.gpa);  // 3.8\n    \n    updateGPA(alice, 4.0);\n    System.out.println(alice.gpa);  // 4.0 (changed!)\n}"
+    },
+    {
+      "type": "text",
+      "value": "However, if you reassign the parameter inside the method to point to a new object, it doesn't affect the original reference outside the method."
+    },
+    {
+      "type": "code",
+      "value": "public static void replaceStudent(Student s) {\n    s = new Student(\"Bob\", 17, 3.5);  // Creates new object, changes local reference\n    // The parameter 's' now points to a different object\n    // The original reference outside this method is unchanged\n}\n\npublic static void main(String[] args) {\n    Student alice = new Student(\"Alice\", 16, 3.8);\n    replaceStudent(alice);\n    System.out.println(alice.name);  // Still \"Alice\" (unchanged)\n}"
+    },
+    {
+      "type": "text",
+      "value": "Multiple references can point to the same object. When you modify the object through any reference, all references see the change because they all point to the same object."
+    },
+    {
+      "type": "code",
+      "value": "Student student = new Student(\"Charlie\", 15, 3.6);\nStudent ref1 = student;\nStudent ref2 = student;\nStudent ref3 = student;\n\n// All four references point to the same object\nref1.gpa = 3.9;\n\nSystem.out.println(student.gpa);  // 3.9\nSystem.out.println(ref2.gpa);     // 3.9\nSystem.out.println(ref3.gpa);     // 3.9"
+    },
+    {
+      "type": "text",
+      "value": "When an object has no references pointing to it, it becomes eligible for garbage collection. Java's garbage collector automatically frees up memory used by objects that are no longer accessible."
+    },
+    {
+      "type": "code",
+      "value": "Student temp = new Student(\"Temp\", 16, 3.0);\ntemp = null;  // The Student object has no references now\n// The object becomes eligible for garbage collection\n\nStudent alice = new Student(\"Alice\", 16, 3.8);\nalice = new Student(\"Bob\", 17, 3.5);\n// The original \"Alice\" object has no references now\n// It becomes eligible for garbage collection"
+    },
+    {
+      "type": "text",
+      "value": "Understanding references helps explain why changing an object in one place can affect it elsewhere in your program. If two variables hold references to the same object, modifying through either variable affects the shared object."
+    },
+    {
+      "type": "code",
+      "value": "public class StudentManager {\n    private Student currentStudent;\n    \n    public void setStudent(Student s) {\n        currentStudent = s;  // Stores reference to the object\n    }\n    \n    public void updateGPA(double newGPA) {\n        currentStudent.gpa = newGPA;\n    }\n}\n\n// Usage\nStudent alice = new Student(\"Alice\", 16, 3.8);\nStudentManager manager = new StudentManager();\nmanager.setStudent(alice);\nmanager.updateGPA(4.0);\nSystem.out.println(alice.gpa);  // 4.0 (changed through manager)"
+    },
+    {
+      "type": "text",
+      "value": "Arrays of objects store references to objects, not the objects themselves. Each array element contains a reference that points to an object."
+    },
+    {
+      "type": "code",
+      "value": "Student[] students = new Student[3];\nstudents[0] = new Student(\"Alice\", 16, 3.8);\nstudents[1] = new Student(\"Bob\", 17, 3.5);\nstudents[2] = new Student(\"Charlie\", 15, 3.6);\n\n// Each array element holds a reference\nStudent firstStudent = students[0];  // Copy the reference\nfirstStudent.gpa = 4.0;\nSystem.out.println(students[0].gpa);  // 4.0 (same object)"
+    },
+    {
+      "type": "text",
+      "value": "When you create an array of objects without initializing the elements, each element contains "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " until you assign an object to it."
+    },
+    {
+      "type": "code",
+      "value": "Student[] students = new Student[5];\n// All elements are initially null\n\nfor (int i = 0; i < students.length; i++) {\n    students[i] = new Student(\"Student\" + i, 16, 3.5);\n    // Now each element points to a new Student object\n}"
+    },
+    {
+      "type": "text",
+      "value": "Common errors related to object references include "
+    },
+    {
+      "type": "code",
+      "value": "NullPointerException"
+    },
+    {
+      "type": "text",
+      "value": " (trying to use "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " references), unexpected changes to objects (when multiple references point to the same object), and confusion between "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " for comparing objects."
+    },
+    {
+      "type": "code",
+      "value": "// Common mistake: Not checking for null\nStudent student = null;\n// student.displayInfo();  // NullPointerException!\n\n// Correct approach\nif (student != null) {\n    student.displayInfo();\n} else {\n    System.out.println(\"No student assigned\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Understanding object references and memory is essential for debugging unexpected behavior and writing efficient programs. In upcoming lessons, you'll learn about the "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " keyword and how to work with instance variables more effectively in your classes."
+    }
+  ]
+}

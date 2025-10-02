@@ -1,0 +1,214 @@
+{
+  "lessonId": 13,
+  "title": "String Basics and String Concatenation",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What type of quotes are used for String literals?",
+      "options": [
+        { "type": "text", "value": "Double quotes" },
+        { "type": "text", "value": "Single quotes" },
+        { "type": "text", "value": "Backticks" },
+        { "type": "text", "value": "No quotes" }
+      ],
+      "answer": 0,
+      "explanation": "String literals in Java are enclosed in double quotes, like \"Hello World\". Single quotes are for char literals."
+    },
+    {
+      "id": 2,
+      "type": "code",
+      "question": "What is the result of: \"Hello\" + \" World\"",
+      "options": [
+        { "type": "text", "value": "Hello World" },
+        { "type": "text", "value": "HelloWorld" },
+        { "type": "text", "value": "\"Hello World\"" },
+        { "type": "text", "value": "Hello + World" }
+      ],
+      "answer": 1,
+      "explanation": "String concatenation with + combines the strings: \"Hello\" + \" World\" = \"Hello World\"."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What is the result of: \"Age: \" + 17",
+      "options": [
+        { "type": "text", "value": "Age: 17" },
+        { "type": "text", "value": "Age: + 17" },
+        { "type": "text", "value": "Age:17" },
+        { "type": "text", "value": "Age: seventeen" }
+      ],
+      "answer": 2,
+      "explanation": "The integer 17 is automatically converted to string \"17\" and concatenated: \"Age: \" + 17 = \"Age: 17\"."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "What is the result of: 5 + 3 + \" points\"",
+      "options": [
+        { "type": "text", "value": "53 points" },
+        { "type": "text", "value": "5 + 3 points" },
+        { "type": "text", "value": "8 points" },
+        { "type": "text", "value": "points 8" }
+      ],
+      "answer": 3,
+      "explanation": "Arithmetic is performed first (5 + 3 = 8), then concatenation: 8 + \" points\" = \"8 points\"."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What does it mean that Strings are immutable?",
+      "options": [
+        { "type": "text", "value": "Their content cannot be changed after creation" },
+        { "type": "text", "value": "They can only store numbers" },
+        { "type": "text", "value": "They are always empty" },
+        { "type": "text", "value": "They cannot be concatenated" }
+      ],
+      "answer": 0,
+      "explanation": "String immutability means once a String object is created, its content cannot be modified. Operations create new String objects."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What escape sequence represents a new line?",
+      "options": [
+        { "type": "text", "value": "\\t" },
+        { "type": "text", "value": "\\n" },
+        { "type": "text", "value": "\\r" },
+        { "type": "text", "value": "\\b" }
+      ],
+      "answer": 1,
+      "explanation": "The \\n escape sequence represents a new line character in strings."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "What is the result of: \"Total: \" + 4 + 5",
+      "options": [
+        { "type": "text", "value": "Total: 9" },
+        { "type": "text", "value": "Total: 45" },
+        { "type": "text", "value": "Total: 4 + 5" },
+        { "type": "text", "value": "9 Total:" }
+      ],
+      "answer": 1,
+      "explanation": "String concatenation proceeds left-to-right: \"Total: \" + 4 = \"Total: 4\", then \"Total: 4\" + 5 = \"Total: 45\"."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What does the += operator do with strings?",
+      "options": [
+        { "type": "text", "value": "Subtracts from the string" },
+        { "type": "text", "value": "Multiplies the string" },
+        { "type": "text", "value": "Appends to the string" },
+        { "type": "text", "value": "Divides the string" }
+      ],
+      "answer": 2,
+      "explanation": "The += operator appends (concatenates) text to an existing string variable: str += \"text\" is equivalent to str = str + \"text\"."
+    },
+    {
+      "id": 9,
+      "type": "code",
+      "question": "What is the result of: \"Score: \" + true",
+      "options": [
+        { "type": "text", "value": "Score: true" },
+        { "type": "text", "value": "Score: 1" },
+        { "type": "text", "value": "Score: yes" },
+        { "type": "text", "value": "Error" }
+      ],
+      "answer": 0,
+      "explanation": "The boolean true is converted to the string \"true\" during concatenation: \"Score: \" + true = \"Score: true\"."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "How do you include a double quote in a string?",
+      "options": [
+        { "type": "text", "value": "Use \\\"" },
+        { "type": "text", "value": "Use \"\"" },
+        { "type": "text", "value": "Use '\"'" },
+        { "type": "text", "value": "Use /\"" }
+      ],
+      "answer": 0,
+      "explanation": "Use the escape sequence \\\" to include a double quote inside a string literal."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "What is the result of: \"\" + 42",
+      "options": [
+        { "type": "text", "value": "42" },
+        { "type": "text", "value": "\"42\"" },
+        { "type": "text", "value": "empty" },
+        { "type": "text", "value": "0" }
+      ],
+      "answer": 2,
+      "explanation": "Concatenating an empty string with 42 converts 42 to string: \"\" + 42 = \"42\"."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What is the result of: \"Hi\" + \"\"",
+      "options": [
+        { "type": "text", "value": "Hi" },
+        { "type": "text", "value": "\"Hi\"" },
+        { "type": "text", "value": "Hi + \"\"" },
+        { "type": "text", "value": "empty" }
+      ],
+      "answer": 3,
+      "explanation": "Concatenating with an empty string leaves the original string unchanged: \"Hi\" + \"\" = \"Hi\"."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What is String in Java?",
+      "options": [
+        { "type": "text", "value": "A reference type (class)" },
+        { "type": "text", "value": "A primitive type" },
+        { "type": "text", "value": "A keyword" },
+        { "type": "text", "value": "An operator" }
+      ],
+      "answer": 0,
+      "explanation": "String is a reference type (class) in Java, not a primitive type like int or boolean."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What does \\t represent in a string?",
+      "options": [
+        { "type": "text", "value": "Tab character" },
+        { "type": "text", "value": "New line" },
+        { "type": "text", "value": "Backslash" },
+        { "type": "text", "value": "Letter t" }
+      ],
+      "answer": 0,
+      "explanation": "The \\t escape sequence represents a tab character for horizontal spacing."
+    },
+    {
+      "id": 15,
+      "type": "code",
+      "question": "What is the result of: \"Total: \" + (4 + 5)",
+      "options": [
+        { "type": "text", "value": "Total: 45" },
+        { "type": "text", "value": "Total: 9" },
+        { "type": "text", "value": "Total: (4 + 5)" },
+        { "type": "text", "value": "9 Total:" }
+      ],
+      "answer": 1,
+      "explanation": "Parentheses force arithmetic first: (4 + 5) = 9, then \"Total: \" + 9 = \"Total: 9\"."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What happens when you concatenate a String with null?",
+      "options": [
+        { "type": "text", "value": "The string becomes empty" },
+        { "type": "text", "value": "A compilation error occurs" },
+        { "type": "text", "value": "The word \"null\" is added to the string" },
+        { "type": "text", "value": "A NullPointerException occurs" }
+      ],
+      "answer": 2,
+      "explanation": "When concatenating with null, Java converts null to the string \"null\" and includes it in the result."
+    }
+  ]
+}

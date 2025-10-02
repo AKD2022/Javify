@@ -1,0 +1,394 @@
+{
+  "lessonId": 17,
+  "title": "Using the Math Class (Math.sqrt, Math.pow)",
+  "content": [
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class in Java provides a comprehensive collection of mathematical functions and constants for performing complex calculations. This built-in class eliminates the need to implement common mathematical operations from scratch, making your programs more efficient and reliable."
+    },
+    {
+      "type": "text",
+      "value": "All methods in the "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class are "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": ", meaning you call them using the class name without creating an object. The "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class also provides important mathematical constants like "
+    },
+    {
+      "type": "code",
+      "value": "Math.PI"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "Math.E"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "// Mathematical constants\ndouble pi = Math.PI;           // 3.141592653589793\ndouble e = Math.E;             // 2.718281828459045\n\n// Using Math methods (no object creation needed)\ndouble result = Math.sqrt(25);\nint absolute = Math.abs(-10);"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math.sqrt()"
+    },
+    {
+      "type": "text",
+      "value": " method calculates the square root of a number, returning a "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " value. This function is essential for geometric calculations, physics problems, and statistical operations."
+    },
+    {
+      "type": "code",
+      "value": "double squareRoot1 = Math.sqrt(16);    // 4.0\ndouble squareRoot2 = Math.sqrt(25);    // 5.0\ndouble squareRoot3 = Math.sqrt(2);     // 1.4142135623730951\ndouble squareRoot4 = Math.sqrt(100);   // 10.0\n\n// Calculate hypotenuse using Pythagorean theorem\ndouble a = 3.0;\ndouble b = 4.0;\ndouble hypotenuse = Math.sqrt(a * a + b * b); // 5.0"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math.pow()"
+    },
+    {
+      "type": "text",
+      "value": " method raises a number to a specified power, taking two "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " parameters: the base and the exponent. This method handles both positive and negative exponents, as well as fractional powers."
+    },
+    {
+      "type": "code",
+      "value": "double power1 = Math.pow(2, 3);       // 8.0 (2 cubed)\ndouble power2 = Math.pow(5, 2);       // 25.0 (5 squared)\ndouble power3 = Math.pow(10, -2);     // 0.01 (10 to the -2)\ndouble power4 = Math.pow(8, 1.0/3.0); // 2.0 (cube root of 8)\ndouble power5 = Math.pow(16, 0.5);    // 4.0 (same as square root)"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math.abs()"
+    },
+    {
+      "type": "text",
+      "value": " method returns the absolute value of a number, effectively removing the negative sign if present. This method is overloaded to work with "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ", and other numeric types."
+    },
+    {
+      "type": "code",
+      "value": "int absoluteInt = Math.abs(-15);        // 15\ndouble absoluteDouble = Math.abs(-7.5);  // 7.5\nint positiveValue = Math.abs(10);        // 10 (already positive)\n\n// Calculate distance between two points on a number line\nint point1 = 5;\nint point2 = -3;\nint distance = Math.abs(point1 - point2); // 8"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math.max()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "Math.min()"
+    },
+    {
+      "type": "text",
+      "value": " methods return the larger or smaller of two values, respectively. These methods are useful for finding extremes and implementing boundary conditions."
+    },
+    {
+      "type": "code",
+      "value": "int maximum = Math.max(15, 23);       // 23\nint minimum = Math.min(15, 23);       // 15\ndouble maxDouble = Math.max(7.2, 7.15); // 7.2\n\n// Find the highest of three test scores\nint test1 = 85, test2 = 92, test3 = 78;\nint highest = Math.max(Math.max(test1, test2), test3); // 92"
+    },
+    {
+      "type": "text",
+      "value": "Rounding methods in the "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class include "
+    },
+    {
+      "type": "code",
+      "value": "Math.round()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Math.ceil()"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "Math.floor()"
+    },
+    {
+      "type": "text",
+      "value": ". These methods handle different rounding strategies for converting floating-point numbers to integers."
+    },
+    {
+      "type": "code",
+      "value": "long rounded = Math.round(7.6);       // 8 (rounds to nearest)\nlong rounded2 = Math.round(7.4);      // 7 (rounds to nearest)\ndouble ceiling = Math.ceil(7.1);      // 8.0 (rounds up)\ndouble floor = Math.floor(7.9);       // 7.0 (rounds down)\n\n// Calculate number of pages needed\ndouble totalItems = 127;\ndouble itemsPerPage = 10;\nint pagesNeeded = (int) Math.ceil(totalItems / itemsPerPage); // 13"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Math.random()"
+    },
+    {
+      "type": "text",
+      "value": " method generates a random "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " value between 0.0 (inclusive) and 1.0 (exclusive). This method is commonly used for simulations, games, and generating test data."
+    },
+    {
+      "type": "code",
+      "value": "double randomValue = Math.random();   // Between 0.0 and 1.0\n\n// Generate random integer between 1 and 6 (dice roll)\nint diceRoll = (int)(Math.random() * 6) + 1;\n\n// Generate random integer between min and max (inclusive)\nint min = 10, max = 50;\nint randomInRange = (int)(Math.random() * (max - min + 1)) + min;"
+    },
+    {
+      "type": "text",
+      "value": "Trigonometric functions are available for angular calculations, including "
+    },
+    {
+      "type": "code",
+      "value": "Math.sin()"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "Math.cos()"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "Math.tan()"
+    },
+    {
+      "type": "text",
+      "value": ". These functions expect angles in radians, not degrees."
+    },
+    {
+      "type": "code",
+      "value": "double angleInRadians = Math.PI / 4;  // 45 degrees\ndouble sine = Math.sin(angleInRadians);     // 0.7071...\ndouble cosine = Math.cos(angleInRadians);   // 0.7071...\ndouble tangent = Math.tan(angleInRadians);  // 1.0\n\n// Convert degrees to radians\ndouble degrees = 90;\ndouble radians = Math.toRadians(degrees);\ndouble sineOf90 = Math.sin(radians);        // 1.0"
+    },
+    {
+      "type": "text",
+      "value": "Logarithmic functions include "
+    },
+    {
+      "type": "code",
+      "value": "Math.log()"
+    },
+    {
+      "type": "text",
+      "value": " for natural logarithm and "
+    },
+    {
+      "type": "code",
+      "value": "Math.log10()"
+    },
+    {
+      "type": "text",
+      "value": " for base-10 logarithm. These functions are useful in scientific calculations and data analysis."
+    },
+    {
+      "type": "code",
+      "value": "double naturalLog = Math.log(Math.E);     // 1.0 (ln(e) = 1)\ndouble log10 = Math.log10(100);           // 2.0 (log₁₀(100) = 2)\ndouble log2 = Math.log(8) / Math.log(2);  // 3.0 (change of base formula)"
+    },
+    {
+      "type": "text",
+      "value": "Practical applications of "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " methods include calculating distances, areas, compound interest, and solving geometric problems. These real-world applications demonstrate the power and utility of mathematical functions."
+    },
+    {
+      "type": "code",
+      "value": "// Calculate circle area\ndouble radius = 5.0;\ndouble area = Math.PI * Math.pow(radius, 2);  // 78.54\n\n// Calculate compound interest\ndouble principal = 1000.0;\ndouble rate = 0.05;\nint periods = 4;\nint years = 10;\ndouble amount = principal * Math.pow(1 + rate/periods, periods * years);\n\n// Calculate distance between two points\ndouble x1 = 1, y1 = 2, x2 = 4, y2 = 6;\ndouble distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));"
+    },
+    {
+      "type": "text",
+      "value": "Error handling with "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " methods involves understanding special return values. For example, "
+    },
+    {
+      "type": "code",
+      "value": "Math.sqrt()"
+    },
+    {
+      "type": "text",
+      "value": " of a negative number returns "
+    },
+    {
+      "type": "code",
+      "value": "NaN"
+    },
+    {
+      "type": "text",
+      "value": " (Not a Number), and division by zero in certain contexts returns infinity."
+    },
+    {
+      "type": "code",
+      "value": "double invalidSqrt = Math.sqrt(-1);       // NaN\ndouble divisionByZero = 1.0 / 0.0;        // Infinity\ndouble zeroDivision = 0.0 / 0.0;          // NaN\n\n// Check for valid results\nif (!Double.isNaN(invalidSqrt)) {\n    System.out.println(\"Valid square root: \" + invalidSqrt);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Performance considerations include understanding that some "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " methods are computationally expensive. For simple operations like squaring a number, using "
+    },
+    {
+      "type": "code",
+      "value": "x * x"
+    },
+    {
+      "type": "text",
+      "value": " is faster than "
+    },
+    {
+      "type": "code",
+      "value": "Math.pow(x, 2)"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "// More efficient for simple operations\ndouble squared = x * x;              // Faster\ndouble cubed = x * x * x;            // Faster\n\n// Use Math.pow() for complex exponents\ndouble complexPower = Math.pow(x, 3.7);  // Necessary for fractional powers"
+    },
+    {
+      "type": "text",
+      "value": "Understanding the "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class enables you to solve complex mathematical problems efficiently and accurately. These methods are essential tools for scientific computing, financial calculations, and geometric operations in Java programs."
+    },
+    {
+      "type": "text",
+      "value": "Mastering "
+    },
+    {
+      "type": "code",
+      "value": "Math"
+    },
+    {
+      "type": "text",
+      "value": " class functions prepares you for advanced mathematical programming and real-world problem solving. In the next lesson, we'll explore method definition and calling to create reusable code blocks."
+    }
+  ]
+}

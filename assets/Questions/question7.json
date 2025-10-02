@@ -1,0 +1,214 @@
+{
+  "lessonId": 7,
+  "title": "char Data Type and Characters in Java",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What type of quotes are used for char literals?",
+      "options": [
+        { "type": "text", "value": "Single quotes" },
+        { "type": "text", "value": "Double quotes" },
+        { "type": "text", "value": "Backticks" },
+        { "type": "text", "value": "No quotes" }
+      ],
+      "answer": 0,
+      "explanation": "Character literals in Java use single quotes, like 'A' or '$'. Double quotes are used for String literals."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "How many characters can a char variable store?",
+      "options": [
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "Unlimited" }
+      ],
+      "answer": 1,
+      "explanation": "A char variable stores exactly one character. For multiple characters, use String."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "Which escape sequence represents a new line?",
+      "options": [
+        { "type": "text", "value": "\\t" },
+        { "type": "text", "value": "\\\\" },
+        { "type": "text", "value": "\\n" },
+        { "type": "text", "value": "\\'" }
+      ],
+      "answer": 2,
+      "explanation": "The \\n escape sequence represents a new line character in Java."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "What is the Unicode value of 'A'?",
+      "options": [
+        { "type": "text", "value": "64" },
+        { "type": "text", "value": "66" },
+        { "type": "text", "value": "97" },
+        { "type": "text", "value": "65" }
+      ],
+      "answer": 3,
+      "explanation": "The Unicode value of uppercase 'A' is 65 in the ASCII/Unicode character set."
+    },
+    {
+      "id": 5,
+      "type": "code",
+      "question": "What is the result of: 'B' - 'A'",
+      "options": [
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "-1" },
+        { "type": "text", "value": "BA" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 0,
+      "explanation": "Character arithmetic uses Unicode values: 'B' (66) - 'A' (65) = 1."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What does Character.isDigit('7') return?",
+      "options": [
+        { "type": "text", "value": "7" },
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 1,
+      "explanation": "Character.isDigit() returns true for digit characters like '0' through '9'."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "Which represents a tab character?",
+      "options": [
+        { "type": "text", "value": "\\n" },
+        { "type": "text", "value": "\\r" },
+        { "type": "text", "value": "\\t" },
+        { "type": "text", "value": "\\s" }
+      ],
+      "answer": 2,
+      "explanation": "The \\t escape sequence represents a tab character for horizontal spacing."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What is required to convert int to char?",
+      "options": [
+        { "type": "text", "value": "Nothing, it's automatic" },
+        { "type": "text", "value": "A special method" },
+        { "type": "text", "value": "It's impossible" },
+        { "type": "text", "value": "Explicit casting" }
+      ],
+      "answer": 3,
+      "explanation": "Converting int to char requires explicit casting: (char)intValue because it's a narrowing conversion."
+    },
+    {
+      "id": 9,
+      "type": "code",
+      "question": "What does Character.toUpperCase('m') return?",
+      "options": [
+        { "type": "text", "value": "'M'" },
+        { "type": "text", "value": "'m'" },
+        { "type": "text", "value": "77" },
+        { "type": "text", "value": "109" }
+      ],
+      "answer": 0,
+      "explanation": "Character.toUpperCase() converts lowercase letters to their uppercase equivalents."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "Which comparison is true?",
+      "options": [
+        { "type": "text", "value": "'A' > 'B'" },
+        { "type": "text", "value": "'A' < 'B'" },
+        { "type": "text", "value": "'A' == 'B'" },
+        { "type": "text", "value": "'A' != 'A'" }
+      ],
+      "answer": 1,
+      "explanation": "Character comparison uses Unicode values: 'A' (65) is less than 'B' (66)."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "How many bits does a char use in Java?",
+      "options": [
+        { "type": "text", "value": "8 bits" },
+        { "type": "text", "value": "16 bits" },
+        { "type": "text", "value": "32 bits" },
+        { "type": "text", "value": "64 bits" }
+      ],
+      "answer": 2,
+      "explanation": "Java char uses 16 bits to support Unicode characters from many languages."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What does '5' - '0' equal?",
+      "options": [
+        { "type": "text", "value": "50" },
+        { "type": "text", "value": "-5" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "5" }
+      ],
+      "answer": 3,
+      "explanation": "This converts character digit '5' to integer 5 by subtracting the Unicode value of '0'."
+    },
+    {
+      "id": 13,
+      "type": "code",
+      "question": "What is the result of: (char)(65)",
+      "options": [
+        { "type": "text", "value": "'A'" },
+        { "type": "text", "value": "65" },
+        { "type": "text", "value": "'65'" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 0,
+      "explanation": "Casting 65 to char gives 'A' since 65 is the Unicode value for uppercase A."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "Which comparison is true?",
+      "options": [
+        { "type": "text", "value": "'a' < 'A'" },
+        { "type": "text", "value": "'A' < 'a'" },
+        { "type": "text", "value": "'a' == 'A'" },
+        { "type": "text", "value": "'A' > 'Z'" }
+      ],
+      "answer": 1,
+      "explanation": "Uppercase letters have smaller Unicode values than lowercase: 'A' (65) < 'a' (97)."
+    },
+    {
+      "id": 15,
+      "type": "code",
+      "question": "What does Character.isLetter('9') return?",
+      "options": [
+        { "type": "text", "value": "9" },
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "error" }
+      ],
+      "answer": 2,
+      "explanation": "Character.isLetter() returns false for '9' because it's a digit, not a letter."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "Which represents a single quote character?",
+      "options": [
+        { "type": "text", "value": "\"'\"" },
+        { "type": "text", "value": "'''" },
+        { "type": "text", "value": "\"\\\"\"" },
+        { "type": "text", "value": "'\\''" }
+      ],
+      "answer": 3,
+      "explanation": "To represent a single quote as a char literal, you must escape it: '\\'' inside single quotes."
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "lessonId": 37,
+  "title": "Relational Operators (==, !=, >, <, >=, <=)",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What do relational operators produce?",
+      "options": [
+        { "type": "text", "value": "A boolean result (true or false)" },
+        { "type": "text", "value": "An integer" },
+        { "type": "text", "value": "A string" },
+        { "type": "text", "value": "A double" }
+      ],
+      "answer": 0,
+      "explanation": "Relational operators compare two values and produce a boolean result - either true or false depending on whether the relationship holds."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "How many relational operators does Java provide?",
+      "options": [
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "6" },
+        { "type": "text", "value": "8" },
+        { "type": "text", "value": "10" }
+      ],
+      "answer": 1,
+      "explanation": "Java provides six relational operators: ==, !=, >, <, >=, and <=."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What does the == operator check?",
+      "options": [
+        { "type": "text", "value": "Assignment" },
+        { "type": "text", "value": "Greater than" },
+        { "type": "text", "value": "If two values are equal" },
+        { "type": "text", "value": "If two values are different" }
+      ],
+      "answer": 2,
+      "explanation": "The == operator checks if two values are equal, returning true if they're the same and false if they're different."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What is the difference between = and ==?",
+      "options": [
+        { "type": "text", "value": "They're the same" },
+        { "type": "text", "value": "= is for strings only" },
+        { "type": "text", "value": "== is faster" },
+        { "type": "text", "value": "= assigns a value, == compares two values" }
+      ],
+      "answer": 3,
+      "explanation": "The = operator assigns a value to a variable (assignment), while == compares two values for equality (comparison)."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What does the != operator check?",
+      "options": [
+        { "type": "text", "value": "If two values are not equal" },
+        { "type": "text", "value": "If two values are equal" },
+        { "type": "text", "value": "If a value is negative" },
+        { "type": "text", "value": "If a value is null" }
+      ],
+      "answer": 0,
+      "explanation": "The != operator checks if two values are not equal, returning true if they're different and false if they're the same."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What does (15 > 10) evaluate to?",
+      "options": [
+        { "type": "text", "value": "15" },
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "5" }
+      ],
+      "answer": 1,
+      "explanation": "The expression (15 > 10) evaluates to true because 15 is indeed greater than 10."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What does (8 < 8) evaluate to?",
+      "options": [
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "8" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "0" }
+      ],
+      "answer": 2,
+      "explanation": "The expression (8 < 8) evaluates to false because 8 is not strictly less than 8 (they're equal)."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What does >= check?",
+      "options": [
+        { "type": "text", "value": "Only greater than" },
+        { "type": "text", "value": "Only equal to" },
+        { "type": "text", "value": "Less than or equal to" },
+        { "type": "text", "value": "Greater than or equal to" }
+      ],
+      "answer": 3,
+      "explanation": "The >= operator checks if the left value is greater than or equal to the right value, returning true if either condition holds."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What does (10 >= 10) evaluate to?",
+      "options": [
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "0" }
+      ],
+      "answer": 0,
+      "explanation": "The expression (10 >= 10) evaluates to true because 10 is equal to 10, satisfying the 'equal to' part of 'greater than or equal to'."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What does <= check?",
+      "options": [
+        { "type": "text", "value": "Only less than" },
+        { "type": "text", "value": "Less than or equal to" },
+        { "type": "text", "value": "Greater than or equal to" },
+        { "type": "text", "value": "Not equal to" }
+      ],
+      "answer": 1,
+      "explanation": "The <= operator checks if the left value is less than or equal to the right value, returning true if either condition holds."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Can relational operators compare different numeric types?",
+      "options": [
+        { "type": "text", "value": "No, types must match exactly" },
+        { "type": "text", "value": "Only int and double" },
+        { "type": "text", "value": "Yes, Java automatically converts them for comparison" },
+        { "type": "text", "value": "Only with explicit casting" }
+      ],
+      "answer": 2,
+      "explanation": "Relational operators work with all numeric types, and Java will automatically convert them for comparison when comparing different numeric types."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "In expressions with arithmetic and relational operators, which happens first?",
+      "options": [
+        { "type": "text", "value": "Relational operators" },
+        { "type": "text", "value": "They happen simultaneously" },
+        { "type": "text", "value": "It depends on the expression" },
+        { "type": "text", "value": "Arithmetic operations" }
+      ],
+      "answer": 3,
+      "explanation": "Arithmetic operations are evaluated first, then the comparison is performed. For example, in (x + 5 > 10), x + 5 is calculated before comparing to 10."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "For char values, what do relational operators compare?",
+      "options": [
+        { "type": "text", "value": "Their Unicode values" },
+        { "type": "text", "value": "Their ASCII values only" },
+        { "type": "text", "value": "Their alphabetical position only" },
+        { "type": "text", "value": "Their string representations" }
+      ],
+      "answer": 0,
+      "explanation": "For char values, relational operators compare based on their Unicode values, which orders characters alphabetically with uppercase before lowercase."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "Should you use == to compare String content?",
+      "options": [
+        { "type": "text", "value": "Yes, always" },
+        { "type": "text", "value": "No, use equals() method instead because == compares references" },
+        { "type": "text", "value": "Only for short strings" },
+        { "type": "text", "value": "Only in loops" }
+      ],
+      "answer": 1,
+      "explanation": "For String objects, you should NOT use == to compare content. Use the equals() method instead, as == compares object references, not the actual text."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "Where are relational operators commonly used?",
+      "options": [
+        { "type": "text", "value": "Only in loops" },
+        { "type": "text", "value": "Only in methods" },
+        { "type": "text", "value": "Only with integers" },
+        { "type": "text", "value": "In conditional statements to control program flow" }
+      ],
+      "answer": 3,
+      "explanation": "Relational operators are commonly used in conditional statements to control program flow, determining which code should execute based on value comparisons."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What is a common mistake when using relational operators?",
+      "options": [
+        { "type": "text", "value": "Using = instead of == for comparison" },
+        { "type": "text", "value": "Using too many parentheses" },
+        { "type": "text", "value": "Comparing only integers" },
+        { "type": "text", "value": "Using them in loops" }
+      ],
+      "answer": 0,
+      "explanation": "A common mistake is using = (assignment) instead of == (comparison), which assigns a value instead of comparing it."
+    }
+  ]
+}

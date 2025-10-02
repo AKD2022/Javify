@@ -1,0 +1,214 @@
+{
+  "lessonId": 2,
+  "title": "Setting Up Development Environment & Hello World",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What does JDK stand for?",
+      "options": [
+        { "type": "text", "value": "Java Development Kit" },
+        { "type": "text", "value": "Java Deployment Kit" },
+        { "type": "text", "value": "Java Design Kit" },
+        { "type": "text", "value": "Java Documentation Kit" }
+      ],
+      "answer": 0,
+      "explanation": "JDK stands for Java Development Kit, which contains all tools needed to develop Java applications."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "Which command compiles a Java source file?",
+      "options": [
+        { "type": "text", "value": "java" },
+        { "type": "text", "value": "javac" },
+        { "type": "text", "value": "compile" },
+        { "type": "text", "value": "run" }
+      ],
+      "answer": 1,
+      "explanation": "javac is the Java compiler command that converts .java source files into .class bytecode files."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What file extension do compiled Java programs have?",
+      "options": [
+        { "type": "text", "value": ".java" },
+        { "type": "text", "value": ".exe" },
+        { "type": "text", "value": ".class" },
+        { "type": "text", "value": ".compile" }
+      ],
+      "answer": 2,
+      "explanation": "Compiled Java programs have the .class extension, containing bytecode that runs on the JVM."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What does the static keyword mean in the main method?",
+      "options": [
+        { "type": "text", "value": "The method cannot be changed" },
+        { "type": "text", "value": "The method is slow" },
+        { "type": "text", "value": "The method is private" },
+        { "type": "text", "value": "The method belongs to the class itself, not individual objects" }
+      ],
+      "answer": 3,
+      "explanation": "static means the method belongs to the class itself rather than to individual object instances."
+    },
+    {
+      "id": 5,
+      "type": "code",
+      "question": "What is the output of this code?\nSystem.out.println(\"Hello\");\nSystem.out.println(\"World\");",
+      "options": [
+        { "type": "text", "value": "Hello\nWorld" },
+        { "type": "text", "value": "HelloWorld" },
+        { "type": "text", "value": "Hello World" },
+        { "type": "text", "value": "World\nHello" }
+      ],
+      "answer": 0,
+      "explanation": "println prints each string on a separate line, so \"Hello\" appears on the first line and \"World\" on the second."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What does void mean in the main method signature?",
+      "options": [
+        { "type": "text", "value": "The method is empty" },
+        { "type": "text", "value": "The method returns no value" },
+        { "type": "text", "value": "The method is broken" },
+        { "type": "text", "value": "The method is optional" }
+      ],
+      "answer": 1,
+      "explanation": "void indicates that the method does not return any value when it completes execution."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "Which symbol ends every Java statement?",
+      "options": [
+        { "type": "text", "value": "." },
+        { "type": "text", "value": "," },
+        { "type": "text", "value": ";" },
+        { "type": "text", "value": ":" }
+      ],
+      "answer": 2,
+      "explanation": "Every Java statement must end with a semicolon (;) to indicate the end of the statement."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What must match exactly between the class name and filename?",
+      "options": [
+        { "type": "text", "value": "The size" },
+        { "type": "text", "value": "The creation date" },
+        { "type": "text", "value": "The location" },
+        { "type": "text", "value": "The spelling and capitalization" }
+      ],
+      "answer": 3,
+      "explanation": "The class name must exactly match the filename including capitalization. HelloWorld class must be in HelloWorld.java."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What does String[] args represent in the main method?",
+      "options": [
+        { "type": "text", "value": "Command-line arguments" },
+        { "type": "text", "value": "The program output" },
+        { "type": "text", "value": "Error messages" },
+        { "type": "text", "value": "The class name" }
+      ],
+      "answer": 0,
+      "explanation": "String[] args represents command-line arguments that can be passed to the program when it starts."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "Which IDE is commonly used for Java development?",
+      "options": [
+        { "type": "text", "value": "Notepad" },
+        { "type": "text", "value": "Eclipse" },
+        { "type": "text", "value": "Paint" },
+        { "type": "text", "value": "Calculator" }
+      ],
+      "answer": 1,
+      "explanation": "Eclipse is a popular IDE for Java development, along with IntelliJ IDEA and Visual Studio Code."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What symbols define code blocks in Java?",
+      "options": [
+        { "type": "text", "value": "( )" },
+        { "type": "text", "value": "[ ]" },
+        { "type": "text", "value": "{ }" },
+        { "type": "text", "value": "< >" }
+      ],
+      "answer": 2,
+      "explanation": "Curly braces { } define code blocks in Java, grouping statements together within methods and classes."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What happens when you compile a Java program with syntax errors?",
+      "options": [
+        { "type": "text", "value": "It runs anyway" },
+        { "type": "text", "value": "It creates a warning" },
+        { "type": "text", "value": "It deletes the file" },
+        { "type": "text", "value": "Compilation fails and displays error messages" }
+      ],
+      "answer": 3,
+      "explanation": "If there are syntax errors, compilation fails and the compiler displays error messages indicating what needs to be fixed."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What does System.out.println() do?",
+      "options": [
+        { "type": "text", "value": "Prints text to the console followed by a new line" },
+        { "type": "text", "value": "Deletes text from the console" },
+        { "type": "text", "value": "Saves text to a file" },
+        { "type": "text", "value": "Sends text over the internet" }
+      ],
+      "answer": 0,
+      "explanation": "System.out.println() prints the specified text to the console and then moves to the next line."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "Is Java case-sensitive?",
+      "options": [
+        { "type": "text", "value": "No, all letters are treated the same" },
+        { "type": "text", "value": "Yes, System and system are different" },
+        { "type": "text", "value": "Only for class names" },
+        { "type": "text", "value": "Only for method names" }
+      ],
+      "answer": 1,
+      "explanation": "Java is case-sensitive, meaning System and system are completely different identifiers."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What component is part of the JDK?",
+      "options": [
+        { "type": "text", "value": "Web browser" },
+        { "type": "text", "value": "Music player" },
+        { "type": "text", "value": "Java compiler (javac)" },
+        { "type": "text", "value": "Photo editor" }
+      ],
+      "answer": 2,
+      "explanation": "The Java compiler (javac) is a key component of the JDK, used to compile .java files into bytecode."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What should you do before running a Java program?",
+      "options": [
+        { "type": "text", "value": "Restart your computer" },
+        { "type": "text", "value": "Delete old files" },
+        { "type": "text", "value": "Check the weather" },
+        { "type": "text", "value": "Compile the .java file using javac" }
+      ],
+      "answer": 3,
+      "explanation": "You must first compile the .java source file using javac to create the .class bytecode file before running it."
+    }
+  ]
+}

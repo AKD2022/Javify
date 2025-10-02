@@ -1,0 +1,214 @@
+{
+  "lessonId": 26,
+  "title": "Return Values and void Methods",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What does a method with a return value produce?",
+      "options": [
+        { "type": "text", "value": "A result that can be used by the calling code" },
+        { "type": "text", "value": "An error message" },
+        { "type": "text", "value": "A printed output" },
+        { "type": "text", "value": "A method signature" }
+      ],
+      "answer": 0,
+      "explanation": "A method with a return value produces a result that the calling code can store in a variable, use in calculations, or pass to other methods."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "Which keyword is used to send a result back from a method?",
+      "options": [
+        { "type": "text", "value": "send" },
+        { "type": "text", "value": "return" },
+        { "type": "text", "value": "give" },
+        { "type": "text", "value": "output" }
+      ],
+      "answer": 1,
+      "explanation": "The return keyword is used to send a result back to whoever called the method and immediately exit the method."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What happens after a return statement executes in a method?",
+      "options": [
+        { "type": "text", "value": "The method continues to the next line" },
+        { "type": "text", "value": "The method pauses temporarily" },
+        { "type": "text", "value": "The method immediately exits and no code after it runs" },
+        { "type": "text", "value": "The method restarts from the beginning" }
+      ],
+      "answer": 2,
+      "explanation": "Once a return statement executes, the method immediately exits and sends the value back to the caller. No code after the return statement will execute."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What does the void keyword indicate about a method?",
+      "options": [
+        { "type": "text", "value": "The method is empty" },
+        { "type": "text", "value": "The method has parameters" },
+        { "type": "text", "value": "The method is private" },
+        { "type": "text", "value": "The method returns nothing" }
+      ],
+      "answer": 3,
+      "explanation": "The void keyword indicates that the method performs actions but doesn't return any value back to the calling code."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Can you assign the result of a void method to a variable?",
+      "options": [
+        { "type": "text", "value": "No, because void methods don't return any value" },
+        { "type": "text", "value": "Yes, it will store null" },
+        { "type": "text", "value": "Yes, but only to int variables" },
+        { "type": "text", "value": "Yes, but it causes a warning" }
+      ],
+      "answer": 0,
+      "explanation": "You cannot assign the result of a void method to a variable because void methods don't return any value - there's nothing to assign."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "Can void methods use the return statement?",
+      "options": [
+        { "type": "text", "value": "No, never" },
+        { "type": "text", "value": "Yes, but without any value after it to exit early" },
+        { "type": "text", "value": "Yes, but only with null" },
+        { "type": "text", "value": "Only in the main method" }
+      ],
+      "answer": 1,
+      "explanation": "Void methods can use return statements without any value to exit the method early based on certain conditions."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What types of data can methods return in Java?",
+      "options": [
+        { "type": "text", "value": "Only primitive types" },
+        { "type": "text", "value": "Only reference types" },
+        { "type": "text", "value": "Any data type that exists in Java" },
+        { "type": "text", "value": "Only int and String" }
+      ],
+      "answer": 2,
+      "explanation": "Methods can return any data type that exists in Java, including primitive types (int, double, boolean, char) and reference types (String, objects)."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What must match between a method's declaration and its return statement?",
+      "options": [
+        { "type": "text", "value": "The parameter names" },
+        { "type": "text", "value": "The method name" },
+        { "type": "text", "value": "The access modifier" },
+        { "type": "text", "value": "The return type" }
+      ],
+      "answer": 3,
+      "explanation": "The return type declared in the method signature must match the type of value actually returned by the return statement."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What happens if a non-void method doesn't have a return statement on all execution paths?",
+      "options": [
+        { "type": "text", "value": "The compiler reports an error" },
+        { "type": "text", "value": "The method returns null automatically" },
+        { "type": "text", "value": "The method returns 0 automatically" },
+        { "type": "text", "value": "The program crashes at runtime" }
+      ],
+      "answer": 0,
+      "explanation": "The compiler will report an error if there's any execution path through a non-void method that doesn't encounter a return statement."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "How many return statements can execute during a single method call?",
+      "options": [
+        { "type": "text", "value": "All of them" },
+        { "type": "text", "value": "Only one" },
+        { "type": "text", "value": "At least two" },
+        { "type": "text", "value": "It depends on the method length" }
+      ],
+      "answer": 1,
+      "explanation": "Only one return statement can execute during any single method call, as the method exits immediately when a return statement is encountered."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Which type of method is best for calculating and producing data?",
+      "options": [
+        { "type": "text", "value": "void methods" },
+        { "type": "text", "value": "static methods only" },
+        { "type": "text", "value": "Methods with return values" },
+        { "type": "text", "value": "private methods only" }
+      ],
+      "answer": 2,
+      "explanation": "Methods with return values are best for calculating and producing data because they can send the calculated result back to the calling code."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "Which type of method is best for performing actions like printing?",
+      "options": [
+        { "type": "text", "value": "Methods that return String" },
+        { "type": "text", "value": "Methods that return int" },
+        { "type": "text", "value": "Methods that return boolean" },
+        { "type": "text", "value": "void methods" }
+      ],
+      "answer": 3,
+      "explanation": "void methods are best for performing actions like printing, updating variables, or other tasks that don't need to return a value."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "Can a method have multiple return statements?",
+      "options": [
+        { "type": "text", "value": "Yes, but only one will execute per method call" },
+        { "type": "text", "value": "No, only one return statement is allowed" },
+        { "type": "text", "value": "Yes, and all will execute" },
+        { "type": "text", "value": "Only in void methods" }
+      ],
+      "answer": 0,
+      "explanation": "A method can have multiple return statements for handling different cases, but only one will execute during any single method call."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "How do you capture the returned value from a method call?",
+      "options": [
+        { "type": "text", "value": "Use System.out.println()" },
+        { "type": "text", "value": "Store it in a variable or use it directly in an expression" },
+        { "type": "text", "value": "Use the capture keyword" },
+        { "type": "text", "value": "It's automatically saved" }
+      ],
+      "answer": 1,
+      "explanation": "You capture a returned value by storing it in a variable of the appropriate type or using it directly in an expression or method call."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What determines whether a method should return a value or be void?",
+      "options": [
+        { "type": "text", "value": "The method name" },
+        { "type": "text", "value": "The number of parameters" },
+        { "type": "text", "value": "The length of the method" },
+        { "type": "text", "value": "Whether the method produces data that other parts of the program need" }
+      ],
+      "answer": 3,
+      "explanation": "If a method calculates, finds, or produces data that other parts of the program need, it should return a value. If it primarily performs actions, it should be void."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What can you do with the return value from a method?",
+      "options": [
+        { "type": "text", "value": "Store it in a variable, use it in calculations, or pass it to other methods" },
+        { "type": "text", "value": "Only print it to the console" },
+        { "type": "text", "value": "Only store it in a variable" },
+        { "type": "text", "value": "Nothing, it's automatically discarded" }
+      ],
+      "answer": 0,
+      "explanation": "Return values are versatile - you can store them in variables, use them in calculations, pass them to other methods, or use them directly in expressions."
+    }
+  ]
+}

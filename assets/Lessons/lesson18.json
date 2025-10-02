@@ -1,0 +1,154 @@
+{
+  "lessonId": 18,
+  "title": "Introduction to Methods: Definition and Calling",
+  "content": [
+    {
+      "type": "text",
+      "value": "Methods are reusable blocks of code that perform specific tasks in Java programs. They allow you to organize your code into logical units, eliminate repetition, and create programs that are easier to read, debug, and maintain. Understanding methods is fundamental to writing efficient and professional Java code."
+    },
+    {
+      "type": "text",
+      "value": "A method is defined using a specific syntax that includes access modifiers, return type, method name, and parameters. The basic structure follows the pattern: "
+    },
+    {
+      "type": "code",
+      "value": "accessModifier returnType methodName(parameters)"
+    },
+    {
+      "type": "text",
+      "value": " followed by the method body enclosed in curly braces."
+    },
+    {
+      "type": "code",
+      "value": "// Basic method structure\npublic static void greetUser() {\n    System.out.println(\"Hello, welcome to Java programming!\");\n    System.out.println(\"Let's learn about methods together.\");\n}\n\n// Method with parameters\npublic static void greetUserByName(String name) {\n    System.out.println(\"Hello, \" + name + \"!\");\n    System.out.println(\"Welcome to Java programming.\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "public"
+    },
+    {
+      "type": "text",
+      "value": " keyword is an access modifier that makes the method accessible from anywhere in the program. The "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": " keyword means the method belongs to the class itself rather than to individual objects, allowing you to call it without creating an instance."
+    },
+    {
+      "type": "code",
+      "value": "public class MethodExample {\n    // Static method - can be called without creating an object\n    public static void displayMessage() {\n        System.out.println(\"This is a static method!\");\n    }\n    \n    public static void main(String[] args) {\n        displayMessage(); // Call the method\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Method names should follow camelCase convention and clearly describe what the method does. Good method names typically start with a verb indicating the action being performed."
+    },
+    {
+      "type": "code",
+      "value": "// Good method names - descriptive and follow camelCase\npublic static void calculateGrade() { }\npublic static void displayResults() { }\npublic static void processStudentData() { }\npublic static void validateInput() { }\n\n// Poor method names - vague or poorly formatted\npublic static void calc() { }        // Too abbreviated\npublic static void DoStuff() { }     // Wrong capitalization\npublic static void method1() { }     // Not descriptive"
+    },
+    {
+      "type": "text",
+      "value": "Calling a method means executing the code inside that method. To call a static method, you use the method name followed by parentheses. If the method is in the same class, you can call it directly by name."
+    },
+    {
+      "type": "code",
+      "value": "public class Calculator {\n    public static void displayWelcome() {\n        System.out.println(\"Welcome to the Calculator!\");\n        System.out.println(\"Let's perform some calculations.\");\n    }\n    \n    public static void main(String[] args) {\n        displayWelcome();  // Method call\n        displayWelcome();  // Can call multiple times\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Parameters allow you to pass data into methods, making them more flexible and reusable. Parameters are declared inside the parentheses with their data type and name, separated by commas if there are multiple parameters."
+    },
+    {
+      "type": "code",
+      "value": "// Method with one parameter\npublic static void printNumber(int number) {\n    System.out.println(\"The number is: \" + number);\n}\n\n// Method with multiple parameters\npublic static void printStudentInfo(String name, int age, double gpa) {\n    System.out.println(\"Name: \" + name);\n    System.out.println(\"Age: \" + age);\n    System.out.println(\"GPA: \" + gpa);\n}"
+    },
+    {
+      "type": "text",
+      "value": "When calling methods with parameters, you must provide arguments (actual values) that match the parameter types and order. These arguments are passed to the method and can be used within the method body."
+    },
+    {
+      "type": "code",
+      "value": "public static void main(String[] args) {\n    printNumber(42);                    // Pass integer argument\n    printNumber(100);\n    \n    printStudentInfo(\"Alice\", 17, 3.8); // Pass multiple arguments\n    printStudentInfo(\"Bob\", 16, 3.2);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Methods can perform calculations and operations using their parameters. The parameters act like local variables within the method scope, allowing you to work with the passed data."
+    },
+    {
+      "type": "code",
+      "value": "public static void calculateRectangleArea(double length, double width) {\n    double area = length * width;\n    System.out.println(\"Length: \" + length);\n    System.out.println(\"Width: \" + width);\n    System.out.println(\"Area: \" + area);\n}\n\npublic static void displayGradeInfo(String subject, int score) {\n    System.out.println(\"Subject: \" + subject);\n    System.out.println(\"Score: \" + score + \"/100\");\n    \n    if (score >= 90) {\n        System.out.println(\"Grade: A\");\n    } else if (score >= 80) {\n        System.out.println(\"Grade: B\");\n    } else {\n        System.out.println(\"Grade: C or below\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " return type indicates that the method does not return any value - it simply performs actions and completes. Methods with "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " return type are often used for displaying output, modifying data, or performing operations without producing a result."
+    },
+    {
+      "type": "code",
+      "value": "// Void methods - perform actions but don't return values\npublic static void printHeader() {\n    System.out.println(\"================================\");\n    System.out.println(\"    Student Grade Calculator    \");\n    System.out.println(\"================================\");\n}\n\npublic static void processGrades(int math, int english, int science) {\n    System.out.println(\"Processing grades...\");\n    double average = (math + english + science) / 3.0;\n    System.out.println(\"Average: \" + average);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Local variables declared inside methods have method scope, meaning they only exist within that method. Parameters are also local to the method and cannot be accessed from outside the method."
+    },
+    {
+      "type": "code",
+      "value": "public static void calculateTotal(int price, double tax) {\n    double total = price + (price * tax);  // Local variable\n    System.out.println(\"Total cost: $\" + total);\n    // 'total', 'price', and 'tax' only exist within this method\n}\n\npublic static void main(String[] args) {\n    calculateTotal(100, 0.08);\n    // Cannot access 'total' here - it's local to calculateTotal\n}"
+    },
+    {
+      "type": "text",
+      "value": "Method organization helps structure your programs logically. Group related functionality into separate methods, use descriptive names, and keep methods focused on a single task for better readability and maintainability."
+    },
+    {
+      "type": "code",
+      "value": "public class StudentManager {\n    public static void displayMenu() {\n        System.out.println(\"1. Add Student\");\n        System.out.println(\"2. Display Grades\");\n        System.out.println(\"3. Calculate Average\");\n        System.out.println(\"4. Exit\");\n    }\n    \n    public static void processStudentGrades(String name, int test1, int test2, int test3) {\n        System.out.println(\"\\nStudent: \" + name);\n        displayIndividualScores(test1, test2, test3);\n        calculateAndDisplayAverage(test1, test2, test3);\n    }\n    \n    public static void displayIndividualScores(int test1, int test2, int test3) {\n        System.out.println(\"Test 1: \" + test1);\n        System.out.println(\"Test 2: \" + test2);\n        System.out.println(\"Test 3: \" + test3);\n    }\n    \n    public static void calculateAndDisplayAverage(int test1, int test2, int test3) {\n        double average = (test1 + test2 + test3) / 3.0;\n        System.out.println(\"Average: \" + average);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Method calls can be chained or nested, where one method calls another method. This allows you to build complex functionality by combining simpler methods."
+    },
+    {
+      "type": "code",
+      "value": "public static void runCalculator() {\n    displayWelcomeMessage();\n    processCalculations();\n    displayGoodbyeMessage();\n}\n\npublic static void displayWelcomeMessage() {\n    System.out.println(\"Welcome to the Advanced Calculator!\");\n}\n\npublic static void processCalculations() {\n    System.out.println(\"Processing your calculations...\");\n    displayCalculationResults(10, 5);\n}\n\npublic static void displayCalculationResults(int a, int b) {\n    System.out.println(a + \" + \" + b + \" = \" + (a + b));\n    System.out.println(a + \" - \" + b + \" = \" + (a - b));\n}\n\npublic static void displayGoodbyeMessage() {\n    System.out.println(\"Thank you for using the calculator!\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Common method patterns include input validation, data processing, formatting output, and utility functions. These patterns help you recognize opportunities to create reusable methods in your programs."
+    },
+    {
+      "type": "code",
+      "value": "// Utility method for input validation\npublic static void validateAge(int age) {\n    if (age < 0 || age > 120) {\n        System.out.println(\"Warning: Invalid age entered\");\n    } else {\n        System.out.println(\"Age is valid: \" + age);\n    }\n}\n\n// Formatting method\npublic static void displayFormattedGrade(String subject, int score) {\n    System.out.println(\"[\" + subject + \"]: \" + score + \"% - \" + getLetterGrade(score));\n}\n\n// Helper method (will be covered more in future lessons)\npublic static String getLetterGrade(int score) {\n    if (score >= 90) return \"A\";\n    if (score >= 80) return \"B\";\n    if (score >= 70) return \"C\";\n    return \"F\";\n}"
+    },
+    {
+      "type": "text",
+      "value": "Understanding method definition and calling is fundamental to creating organized, maintainable Java programs. Methods allow you to break complex problems into smaller, manageable pieces and create code that can be reused throughout your application."
+    },
+    {
+      "type": "text",
+      "value": "Mastering method basics prepares you for more advanced concepts like return values, method overloading, and object-oriented programming. In the next lesson, we'll explore return types and parameters in greater detail."
+    }
+  ]
+}

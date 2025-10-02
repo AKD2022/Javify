@@ -1,0 +1,214 @@
+{
+  "lessonId": 19,
+  "title": "Return Types and Parameters",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What does a return type specify in a method?",
+      "options": [
+        { "type": "text", "value": "What kind of data the method sends back to the caller" },
+        { "type": "text", "value": "How many parameters the method has" },
+        { "type": "text", "value": "The method's name" },
+        { "type": "text", "value": "Whether the method is public or private" }
+      ],
+      "answer": 0,
+      "explanation": "A return type specifies what kind of data a method will send back to the code that called it."
+    },
+    {
+      "id": 2,
+      "type": "code",
+      "question": "What keyword is used to send a value back from a method?",
+      "options": [
+        { "type": "text", "value": "send" },
+        { "type": "text", "value": "return" },
+        { "type": "text", "value": "give" },
+        { "type": "text", "value": "output" }
+      ],
+      "answer": 1,
+      "explanation": "The 'return' keyword is used to send a value back from a method to the calling code."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What happens after a return statement executes?",
+      "options": [
+        { "type": "text", "value": "The program continues to the next line" },
+        { "type": "text", "value": "The program crashes" },
+        { "type": "text", "value": "The method execution ends immediately" },
+        { "type": "text", "value": "Nothing special happens" }
+      ],
+      "answer": 2,
+      "explanation": "When a return statement executes, the method ends immediately and control returns to the calling code."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "What is the result of this code?\nint result = addNumbers(10, 5); // addNumbers returns 15",
+      "options": [
+        { "type": "text", "value": "result equals 10" },
+        { "type": "text", "value": "result equals 5" },
+        { "type": "text", "value": "result equals 105" },
+        { "type": "text", "value": "result equals 15" }
+      ],
+      "answer": 3,
+      "explanation": "The variable result stores the returned value from addNumbers(10, 5), which is 15."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What are parameters in a method?",
+      "options": [
+        { "type": "text", "value": "Input variables that receive data when the method is called" },
+        { "type": "text", "value": "The method's return value" },
+        { "type": "text", "value": "Variables outside the method" },
+        { "type": "text", "value": "The method's name" }
+      ],
+      "answer": 0,
+      "explanation": "Parameters are input variables that receive data (arguments) when the method is called, allowing the method to work with different values."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What return type should a method that checks if a number is positive use?",
+      "options": [
+        { "type": "text", "value": "int" },
+        { "type": "text", "value": "boolean" },
+        { "type": "text", "value": "String" },
+        { "type": "text", "value": "double" }
+      ],
+      "answer": 1,
+      "explanation": "A method that checks conditions should return boolean (true or false) to indicate whether the condition is met."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What is 'pass by value' in Java parameter passing?",
+      "options": [
+        { "type": "text", "value": "Parameters can be changed permanently" },
+        { "type": "text", "value": "Methods receive copies of the argument values" },
+        { "type": "text", "value": "Parameters are shared between methods" },
+        { "type": "text", "value": "Methods receive references to original variables" }
+      ],
+      "answer": 2,
+      "explanation": "Pass by value means methods receive copies of argument values, so changes to parameters don't affect the original variables."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "How many return statements can execute in a single method call?",
+      "options": [
+        { "type": "text", "value": "Zero" },
+        { "type": "text", "value": "One" },
+        { "type": "text", "value": "Two" },
+        { "type": "text", "value": "Unlimited" }
+      ],
+      "answer": 1,
+      "explanation": "Only one return statement can execute per method call because return immediately ends the method execution."
+    },
+    {
+      "id": 9,
+      "type": "code",
+      "question": "Which method declaration is correct for a method that calculates area?",
+      "options": [
+        { "type": "code", "value": "public static double calculateArea(double length, double width)" },
+        { "type": "code", "value": "public static void calculateArea(double length, double width)" },
+        { "type": "code", "value": "calculateArea double(double length, double width)" },
+        { "type": "code", "value": "public calculateArea(length, width)" }
+      ],
+      "answer": 0,
+      "explanation": "A method that calculates area should return a double value and have properly typed parameters: public static double calculateArea(double length, double width)."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What must match between a method's return type and return statement?",
+      "options": [
+        { "type": "text", "value": "The data type of the returned value" },
+        { "type": "text", "value": "The number of parameters" },
+        { "type": "text", "value": "The method name" },
+        { "type": "text", "value": "The access modifier" }
+      ],
+      "answer": 0,
+      "explanation": "The data type of the value in the return statement must match the method's declared return type."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "What can you do with a method's return value?",
+      "options": [
+        { "type": "text", "value": "Only print it" },
+        { "type": "text", "value": "Store it in a variable, use it in expressions, or pass it to other methods" },
+        { "type": "text", "value": "Only store it in a variable" },
+        { "type": "text", "value": "Nothing special" }
+      ],
+      "answer": 1,
+      "explanation": "Method return values can be stored in variables, used directly in expressions, or passed as arguments to other methods."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What is method chaining?",
+      "options": [
+        { "type": "text", "value": "Connecting methods with cables" },
+        { "type": "text", "value": "Writing very long methods" },
+        { "type": "text", "value": "Using the return value of one method as an argument for another" },
+        { "type": "text", "value": "Using the return value of one method as an argument for another" }
+      ],
+      "answer": 3,
+      "explanation": "Method chaining uses the return value of one method as an argument for another method, creating compact code like getGrade(calculateAverage(85, 90, 88))."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What should a method return to indicate an error condition?",
+      "options": [
+        { "type": "text", "value": "A special value like -1 or empty string" },
+        { "type": "text", "value": "Nothing" },
+        { "type": "text", "value": "A random number" },
+        { "type": "text", "value": "The method name" }
+      ],
+      "answer": 0,
+      "explanation": "Methods often return special values like -1 for invalid indices or empty strings to indicate error conditions."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What is a helper method?",
+      "options": [
+        { "type": "text", "value": "A method that helps other programmers" },
+        { "type": "text", "value": "A small, focused method that performs specific tasks for other methods" },
+        { "type": "text", "value": "A method that fixes errors" },
+        { "type": "text", "value": "A method that prints help text" }
+      ],
+      "answer": 1,
+      "explanation": "A helper method is a small, focused method that performs specific tasks and returns values used by other methods."
+    },
+    {
+      "id": 15,
+      "type": "code",
+      "question": "What's required for all non-void methods?",
+      "options": [
+        { "type": "text", "value": "At least one parameter" },
+        { "type": "text", "value": "A return statement on all possible code paths" },
+        { "type": "text", "value": "Multiple return statements" },
+        { "type": "text", "value": "Static keyword" }
+      ],
+      "answer": 2,
+      "explanation": "All non-void methods must have return statements on all possible code paths to ensure they always return a value."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "What happens to the original variable when passed to a method parameter?",
+      "options": [
+        { "type": "text", "value": "It gets deleted" },
+        { "type": "text", "value": "It can be modified by the method" },
+        { "type": "text", "value": "It becomes null" },
+        { "type": "text", "value": "It remains unchanged (pass by value)" }
+      ],
+      "answer": 3,
+      "explanation": "In Java's pass-by-value system, the original variable remains unchanged because the method works with a copy of the value."
+    }
+  ]
+}

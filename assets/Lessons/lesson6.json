@@ -1,0 +1,458 @@
+{
+  "lessonId": 6,
+  "title": "boolean Data Type and Logical Values",
+  "content": [
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " data type is fundamental to programming logic and decision-making in Java. Unlike numeric types that store quantities, "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " variables store truth values - either "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". These simple values become powerful tools for controlling program flow and making logical decisions."
+    },
+    {
+      "type": "text",
+      "value": "A "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " variable can only hold two possible values: "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". These are reserved keywords in Java and must be written in lowercase. The "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " type is named after George Boole, who developed Boolean algebra."
+    },
+    {
+      "type": "code",
+      "value": "boolean isComplete = true;\nboolean hasError = false;\nboolean isLoggedIn = true;\nboolean isEmpty = false;"
+    },
+    {
+      "type": "text",
+      "value": "Boolean variables are commonly used to represent states, conditions, or flags in your programs. They answer yes/no questions: Is the user logged in? Has the data been processed? Is the game over? Did the student pass the test?"
+    },
+    {
+      "type": "code",
+      "value": "boolean isPassing = true;     // Student passed\nboolean isOnline = false;     // User is offline\nboolean gameOver = false;     // Game is still running\nboolean dataLoaded = true;    // Data finished loading"
+    },
+    {
+      "type": "text",
+      "value": "Boolean expressions are statements that evaluate to either "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". These expressions often involve comparison operators that compare values and return boolean results."
+    },
+    {
+      "type": "text",
+      "value": "The equality operator ("
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": ") checks if two values are equal, while the not-equal operator ("
+    },
+    {
+      "type": "code",
+      "value": "!="
+    },
+    {
+      "type": "text",
+      "value": ") checks if they are different. Note that "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " uses two equal signs, not one."
+    },
+    {
+      "type": "code",
+      "value": "int score = 85;\nboolean isPerfect = (score == 100);   // false\nboolean isNotZero = (score != 0);     // true\nboolean isEighty = (score == 85);     // true"
+    },
+    {
+      "type": "text",
+      "value": "Relational operators compare numeric values and return boolean results. These include greater than ("
+    },
+    {
+      "type": "code",
+      "value": ">"
+    },
+    {
+      "type": "text",
+      "value": "), less than ("
+    },
+    {
+      "type": "code",
+      "value": "<"
+    },
+    {
+      "type": "text",
+      "value": "), greater than or equal ("
+    },
+    {
+      "type": "code",
+      "value": ">="
+    },
+    {
+      "type": "text",
+      "value": "), and less than or equal ("
+    },
+    {
+      "type": "code",
+      "value": "<="
+    },
+    {
+      "type": "text",
+      "value": ")."
+    },
+    {
+      "type": "code",
+      "value": "int age = 17;\nboolean isAdult = (age >= 18);        // false\nboolean isTeen = (age >= 13);         // true\nboolean isChild = (age < 13);         // false\nboolean canDrive = (age > 15);        // true"
+    },
+    {
+      "type": "text",
+      "value": "The logical NOT operator ("
+    },
+    {
+      "type": "code",
+      "value": "!"
+    },
+    {
+      "type": "text",
+      "value": ") flips a boolean value - it makes "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " become "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " become "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". This operator is useful for expressing the opposite of a condition."
+    },
+    {
+      "type": "code",
+      "value": "boolean isComplete = true;\nboolean isIncomplete = !isComplete;   // false\n\nboolean hasErrors = false;\nboolean isValid = !hasErrors;         // true"
+    },
+    {
+      "type": "text",
+      "value": "The logical AND operator ("
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": ") returns "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " only when both conditions are "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". If either condition is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", the entire expression becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "int age = 17;\nint grade = 95;\n\nboolean canGraduate = (age >= 18) && (grade >= 90);\n// false (age requirement not met)\n\nboolean isHonorStudent = (grade >= 90) && (age >= 16);\n// true (both conditions met)"
+    },
+    {
+      "type": "text",
+      "value": "The logical OR operator ("
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": ") returns "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " when at least one condition is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". It only returns "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " when both conditions are "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "boolean isWeekend = true;\nboolean isHoliday = false;\n\nboolean noSchool = isWeekend || isHoliday;\n// true (weekend condition is true)\n\nboolean canSleep = (age < 5) || (isWeekend);\n// true (weekend condition is true)"
+    },
+    {
+      "type": "text",
+      "value": "Short-circuit evaluation is an important feature of logical operators. With "
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": ", if the first condition is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", Java doesn't evaluate the second condition because the result will definitely be "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". Similarly, with "
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": ", if the first condition is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", the second condition isn't evaluated."
+    },
+    {
+      "type": "code",
+      "value": "int x = 0;\nboolean safe = (x != 0) && (10 / x > 1);\n// Safe: second part not evaluated because x == 0\n\nboolean quick = (x == 0) || (10 / x > 1);\n// Safe: second part not evaluated because x == 0"
+    },
+    {
+      "type": "text",
+      "value": "Boolean variables work seamlessly with assignment operators. You can directly assign the result of boolean expressions to boolean variables, making your code more readable and efficient."
+    },
+    {
+      "type": "code",
+      "value": "int temperature = 75;\nboolean isComfortable = (temperature >= 70) && (temperature <= 80);\n\ndouble gpa = 3.8;\nboolean isHonors = (gpa >= 3.5);\n\nboolean needsJacket = (temperature < 60) || (isRaining);"
+    },
+    {
+      "type": "text",
+      "value": "When working with "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " comparisons, use the "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " method instead of "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": ". The "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " operator compares object references, while "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " compares the actual text content."
+    },
+    {
+      "type": "code",
+      "value": "String name = \"Alice\";\nboolean isAlice = name.equals(\"Alice\");     // true (correct way)\nboolean matchesName = \"Bob\".equals(name);   // false\n\n// Avoid using == with Strings\n// boolean wrong = (name == \"Alice\");  // Unreliable"
+    },
+    {
+      "type": "text",
+      "value": "Common boolean patterns include flag variables that track program states, condition checking for validation, and combining multiple criteria for complex decisions. These patterns form the foundation of control structures you'll learn in upcoming lessons."
+    },
+    {
+      "type": "code",
+      "value": "// Common boolean usage patterns\nboolean isValid = (age >= 0) && (age <= 120);\nboolean canVote = (age >= 18) && (isCitizen);\nboolean passingGrade = (score >= 70) || (hasExtraCredit);\nboolean gameActive = !gameOver && (lives > 0);"
+    },
+    {
+      "type": "text",
+      "value": "Understanding "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " logic is essential for controlling program flow through conditional statements and loops. In the next lesson, we'll explore the "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " data type and how Java handles individual characters."
+    }
+  ]
+}

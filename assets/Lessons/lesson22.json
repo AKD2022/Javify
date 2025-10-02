@@ -1,0 +1,378 @@
+{
+  "lessonId": 22,
+  "title": "Using the String Class and Common Methods",
+  "content": [
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " class is one of the most frequently used classes in Java programming. Unlike primitive types, "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " is a reference type (class) that provides powerful methods for text manipulation, comparison, and processing. Understanding "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " methods is essential for handling user input, processing data, and creating interactive programs."
+    },
+    {
+      "type": "text",
+      "value": "String objects store sequences of characters and provide methods to work with that text data. You can create "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " objects using string literals (text in double quotes) or by using the "
+    },
+    {
+      "type": "code",
+      "value": "new"
+    },
+    {
+      "type": "text",
+      "value": " keyword, though string literals are more common and efficient."
+    },
+    {
+      "type": "code",
+      "value": "// Creating String objects\nString message = \"Hello, World!\";           // String literal (preferred)\nString name = \"Alice Johnson\";\nString course = \"AP Computer Science A\";\n\n// Alternative (less common)\nString greeting = new String(\"Welcome!\");"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "length()"
+    },
+    {
+      "type": "text",
+      "value": " method returns the number of characters in a string, including spaces and special characters. This method is essential for input validation, loop control, and text processing."
+    },
+    {
+      "type": "code",
+      "value": "String studentName = \"Alice Johnson\";\nint nameLength = studentName.length();     // 13 characters\n\nString password = \"myPassword123\";\nint passwordLength = password.length();    // 13 characters\n\n// Using length in conditions\nif (password.length() >= 8) {\n    System.out.println(\"Password meets minimum length requirement\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "charAt()"
+    },
+    {
+      "type": "text",
+      "value": " method returns the character at a specific index position. String indexing starts at 0, so the first character is at index 0, the second at index 1, and so on."
+    },
+    {
+      "type": "code",
+      "value": "String word = \"Computer\";\nchar firstChar = word.charAt(0);        // 'C'\nchar thirdChar = word.charAt(2);        // 'm'\nchar lastChar = word.charAt(7);         // 'r'\n\n// Using charAt in loops\nString text = \"Java\";\nfor (int i = 0; i < text.length(); i++) {\n    char currentChar = text.charAt(i);\n    System.out.println(\"Character at index \" + i + \": \" + currentChar);\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "substring()"
+    },
+    {
+      "type": "text",
+      "value": " method extracts a portion of a string and returns it as a new "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " object. It has two forms: one that takes a starting index and continues to the end, and another that takes both starting and ending indices."
+    },
+    {
+      "type": "code",
+      "value": "String fullName = \"Alice Johnson\";\n\n// substring(startIndex) - from start to end\nString lastName = fullName.substring(6);        // \"Johnson\"\n\n// substring(startIndex, endIndex) - from start up to (not including) end\nString firstName = fullName.substring(0, 5);    // \"Alice\"\nString middle = fullName.substring(2, 7);       // \"ice J\"\n\n// Extract file extension\nString fileName = \"document.pdf\";\nString extension = fileName.substring(9);        // \".pdf\""
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "indexOf()"
+    },
+    {
+      "type": "text",
+      "value": " method searches for a character or substring within a string and returns the index of the first occurrence. If the search item is not found, it returns -1."
+    },
+    {
+      "type": "code",
+      "value": "String email = \"student@school.edu\";\n\n// Find characters\nint atIndex = email.indexOf('@');           // 7\nint dotIndex = email.indexOf('.');\t\t    // 14\n\n// Find substrings\nString sentence = \"The quick brown fox jumps\";\nint foxIndex = sentence.indexOf(\"fox\");     // 16\nint notFound = sentence.indexOf(\"cat\");     // -1 (not found)\n\n// Extract username from email\nif (atIndex != -1) {\n    String username = email.substring(0, atIndex);  // \"student\"\n}"
+    },
+    {
+      "type": "text",
+      "value": "String comparison requires special attention because "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " is a reference type. Never use "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " to compare "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " content. Instead, use the "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " method to compare the actual text content."
+    },
+    {
+      "type": "code",
+      "value": "String input = \"Java\";\nString language = \"Java\";\n\n// Correct way to compare strings\nboolean isMatch = input.equals(language);       // true\nboolean isJava = input.equals(\"Java\");          // true\n\n// Incorrect way (compares object references, not content)\n// boolean wrong = (input == language);         // Unreliable!\n\n// Case-sensitive comparison\nboolean caseSensitive = input.equals(\"java\");   // false (different case)"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "equalsIgnoreCase()"
+    },
+    {
+      "type": "text",
+      "value": " method compares strings while ignoring uppercase and lowercase differences. This is useful for user input validation where case shouldn't matter."
+    },
+    {
+      "type": "code",
+      "value": "String userInput = \"YES\";\nString expected = \"yes\";\n\n// Case-insensitive comparison\nboolean matches = userInput.equalsIgnoreCase(expected);  // true\n\n// Useful for user responses\nString response = \"Yes\";\nif (response.equalsIgnoreCase(\"yes\") || response.equalsIgnoreCase(\"y\")) {\n    System.out.println(\"User confirmed\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "toUpperCase()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "toLowerCase()"
+    },
+    {
+      "type": "text",
+      "value": " methods create new strings with all letters converted to uppercase or lowercase. These methods are useful for standardizing text input and formatting output."
+    },
+    {
+      "type": "code",
+      "value": "String original = \"Hello World\";\nString upper = original.toUpperCase();      // \"HELLO WORLD\"\nString lower = original.toLowerCase();      // \"hello world\"\n\n// Standardizing user input\nString userChoice = \"Exit\";\nString standardized = userChoice.toLowerCase();  // \"exit\"\n\nif (standardized.equals(\"exit\") || standardized.equals(\"quit\")) {\n    System.out.println(\"Goodbye!\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "trim()"
+    },
+    {
+      "type": "text",
+      "value": " method removes whitespace (spaces, tabs, newlines) from the beginning and end of a string. This method is essential for cleaning up user input."
+    },
+    {
+      "type": "code",
+      "value": "String messyInput = \"  Alice Johnson  \";\nString cleanInput = messyInput.trim();      // \"Alice Johnson\"\n\n// Common pattern for processing user input\nString userEntry = \"  john@email.com  \";\nString email = userEntry.trim().toLowerCase();  // \"john@email.com\"\n\n// Check if input is empty after trimming\nString input = \"   \";\nif (input.trim().isEmpty()) {\n    System.out.println(\"Please enter valid data\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "replace()"
+    },
+    {
+      "type": "text",
+      "value": " method creates a new string with all occurrences of a specified character or substring replaced with another character or substring."
+    },
+    {
+      "type": "code",
+      "value": "String phoneNumber = \"(555) 123-4567\";\nString digitsOnly = phoneNumber.replace(\"(\", \"\")\n                                .replace(\")\", \"\")\n                                .replace(\" \", \"\")\n                                .replace(\"-\", \"\");  // \"5551234567\"\n\n// Replace characters\nString sentence = \"Java is fun!\";\nString modified = sentence.replace('a', '@');   // \"J@v@ is fun!\"\n\n// Replace substrings\nString text = \"I love Python programming\";\nString updated = text.replace(\"Python\", \"Java\");  // \"I love Java programming\""
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "startsWith()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "endsWith()"
+    },
+    {
+      "type": "text",
+      "value": " methods check if a string begins or ends with a specified substring. These methods return "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " values and are useful for validation and classification."
+    },
+    {
+      "type": "code",
+      "value": "String fileName = \"document.pdf\";\nboolean isPDF = fileName.endsWith(\".pdf\");      // true\nboolean isImage = fileName.endsWith(\".jpg\") || \n                  fileName.endsWith(\".png\");    // false\n\nString url = \"https://www.example.com\";\nboolean isSecure = url.startsWith(\"https://\");  // true\n\n// Check file type\nif (fileName.endsWith(\".java\")) {\n    System.out.println(\"This is a Java source file\");\n} else if (fileName.endsWith(\".class\")) {\n    System.out.println(\"This is a compiled Java file\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "isEmpty()"
+    },
+    {
+      "type": "text",
+      "value": " method checks if a string has no characters (length is 0). This method is useful for validating that required input has been provided."
+    },
+    {
+      "type": "code",
+      "value": "String name = \"\";\nboolean hasNoContent = name.isEmpty();      // true\n\nString data = \"Hello\";\nboolean hasContent = !data.isEmpty();       // true (not empty)\n\n// Input validation\nString userInput = \"\";\nif (userInput.isEmpty()) {\n    System.out.println(\"Name cannot be empty\");\n} else {\n    System.out.println(\"Welcome, \" + userInput);\n}"
+    },
+    {
+      "type": "text",
+      "value": "String methods can be chained together to perform multiple operations in sequence. This creates concise code for complex text processing tasks."
+    },
+    {
+      "type": "code",
+      "value": "String rawInput = \"  ALICE JOHNSON  \";\n\n// Chain multiple string operations\nString processed = rawInput.trim()              // Remove whitespace\n                          .toLowerCase()        // Convert to lowercase\n                          .replace(\" \", \".\");   // Replace spaces with dots\n// Result: \"alice.johnson\"\n\n// Complex processing example\nString email = \"  USER@DOMAIN.COM  \";\nString cleanEmail = email.trim().toLowerCase();\nif (cleanEmail.contains(\"@\") && cleanEmail.contains(\".\")) {\n    System.out.println(\"Valid email format: \" + cleanEmail);\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "contains()"
+    },
+    {
+      "type": "text",
+      "value": " method checks if a string contains a specified substring and returns a "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " result. This method is useful for searching and filtering text."
+    },
+    {
+      "type": "code",
+      "value": "String sentence = \"Java programming is fun\";\nboolean hasJava = sentence.contains(\"Java\");        // true\nboolean hasPython = sentence.contains(\"Python\");    // false\n\n// Filter based on content\nString[] courses = {\"AP Computer Science A\", \"AP Biology\", \"AP History\"};\nfor (String course : courses) {\n    if (course.contains(\"AP\")) {\n        System.out.println(\"Advanced Placement: \" + course);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Common string processing patterns include parsing user input, extracting information from formatted text, validating data formats, and creating formatted output for display or file storage."
+    },
+    {
+      "type": "code",
+      "value": "// Parse full name into components\nString fullName = \"Smith, John A.\";\nint commaIndex = fullName.indexOf(\",\");\nif (commaIndex != -1) {\n    String lastName = fullName.substring(0, commaIndex).trim();\n    String firstName = fullName.substring(commaIndex + 1).trim();\n    System.out.println(\"Last: \" + lastName + \", First: \" + firstName);\n}\n\n// Create formatted output\nString studentData = String.format(\"Student: %s, GPA: %.2f\", \n                                  \"Alice Johnson\", 3.85);\n// Result: \"Student: Alice Johnson, GPA: 3.85\""
+    },
+    {
+      "type": "text",
+      "value": "Understanding "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " methods is essential for text processing, user input validation, data parsing, and creating professional user interfaces. These methods form the foundation for more advanced text manipulation and data processing tasks."
+    },
+    {
+      "type": "text",
+      "value": "Mastering "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " class methods prepares you for working with more complex text processing scenarios and user interaction patterns. In the next lesson, we'll explore "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " immutability and additional methods like "
+    },
+    {
+      "type": "code",
+      "value": "substring()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "length()"
+    },
+    {
+      "type": "text",
+      "value": " in greater depth."
+    }
+  ]
+}

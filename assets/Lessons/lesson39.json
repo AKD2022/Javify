@@ -1,0 +1,126 @@
+{
+  "lessonId": 39,
+  "title": "Combining Boolean Expressions",
+  "content": [
+    {
+      "type": "text",
+      "value": "Now that you understand boolean expressions, relational operators, and logical operators, you're ready to combine them all to create sophisticated conditional logic. Combining boolean expressions allows you to express complex real-world conditions and make intelligent decisions in your programs."
+    },
+    {
+      "type": "text",
+      "value": "The key to combining boolean expressions is using relational operators to create simple comparisons, then connecting those comparisons with logical operators. This allows you to check multiple conditions simultaneously."
+    },
+    {
+      "type": "code",
+      "value": "int age = 20;\nint income = 35000;\n\n// Combining two relational expressions with AND\nboolean qualifiesForLoan = (age >= 18) && (income >= 30000);\n// age >= 18 is true AND income >= 30000 is true → true\n\nSystem.out.println(qualifiesForLoan);  // true"
+    },
+    {
+      "type": "text",
+      "value": "When checking if a value falls within a range, you combine two relational operators with the AND operator. Both the lower bound and upper bound conditions must be true."
+    },
+    {
+      "type": "code",
+      "value": "int temperature = 72;\n\n// Check if temperature is comfortable (between 65 and 80)\nboolean isComfortable = (temperature >= 65) && (temperature <= 80);\n// temperature >= 65 is true AND temperature <= 80 is true → true\n\nSystem.out.println(isComfortable);  // true\n\nint score = 85;\n\n// Check if score is in the B range (80-89)\nboolean isBGrade = (score >= 80) && (score <= 89);\n\nSystem.out.println(isBGrade);  // true"
+    },
+    {
+      "type": "text",
+      "value": "When checking if a value is outside a range, you combine two relational operators with the OR operator. Either the value is below the minimum or above the maximum."
+    },
+    {
+      "type": "code",
+      "value": "int temperature = 95;\n\n// Check if temperature is uncomfortable (below 65 or above 80)\nboolean isUncomfortable = (temperature < 65) || (temperature > 80);\n// temperature < 65 is false OR temperature > 80 is true → true\n\nSystem.out.println(isUncomfortable);  // true\n\nint age = 15;\n\n// Check if age is not in working range (below 18 or above 65)\nboolean notWorkingAge = (age < 18) || (age > 65);\n\nSystem.out.println(notWorkingAge);  // true"
+    },
+    {
+      "type": "text",
+      "value": "You can check multiple discrete values using the OR operator. This is useful when any one of several specific conditions is acceptable."
+    },
+    {
+      "type": "code",
+      "value": "char grade = 'B';\n\n// Check if grade is passing (A, B, or C)\nboolean isPassing = (grade == 'A') || (grade == 'B') || (grade == 'C');\n// grade == 'A' is false OR grade == 'B' is true → true\n\nSystem.out.println(isPassing);  // true\n\nint dayOfWeek = 6;  // 1=Monday, 7=Sunday\n\n// Check if it's the weekend (Saturday or Sunday)\nboolean isWeekend = (dayOfWeek == 6) || (dayOfWeek == 7);\n\nSystem.out.println(isWeekend);  // true"
+    },
+    {
+      "type": "text",
+      "value": "Complex conditions often require combining multiple AND and OR operators. Use parentheses to group conditions and make the logic clear."
+    },
+    {
+      "type": "code",
+      "value": "int age = 22;\nboolean hasLicense = true;\nboolean hasInsurance = true;\nint drivingExperience = 3;\n\n// Can rent a car if: age 21+ AND (has license AND insurance) AND 2+ years experience\nboolean canRentCar = (age >= 21) && (hasLicense && hasInsurance) && (drivingExperience >= 2);\n\nSystem.out.println(canRentCar);  // true"
+    },
+    {
+      "type": "text",
+      "value": "When combining AND and OR operators, parentheses are crucial for ensuring the correct order of evaluation. Without parentheses, the precedence rules may not match your intent."
+    },
+    {
+      "type": "code",
+      "value": "int score = 85;\nboolean hasAttendance = true;\nboolean extraCredit = false;\n\n// Pass if: (score >= 80 AND attendance) OR extra credit\nboolean passes1 = ((score >= 80) && hasAttendance) || extraCredit;\n// (true AND true) OR false → true OR false → true\n\nSystem.out.println(passes1);  // true\n\n// Different grouping: score >= 80 AND (attendance OR extra credit)\nboolean passes2 = (score >= 80) && (hasAttendance || extraCredit);\n// true AND (true OR false) → true AND true → true\n\nSystem.out.println(passes2);  // true"
+    },
+    {
+      "type": "text",
+      "value": "The NOT operator can be combined with complex expressions to invert entire conditions. This is useful for expressing negative requirements."
+    },
+    {
+      "type": "code",
+      "value": "int age = 16;\nboolean hasPermit = false;\n\n// Cannot drive if: NOT (age >= 18 AND has permit)\nboolean cannotDrive = !((age >= 18) && hasPermit);\n// !((false) && false) → !(false) → true\n\nSystem.out.println(cannotDrive);  // true\n\nint temperature = 75;\nboolean isRaining = false;\n\n// Good weather if: NOT (too hot OR raining)\nboolean goodWeather = !((temperature > 85) || isRaining);\n// !((false) OR false) → !(false) → true\n\nSystem.out.println(goodWeather);  // true"
+    },
+    {
+      "type": "text",
+      "value": "You can combine relational expressions involving arithmetic operations. The arithmetic is evaluated first, then the comparisons, then the logical operators."
+    },
+    {
+      "type": "code",
+      "value": "int hours = 40;\nint rate = 15;\nint bonus = 100;\nint minimumPay = 650;\n\n// Check if total pay meets minimum\nboolean meetsMinimum = (hours * rate + bonus >= minimumPay);\n// 40 * 15 + 100 = 700, then 700 >= 650 → true\n\nSystem.out.println(meetsMinimum);  // true\n\nint test1 = 85;\nint test2 = 90;\nint test3 = 88;\n\n// Check if average is above 85\nboolean highAverage = ((test1 + test2 + test3) / 3 >= 85);\n// (85 + 90 + 88) / 3 = 87, then 87 >= 85 → true\n\nSystem.out.println(highAverage);  // true"
+    },
+    {
+      "type": "text",
+      "value": "DeMorgan's Laws provide rules for simplifying complex boolean expressions involving NOT. These laws state that NOT (A AND B) equals (NOT A) OR (NOT B), and NOT (A OR B) equals (NOT A) AND (NOT B)."
+    },
+    {
+      "type": "code",
+      "value": "boolean a = true;\nboolean b = false;\n\n// DeMorgan's Law 1: !(A && B) == (!A || !B)\nboolean result1 = !(a && b);           // !(true && false) → !(false) → true\nboolean result2 = (!a) || (!b);        // (!true) || (!false) → false || true → true\n// result1 equals result2\n\nSystem.out.println(result1);  // true\nSystem.out.println(result2);  // true\n\n// DeMorgan's Law 2: !(A || B) == (!A && !B)\nboolean result3 = !(a || b);           // !(true || false) → !(true) → false\nboolean result4 = (!a) && (!b);        // (!true) && (!false) → false && true → false\n// result3 equals result4\n\nSystem.out.println(result3);  // false\nSystem.out.println(result4);  // false"
+    },
+    {
+      "type": "text",
+      "value": "When combining many conditions, break complex expressions into intermediate boolean variables. This improves readability and makes debugging easier."
+    },
+    {
+      "type": "code",
+      "value": "int age = 25;\nint creditScore = 720;\nint income = 55000;\nint debt = 15000;\n\n// Break into readable parts\nboolean meetsAgeRequirement = (age >= 21);\nboolean hasgoodCredit = (creditScore >= 700);\nboolean hasStableIncome = (income >= 40000);\nboolean lowDebtRatio = (debt < income * 0.4);\n\n// Combine the parts\nboolean qualifiesForMortgage = meetsAgeRequirement && hasgoodCredit && \n                               hasStableIncome && lowDebtRatio;\n\nSystem.out.println(qualifiesForMortgage);  // true"
+    },
+    {
+      "type": "text",
+      "value": "Combining boolean expressions is essential for real-world validation logic, such as form validation, access control, and business rule enforcement."
+    },
+    {
+      "type": "code",
+      "value": "// Form validation example\nString username = \"alice123\";\nString password = \"SecurePass123\";\nint passwordLength = password.length();\nboolean agreedToTerms = true;\n\n// Validate form submission\nboolean usernameValid = (username.length() >= 5) && (username.length() <= 20);\nboolean passwordValid = (passwordLength >= 8) && (passwordLength <= 30);\nboolean formValid = usernameValid && passwordValid && agreedToTerms;\n\nif (formValid) {\n    System.out.println(\"Form submitted successfully\");\n} else {\n    System.out.println(\"Please fix validation errors\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "When writing complex boolean expressions, follow these best practices: use parentheses for clarity, break complex conditions into named variables, keep expressions as simple as possible, and test edge cases thoroughly."
+    },
+    {
+      "type": "code",
+      "value": "int temperature = 78;\nboolean isSunny = true;\nboolean isWeekend = true;\nint airQualityIndex = 45;\n\n// Good practice: clear, well-structured condition\nboolean goodBeachDay = (temperature >= 75 && temperature <= 85) &&\n                       isSunny &&\n                       isWeekend &&\n                       (airQualityIndex < 50);\n\nif (goodBeachDay) {\n    System.out.println(\"Perfect day for the beach!\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Common mistakes when combining boolean expressions include forgetting parentheses, creating overly complex conditions, misunderstanding operator precedence, and not testing all possible combinations of conditions."
+    },
+    {
+      "type": "code",
+      "value": "int x = 10;\nint y = 20;\nint z = 15;\n\n// WRONG - unclear without parentheses\n// boolean result = x > 5 || y < 25 && z == 15;  // Hard to understand\n\n// CORRECT - clear with parentheses\nboolean result = (x > 5) || ((y < 25) && (z == 15));\n\nSystem.out.println(result);  // true\n\n// WRONG - redundant complexity\n// boolean check = (age >= 18 && age >= 18);  // Duplicate condition\n\n// CORRECT - simplified\nint age = 20;\nboolean check = (age >= 18);\n\nSystem.out.println(check);  // true"
+    },
+    {
+      "type": "text",
+      "value": "Testing combined boolean expressions requires checking multiple scenarios. Consider boundary values, typical cases, and edge cases to ensure your logic is correct."
+    },
+    {
+      "type": "code",
+      "value": "// Testing range check logic\npublic static boolean isValidGrade(int score) {\n    return (score >= 0) && (score <= 100);\n}\n\n// Test cases\nSystem.out.println(isValidGrade(85));    // true - typical case\nSystem.out.println(isValidGrade(0));     // true - boundary\nSystem.out.println(isValidGrade(100));   // true - boundary\nSystem.out.println(isValidGrade(-5));    // false - below range\nSystem.out.println(isValidGrade(105));   // false - above range"
+    },
+    {
+      "type": "text",
+      "value": "Mastering the art of combining boolean expressions is essential for writing programs that make intelligent decisions. These skills will be immediately applied in the upcoming lessons on conditional statements where you'll use these combined expressions to control program flow."
+    }
+  ]
+}
