@@ -1,3 +1,4 @@
+# Description
 Javify is your personalized companion for AP Computer Science A.
 With a structured lesson plan covering all major Java topics — from variables and loops to algorithms and object-oriented programming — Javify helps you stay on track for the AP exam. Students can follow the default August-to-May schedule or choose their own start date, allowing for a fully customized learning path that fits any pace.
 
