@@ -1,0 +1,214 @@
+{
+  "lessonId": 50,
+  "title": "Recap and Mini Quiz on Unit 3 Concepts",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What are the two possible values of a boolean expression?",
+      "options": [
+        { "type": "text", "value": "true or false" },
+        { "type": "text", "value": "0 or 1" },
+        { "type": "text", "value": "yes or no" },
+        { "type": "text", "value": "on or off" }
+      ],
+      "answer": 0,
+      "explanation": "Boolean expressions evaluate to either true or false, which are the two boolean values in Java."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "Which relational operator checks if two values are equal?",
+      "options": [
+        { "type": "text", "value": "=" },
+        { "type": "text", "value": "==" },
+        { "type": "text", "value": "!=" },
+        { "type": "text", "value": "===" }
+      ],
+      "answer": 1,
+      "explanation": "The == operator checks if two values are equal, while = is the assignment operator used to assign values to variables."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "For an AND (&&) operator, when is the result true?",
+      "options": [
+        { "type": "text", "value": "When at least one condition is true" },
+        { "type": "text", "value": "When both conditions are false" },
+        { "type": "text", "value": "When all conditions are true" },
+        { "type": "text", "value": "When exactly one condition is true" }
+      ],
+      "answer": 2,
+      "explanation": "The AND operator requires all conditions to be true for the result to be true. If any condition is false, the entire expression is false."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "For an OR (||) operator, when is the result true?",
+      "options": [
+        { "type": "text", "value": "When all conditions are false" },
+        { "type": "text", "value": "When both conditions are true" },
+        { "type": "text", "value": "When all conditions are true" },
+        { "type": "text", "value": "When at least one condition is true" }
+      ],
+      "answer": 3,
+      "explanation": "The OR operator requires at least one condition to be true for the result to be true. Only when all conditions are false is the result false."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What does the NOT (!) operator do?",
+      "options": [
+        { "type": "text", "value": "Inverts a boolean value" },
+        { "type": "text", "value": "Compares two values" },
+        { "type": "text", "value": "Adds two numbers" },
+        { "type": "text", "value": "Checks for equality" }
+      ],
+      "answer": 0,
+      "explanation": "The NOT operator inverts a boolean value, changing true to false and false to true."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What prints when this code runs?\n\nint score = 75;\nif (score >= 60) {\n    System.out.println(\"Pass\");\n} else {\n    System.out.println(\"Fail\");\n}",
+      "options": [
+        { "type": "text", "value": "Nothing" },
+        { "type": "text", "value": "Pass" },
+        { "type": "text", "value": "Fail" },
+        { "type": "text", "value": "75" }
+      ],
+      "answer": 1,
+      "explanation": "Since score is 75, which is greater than or equal to 60, the condition is true and \"Pass\" prints."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "In an else-if ladder, what happens after the first true condition is found?",
+      "options": [
+        { "type": "text", "value": "All remaining conditions are checked" },
+        { "type": "text", "value": "The program restarts" },
+        { "type": "text", "value": "All remaining conditions are skipped" },
+        { "type": "text", "value": "Only the else block executes" }
+      ],
+      "answer": 2,
+      "explanation": "In an else-if ladder, once a true condition is found and its block executes, all remaining conditions are skipped."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What data types can be used in a switch statement?",
+      "options": [
+        { "type": "text", "value": "Only boolean" },
+        { "type": "text", "value": "Only double" },
+        { "type": "text", "value": "Only String" },
+        { "type": "text", "value": "int and char, among others" }
+      ],
+      "answer": 3,
+      "explanation": "Switch statements work with int and char types, among others like String (in newer Java versions) and enums."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What happens if you forget to include break in a switch case?",
+      "options": [
+        { "type": "text", "value": "Fall-through occurs and subsequent cases execute" },
+        { "type": "text", "value": "Compilation error" },
+        { "type": "text", "value": "The program crashes" },
+        { "type": "text", "value": "Nothing happens" }
+      ],
+      "answer": 0,
+      "explanation": "Without break, fall-through occurs where execution continues into subsequent cases until a break is encountered or the switch ends."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What is the purpose of the default case in a switch statement?",
+      "options": [
+        { "type": "text", "value": "To execute first" },
+        { "type": "text", "value": "To handle values that don't match any explicit case" },
+        { "type": "text", "value": "To make the code faster" },
+        { "type": "text", "value": "To create loops" }
+      ],
+      "answer": 1,
+      "explanation": "The default case handles values that don't match any explicit case, acting like a final else clause."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "In short-circuit evaluation with &&, when does Java skip the second condition?",
+      "options": [
+        { "type": "text", "value": "When the second condition is true" },
+        { "type": "text", "value": "When the first condition is true" },
+        { "type": "text", "value": "When the first condition is false" },
+        { "type": "text", "value": "Java never skips conditions" }
+      ],
+      "answer": 2,
+      "explanation": "With &&, if the first condition is false, Java knows the entire expression will be false and skips evaluating the second condition."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "Which operator has higher precedence?",
+      "options": [
+        { "type": "text", "value": "||" },
+        { "type": "text", "value": "!" },
+        { "type": "text", "value": "&&" },
+        { "type": "text", "value": "==" }
+      ],
+      "answer": 2,
+      "explanation": "The && operator has higher precedence than ||, meaning AND operations are evaluated before OR operations unless parentheses specify otherwise."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What common error involves using the wrong operator in conditions?",
+      "options": [
+        { "type": "text", "value": "Using + instead of -" },
+        { "type": "text", "value": "Using * instead of /" },
+        { "type": "text", "value": "Using > instead of <" },
+        { "type": "text", "value": "Using = instead of ==" }
+      ],
+      "answer": 3,
+      "explanation": "A common error is using = (assignment) instead of == (comparison) in conditional expressions, which can cause unexpected behavior."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What debugging technique involves printing messages to track program execution?",
+      "options": [
+        { "type": "text", "value": "Adding print statements at key points" },
+        { "type": "text", "value": "Deleting all code" },
+        { "type": "text", "value": "Rewriting the entire program" },
+        { "type": "text", "value": "Removing all variables" }
+      ],
+      "answer": 0,
+      "explanation": "Adding print statements at key points helps track which branches execute and verify that conditions evaluate as expected."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "Why should you break complex boolean expressions into named variables?",
+      "options": [
+        { "type": "text", "value": "To make code slower" },
+        { "type": "text", "value": "To use more memory" },
+        { "type": "text", "value": "To improve readability and make debugging easier" },
+        { "type": "text", "value": "It's required by Java" }
+      ],
+      "answer": 2,
+      "explanation": "Breaking complex expressions into named variables improves readability, maintainability, and makes debugging easier by allowing you to test each part independently."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "According to De Morgan's Laws, what is !(A && B) equivalent to?",
+      "options": [
+        { "type": "text", "value": "(A || B)" },
+        { "type": "text", "value": "(!A && !B)" },
+        { "type": "text", "value": "(A && !B)" },
+        { "type": "text", "value": "(!A || !B)" }
+      ],
+      "answer": 3,
+      "explanation": "By De Morgan's Laws, the negation of an AND expression !(A && B) is equivalent to (!A || !B). The AND becomes OR and each condition is negated."
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "lessonId": 48,
+  "title": "Debugging Conditional Statements",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is one of the most effective debugging techniques for tracking program flow?",
+      "options": [
+        { "type": "text", "value": "Adding print statements at key points" },
+        { "type": "text", "value": "Rewriting all code" },
+        { "type": "text", "value": "Deleting variables" },
+        { "type": "text", "value": "Removing all comments" }
+      ],
+      "answer": 0,
+      "explanation": "Adding print statements at key points lets you see which branches execute and verify that conditions evaluate as expected, making it highly effective for debugging."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "Why should you print boolean expressions themselves when debugging?",
+      "options": [
+        { "type": "text", "value": "To make code longer" },
+        { "type": "text", "value": "To reveal unexpected evaluations and see condition values directly" },
+        { "type": "text", "value": "To slow down the program" },
+        { "type": "text", "value": "To delete variables" }
+      ],
+      "answer": 1,
+      "explanation": "Printing boolean expressions directly reveals unexpected evaluations, showing you exactly what values conditions produce rather than guessing why they fail."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "When testing boundary values for the condition (score >= 90), which values should you test?",
+      "options": [
+        { "type": "text", "value": "Only 90" },
+        { "type": "text", "value": "Only 100" },
+        { "type": "text", "value": "89, 90, and 91" },
+        { "type": "text", "value": "0 and 100" }
+      ],
+      "answer": 2,
+      "explanation": "You should test the exact boundary value (90) and values immediately above (91) and below (89) to uncover off-by-one errors and range problems."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What is a truth table useful for when debugging?",
+      "options": [
+        { "type": "text", "value": "Speeding up code" },
+        { "type": "text", "value": "Deleting variables" },
+        { "type": "text", "value": "Adding more conditions" },
+        { "type": "text", "value": "Testing all possible combinations of boolean inputs" }
+      ],
+      "answer": 3,
+      "explanation": "A truth table helps debug complex boolean expressions by listing all possible combinations of inputs and determining what the output should be for each."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Why should you simplify complex conditions when debugging?",
+      "options": [
+        { "type": "text", "value": "To break them into smaller, testable parts with named variables" },
+        { "type": "text", "value": "To make code longer" },
+        { "type": "text", "value": "To remove all operators" },
+        { "type": "text", "value": "To confuse other programmers" }
+      ],
+      "answer": 0,
+      "explanation": "Breaking complex conditions into smaller, named variables makes debugging easier by letting you test each part independently and identify exactly where problems occur."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What does setting a breakpoint in an IDE debugger allow you to do?",
+      "options": [
+        { "type": "text", "value": "Delete code automatically" },
+        { "type": "text", "value": "Pause execution and examine variable values step by step" },
+        { "type": "text", "value": "Speed up the program" },
+        { "type": "text", "value": "Remove all conditions" }
+      ],
+      "answer": 1,
+      "explanation": "Setting a breakpoint pauses execution at that point, allowing you to examine variable values and step through code line by line to see exactly what happens."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What is rubber duck debugging?",
+      "options": [
+        { "type": "text", "value": "Using a special debugging tool" },
+        { "type": "text", "value": "Writing code faster" },
+        { "type": "text", "value": "Explaining your code line by line to reveal errors" },
+        { "type": "text", "value": "Deleting all comments" }
+      ],
+      "answer": 2,
+      "explanation": "Rubber duck debugging involves explaining your code line by line (to an object or person), which forces you to articulate your logic clearly and often reveals overlooked errors."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What happens when testing this code with age = -5?\n\nif (age >= 18) {\n    System.out.println(\"Adult\");\n} else if (age >= 0) {\n    System.out.println(\"Minor\");\n} else {\n    System.out.println(\"Invalid age\");\n}",
+      "options": [
+        { "type": "text", "value": "Prints \"Adult\"" },
+        { "type": "text", "value": "Prints \"Minor\"" },
+        { "type": "text", "value": "Nothing prints" },
+        { "type": "text", "value": "Prints \"Invalid age\"" }
+      ],
+      "answer": 3,
+      "explanation": "Since age is -5, both age >= 18 and age >= 0 are false, so the else block executes and prints \"Invalid age\", showing proper validation of negative values."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Why should every if-else chain have a final else clause?",
+      "options": [
+        { "type": "text", "value": "To catch unexpected cases that don't match explicit conditions" },
+        { "type": "text", "value": "It's required by Java" },
+        { "type": "text", "value": "To make code slower" },
+        { "type": "text", "value": "To add more variables" }
+      ],
+      "answer": 0,
+      "explanation": "A final else clause acts as a safety net that catches unexpected cases and prevents silent failures where invalid inputs are ignored."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What should you do when combining multiple operators in complex expressions?",
+      "options": [
+        { "type": "text", "value": "Remove all operators" },
+        { "type": "text", "value": "Add parentheses to clarify evaluation order" },
+        { "type": "text", "value": "Use only one operator" },
+        { "type": "text", "value": "Avoid using variables" }
+      ],
+      "answer": 1,
+      "explanation": "Adding parentheses clarifies evaluation order and eliminates ambiguity, ensuring Java evaluates complex expressions in the order you intend."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What debugging approach involves writing down expected output before running code?",
+      "options": [
+        { "type": "text", "value": "Rubber duck debugging" },
+        { "type": "text", "value": "Random testing" },
+        { "type": "text", "value": "Comparing actual output with expected output" },
+        { "type": "text", "value": "Deleting all code" }
+      ],
+      "answer": 2,
+      "explanation": "Comparing actual output with expected output systematically reveals discrepancies by establishing what should happen before checking what actually happens."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What should print when score = 85 in this code?\n\nif (score >= 90) {\n    System.out.println(\"A\");\n} else if (score >= 80) {\n    System.out.println(\"B\");\n} else {\n    System.out.println(\"C\");\n}",
+      "options": [
+        { "type": "text", "value": "A" },
+        { "type": "text", "value": "C" },
+        { "type": "text", "value": "B" },
+        { "type": "text", "value": "Nothing" }
+      ],
+      "answer": 2,
+      "explanation": "Since score is 85, the first condition (>= 90) is false but the second condition (>= 80) is true, so \"B\" prints."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What values should you test to catch edge cases?",
+      "options": [
+        { "type": "text", "value": "Only positive numbers" },
+        { "type": "text", "value": "Only the middle range" },
+        { "type": "text", "value": "Only zero" },
+        { "type": "text", "value": "Extreme values like negative, zero, and unrealistically large values" }
+      ],
+      "answer": 3,
+      "explanation": "Testing extreme values like negative numbers, zero, and unrealistically large values catches unexpected edge cases that typical values might miss."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What is the benefit of breaking down this complex condition?\n\nif ((temp > 70 && temp < 85) && (isSunny || isWeekend))",
+      "options": [
+        { "type": "text", "value": "You can test each part independently and identify exactly where problems occur" },
+        { "type": "text", "value": "It makes code run faster" },
+        { "type": "text", "value": "It uses less memory" },
+        { "type": "text", "value": "It removes all operators" }
+      ],
+      "answer": 0,
+      "explanation": "Breaking down complex conditions into named variables lets you test each part independently with print statements, making it easy to identify which specific part fails."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What does verbalizing your logic help reveal?",
+      "options": [
+        { "type": "text", "value": "Nothing useful" },
+        { "type": "text", "value": "How to delete code" },
+        { "type": "text", "value": "Flaws that silent reading misses" },
+        { "type": "text", "value": "How to add more variables" }
+      ],
+      "answer": 2,
+      "explanation": "Verbalizing logic forces you to articulate your reasoning clearly, often revealing flaws and incorrect assumptions that you overlook when reading silently."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "Which IDE features are useful for debugging?",
+      "options": [
+        { "type": "text", "value": "Only syntax highlighting" },
+        { "type": "text", "value": "Only file management" },
+        { "type": "text", "value": "Only auto-complete" },
+        { "type": "text", "value": "Breakpoints and step-through execution" }
+      ],
+      "answer": 3,
+      "explanation": "Breakpoints and step-through execution are powerful IDE debugging features that let you pause execution and examine program state at specific points."
+    }
+  ]
+}

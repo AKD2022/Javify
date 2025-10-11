@@ -1,0 +1,214 @@
+{
+  "lessonId": 46,
+  "title": "Short-Circuit Evaluation",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is short-circuit evaluation?",
+      "options": [
+        { "type": "text", "value": "Java stops evaluating a boolean expression once the result is determined" },
+        { "type": "text", "value": "Java evaluates all conditions twice for accuracy" },
+        { "type": "text", "value": "Java skips the first condition in an expression" },
+        { "type": "text", "value": "Java only works with short expressions" }
+      ],
+      "answer": 0,
+      "explanation": "Short-circuit evaluation means Java stops evaluating a boolean expression as soon as the final result is determined, avoiding unnecessary checks."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "Which operators use short-circuit evaluation?",
+      "options": [
+        { "type": "text", "value": "& and |" },
+        { "type": "text", "value": "&& and ||" },
+        { "type": "text", "value": "== and !=" },
+        { "type": "text", "value": "+ and -" }
+      ],
+      "answer": 1,
+      "explanation": "The && (logical AND) and || (logical OR) operators use short-circuit evaluation, unlike their single-character counterparts & and |."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "In the expression (x > 10 && y > 5), when does Java skip evaluating y > 5?",
+      "options": [
+        { "type": "text", "value": "When y is negative" },
+        { "type": "text", "value": "When x is greater than 10" },
+        { "type": "text", "value": "When x > 10 is false" },
+        { "type": "text", "value": "Java always evaluates both conditions" }
+      ],
+      "answer": 2,
+      "explanation": "With the && operator, if the first condition (x > 10) is false, Java knows the entire expression will be false and skips evaluating the second condition."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "In the expression (age >= 18 || hasPermission), when does Java skip evaluating hasPermission?",
+      "options": [
+        { "type": "text", "value": "When hasPermission is false" },
+        { "type": "text", "value": "When age is less than 18" },
+        { "type": "text", "value": "Java never skips it" },
+        { "type": "text", "value": "When age >= 18 is true" }
+      ],
+      "answer": 3,
+      "explanation": "With the || operator, if the first condition (age >= 18) is true, Java knows the entire expression will be true and skips evaluating the second condition."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Why is short-circuit evaluation important for preventing errors?",
+      "options": [
+        { "type": "text", "value": "It can prevent evaluating conditions that would cause runtime errors" },
+        { "type": "text", "value": "It makes code run twice as fast" },
+        { "type": "text", "value": "It automatically fixes syntax errors" },
+        { "type": "text", "value": "It removes the need for parentheses" }
+      ],
+      "answer": 0,
+      "explanation": "Short-circuit evaluation can prevent runtime errors by skipping conditions that would cause errors, such as division by zero or accessing null references."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What happens when this code runs?\n\nint divisor = 0;\nif (divisor != 0 && 10 / divisor > 2) {\n    System.out.println(\"Safe\");\n}",
+      "options": [
+        { "type": "text", "value": "Prints \"Safe\"" },
+        { "type": "text", "value": "No error occurs, nothing prints" },
+        { "type": "text", "value": "Division by zero error" },
+        { "type": "text", "value": "Compilation error" }
+      ],
+      "answer": 1,
+      "explanation": "Since divisor != 0 is false, short-circuit evaluation prevents Java from evaluating 10 / divisor, avoiding a division by zero error. Nothing prints because the condition is false."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What are the non-short-circuit versions of the logical operators?",
+      "options": [
+        { "type": "text", "value": "!! and ??" },
+        { "type": "text", "value": "++ and --" },
+        { "type": "text", "value": "& and |" },
+        { "type": "text", "value": "== and !=" }
+      ],
+      "answer": 2,
+      "explanation": "The single-character operators & (AND) and | (OR) are non-short-circuit versions that always evaluate both operands."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What is printed?\n\nint x = 5;\nint y = 10;\nif (x > 10 & y++ > 5) {\n    System.out.println(\"True\");\n}\nSystem.out.println(y);",
+      "options": [
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "True, then 10" },
+        { "type": "text", "value": "11" }
+      ],
+      "answer": 3,
+      "explanation": "With the non-short-circuit & operator, both conditions are evaluated. Even though x > 10 is false, y++ > 5 still executes, incrementing y to 11."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "When placing multiple conditions in an expression, which should come first?",
+      "options": [
+        { "type": "text", "value": "The simpler or safer condition to take advantage of short-circuit evaluation" },
+        { "type": "text", "value": "The most complex condition" },
+        { "type": "text", "value": "The condition most likely to be false" },
+        { "type": "text", "value": "The order doesn't matter" }
+      ],
+      "answer": 0,
+      "explanation": "You should place the simpler or safer condition first to take advantage of short-circuit evaluation and prevent potential errors."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What happens when this code runs?\n\nString name = null;\nif (name != null && name.length() > 0) {\n    System.out.println(\"Valid\");\n}",
+      "options": [
+        { "type": "text", "value": "Prints \"Valid\"" },
+        { "type": "text", "value": "No error occurs, nothing prints" },
+        { "type": "text", "value": "Compilation error" },
+        { "type": "text", "value": "Runtime error from calling method on null" }
+      ],
+      "answer": 1,
+      "explanation": "Since name != null evaluates to false, short-circuit evaluation prevents calling name.length() on null, avoiding an error. Nothing prints because the condition is false."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "In the expression (isWinter || temperature < 10), if isWinter is true, what happens?",
+      "options": [
+        { "type": "text", "value": "Both conditions are checked" },
+        { "type": "text", "value": "The expression evaluates to false" },
+        { "type": "text", "value": "Java skips checking temperature < 10" },
+        { "type": "text", "value": "A compilation error occurs" }
+      ],
+      "answer": 2,
+      "explanation": "With the || operator, if isWinter is true, Java knows the entire expression is true and skips evaluating temperature < 10."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What is the result of this expression when x = 3?\n\n(x < 5 && x > 0)",
+      "options": [
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "Compilation error" }
+      ],
+      "answer": 2,
+      "explanation": "Since x is 3, both x < 5 (true) and x > 0 (true) are true. With &&, when both operands are true, the result is true."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What is the main benefit of short-circuit evaluation for program performance?",
+      "options": [
+        { "type": "text", "value": "It reduces memory usage" },
+        { "type": "text", "value": "It compiles code faster" },
+        { "type": "text", "value": "It makes variables smaller" },
+        { "type": "text", "value": "It avoids evaluating unnecessary conditions" }
+      ],
+      "answer": 3,
+      "explanation": "Short-circuit evaluation improves performance by avoiding unnecessary condition evaluations once the result is determined."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What happens when this code runs?\n\nint[] nums = {1, 2, 3};\nint i = 5;\nif (i >= 0 && i < nums.length && nums[i] > 0) {\n    System.out.println(\"Valid\");\n}",
+      "options": [
+        { "type": "text", "value": "Prints \"Valid\"" },
+        { "type": "text", "value": "No error occurs, nothing prints" },
+        { "type": "text", "value": "Array index out of bounds error" },
+        { "type": "text", "value": "Compilation error" }
+      ],
+      "answer": 1,
+      "explanation": "Since i < nums.length is false (5 is not less than 3), short-circuit evaluation prevents accessing nums[i], avoiding an array index out of bounds error."
+    },
+    {
+      "id": 15,
+      "type": "code",
+      "question": "For an AND (&&) expression to be true, what must happen?",
+      "options": [
+        { "type": "text", "value": "At least one operand must be true" },
+        { "type": "text", "value": "The first operand must be false" },
+        { "type": "text", "value": "Both operands must be true" },
+        { "type": "text", "value": "The second operand must be false" }
+      ],
+      "answer": 2,
+      "explanation": "For an AND expression to be true, both operands must be true. If the first operand is false, Java short-circuits and the expression is false."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "For an OR (||) expression to be true, what must happen?",
+      "options": [
+        { "type": "text", "value": "Both operands must be true" },
+        { "type": "text", "value": "Both operands must be false" },
+        { "type": "text", "value": "The second operand must be true" },
+        { "type": "text", "value": "At least one operand must be true" }
+      ],
+      "answer": 3,
+      "explanation": "For an OR expression to be true, at least one operand must be true. If the first operand is true, Java short-circuits and the expression is true."
+    }
+  ]
+}

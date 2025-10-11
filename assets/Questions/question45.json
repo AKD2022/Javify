@@ -1,0 +1,214 @@
+{
+  "lessonId": 45,
+  "title": "Using break and default in switch",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What does the break statement do in a switch?",
+      "options": [
+        { "type": "text", "value": "Exits the switch block immediately" },
+        { "type": "text", "value": "Skips the next case" },
+        { "type": "text", "value": "Ends the program" },
+        { "type": "text", "value": "Restarts the switch from the beginning" }
+      ],
+      "answer": 0,
+      "explanation": "The break statement causes the program to exit the entire switch block immediately and continue execution after the closing brace."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What happens when you forget to include break in a switch case?",
+      "options": [
+        { "type": "text", "value": "The program crashes" },
+        { "type": "text", "value": "Fall-through occurs and subsequent cases execute" },
+        { "type": "text", "value": "The switch statement is skipped" },
+        { "type": "text", "value": "A compilation error occurs" }
+      ],
+      "answer": 1,
+      "explanation": "Without break, fall-through occurs - the program continues executing code in subsequent cases until it encounters a break or reaches the end of the switch."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What is the purpose of the default case in a switch statement?",
+      "options": [
+        { "type": "text", "value": "It executes first before all other cases" },
+        { "type": "text", "value": "It prevents fall-through" },
+        { "type": "text", "value": "It handles values that don't match any explicit case" },
+        { "type": "text", "value": "It makes the switch run faster" }
+      ],
+      "answer": 2,
+      "explanation": "The default case acts as a catch-all that executes when none of the other cases match the switch expression, similar to an else clause."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "Where is the default case typically placed in a switch statement?",
+      "options": [
+        { "type": "text", "value": "At the beginning" },
+        { "type": "text", "value": "In the middle" },
+        { "type": "text", "value": "Before the first case" },
+        { "type": "text", "value": "At the end" }
+      ],
+      "answer": 3,
+      "explanation": "The default case is typically placed at the end of the switch statement, though Java allows it anywhere within the switch block."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Is a break statement required after the default case when it's at the end?",
+      "options": [
+        { "type": "text", "value": "No, it's optional since there are no more cases to fall through to" },
+        { "type": "text", "value": "Yes, it's always required" },
+        { "type": "text", "value": "Only if there are more than 5 cases" },
+        { "type": "text", "value": "Only if the default contains multiple statements" }
+      ],
+      "answer": 0,
+      "explanation": "When the default case is positioned last, the break statement is optional because there are no remaining cases to fall through to."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What prints when this code runs?\n\nint x = 2;\nswitch (x) {\n    case 1:\n        System.out.println(\"One\");\n    case 2:\n        System.out.println(\"Two\");\n    case 3:\n        System.out.println(\"Three\");\n        break;\n}",
+      "options": [
+        { "type": "text", "value": "One" },
+        { "type": "text", "value": "Two\nThree" },
+        { "type": "text", "value": "Two" },
+        { "type": "text", "value": "Three" }
+      ],
+      "answer": 1,
+      "explanation": "Since case 2 has no break, fall-through occurs. The program prints \"Two\", then continues to case 3 and prints \"Three\" before hitting the break."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What is intentional fall-through useful for?",
+      "options": [
+        { "type": "text", "value": "Making code run faster" },
+        { "type": "text", "value": "Reducing memory usage" },
+        { "type": "text", "value": "Grouping multiple cases that execute the same code" },
+        { "type": "text", "value": "Creating infinite loops" }
+      ],
+      "answer": 2,
+      "explanation": "Intentional fall-through allows multiple cases to execute the same code block, useful when several different values should trigger identical behavior."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What prints when this code runs?\n\nchar grade = 'F';\nswitch (grade) {\n    case 'A':\n        System.out.println(\"Excellent\");\n        break;\n    case 'B':\n        System.out.println(\"Good\");\n        break;\n    default:\n        System.out.println(\"Try harder\");\n}",
+      "options": [
+        { "type": "text", "value": "Excellent" },
+        { "type": "text", "value": "Good" },
+        { "type": "text", "value": "Nothing prints" },
+        { "type": "text", "value": "Try harder" }
+      ],
+      "answer": 3,
+      "explanation": "Since grade is 'F' and no case matches, the default case executes, printing \"Try harder\"."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Is the default case required in a switch statement?",
+      "options": [
+        { "type": "text", "value": "No, but it's highly recommended for handling unexpected inputs" },
+        { "type": "text", "value": "Yes, the code won't compile without it" },
+        { "type": "text", "value": "Only when using char types" },
+        { "type": "text", "value": "Only when using int types" }
+      ],
+      "answer": 0,
+      "explanation": "The default case isn't strictly required, but it's highly recommended as it provides a safety net for unexpected inputs and makes code more robust."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What prints when this code runs?\n\nint day = 5;\nswitch (day) {\n    case 1:\n    case 2:\n    case 3:\n    case 4:\n    case 5:\n        System.out.println(\"Weekday\");\n        break;\n    default:\n        System.out.println(\"Weekend\");\n}",
+      "options": [
+        { "type": "text", "value": "Weekend" },
+        { "type": "text", "value": "Weekday" },
+        { "type": "text", "value": "Nothing prints" },
+        { "type": "text", "value": "Compilation error" }
+      ],
+      "answer": 1,
+      "explanation": "Since day is 5, it matches case 5. All cases 1-5 fall through to print \"Weekday\", demonstrating intentional fall-through for grouping cases."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What is the most common mistake when writing switch statements?",
+      "options": [
+        { "type": "text", "value": "Using too many cases" },
+        { "type": "text", "value": "Placing default at the wrong position" },
+        { "type": "text", "value": "Forgetting to include break statements" },
+        { "type": "text", "value": "Using the wrong data type" }
+      ],
+      "answer": 2,
+      "explanation": "Forgetting break statements is the most common mistake, leading to unintended fall-through behavior that can be difficult to debug."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What prints when this code runs?\n\nint num = 10;\nswitch (num / 5) {\n    case 1:\n        System.out.println(\"A\");\n        break;\n    case 2:\n        System.out.println(\"B\");\n        break;\n    default:\n        System.out.println(\"C\");\n}",
+      "options": [
+        { "type": "text", "value": "C" },
+        { "type": "text", "value": "B" },
+        { "type": "text", "value": "A" },
+        { "type": "text", "value": "Nothing prints" }
+      ],
+      "answer": 2,
+      "explanation": "The expression num / 5 evaluates to 10 / 5 which equals 2. This matches case 2, so \"B\" is printed."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "When using intentional fall-through, what should you do?",
+      "options": [
+        { "type": "text", "value": "Nothing special is needed" },
+        { "type": "text", "value": "Avoid using it entirely" },
+        { "type": "text", "value": "Use double break statements" },
+        { "type": "text", "value": "Add a comment indicating it's intentional" }
+      ],
+      "answer": 3,
+      "explanation": "When using intentional fall-through, it's good practice to add a comment indicating the fall-through is deliberate, so other programmers know it wasn't a mistake."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What prints when this code runs?\n\nchar letter = 'b';\nswitch (letter) {\n    case 'a':\n    case 'e':\n    case 'i':\n        System.out.println(\"Vowel\");\n        break;\n    default:\n        System.out.println(\"Consonant\");\n}",
+      "options": [
+        { "type": "text", "value": "Vowel" },
+        { "type": "text", "value": "Consonant" },
+        { "type": "text", "value": "Nothing prints" },
+        { "type": "text", "value": "Compilation error" }
+      ],
+      "answer": 1,
+      "explanation": "Since letter is 'b' and doesn't match any of the vowel cases (a, e, i), the default case executes and prints \"Consonant\"."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What does fall-through mean in a switch statement?",
+      "options": [
+        { "type": "text", "value": "The switch statement fails to execute" },
+        { "type": "text", "value": "The program crashes" },
+        { "type": "text", "value": "Execution continues into subsequent cases without break" },
+        { "type": "text", "value": "The default case always executes" }
+      ],
+      "answer": 2,
+      "explanation": "Fall-through occurs when execution continues into subsequent cases because there's no break statement to exit the switch block."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "What prints when this code runs?\n\nint month = 15;\nswitch (month) {\n    case 1:\n        System.out.println(\"Jan\");\n        break;\n    case 2:\n        System.out.println(\"Feb\");\n        break;\n    default:\n        System.out.println(\"Invalid\");\n}",
+      "options": [
+        { "type": "text", "value": "Jan" },
+        { "type": "text", "value": "Feb" },
+        { "type": "text", "value": "Nothing prints" },
+        { "type": "text", "value": "Invalid" }
+      ],
+      "answer": 3,
+      "explanation": "Since month is 15 and doesn't match case 1 or 2, the default case executes and prints \"Invalid\", demonstrating how default handles invalid input."
+    }
+  ]
+}

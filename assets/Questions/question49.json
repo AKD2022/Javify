@@ -1,0 +1,214 @@
+{
+  "lessonId": 49,
+  "title": "Writing Complex Boolean Expressions",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What are the three primary logical operators used in complex boolean expressions?",
+      "options": [
+        { "type": "text", "value": "AND (&&), OR (||), and NOT (!)" },
+        { "type": "text", "value": "+, -, and *" },
+        { "type": "text", "value": "==, !=, and <" },
+        { "type": "text", "value": "if, else, and switch" }
+      ],
+      "answer": 0,
+      "explanation": "The three primary logical operators are AND (&&), OR (||), and NOT (!), which are used to combine and manipulate boolean conditions."
+    },
+    {
+      "id": 2,
+      "type": "code",
+      "question": "For an AND expression to be true, what must happen?\n\nif (age >= 18 && hasLicense && hasInsurance)",
+      "options": [
+        { "type": "text", "value": "Only one condition must be true" },
+        { "type": "text", "value": "All conditions must be true" },
+        { "type": "text", "value": "None of the conditions can be true" },
+        { "type": "text", "value": "At least two conditions must be true" }
+      ],
+      "answer": 1,
+      "explanation": "For an AND expression to be true, all conditions must be true simultaneously. If any single condition is false, the entire expression becomes false."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "For an OR expression to be true, what must happen?\n\nif (score >= 90 || extraCredit)",
+      "options": [
+        { "type": "text", "value": "Both conditions must be true" },
+        { "type": "text", "value": "Both conditions must be false" },
+        { "type": "text", "value": "At least one condition must be true" },
+        { "type": "text", "value": "All conditions must be false" }
+      ],
+      "answer": 2,
+      "explanation": "For an OR expression to be true, at least one condition must be true. It provides flexibility where multiple paths can satisfy a requirement."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What does the NOT operator (!) do?",
+      "options": [
+        { "type": "text", "value": "Adds two values" },
+        { "type": "text", "value": "Compares two values" },
+        { "type": "text", "value": "Deletes a variable" },
+        { "type": "text", "value": "Inverts a boolean value from true to false or false to true" }
+      ],
+      "answer": 3,
+      "explanation": "The NOT operator inverts a boolean value, turning true into false and false into true, useful for checking that something is NOT the case."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Which operator has higher precedence?",
+      "options": [
+        { "type": "text", "value": "&&" },
+        { "type": "text", "value": "||" },
+        { "type": "text", "value": "They have equal precedence" },
+        { "type": "text", "value": "Neither has precedence" }
+      ],
+      "answer": 0,
+      "explanation": "The && operator has higher precedence than ||, meaning Java evaluates AND operations before OR operations unless parentheses specify otherwise."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What prints when this code runs?\n\nint temperature = 72;\nif (temperature >= 68 && temperature <= 75) {\n    System.out.println(\"Comfortable\");\n}",
+      "options": [
+        { "type": "text", "value": "Nothing prints" },
+        { "type": "text", "value": "Comfortable" },
+        { "type": "text", "value": "72" },
+        { "type": "text", "value": "Compilation error" }
+      ],
+      "answer": 1,
+      "explanation": "Since 72 satisfies both temperature >= 68 and temperature <= 75, the entire AND expression is true and \"Comfortable\" prints."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "When checking if a value is outside a range, which operator should you use?\n\nif (hour < 9 || hour > 17)",
+      "options": [
+        { "type": "text", "value": "==" },
+        { "type": "text", "value": "!=" },
+        { "type": "text", "value": "||" },
+        { "type": "text", "value": "&&" }
+      ],
+      "answer": 2,
+      "explanation": "Use OR (||) for exclusion logic to check if a value is outside a range, as the value needs to be either less than the minimum OR greater than the maximum."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "According to De Morgan's Laws, what does the negation of (A && B) become?",
+      "options": [
+        { "type": "text", "value": "(A || B)" },
+        { "type": "text", "value": "(!A && !B)" },
+        { "type": "text", "value": "(A && !B)" },
+        { "type": "text", "value": "(!A || !B)" }
+      ],
+      "answer": 3,
+      "explanation": "By De Morgan's Laws, the negation of an AND becomes an OR of negations: !(A && B) is equivalent to (!A || !B)."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Why should you use parentheses in complex boolean expressions?",
+      "options": [
+        { "type": "text", "value": "To make the code run faster" },
+        { "type": "text", "value": "To clarify evaluation order and make intentions explicit" },
+        { "type": "text", "value": "To reduce memory usage" },
+        { "type": "text", "value": "They are always required by Java" }
+      ],
+      "answer": 1,
+      "explanation": "Using parentheses clarifies evaluation order and makes your intentions explicit, preventing bugs from unexpected operator precedence."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What is a benefit of extracting subexpressions into named boolean variables?",
+      "options": [
+        { "type": "text", "value": "It improves readability and makes debugging easier" },
+        { "type": "text", "value": "It makes code run slower" },
+        { "type": "text", "value": "It uses more memory" },
+        { "type": "text", "value": "It's required by Java" }
+      ],
+      "answer": 0,
+      "explanation": "Extracting subexpressions into named variables improves readability, maintainability, and makes debugging easier since you can print each intermediate value."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "What prints when this code runs?\n\nboolean isWeekend = false;\nboolean isHoliday = false;\nif (!isWeekend && !isHoliday) {\n    System.out.println(\"Work day\");\n}",
+      "options": [
+        { "type": "text", "value": "Nothing prints" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "Work day" },
+        { "type": "text", "value": "Compilation error" }
+      ],
+      "answer": 2,
+      "explanation": "Since both isWeekend and isHoliday are false, their negations (!isWeekend and !isHoliday) are both true, making the AND expression true and printing \"Work day\"."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What is this expression checking?\n\nif (hour < 9 || hour > 17)",
+      "options": [
+        { "type": "text", "value": "If hour is exactly 9" },
+        { "type": "text", "value": "If hour is within business hours" },
+        { "type": "text", "value": "If hour is outside the range 9-17" },
+        { "type": "text", "value": "If hour equals 17" }
+      ],
+      "answer": 2,
+      "explanation": "This expression checks if hour is outside the range 9-17, meaning it's either before 9 OR after 17, representing outside business hours."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "When comparing strings in boolean expressions, what should you use instead of ==?",
+      "options": [
+        { "type": "text", "value": "!=" },
+        { "type": "text", "value": "<" },
+        { "type": "text", "value": ">" },
+        { "type": "text", "value": "equals() method" }
+      ],
+      "answer": 3,
+      "explanation": "When comparing strings in boolean expressions, you should use the equals() method rather than == to properly compare string content."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "How does this expression evaluate due to precedence?\n\nif (isStudent || isSenior && age >= 65)",
+      "options": [
+        { "type": "text", "value": "isStudent || (isSenior && age >= 65)" },
+        { "type": "text", "value": "(isStudent || isSenior) && age >= 65" },
+        { "type": "text", "value": "isStudent || isSenior || age >= 65" },
+        { "type": "text", "value": "It's a compilation error" }
+      ],
+      "answer": 0,
+      "explanation": "Due to operator precedence, && is evaluated before ||, so the expression evaluates as isStudent || (isSenior && age >= 65)."
+    },
+    {
+      "id": 15,
+      "type": "code",
+      "question": "According to De Morgan's Laws, what is equivalent to !(age >= 18 || hasPermission)?",
+      "options": [
+        { "type": "text", "value": "age >= 18 && hasPermission" },
+        { "type": "text", "value": "age < 18 || !hasPermission" },
+        { "type": "text", "value": "age < 18 && !hasPermission" },
+        { "type": "text", "value": "!(age < 18) || !hasPermission" }
+      ],
+      "answer": 2,
+      "explanation": "By De Morgan's Laws, !(age >= 18 || hasPermission) becomes (age < 18 && !hasPermission). The OR changes to AND and each condition is negated."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What is the best practice when writing very complex boolean expressions?",
+      "options": [
+        { "type": "text", "value": "Write everything in one line" },
+        { "type": "text", "value": "Avoid using variables" },
+        { "type": "text", "value": "Never use parentheses" },
+        { "type": "text", "value": "Break them into multiple named variables and test components independently" }
+      ],
+      "answer": 3,
+      "explanation": "The best practice is to break very complex expressions into multiple named variables and test each component independently before combining them for better clarity and maintainability."
+    }
+  ]
+}

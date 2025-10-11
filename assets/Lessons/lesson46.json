@@ -1,0 +1,582 @@
+{
+  "lessonId": 46,
+  "title": "Short-Circuit Evaluation",
+  "content": [
+    {
+      "type": "text",
+      "value": "When working with logical operators in Java, understanding how the language evaluates boolean expressions can help you write more efficient and safer code. Short-circuit evaluation is a powerful optimization technique that Java uses automatically when processing logical AND ("
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": ") and logical OR ("
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": ") operators."
+    },
+    {
+      "type": "text",
+      "value": "Short-circuit evaluation means that Java stops evaluating a boolean expression as soon as the final result is determined. The program doesn't waste time checking conditions that won't change the outcome. This behavior occurs with the "
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": " operators, but not with their single-character counterparts "
+    },
+    {
+      "type": "code",
+      "value": "&"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "|"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Let's start with the logical AND operator ("
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": "). For an AND expression to be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", both operands must be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". If the first operand evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", Java knows the entire expression will be "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " regardless of the second operand's value. Therefore, Java skips evaluating the second operand entirely."
+    },
+    {
+      "type": "code",
+      "value": "int x = 5;\nint y = 10;\n\nif (x > 10 && y > 5) {\n    System.out.println(\"Both conditions true\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "In this example, "
+    },
+    {
+      "type": "code",
+      "value": "x > 10"
+    },
+    {
+      "type": "text",
+      "value": " evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " since "
+    },
+    {
+      "type": "code",
+      "value": "x"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": ". Because the first condition is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", Java never checks whether "
+    },
+    {
+      "type": "code",
+      "value": "y > 5"
+    },
+    {
+      "type": "text",
+      "value": ". The entire expression is immediately determined to be "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "The logical OR operator ("
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": ") works similarly but in reverse. For an OR expression to be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", at least one operand must be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". If the first operand is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", Java knows the entire expression will be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " regardless of the second operand, so it skips evaluating it."
+    },
+    {
+      "type": "code",
+      "value": "int age = 25;\nboolean hasPermission = true;\n\nif (age >= 18 || hasPermission) {\n    System.out.println(\"Access granted\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Here, "
+    },
+    {
+      "type": "code",
+      "value": "age >= 18"
+    },
+    {
+      "type": "text",
+      "value": " evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " since "
+    },
+    {
+      "type": "code",
+      "value": "age"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "25"
+    },
+    {
+      "type": "text",
+      "value": ". Because the first condition is already "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", Java doesn't bother checking "
+    },
+    {
+      "type": "code",
+      "value": "hasPermission"
+    },
+    {
+      "type": "text",
+      "value": ". The expression is immediately determined to be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Short-circuit evaluation becomes especially important when the second operand could cause an error. Consider checking if a value is within range while avoiding division by zero:"
+    },
+    {
+      "type": "code",
+      "value": "int divisor = 0;\nint numerator = 10;\n\nif (divisor != 0 && numerator / divisor > 2) {\n    System.out.println(\"Result is greater than 2\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "In this example, "
+    },
+    {
+      "type": "code",
+      "value": "divisor != 0"
+    },
+    {
+      "type": "text",
+      "value": " evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " since "
+    },
+    {
+      "type": "code",
+      "value": "divisor"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ". Thanks to short-circuit evaluation, Java never attempts to evaluate "
+    },
+    {
+      "type": "code",
+      "value": "numerator / divisor"
+    },
+    {
+      "type": "text",
+      "value": ", which would have caused a runtime error. The program safely avoids the division by zero."
+    },
+    {
+      "type": "text",
+      "value": "Another common use case involves checking if an object reference is not "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " before calling methods on it. You'll learn more about objects in later units, but this pattern is worth seeing now:"
+    },
+    {
+      "type": "code",
+      "value": "String name = null;\n\nif (name != null && name.length() > 0) {\n    System.out.println(\"Name is valid\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Since "
+    },
+    {
+      "type": "code",
+      "value": "name != null"
+    },
+    {
+      "type": "text",
+      "value": " evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", Java never attempts to call "
+    },
+    {
+      "type": "code",
+      "value": "name.length()"
+    },
+    {
+      "type": "text",
+      "value": ", preventing a potential error. Without short-circuit evaluation, calling a method on "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " would crash the program."
+    },
+    {
+      "type": "text",
+      "value": "The order of operands matters significantly with short-circuit evaluation. You should place the simpler or safer condition first to take advantage of this optimization:"
+    },
+    {
+      "type": "code",
+      "value": "int[] numbers = {1, 2, 3};\nint index = 5;\n\nif (index >= 0 && index < numbers.length && numbers[index] > 0) {\n    System.out.println(\"Valid positive number\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "This code checks "
+    },
+    {
+      "type": "code",
+      "value": "index >= 0"
+    },
+    {
+      "type": "text",
+      "value": " first, then "
+    },
+    {
+      "type": "code",
+      "value": "index < numbers.length"
+    },
+    {
+      "type": "text",
+      "value": ", and only if both are "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " does it access "
+    },
+    {
+      "type": "code",
+      "value": "numbers[index]"
+    },
+    {
+      "type": "text",
+      "value": ". Since "
+    },
+    {
+      "type": "code",
+      "value": "index"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": " and the array length is "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": ", the second condition fails, preventing an array index out of bounds error."
+    },
+    {
+      "type": "text",
+      "value": "Java also provides non-short-circuit versions of these operators: "
+    },
+    {
+      "type": "code",
+      "value": "&"
+    },
+    {
+      "type": "text",
+      "value": " for AND and "
+    },
+    {
+      "type": "code",
+      "value": "|"
+    },
+    {
+      "type": "text",
+      "value": " for OR. These single-character operators always evaluate both operands, regardless of the first operand's value. You'll rarely use these for boolean logic, but they exist for specific situations where you need both sides evaluated."
+    },
+    {
+      "type": "code",
+      "value": "int x = 5;\nint y = 10;\n\nif (x > 10 & y++ > 5) {\n    System.out.println(\"Both conditions checked\");\n}\n\nSystem.out.println(\"y is now: \" + y);"
+    },
+    {
+      "type": "text",
+      "value": "With the non-short-circuit "
+    },
+    {
+      "type": "code",
+      "value": "&"
+    },
+    {
+      "type": "text",
+      "value": " operator, even though "
+    },
+    {
+      "type": "code",
+      "value": "x > 10"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", Java still evaluates "
+    },
+    {
+      "type": "code",
+      "value": "y++ > 5"
+    },
+    {
+      "type": "text",
+      "value": ", causing "
+    },
+    {
+      "type": "code",
+      "value": "y"
+    },
+    {
+      "type": "text",
+      "value": " to increment to "
+    },
+    {
+      "type": "code",
+      "value": "11"
+    },
+    {
+      "type": "text",
+      "value": ". This demonstrates the difference between short-circuit and non-short-circuit operators."
+    },
+    {
+      "type": "text",
+      "value": "Understanding short-circuit evaluation helps you write defensive code that handles edge cases gracefully. When combining multiple conditions, think carefully about which should be checked first to prevent errors and improve efficiency:"
+    },
+    {
+      "type": "code",
+      "value": "int temperature = -5;\nboolean isWinter = true;\n\nif (isWinter || temperature < 10) {\n    System.out.println(\"Wear a jacket\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Since "
+    },
+    {
+      "type": "code",
+      "value": "isWinter"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", Java determines the entire OR expression is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " without checking the temperature condition. This small optimization adds up in complex programs with many conditional checks."
+    },
+    {
+      "type": "text",
+      "value": "Short-circuit evaluation is an essential concept for writing efficient, error-free boolean expressions. By understanding how Java evaluates "
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": " operators, you can structure your conditions to avoid runtime errors and improve program performance. In the next lesson, you'll learn about common logic errors in conditional statements and how to debug them effectively."
+    }
+  ]
+}

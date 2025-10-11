@@ -1,0 +1,538 @@
+{
+  "lessonId": 45,
+  "title": "Using break and default in switch",
+  "content": [
+    {
+      "type": "text",
+      "value": "In the previous lesson, you learned the basic structure of "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statements with "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " types. Now we'll explore two crucial components that make "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statements more powerful and flexible: the "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " keyword and the "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " case."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " keyword serves a critical role in "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statements. When the program executes a "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statement, it immediately exits the entire "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " block and continues execution after the closing brace. Without "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": ", something unexpected happens - the program continues executing code in the subsequent cases, even if they don't match."
+    },
+    {
+      "type": "code",
+      "value": "int day = 2;\nswitch (day) {\n    case 1:\n        System.out.println(\"Monday\");\n        break;\n    case 2:\n        System.out.println(\"Tuesday\");\n        break;\n    case 3:\n        System.out.println(\"Wednesday\");\n        break;\n}"
+    },
+    {
+      "type": "text",
+      "value": "In this example, when "
+    },
+    {
+      "type": "code",
+      "value": "day"
+    },
+    {
+      "type": "text",
+      "value": " equals "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ", the program prints \"Tuesday\" and then encounters the "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statement. This causes the program to exit the "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " entirely, skipping the remaining cases."
+    },
+    {
+      "type": "text",
+      "value": "What happens if you forget to include "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": "? This creates a phenomenon called fall-through. The program continues executing code in all subsequent cases until it either encounters a "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " or reaches the end of the "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " block."
+    },
+    {
+      "type": "code",
+      "value": "int score = 85;\nswitch (score / 10) {\n    case 10:\n    case 9:\n        System.out.println(\"Grade: A\");\n        break;\n    case 8:\n        System.out.println(\"Grade: B\");\n        break;\n    case 7:\n        System.out.println(\"Grade: C\");\n        break;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Notice how "
+    },
+    {
+      "type": "code",
+      "value": "case 10:"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "case 9:"
+    },
+    {
+      "type": "text",
+      "value": " both have no code and no "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statement. This intentional fall-through allows both values to execute the same code block. When "
+    },
+    {
+      "type": "code",
+      "value": "score"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "85"
+    },
+    {
+      "type": "text",
+      "value": ", the expression "
+    },
+    {
+      "type": "code",
+      "value": "score / 10"
+    },
+    {
+      "type": "text",
+      "value": " evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "8"
+    },
+    {
+      "type": "text",
+      "value": ", matching "
+    },
+    {
+      "type": "code",
+      "value": "case 8:"
+    },
+    {
+      "type": "text",
+      "value": " and printing \"Grade: B\"."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " case is a special case that acts as a catch-all. If none of the other cases match the "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " expression, the code in the "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " case executes. Think of it like an "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " clause at the end of an if-else ladder."
+    },
+    {
+      "type": "code",
+      "value": "char grade = 'D';\nswitch (grade) {\n    case 'A':\n        System.out.println(\"Excellent!\");\n        break;\n    case 'B':\n        System.out.println(\"Good job!\");\n        break;\n    case 'C':\n        System.out.println(\"Satisfactory\");\n        break;\n    default:\n        System.out.println(\"Needs improvement\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "In this example, since "
+    },
+    {
+      "type": "code",
+      "value": "grade"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "'D'"
+    },
+    {
+      "type": "text",
+      "value": " and no explicit case matches, the "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " case executes, printing \"Needs improvement\". The "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": "case handles any value that wasn't explicitly covered by other cases."
+    },
+    {
+      "type": "text",
+      "value": "You typically place the "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " case at the end of the "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statement, though Java allows it anywhere within the "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " block. When positioned last, you can optionally omit the "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statement since there are no more cases to fall through to."
+    },
+    {
+      "type": "code",
+      "value": "int month = 15;\nswitch (month) {\n    case 1:\n        System.out.println(\"January\");\n        break;\n    case 2:\n        System.out.println(\"February\");\n        break;\n    case 3:\n        System.out.println(\"March\");\n        break;\n    default:\n        System.out.println(\"Invalid month\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Since "
+    },
+    {
+      "type": "code",
+      "value": "month"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "15"
+    },
+    {
+      "type": "text",
+      "value": ", which isn't a valid month number, the "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " case handles this invalid input gracefully by printing an error message. This demonstrates why the "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " case is so valuable for input validation."
+    },
+    {
+      "type": "text",
+      "value": "Using "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statements consistently is considered best practice. Forgetting a "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " is one of the most common mistakes when writing "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statements, leading to unintended fall-through behavior that can be difficult to debug."
+    },
+    {
+      "type": "code",
+      "value": "int menuChoice = 2;\nswitch (menuChoice) {\n    case 1:\n        System.out.println(\"Opening file...\");\n        break;\n    case 2:\n        System.out.println(\"Saving file...\");\n        break;\n    case 3:\n        System.out.println(\"Closing file...\");\n        break;\n    case 4:\n        System.out.println(\"Exiting program...\");\n        break;\n    default:\n        System.out.println(\"Invalid choice. Please try again.\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "This menu system demonstrates proper use of both "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": ". Each case has its own "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " to prevent fall-through, and the "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " case provides feedback when the user enters an invalid option."
+    },
+    {
+      "type": "text",
+      "value": "Sometimes intentional fall-through can be useful for grouping multiple cases that should execute the same code. However, when doing this deliberately, it's good practice to add a comment indicating the fall-through is intentional, so other programmers know it wasn't a mistake."
+    },
+    {
+      "type": "code",
+      "value": "char letter = 'e';\nswitch (letter) {\n    case 'a':\n    case 'e':\n    case 'i':\n    case 'o':\n    case 'u':\n        System.out.println(\"Vowel\");\n        break;\n    default:\n        System.out.println(\"Consonant\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "This vowel checker uses intentional fall-through to handle all five vowels with a single print statement. Each vowel case falls through to the next until reaching the code that prints \"Vowel\", followed by a "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " to exit the "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Including a "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " case isn't strictly required, but it's highly recommended. Even if you believe you've covered all possible values, the "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " case provides a safety net for unexpected inputs and makes your code more robust."
+    },
+    {
+      "type": "text",
+      "value": "Understanding when to use "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " and how to implement "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " cases effectively will help you write cleaner, more maintainable "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statements. In the next lesson, you'll learn about short-circuit evaluation and how Java optimizes boolean expressions."
+    }
+  ]
+}

@@ -1,0 +1,614 @@
+{
+  "lessonId": 49,
+  "title": "Writing Complex Boolean Expressions",
+  "content": [
+    {
+      "type": "text",
+      "value": "As your programs become more sophisticated, you'll need to combine multiple conditions into complex boolean expressions. Mastering this skill allows you to write concise, powerful conditional logic that handles intricate decision-making scenarios. This lesson explores techniques for constructing and managing complex boolean expressions effectively."
+    },
+    {
+      "type": "text",
+      "value": "Complex boolean expressions combine multiple simple conditions using logical operators. The three primary logical operators are AND ("
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": "), OR ("
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": "), and NOT ("
+    },
+    {
+      "type": "code",
+      "value": "!"
+    },
+    {
+      "type": "text",
+      "value": "). Understanding how to combine these operators lets you express sophisticated logic in a single statement."
+    },
+    {
+      "type": "code",
+      "value": "int age = 25;\nboolean hasLicense = true;\nboolean hasInsurance = true;\n\nif (age >= 18 && hasLicense && hasInsurance) {\n    System.out.println(\"Eligible to rent a car\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "This expression uses the AND operator to require that all three conditions must be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " simultaneously. The person must be at least 18 years old, possess a license, and have insurance. If any single condition evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", the entire expression becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "The OR operator creates expressions where at least one condition must be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " for the overall expression to succeed. This provides flexibility when multiple paths can satisfy a requirement."
+    },
+    {
+      "type": "code",
+      "value": "int score = 92;\nboolean extraCredit = false;\n\nif (score >= 90 || extraCredit) {\n    System.out.println(\"Grade: A\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Here, a student earns an A either by scoring at least "
+    },
+    {
+      "type": "code",
+      "value": "90"
+    },
+    {
+      "type": "text",
+      "value": " or by completing extra credit work. Since "
+    },
+    {
+      "type": "code",
+      "value": "score >= 90"
+    },
+    {
+      "type": "text",
+      "value": " evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", the entire expression is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " regardless of the "
+    },
+    {
+      "type": "code",
+      "value": "extraCredit"
+    },
+    {
+      "type": "text",
+      "value": " value."
+    },
+    {
+      "type": "text",
+      "value": "The NOT operator inverts a boolean value, turning "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " into "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " into "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". It's particularly useful when you want to check that something is NOT the case."
+    },
+    {
+      "type": "code",
+      "value": "boolean isWeekend = false;\nboolean isHoliday = false;\n\nif (!isWeekend && !isHoliday) {\n    System.out.println(\"Regular work day\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "This expression checks that it's neither a weekend nor a holiday. Both "
+    },
+    {
+      "type": "code",
+      "value": "!isWeekend"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "!isHoliday"
+    },
+    {
+      "type": "text",
+      "value": " evaluate to "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", making the entire AND expression "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Combining AND and OR operators in the same expression requires careful attention to precedence. The "
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": " operator has higher precedence than "
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": ", meaning Java evaluates AND operations before OR operations unless parentheses specify otherwise."
+    },
+    {
+      "type": "code",
+      "value": "boolean isStudent = true;\nboolean isSenior = false;\nint age = 20;\n\n// Without parentheses - AND evaluated first\nif (isStudent || isSenior && age >= 65) {\n    System.out.println(\"Discount eligible\");\n}\n\n// With parentheses - OR evaluated first\nif ((isStudent || isSenior) && age >= 18) {\n    System.out.println(\"Can register\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The first expression evaluates as "
+    },
+    {
+      "type": "code",
+      "value": "isStudent || (isSenior && age >= 65)"
+    },
+    {
+      "type": "text",
+      "value": " due to precedence rules. Since "
+    },
+    {
+      "type": "code",
+      "value": "isStudent"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", the entire expression is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". The second expression explicitly groups the OR with parentheses, requiring both the grouped condition and the age check."
+    },
+    {
+      "type": "text",
+      "value": "Range checking is a common use case for complex boolean expressions. You often need to verify that a value falls within specific boundaries."
+    },
+    {
+      "type": "code",
+      "value": "int temperature = 72;\n\nif (temperature >= 68 && temperature <= 75) {\n    System.out.println(\"Comfortable temperature\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "This expression checks that "
+    },
+    {
+      "type": "code",
+      "value": "temperature"
+    },
+    {
+      "type": "text",
+      "value": " is between "
+    },
+    {
+      "type": "code",
+      "value": "68"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "75"
+    },
+    {
+      "type": "text",
+      "value": " inclusive. Both conditions must be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " for the value to be within range. Since "
+    },
+    {
+      "type": "code",
+      "value": "72"
+    },
+    {
+      "type": "text",
+      "value": " satisfies both "
+    },
+    {
+      "type": "code",
+      "value": "temperature >= 68"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "temperature <= 75"
+    },
+    {
+      "type": "text",
+      "value": ", the message prints."
+    },
+    {
+      "type": "text",
+      "value": "Exclusion logic uses OR to check that a value is outside certain ranges. You want the opposite of being within bounds."
+    },
+    {
+      "type": "code",
+      "value": "int hour = 22;\n\nif (hour < 9 || hour > 17) {\n    System.out.println(\"Outside business hours\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "This expression checks whether "
+    },
+    {
+      "type": "code",
+      "value": "hour"
+    },
+    {
+      "type": "text",
+      "value": " is before "
+    },
+    {
+      "type": "code",
+      "value": "9"
+    },
+    {
+      "type": "text",
+      "value": " or after "
+    },
+    {
+      "type": "code",
+      "value": "17"
+    },
+    {
+      "type": "text",
+      "value": ". Since "
+    },
+    {
+      "type": "code",
+      "value": "hour"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "22"
+    },
+    {
+      "type": "text",
+      "value": ", which is greater than "
+    },
+    {
+      "type": "code",
+      "value": "17"
+    },
+    {
+      "type": "text",
+      "value": ", the condition evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". Notice that we use OR for exclusion rather than AND."
+    },
+    {
+      "type": "text",
+      "value": "De Morgan's Laws provide rules for transforming complex expressions, particularly when negating them. These laws state that the negation of an AND becomes an OR of negations, and the negation of an OR becomes an AND of negations."
+    },
+    {
+      "type": "code",
+      "value": "int age = 16;\nboolean hasPermission = false;\n\n// Original: NOT (age >= 18 OR has permission)\nif (!(age >= 18 || hasPermission)) {\n    System.out.println(\"Cannot enter\");\n}\n\n// Equivalent using De Morgan's Law\nif (age < 18 && !hasPermission) {\n    System.out.println(\"Cannot enter\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Both expressions are equivalent. The first negates the entire OR expression, while the second applies De Morgan's Laws to distribute the negation. The "
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": ", and each condition gets negated individually. Since "
+    },
+    {
+      "type": "code",
+      "value": "age"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "16"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "hasPermission"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", both versions print the message."
+    },
+    {
+      "type": "text",
+      "value": "Multiple levels of nesting create very complex expressions. Using parentheses makes the logic clear and ensures correct evaluation order."
+    },
+    {
+      "type": "code",
+      "value": "boolean isWeekday = true;\nint hour = 14;\nboolean hasAppointment = false;\nboolean isEmergency = false;\n\nif ((isWeekday && hour >= 9 && hour < 17) || hasAppointment || isEmergency) {\n    System.out.println(\"Office is open\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "This expression checks three different ways the office might be open: during weekday business hours, when there's an appointment, or during an emergency. The parentheses group the weekday business hours check together. Since "
+    },
+    {
+      "type": "code",
+      "value": "isWeekday"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "hour"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "14"
+    },
+    {
+      "type": "text",
+      "value": " (which falls within the range), the first group is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " and the entire expression evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Extracting subexpressions into named boolean variables improves readability and maintainability when expressions become too complex."
+    },
+    {
+      "type": "code",
+      "value": "int temperature = 78;\nint humidity = 65;\nboolean isSunny = true;\n\nboolean goodTemperature = temperature >= 70 && temperature <= 85;\nboolean goodHumidity = humidity < 70;\nboolean niceWeather = goodTemperature && goodHumidity && isSunny;\n\nif (niceWeather) {\n    System.out.println(\"Perfect day for outdoor activities!\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Breaking the complex logic into named components makes each piece easier to understand. You can see that "
+    },
+    {
+      "type": "code",
+      "value": "goodTemperature"
+    },
+    {
+      "type": "text",
+      "value": " checks the temperature range, "
+    },
+    {
+      "type": "code",
+      "value": "goodHumidity"
+    },
+    {
+      "type": "text",
+      "value": " verifies comfortable humidity, and "
+    },
+    {
+      "type": "code",
+      "value": "niceWeather"
+    },
+    {
+      "type": "text",
+      "value": " combines all conditions. This structure also helps with debugging since you can print each intermediate value."
+    },
+    {
+      "type": "text",
+      "value": "Comparing strings in complex expressions requires using the "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " method rather than "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": ". You'll learn more about this in later units, but it's important to mention when building complex conditions."
+    },
+    {
+      "type": "code",
+      "value": "String userType = \"admin\";\nint accessLevel = 5;\n\nif (userType.equals(\"admin\") && accessLevel >= 5) {\n    System.out.println(\"Full system access granted\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "This expression combines a string comparison with a numeric comparison. Both "
+    },
+    {
+      "type": "code",
+      "value": "userType.equals(\"admin\")"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "accessLevel >= 5"
+    },
+    {
+      "type": "text",
+      "value": " must be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " for access to be granted. Since both conditions are satisfied, the message prints."
+    },
+    {
+      "type": "text",
+      "value": "When writing complex boolean expressions, strive for clarity over cleverness. Use parentheses liberally, even when not strictly required, to make your intentions explicit. Break very complex expressions into multiple named variables. Test each component independently before combining them. These practices prevent bugs and make your code maintainable. In the next lesson, you'll apply everything you've learned about control structures in a comprehensive recap."
+    }
+  ]
+}

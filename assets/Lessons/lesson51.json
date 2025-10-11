@@ -1,0 +1,438 @@
+{
+  "lessonId": 51,
+  "title": "Introduction to Loops and Loop Control",
+  "content": [
+    {
+      "type": "text",
+      "value": "Welcome to Unit 4: Loops & Iteration! Up until now, your programs have executed statements once and moved on. Loops change this by allowing you to repeat blocks of code multiple times, making your programs far more powerful and efficient. This lesson introduces the fundamental concepts of loops and how they control repetition in Java."
+    },
+    {
+      "type": "text",
+      "value": "A loop is a control structure that repeatedly executes a block of code as long as a specified condition remains "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". Without loops, you would need to write the same code hundreds or thousands of times to perform repetitive tasks. Loops solve this problem elegantly by automating repetition."
+    },
+    {
+      "type": "text",
+      "value": "Consider printing numbers from 1 to 5. Without a loop, you would write:"
+    },
+    {
+      "type": "code",
+      "value": "System.out.println(1);\nSystem.out.println(2);\nSystem.out.println(3);\nSystem.out.println(4);\nSystem.out.println(5);"
+    },
+    {
+      "type": "text",
+      "value": "This approach becomes impractical for larger ranges. What if you needed to print 1 to 100, or 1 to 1000? Loops provide the solution by repeating a single print statement with a changing value."
+    },
+    {
+      "type": "text",
+      "value": "Java provides three types of loops: "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loops, "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loops, and "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loops. Each type serves specific purposes, though they can often accomplish the same tasks in different ways. You'll learn the details of each loop type in upcoming lessons."
+    },
+    {
+      "type": "text",
+      "value": "Every loop has three essential components: initialization, a condition, and an update. The initialization sets up variables before the loop begins. The condition determines whether the loop continues executing. The update modifies variables so the loop eventually terminates."
+    },
+    {
+      "type": "code",
+      "value": "int count = 1;           // Initialization\nwhile (count <= 5) {     // Condition\n    System.out.println(count);\n    count++;             // Update\n}"
+    },
+    {
+      "type": "text",
+      "value": "In this example, "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " is initialized to "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ". The loop continues while "
+    },
+    {
+      "type": "code",
+      "value": "count <= 5"
+    },
+    {
+      "type": "text",
+      "value": " remains "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". After each iteration, "
+    },
+    {
+      "type": "code",
+      "value": "count++"
+    },
+    {
+      "type": "text",
+      "value": " increments the counter. When "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " reaches "
+    },
+    {
+      "type": "code",
+      "value": "6"
+    },
+    {
+      "type": "text",
+      "value": ", the condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and the loop stops."
+    },
+    {
+      "type": "text",
+      "value": "Loop control refers to how you manage the flow and behavior of loops. Understanding loop control means knowing when loops start, when they continue, and when they stop. Proper control prevents common problems like infinite loops that never terminate."
+    },
+    {
+      "type": "text",
+      "value": "An iteration is a single execution of the loop body. Each time the loop repeats its code block, that's one iteration. Keeping track of iterations helps you understand what the loop accomplishes over time."
+    },
+    {
+      "type": "code",
+      "value": "int i = 0;\nwhile (i < 3) {\n    System.out.println(\"Iteration: \" + i);\n    i++;\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop performs three iterations. During the first iteration, "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ". During the second, "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ". During the third, "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ". After the third iteration, "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": ", making the condition "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Loop variables are variables that control loop execution. These variables typically change with each iteration, allowing the loop to make progress toward termination. The most common loop variable name is "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": ", short for index or iterator."
+    },
+    {
+      "type": "code",
+      "value": "int i = 10;\nwhile (i > 0) {\n    System.out.println(i);\n    i--;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Here, "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " starts at "
+    },
+    {
+      "type": "code",
+      "value": "10"
+    },
+    {
+      "type": "text",
+      "value": " and decrements each iteration. The loop counts down from 10 to 1, stopping when "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " reaches "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ". Notice how the update uses "
+    },
+    {
+      "type": "code",
+      "value": "i--"
+    },
+    {
+      "type": "text",
+      "value": " instead of "
+    },
+    {
+      "type": "code",
+      "value": "i++"
+    },
+    {
+      "type": "text",
+      "value": " because we're counting down."
+    },
+    {
+      "type": "text",
+      "value": "The loop condition is a boolean expression that Java evaluates before each iteration. If the condition evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", the loop body executes. If it evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", the loop terminates and execution continues with the next statement after the loop."
+    },
+    {
+      "type": "code",
+      "value": "int temperature = 60;\nwhile (temperature < 70) {\n    System.out.println(\"Current temp: \" + temperature);\n    temperature += 2;\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop checks whether "
+    },
+    {
+      "type": "code",
+      "value": "temperature < 70"
+    },
+    {
+      "type": "text",
+      "value": " before each iteration. The temperature increases by "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": " each time. Starting at "
+    },
+    {
+      "type": "code",
+      "value": "60"
+    },
+    {
+      "type": "text",
+      "value": ", the loop prints 60, 62, 64, 66, and 68. When temperature reaches "
+    },
+    {
+      "type": "code",
+      "value": "70"
+    },
+    {
+      "type": "text",
+      "value": ", the condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and the loop stops."
+    },
+    {
+      "type": "text",
+      "value": "Loop termination occurs when the loop condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". For this to happen naturally, your loop update must move the loop variable toward the termination condition. If the variable never changes or moves in the wrong direction, the loop may never terminate."
+    },
+    {
+      "type": "code",
+      "value": "int countdown = 5;\nwhile (countdown > 0) {\n    System.out.println(countdown);\n    countdown--;\n}\nSystem.out.println(\"Liftoff!\");"
+    },
+    {
+      "type": "text",
+      "value": "This countdown loop terminates properly because "
+    },
+    {
+      "type": "code",
+      "value": "countdown--"
+    },
+    {
+      "type": "text",
+      "value": " decreases the value toward "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ". After printing 5, 4, 3, 2, and 1, the loop exits and \"Liftoff!\" prints. The decrement ensures the condition "
+    },
+    {
+      "type": "code",
+      "value": "countdown > 0"
+    },
+    {
+      "type": "text",
+      "value": " eventually becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Loops enable powerful programming patterns you couldn't achieve with just conditional statements. You can process large amounts of data, perform calculations repeatedly, validate user input until it's correct, and generate sequences of values. These capabilities make loops indispensable in programming."
+    },
+    {
+      "type": "text",
+      "value": "Understanding loop control is essential before diving into specific loop types. Every loop needs proper initialization to set starting values, a clear condition that eventually becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", and an update that makes progress toward termination. Master these concepts, and you'll write effective loops throughout your programming career. In the next lesson, you'll learn about "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loops in detail."
+    }
+  ]
+}

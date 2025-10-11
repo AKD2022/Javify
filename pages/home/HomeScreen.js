@@ -262,6 +262,47 @@ export const units = [
         title: "Lesson 44: switch with int and char",
         description: "Master the most common uses of switch statements with integer and character values through practical examples and patterns."
       },
+      {
+        id: "lesson45",
+        title: "Lesson 45: Using break and default in switch",
+        description: "Master the break keyword to control switch flow and use default cases to handle unexpected values effectively."
+      },
+      {
+        id: "lesson46",
+        title: "Lesson 46: Short-Circuit Evaluation",
+        description: "Learn how Java optimizes boolean expressions by skipping unnecessary evaluations and how to use this to write safer, more efficient code."
+      },
+      {
+        id: "lesson47",
+        title: "Lesson 47: Common Logic Errors in Conditionals",
+        description: "Identify and avoid frequent mistakes in boolean expressions and conditional statements, from operator confusion to boundary errors."
+      },
+      {
+        id: "lesson48",
+        title: "Lesson 48: Debugging Conditional Statements",
+        description: "Master practical debugging techniques including print statements, boundary testing, truth tables, and IDE debuggers to solve conditional logic problems."
+      },
+      {
+        id: "lesson49",
+        title: "Lesson 49: Writing Complex Boolean Expressions",
+        description: "Master combining multiple conditions with AND, OR, and NOT operators to create sophisticated conditional logic for complex decision-making scenarios."
+      },
+      {
+        id: "lesson50",
+        title: "Lesson 50: Recap and Mini Quiz on Unit 3 Concepts",
+        description: "Review all control structure concepts from Unit 3 including boolean expressions, if-else statements, switch statements, and complex conditionals."
+      },
+    ]
+  },
+  {
+    id: 'unit4',
+    title: 'Loops and Iteration',
+    lessons: [
+      {
+        id: "lesson51",
+        title: "Lesson 51: Introduction to Loops and Loop Control",
+        description: "Discover how loops automate repetitive tasks and learn the fundamental concepts of initialization, conditions, and updates that control loop execution."
+      },
     ]
   }
 ];

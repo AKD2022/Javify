@@ -1,0 +1,474 @@
+{
+  "lessonId": 48,
+  "title": "Debugging Conditional Statements",
+  "content": [
+    {
+      "type": "text",
+      "value": "Debugging conditional statements requires systematic approaches and careful analysis. When your "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": ", or "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statements don't behave as expected, specific strategies can help you identify and fix the problems quickly. This lesson covers practical techniques for debugging conditional logic."
+    },
+    {
+      "type": "text",
+      "value": "One of the most effective debugging techniques is adding print statements to track program flow. By printing messages at key points, you can see which branches execute and verify that conditions evaluate as expected."
+    },
+    {
+      "type": "code",
+      "value": "int score = 85;\n\nSystem.out.println(\"Score: \" + score);\n\nif (score >= 90) {\n    System.out.println(\"Branch: A grade\");\n    System.out.println(\"Grade: A\");\n} else if (score >= 80) {\n    System.out.println(\"Branch: B grade\");\n    System.out.println(\"Grade: B\");\n} else {\n    System.out.println(\"Branch: C or lower\");\n    System.out.println(\"Grade: C or lower\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The debug print statements show which branch executes. When "
+    },
+    {
+      "type": "code",
+      "value": "score"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "85"
+    },
+    {
+      "type": "text",
+      "value": ", you'll see \"Branch: B grade\" printed, confirming the second "
+    },
+    {
+      "type": "code",
+      "value": "else if"
+    },
+    {
+      "type": "text",
+      "value": " executes. This verification helps you understand program behavior."
+    },
+    {
+      "type": "text",
+      "value": "Printing boolean expressions themselves can reveal unexpected evaluations. Rather than guessing why a condition fails, print the condition's value directly."
+    },
+    {
+      "type": "code",
+      "value": "int age = 17;\nboolean hasPermission = false;\n\nboolean canEnter = age >= 18 || hasPermission;\nSystem.out.println(\"Can enter: \" + canEnter);\nSystem.out.println(\"Age >= 18: \" + (age >= 18));\nSystem.out.println(\"Has permission: \" + hasPermission);\n\nif (canEnter) {\n    System.out.println(\"Access granted\");\n} else {\n    System.out.println(\"Access denied\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "This approach breaks down complex conditions into parts. You can see that "
+    },
+    {
+      "type": "code",
+      "value": "age >= 18"
+    },
+    {
+      "type": "text",
+      "value": " evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "hasPermission"
+    },
+    {
+      "type": "text",
+      "value": " is also "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", making "
+    },
+    {
+      "type": "code",
+      "value": "canEnter"
+    },
+    {
+      "type": "text",
+      "value": " evaluate to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". This visibility clarifies exactly what's happening."
+    },
+    {
+      "type": "text",
+      "value": "Testing boundary values systematically uncovers off-by-one errors and range problems. For any condition, test values right at the boundaries and values on either side."
+    },
+    {
+      "type": "code",
+      "value": "// Test these values: 89, 90, 91\nint score = 90;\n\nif (score >= 90) {\n    System.out.println(\"A\");\n} else if (score >= 80) {\n    System.out.println(\"B\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Testing with "
+    },
+    {
+      "type": "code",
+      "value": "89"
+    },
+    {
+      "type": "text",
+      "value": " should print \"B\", testing with "
+    },
+    {
+      "type": "code",
+      "value": "90"
+    },
+    {
+      "type": "text",
+      "value": " should print \"A\", and testing with "
+    },
+    {
+      "type": "code",
+      "value": "91"
+    },
+    {
+      "type": "text",
+      "value": " should also print \"A\". If any of these produces unexpected results, you've found a boundary error. Always test the exact boundary value and values immediately above and below."
+    },
+    {
+      "type": "text",
+      "value": "Creating a truth table helps debug complex boolean expressions. List all possible combinations of inputs and determine what the output should be for each combination."
+    },
+    {
+      "type": "code",
+      "value": "boolean isWeekend = true;\nboolean isHoliday = false;\nboolean hasWork = false;\n\nSystem.out.println(\"Weekend: \" + isWeekend);\nSystem.out.println(\"Holiday: \" + isHoliday);\nSystem.out.println(\"Has work: \" + hasWork);\n\nif ((isWeekend || isHoliday) && !hasWork) {\n    System.out.println(\"Time to relax!\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "For this condition, create a mental or written table showing all eight combinations of the three "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " values. Check whether the result matches expectations for each case. When "
+    },
+    {
+      "type": "code",
+      "value": "isWeekend"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "isHoliday"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "hasWork"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", the message should print."
+    },
+    {
+      "type": "text",
+      "value": "Simplifying complex conditions makes debugging easier. Break down complicated expressions into smaller, named variables that you can test independently."
+    },
+    {
+      "type": "code",
+      "value": "int temperature = 75;\nboolean isSunny = true;\nboolean isWeekend = true;\n\n// Complex - hard to debug\nif ((temperature > 70 && temperature < 85) && (isSunny || isWeekend)) {\n    System.out.println(\"Perfect day!\");\n}\n\n// Simplified - easier to debug\nboolean goodTemperature = temperature > 70 && temperature < 85;\nboolean niceConditions = isSunny || isWeekend;\n\nSystem.out.println(\"Good temp: \" + goodTemperature);\nSystem.out.println(\"Nice conditions: \" + niceConditions);\n\nif (goodTemperature && niceConditions) {\n    System.out.println(\"Perfect day!\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The simplified version lets you see exactly which part of the condition succeeds or fails. If the output isn't what you expect, you can immediately identify whether the problem lies in "
+    },
+    {
+      "type": "code",
+      "value": "goodTemperature"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "niceConditions"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Using an IDE debugger allows you to step through code line by line and examine variable values at each step. Set a breakpoint before your conditional statement, then step through to watch how conditions evaluate."
+    },
+    {
+      "type": "code",
+      "value": "int x = 5;\nint y = 10;\n\n// Set breakpoint here\nif (x > 0) {\n    if (y > 5) {\n        System.out.println(\"Both positive and y > 5\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "When execution pauses at the breakpoint, you can inspect "
+    },
+    {
+      "type": "code",
+      "value": "x"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "y"
+    },
+    {
+      "type": "text",
+      "value": " values before stepping into the "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statement. You'll see exactly which branches execute and which are skipped. IDEs like Eclipse, IntelliJ, and VS Code all provide powerful debugging tools."
+    },
+    {
+      "type": "text",
+      "value": "The rubber duck debugging technique involves explaining your code line by line to an inanimate object. This forces you to articulate your logic clearly, often revealing errors you overlooked."
+    },
+    {
+      "type": "code",
+      "value": "int score = 85;\n\n// Explain: \"If score is greater than 90...\"\nif (score > 90) {\n    System.out.println(\"A\");\n// Explain: \"Otherwise, if score is greater than OR EQUAL to 80...\"\n} else if (score >= 80) {\n    System.out.println(\"B\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "When you say aloud \"If score is greater than ninety\" and realize the score is "
+    },
+    {
+      "type": "code",
+      "value": "85"
+    },
+    {
+      "type": "text",
+      "value": ", you might catch that you want \"greater than or equal to\" instead. Verbalizing logic often exposes flaws that silent reading misses."
+    },
+    {
+      "type": "text",
+      "value": "Testing with extreme values catches unexpected edge cases. Try the smallest and largest possible values for your data types."
+    },
+    {
+      "type": "code",
+      "value": "int age = -5; // Test with negative\n// int age = 0; // Test with zero\n// int age = 150; // Test with unrealistic value\n\nif (age >= 18) {\n    System.out.println(\"Adult\");\n} else if (age >= 0) {\n    System.out.println(\"Minor\");\n} else {\n    System.out.println(\"Invalid age\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Testing with "
+    },
+    {
+      "type": "code",
+      "value": "-5"
+    },
+    {
+      "type": "text",
+      "value": " reveals whether your code handles invalid negative ages properly. The \"Invalid age\" branch should execute when "
+    },
+    {
+      "type": "code",
+      "value": "age"
+    },
+    {
+      "type": "text",
+      "value": " is negative, showing that your validation works correctly."
+    },
+    {
+      "type": "text",
+      "value": "Checking for missing "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " cases prevents bugs where certain values aren't handled. Every "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " chain should have a final "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " to catch unexpected cases."
+    },
+    {
+      "type": "code",
+      "value": "int dayOfWeek = 8; // Invalid day\n\nif (dayOfWeek == 1) {\n    System.out.println(\"Monday\");\n} else if (dayOfWeek == 2) {\n    System.out.println(\"Tuesday\");\n} else if (dayOfWeek == 3) {\n    System.out.println(\"Wednesday\");\n} else {\n    System.out.println(\"Invalid day: \" + dayOfWeek);\n}"
+    },
+    {
+      "type": "text",
+      "value": "The final "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " catches the invalid value "
+    },
+    {
+      "type": "code",
+      "value": "8"
+    },
+    {
+      "type": "text",
+      "value": " that doesn't match any explicit day. Without this safety net, invalid inputs could cause silent failures where nothing happens and you don't know why."
+    },
+    {
+      "type": "text",
+      "value": "Reviewing operator precedence prevents subtle bugs in complex expressions. When combining multiple operators, verify that Java evaluates them in the order you intend."
+    },
+    {
+      "type": "code",
+      "value": "int x = 5;\nint y = 10;\nint z = 15;\n\n// Unclear precedence\nboolean result = x < y || y < z && z < 20;\nSystem.out.println(\"Result: \" + result);\n\n// Clear with parentheses\nboolean clearResult = (x < y) || ((y < z) && (z < 20));\nSystem.out.println(\"Clear result: \" + clearResult);"
+    },
+    {
+      "type": "text",
+      "value": "Because "
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": " has higher precedence than "
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": ", both expressions produce the same result, but the second makes the evaluation order explicit. Adding parentheses eliminates ambiguity even when they're not strictly necessary."
+    },
+    {
+      "type": "text",
+      "value": "Comparing your actual output with expected output systematically reveals discrepancies. Write down what you expect before running the code, then check whether reality matches."
+    },
+    {
+      "type": "code",
+      "value": "int score = 78;\n\n// Expected: Should print \"C\"\nif (score >= 90) {\n    System.out.println(\"A\");\n} else if (score >= 80) {\n    System.out.println(\"B\");\n} else if (score >= 70) {\n    System.out.println(\"C\");\n}\n// Actual: Prints \"C\" - Correct!"
+    },
+    {
+      "type": "text",
+      "value": "When "
+    },
+    {
+      "type": "code",
+      "value": "score"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "78"
+    },
+    {
+      "type": "text",
+      "value": ", you expect \"C\" to print because "
+    },
+    {
+      "type": "code",
+      "value": "78"
+    },
+    {
+      "type": "text",
+      "value": " is greater than or equal to "
+    },
+    {
+      "type": "code",
+      "value": "70"
+    },
+    {
+      "type": "text",
+      "value": ". Verifying this expectation confirms the logic works correctly. If the output differs from your prediction, investigate which assumption was wrong."
+    },
+    {
+      "type": "text",
+      "value": "Understanding these debugging strategies gives you a toolkit for solving conditional logic problems efficiently. Practice applying these techniques whenever your conditions don't behave as expected, and you'll become faster at identifying and fixing bugs. In the next lesson, you'll learn about writing complex boolean expressions that combine multiple conditions effectively."
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "lessonId": 51,
+  "title": "Introduction to Loops and Loop Control",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is a loop?",
+      "options": [
+        { "type": "text", "value": "A control structure that repeatedly executes a block of code" },
+        { "type": "text", "value": "A type of variable" },
+        { "type": "text", "value": "A way to declare methods" },
+        { "type": "text", "value": "A data type" }
+      ],
+      "answer": 0,
+      "explanation": "A loop is a control structure that repeatedly executes a block of code as long as a specified condition remains true, automating repetitive tasks."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What are the three types of loops in Java?",
+      "options": [
+        { "type": "text", "value": "if, else, switch" },
+        { "type": "text", "value": "while, do-while, and for" },
+        { "type": "text", "value": "int, double, boolean" },
+        { "type": "text", "value": "public, private, protected" }
+      ],
+      "answer": 1,
+      "explanation": "Java provides three types of loops: while loops, do-while loops, and for loops, each serving specific purposes in controlling repetition."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What are the three essential components of every loop?",
+      "options": [
+        { "type": "text", "value": "Start, middle, end" },
+        { "type": "text", "value": "Variables, methods, classes" },
+        { "type": "text", "value": "Initialization, condition, and update" },
+        { "type": "text", "value": "Input, process, output" }
+      ],
+      "answer": 2,
+      "explanation": "Every loop has three essential components: initialization (sets up variables), condition (determines if loop continues), and update (modifies variables toward termination)."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What is an iteration?",
+      "options": [
+        { "type": "text", "value": "A type of loop" },
+        { "type": "text", "value": "A variable name" },
+        { "type": "text", "value": "A method" },
+        { "type": "text", "value": "A single execution of the loop body" }
+      ],
+      "answer": 3,
+      "explanation": "An iteration is a single execution of the loop body. Each time the loop repeats its code block, that counts as one iteration."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What are loop variables?",
+      "options": [
+        { "type": "text", "value": "Variables that control loop execution and typically change with each iteration" },
+        { "type": "text", "value": "Variables that never change" },
+        { "type": "text", "value": "Variables only used outside loops" },
+        { "type": "text", "value": "Constant values" }
+      ],
+      "answer": 0,
+      "explanation": "Loop variables control loop execution and typically change with each iteration, allowing the loop to make progress toward termination."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "How many times does this loop iterate?\n\nint i = 0;\nwhile (i < 3) {\n    System.out.println(i);\n    i++;\n}",
+      "options": [
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "Infinite" }
+      ],
+      "answer": 1,
+      "explanation": "This loop iterates 3 times with i values of 0, 1, and 2. When i reaches 3, the condition i < 3 becomes false and the loop stops."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What is the most common name for a loop variable?",
+      "options": [
+        { "type": "text", "value": "x" },
+        { "type": "text", "value": "loop" },
+        { "type": "text", "value": "i" },
+        { "type": "text", "value": "count" }
+      ],
+      "answer": 2,
+      "explanation": "The most common loop variable name is i, which is short for index or iterator, though any valid identifier can be used."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "When does loop termination occur?",
+      "options": [
+        { "type": "text", "value": "When the program ends" },
+        { "type": "text", "value": "After one iteration" },
+        { "type": "text", "value": "When a method is called" },
+        { "type": "text", "value": "When the loop condition becomes false" }
+      ],
+      "answer": 3,
+      "explanation": "Loop termination occurs when the loop condition becomes false, causing execution to continue with the next statement after the loop."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What does the loop condition determine?",
+      "options": [
+        { "type": "text", "value": "Whether the loop continues executing" },
+        { "type": "text", "value": "How many variables to create" },
+        { "type": "text", "value": "The data type of variables" },
+        { "type": "text", "value": "The name of the loop" }
+      ],
+      "answer": 0,
+      "explanation": "The loop condition determines whether the loop continues executing. If true, the loop body executes; if false, the loop terminates."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What values does this loop print?\n\nint i = 10;\nwhile (i > 0) {\n    System.out.println(i);\n    i--;\n}",
+      "options": [
+        { "type": "text", "value": "0 to 10" },
+        { "type": "text", "value": "10 to 1" },
+        { "type": "text", "value": "1 to 10" },
+        { "type": "text", "value": "10 to 0" }
+      ],
+      "answer": 1,
+      "explanation": "This loop counts down from 10 to 1 by decrementing i each iteration. When i reaches 0, the condition i > 0 becomes false and the loop stops."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What must the loop update do for proper termination?",
+      "options": [
+        { "type": "text", "value": "Print values" },
+        { "type": "text", "value": "Create new variables" },
+        { "type": "text", "value": "Move the loop variable toward the termination condition" },
+        { "type": "text", "value": "Delete variables" }
+      ],
+      "answer": 2,
+      "explanation": "The loop update must move the loop variable toward the termination condition to ensure the loop eventually terminates naturally."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "In this loop, what is the initialization?\n\nint count = 1;\nwhile (count <= 5) {\n    System.out.println(count);\n    count++;\n}",
+      "options": [
+        { "type": "text", "value": "while (count <= 5)" },
+        { "type": "text", "value": "count++" },
+        { "type": "text", "value": "int count = 1" },
+        { "type": "text", "value": "System.out.println(count)" }
+      ],
+      "answer": 2,
+      "explanation": "The initialization is int count = 1, which sets up the loop variable before the loop begins execution."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "Why are loops essential in programming?",
+      "options": [
+        { "type": "text", "value": "They make programs shorter" },
+        { "type": "text", "value": "They are required by Java" },
+        { "type": "text", "value": "They use less memory" },
+        { "type": "text", "value": "They automate repetitive tasks that would be impractical to write manually" }
+      ],
+      "answer": 3,
+      "explanation": "Loops are essential because they automate repetitive tasks that would be impractical to write manually, making programs more powerful and efficient."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What happens after this loop finishes?\n\nint countdown = 5;\nwhile (countdown > 0) {\n    System.out.println(countdown);\n    countdown--;\n}\nSystem.out.println(\"Liftoff!\");",
+      "options": [
+        { "type": "text", "value": "\"Liftoff!\" prints" },
+        { "type": "text", "value": "The program crashes" },
+        { "type": "text", "value": "The loop starts over" },
+        { "type": "text", "value": "Nothing happens" }
+      ],
+      "answer": 0,
+      "explanation": "After the loop terminates (when countdown reaches 0), execution continues with the next statement, printing \"Liftoff!\"."
+    },
+    {
+      "id": 15,
+      "type": "code",
+      "question": "In this loop, what is the update?\n\nint temperature = 60;\nwhile (temperature < 70) {\n    System.out.println(temperature);\n    temperature += 2;\n}",
+      "options": [
+        { "type": "text", "value": "int temperature = 60" },
+        { "type": "text", "value": "while (temperature < 70)" },
+        { "type": "text", "value": "temperature += 2" },
+        { "type": "text", "value": "System.out.println(temperature)" }
+      ],
+      "answer": 2,
+      "explanation": "The update is temperature += 2, which modifies the loop variable each iteration to make progress toward termination."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "When is the loop condition evaluated?",
+      "options": [
+        { "type": "text", "value": "Once at the end" },
+        { "type": "text", "value": "Never" },
+        { "type": "text", "value": "Only during initialization" },
+        { "type": "text", "value": "Before each iteration" }
+      ],
+      "answer": 3,
+      "explanation": "The loop condition is evaluated before each iteration to determine if the loop body should execute or if the loop should terminate."
+    }
+  ]
+}

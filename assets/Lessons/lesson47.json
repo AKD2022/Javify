@@ -1,0 +1,494 @@
+{
+  "lessonId": 47,
+  "title": "Common Logic Errors in Conditionals",
+  "content": [
+    {
+      "type": "text",
+      "value": "Even experienced programmers make mistakes when writing conditional statements. Understanding common logic errors helps you spot bugs quickly and write more reliable code. This lesson explores the most frequent mistakes that occur when working with "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": ", and boolean expressions."
+    },
+    {
+      "type": "text",
+      "value": "One of the most common mistakes is using the assignment operator ("
+    },
+    {
+      "type": "code",
+      "value": "="
+    },
+    {
+      "type": "text",
+      "value": ") instead of the equality operator ("
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": ") in boolean expressions. This error can be particularly tricky because it often compiles without errors but produces unexpected behavior."
+    },
+    {
+      "type": "code",
+      "value": "int score = 85;\n\n// Wrong - assigns 100 to score\nif (score = 100) {\n    System.out.println(\"Perfect score!\");\n}\n\n// Correct - compares score to 100\nif (score == 100) {\n    System.out.println(\"Perfect score!\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "In the incorrect version, "
+    },
+    {
+      "type": "code",
+      "value": "score = 100"
+    },
+    {
+      "type": "text",
+      "value": " assigns "
+    },
+    {
+      "type": "code",
+      "value": "100"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "score"
+    },
+    {
+      "type": "text",
+      "value": " rather than comparing them. In Java, this typically causes a compilation error when used with "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " values, but with "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " variables it can slip through unnoticed."
+    },
+    {
+      "type": "text",
+      "value": "Another frequent error involves incorrectly negating compound conditions. When you need to negate a condition with multiple parts, you must apply De Morgan's Laws. The negation of an AND becomes an OR of negations, and the negation of an OR becomes an AND of negations."
+    },
+    {
+      "type": "code",
+      "value": "int age = 15;\nboolean hasPermission = false;\n\n// Wrong way to check if NOT (adult OR has permission)\nif (!(age >= 18 || hasPermission)) {\n    System.out.println(\"Access denied\");\n}\n\n// This is equivalent to:\nif (age < 18 && !hasPermission) {\n    System.out.println(\"Access denied\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "When negating "
+    },
+    {
+      "type": "code",
+      "value": "(age >= 18 || hasPermission)"
+    },
+    {
+      "type": "text",
+      "value": ", the "
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": " changes to "
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": ", and each condition gets negated individually. Understanding this transformation prevents subtle logic bugs."
+    },
+    {
+      "type": "text",
+      "value": "Floating-point comparison errors occur when programmers use "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " to compare "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " values. Due to how computers store decimal numbers, tiny rounding errors can make seemingly equal values actually differ slightly."
+    },
+    {
+      "type": "code",
+      "value": "double result = 0.1 + 0.2;\n\n// Wrong - may not work as expected\nif (result == 0.3) {\n    System.out.println(\"Equal\");\n}\n\n// Better - check if close enough\ndouble epsilon = 0.0001;\nif (Math.abs(result - 0.3) < epsilon) {\n    System.out.println(\"Equal\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Instead of checking exact equality with "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " values, check whether the difference between them is smaller than a tiny threshold value. This approach accounts for rounding imprecision."
+    },
+    {
+      "type": "text",
+      "value": "Boundary condition errors happen when programmers use the wrong comparison operator for range checks. Off-by-one mistakes are especially common with inequalities."
+    },
+    {
+      "type": "code",
+      "value": "int score = 90;\n\n// Wrong - excludes 90\nif (score > 90) {\n    System.out.println(\"Grade: A\");\n}\n\n// Correct - includes 90\nif (score >= 90) {\n    System.out.println(\"Grade: A\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Using "
+    },
+    {
+      "type": "code",
+      "value": ">"
+    },
+    {
+      "type": "text",
+      "value": " instead of "
+    },
+    {
+      "type": "code",
+      "value": ">="
+    },
+    {
+      "type": "text",
+      "value": " means a score of exactly "
+    },
+    {
+      "type": "code",
+      "value": "90"
+    },
+    {
+      "type": "text",
+      "value": " won't be recognized as an A grade. Always carefully consider whether boundary values should be included or excluded from ranges."
+    },
+    {
+      "type": "text",
+      "value": "Missing curly braces in "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements can lead to confusing logic errors. Without braces, only the first statement after the "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " is conditionally executed."
+    },
+    {
+      "type": "code",
+      "value": "int age = 15;\n\n// Wrong - only first line is conditional\nif (age >= 18)\n    System.out.println(\"You can vote\");\n    System.out.println(\"Registration is open\");\n\n// Correct - both lines are conditional\nif (age >= 18) {\n    System.out.println(\"You can vote\");\n    System.out.println(\"Registration is open\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "In the incorrect version, \"Registration is open\" prints regardless of age because it's not actually inside the "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " block. The indentation is misleading. Always use curly braces to avoid this issue, even for single statements."
+    },
+    {
+      "type": "text",
+      "value": "The dangling "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " problem occurs when nested "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements create ambiguity about which "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " an "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " belongs to."
+    },
+    {
+      "type": "code",
+      "value": "int x = 5;\nint y = 10;\n\n// Ambiguous without braces\nif (x > 0)\n    if (y > 0)\n        System.out.println(\"Both positive\");\nelse\n    System.out.println(\"X is not positive\");\n\n// Clear with braces\nif (x > 0) {\n    if (y > 0) {\n        System.out.println(\"Both positive\");\n    }\n} else {\n    System.out.println(\"X is not positive\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Java associates an "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " with the nearest "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": ", which might not match your intention. In the ambiguous version, the "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " actually pairs with the inner "
+    },
+    {
+      "type": "code",
+      "value": "if (y > 0)"
+    },
+    {
+      "type": "text",
+      "value": ", not the outer "
+    },
+    {
+      "type": "code",
+      "value": "if (x > 0)"
+    },
+    {
+      "type": "text",
+      "value": ". Using braces makes the structure explicit."
+    },
+    {
+      "type": "text",
+      "value": "Redundant conditions waste processing time and make code harder to read. After an "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " block, the "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " automatically handles all other cases."
+    },
+    {
+      "type": "code",
+      "value": "int grade = 85;\n\n// Redundant - checking the opposite condition\nif (grade >= 90) {\n    System.out.println(\"A\");\n} else if (grade < 90) {\n    System.out.println(\"Not an A\");\n}\n\n// Better - else handles remaining cases\nif (grade >= 90) {\n    System.out.println(\"A\");\n} else {\n    System.out.println(\"Not an A\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The condition "
+    },
+    {
+      "type": "code",
+      "value": "grade < 90"
+    },
+    {
+      "type": "text",
+      "value": " in the "
+    },
+    {
+      "type": "code",
+      "value": "else if"
+    },
+    {
+      "type": "text",
+      "value": " is unnecessary because it must be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " if the first condition was "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". A simple "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " is clearer and more efficient."
+    },
+    {
+      "type": "text",
+      "value": "Incorrect operator precedence can lead to unexpected results when combining boolean expressions without proper parentheses."
+    },
+    {
+      "type": "code",
+      "value": "boolean isWeekend = true;\nboolean isHoliday = false;\nint temperature = 75;\n\n// Wrong - && has higher precedence than ||\nif (isWeekend || isHoliday && temperature > 70) {\n    System.out.println(\"Go to the beach\");\n}\n\n// Correct - use parentheses for clarity\nif ((isWeekend || isHoliday) && temperature > 70) {\n    System.out.println(\"Go to the beach\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": " operator has higher precedence than "
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": ", so the first expression evaluates as "
+    },
+    {
+      "type": "code",
+      "value": "isWeekend || (isHoliday && temperature > 70)"
+    },
+    {
+      "type": "text",
+      "value": ", which may not be the intended logic. Using parentheses removes ambiguity."
+    },
+    {
+      "type": "text",
+      "value": "Range checking errors occur when programmers fail to properly handle overlapping or adjacent ranges in "
+    },
+    {
+      "type": "code",
+      "value": "else if"
+    },
+    {
+      "type": "text",
+      "value": " chains."
+    },
+    {
+      "type": "code",
+      "value": "int score = 85;\n\n// Wrong - gaps and overlaps\nif (score > 90) {\n    System.out.println(\"A\");\n} else if (score > 80) {\n    System.out.println(\"B\");\n} else if (score >= 70) {\n    System.out.println(\"C\");\n}\n\n// Correct - proper boundaries\nif (score >= 90) {\n    System.out.println(\"A\");\n} else if (score >= 80) {\n    System.out.println(\"B\");\n} else if (score >= 70) {\n    System.out.println(\"C\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The incorrect version excludes a score of exactly "
+    },
+    {
+      "type": "code",
+      "value": "90"
+    },
+    {
+      "type": "text",
+      "value": " from any category and has inconsistent use of "
+    },
+    {
+      "type": "code",
+      "value": ">"
+    },
+    {
+      "type": "text",
+      "value": " versus "
+    },
+    {
+      "type": "code",
+      "value": ">="
+    },
+    {
+      "type": "text",
+      "value": ". When checking ranges, ensure each value falls into exactly one category with no gaps or overlaps."
+    },
+    {
+      "type": "text",
+      "value": "Semicolon placement errors can create empty conditional blocks that do nothing."
+    },
+    {
+      "type": "code",
+      "value": "int x = 10;\n\n// Wrong - semicolon creates empty if block\nif (x > 5);\n    System.out.println(\"X is large\");\n\n// Correct - no semicolon after condition\nif (x > 5)\n    System.out.println(\"X is large\");"
+    },
+    {
+      "type": "text",
+      "value": "A semicolon immediately after the "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " condition creates an empty statement that serves as the conditional block. The print statement then executes unconditionally. This mistake is hard to spot visually but causes serious logic errors."
+    },
+    {
+      "type": "text",
+      "value": "Understanding these common pitfalls helps you write better conditional logic and debug problems more effectively. Always test your conditions with boundary values and edge cases to catch these errors early. In the next lesson, you'll learn specific techniques for debugging conditional statements systematically."
+    }
+  ]
+}

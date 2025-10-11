@@ -1,0 +1,214 @@
+{
+  "lessonId": 47,
+  "title": "Common Logic Errors in Conditionals",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is the difference between = and == in conditional statements?",
+      "options": [
+        { "type": "text", "value": "= is assignment, == is comparison" },
+        { "type": "text", "value": "They are the same" },
+        { "type": "text", "value": "= is comparison, == is assignment" },
+        { "type": "text", "value": "= is for int, == is for boolean" }
+      ],
+      "answer": 0,
+      "explanation": "The = operator assigns values, while == compares values for equality. Using = instead of == in conditions is a common mistake."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "Why should you avoid using == to compare double values?",
+      "options": [
+        { "type": "text", "value": "It causes compilation errors" },
+        { "type": "text", "value": "Rounding errors can make seemingly equal values differ slightly" },
+        { "type": "text", "value": "It's slower than other operators" },
+        { "type": "text", "value": "Double values can't be compared" }
+      ],
+      "answer": 1,
+      "explanation": "Due to how computers store decimal numbers, tiny rounding errors can make seemingly equal double values actually differ slightly, causing == comparisons to fail unexpectedly."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What happens when this code runs?\n\nint age = 15;\nif (age >= 18)\n    System.out.println(\"Can vote\");\n    System.out.println(\"Registration open\");",
+      "options": [
+        { "type": "text", "value": "Nothing prints" },
+        { "type": "text", "value": "Only \"Can vote\" prints" },
+        { "type": "text", "value": "Only \"Registration open\" prints" },
+        { "type": "text", "value": "Both lines print" }
+      ],
+      "answer": 2,
+      "explanation": "Without braces, only the first statement is conditional. \"Registration open\" prints unconditionally because it's not actually inside the if block, despite the misleading indentation."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "Which operator has higher precedence?",
+      "options": [
+        { "type": "text", "value": "||" },
+        { "type": "text", "value": "==" },
+        { "type": "text", "value": "They have equal precedence" },
+        { "type": "text", "value": "&&" }
+      ],
+      "answer": 3,
+      "explanation": "The && operator has higher precedence than ||, which can lead to unexpected results if parentheses aren't used to clarify the intended logic."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "When negating a compound AND condition, what happens to the operator?",
+      "options": [
+        { "type": "text", "value": "AND changes to OR and each condition is negated" },
+        { "type": "text", "value": "The operator stays the same" },
+        { "type": "text", "value": "AND changes to NOT" },
+        { "type": "text", "value": "The conditions are reversed" }
+      ],
+      "answer": 0,
+      "explanation": "By De Morgan's Laws, when negating an AND condition, the && changes to || and each individual condition gets negated."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What is the better way to compare double values for equality?\n\ndouble result = 0.1 + 0.2;",
+      "options": [
+        { "type": "text", "value": "if (result = 0.3)" },
+        { "type": "text", "value": "if (Math.abs(result - 0.3) < 0.0001)" },
+        { "type": "text", "value": "if (result == 0.3)" },
+        { "type": "text", "value": "if (result != 0.3)" }
+      ],
+      "answer": 1,
+      "explanation": "Instead of checking exact equality, check if the difference is smaller than a tiny threshold (epsilon) to account for rounding imprecision."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What is the dangling else problem?",
+      "options": [
+        { "type": "text", "value": "Using else without if" },
+        { "type": "text", "value": "Having too many else statements" },
+        { "type": "text", "value": "Ambiguity about which if an else belongs to in nested statements" },
+        { "type": "text", "value": "Missing semicolons after else" }
+      ],
+      "answer": 2,
+      "explanation": "The dangling else problem occurs when nested if statements create ambiguity about which if an else belongs to. Java associates else with the nearest if."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What prints when this code runs?\n\nint x = 10;\nif (x > 5);\n    System.out.println(\"Large\");",
+      "options": [
+        { "type": "text", "value": "Nothing" },
+        { "type": "text", "value": "Compilation error" },
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "Large" }
+      ],
+      "answer": 3,
+      "explanation": "The semicolon after the if creates an empty conditional block. The print statement executes unconditionally, always printing \"Large\"."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Why should you always use curly braces with if statements?",
+      "options": [
+        { "type": "text", "value": "To avoid confusion about which statements are conditional" },
+        { "type": "text", "value": "It makes code run faster" },
+        { "type": "text", "value": "It's required by Java" },
+        { "type": "text", "value": "It reduces memory usage" }
+      ],
+      "answer": 0,
+      "explanation": "Using curly braces, even for single statements, prevents confusion about which statements are conditional and avoids errors from misleading indentation."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What is wrong with this code?\n\nint score = 90;\nif (score > 90) {\n    System.out.println(\"A\");\n}",
+      "options": [
+        { "type": "text", "value": "Nothing is wrong" },
+        { "type": "text", "value": "It excludes a score of exactly 90" },
+        { "type": "text", "value": "It should use >=" },
+        { "type": "text", "value": "Syntax error" }
+      ],
+      "answer": 1,
+      "explanation": "Using > instead of >= means a score of exactly 90 won't be recognized as an A grade. This is a boundary condition error."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What is a redundant condition in an else if?",
+      "options": [
+        { "type": "text", "value": "A condition that's too long" },
+        { "type": "text", "value": "A condition that uses multiple operators" },
+        { "type": "text", "value": "Checking the opposite of the previous if condition" },
+        { "type": "text", "value": "Using the same variable twice" }
+      ],
+      "answer": 2,
+      "explanation": "After an if block, the else automatically handles all remaining cases, so checking the opposite condition in else if is redundant and wasteful."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "When checking grade ranges, what should you ensure?\n\nif (score >= 90) { ... }\nelse if (score >= 80) { ... }",
+      "options": [
+        { "type": "text", "value": "Use only >" },
+        { "type": "text", "value": "Use only <" },
+        { "type": "text", "value": "Each value falls into exactly one category with no gaps" },
+        { "type": "text", "value": "Allow overlapping ranges" }
+      ],
+      "answer": 2,
+      "explanation": "When checking ranges, ensure each value falls into exactly one category with no gaps or overlaps between the ranges."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What should you use to clarify operator precedence in complex boolean expressions?",
+      "options": [
+        { "type": "text", "value": "Comments" },
+        { "type": "text", "value": "More variables" },
+        { "type": "text", "value": "Shorter expressions" },
+        { "type": "text", "value": "Parentheses" }
+      ],
+      "answer": 3,
+      "explanation": "Using parentheses removes ambiguity and makes the intended order of operations explicit in complex boolean expressions."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What is wrong with this range check?\n\nif (score > 90) { ... }\nelse if (score > 80) { ... }\nelse if (score >= 70) { ... }",
+      "options": [
+        { "type": "text", "value": "A score of exactly 90 isn't handled and operators are inconsistent" },
+        { "type": "text", "value": "Nothing is wrong" },
+        { "type": "text", "value": "Too many conditions" },
+        { "type": "text", "value": "Should use ==" }
+      ],
+      "answer": 0,
+      "explanation": "The code excludes a score of exactly 90 from any category and has inconsistent use of > versus >=, creating gaps and confusion."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "According to De Morgan's Laws, what is the negation of (A || B)?",
+      "options": [
+        { "type": "text", "value": "(!A || !B)" },
+        { "type": "text", "value": "(A && B)" },
+        { "type": "text", "value": "(!A && !B)" },
+        { "type": "text", "value": "!(A || B)" }
+      ],
+      "answer": 2,
+      "explanation": "By De Morgan's Laws, the negation of (A || B) is (!A && !B). The OR changes to AND and each condition is negated."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "After this if statement, what does the else automatically handle?\n\nif (grade >= 90) {\n    System.out.println(\"A\");\n} else { ... }",
+      "options": [
+        { "type": "text", "value": "Only grade == 89" },
+        { "type": "text", "value": "Nothing" },
+        { "type": "text", "value": "Only negative grades" },
+        { "type": "text", "value": "All cases where grade < 90" }
+      ],
+      "answer": 3,
+      "explanation": "The else block automatically handles all remaining cases where the if condition is false, meaning all values where grade < 90."
+    }
+  ]
+}

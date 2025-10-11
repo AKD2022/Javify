@@ -37,6 +37,18 @@ import lesson36 from "../../assets/Lessons/lesson36.json";
 import lesson37 from "../../assets/Lessons/lesson37.json";
 import lesson38 from "../../assets/Lessons/lesson38.json";
 import lesson39 from "../../assets/Lessons/lesson39.json";
+import lesson40 from "../../assets/Lessons/lesson40.json";
+import lesson41 from "../../assets/Lessons/lesson41.json";
+import lesson42 from "../../assets/Lessons/lesson42.json";
+import lesson43 from "../../assets/Lessons/lesson43.json";
+import lesson44 from "../../assets/Lessons/lesson44.json";
+import lesson45 from "../../assets/Lessons/lesson45.json";
+import lesson46 from "../../assets/Lessons/lesson46.json";
+import lesson47 from "../../assets/Lessons/lesson47.json";
+import lesson48 from "../../assets/Lessons/lesson48.json";
+import lesson49 from "../../assets/Lessons/lesson49.json";
+import lesson50 from "../../assets/Lessons/lesson50.json";
+import lesson51 from "../../assets/Lessons/lesson51.json";
 
 export const lesson = {
     lesson1, 
@@ -78,4 +90,17 @@ export const lesson = {
     lesson37,
     lesson38,
     lesson39,
+    lesson40,
+    lesson41,
+    lesson42,
+    lesson43,
+    lesson44,
+    lesson45,
+    lesson46,
+    lesson47,
+    lesson48,
+    lesson49,
+    lesson50,
+    lesson51,
+
 }

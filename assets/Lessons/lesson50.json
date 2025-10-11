@@ -1,0 +1,466 @@
+{
+  "lessonId": 50,
+  "title": "Recap and Mini Quiz on Unit 3 Concepts",
+  "content": [
+    {
+      "type": "text",
+      "value": "You've completed Unit 3 on Control Structures! This unit covered fundamental concepts that allow your programs to make decisions and execute different code paths based on conditions. Let's review the key topics you've mastered before testing your knowledge."
+    },
+    {
+      "type": "text",
+      "value": "Boolean expressions form the foundation of all conditional logic. These expressions evaluate to either "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", controlling which code blocks execute. You learned that the "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " data type stores these binary values directly."
+    },
+    {
+      "type": "code",
+      "value": "boolean isAdult = age >= 18;\nboolean hasDiscount = isStudent || isSenior;"
+    },
+    {
+      "type": "text",
+      "value": "Relational operators allow you to compare values and create boolean expressions. The six relational operators are "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " (equal to), "
+    },
+    {
+      "type": "code",
+      "value": "!="
+    },
+    {
+      "type": "text",
+      "value": " (not equal to), "
+    },
+    {
+      "type": "code",
+      "value": ">"
+    },
+    {
+      "type": "text",
+      "value": " (greater than), "
+    },
+    {
+      "type": "code",
+      "value": "<"
+    },
+    {
+      "type": "text",
+      "value": " (less than), "
+    },
+    {
+      "type": "code",
+      "value": ">="
+    },
+    {
+      "type": "text",
+      "value": " (greater than or equal to), and "
+    },
+    {
+      "type": "code",
+      "value": "<="
+    },
+    {
+      "type": "text",
+      "value": " (less than or equal to). Each produces a boolean result based on the comparison."
+    },
+    {
+      "type": "code",
+      "value": "if (score >= 90) {\n    System.out.println(\"A grade\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Logical operators combine multiple boolean expressions into more complex conditions. The AND operator ("
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": ") requires all conditions to be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". The OR operator ("
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": ") requires at least one condition to be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". The NOT operator ("
+    },
+    {
+      "type": "code",
+      "value": "!"
+    },
+    {
+      "type": "text",
+      "value": ") inverts a boolean value."
+    },
+    {
+      "type": "code",
+      "value": "if (age >= 18 && hasLicense) {\n    System.out.println(\"Can drive\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statement executes a block of code only when its condition evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". This is the most basic form of conditional execution, allowing programs to make simple decisions."
+    },
+    {
+      "type": "code",
+      "value": "if (temperature > 90) {\n    System.out.println(\"It's hot outside!\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statement provides two paths: one for when the condition is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " and another for when it's "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". The "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " block executes automatically when the "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " condition fails, without requiring a redundant opposite condition."
+    },
+    {
+      "type": "code",
+      "value": "if (score >= 60) {\n    System.out.println(\"Pass\");\n} else {\n    System.out.println(\"Fail\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladder allows checking multiple conditions in sequence. Java evaluates conditions from top to bottom, executing the first block whose condition is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " and skipping all remaining conditions."
+    },
+    {
+      "type": "code",
+      "value": "if (score >= 90) {\n    System.out.println(\"A\");\n} else if (score >= 80) {\n    System.out.println(\"B\");\n} else if (score >= 70) {\n    System.out.println(\"C\");\n} else {\n    System.out.println(\"F\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Nested "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements place one conditional inside another, creating more sophisticated decision trees. Each level adds another layer of conditional logic, though excessive nesting can reduce code readability."
+    },
+    {
+      "type": "code",
+      "value": "if (hasTicket) {\n    if (age >= 18) {\n        System.out.println(\"Adult entry\");\n    } else {\n        System.out.println(\"Child entry\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statement provides an alternative to multiple "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " conditions when comparing a single variable against multiple constant values. It works with "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " types, among others."
+    },
+    {
+      "type": "code",
+      "value": "switch (dayOfWeek) {\n    case 1:\n        System.out.println(\"Monday\");\n        break;\n    case 2:\n        System.out.println(\"Tuesday\");\n        break;\n    default:\n        System.out.println(\"Other day\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " keyword exits a "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statement immediately after executing a case. Without "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": ", fall-through occurs where execution continues into subsequent cases. The "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " case handles values that don't match any explicit case, acting like a final "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Short-circuit evaluation is Java's optimization where "
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": " operators stop evaluating once the result is determined. For "
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": ", if the first condition is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", the second is skipped. For "
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": ", if the first condition is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", the second is skipped. This behavior prevents errors and improves efficiency."
+    },
+    {
+      "type": "code",
+      "value": "if (divisor != 0 && numerator / divisor > 2) {\n    System.out.println(\"Result is large\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Common logic errors include using "
+    },
+    {
+      "type": "code",
+      "value": "="
+    },
+    {
+      "type": "text",
+      "value": " instead of "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": ", forgetting curly braces causing only one statement to be conditional, boundary errors with "
+    },
+    {
+      "type": "code",
+      "value": ">"
+    },
+    {
+      "type": "text",
+      "value": " versus "
+    },
+    {
+      "type": "code",
+      "value": ">="
+    },
+    {
+      "type": "text",
+      "value": ", and incorrect negation of compound conditions. De Morgan's Laws help transform negated expressions correctly."
+    },
+    {
+      "type": "text",
+      "value": "Debugging conditional statements involves adding print statements to track execution flow, testing boundary values systematically, breaking complex expressions into named variables, and using IDE debuggers to step through code. These techniques help identify where logic differs from expectations."
+    },
+    {
+      "type": "text",
+      "value": "Complex boolean expressions combine multiple conditions using logical operators and parentheses. Operator precedence matters: "
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": " evaluates before "
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": ". Using parentheses explicitly clarifies evaluation order. Breaking very complex expressions into intermediate boolean variables improves readability and maintainability."
+    },
+    {
+      "type": "code",
+      "value": "boolean goodTemp = temp >= 70 && temp <= 85;\nboolean goodWeather = goodTemp && !isRaining;\n\nif (goodWeather) {\n    System.out.println(\"Great day!\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "You've learned to write clean, efficient conditional logic that makes your programs intelligent and responsive. These control structures are essential for virtually every program you'll write. The upcoming unit will introduce loops, which repeat code blocks based on conditions, building on the foundation you've established here. Great work completing Unit 3!"
+    }
+  ]
+}
