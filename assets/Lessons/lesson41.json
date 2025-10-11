@@ -1,0 +1,398 @@
+{
+  "lessonId": 41,
+  "title": "if-else Statement",
+  "content": [
+    {
+      "type": "text",
+      "value": "While "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements allow you to execute code when a condition is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", the "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statement lets you specify alternative code to execute when the condition is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". This creates a complete two-way decision structure where exactly one of the two code blocks will always execute."
+    },
+    {
+      "type": "text",
+      "value": "An "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statement tests a boolean expression. If the condition is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", the first code block executes. If the condition is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", the "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " code block executes. One of the two blocks always runs."
+    },
+    {
+      "type": "code",
+      "value": "int age = 15;\n\nif (age >= 18) {\n    System.out.println(\"You are an adult\");\n} else {\n    System.out.println(\"You are a minor\");\n}\n// Output: You are a minor"
+    },
+    {
+      "type": "text",
+      "value": "The syntax of an "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statement consists of the "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " keyword with a condition, a code block, the "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " keyword, and another code block. The "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " block executes only when the condition is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "// if-else structure\nif (condition) {\n    // Code to execute if condition is true\n} else {\n    // Code to execute if condition is false\n}\n\n// Example\nint temperature = 65;\n\nif (temperature > 75) {\n    System.out.println(\"Wear shorts\");\n} else {\n    System.out.println(\"Wear pants\");\n}\n// Output: Wear pants"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statement guarantees that exactly one branch will execute. This is different from two separate "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements, where neither or both might execute."
+    },
+    {
+      "type": "code",
+      "value": "int score = 85;\n\n// With if-else: exactly one branch executes\nif (score >= 90) {\n    System.out.println(\"Grade: A\");\n} else {\n    System.out.println(\"Grade: Not an A\");\n}\n// Output: Grade: Not an A\n\n// With two separate ifs: both could execute\nif (score >= 60) {\n    System.out.println(\"Passing\");\n}\nif (score < 90) {\n    System.out.println(\"Not perfect\");\n}\n// Output:\n// Passing\n// Not perfect"
+    },
+    {
+      "type": "text",
+      "value": "You can include multiple statements in both the "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " block and the "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " block. All statements in the executed branch will run."
+    },
+    {
+      "type": "code",
+      "value": "int balance = 50;\nint withdrawAmount = 75;\n\nif (balance >= withdrawAmount) {\n    System.out.println(\"Withdrawal approved\");\n    balance = balance - withdrawAmount;\n    System.out.println(\"New balance: $\" + balance);\n} else {\n    System.out.println(\"Insufficient funds\");\n    System.out.println(\"Current balance: $\" + balance);\n}\n// Output:\n// Insufficient funds\n// Current balance: $50"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statement is perfect for binary decisions - situations where you need to choose between two mutually exclusive options."
+    },
+    {
+      "type": "code",
+      "value": "boolean isRaining = true;\n\nif (isRaining) {\n    System.out.println(\"Take an umbrella\");\n} else {\n    System.out.println(\"Enjoy the sunshine\");\n}\n// Output: Take an umbrella\n\nint number = 7;\n\nif (number % 2 == 0) {\n    System.out.println(number + \" is even\");\n} else {\n    System.out.println(number + \" is odd\");\n}\n// Output: 7 is odd"
+    },
+    {
+      "type": "text",
+      "value": "You can use complex boolean expressions in "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statements by combining multiple conditions with logical operators."
+    },
+    {
+      "type": "code",
+      "value": "int age = 22;\nboolean hasTicket = true;\n\nif ((age >= 18) && hasTicket) {\n    System.out.println(\"Welcome to the concert!\");\n} else {\n    System.out.println(\"Sorry, you cannot enter\");\n}\n// Output: Welcome to the concert!\n\nint temperature = 85;\nboolean isSunny = false;\n\nif ((temperature > 80) && isSunny) {\n    System.out.println(\"Perfect beach day\");\n} else {\n    System.out.println(\"Maybe stay inside\");\n}\n// Output: Maybe stay inside"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statement is commonly used for validation, where you check if input meets requirements and provide feedback for both valid and invalid cases."
+    },
+    {
+      "type": "code",
+      "value": "String password = \"short\";\nint minLength = 8;\n\nif (password.length() >= minLength) {\n    System.out.println(\"Password accepted\");\n} else {\n    System.out.println(\"Password must be at least \" + minLength + \" characters\");\n}\n// Output: Password must be at least 8 characters\n\nint age = 25;\n\nif (age >= 0 && age <= 120) {\n    System.out.println(\"Valid age: \" + age);\n} else {\n    System.out.println(\"Invalid age\");\n}\n// Output: Valid age: 25"
+    },
+    {
+      "type": "text",
+      "value": "You can nest "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statements inside other "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statements to create more complex decision trees."
+    },
+    {
+      "type": "code",
+      "value": "int age = 20;\nboolean hasLicense = true;\n\nif (age >= 18) {\n    if (hasLicense) {\n        System.out.println(\"You can drive\");\n    } else {\n        System.out.println(\"You need a license first\");\n    }\n} else {\n    System.out.println(\"You are too young to drive\");\n}\n// Output: You can drive"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statement is useful for toggling between states or selecting between two courses of action based on a condition."
+    },
+    {
+      "type": "code",
+      "value": "boolean lightsOn = false;\n\nif (lightsOn) {\n    System.out.println(\"Turning lights off\");\n    lightsOn = false;\n} else {\n    System.out.println(\"Turning lights on\");\n    lightsOn = true;\n}\n// Output: Turning lights on\n\nint score = 85;\nint passingScore = 60;\n\nif (score >= passingScore) {\n    System.out.println(\"Congratulations! You passed.\");\n} else {\n    System.out.println(\"Sorry, you need to retake the test.\");\n}\n// Output: Congratulations! You passed."
+    },
+    {
+      "type": "text",
+      "value": "When using "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " with method return values, you can make decisions based on what methods return."
+    },
+    {
+      "type": "code",
+      "value": "public static boolean isPassing(int score) {\n    return score >= 60;\n}\n\npublic static void main(String[] args) {\n    int studentScore = 75;\n    \n    if (isPassing(studentScore)) {\n        System.out.println(\"Student passed\");\n    } else {\n        System.out.println(\"Student failed\");\n    }\n    // Output: Student passed\n}"
+    },
+    {
+      "type": "text",
+      "value": "You can use "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " to assign different values to a variable based on a condition. This is a common pattern for conditional initialization."
+    },
+    {
+      "type": "code",
+      "value": "int age = 20;\nString category;\n\nif (age >= 18) {\n    category = \"Adult\";\n} else {\n    category = \"Minor\";\n}\n\nSystem.out.println(\"Category: \" + category);\n// Output: Category: Adult\n\nint score = 85;\nString result;\n\nif (score >= 60) {\n    result = \"Pass\";\n} else {\n    result = \"Fail\";\n}\n\nSystem.out.println(\"Result: \" + result);\n// Output: Result: Pass"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statement is essential for error handling and providing appropriate responses for both success and failure scenarios."
+    },
+    {
+      "type": "code",
+      "value": "int divisor = 0;\nint dividend = 10;\n\nif (divisor != 0) {\n    int result = dividend / divisor;\n    System.out.println(\"Result: \" + result);\n} else {\n    System.out.println(\"Error: Cannot divide by zero\");\n}\n// Output: Error: Cannot divide by zero\n\nString username = \"alice123\";\nint usernameLength = username.length();\n\nif (usernameLength >= 5 && usernameLength <= 20) {\n    System.out.println(\"Username is valid\");\n} else {\n    System.out.println(\"Username must be 5-20 characters\");\n}\n// Output: Username is valid"
+    },
+    {
+      "type": "text",
+      "value": "When comparing "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " to multiple "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements, remember that "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " is more efficient when you know exactly one branch should execute. With "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": ", once the first condition is evaluated, Java knows which branch to take without checking additional conditions."
+    },
+    {
+      "type": "code",
+      "value": "int number = 5;\n\n// Less efficient: checks both conditions\nif (number % 2 == 0) {\n    System.out.println(\"Even\");\n}\nif (number % 2 != 0) {\n    System.out.println(\"Odd\");\n}\n\n// More efficient: checks once, exactly one branch executes\nif (number % 2 == 0) {\n    System.out.println(\"Even\");\n} else {\n    System.out.println(\"Odd\");\n}\n// Output: Odd"
+    },
+    {
+      "type": "text",
+      "value": "Common mistakes with "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statements include forgetting curly braces for multi-line blocks, placing a semicolon after the "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " keyword, and creating unnecessarily complex nested structures."
+    },
+    {
+      "type": "code",
+      "value": "int x = 10;\n\n// WRONG - missing braces for multi-line else\n// if (x > 5)\n//     System.out.println(\"Greater\");\n// else\n//     System.out.println(\"Less or equal\");\n//     System.out.println(\"Done\");  // This always runs!\n\n// CORRECT - braces included\nif (x > 5) {\n    System.out.println(\"Greater\");\n} else {\n    System.out.println(\"Less or equal\");\n    System.out.println(\"Done\");\n}\n// Output: Greater"
+    },
+    {
+      "type": "text",
+      "value": "Understanding "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statements is crucial for creating programs that respond appropriately to different conditions. In the next lesson, you'll learn about "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladders, which allow you to check multiple conditions in sequence and handle more than two possible outcomes."
+    }
+  ]
+}

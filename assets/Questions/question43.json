@@ -1,0 +1,214 @@
+{
+  "lessonId": 43,
+  "title": "switch Statement Basics",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What does a switch statement provide?",
+      "options": [
+        { "type": "text", "value": "An alternative to else-if ladders for comparing one variable against multiple specific values" },
+        { "type": "text", "value": "A way to create loops" },
+        { "type": "text", "value": "A method for declaring variables" },
+        { "type": "text", "value": "A tool for importing packages" }
+      ],
+      "answer": 0,
+      "explanation": "The switch statement provides an alternative to else-if ladders when you need to compare a single variable against multiple specific values."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What does a switch statement do?",
+      "options": [
+        { "type": "text", "value": "Creates loops" },
+        { "type": "text", "value": "Evaluates an expression once and compares the result against multiple case values" },
+        { "type": "text", "value": "Declares multiple variables" },
+        { "type": "text", "value": "Defines methods" }
+      ],
+      "answer": 1,
+      "explanation": "A switch statement evaluates an expression once and then compares the result against multiple case values, executing the matching case."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What is the purpose of the break statement in a switch?",
+      "options": [
+        { "type": "text", "value": "To start the switch" },
+        { "type": "text", "value": "To declare variables" },
+        { "type": "text", "value": "To exit the switch block immediately after executing a case" },
+        { "type": "text", "value": "To repeat the case" }
+      ],
+      "answer": 2,
+      "explanation": "The break statement exits the switch block immediately after executing a case. Without break, execution continues into the next case (fall-through)."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What happens without break statements in a switch?",
+      "options": [
+        { "type": "text", "value": "Nothing" },
+        { "type": "text", "value": "An error occurs" },
+        { "type": "text", "value": "The switch stops immediately" },
+        { "type": "text", "value": "Execution continues into the next case (fall-through)" }
+      ],
+      "answer": 3,
+      "explanation": "Without break, execution continues into the next case, which is called fall-through. This is usually unintended behavior."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What is the default case in a switch statement?",
+      "options": [
+        { "type": "text", "value": "Executes when none of the other cases match" },
+        { "type": "text", "value": "Always executes first" },
+        { "type": "text", "value": "Required in all switches" },
+        { "type": "text", "value": "Creates a loop" }
+      ],
+      "answer": 0,
+      "explanation": "The default case is optional but recommended. It executes when none of the other cases match, similar to the final else in an else-if ladder."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "Which data types can be used in switch statements?",
+      "options": [
+        { "type": "text", "value": "Only int" },
+        { "type": "text", "value": "int, char, byte, short, String, and enumerated types" },
+        { "type": "text", "value": "All data types" },
+        { "type": "text", "value": "Only String" }
+      ],
+      "answer": 1,
+      "explanation": "Switch statements can work with int, char, byte, short, String (Java 7+), and enumerated types. They cannot work with boolean, double, float, or long."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "Can multiple cases share the same code block?",
+      "options": [
+        { "type": "text", "value": "No, never" },
+        { "type": "text", "value": "Only with strings" },
+        { "type": "text", "value": "Yes, by stacking case labels without break statements between them" },
+        { "type": "text", "value": "Only with integers" }
+      ],
+      "answer": 2,
+      "explanation": "Multiple cases can share the same code block by stacking case labels without break statements between them, useful when multiple values should trigger the same action."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What must case values be?",
+      "options": [
+        { "type": "text", "value": "Variables" },
+        { "type": "text", "value": "Expressions" },
+        { "type": "text", "value": "Method calls" },
+        { "type": "text", "value": "Constant expressions - literal values or final variables" }
+      ],
+      "answer": 3,
+      "explanation": "Each case value must be a constant expression - a literal value or a final variable that doesn't change. You cannot use variables or runtime expressions."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "When is switch more efficient than else-if?",
+      "options": [
+        { "type": "text", "value": "When checking a single variable against multiple discrete values" },
+        { "type": "text", "value": "When checking ranges" },
+        { "type": "text", "value": "When using complex boolean expressions" },
+        { "type": "text", "value": "Never" }
+      ],
+      "answer": 0,
+      "explanation": "Switch is more efficient and readable when checking a single variable against multiple discrete values, compared to a long chain of else-if statements."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "Do you need curly braces for multiple statements under a case?",
+      "options": [
+        { "type": "text", "value": "Yes, always" },
+        { "type": "text", "value": "No, all statements after a case label execute until break is encountered" },
+        { "type": "text", "value": "Only for more than two statements" },
+        { "type": "text", "value": "Only with strings" }
+      ],
+      "answer": 1,
+      "explanation": "You can include multiple statements under each case without needing curly braces. All statements execute until a break is encountered."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What is switch particularly useful for?",
+      "options": [
+        { "type": "text", "value": "Creating loops" },
+        { "type": "text", "value": "Declaring classes" },
+        { "type": "text", "value": "Menu-driven programs where users select from numbered or lettered options" },
+        { "type": "text", "value": "Importing packages" }
+      ],
+      "answer": 2,
+      "explanation": "The switch statement is particularly useful for menu-driven programs where users select from numbered or lettered options."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "Are String comparisons in switch statements case-sensitive?",
+      "options": [
+        { "type": "text", "value": "No, they ignore case" },
+        { "type": "text", "value": "Only for uppercase" },
+        { "type": "text", "value": "Only for lowercase" },
+        { "type": "text", "value": "Yes, the comparison is case-sensitive" }
+      ],
+      "answer": 3,
+      "explanation": "When using String values in switch statements, the comparison is case-sensitive. Different cases are treated as different values."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What is a common mistake with switch statements?",
+      "options": [
+        { "type": "text", "value": "Forgetting break statements causing unintended fall-through" },
+        { "type": "text", "value": "Using too many cases" },
+        { "type": "text", "value": "Including a default case" },
+        { "type": "text", "value": "Using constant values" }
+      ],
+      "answer": 0,
+      "explanation": "A common mistake is forgetting break statements, which causes unintended fall-through where multiple cases execute instead of just one."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "Can you use switch for range checks?",
+      "options": [
+        { "type": "text", "value": "Yes, easily" },
+        { "type": "text", "value": "No, use if-else for ranges and complex boolean expressions" },
+        { "type": "text", "value": "Only with integers" },
+        { "type": "text", "value": "Only with doubles" }
+      ],
+      "answer": 1,
+      "explanation": "Switch cannot handle range checks. Use if-else when you need range checks, complex boolean expressions, or comparisons with non-constant values."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "When should you use switch versus if-else?",
+      "options": [
+        { "type": "text", "value": "Always use switch" },
+        { "type": "text", "value": "Always use if-else" },
+        { "type": "text", "value": "They're the same" },
+        { "type": "text", "value": "Use switch for one variable against multiple specific constants, if-else for ranges and complex expressions" }
+      ],
+      "answer": 3,
+      "explanation": "Use switch when comparing one variable against multiple specific constant values. Use if-else when you need range checks, complex boolean expressions, or non-constant comparisons."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What does switch provide for handling multiple discrete cases?",
+      "options": [
+        { "type": "text", "value": "A clean, efficient way that's more maintainable than long equality chains" },
+        { "type": "text", "value": "A slower alternative" },
+        { "type": "text", "value": "A more complex solution" },
+        { "type": "text", "value": "A way to create loops" }
+      ],
+      "answer": 0,
+      "explanation": "The switch statement provides a clean, efficient way to handle multiple discrete cases, making code more maintainable and easier to understand than long chains of equality comparisons."
+    }
+  ]
+}

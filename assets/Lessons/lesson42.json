@@ -1,0 +1,414 @@
+{
+  "lessonId": 42,
+  "title": "else-if Ladder and Nested ifs",
+  "content": [
+    {
+      "type": "text",
+      "value": "While "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statements handle two possible outcomes, many real-world situations require choosing between three or more options. The "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladder allows you to test multiple conditions in sequence, executing the first matching block. Nested "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements provide another way to create complex decision structures by placing conditional statements inside other conditional blocks."
+    },
+    {
+      "type": "text",
+      "value": "An "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladder consists of an initial "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statement followed by one or more "
+    },
+    {
+      "type": "code",
+      "value": "else if"
+    },
+    {
+      "type": "text",
+      "value": " statements, and optionally ending with an "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " statement. The conditions are evaluated in order from top to bottom, and the first "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " condition executes its block, then the entire structure is exited."
+    },
+    {
+      "type": "code",
+      "value": "int score = 85;\n\nif (score >= 90) {\n    System.out.println(\"Grade: A\");\n} else if (score >= 80) {\n    System.out.println(\"Grade: B\");\n} else if (score >= 70) {\n    System.out.println(\"Grade: C\");\n} else if (score >= 60) {\n    System.out.println(\"Grade: D\");\n} else {\n    System.out.println(\"Grade: F\");\n}\n// Output: Grade: B"
+    },
+    {
+      "type": "text",
+      "value": "The key characteristic of an "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladder is that only one block executes. Once a condition is found to be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", its code runs and all remaining conditions are skipped."
+    },
+    {
+      "type": "code",
+      "value": "int temperature = 75;\n\nif (temperature >= 100) {\n    System.out.println(\"Extremely hot\");\n} else if (temperature >= 80) {\n    System.out.println(\"Hot\");\n} else if (temperature >= 60) {\n    System.out.println(\"Comfortable\");\n} else if (temperature >= 40) {\n    System.out.println(\"Cool\");\n} else {\n    System.out.println(\"Cold\");\n}\n// Output: Comfortable\n// (Even though temperature >= 40 is also true, it's not checked)"
+    },
+    {
+      "type": "text",
+      "value": "The order of conditions in an "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladder matters significantly. Conditions should be arranged from most specific to most general, or in a logical sequence that matches your requirements."
+    },
+    {
+      "type": "code",
+      "value": "int age = 25;\n\n// Correct order: most specific to least specific\nif (age < 13) {\n    System.out.println(\"Child\");\n} else if (age < 20) {\n    System.out.println(\"Teenager\");\n} else if (age < 65) {\n    System.out.println(\"Adult\");\n} else {\n    System.out.println(\"Senior\");\n}\n// Output: Adult"
+    },
+    {
+      "type": "text",
+      "value": "If conditions are ordered incorrectly, earlier broad conditions might prevent more specific conditions from ever being reached."
+    },
+    {
+      "type": "code",
+      "value": "int score = 95;\n\n// WRONG order: broad condition first\nif (score >= 60) {\n    System.out.println(\"Passing\");  // This executes first\n} else if (score >= 90) {\n    System.out.println(\"Excellent\");  // Never reached!\n}\n// Output: Passing (not what we want for a 95!)\n\n// CORRECT order: specific conditions first\nif (score >= 90) {\n    System.out.println(\"Excellent\");\n} else if (score >= 60) {\n    System.out.println(\"Passing\");\n}\n// Output: Excellent"
+    },
+    {
+      "type": "text",
+      "value": "The final "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " clause in an "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladder is optional but recommended. It acts as a catch-all for any case that doesn't match the previous conditions, providing a default action."
+    },
+    {
+      "type": "code",
+      "value": "char grade = 'B';\n\nif (grade == 'A') {\n    System.out.println(\"Excellent work!\");\n} else if (grade == 'B') {\n    System.out.println(\"Good job!\");\n} else if (grade == 'C') {\n    System.out.println(\"Satisfactory\");\n} else {\n    System.out.println(\"Needs improvement\");  // Catches D, F, and any other value\n}\n// Output: Good job!"
+    },
+    {
+      "type": "text",
+      "value": "An "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladder can have as many "
+    },
+    {
+      "type": "code",
+      "value": "else if"
+    },
+    {
+      "type": "text",
+      "value": " clauses as needed to handle all the different cases in your logic."
+    },
+    {
+      "type": "code",
+      "value": "int month = 7;\nString season;\n\nif (month == 12 || month == 1 || month == 2) {\n    season = \"Winter\";\n} else if (month == 3 || month == 4 || month == 5) {\n    season = \"Spring\";\n} else if (month == 6 || month == 7 || month == 8) {\n    season = \"Summer\";\n} else if (month == 9 || month == 10 || month == 11) {\n    season = \"Fall\";\n} else {\n    season = \"Invalid month\";\n}\n\nSystem.out.println(\"Season: \" + season);\n// Output: Season: Summer"
+    },
+    {
+      "type": "text",
+      "value": "Nested "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements involve placing one "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statement inside another. This creates a hierarchical decision structure where inner conditions are only evaluated if outer conditions are "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "int age = 20;\nboolean hasLicense = true;\n\nif (age >= 18) {\n    // Only check license if age requirement is met\n    if (hasLicense) {\n        System.out.println(\"You can drive\");\n    } else {\n        System.out.println(\"Get a license first\");\n    }\n} else {\n    System.out.println(\"Too young to drive\");\n}\n// Output: You can drive"
+    },
+    {
+      "type": "text",
+      "value": "Nested "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements are useful when you have dependent conditions - where checking the second condition only makes sense if the first condition is true."
+    },
+    {
+      "type": "code",
+      "value": "int balance = 100;\nint withdrawAmount = 50;\n\nif (balance > 0) {\n    // Only check withdrawal amount if there's money in account\n    if (withdrawAmount <= balance) {\n        System.out.println(\"Withdrawal approved\");\n        balance = balance - withdrawAmount;\n    } else {\n        System.out.println(\"Insufficient funds\");\n    }\n} else {\n    System.out.println(\"Account is empty\");\n}\n// Output: Withdrawal approved"
+    },
+    {
+      "type": "text",
+      "value": "You can nest multiple levels deep, but be careful not to create overly complex structures. Too many nested levels make code difficult to read and maintain."
+    },
+    {
+      "type": "code",
+      "value": "int age = 25;\nboolean isStudent = true;\nboolean hasID = true;\n\nif (age >= 18) {\n    if (isStudent) {\n        if (hasID) {\n            System.out.println(\"Student discount applied\");\n        } else {\n            System.out.println(\"Need student ID for discount\");\n        }\n    } else {\n        System.out.println(\"Regular pricing\");\n    }\n} else {\n    System.out.println(\"Youth pricing\");\n}\n// Output: Student discount applied"
+    },
+    {
+      "type": "text",
+      "value": "Understanding when to use "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladders versus nested "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements is important. Use "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " when checking mutually exclusive conditions in a single category. Use nested "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements when conditions are dependent or belong to different categories."
+    },
+    {
+      "type": "code",
+      "value": "// else-if: Mutually exclusive grade categories\nint score = 85;\nif (score >= 90) {\n    System.out.println(\"A\");\n} else if (score >= 80) {\n    System.out.println(\"B\");\n} else if (score >= 70) {\n    System.out.println(\"C\");\n}\n\n// Nested if: Dependent conditions\nint age = 22;\nboolean hasTicket = true;\n\nif (age >= 18) {\n    // Ticket check only matters if age is met\n    if (hasTicket) {\n        System.out.println(\"Enjoy the show\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Sometimes you can convert nested "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements to "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladders by combining conditions with logical operators, which can improve readability."
+    },
+    {
+      "type": "code",
+      "value": "int age = 20;\nboolean hasLicense = true;\n\n// Nested version\nif (age >= 18) {\n    if (hasLicense) {\n        System.out.println(\"Can drive\");\n    }\n}\n\n// Flattened version with combined condition\nif ((age >= 18) && hasLicense) {\n    System.out.println(\"Can drive\");\n}\n// Output: Can drive"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladder is commonly used for categorization - assigning items to different groups based on their properties."
+    },
+    {
+      "type": "code",
+      "value": "int bmi = 22;\nString category;\n\nif (bmi < 18.5) {\n    category = \"Underweight\";\n} else if (bmi < 25) {\n    category = \"Normal weight\";\n} else if (bmi < 30) {\n    category = \"Overweight\";\n} else {\n    category = \"Obese\";\n}\n\nSystem.out.println(\"BMI Category: \" + category);\n// Output: BMI Category: Normal weight"
+    },
+    {
+      "type": "text",
+      "value": "You can combine "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladders with nested "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements for more complex logic, but strive to keep the structure as simple as possible."
+    },
+    {
+      "type": "code",
+      "value": "int age = 16;\nboolean hasPermit = true;\nint experience = 1;  // years\n\nif (age >= 18) {\n    System.out.println(\"Full license eligible\");\n} else if (age >= 16) {\n    // Nested check for permit requirements\n    if (hasPermit) {\n        if (experience >= 1) {\n            System.out.println(\"Can drive with restrictions\");\n        } else {\n            System.out.println(\"Need more practice hours\");\n        }\n    } else {\n        System.out.println(\"Need to get a permit first\");\n    }\n} else {\n    System.out.println(\"Too young for permit\");\n}\n// Output: Can drive with restrictions"
+    },
+    {
+      "type": "text",
+      "value": "Common mistakes with "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladders include incorrect condition ordering, forgetting the final "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " clause when it's needed, and using separate "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements instead of "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " when only one condition should match."
+    },
+    {
+      "type": "code",
+      "value": "int score = 95;\n\n// WRONG: Separate ifs allow multiple matches\nif (score >= 90) {\n    System.out.println(\"A\");\n}\nif (score >= 80) {\n    System.out.println(\"B\");  // This also prints!\n}\n// Output:\n// A\n// B\n\n// CORRECT: else-if ensures only one match\nif (score >= 90) {\n    System.out.println(\"A\");\n} else if (score >= 80) {\n    System.out.println(\"B\");  // This is skipped\n}\n// Output: A"
+    },
+    {
+      "type": "text",
+      "value": "Common mistakes with nested "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements include creating unnecessarily deep nesting, improper indentation that makes code hard to read, and forgetting to handle all possible paths through the nested structure."
+    },
+    {
+      "type": "code",
+      "value": "// WRONG: Unclear which else matches which if\nint x = 5;\nif (x > 0)\nif (x > 10)\n    System.out.println(\"Big\");\nelse  // This else matches the inner if!\n    System.out.println(\"Small\");\n\n// CORRECT: Clear structure with braces\nif (x > 0) {\n    if (x > 10) {\n        System.out.println(\"Big\");\n    } else {\n        System.out.println(\"Small\");\n    }\n}\n// Output: Small"
+    },
+    {
+      "type": "text",
+      "value": "Mastering "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladders and nested "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements gives you powerful tools for creating complex decision-making logic in your programs. These structures form the foundation for handling real-world scenarios with multiple conditions and outcomes."
+    }
+  ]
+}

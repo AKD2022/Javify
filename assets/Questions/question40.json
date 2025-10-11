@@ -1,0 +1,214 @@
+{
+  "lessonId": 40,
+  "title": "if Statement Basics",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What does an if statement do?",
+      "options": [
+        { "type": "text", "value": "Executes code only when a condition is true" },
+        { "type": "text", "value": "Creates loops" },
+        { "type": "text", "value": "Declares variables" },
+        { "type": "text", "value": "Defines methods" }
+      ],
+      "answer": 0,
+      "explanation": "An if statement tests a boolean expression and executes code inside the if block only when the expression evaluates to true."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What happens if an if statement's condition is false?",
+      "options": [
+        { "type": "text", "value": "The program crashes" },
+        { "type": "text", "value": "The code inside the if block is skipped" },
+        { "type": "text", "value": "The code runs anyway" },
+        { "type": "text", "value": "An error occurs" }
+      ],
+      "answer": 1,
+      "explanation": "If the condition is false, all code inside the if block is skipped, and the program continues with the next statement after the if block."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What must the condition inside an if statement's parentheses be?",
+      "options": [
+        { "type": "text", "value": "An integer" },
+        { "type": "text", "value": "A string" },
+        { "type": "text", "value": "A boolean expression" },
+        { "type": "text", "value": "A method" }
+      ],
+      "answer": 2,
+      "explanation": "The condition inside the parentheses must be a boolean expression - something that evaluates to either true or false."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "Can you include multiple statements inside an if block?",
+      "options": [
+        { "type": "text", "value": "No, only one statement" },
+        { "type": "text", "value": "Only two statements" },
+        { "type": "text", "value": "Only print statements" },
+        { "type": "text", "value": "Yes, all statements within the curly braces will execute if true" }
+      ],
+      "answer": 3,
+      "explanation": "You can include multiple statements inside an if block. All statements within the curly braces will execute if the condition is true."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Can you use complex boolean expressions in if statements?",
+      "options": [
+        { "type": "text", "value": "Yes, by combining relational and logical operators" },
+        { "type": "text", "value": "No, only simple comparisons" },
+        { "type": "text", "value": "Only with integers" },
+        { "type": "text", "value": "Only with strings" }
+      ],
+      "answer": 0,
+      "explanation": "You can use complex boolean expressions in if statements by combining relational and logical operators to create sophisticated conditions."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "Are curly braces required for single-statement if blocks?",
+      "options": [
+        { "type": "text", "value": "Yes, always" },
+        { "type": "text", "value": "No, but strongly recommended to always use them" },
+        { "type": "text", "value": "Only for loops" },
+        { "type": "text", "value": "Never use them" }
+      ],
+      "answer": 1,
+      "explanation": "Curly braces are optional for single-statement if blocks, but it's strongly recommended to always use them to prevent errors and improve readability."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "Can you have multiple independent if statements in your code?",
+      "options": [
+        { "type": "text", "value": "No, only one per program" },
+        { "type": "text", "value": "No, only one per method" },
+        { "type": "text", "value": "Yes, each one is evaluated separately" },
+        { "type": "text", "value": "Only in loops" }
+      ],
+      "answer": 2,
+      "explanation": "You can have multiple independent if statements in your code, and each one is evaluated separately."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What are common use cases for if statements?",
+      "options": [
+        { "type": "text", "value": "Only for printing" },
+        { "type": "text", "value": "Only for arithmetic" },
+        { "type": "text", "value": "Only for loops" },
+        { "type": "text", "value": "Input validation, boundary checking, access control" }
+      ],
+      "answer": 3,
+      "explanation": "Common use cases for if statements include input validation, checking boundaries, controlling access, and responding to user actions."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What is the scope of variables declared inside an if block?",
+      "options": [
+        { "type": "text", "value": "Local to that block - cannot be accessed outside" },
+        { "type": "text", "value": "Global to the entire program" },
+        { "type": "text", "value": "Accessible in all methods" },
+        { "type": "text", "value": "Available to all classes" }
+      ],
+      "answer": 0,
+      "explanation": "Variables declared inside an if block have local scope - they only exist within that block and cannot be accessed outside of it."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "Can you nest if statements inside other if statements?",
+      "options": [
+        { "type": "text", "value": "No, never" },
+        { "type": "text", "value": "Yes, to check multiple levels of conditions" },
+        { "type": "text", "value": "Only one level deep" },
+        { "type": "text", "value": "Only in loops" }
+      ],
+      "answer": 1,
+      "explanation": "You can nest if statements inside other if statements to check multiple levels of conditions and create more complex logic."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Can method return values be used as if statement conditions?",
+      "options": [
+        { "type": "text", "value": "No, only variables" },
+        { "type": "text", "value": "No, only literals" },
+        { "type": "text", "value": "Yes, the method's return value is evaluated as the condition" },
+        { "type": "text", "value": "Only static methods" }
+      ],
+      "answer": 2,
+      "explanation": "When using if statements with method calls, the method's return value is evaluated as the condition, as long as it returns a boolean."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What is a common mistake with if statements?",
+      "options": [
+        { "type": "text", "value": "Using them too often" },
+        { "type": "text", "value": "Making them too short" },
+        { "type": "text", "value": "Testing too many conditions" },
+        { "type": "text", "value": "Using assignment = instead of comparison ==" }
+      ],
+      "answer": 3,
+      "explanation": "A common mistake is using assignment (=) instead of comparison (==) in the condition, which assigns a value instead of comparing it."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What happens if you put a semicolon after an if condition?",
+      "options": [
+        { "type": "text", "value": "The semicolon ends the if statement, causing incorrect behavior" },
+        { "type": "text", "value": "Nothing, it works fine" },
+        { "type": "text", "value": "It makes the code faster" },
+        { "type": "text", "value": "It's required syntax" }
+      ],
+      "answer": 0,
+      "explanation": "Putting a semicolon after an if condition ends the if statement immediately, causing the code block to always execute regardless of the condition."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "How can you check if a value is within a range using if statements?",
+      "options": [
+        { "type": "text", "value": "Use two separate if statements" },
+        { "type": "text", "value": "Combine multiple conditions with logical operators" },
+        { "type": "text", "value": "It's not possible" },
+        { "type": "text", "value": "Use arithmetic operators only" }
+      ],
+      "answer": 1,
+      "explanation": "You can check ranges by combining multiple conditions with logical operators, like (value >= min) && (value <= max)."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What is the basic syntax structure of an if statement?",
+      "options": [
+        { "type": "text", "value": "if condition { code }" },
+        { "type": "text", "value": "if { condition } code" },
+        { "type": "text", "value": "condition if { code }" },
+        { "type": "text", "value": "if (condition) { code }" }
+      ],
+      "answer": 3,
+      "explanation": "The basic syntax is: if (condition) { code }, with the keyword if, condition in parentheses, and code block in curly braces."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What will you learn in the next lesson after mastering if statements?",
+      "options": [
+        { "type": "text", "value": "if-else statements for specifying alternative code when condition is false" },
+        { "type": "text", "value": "Loops" },
+        { "type": "text", "value": "Arrays" },
+        { "type": "text", "value": "Classes" }
+      ],
+      "answer": 0,
+      "explanation": "The next lesson covers if-else statements, which allow you to specify alternative code to execute when the condition is false."
+    }
+  ]
+}

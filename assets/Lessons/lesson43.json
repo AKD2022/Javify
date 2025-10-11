@@ -1,0 +1,478 @@
+{
+  "lessonId": 43,
+  "title": "switch Statement Basics",
+  "content": [
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statement provides an alternative to "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladders when you need to compare a single variable against multiple specific values. It's particularly useful when you have many discrete cases to check, making your code cleaner and more readable than a long chain of "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " statements."
+    },
+    {
+      "type": "text",
+      "value": "A "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statement evaluates an expression once and then compares the result against multiple "
+    },
+    {
+      "type": "code",
+      "value": "case"
+    },
+    {
+      "type": "text",
+      "value": " values. When a matching case is found, the code associated with that case executes."
+    },
+    {
+      "type": "code",
+      "value": "int day = 3;\n\nswitch (day) {\n    case 1:\n        System.out.println(\"Monday\");\n        break;\n    case 2:\n        System.out.println(\"Tuesday\");\n        break;\n    case 3:\n        System.out.println(\"Wednesday\");\n        break;\n    case 4:\n        System.out.println(\"Thursday\");\n        break;\n    case 5:\n        System.out.println(\"Friday\");\n        break;\n    default:\n        System.out.println(\"Weekend\");\n        break;\n}\n// Output: Wednesday"
+    },
+    {
+      "type": "text",
+      "value": "The basic syntax of a "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statement includes the "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " keyword, the expression to evaluate in parentheses, multiple "
+    },
+    {
+      "type": "code",
+      "value": "case"
+    },
+    {
+      "type": "text",
+      "value": " labels with values, and optionally a "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " case."
+    },
+    {
+      "type": "code",
+      "value": "// switch structure\nswitch (expression) {\n    case value1:\n        // code to execute if expression equals value1\n        break;\n    case value2:\n        // code to execute if expression equals value2\n        break;\n    default:\n        // code to execute if no cases match\n        break;\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statement is crucial in "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statements. It exits the "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " block immediately after executing a case. Without "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": ", execution continues into the next case, which is called fall-through."
+    },
+    {
+      "type": "code",
+      "value": "char grade = 'B';\n\nswitch (grade) {\n    case 'A':\n        System.out.println(\"Excellent!\");\n        break;  // Exit switch after this case\n    case 'B':\n        System.out.println(\"Good job!\");\n        break;  // Exit switch after this case\n    case 'C':\n        System.out.println(\"Satisfactory\");\n        break;\n    case 'D':\n        System.out.println(\"Needs improvement\");\n        break;\n    case 'F':\n        System.out.println(\"Failed\");\n        break;\n}\n// Output: Good job!"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " case is optional but recommended. It executes when none of the other cases match, similar to the final "
+    },
+    {
+      "type": "code",
+      "value": "else"
+    },
+    {
+      "type": "text",
+      "value": " in an "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladder. The "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " case can be placed anywhere in the "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": ", but it's commonly placed at the end."
+    },
+    {
+      "type": "code",
+      "value": "int choice = 9;\n\nswitch (choice) {\n    case 1:\n        System.out.println(\"Option one\");\n        break;\n    case 2:\n        System.out.println(\"Option two\");\n        break;\n    case 3:\n        System.out.println(\"Option three\");\n        break;\n    default:\n        System.out.println(\"Invalid option\");\n        break;\n}\n// Output: Invalid option"
+    },
+    {
+      "type": "text",
+      "value": "In Java, "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statements can work with "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "byte"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "short"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " (Java 7+), and enumerated types. They cannot work with "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "float"
+    },
+    {
+      "type": "text",
+      "value": ", or "
+    },
+    {
+      "type": "code",
+      "value": "long"
+    },
+    {
+      "type": "text",
+      "value": " types."
+    },
+    {
+      "type": "code",
+      "value": "// Valid: switch with int\nint number = 2;\nswitch (number) {\n    case 1:\n        System.out.println(\"One\");\n        break;\n    case 2:\n        System.out.println(\"Two\");\n        break;\n}\n\n// Valid: switch with String\nString color = \"red\";\nswitch (color) {\n    case \"red\":\n        System.out.println(\"Stop\");\n        break;\n    case \"yellow\":\n        System.out.println(\"Caution\");\n        break;\n    case \"green\":\n        System.out.println(\"Go\");\n        break;\n}\n// Output: Stop"
+    },
+    {
+      "type": "text",
+      "value": "Multiple cases can share the same code block by stacking case labels without "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statements between them. This is useful when multiple values should trigger the same action."
+    },
+    {
+      "type": "code",
+      "value": "int month = 4;\n\nswitch (month) {\n    case 12:\n    case 1:\n    case 2:\n        System.out.println(\"Winter\");\n        break;\n    case 3:\n    case 4:\n    case 5:\n        System.out.println(\"Spring\");\n        break;\n    case 6:\n    case 7:\n    case 8:\n        System.out.println(\"Summer\");\n        break;\n    case 9:\n    case 10:\n    case 11:\n        System.out.println(\"Fall\");\n        break;\n    default:\n        System.out.println(\"Invalid month\");\n        break;\n}\n// Output: Spring"
+    },
+    {
+      "type": "text",
+      "value": "Each "
+    },
+    {
+      "type": "code",
+      "value": "case"
+    },
+    {
+      "type": "text",
+      "value": " value must be a constant expression - a literal value or a "
+    },
+    {
+      "type": "code",
+      "value": "final"
+    },
+    {
+      "type": "text",
+      "value": " variable that doesn't change. You cannot use variables or expressions that are calculated at runtime."
+    },
+    {
+      "type": "code",
+      "value": "final int OPTION_A = 1;\nfinal int OPTION_B = 2;\nint choice = 1;\n\nswitch (choice) {\n    case OPTION_A:  // Valid: final variable\n        System.out.println(\"Option A selected\");\n        break;\n    case OPTION_B:  // Valid: final variable\n        System.out.println(\"Option B selected\");\n        break;\n    // case choice + 1:  // INVALID: cannot use expressions\n}\n// Output: Option A selected"
+    },
+    {
+      "type": "text",
+      "value": "Comparing "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statements to "
+    },
+    {
+      "type": "code",
+      "value": "else-if"
+    },
+    {
+      "type": "text",
+      "value": " ladders shows that "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " is more efficient and readable when checking a single variable against multiple discrete values."
+    },
+    {
+      "type": "code",
+      "value": "int command = 2;\n\n// Using else-if ladder\nif (command == 1) {\n    System.out.println(\"Save\");\n} else if (command == 2) {\n    System.out.println(\"Load\");\n} else if (command == 3) {\n    System.out.println(\"Delete\");\n} else {\n    System.out.println(\"Unknown\");\n}\n\n// Using switch (cleaner)\nswitch (command) {\n    case 1:\n        System.out.println(\"Save\");\n        break;\n    case 2:\n        System.out.println(\"Load\");\n        break;\n    case 3:\n        System.out.println(\"Delete\");\n        break;\n    default:\n        System.out.println(\"Unknown\");\n        break;\n}\n// Output: Load"
+    },
+    {
+      "type": "text",
+      "value": "You can include multiple statements under each case without needing curly braces. All statements after a case label execute until a "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " is encountered."
+    },
+    {
+      "type": "code",
+      "value": "int operation = 1;\nint x = 10;\nint y = 5;\n\nswitch (operation) {\n    case 1:\n        int result = x + y;\n        System.out.println(\"Addition: \" + result);\n        System.out.println(\"Result: \" + result);\n        break;\n    case 2:\n        result = x - y;\n        System.out.println(\"Subtraction: \" + result);\n        break;\n    case 3:\n        result = x * y;\n        System.out.println(\"Multiplication: \" + result);\n        break;\n}\n// Output:\n// Addition: 15\n// Result: 15"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statement is particularly useful for menu-driven programs where users select from numbered or lettered options."
+    },
+    {
+      "type": "code",
+      "value": "char menuChoice = 'B';\n\nswitch (menuChoice) {\n    case 'A':\n    case 'a':\n        System.out.println(\"New File\");\n        break;\n    case 'B':\n    case 'b':\n        System.out.println(\"Open File\");\n        break;\n    case 'C':\n    case 'c':\n        System.out.println(\"Save File\");\n        break;\n    case 'X':\n    case 'x':\n        System.out.println(\"Exit\");\n        break;\n    default:\n        System.out.println(\"Invalid selection\");\n        break;\n}\n// Output: Open File"
+    },
+    {
+      "type": "text",
+      "value": "When using "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " values in "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statements, the comparison is case-sensitive. Different cases are treated as different values."
+    },
+    {
+      "type": "code",
+      "value": "String command = \"start\";\n\nswitch (command) {\n    case \"start\":\n        System.out.println(\"Starting application...\");\n        break;\n    case \"Stop\":  // Different from \"stop\"\n        System.out.println(\"Stopping application...\");\n        break;\n    case \"restart\":\n        System.out.println(\"Restarting application...\");\n        break;\n    default:\n        System.out.println(\"Unknown command\");\n        break;\n}\n// Output: Starting application..."
+    },
+    {
+      "type": "text",
+      "value": "Common mistakes with "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statements include forgetting "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statements (causing unintended fall-through), using non-constant expressions in case labels, and trying to use incompatible data types."
+    },
+    {
+      "type": "code",
+      "value": "int value = 2;\n\n// WRONG: Missing break statements\nswitch (value) {\n    case 1:\n        System.out.println(\"One\");\n        // Missing break - falls through!\n    case 2:\n        System.out.println(\"Two\");\n        // Missing break - falls through!\n    case 3:\n        System.out.println(\"Three\");\n        break;\n}\n// Output:\n// Two\n// Three\n\n// CORRECT: Include break statements\nswitch (value) {\n    case 1:\n        System.out.println(\"One\");\n        break;\n    case 2:\n        System.out.println(\"Two\");\n        break;\n    case 3:\n        System.out.println(\"Three\");\n        break;\n}\n// Output: Two"
+    },
+    {
+      "type": "text",
+      "value": "Understanding when to use "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " versus "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " is important. Use "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " when comparing one variable against multiple specific constant values. Use "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " when you need range checks, complex boolean expressions, or comparisons with non-constant values."
+    },
+    {
+      "type": "code",
+      "value": "int score = 85;\n\n// Can't use switch for ranges\n// switch (score) {  // Won't work!\n//     case >= 90:  // Invalid syntax\n\n// Use if-else for ranges\nif (score >= 90) {\n    System.out.println(\"A\");\n} else if (score >= 80) {\n    System.out.println(\"B\");\n} else if (score >= 70) {\n    System.out.println(\"C\");\n}\n// Output: B"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statement provides a clean, efficient way to handle multiple discrete cases. It's especially valuable in scenarios with many specific values to check, making your code more maintainable and easier to understand than long chains of equality comparisons."
+    }
+  ]
+}

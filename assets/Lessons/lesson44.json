@@ -1,0 +1,374 @@
+{
+  "lessonId": 44,
+  "title": "switch with int and char",
+  "content": [
+    {
+      "type": "text",
+      "value": "The two most commonly used data types in "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statements are "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": ". Integer values are perfect for numbered menus, codes, and status indicators, while character values work well for letter-based options, grades, and single-character commands. Understanding how to effectively use "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " with these types is essential for writing clean, efficient decision-making code."
+    },
+    {
+      "type": "text",
+      "value": "Using "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " with "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " values is straightforward. Each case label contains an integer literal, and the "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " compares the expression value against these integers."
+    },
+    {
+      "type": "code",
+      "value": "int menuOption = 2;\n\nswitch (menuOption) {\n    case 1:\n        System.out.println(\"View profile\");\n        break;\n    case 2:\n        System.out.println(\"Edit settings\");\n        break;\n    case 3:\n        System.out.println(\"Logout\");\n        break;\n    default:\n        System.out.println(\"Invalid option\");\n        break;\n}\n// Output: Edit settings"
+    },
+    {
+      "type": "text",
+      "value": "Integer-based "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statements are commonly used for menu systems where users select options by number. This creates clear, maintainable code for handling user choices."
+    },
+    {
+      "type": "code",
+      "value": "int userChoice = 3;\n\nSystem.out.println(\"Calculator Menu:\");\nSystem.out.println(\"1. Add\");\nSystem.out.println(\"2. Subtract\");\nSystem.out.println(\"3. Multiply\");\nSystem.out.println(\"4. Divide\");\n\nswitch (userChoice) {\n    case 1:\n        System.out.println(\"Performing addition\");\n        break;\n    case 2:\n        System.out.println(\"Performing subtraction\");\n        break;\n    case 3:\n        System.out.println(\"Performing multiplication\");\n        break;\n    case 4:\n        System.out.println(\"Performing division\");\n        break;\n    default:\n        System.out.println(\"Invalid choice\");\n        break;\n}\n// Output: Performing multiplication"
+    },
+    {
+      "type": "text",
+      "value": "You can use "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " switches with status codes or error codes where each number represents a specific state or condition."
+    },
+    {
+      "type": "code",
+      "value": "int errorCode = 404;\n\nswitch (errorCode) {\n    case 200:\n        System.out.println(\"Success: Request completed\");\n        break;\n    case 400:\n        System.out.println(\"Error: Bad request\");\n        break;\n    case 404:\n        System.out.println(\"Error: Not found\");\n        break;\n    case 500:\n        System.out.println(\"Error: Server error\");\n        break;\n    default:\n        System.out.println(\"Unknown status code\");\n        break;\n}\n// Output: Error: Not found"
+    },
+    {
+      "type": "text",
+      "value": "Integer switches work well for mapping numeric codes to actions or descriptions, such as days of the week, months, or other enumerated values."
+    },
+    {
+      "type": "code",
+      "value": "int dayNumber = 5;\nString dayName;\n\nswitch (dayNumber) {\n    case 1:\n        dayName = \"Monday\";\n        break;\n    case 2:\n        dayName = \"Tuesday\";\n        break;\n    case 3:\n        dayName = \"Wednesday\";\n        break;\n    case 4:\n        dayName = \"Thursday\";\n        break;\n    case 5:\n        dayName = \"Friday\";\n        break;\n    case 6:\n        dayName = \"Saturday\";\n        break;\n    case 7:\n        dayName = \"Sunday\";\n        break;\n    default:\n        dayName = \"Invalid day\";\n        break;\n}\n\nSystem.out.println(\"Day: \" + dayName);\n// Output: Day: Friday"
+    },
+    {
+      "type": "text",
+      "value": "Using "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " with "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " values allows you to handle single-character inputs efficiently. Character literals in case labels are enclosed in single quotes."
+    },
+    {
+      "type": "code",
+      "value": "char grade = 'B';\n\nswitch (grade) {\n    case 'A':\n        System.out.println(\"Excellent! Score: 90-100\");\n        break;\n    case 'B':\n        System.out.println(\"Good! Score: 80-89\");\n        break;\n    case 'C':\n        System.out.println(\"Satisfactory. Score: 70-79\");\n        break;\n    case 'D':\n        System.out.println(\"Needs improvement. Score: 60-69\");\n        break;\n    case 'F':\n        System.out.println(\"Failed. Score: Below 60\");\n        break;\n    default:\n        System.out.println(\"Invalid grade\");\n        break;\n}\n// Output: Good! Score: 80-89"
+    },
+    {
+      "type": "text",
+      "value": "Character-based switches are perfect for command systems where single letters represent different actions or operations."
+    },
+    {
+      "type": "code",
+      "value": "char command = 'S';\n\nswitch (command) {\n    case 'N':\n    case 'n':\n        System.out.println(\"Creating new file...\");\n        break;\n    case 'O':\n    case 'o':\n        System.out.println(\"Opening file...\");\n        break;\n    case 'S':\n    case 's':\n        System.out.println(\"Saving file...\");\n        break;\n    case 'Q':\n    case 'q':\n        System.out.println(\"Quitting program...\");\n        break;\n    default:\n        System.out.println(\"Unknown command\");\n        break;\n}\n// Output: Saving file..."
+    },
+    {
+      "type": "text",
+      "value": "A common pattern with "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " switches is handling both uppercase and lowercase versions of the same letter by stacking cases. This makes input handling more flexible and user-friendly."
+    },
+    {
+      "type": "code",
+      "value": "char answer = 'y';\n\nswitch (answer) {\n    case 'Y':\n    case 'y':\n        System.out.println(\"You selected Yes\");\n        break;\n    case 'N':\n    case 'n':\n        System.out.println(\"You selected No\");\n        break;\n    default:\n        System.out.println(\"Please enter Y or N\");\n        break;\n}\n// Output: You selected Yes"
+    },
+    {
+      "type": "text",
+      "value": "You can use "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " switches to process mathematical operators or symbols."
+    },
+    {
+      "type": "code",
+      "value": "char operator = '+';\nint num1 = 10;\nint num2 = 5;\nint result;\n\nswitch (operator) {\n    case '+':\n        result = num1 + num2;\n        System.out.println(\"Result: \" + result);\n        break;\n    case '-':\n        result = num1 - num2;\n        System.out.println(\"Result: \" + result);\n        break;\n    case '*':\n        result = num1 * num2;\n        System.out.println(\"Result: \" + result);\n        break;\n    case '/':\n        if (num2 != 0) {\n            result = num1 / num2;\n            System.out.println(\"Result: \" + result);\n        } else {\n            System.out.println(\"Error: Division by zero\");\n        }\n        break;\n    default:\n        System.out.println(\"Invalid operator\");\n        break;\n}\n// Output: Result: 15"
+    },
+    {
+      "type": "text",
+      "value": "Both "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " switches can include calculations and multiple statements within each case before the "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "int level = 2;\nint points = 0;\n\nswitch (level) {\n    case 1:\n        points = 100;\n        System.out.println(\"Level 1: Beginner\");\n        System.out.println(\"Points awarded: \" + points);\n        break;\n    case 2:\n        points = 250;\n        System.out.println(\"Level 2: Intermediate\");\n        System.out.println(\"Points awarded: \" + points);\n        break;\n    case 3:\n        points = 500;\n        System.out.println(\"Level 3: Advanced\");\n        System.out.println(\"Points awarded: \" + points);\n        break;\n    default:\n        System.out.println(\"Invalid level\");\n        break;\n}\n// Output:\n// Level 2: Intermediate\n// Points awarded: 250"
+    },
+    {
+      "type": "text",
+      "value": "You can combine "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " switches with additional logic inside each case to create more sophisticated behavior."
+    },
+    {
+      "type": "code",
+      "value": "int month = 2;\nint year = 2024;\nint daysInMonth;\n\nswitch (month) {\n    case 1:\n    case 3:\n    case 5:\n    case 7:\n    case 8:\n    case 10:\n    case 12:\n        daysInMonth = 31;\n        break;\n    case 4:\n    case 6:\n    case 9:\n    case 11:\n        daysInMonth = 30;\n        break;\n    case 2:\n        // Check for leap year\n        if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {\n            daysInMonth = 29;\n        } else {\n            daysInMonth = 28;\n        }\n        break;\n    default:\n        daysInMonth = 0;\n        System.out.println(\"Invalid month\");\n        break;\n}\n\nSystem.out.println(\"Days in month: \" + daysInMonth);\n// Output: Days in month: 29"
+    },
+    {
+      "type": "text",
+      "value": "Using constants with "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " switches improves code readability and maintainability. Define "
+    },
+    {
+      "type": "code",
+      "value": "final"
+    },
+    {
+      "type": "text",
+      "value": " variables for case values to give them meaningful names."
+    },
+    {
+      "type": "code",
+      "value": "final int STATUS_PENDING = 1;\nfinal int STATUS_APPROVED = 2;\nfinal int STATUS_REJECTED = 3;\n\nint orderStatus = STATUS_APPROVED;\n\nswitch (orderStatus) {\n    case STATUS_PENDING:\n        System.out.println(\"Order is pending review\");\n        break;\n    case STATUS_APPROVED:\n        System.out.println(\"Order has been approved\");\n        break;\n    case STATUS_REJECTED:\n        System.out.println(\"Order has been rejected\");\n        break;\n    default:\n        System.out.println(\"Unknown status\");\n        break;\n}\n// Output: Order has been approved"
+    },
+    {
+      "type": "text",
+      "value": "Character switches are useful for parsing and validating single-character input, such as checking if a character is a vowel or consonant."
+    },
+    {
+      "type": "code",
+      "value": "char letter = 'e';\nboolean isVowel;\n\nswitch (letter) {\n    case 'a':\n    case 'e':\n    case 'i':\n    case 'o':\n    case 'u':\n    case 'A':\n    case 'E':\n    case 'I':\n    case 'O':\n    case 'U':\n        isVowel = true;\n        System.out.println(letter + \" is a vowel\");\n        break;\n    default:\n        isVowel = false;\n        System.out.println(letter + \" is a consonant\");\n        break;\n}\n// Output: e is a vowel"
+    },
+    {
+      "type": "text",
+      "value": "Both "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " switches can be nested inside other control structures, including other "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statements, though this should be used sparingly to maintain readability."
+    },
+    {
+      "type": "code",
+      "value": "int category = 1;\nchar subcategory = 'B';\n\nswitch (category) {\n    case 1:\n        System.out.println(\"Category: Electronics\");\n        switch (subcategory) {\n            case 'A':\n                System.out.println(\"Subcategory: Computers\");\n                break;\n            case 'B':\n                System.out.println(\"Subcategory: Phones\");\n                break;\n            default:\n                System.out.println(\"Unknown subcategory\");\n                break;\n        }\n        break;\n    case 2:\n        System.out.println(\"Category: Clothing\");\n        break;\n    default:\n        System.out.println(\"Unknown category\");\n        break;\n}\n// Output:\n// Category: Electronics\n// Subcategory: Phones"
+    },
+    {
+      "type": "text",
+      "value": "Common patterns include using "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " switches for state machines where each integer represents a different state of a system."
+    },
+    {
+      "type": "code",
+      "value": "int gameState = 2;\n\nswitch (gameState) {\n    case 0:\n        System.out.println(\"Game: Main Menu\");\n        break;\n    case 1:\n        System.out.println(\"Game: Playing\");\n        break;\n    case 2:\n        System.out.println(\"Game: Paused\");\n        break;\n    case 3:\n        System.out.println(\"Game: Game Over\");\n        break;\n    default:\n        System.out.println(\"Invalid game state\");\n        break;\n}\n// Output: Game: Paused"
+    },
+    {
+      "type": "text",
+      "value": "Best practices for "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " switches include always including a "
+    },
+    {
+      "type": "code",
+      "value": "default"
+    },
+    {
+      "type": "text",
+      "value": " case to handle unexpected values, using "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statements consistently, and keeping cases simple and readable."
+    },
+    {
+      "type": "code",
+      "value": "int priority = 1;\n\n// Good practice: includes default, has break statements, clear cases\nswitch (priority) {\n    case 1:\n        System.out.println(\"High priority - handle immediately\");\n        break;\n    case 2:\n        System.out.println(\"Medium priority - handle today\");\n        break;\n    case 3:\n        System.out.println(\"Low priority - handle this week\");\n        break;\n    default:\n        System.out.println(\"Invalid priority level\");\n        break;\n}\n// Output: High priority - handle immediately"
+    },
+    {
+      "type": "text",
+      "value": "Mastering "
+    },
+    {
+      "type": "code",
+      "value": "switch"
+    },
+    {
+      "type": "text",
+      "value": " statements with "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": " types gives you powerful tools for handling discrete choices in your programs. These patterns appear frequently in real-world applications and form the foundation for clean, maintainable decision-making code."
+    }
+  ]
+}

@@ -237,6 +237,31 @@ export const units = [
         title: "Lesson 39: Combining Boolean Expressions",
         description: "Master the art of combining relational and logical operators to create sophisticated conditional logic for complex decision-making."
       },
+      {
+        id: "lesson40",
+        title: "Lesson 40: if Statement Basics",
+        description: "Learn how to use if statements to make decisions in your programs and execute code conditionally based on boolean expressions."
+      },
+      {
+        id: "lesson41",
+        title: "Lesson 41: if-else Statement",
+        description: "Learn how to use if-else statements to execute alternative code when conditions are false, creating complete decision structures."
+      },
+      {
+        id: "lesson42",
+        title: "Lesson 42: else-if Ladder and Nested ifs",
+        description: "Learn how to handle multiple conditions with else-if ladders and create complex decision structures with nested if statements."
+      },
+      {
+        id: "lesson43",
+        title: "Lesson 43: switch Statement Basics",
+        description: "Learn how to use switch statements to efficiently handle multiple discrete values and simplify complex multi-way decisions."
+      },
+      {
+        id: "lesson44",
+        title: "Lesson 44: switch with int and char",
+        description: "Master the most common uses of switch statements with integer and character values through practical examples and patterns."
+      },
     ]
   }
 ];

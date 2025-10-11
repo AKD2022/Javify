@@ -1,0 +1,214 @@
+{
+  "lessonId": 41,
+  "title": "if-else Statement",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What does an if-else statement allow you to do?",
+      "options": [
+        { "type": "text", "value": "Specify alternative code to execute when the condition is false" },
+        { "type": "text", "value": "Create loops" },
+        { "type": "text", "value": "Declare variables" },
+        { "type": "text", "value": "Define methods" }
+      ],
+      "answer": 0,
+      "explanation": "The if-else statement lets you specify alternative code to execute when the condition is false, creating a complete two-way decision structure."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "In an if-else statement, how many branches will execute?",
+      "options": [
+        { "type": "text", "value": "None" },
+        { "type": "text", "value": "Exactly one branch always executes" },
+        { "type": "text", "value": "Both branches" },
+        { "type": "text", "value": "It depends on the condition" }
+      ],
+      "answer": 1,
+      "explanation": "In an if-else statement, exactly one of the two code blocks will always execute - either the if block or the else block."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "When does the else block execute?",
+      "options": [
+        { "type": "text", "value": "Always" },
+        { "type": "text", "value": "Never" },
+        { "type": "text", "value": "Only when the condition is false" },
+        { "type": "text", "value": "Only when the condition is true" }
+      ],
+      "answer": 2,
+      "explanation": "The else block executes only when the if condition is false, providing an alternative path of execution."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What is the difference between if-else and two separate if statements?",
+      "options": [
+        { "type": "text", "value": "There is no difference" },
+        { "type": "text", "value": "if-else is faster" },
+        { "type": "text", "value": "if-else uses less memory" },
+        { "type": "text", "value": "if-else guarantees exactly one branch executes, two ifs might execute neither or both" }
+      ],
+      "answer": 3,
+      "explanation": "if-else guarantees exactly one branch executes, while two separate if statements could result in neither or both executing depending on the conditions."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Can you include multiple statements in both the if and else blocks?",
+      "options": [
+        { "type": "text", "value": "Yes, all statements in the executed branch will run" },
+        { "type": "text", "value": "No, only one statement per block" },
+        { "type": "text", "value": "Only in the if block" },
+        { "type": "text", "value": "Only in the else block" }
+      ],
+      "answer": 0,
+      "explanation": "You can include multiple statements in both the if block and the else block, and all statements in the executed branch will run."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What type of decisions are if-else statements perfect for?",
+      "options": [
+        { "type": "text", "value": "Multiple choice decisions" },
+        { "type": "text", "value": "Binary decisions with two mutually exclusive options" },
+        { "type": "text", "value": "Decisions with more than three options" },
+        { "type": "text", "value": "Loop control" }
+      ],
+      "answer": 1,
+      "explanation": "if-else statements are perfect for binary decisions - situations where you need to choose between two mutually exclusive options."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "Can you use complex boolean expressions in if-else statements?",
+      "options": [
+        { "type": "text", "value": "No, only simple comparisons" },
+        { "type": "text", "value": "Only with integers" },
+        { "type": "text", "value": "Yes, by combining multiple conditions with logical operators" },
+        { "type": "text", "value": "Only in nested structures" }
+      ],
+      "answer": 2,
+      "explanation": "You can use complex boolean expressions in if-else statements by combining multiple conditions with logical operators like && and ||."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What is a common use case for if-else statements?",
+      "options": [
+        { "type": "text", "value": "Creating classes" },
+        { "type": "text", "value": "Declaring variables" },
+        { "type": "text", "value": "Defining methods" },
+        { "type": "text", "value": "Validation with feedback for both valid and invalid cases" }
+      ],
+      "answer": 3,
+      "explanation": "if-else is commonly used for validation, where you check if input meets requirements and provide feedback for both valid and invalid cases."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Can you nest if-else statements inside other if-else statements?",
+      "options": [
+        { "type": "text", "value": "Yes, to create more complex decision trees" },
+        { "type": "text", "value": "No, only one level allowed" },
+        { "type": "text", "value": "Only in loops" },
+        { "type": "text", "value": "Only in methods" }
+      ],
+      "answer": 0,
+      "explanation": "You can nest if-else statements inside other if-else statements to create more complex decision trees for handling multiple levels of conditions."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "Can if-else statements use method return values as conditions?",
+      "options": [
+        { "type": "text", "value": "No, only variables" },
+        { "type": "text", "value": "Yes, you can make decisions based on what methods return" },
+        { "type": "text", "value": "Only static methods" },
+        { "type": "text", "value": "Only void methods" }
+      ],
+      "answer": 1,
+      "explanation": "When using if-else with method return values, you can make decisions based on what methods return, as long as they return boolean values."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What is a common pattern using if-else statements?",
+      "options": [
+        { "type": "text", "value": "Creating loops" },
+        { "type": "text", "value": "Defining classes" },
+        { "type": "text", "value": "Conditional initialization - assigning different values based on conditions" },
+        { "type": "text", "value": "Importing packages" }
+      ],
+      "answer": 2,
+      "explanation": "A common pattern is using if-else to assign different values to a variable based on a condition, known as conditional initialization."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What is if-else essential for?",
+      "options": [
+        { "type": "text", "value": "Creating arrays" },
+        { "type": "text", "value": "Declaring methods" },
+        { "type": "text", "value": "Importing libraries" },
+        { "type": "text", "value": "Error handling and providing responses for success and failure scenarios" }
+      ],
+      "answer": 3,
+      "explanation": "if-else is essential for error handling and providing appropriate responses for both success and failure scenarios in your programs."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "Why is if-else more efficient than multiple if statements for binary decisions?",
+      "options": [
+        { "type": "text", "value": "Once the first condition is evaluated, Java knows which branch to take" },
+        { "type": "text", "value": "It uses less memory" },
+        { "type": "text", "value": "It's shorter to type" },
+        { "type": "text", "value": "It's not more efficient" }
+      ],
+      "answer": 0,
+      "explanation": "if-else is more efficient because once the first condition is evaluated, Java knows which branch to take without checking additional conditions."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What is a common mistake with if-else statements?",
+      "options": [
+        { "type": "text", "value": "Using them too often" },
+        { "type": "text", "value": "Forgetting curly braces for multi-line blocks" },
+        { "type": "text", "value": "Making them too short" },
+        { "type": "text", "value": "Using complex conditions" }
+      ],
+      "answer": 1,
+      "explanation": "A common mistake is forgetting curly braces for multi-line blocks, which can cause unexpected behavior when additional statements are added."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What is the basic syntax structure of an if-else statement?",
+      "options": [
+        { "type": "text", "value": "if condition { code } else { code }" },
+        { "type": "text", "value": "if { condition } code else code" },
+        { "type": "text", "value": "condition if { code } else { code }" },
+        { "type": "text", "value": "if (condition) { code } else { code }" }
+      ],
+      "answer": 3,
+      "explanation": "The basic syntax is: if (condition) { code } else { code }, with the condition in parentheses and both code blocks in curly braces."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What will you learn in the next lesson?",
+      "options": [
+        { "type": "text", "value": "else-if ladders for checking multiple conditions in sequence" },
+        { "type": "text", "value": "Loops" },
+        { "type": "text", "value": "Arrays" },
+        { "type": "text", "value": "Methods" }
+      ],
+      "answer": 0,
+      "explanation": "The next lesson covers else-if ladders, which allow you to check multiple conditions in sequence and handle more than two possible outcomes."
+    }
+  ]
+}

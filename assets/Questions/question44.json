@@ -1,0 +1,188 @@
+{
+    "lessonId": 44,
+    "title": "switch with int and char",
+    "questions": [
+        {
+        "id": 1,
+        "type": "text",
+        "question": "What are the two most commonly used data types in switch statements?",
+        "options": [
+            { "type": "text", "value": "int and char" },
+            { "type": "text", "value": "double and boolean" },
+            { "type": "text", "value": "String and float" },
+            { "type": "text", "value": "long and byte" }
+        ],
+        "answer": 0,
+        "explanation": "The two most commonly used data types in switch statements are int and char. Integers work well for menus and codes, while characters work well for letter-based options."
+        },
+        {
+        "id": 2,
+        "type": "text",
+        "question": "What are int-based switches commonly used for?",
+        "options": [
+            { "type": "text", "value": "Creating loops" },
+            { "type": "text", "value": "Menu systems where users select options by number" },
+            { "type": "text", "value": "Declaring variables" },
+            { "type": "text", "value": "Importing packages" }
+        ],
+        "answer": 1,
+        "explanation": "Integer-based switch statements are commonly used for menu systems where users select options by number, creating clear and maintainable code."
+        },
+        {
+        "id": 3,
+        "type": "text",
+        "question": "What can int switches be used for besides menus?",
+        "options": [
+            { "type": "text", "value": "Creating arrays" },
+            { "type": "text", "value": "Defining classes" },
+            { "type": "text", "value": "Status codes, error codes, or mapping numeric codes to actions" },
+            { "type": "text", "value": "Importing libraries" }
+        ],
+        "answer": 2,
+        "explanation": "int switches work well for status codes, error codes, or mapping numeric codes to actions such as days of the week or months."
+        },
+        {
+        "id": 4,
+        "type": "text",
+        "question": "How are character literals written in case labels?",
+        "options": [
+            { "type": "text", "value": "In double quotes" },
+            { "type": "text", "value": "Without quotes" },
+            { "type": "text", "value": "In brackets" },
+            { "type": "text", "value": "In single quotes" }
+        ],
+        "answer": 3,
+        "explanation": "Character literals in case labels are enclosed in single quotes, like case 'A': or case 'x':."
+        },
+        {
+        "id": 5,
+        "type": "text",
+        "question": "What are char-based switches perfect for?",
+        "options": [
+            { "type": "text", "value": "Command systems with single-letter actions and grade processing" },
+            { "type": "text", "value": "Complex calculations" },
+            { "type": "text", "value": "Creating loops" },
+            { "type": "text", "value": "Declaring arrays" }
+        ],
+        "answer": 0,
+        "explanation": "Character-based switches are perfect for command systems where single letters represent different actions, and for processing grades or single-character inputs."
+        },
+        {
+        "id": 6,
+        "type": "text",
+        "question": "What is a common pattern with char switches for handling input?",
+        "options": [
+            { "type": "text", "value": "Using only lowercase" },
+            { "type": "text", "value": "Stacking cases for both uppercase and lowercase versions of the same letter" },
+            { "type": "text", "value": "Using only uppercase" },
+            { "type": "text", "value": "Converting to numbers first" }
+        ],
+        "answer": 1,
+        "explanation": "A common pattern is handling both uppercase and lowercase versions by stacking cases without break statements between them, making input handling more flexible."
+        },
+        {
+        "id": 7,
+        "type": "text",
+        "question": "Can char switches process mathematical operators?",
+        "options": [
+            { "type": "text", "value": "No, only letters" },
+            { "type": "text", "value": "No, only digits" },
+            { "type": "text", "value": "Yes, you can use char switches for symbols like +, -, *, /" },
+            { "type": "text", "value": "Only in nested switches" }
+        ],
+        "answer": 2,
+        "explanation": "You can use char switches to process mathematical operators or symbols, making them useful for calculator programs and expression evaluation."
+        },
+        {
+        "id": 8,
+        "type": "text",
+        "question": "Can you include multiple statements within each case?",
+        "options": [
+            { "type": "text", "value": "No, only one statement" },
+            { "type": "text", "value": "Only two statements" },
+            { "type": "text", "value": "Only print statements" },
+            { "type": "text", "value": "Yes, both int and char switches can include calculations and multiple statements" }
+        ],
+        "answer": 3,
+        "explanation": "Both int and char switches can include calculations and multiple statements within each case before the break statement."
+        },
+        {
+        "id": 9,
+        "type": "text",
+        "question": "Can you combine int switches with additional logic inside cases?",
+        "options": [
+            { "type": "text", "value": "Yes, to create more sophisticated behavior" },
+            { "type": "text", "value": "No, only simple assignments" },
+            { "type": "text", "value": "Only with char switches" },
+            { "type": "text", "value": "Never allowed" }
+        ],
+        "answer": 0,
+        "explanation": "You can combine int switches with additional logic inside each case, such as if statements or calculations, to create more sophisticated behavior."
+        },
+        {
+        "id": 10,
+        "type": "text",
+        "question": "What improves readability when using int switches?",
+        "options": [
+            { "type": "text", "value": "Using random numbers" },
+            { "type": "text", "value": "Using constants (final variables) for case values to give them meaningful names" },
+            { "type": "text", "value": "Avoiding comments" },
+            { "type": "text", "value": "Using only single digits" }
+        ],
+        "answer": 1,
+        "explanation": "Using constants (final variables) with meaningful names for case values improves code readability and maintainability."
+        },
+        {
+        "id": 11,
+        "type": "text",
+        "question": "What are char switches useful for with single-character input?",
+        "options": [
+            { "type": "text", "value": "Creating loops" },
+            { "type": "text", "value": "Declaring variables" },
+            { "type": "text", "value": "Parsing and validating, such as checking vowels or consonants" },
+            { "type": "text", "value": "Importing packages" }
+        ],
+        "answer": 2,
+        "explanation": "Character switches are useful for parsing and validating single-character input, such as checking if a character is a vowel or consonant."
+        },
+        {
+        "id": 12,
+        "type": "text",
+        "question": "Can switches be nested inside other control structures?",
+        "options": [
+            { "type": "text", "value": "No, never" },
+            { "type": "text", "value": "Only in loops" },
+            { "type": "text", "value": "Only with if statements" },
+            { "type": "text", "value": "Yes, but use sparingly to maintain readability" }
+        ],
+        "answer": 3,
+        "explanation": "Both int and char switches can be nested inside other control structures, including other switch statements, though this should be used sparingly."
+        },
+        {
+        "id": 13,
+        "type": "text",
+        "question": "What are int switches commonly used for in system design?",
+        "options": [
+            { "type": "text", "value": "State machines where each integer represents a different state" },
+            { "type": "text", "value": "Creating arrays" },
+            { "type": "text", "value": "Declaring methods" },
+            { "type": "text", "value": "Importing libraries" }
+        ],
+        "answer": 0,
+        "explanation": "int switches are commonly used for state machines where each integer represents a different state of a system, like game states or connection states."
+        },
+        {
+        "id": 14,
+        "type": "text",
+        "question": "What are best practices for int and char switches?",
+        "options": [
+            { "type": "text", "value": "Avoid default cases" },
+            { "type": "text", "value": "Always include a default case, use break statements consistently, keep cases simple" },
+            { "type": "text", "value": "Never use break statements" },
+            { "type": "text", "value": "Make cases as complex as possible" }
+        ],
+        "answer": 1,
+        "explanation": "Best practices include always including a default case to handle unexpected values, using break statements consistently, and keeping cases simple and readable."
+        }
+    ]
+}

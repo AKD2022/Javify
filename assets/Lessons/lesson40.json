@@ -1,0 +1,374 @@
+{
+  "lessonId": 40,
+  "title": "if Statement Basics",
+  "content": [
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statement is the most fundamental control structure in programming. It allows your program to make decisions by executing code only when a certain condition is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". This is where all your knowledge of boolean expressions, relational operators, and logical operators comes together to create responsive, intelligent programs."
+    },
+    {
+      "type": "text",
+      "value": "An "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statement tests a boolean expression. If the expression evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", the code inside the "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " block executes. If the expression evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", the code is skipped."
+    },
+    {
+      "type": "code",
+      "value": "int age = 18;\n\nif (age >= 18) {\n    System.out.println(\"You are an adult\");\n}\n// Output: You are an adult"
+    },
+    {
+      "type": "text",
+      "value": "The basic syntax of an "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statement consists of the keyword "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": ", followed by a boolean expression in parentheses, followed by a code block in curly braces. The code block contains the statements to execute when the condition is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "// Basic if statement structure\nif (condition) {\n    // Code to execute if condition is true\n}\n\n// Example\nint temperature = 85;\n\nif (temperature > 80) {\n    System.out.println(\"It's hot outside!\");\n}\n// Output: It's hot outside!"
+    },
+    {
+      "type": "text",
+      "value": "The condition inside the parentheses must be a boolean expression - something that evaluates to either "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". You can use any relational or logical operators you've learned."
+    },
+    {
+      "type": "code",
+      "value": "int score = 95;\n\nif (score >= 90) {\n    System.out.println(\"Excellent work!\");\n}\n// Output: Excellent work!\n\nboolean isRaining = true;\n\nif (isRaining) {\n    System.out.println(\"Don't forget your umbrella!\");\n}\n// Output: Don't forget your umbrella!"
+    },
+    {
+      "type": "text",
+      "value": "You can include multiple statements inside an "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " block. All statements within the curly braces will execute if the condition is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "int balance = 150;\nint purchaseAmount = 100;\n\nif (balance >= purchaseAmount) {\n    System.out.println(\"Purchase approved\");\n    balance = balance - purchaseAmount;\n    System.out.println(\"New balance: $\" + balance);\n}\n// Output:\n// Purchase approved\n// New balance: $50"
+    },
+    {
+      "type": "text",
+      "value": "If the condition is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", all code inside the "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " block is skipped, and the program continues with the next statement after the "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " block."
+    },
+    {
+      "type": "code",
+      "value": "int age = 15;\n\nif (age >= 18) {\n    System.out.println(\"You can vote\");\n}\n\nSystem.out.println(\"Program continues\");\n// Output: Program continues\n// (The \"You can vote\" message is NOT printed)"
+    },
+    {
+      "type": "text",
+      "value": "You can use complex boolean expressions in "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements by combining relational and logical operators."
+    },
+    {
+      "type": "code",
+      "value": "int age = 22;\nboolean hasLicense = true;\n\nif ((age >= 21) && hasLicense) {\n    System.out.println(\"You can rent a car\");\n}\n// Output: You can rent a car\n\nint temperature = 75;\nboolean isSunny = true;\n\nif ((temperature >= 70) && isSunny) {\n    System.out.println(\"Perfect day for the beach!\");\n}\n// Output: Perfect day for the beach!"
+    },
+    {
+      "type": "text",
+      "value": "While curly braces are optional for single-statement "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " blocks, it's strongly recommended to always use them. This prevents errors when you add more statements later and makes your code more readable."
+    },
+    {
+      "type": "code",
+      "value": "// Without braces (works but not recommended)\nint x = 10;\nif (x > 5)\n    System.out.println(\"x is greater than 5\");\n\n// With braces (recommended)\nint y = 10;\nif (y > 5) {\n    System.out.println(\"y is greater than 5\");\n}\n// Output: y is greater than 5"
+    },
+    {
+      "type": "text",
+      "value": "You can have multiple independent "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements in your code. Each one is evaluated separately."
+    },
+    {
+      "type": "code",
+      "value": "int score = 85;\n\nif (score >= 90) {\n    System.out.println(\"Grade: A\");\n}\n\nif (score >= 80) {\n    System.out.println(\"You made the honor roll\");\n}\n\nif (score >= 60) {\n    System.out.println(\"You passed\");\n}\n// Output:\n// You made the honor roll\n// You passed"
+    },
+    {
+      "type": "text",
+      "value": "Common use cases for "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements include input validation, checking boundaries, controlling access, and responding to user actions."
+    },
+    {
+      "type": "code",
+      "value": "// Input validation\nint age = -5;\n\nif (age < 0) {\n    System.out.println(\"Error: Age cannot be negative\");\n}\n// Output: Error: Age cannot be negative\n\n// Boundary checking\nint inventory = 3;\nint minStock = 10;\n\nif (inventory < minStock) {\n    System.out.println(\"Warning: Low inventory!\");\n}\n// Output: Warning: Low inventory!"
+    },
+    {
+      "type": "text",
+      "value": "You can use "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements to check ranges by combining multiple conditions with logical operators."
+    },
+    {
+      "type": "code",
+      "value": "int temperature = 72;\n\nif ((temperature >= 65) && (temperature <= 75)) {\n    System.out.println(\"Temperature is comfortable\");\n}\n// Output: Temperature is comfortable\n\nint score = 85;\n\nif ((score >= 80) && (score < 90)) {\n    System.out.println(\"Grade: B\");\n}\n// Output: Grade: B"
+    },
+    {
+      "type": "text",
+      "value": "Variables declared inside an "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " block have local scope - they only exist within that block and cannot be accessed outside of it."
+    },
+    {
+      "type": "code",
+      "value": "int x = 10;\n\nif (x > 5) {\n    int y = 20;  // y is only accessible inside this if block\n    System.out.println(\"x: \" + x);\n    System.out.println(\"y: \" + y);\n}\n\n// System.out.println(y);  // ERROR! y doesn't exist here\n// Output:\n// x: 10\n// y: 20"
+    },
+    {
+      "type": "text",
+      "value": "You can nest "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements inside other "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements to check multiple levels of conditions."
+    },
+    {
+      "type": "code",
+      "value": "int age = 20;\nboolean hasID = true;\n\nif (age >= 18) {\n    System.out.println(\"Age requirement met\");\n    \n    if (hasID) {\n        System.out.println(\"ID verified - access granted\");\n    }\n}\n// Output:\n// Age requirement met\n// ID verified - access granted"
+    },
+    {
+      "type": "text",
+      "value": "When using "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements with method calls, the method's return value is evaluated as the condition."
+    },
+    {
+      "type": "code",
+      "value": "public static boolean isEven(int number) {\n    return (number % 2 == 0);\n}\n\npublic static void main(String[] args) {\n    int value = 8;\n    \n    if (isEven(value)) {\n        System.out.println(value + \" is even\");\n    }\n    // Output: 8 is even\n}"
+    },
+    {
+      "type": "text",
+      "value": "Common mistakes with "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statements include using assignment "
+    },
+    {
+      "type": "code",
+      "value": "="
+    },
+    {
+      "type": "text",
+      "value": " instead of comparison "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": ", forgetting curly braces, and putting a semicolon after the condition."
+    },
+    {
+      "type": "code",
+      "value": "int x = 5;\n\n// WRONG - assignment instead of comparison\n// if (x = 5) { }  // This assigns 5 to x, doesn't compare!\n\n// CORRECT - comparison\nif (x == 5) {\n    System.out.println(\"x equals 5\");\n}\n// Output: x equals 5\n\n// WRONG - semicolon after condition\n// if (x > 3);  // The semicolon ends the if statement!\n// {\n//     System.out.println(\"This always runs\");\n// }\n\n// CORRECT - no semicolon\nif (x > 3) {\n    System.out.println(\"x is greater than 3\");\n}\n// Output: x is greater than 3"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statement is the building block for all conditional logic. In the next lesson, you'll learn about "
+    },
+    {
+      "type": "code",
+      "value": "if-else"
+    },
+    {
+      "type": "text",
+      "value": " statements, which allow you to specify alternative code to execute when the condition is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    }
+  ]
+}
