@@ -7,7 +7,7 @@ import { getFirestore } from 'firebase/firestore';
 
 // Your Firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyCaFfOZ61OM9NEHQ8ikbCmLQIM9OUBvj8k",
+  apiKey: "replace-with-your-own-key",
   authDomain: "apcsa-df990.firebaseapp.com",
   databaseURL: "https://apcsa-df990-default-rtdb.firebaseio.com",
   projectId: "apcsa-df990",
