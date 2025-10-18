@@ -37,23 +37,47 @@ import quiz36 from '../../assets/Questions/question36.json';
 import quiz37 from '../../assets/Questions/question37.json';
 import quiz38 from '../../assets/Questions/question38.json';
 import quiz39 from '../../assets/Questions/question39.json';
-
-
+import quiz40 from '../../assets/Questions/question40.json';
+import quiz41 from '../../assets/Questions/question41.json';
+import quiz42 from '../../assets/Questions/question42.json';
+import quiz43 from '../../assets/Questions/question43.json';
+import quiz44 from '../../assets/Questions/question44.json';
+import quiz45 from '../../assets/Questions/question45.json';
+import quiz46 from '../../assets/Questions/question46.json';
+import quiz47 from '../../assets/Questions/question47.json';
+import quiz48 from '../../assets/Questions/question48.json';
+import quiz49 from '../../assets/Questions/question49.json';
+import quiz50 from '../../assets/Questions/question50.json';
+import quiz51 from '../../assets/Questions/question51.json';
+import quiz52 from '../../assets/Questions/question52.json';
+import quiz53 from '../../assets/Questions/question53.json';
+import quiz54 from '../../assets/Questions/question54.json';
+import quiz55 from '../../assets/Questions/question55.json';
+import quiz56 from '../../assets/Questions/question56.json';
+import quiz57 from '../../assets/Questions/question57.json';
+import quiz58 from '../../assets/Questions/question58.json';
+import quiz59 from '../../assets/Questions/question59.json';
+import quiz60 from '../../assets/Questions/question60.json';
+import quiz61 from '../../assets/Questions/question61.json';
+import quiz62 from '../../assets/Questions/question62.json';
+import quiz63 from '../../assets/Questions/question63.json';
+import quiz64 from '../../assets/Questions/question64.json';
+import quiz65 from '../../assets/Questions/question65.json';
 
 export const quizzes = {
     lesson1: quiz1,
-    lesson2: quiz2, 
+    lesson2: quiz2,
     lesson3: quiz3,
     lesson4: quiz4,
     lesson5: quiz5,
     lesson6: quiz6,
     lesson7: quiz7,
-    lesson8: quiz8, 
+    lesson8: quiz8,
     lesson9: quiz9,
     lesson10: quiz10,
     lesson11: quiz11,
     lesson12: quiz12,
-    lesson13: quiz13, 
+    lesson13: quiz13,
     lesson14: quiz14,
     lesson15: quiz15,
     lesson16: quiz16,
@@ -66,18 +90,44 @@ export const quizzes = {
     lesson23: quiz23,
     lesson24: quiz24,
     lesson25: quiz25,
-    lesson26: quiz26, 
-    lesson27: quiz27, 
-    lesson28: quiz28, 
-    lesson29: quiz29, 
-    lesson30: quiz30, 
-    lesson31: quiz31, 
-    lesson32: quiz32, 
-    lesson33: quiz33, 
-    lesson34: quiz34, 
-    lesson35: quiz35, 
-    lesson36: quiz36, 
+    lesson26: quiz26,
+    lesson27: quiz27,
+    lesson28: quiz28,
+    lesson29: quiz29,
+    lesson30: quiz30,
+    lesson31: quiz31,
+    lesson32: quiz32,
+    lesson33: quiz33,
+    lesson34: quiz34,
+    lesson35: quiz35,
+    lesson36: quiz36,
     lesson37: quiz37,
-    lesson38: quiz38, 
+    lesson38: quiz38,
     lesson39: quiz39,
-}
+    lesson40: quiz40,
+    lesson41: quiz41,
+    lesson42: quiz42,
+    lesson43: quiz43,
+    lesson44: quiz44,
+    lesson45: quiz45,
+    lesson46: quiz46,
+    lesson47: quiz47,
+    lesson48: quiz48,
+    lesson49: quiz49,
+    lesson50: quiz50,
+    lesson51: quiz51,
+    lesson52: quiz52,
+    lesson53: quiz53,
+    lesson54: quiz54,
+    lesson55: quiz55,
+    lesson56: quiz56,
+    lesson57: quiz57,
+    lesson58: quiz58,
+    lesson59: quiz59,
+    lesson60: quiz60,
+    lesson61: quiz61,
+    lesson62: quiz62,
+    lesson63: quiz63,
+    lesson64: quiz64,
+    lesson65: quiz65,
+};

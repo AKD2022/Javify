@@ -1,0 +1,213 @@
+{
+  "lessonId": 67,
+  "title": "Practice with Nested Loops",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "In nested loops, when does the inner loop execute?",
+      "options": [
+        { "type": "text", "value": "Only once at the beginning" },
+        { "type": "text", "value": "Completely for each iteration of the outer loop" },
+        { "type": "text", "value": "Only when the outer loop finishes" },
+        { "type": "text", "value": "Never" }
+      ],
+      "answer": 0,
+      "explanation": "The inner loop executes completely for each iteration of the outer loop, resetting and running from the beginning each time the outer loop advances."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "For a matrix with rows and columns, which loop should iterate through rows?",
+      "options": [
+        { "type": "text", "value": "The inner loop" },
+        { "type": "text", "value": "The outer loop" },
+        { "type": "text", "value": "Both loops equally" },
+        { "type": "text", "value": "Whichever starts first" }
+      ],
+      "answer": 1,
+      "explanation": "The outer loop should control rows, while the inner loop controls columns, allowing systematic traversal of the entire matrix row by row."
+    },
+    {
+      "type": "text",
+      "question": "What does matrix.length represent when iterating through a 2D array?",
+      "options": [
+        { "type": "text", "value": "The number of columns" },
+        { "type": "text", "value": "The number of rows" },
+        { "type": "text", "value": "The total number of elements" },
+        { "type": "text", "value": "The size of each row" }
+      ],
+      "answer": 2,
+      "explanation": "matrix.length returns the number of rows in the 2D array, used by the outer loop to control row iteration."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "How many total iterations occur with an outer loop of 4 and inner loop of 5?",
+      "options": [
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "9" },
+        { "type": "text", "value": "20" }
+      ],
+      "answer": 3,
+      "explanation": "The total iterations equal outer count times inner count: 4 × 5 = 20 total inner loop executions."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "In a triangular pattern where the inner loop depends on the outer loop variable, what makes it triangular?",
+      "options": [
+        { "type": "text", "value": "The inner loop boundary depends on the outer loop variable i" },
+        { "type": "text", "value": "The outer loop is larger" },
+        { "type": "text", "value": "The loop directions are opposite" },
+        { "type": "text", "value": "Special characters are printed" }
+      ],
+      "answer": 0,
+      "explanation": "When the inner loop runs i times (where i is the outer loop variable), each row has progressively more iterations, creating a triangular shape."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "Where should an accumulator be declared when calculating row sums that reset each row?",
+      "options": [
+        { "type": "text", "value": "Outside both loops" },
+        { "type": "text", "value": "Inside the outer loop but outside the inner loop" },
+        { "type": "text", "value": "Inside the inner loop" },
+        { "type": "text", "value": "In the loop header" }
+      ],
+      "answer": 1,
+      "explanation": "Declaring inside the outer loop but outside the inner loop causes the accumulator to reset for each new row while persisting through inner loop iterations."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What happens if you use the same variable name for both outer and inner loops?",
+      "options": [
+        { "type": "text", "value": "It works correctly" },
+        { "type": "text", "value": "A compilation error occurs" },
+        { "type": "text", "value": "The loops run infinitely" },
+        { "type": "text", "value": "The program crashes at runtime" }
+      ],
+      "answer": 1,
+      "explanation": "Java does not allow declaring the same variable name twice in overlapping scopes, resulting in a compilation error."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "How do you access matrix[row][col] to represent the element at a specific row and column?",
+      "options": [
+        { "type": "text", "value": "matrix row col" },
+        { "type": "text", "value": "matrix(row, col)" },
+        { "type": "text", "value": "matrix[row][col]" },
+        { "type": "text", "value": "matrix.row.col" }
+      ],
+      "answer": 2,
+      "explanation": "2D array elements are accessed using double bracket notation: matrix[row][col], where row and col are array indices."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What does matrix[i].length represent in nested loops?",
+      "options": [
+        { "type": "text", "value": "The total number of elements" },
+        { "type": "text", "value": "The number of rows" },
+        { "type": "text", "value": "The number of columns in row i" },
+        { "type": "text", "value": "The size of the matrix" }
+      ],
+      "answer": 2,
+      "explanation": "matrix[i].length returns the number of columns in the specific row i, used by the inner loop to control column iteration."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "When finding a value in a matrix, what stops the search immediately after finding it?",
+      "options": [
+        { "type": "text", "value": "An automatic break" },
+        { "type": "text", "value": "A boolean flag included in loop conditions" },
+        { "type": "text", "value": "The end of the matrix" },
+        { "type": "text", "value": "A separate search function" }
+      ],
+      "answer": 1,
+      "explanation": "Using a boolean flag like !found in both loop conditions allows immediate exit when the value is found, avoiding unnecessary iterations."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "How should column sums be calculated to maintain totals across all rows?",
+      "options": [
+        { "type": "text", "value": "Use an accumulator inside the outer loop" },
+        { "type": "text", "value": "Use an array to store sums, declared outside both loops" },
+        { "type": "text", "value": "Use multiple accumulators inside the inner loop" },
+        { "type": "text", "value": "Use a separate loop after the nested loops" }
+      ],
+      "answer": 1,
+      "explanation": "An array declared outside both loops stores each column's running total, allowing accumulation across all rows without resetting."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What comparison checks if a matrix is symmetric (equals its transpose)?",
+      "options": [
+        { "type": "text", "value": "matrix[i][j] == matrix[i][j]" },
+        { "type": "text", "value": "matrix[i][j] == matrix[j][i]" },
+        { "type": "text", "value": "matrix[0][0] == matrix[n][n]" },
+        { "type": "text", "value": "matrix[i][j] == matrix[0][0]" }
+      ],
+      "answer": 1,
+      "explanation": "A symmetric matrix satisfies matrix[i][j] == matrix[j][i], meaning the element at (i,j) equals the element at (j,i)."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "With three nested loops on a 3D array, what does the innermost loop iterate through?",
+      "options": [
+        { "type": "text", "value": "Planes" },
+        { "type": "text", "value": "Rows" },
+        { "type": "text", "value": "Individual elements within each row" },
+        { "type": "text", "value": "Entire planes" }
+      ],
+      "answer": 2,
+      "explanation": "The innermost loop of three nested loops iterates through individual elements (columns/values) within each row of the 3D structure."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "When counting even numbers in a 2D array, where should the counter be declared?",
+      "options": [
+        { "type": "text", "value": "Inside the inner loop" },
+        { "type": "text", "value": "Inside the outer loop" },
+        { "type": "text", "value": "Outside both loops" },
+        { "type": "text", "value": "In the loop header" }
+      ],
+      "answer": 2,
+      "explanation": "The counter must be declared outside both loops to persist throughout all iterations and maintain the total count."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "How is matrix[row][col] accessed within nested loops?",
+      "options": [
+        { "type": "text", "value": "Using the outer loop variable as row and inner loop variable as col" },
+        { "type": "text", "value": "Using row numbers starting at 1" },
+        { "type": "text", "value": "Using string indices" },
+        { "type": "text", "value": "Using method calls" }
+      ],
+      "answer": 0,
+      "explanation": "The outer loop variable typically represents the row index, and the inner loop variable represents the column index, allowing systematic access to each element."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What is the efficiency impact of nested loops on total executions?",
+      "options": [
+        { "type": "text", "value": "Outer plus inner iterations" },
+        { "type": "text", "value": "Outer minus inner iterations" },
+        { "type": "text", "value": "Outer times inner iterations (multiplicative)" },
+        { "type": "text", "value": "Always the same as a single loop" }
+      ],
+      "answer": 2,
+      "explanation": "Total iterations equal outer loop count multiplied by inner loop count, making nested loops significantly slower with large arrays."
+    }
+  ]
+}

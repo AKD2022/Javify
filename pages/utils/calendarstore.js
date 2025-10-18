@@ -1,6 +1,6 @@
 import { collection, getDocs, setDoc, doc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
-import { units } from '../home/HomeScreen';
+import { units } from '../utils/units';
 import { getStartDate, getEndDate } from '../diagnostic/datestore';
 import { isBefore } from 'date-fns';
 import { Alert } from 'react-native';

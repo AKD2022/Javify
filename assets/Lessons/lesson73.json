@@ -1,0 +1,270 @@
+{
+  "lessonId": 73,
+  "title": "Accessor (getter) Methods",
+  "content": [
+    {
+      "type": "text",
+      "value": "An accessor method, commonly called a getter, is a method that returns the value of an instance variable. Getters allow other parts of your program to read an object's data without directly accessing the instance variables. This controlled access is fundamental to encapsulation, a core principle of object-oriented programming."
+    },
+    {
+      "type": "text",
+      "value": "While you could allow direct access to instance variables, getters provide better control and flexibility. They enable you to change how data is stored internally without breaking code that uses your class, add validation or computation when retrieving values, and make your code's intent clearer."
+    },
+    {
+      "type": "text",
+      "value": "A basic accessor method has a return type matching the instance variable's type, a name following the pattern "
+    },
+    {
+      "type": "code",
+      "value": "get"
+    },
+    {
+      "type": "text",
+      "value": " followed by the variable name (with first letter capitalized), and a "
+    },
+    {
+      "type": "code",
+      "value": "return"
+    },
+    {
+      "type": "text",
+      "value": " statement."
+    },
+    {
+      "type": "code",
+      "value": "public class Book {\n    String title;\n    String author;\n    int pageCount;\n    \n    // Accessor methods (getters)\n    public String getTitle() {\n        return title;\n    }\n    \n    public String getAuthor() {\n        return author;\n    }\n    \n    public int getPageCount() {\n        return pageCount;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Each getter returns a specific instance variable. The method name "
+    },
+    {
+      "type": "code",
+      "value": "getTitle()"
+    },
+    {
+      "type": "text",
+      "value": " clearly indicates it retrieves the "
+    },
+    {
+      "type": "code",
+      "value": "title"
+    },
+    {
+      "type": "text",
+      "value": ". Following this naming convention makes your code consistent and intuitive."
+    },
+    {
+      "type": "text",
+      "value": "Using getters to access data is straightforward. Call the getter method on an object to retrieve the value."
+    },
+    {
+      "type": "code",
+      "value": "Book book = new Book();\nbook.title = \"Java Programming\";\nbook.author = \"Jane Smith\";\nbook.pageCount = 500;\n\nSystem.out.println(book.getTitle());      // Java Programming\nSystem.out.println(book.getAuthor());     // Jane Smith\nSystem.out.println(book.getPageCount());  // 500"
+    },
+    {
+      "type": "text",
+      "value": "The getter methods provide access to the values without directly accessing the instance variables. This indirection, while seeming unnecessary here, becomes valuable as your classes grow more complex."
+    },
+    {
+      "type": "text",
+      "value": "Getters for boolean instance variables follow a slightly different naming convention, using "
+    },
+    {
+      "type": "code",
+      "value": "is"
+    },
+    {
+      "type": "text",
+      "value": " instead of "
+    },
+    {
+      "type": "code",
+      "value": "get"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "public class Player {\n    String name;\n    boolean isAlive;\n    boolean isPremium;\n    \n    public String getName() {\n        return name;\n    }\n    \n    public boolean isAlive() {\n        return isAlive;\n    }\n    \n    public boolean isPremium() {\n        return isPremium;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Using "
+    },
+    {
+      "type": "code",
+      "value": "isAlive()"
+    },
+    {
+      "type": "text",
+      "value": " instead of "
+    },
+    {
+      "type": "code",
+      "value": "getIsAlive()"
+    },
+    {
+      "type": "text",
+      "value": " reads more naturally: \"Is the player alive?\" rather than \"Get is alive?\""
+    },
+    {
+      "type": "text",
+      "value": "Getters can perform computations when retrieving values, not just return stored data directly. This allows calculated properties based on instance variables."
+    },
+    {
+      "type": "code",
+      "value": "public class Rectangle {\n    double width;\n    double height;\n    \n    public double getWidth() {\n        return width;\n    }\n    \n    public double getHeight() {\n        return height;\n    }\n    \n    // Computed property - not stored, calculated when requested\n    public double getArea() {\n        return width * height;\n    }\n    \n    public double getPerimeter() {\n        return 2 * (width + height);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "getArea()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "getPerimeter()"
+    },
+    {
+      "type": "text",
+      "value": " methods calculate values on-the-fly. The calling code doesn't know or care whether the value is stored or computed—it just calls the getter and receives a result."
+    },
+    {
+      "type": "text",
+      "value": "Getters enable flexibility in implementation. You can change how data is stored internally without affecting code using the class."
+    },
+    {
+      "type": "code",
+      "value": "public class Temperature {\n    // Implementation 1: Store in Celsius\n    private double celsius;\n    \n    public double getCelsius() {\n        return celsius;\n    }\n    \n    public double getFahrenheit() {\n        return (celsius * 9/5) + 32;  // Convert on retrieval\n    }\n    \n    // Could later change to storing Fahrenheit instead\n    // Only getCelsius() and getFahrenheit() would need updates\n}"
+    },
+    {
+      "type": "text",
+      "value": "If you later decide to store temperature in Fahrenheit instead of Celsius, only the getter methods need updating. Code using these getters continues working without modification."
+    },
+    {
+      "type": "text",
+      "value": "Getters are particularly useful for arrays and collections, allowing controlled access to the data."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    String name;\n    int[] testScores;\n    \n    public String getName() {\n        return name;\n    }\n    \n    public int[] getTestScores() {\n        return testScores;\n    }\n    \n    public int getTestScore(int index) {\n        if (index >= 0 && index < testScores.length) {\n            return testScores[index];\n        }\n        return -1;  // Return -1 if index is invalid\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "getTestScore(int index)"
+    },
+    {
+      "type": "text",
+      "value": " method provides safe access to a specific array element with validation. If the index is out of bounds, it returns "
+    },
+    {
+      "type": "code",
+      "value": "-1"
+    },
+    {
+      "type": "text",
+      "value": " rather than crashing with an error."
+    },
+    {
+      "type": "text",
+      "value": "A complete class typically has a getter for every significant instance variable that outside code needs to access."
+    },
+    {
+      "type": "code",
+      "value": "public class BankAccount {\n    String accountNumber;\n    String accountHolder;\n    double balance;\n    double interestRate;\n    \n    // Constructor\n    public BankAccount(String number, String holder, double initial) {\n        this.accountNumber = number;\n        this.accountHolder = holder;\n        this.balance = initial;\n        this.interestRate = 0.02;\n    }\n    \n    // Getters\n    public String getAccountNumber() {\n        return accountNumber;\n    }\n    \n    public String getAccountHolder() {\n        return accountHolder;\n    }\n    \n    public double getBalance() {\n        return balance;\n    }\n    \n    public double getInterestRate() {\n        return interestRate;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This "
+    },
+    {
+      "type": "code",
+      "value": "BankAccount"
+    },
+    {
+      "type": "text",
+      "value": " class has getters for each instance variable, allowing controlled access to all account information."
+    },
+    {
+      "type": "text",
+      "value": "Getters can add validation or constraints when returning values. A getter might modify the returned value based on conditions."
+    },
+    {
+      "type": "code",
+      "value": "public class GameCharacter {\n    int health;\n    int maxHealth = 100;\n    \n    public int getHealth() {\n        return health;\n    }\n    \n    // Health never exceeds max\n    public int getHealthPercentage() {\n        return (health * 100) / maxHealth;\n    }\n    \n    // Returns a status string based on health level\n    public String getHealthStatus() {\n        if (health >= 75) {\n            return \"Excellent\";\n        } else if (health >= 50) {\n            return \"Good\";\n        } else if (health >= 25) {\n            return \"Fair\";\n        } else {\n            return \"Critical\";\n        }\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "getHealthStatus()"
+    },
+    {
+      "type": "text",
+      "value": " method illustrates how a getter can derive meaningful information from instance variables, providing information beyond simple retrieval."
+    },
+    {
+      "type": "text",
+      "value": "Getters are essential for encapsulation, one of the four pillars of object-oriented programming. Encapsulation hides internal details and protects data from unwanted modification. By using getters (and later, setters), you control exactly how data is accessed and modified."
+    },
+    {
+      "type": "text",
+      "value": "The naming convention for getters is important for consistency and readability. Always use "
+    },
+    {
+      "type": "code",
+      "value": "get"
+    },
+    {
+      "type": "text",
+      "value": " for most types, "
+    },
+    {
+      "type": "code",
+      "value": "is"
+    },
+    {
+      "type": "text",
+      "value": " for boolean, capitalize the first letter of the variable name after "
+    },
+    {
+      "type": "code",
+      "value": "get"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "is"
+    },
+    {
+      "type": "text",
+      "value": ", and include parentheses even when no parameters are needed."
+    },
+    {
+      "type": "code",
+      "value": "public class Vehicle {\n    String make;\n    String model;\n    double price;\n    boolean isElectric;\n    int yearManufactured;\n    \n    public String getMake() { return make; }        // Correct\n    public String getModel() { return model; }      // Correct\n    public double getPrice() { return price; }      // Correct\n    public boolean isElectric() { return isElectric; }  // Correct for boolean\n    public int getYearManufactured() { return yearManufactured; }  // Correct\n    \n    // Incorrect naming examples:\n    // public String getMake_() { return make; }     // Wrong suffix\n    // public String get_make() { return make; }     // Wrong underscore\n    // public String makeGetter() { return make; }   // Wrong name\n}"
+    },
+    {
+      "type": "text",
+      "value": "Following these conventions makes your code professional and allows other programmers to immediately understand your intent. Mastering getters is crucial for writing well-designed classes that properly encapsulate data while providing safe access to it."
+    }
+  ]
+}

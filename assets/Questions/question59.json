@@ -1,0 +1,214 @@
+{
+  "lessonId": 59,
+  "title": "Using break and continue",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What does the break statement do?",
+      "options": [
+        { "type": "text", "value": "Immediately terminates the loop" },
+        { "type": "text", "value": "Skips to the next iteration" },
+        { "type": "text", "value": "Restarts the loop" },
+        { "type": "text", "value": "Pauses the loop" }
+      ],
+      "answer": 0,
+      "explanation": "The break statement immediately terminates the loop, causing execution to jump to the first statement after the loop."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What does the continue statement do?",
+      "options": [
+        { "type": "text", "value": "Exits the loop" },
+        { "type": "text", "value": "Skips the rest of the current iteration and moves to the next one" },
+        { "type": "text", "value": "Restarts from the beginning" },
+        { "type": "text", "value": "Doubles the loop speed" }
+      ],
+      "answer": 1,
+      "explanation": "The continue statement skips the rest of the current iteration and moves to the next one, jumping to the update step and condition check."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What does this loop print?\n\nfor (int i = 1; i <= 10; i++) {\n    System.out.println(i);\n    if (i == 5) {\n        break;\n    }\n}",
+      "options": [
+        { "type": "text", "value": "1 to 10" },
+        { "type": "text", "value": "Only 5" },
+        { "type": "text", "value": "1 to 5" },
+        { "type": "text", "value": "6 to 10" }
+      ],
+      "answer": 2,
+      "explanation": "The loop prints 1 to 5. When i equals 5, the break statement executes after printing 5, immediately exiting the loop."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "What does this loop print?\n\nfor (int i = 1; i <= 5; i++) {\n    if (i == 3) {\n        continue;\n    }\n    System.out.println(i);\n}",
+      "options": [
+        { "type": "text", "value": "1, 2, 3, 4, 5" },
+        { "type": "text", "value": "1, 2, 4, 5" },
+        { "type": "text", "value": "Only 3" },
+        { "type": "text", "value": "3, 4, 5" }
+      ],
+      "answer": 1,
+      "explanation": "The loop prints 1, 2, 4, and 5, skipping 3. When i equals 3, continue skips the print statement and moves to the next iteration."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Why is break useful in search operations?",
+      "options": [
+        { "type": "text", "value": "It stops the loop once the target is found, improving efficiency" },
+        { "type": "text", "value": "It makes searches slower" },
+        { "type": "text", "value": "It prints more information" },
+        { "type": "text", "value": "It creates new variables" }
+      ],
+      "answer": 0,
+      "explanation": "Break stops the loop as soon as the target is found, avoiding unnecessary checks of remaining elements and improving efficiency."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What does this loop print?\n\nfor (int i = 1; i <= 10; i++) {\n    if (i % 2 == 0) {\n        continue;\n    }\n    System.out.println(i);\n}",
+      "options": [
+        { "type": "text", "value": "All numbers 1-10" },
+        { "type": "text", "value": "Odd numbers only" },
+        { "type": "text", "value": "Even numbers only" },
+        { "type": "text", "value": "Nothing" }
+      ],
+      "answer": 1,
+      "explanation": "The loop prints only odd numbers. When i is even (divisible by 2), continue skips the print statement."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "In nested loops, which loop does break exit?",
+      "options": [
+        { "type": "text", "value": "All loops" },
+        { "type": "text", "value": "The outer loop only" },
+        { "type": "text", "value": "Both loops equally" },
+        { "type": "text", "value": "Only the innermost loop containing it" }
+      ],
+      "answer": 3,
+      "explanation": "In nested loops, break only exits the innermost loop containing it. The outer loops continue executing normally."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "How many times does the inner loop print per outer iteration?\n\nfor (int i = 1; i <= 3; i++) {\n    for (int j = 1; j <= 5; j++) {\n        if (j == 3) {\n            break;\n        }\n        System.out.println(j);\n    }\n}",
+      "options": [
+        { "type": "text", "value": "5 times" },
+        { "type": "text", "value": "2 times" },
+        { "type": "text", "value": "3 times" },
+        { "type": "text", "value": "1 time" }
+      ],
+      "answer": 1,
+      "explanation": "The inner loop prints j values 1 and 2, then breaks when j reaches 3. This happens for each of the 3 outer iterations."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Can break and continue be used with while loops?",
+      "options": [
+        { "type": "text", "value": "Yes, they work with all loop types" },
+        { "type": "text", "value": "No, only with for loops" },
+        { "type": "text", "value": "Only break works with while" },
+        { "type": "text", "value": "Only continue works with while" }
+      ],
+      "answer": 0,
+      "explanation": "Yes, break and continue work with all loop types including for, while, and do-while loops."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What pattern uses while(true) with break?\n\nwhile (true) {\n    // code\n    if (condition) {\n        break;\n    }\n}",
+      "options": [
+        { "type": "text", "value": "Infinite loop without exit" },
+        { "type": "text", "value": "Intentional infinite loop with break providing exit mechanism" },
+        { "type": "text", "value": "Syntax error" },
+        { "type": "text", "value": "Countdown loop" }
+      ],
+      "answer": 1,
+      "explanation": "This pattern creates an intentional infinite loop with while(true), but break provides the exit mechanism when a condition is met."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What should you ensure before using continue in while loops?",
+      "options": [
+        { "type": "text", "value": "The loop variable updates before the continue statement" },
+        { "type": "text", "value": "Nothing special" },
+        { "type": "text", "value": "The loop has a break statement" },
+        { "type": "text", "value": "The loop is nested" }
+      ],
+      "answer": 0,
+      "explanation": "Always ensure your loop variable updates before any continue statement in while loops to avoid creating an infinite loop."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What does continue affect in nested loops?\n\nfor (int i = 1; i <= 3; i++) {\n    for (int j = 1; j <= 4; j++) {\n        if (j == 2) {\n            continue;\n        }\n        System.out.print(j);\n    }\n}",
+      "options": [
+        { "type": "text", "value": "Both loops" },
+        { "type": "text", "value": "The outer loop only" },
+        { "type": "text", "value": "Only the loop it's inside" },
+        { "type": "text", "value": "All future loops" }
+      ],
+      "answer": 2,
+      "explanation": "Continue in nested loops affects only the loop it's inside, skipping to the next iteration of that specific loop."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "When should you use break and continue judiciously?",
+      "options": [
+        { "type": "text", "value": "Always use them" },
+        { "type": "text", "value": "Never use them" },
+        { "type": "text", "value": "When they genuinely improve clarity or efficiency" },
+        { "type": "text", "value": "Only in nested loops" }
+      ],
+      "answer": 2,
+      "explanation": "Use break and continue judiciously when they genuinely improve clarity or efficiency. Overusing them can make code harder to understand."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What is a common use case for break in input validation?",
+      "options": [
+        { "type": "text", "value": "To exit once valid input is received" },
+        { "type": "text", "value": "To create infinite loops" },
+        { "type": "text", "value": "To print error messages" },
+        { "type": "text", "value": "To slow down the program" }
+      ],
+      "answer": 0,
+      "explanation": "In input validation loops, break is commonly used to exit once valid input is received, terminating the validation loop."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "Which approach is clearer for multiple exit conditions?",
+      "options": [
+        { "type": "text", "value": "Using many break statements" },
+        { "type": "text", "value": "Using random exits" },
+        { "type": "text", "value": "Incorporating conditions into the loop header when possible" },
+        { "type": "text", "value": "Never exiting loops early" }
+      ],
+      "answer": 2,
+      "explanation": "Incorporating conditions into the loop header when possible is often clearer, making the termination criteria immediately visible rather than scattered throughout the loop body."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "What happens when this code runs?\n\nint i = 0;\nwhile (i < 5) {\n    i++;\n    if (i == 3) {\n        continue;\n    }\n    System.out.println(i);\n}",
+      "options": [
+        { "type": "text", "value": "Prints 0, 1, 2, 3, 4" },
+        { "type": "text", "value": "Prints 3 only" },
+        { "type": "text", "value": "Infinite loop" },
+        { "type": "text", "value": "Prints 1, 2, 4, 5" }
+      ],
+      "answer": 3,
+      "explanation": "The loop prints 1, 2, 4, and 5, skipping 3. The increment happens before the continue check, preventing an infinite loop."
+    }
+  ]
+}

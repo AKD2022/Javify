@@ -1,0 +1,738 @@
+{
+  "lessonId": 52,
+  "title": "while Loop Basics",
+  "content": [
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loop is Java's most fundamental loop structure. It repeatedly executes a block of code as long as its condition remains "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". Understanding "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loops gives you the foundation for mastering all loop types in Java."
+    },
+    {
+      "type": "text",
+      "value": "The basic syntax of a "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loop consists of the keyword "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": ", followed by a condition in parentheses, and then a code block in curly braces. The structure looks similar to an "
+    },
+    {
+      "type": "code",
+      "value": "if"
+    },
+    {
+      "type": "text",
+      "value": " statement, but the key difference is repetition."
+    },
+    {
+      "type": "code",
+      "value": "while (condition) {\n    // Code to repeat\n}"
+    },
+    {
+      "type": "text",
+      "value": "Java evaluates the condition before each iteration. If the condition is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", the loop body executes. After executing the body, Java returns to check the condition again. This cycle continues until the condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "int count = 1;\nwhile (count <= 3) {\n    System.out.println(\"Count: \" + count);\n    count++;\n}"
+    },
+    {
+      "type": "text",
+      "value": "This simple loop prints the numbers 1 through 3. Initially, "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ", making "
+    },
+    {
+      "type": "code",
+      "value": "count <= 3"
+    },
+    {
+      "type": "text",
+      "value": " true. After printing, "
+    },
+    {
+      "type": "code",
+      "value": "count++"
+    },
+    {
+      "type": "text",
+      "value": " increments the value to "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ". The loop continues with "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " equal to "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ", then "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": ". When "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": ", the condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and the loop terminates."
+    },
+    {
+      "type": "text",
+      "value": "A critical aspect of "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loops is that they check the condition before the first iteration. This means if the condition is initially "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", the loop body never executes at all."
+    },
+    {
+      "type": "code",
+      "value": "int number = 10;\nwhile (number < 5) {\n    System.out.println(number);\n    number++;\n}"
+    },
+    {
+      "type": "text",
+      "value": "In this example, "
+    },
+    {
+      "type": "code",
+      "value": "number"
+    },
+    {
+      "type": "text",
+      "value": " starts at "
+    },
+    {
+      "type": "code",
+      "value": "10"
+    },
+    {
+      "type": "text",
+      "value": ", so the condition "
+    },
+    {
+      "type": "code",
+      "value": "number < 5"
+    },
+    {
+      "type": "text",
+      "value": " is immediately "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". The loop body never executes, and nothing prints. This demonstrates that "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loops can execute zero times."
+    },
+    {
+      "type": "text",
+      "value": "The increment operator "
+    },
+    {
+      "type": "code",
+      "value": "++"
+    },
+    {
+      "type": "text",
+      "value": " and decrement operator "
+    },
+    {
+      "type": "code",
+      "value": "--"
+    },
+    {
+      "type": "text",
+      "value": " are commonly used in loop updates. These operators add or subtract "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " from a variable, providing a concise way to modify loop counters."
+    },
+    {
+      "type": "code",
+      "value": "int countdown = 5;\nwhile (countdown > 0) {\n    System.out.println(countdown);\n    countdown--;\n}\nSystem.out.println(\"Blastoff!\");"
+    },
+    {
+      "type": "text",
+      "value": "This countdown loop uses "
+    },
+    {
+      "type": "code",
+      "value": "countdown--"
+    },
+    {
+      "type": "text",
+      "value": " to decrease the value by "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " each iteration. Starting at "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": ", it prints 5, 4, 3, 2, and 1 before the condition "
+    },
+    {
+      "type": "code",
+      "value": "countdown > 0"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". Then \"Blastoff!\" prints after the loop completes."
+    },
+    {
+      "type": "text",
+      "value": "You can use any boolean expression as a "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loop condition, not just simple comparisons. Complex conditions combining multiple checks work just as well."
+    },
+    {
+      "type": "code",
+      "value": "int balance = 100;\nint expenses = 0;\n\nwhile (balance > 50 && expenses < 3) {\n    System.out.println(\"Making purchase\");\n    balance -= 20;\n    expenses++;\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop continues while both conditions remain "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ": the balance stays above "
+    },
+    {
+      "type": "code",
+      "value": "50"
+    },
+    {
+      "type": "text",
+      "value": " and expenses stay below "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": ". Each iteration reduces balance by "
+    },
+    {
+      "type": "code",
+      "value": "20"
+    },
+    {
+      "type": "text",
+      "value": " and increments expenses. The loop stops when either condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Accumulator patterns are common in "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loops. An accumulator is a variable that builds up a value across multiple iterations, such as calculating a sum or product."
+    },
+    {
+      "type": "code",
+      "value": "int sum = 0;\nint i = 1;\n\nwhile (i <= 5) {\n    sum += i;\n    i++;\n}\n\nSystem.out.println(\"Sum: \" + sum);"
+    },
+    {
+      "type": "text",
+      "value": "This loop calculates the sum of numbers from "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": ". The variable "
+    },
+    {
+      "type": "code",
+      "value": "sum"
+    },
+    {
+      "type": "text",
+      "value": " starts at "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " and accumulates values as the loop progresses: 0+1=1, 1+2=3, 3+3=6, 6+4=10, 10+5=15. After the loop completes, "
+    },
+    {
+      "type": "code",
+      "value": "sum"
+    },
+    {
+      "type": "text",
+      "value": " contains "
+    },
+    {
+      "type": "code",
+      "value": "15"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Counter patterns track how many times a loop has executed or how many items meet certain criteria. Counters increment by "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " each time a condition is satisfied."
+    },
+    {
+      "type": "code",
+      "value": "int evenCount = 0;\nint num = 1;\n\nwhile (num <= 10) {\n    if (num % 2 == 0) {\n        evenCount++;\n    }\n    num++;\n}\n\nSystem.out.println(\"Even numbers: \" + evenCount);"
+    },
+    {
+      "type": "text",
+      "value": "This loop counts even numbers from "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "10"
+    },
+    {
+      "type": "text",
+      "value": ". The condition "
+    },
+    {
+      "type": "code",
+      "value": "num % 2 == 0"
+    },
+    {
+      "type": "text",
+      "value": " checks if a number is even. When this is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "evenCount"
+    },
+    {
+      "type": "text",
+      "value": " increments. After checking all numbers, "
+    },
+    {
+      "type": "code",
+      "value": "evenCount"
+    },
+    {
+      "type": "text",
+      "value": " equals "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": " (the numbers 2, 4, 6, 8, and 10)."
+    },
+    {
+      "type": "text",
+      "value": "Boolean variables can control "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loops, providing flexibility for conditions that aren't simple numeric comparisons."
+    },
+    {
+      "type": "code",
+      "value": "boolean searching = true;\nint position = 0;\nint target = 7;\nint[] numbers = {3, 5, 7, 9};\n\nwhile (searching && position < numbers.length) {\n    if (numbers[position] == target) {\n        System.out.println(\"Found at index: \" + position);\n        searching = false;\n    }\n    position++;\n}"
+    },
+    {
+      "type": "text",
+      "value": "This search loop continues while "
+    },
+    {
+      "type": "code",
+      "value": "searching"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " and there are more elements to check. When the target value is found, "
+    },
+    {
+      "type": "code",
+      "value": "searching"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", ending the loop. This pattern is useful when you need to stop searching once you find what you're looking for."
+    },
+    {
+      "type": "text",
+      "value": "You can update loop variables by amounts other than "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ". Any arithmetic operation works in the update step."
+    },
+    {
+      "type": "code",
+      "value": "int value = 2;\nwhile (value <= 16) {\n    System.out.println(value);\n    value *= 2;\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop doubles the value each iteration, printing powers of "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ": 2, 4, 8, and 16. The update "
+    },
+    {
+      "type": "code",
+      "value": "value *= 2"
+    },
+    {
+      "type": "text",
+      "value": " multiplies the current value by "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ". When value becomes "
+    },
+    {
+      "type": "code",
+      "value": "32"
+    },
+    {
+      "type": "text",
+      "value": ", the condition "
+    },
+    {
+      "type": "code",
+      "value": "value <= 16"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and the loop stops."
+    },
+    {
+      "type": "text",
+      "value": "When writing "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loops, always ensure your update moves the loop variable toward the termination condition. Without proper updates, your loop may never terminate, creating an infinite loop that freezes your program."
+    },
+    {
+      "type": "code",
+      "value": "int score = 0;\nwhile (score < 100) {\n    System.out.println(\"Score: \" + score);\n    score += 10;\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop terminates properly because "
+    },
+    {
+      "type": "code",
+      "value": "score += 10"
+    },
+    {
+      "type": "text",
+      "value": " increases the value toward "
+    },
+    {
+      "type": "code",
+      "value": "100"
+    },
+    {
+      "type": "text",
+      "value": ". Starting at "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ", it prints scores of 0, 10, 20, continuing up to 90. When score reaches "
+    },
+    {
+      "type": "code",
+      "value": "100"
+    },
+    {
+      "type": "text",
+      "value": ", the condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Understanding "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loop basics prepares you for more advanced loop concepts. Practice writing "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loops with different conditions and updates to build confidence. In the next lesson, you'll learn about "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loops, which have a key difference in when they check their condition."
+    }
+  ]
+}

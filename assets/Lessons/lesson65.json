@@ -1,0 +1,430 @@
+{
+  "lessonId": 65,
+  "title": "Common Loop Algorithms (sum, max, min)",
+  "content": [
+    {
+      "type": "text",
+      "value": "Throughout your programming journey, you'll encounter certain problems so frequently that they become standard algorithms. Three of the most fundamental are calculating sums, finding maximum values, and finding minimum values. These algorithms form the building blocks for more complex data analysis and problem-solving."
+    },
+    {
+      "type": "text",
+      "value": "The sum algorithm accumulates all values in a collection to find their total. This algorithm uses an accumulator variable initialized to "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " that adds each element during iteration."
+    },
+    {
+      "type": "code",
+      "value": "int[] numbers = {15, 23, 8, 42, 16, 31};\nint sum = 0;\n\nfor (int i = 0; i < numbers.length; i++) {\n    sum += numbers[i];\n}\n\nSystem.out.println(\"Sum: \" + sum);"
+    },
+    {
+      "type": "text",
+      "value": "This implementation demonstrates the standard sum algorithm pattern. The accumulator "
+    },
+    {
+      "type": "code",
+      "value": "sum"
+    },
+    {
+      "type": "text",
+      "value": " starts at "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ", then each array element is added to the running total. After processing all elements, "
+    },
+    {
+      "type": "code",
+      "value": "sum"
+    },
+    {
+      "type": "text",
+      "value": " contains 135, the total of all numbers in the array."
+    },
+    {
+      "type": "text",
+      "value": "The sum algorithm extends naturally to calculating averages by dividing the sum by the count of elements. Remember to cast to "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " for decimal results."
+    },
+    {
+      "type": "code",
+      "value": "int[] scores = {88, 92, 76, 95, 84};\nint sum = 0;\n\nfor (int i = 0; i < scores.length; i++) {\n    sum += scores[i];\n}\n\ndouble average = (double) sum / scores.length;\nSystem.out.println(\"Average: \" + average);"
+    },
+    {
+      "type": "text",
+      "value": "By dividing the sum by "
+    },
+    {
+      "type": "code",
+      "value": "scores.length"
+    },
+    {
+      "type": "text",
+      "value": ", we calculate the average score. The cast to "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " ensures the division produces a decimal result rather than truncating to an integer."
+    },
+    {
+      "type": "text",
+      "value": "Finding the maximum value requires a different approach. The algorithm tracks the largest value seen so far, updating it whenever a larger value is encountered. The key challenge is choosing an appropriate initial value."
+    },
+    {
+      "type": "code",
+      "value": "int[] values = {34, 67, 12, 89, 45, 23};\nint max = values[0];\n\nfor (int i = 1; i < values.length; i++) {\n    if (values[i] > max) {\n        max = values[i];\n    }\n}\n\nSystem.out.println(\"Maximum: \" + max);"
+    },
+    {
+      "type": "text",
+      "value": "This maximum algorithm initializes "
+    },
+    {
+      "type": "code",
+      "value": "max"
+    },
+    {
+      "type": "text",
+      "value": " to the first array element, then compares each subsequent element. When an element exceeds the current maximum, it becomes the new maximum. The loop starts at index "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " since we already used the element at index "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " for initialization. The final result is 89, the largest value in the array."
+    },
+    {
+      "type": "text",
+      "value": "An alternative approach uses "
+    },
+    {
+      "type": "code",
+      "value": "Integer.MIN_VALUE"
+    },
+    {
+      "type": "text",
+      "value": " as the initial value, allowing the loop to start at index "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "int[] numbers = {-15, -8, -23, -4};\nint max = Integer.MIN_VALUE;\n\nfor (int i = 0; i < numbers.length; i++) {\n    if (numbers[i] > max) {\n        max = numbers[i];\n    }\n}\n\nSystem.out.println(\"Maximum: \" + max);"
+    },
+    {
+      "type": "text",
+      "value": "Using "
+    },
+    {
+      "type": "code",
+      "value": "Integer.MIN_VALUE"
+    },
+    {
+      "type": "text",
+      "value": " guarantees that any value in the array will be larger than the initial maximum. This approach works even when all array values are negative. Here, the maximum is -4, the least negative number."
+    },
+    {
+      "type": "text",
+      "value": "The minimum value algorithm mirrors the maximum algorithm but searches for the smallest value instead."
+    },
+    {
+      "type": "code",
+      "value": "int[] temperatures = {72, 68, 75, 64, 70};\nint min = temperatures[0];\n\nfor (int i = 1; i < temperatures.length; i++) {\n    if (temperatures[i] < min) {\n        min = temperatures[i];\n    }\n}\n\nSystem.out.println(\"Minimum temperature: \" + min);"
+    },
+    {
+      "type": "text",
+      "value": "The minimum algorithm initializes "
+    },
+    {
+      "type": "code",
+      "value": "min"
+    },
+    {
+      "type": "text",
+      "value": " to the first element, then updates it whenever a smaller value is found. The comparison operator changes from "
+    },
+    {
+      "type": "code",
+      "value": ">"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "<"
+    },
+    {
+      "type": "text",
+      "value": " to detect smaller values. The minimum temperature is 64."
+    },
+    {
+      "type": "text",
+      "value": "Like the maximum algorithm, you can initialize minimum with "
+    },
+    {
+      "type": "code",
+      "value": "Integer.MAX_VALUE"
+    },
+    {
+      "type": "text",
+      "value": " to ensure any real value will be smaller."
+    },
+    {
+      "type": "code",
+      "value": "int[] data = {156, 89, 234, 45, 178};\nint min = Integer.MAX_VALUE;\n\nfor (int i = 0; i < data.length; i++) {\n    if (data[i] < min) {\n        min = data[i];\n    }\n}\n\nSystem.out.println(\"Minimum: \" + min);"
+    },
+    {
+      "type": "text",
+      "value": "Starting with "
+    },
+    {
+      "type": "code",
+      "value": "Integer.MAX_VALUE"
+    },
+    {
+      "type": "text",
+      "value": " means every element in the array will be smaller than the initial value, guaranteeing proper minimum detection. The minimum value found is 45."
+    },
+    {
+      "type": "text",
+      "value": "Often you need both maximum and minimum values simultaneously. You can combine these algorithms into a single loop for efficiency."
+    },
+    {
+      "type": "code",
+      "value": "int[] readings = {28, 45, 12, 67, 33, 89, 21};\nint max = readings[0];\nint min = readings[0];\n\nfor (int i = 1; i < readings.length; i++) {\n    if (readings[i] > max) {\n        max = readings[i];\n    }\n    if (readings[i] < min) {\n        min = readings[i];\n    }\n}\n\nSystem.out.println(\"Range: \" + min + \" to \" + max);"
+    },
+    {
+      "type": "text",
+      "value": "This combined approach finds both maximum and minimum in one pass through the array. Both variables initialize to the first element, then the loop updates each independently. The maximum is 89 and the minimum is 12, giving a range of 77."
+    },
+    {
+      "type": "text",
+      "value": "Sometimes you need to track not just the extreme value but also its position in the array. Modify the algorithm to store the index alongside the value."
+    },
+    {
+      "type": "code",
+      "value": "int[] grades = {85, 92, 78, 95, 88};\nint maxGrade = grades[0];\nint maxIndex = 0;\n\nfor (int i = 1; i < grades.length; i++) {\n    if (grades[i] > maxGrade) {\n        maxGrade = grades[i];\n        maxIndex = i;\n    }\n}\n\nSystem.out.println(\"Highest grade: \" + maxGrade + \" at index \" + maxIndex);"
+    },
+    {
+      "type": "text",
+      "value": "This variation tracks both the maximum value and its index. When a new maximum is found, both "
+    },
+    {
+      "type": "code",
+      "value": "maxGrade"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "maxIndex"
+    },
+    {
+      "type": "text",
+      "value": " update together. The highest grade is 95, found at index 3."
+    },
+    {
+      "type": "text",
+      "value": "These algorithms also work with "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " values for decimal numbers. The logic remains identical, only the data type changes."
+    },
+    {
+      "type": "code",
+      "value": "double[] prices = {19.99, 24.50, 15.75, 32.00, 18.25};\ndouble sum = 0.0;\n\nfor (int i = 0; i < prices.length; i++) {\n    sum += prices[i];\n}\n\nSystem.out.println(\"Total cost: $\" + sum);"
+    },
+    {
+      "type": "text",
+      "value": "The sum algorithm works with "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " arrays by initializing the accumulator to "
+    },
+    {
+      "type": "code",
+      "value": "0.0"
+    },
+    {
+      "type": "text",
+      "value": " instead of "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ". The algorithm accumulates decimal values to calculate the total cost of 110.49."
+    },
+    {
+      "type": "text",
+      "value": "Finding maximum and minimum with "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " values uses "
+    },
+    {
+      "type": "code",
+      "value": "Double.NEGATIVE_INFINITY"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "Double.POSITIVE_INFINITY"
+    },
+    {
+      "type": "text",
+      "value": " as initial values."
+    },
+    {
+      "type": "code",
+      "value": "double[] measurements = {3.5, 7.2, 2.8, 9.1, 5.6};\ndouble max = Double.NEGATIVE_INFINITY;\ndouble min = Double.POSITIVE_INFINITY;\n\nfor (int i = 0; i < measurements.length; i++) {\n    if (measurements[i] > max) {\n        max = measurements[i];\n    }\n    if (measurements[i] < min) {\n        min = measurements[i];\n    }\n}\n\nSystem.out.println(\"Range: \" + min + \" to \" + max);"
+    },
+    {
+      "type": "text",
+      "value": "Using "
+    },
+    {
+      "type": "code",
+      "value": "Double.NEGATIVE_INFINITY"
+    },
+    {
+      "type": "text",
+      "value": " for maximum and "
+    },
+    {
+      "type": "code",
+      "value": "Double.POSITIVE_INFINITY"
+    },
+    {
+      "type": "text",
+      "value": " for minimum ensures proper initialization for "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " comparisons. The maximum measurement is 9.1 and the minimum is 2.8."
+    },
+    {
+      "type": "text",
+      "value": "These algorithms can be enhanced with conditional logic to process only elements meeting specific criteria. For example, summing only positive numbers or finding the maximum even value."
+    },
+    {
+      "type": "code",
+      "value": "int[] values = {-5, 12, -3, 8, -7, 15, 2};\nint positiveSum = 0;\n\nfor (int i = 0; i < values.length; i++) {\n    if (values[i] > 0) {\n        positiveSum += values[i];\n    }\n}\n\nSystem.out.println(\"Sum of positive numbers: \" + positiveSum);"
+    },
+    {
+      "type": "text",
+      "value": "This conditional sum algorithm adds only values greater than "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " to the accumulator. The condition "
+    },
+    {
+      "type": "code",
+      "value": "values[i] > 0"
+    },
+    {
+      "type": "text",
+      "value": " filters out negative numbers, resulting in a sum of 37 from the positive values."
+    },
+    {
+      "type": "text",
+      "value": "Finding maximum or minimum values under specific conditions requires careful initialization. When conditions might exclude all elements, you need a strategy to handle empty results."
+    },
+    {
+      "type": "code",
+      "value": "int[] numbers = {3, 7, 12, 5, 18, 9};\nint maxEven = Integer.MIN_VALUE;\nboolean foundEven = false;\n\nfor (int i = 0; i < numbers.length; i++) {\n    if (numbers[i] % 2 == 0) {\n        if (numbers[i] > maxEven) {\n            maxEven = numbers[i];\n            foundEven = true;\n        }\n    }\n}\n\nif (foundEven) {\n    System.out.println(\"Maximum even number: \" + maxEven);\n} else {\n    System.out.println(\"No even numbers found\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "This algorithm finds the maximum even number by checking "
+    },
+    {
+      "type": "code",
+      "value": "numbers[i] % 2 == 0"
+    },
+    {
+      "type": "text",
+      "value": " before comparing. The boolean flag "
+    },
+    {
+      "type": "code",
+      "value": "foundEven"
+    },
+    {
+      "type": "text",
+      "value": " tracks whether any even numbers exist. The maximum even number is 18."
+    },
+    {
+      "type": "text",
+      "value": "Understanding these standard algorithms is essential because they appear throughout programming. Whether analyzing data, processing user input, or solving complex problems, you'll frequently need to calculate sums, find extreme values, or identify specific elements. Master these patterns now, as they form the foundation for the more sophisticated algorithms you'll encounter in later lessons on searching, sorting, and recursion."
+    }
+  ]
+}

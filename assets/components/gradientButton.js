@@ -1,9 +1,10 @@
 import React from 'react';
-import { TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import colors from './colors';
+import { FontAwesome } from '@expo/vector-icons';
 
-const GradientButton = ({ title, onPress, style, textStyle }) => {
+const GradientButton = ({ title, onPress, style, textStyle, icon }) => {
   return (
     <TouchableOpacity onPress={onPress} style={styles.buttonContainer}>
       <LinearGradient
@@ -12,6 +13,9 @@ const GradientButton = ({ title, onPress, style, textStyle }) => {
         end={{ x: 1, y: 0 }}
         style={[styles.gradient, style]}
       >
+        <View style={styles.icon}>
+          <FontAwesome name={icon} size={24} color={colors.white}/>
+        </View>
         <Text style={[styles.buttonText, textStyle]}>{title}</Text>
       </LinearGradient>
     </TouchableOpacity>
@@ -28,6 +32,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
     alignItems: 'center',
     justifyContent: 'center',
+    display: "flex",
+    flexDirection: "row"
   },
 
   buttonText: {
@@ -35,7 +41,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 16,
   },
-  
+
+  icon: {
+    alignItems: "center",
+    display: "flex"
+
+  }
+
 });
 
 export default GradientButton;

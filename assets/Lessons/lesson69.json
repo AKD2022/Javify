@@ -1,0 +1,439 @@
+{
+  "lessonId": 69,
+  "title": "Introduction to Classes and Objects",
+  "content": [
+    {
+      "type": "text",
+      "value": "Welcome to Unit 5, where you transition from procedural programming to object-oriented programming. This fundamental shift in how you think about and organize code will make complex programs more manageable and closer to how we naturally think about the world. A class is a blueprint or template that defines what data an object will store and what behaviors it can perform. An object is a specific instance of a class—a concrete realization of that blueprint with actual values."
+    },
+    {
+      "type": "text",
+      "value": "Think of the relationship between classes and objects like a cookie cutter and cookies. The cookie cutter is the class—it defines the shape and structure. Each cookie you make using that cutter is an object—a specific instance with its own properties (maybe some cookies have sprinkles, others don't) but all following the same basic structure."
+    },
+    {
+      "type": "text",
+      "value": "A class contains two main components: instance variables (also called fields or attributes) that store data, and methods that define behavior. Instance variables are variables declared inside a class that belong to each individual object created from that class."
+    },
+    {
+      "type": "code",
+      "value": "public class Car {\n    // Instance variables\n    String color;\n    String model;\n    int year;\n    double speed;\n    \n    // Method\n    public void accelerate() {\n        speed += 5;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This "
+    },
+    {
+      "type": "code",
+      "value": "Car"
+    },
+    {
+      "type": "text",
+      "value": " class defines what every car object will have: color, model, year, and speed data. It also defines behavior with the "
+    },
+    {
+      "type": "code",
+      "value": "accelerate()"
+    },
+    {
+      "type": "text",
+      "value": " method. Each "
+    },
+    {
+      "type": "code",
+      "value": "Car"
+    },
+    {
+      "type": "text",
+      "value": " object created from this class will have its own independent values for these instance variables."
+    },
+    {
+      "type": "text",
+      "value": "Creating an object from a class is called instantiation. You use the "
+    },
+    {
+      "type": "code",
+      "value": "new"
+    },
+    {
+      "type": "code",
+      "value": "keyword to create a new instance of a class."
+    },
+    {
+      "type": "code",
+      "value": "Car myCar = new Car();\nmyCar.color = \"red\";\nmyCar.model = \"Tesla\";\nmyCar.year = 2024;\nmyCar.speed = 0;"
+    },
+    {
+      "type": "text",
+      "value": "The statement "
+    },
+    {
+      "type": "code",
+      "value": "Car myCar = new Car();"
+    },
+    {
+      "type": "text",
+      "value": " creates a new "
+    },
+    {
+      "type": "code",
+      "value": "Car"
+    },
+    {
+      "type": "text",
+      "value": " object and stores a reference to it in the variable "
+    },
+    {
+      "type": "code",
+      "value": "myCar"
+    },
+    {
+      "type": "text",
+      "value": ". The variable "
+    },
+    {
+      "type": "code",
+      "value": "myCar"
+    },
+    {
+      "type": "text",
+      "value": " is not the object itself but rather a reference (like an address) pointing to where the object lives in memory. You access instance variables and methods using the dot operator "
+    },
+    {
+      "type": "code",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "You can create multiple objects from the same class, and each has its own independent state."
+    },
+    {
+      "type": "code",
+      "value": "Car car1 = new Car();\ncar1.color = \"red\";\ncar1.speed = 0;\n\nCar car2 = new Car();\ncar2.color = \"blue\";\ncar2.speed = 0;\n\ncar1.accelerate();\nSystem.out.println(car1.speed);  // 5\nSystem.out.println(car2.speed);  // 0"
+    },
+    {
+      "type": "text",
+      "value": "Both "
+    },
+    {
+      "type": "code",
+      "value": "car1"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "car2"
+    },
+    {
+      "type": "text",
+      "value": " are separate objects with separate data. When "
+    },
+    {
+      "type": "code",
+      "value": "car1"
+    },
+    {
+      "type": "text",
+      "value": " accelerates, only its speed changes; "
+    },
+    {
+      "type": "code",
+      "type": "code",
+      "value": "car2"
+    },
+    {
+      "type": "text",
+      "value": "'s speed remains unaffected."
+    },
+    {
+      "type": "text",
+      "value": "Methods within a class can access and modify the instance variables of that object using the dot operator or by referencing the variable directly."
+    },
+    {
+      "type": "code",
+      "value": "public class Dog {\n    String name;\n    int age;\n    \n    public void bark() {\n        System.out.println(name + \" says woof!\");\n    }\n    \n    public void haveBirthday() {\n        age = age + 1;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Inside the "
+    },
+    {
+      "type": "code",
+      "value": "Dog"
+    },
+    {
+      "type": "text",
+      "value": " class methods, you can directly reference "
+    },
+    {
+      "type": "code",
+      "value": "name"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "text",
+      "value": "age"
+    },
+    {
+      "type": "text",
+      "value": " (implicitly using the current object). The "
+    },
+    {
+      "type": "code",
+      "value": "bark()"
+    },
+    {
+      "type": "text",
+      "value": " method prints the specific dog's name, and "
+    },
+    {
+      "type": "code",
+      "value": "haveBirthday()"
+    },
+    {
+      "type": "text",
+      "value": " increments that dog's age."
+    },
+    {
+      "type": "text",
+      "value": "The dot operator serves multiple purposes when working with objects. You use it to access instance variables, call methods, and specify which object you're interacting with."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    String name;\n    double gpa;\n    \n    public void displayInfo() {\n        System.out.println(\"Name: \" + name);\n        System.out.println(\"GPA: \" + gpa);\n    }\n}\n\n// Creating and using objects\nStudent student1 = new Student();\nstudent1.name = \"Alice\";  // Accessing instance variable\nstudent1.gpa = 3.8;\nstudent1.displayInfo();  // Calling method"
+    },
+    {
+      "type": "text",
+      "value": "The dot operator clearly distinguishes between different objects. "
+    },
+    {
+      "type": "code",
+      "value": "student1.name"
+    },
+    {
+      "type": "text",
+      "value": " refers to Alice's name, while another student's name would be "
+    },
+    {
+      "type": "code",
+      "value": "student2.name"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "The keyword "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " explicitly refers to the current object. Inside a method or constructor, "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " refers to the specific object whose method is being executed."
+    },
+    {
+      "type": "code",
+      "value": "public class Book {\n    String title;\n    String author;\n    \n    public void printDetails() {\n        System.out.println(\"This book is: \" + this.title);\n        System.out.println(\"Written by: \" + this.author);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Using "
+    },
+    {
+      "type": "code",
+      "value": "this.title"
+    },
+    {
+      "type": "text",
+      "value": " is equivalent to just writing "
+    },
+    {
+      "type": "code",
+      "value": "title"
+    },
+    {
+      "type": "text",
+      "value": " inside a method, but being explicit with "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " clarifies that you're referring to an instance variable. The "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " keyword becomes especially important in constructors and when parameter names match instance variable names."
+    },
+    {
+      "type": "text",
+      "value": "Objects are reference types, meaning variables hold references to objects rather than the objects themselves. This distinction is important when assigning objects to variables or passing them to methods."
+    },
+    {
+      "type": "code",
+      "value": "Car myCar = new Car();\nCar yourCar = myCar;  // Both variables point to the SAME object\n\nmyCar.speed = 50;\nSystem.out.println(yourCar.speed);  // Also prints 50"
+    },
+    {
+      "type": "text",
+      "value": "The assignment "
+    },
+    {
+      "type": "code",
+      "value": "yourCar = myCar"
+    },
+    {
+      "type": "text",
+      "value": " does not create a new object. Instead, both "
+    },
+    {
+      "type": "code",
+      "value": "myCar"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "yourCar"
+    },
+    {
+      "type": "text",
+      "value": " reference the same object in memory. Modifying the object through one variable affects it when accessed through the other."
+    },
+    {
+      "type": "text",
+      "value": "Objects can contain other objects as instance variables, creating hierarchical relationships. This composition allows building complex structures from simpler parts."
+    },
+    {
+      "type": "code",
+      "value": "public class Person {\n    String name;\n    int age;\n}\n\npublic class Team {\n    String teamName;\n    Person leader;  // A Person object as an instance variable\n    Person[] members;  // An array of Person objects\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Team"
+    },
+    {
+      "type": "text",
+      "value": " class can have a "
+    },
+    {
+      "type": "code",
+      "value": "Person"
+    },
+    {
+      "type": "text",
+      "value": " object as its "
+    },
+    {
+      "type": "code",
+      "value": "leader"
+    },
+    {
+      "type": "text",
+      "value": " and an array of "
+    },
+    {
+      "type": "code",
+      "value": "Person"
+    },
+    {
+      "type": "text",
+      "value": " objects as "
+    },
+    {
+      "type": "code",
+      "value": "members"
+    },
+    {
+      "type": "text",
+      "value": ". This demonstrates how objects can be nested within other objects."
+    },
+    {
+      "type": "text",
+      "value": "Every Java class exists in a hierarchy. All classes implicitly inherit from the "
+    },
+    {
+      "type": "code",
+      "value": "Object"
+    },
+    {
+      "type": "text",
+      "value": " class, which provides basic methods that every object shares. Understanding this hierarchy becomes important as you advance in programming, though for now focus on creating and using your own classes."
+    },
+    {
+      "type": "text",
+      "value": "The benefits of object-oriented programming become clear when working with complex systems. Instead of managing scattered variables and functions, you group related data and behaviors into cohesive units (classes). This organization makes code more maintainable, reusable, and easier to understand."
+    },
+    {
+      "type": "text",
+      "value": "A practical example combines everything: imagine a gaming scenario. You might create a "
+    },
+    {
+      "type": "code",
+      "value": "Player"
+    },
+    {
+      "type": "code",
+      "value": "class defining health, weapons, and position, along with methods like "
+    },
+    {
+      "type": "code",
+      "value": "takeDamage()"
+    },
+    {
+      "type": "code",
+      "value": "and "
+    },
+    {
+      "type": "code",
+      "value": "moveForward()"
+    },
+    {
+      "type": "text",
+      "value": ". You could create multiple "
+    },
+    {
+      "type": "code",
+      "value": "Player"
+    },
+    {
+      "type": "text",
+      "value": " objects for different characters, each maintaining independent state. The game logic becomes clearer and the code more organized."
+    },
+    {
+      "type": "text",
+      "value": "Moving forward through Unit 5, you'll learn about constructors (special methods that initialize objects), access modifiers (controlling what can be accessed), and more sophisticated class design patterns. The foundation you're building here—understanding classes as blueprints, objects as instances, and how to interact with them using the dot operator—underpins all advanced object-oriented concepts."
+    }
+  ]
+}

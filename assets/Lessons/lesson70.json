@@ -1,0 +1,486 @@
+{
+  "lessonId": 70,
+  "title": "Defining a Class and Instance Variables",
+  "content": [
+    {
+      "type": "text",
+      "value": "Designing a class begins with identifying what data an object should hold and what behaviors it should perform. This planning stage is crucial because it determines how well your class models the real-world concept you're representing. Instance variables are the building blocks of this design, storing the state of each object created from your class."
+    },
+    {
+      "type": "text",
+      "value": "The basic structure of a class definition uses the "
+    },
+    {
+      "type": "code",
+      "value": "public class"
+    },
+    {
+      "type": "text",
+      "value": " keywords followed by the class name. Inside the class body, you declare instance variables that will belong to each object."
+    },
+    {
+      "type": "code",
+      "value": "public class BankAccount {\n    // Instance variables\n    String accountHolder;\n    double balance;\n    String accountNumber;\n    boolean isActive;\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "BankAccount"
+    },
+    {
+      "type": "text",
+      "value": " class declares four instance variables: "
+    },
+    {
+      "type": "code",
+      "value": "accountHolder"
+    },
+    {
+      "type": "text",
+      "value": " as a "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "balance"
+    },
+    {
+      "type": "text",
+      "value": " as a "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "accountNumber"
+    },
+    {
+      "type": "text",
+      "value": " as a "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "isActive"
+    },
+    {
+      "type": "text",
+      "value": " as a "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": ". Each "
+    },
+    {
+      "type": "code",
+      "value": "BankAccount"
+    },
+    {
+      "type": "text",
+      "value": " object will have its own independent copies of these variables."
+    },
+    {
+      "type": "text",
+      "value": "Instance variables can be any type: primitive types like "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": ", or "
+    },
+    {
+      "type": "code",
+      "value": "char"
+    },
+    {
+      "type": "text",
+      "value": "; reference types like "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " or other objects; or even arrays."
+    },
+    {
+      "type": "code",
+      "value": "public class Movie {\n    String title;\n    String director;\n    int releaseYear;\n    double rating;\n    int[] reviews;  // Array of review scores\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Movie"
+    },
+    {
+      "type": "text",
+      "value": " class demonstrates mixing different types. The "
+    },
+    {
+      "type": "code",
+      "value": "reviews"
+    },
+    {
+      "type": "text",
+      "value": " instance variable is an array, allowing each movie to store multiple review scores."
+    },
+    {
+      "type": "text",
+      "value": "When you create an object, instance variables are initialized to default values if you don't explicitly set them. Numeric types default to "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " defaults to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", and reference types default to "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "public class Rectangle {\n    int width;\n    int height;\n    String color;\n    boolean isFilled;\n}\n\nRectangle rect = new Rectangle();\nSystem.out.println(rect.width);      // 0\nSystem.out.println(rect.height);     // 0\nSystem.out.println(rect.color);      // null\nSystem.out.println(rect.isFilled);   // false"
+    },
+    {
+      "type": "text",
+      "value": "Each instance variable receives its default value automatically. Understanding these defaults prevents unexpected "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " reference errors and helps you understand initial object state."
+    },
+    {
+      "type": "text",
+      "value": "Good class design requires thoughtful selection of instance variables. Include only the data that meaningfully represents the object's state. Too many variables lead to complexity; too few fail to capture important information."
+    },
+    {
+      "type": "code",
+      "value": "// Well-designed Student class\npublic class Student {\n    String name;\n    int studentID;\n    double gpa;\n    int graduationYear;\n}\n\n// Poorly-designed Student class (unnecessary variables)\npublic class Student {\n    String name;\n    int studentID;\n    double gpa;\n    int graduationYear;\n    String favoriteColor;  // Not relevant to student\n    int daysPresent;       // Should be calculated, not stored\n}"
+    },
+    {
+      "type": "text",
+      "value": "The well-designed class includes variables that directly define what a student is and needs. The poorly-designed version adds irrelevant attributes that bloat the class without purpose."
+    },
+    {
+      "type": "text",
+      "value": "Instance variables often have relationships and constraints. For example, a person's age should not be negative, or a bank account's balance should never exceed a maximum. These constraints guide how you'll design your class's methods in later lessons."
+    },
+    {
+      "type": "text",
+      "value": "You can initialize instance variables when declaring them, giving them starting values that all new objects will have unless overridden."
+    },
+    {
+      "type": "code",
+      "value": "public class GameCharacter {\n    String name;\n    int health = 100;\n    int maxHealth = 100;\n    double experience = 0.0;\n    int level = 1;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Every "
+    },
+    {
+      "type": "code",
+      "value": "GameCharacter"
+    },
+    {
+      "type": "text",
+      "value": " starts with "
+    },
+    {
+      "type": "code",
+      "value": "health"
+    },
+    {
+      "type": "text",
+      "value": " equal to "
+    },
+    {
+      "type": "code",
+      "value": "100"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "experience"
+    },
+    {
+      "type": "text",
+      "value": " at "
+    },
+    {
+      "type": "code",
+      "value": "0.0"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "level"
+    },
+    {
+      "type": "text",
+      "value": " at "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ". These reasonable defaults reduce the amount of setup code needed when creating objects."
+    },
+    {
+      "type": "text",
+      "value": "Once a class is defined, you create objects by using "
+    },
+    {
+      "type": "code",
+      "value": "new"
+    },
+    {
+      "type": "text",
+      "value": " and then access instance variables using the dot operator."
+    },
+    {
+      "type": "code",
+      "value": "public class Book {\n    String title;\n    String author;\n    int pageCount;\n    double price;\n}\n\nBook book1 = new Book();\nbook1.title = \"Java Programming\";\nbook1.author = \"Jane Smith\";\nbook1.pageCount = 500;\nbook1.price = 49.99;\n\nBook book2 = new Book();\nbook2.title = \"Python Basics\";\nbook2.author = \"John Doe\";\nbook2.pageCount = 400;\nbook2.price = 39.99;"
+    },
+    {
+      "type": "text",
+      "value": "Both "
+    },
+    {
+      "type": "code",
+      "value": "book1"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "book2"
+    },
+    {
+      "type": "text",
+      "value": " are different objects, each with independent instance variables. Changing "
+    },
+    {
+      "type": "code",
+      "value": "book1"
+    },
+    {
+      "type": "text",
+      "value": "'s data doesn't affect "
+    },
+    {
+      "type": "code",
+      "value": "book2"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Instance variables are accessed and modified through the dot operator with specific object references. The same variable name across different objects refers to different data."
+    },
+    {
+      "type": "code",
+      "value": "public class Employee {\n    String name;\n    double salary;\n    int yearsWorked;\n}\n\nEmployee emp1 = new Employee();\nEmployee emp2 = new Employee();\n\nemp1.name = \"Alice\";\nemp1.salary = 60000;\n\nemp2.name = \"Bob\";\nemp2.salary = 55000;\n\nSystem.out.println(emp1.name);   // Alice\nSystem.out.println(emp2.name);   // Bob\nemp1.salary += 5000;\nSystem.out.println(emp1.salary); // 65000\nSystem.out.println(emp2.salary); // 55000"
+    },
+    {
+      "type": "text",
+      "value": "The specific employee reference determines which data you're accessing. "
+    },
+    {
+      "type": "code",
+      "value": "emp1.salary"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "emp2.salary"
+    },
+    {
+      "type": "text",
+      "value": " are completely separate, even though they share the same instance variable name."
+    },
+    {
+      "type": "text",
+      "value": "Arrays of objects allow storing multiple instances of a class together. Each element in the array is a reference to a separate object."
+    },
+    {
+      "type": "code",
+      "value": "public class Card {\n    String suit;\n    int value;\n}\n\nCard[] deck = new Card[52];\ndeck[0] = new Card();\ndeck[0].suit = \"Hearts\";\ndeck[0].value = 1;\n\ndeck[1] = new Card();\ndeck[1].suit = \"Diamonds\";\ndeck[1].value = 2;"
+    },
+    {
+      "type": "text",
+      "value": "The array "
+    },
+    {
+      "type": "code",
+      "value": "deck"
+    },
+    {
+      "type": "text",
+      "value": " holds references to "
+    },
+    {
+      "type": "code",
+      "value": "Card"
+    },
+    {
+      "type": "text",
+      "value": " objects. Each element is created separately with "
+    },
+    {
+      "type": "code",
+      "value": "new"
+    },
+    {
+      "type": "text",
+      "value": ", and each has independent instance variable values."
+    },
+    {
+      "type": "text",
+      "value": "When one object contains another object as an instance variable, you create hierarchical structures. Accessing nested object variables requires chaining dot operators."
+    },
+    {
+      "type": "code",
+      "value": "public class Address {\n    String street;\n    String city;\n    String state;\n}\n\npublic class Person {\n    String name;\n    Address homeAddress;\n}\n\nPerson person = new Person();\nperson.name = \"Charlie\";\nperson.homeAddress = new Address();\nperson.homeAddress.street = \"123 Main St\";\nperson.homeAddress.city = \"Springfield\";\nperson.homeAddress.state = \"IL\";"
+    },
+    {
+      "type": "text",
+      "value": "The expression "
+    },
+    {
+      "type": "code",
+      "value": "person.homeAddress.street"
+    },
+    {
+      "type": "text",
+      "value": " chains through two objects: first accessing the "
+    },
+    {
+      "type": "code",
+      "value": "Person"
+    },
+    {
+      "type": "text",
+      "value": " object's "
+    },
+    {
+      "type": "code",
+      "value": "homeAddress"
+    },
+    {
+      "type": "text",
+      "value": ", then accessing that "
+    },
+    {
+      "type": "code",
+      "value": "Address"
+    },
+    {
+      "type": "text",
+      "value": " object's "
+    },
+    {
+      "type": "code",
+      "value": "street"
+    },
+    {
+      "type": "text",
+      "value": " variable."
+    },
+    {
+      "type": "text",
+      "value": "Understanding instance variables is the foundation for class design. They represent the state of your objects, the data that distinguishes one object from another. In coming lessons, you'll learn how to write methods that operate on these variables and constructors that initialize them properly. For now, focus on identifying appropriate instance variables for the objects you want to represent and understanding how to access them through the dot operator."
+    }
+  ]
+}

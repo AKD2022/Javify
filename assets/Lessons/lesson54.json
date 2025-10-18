@@ -1,0 +1,686 @@
+{
+  "lessonId": 54,
+  "title": "for Loop Basics",
+  "content": [
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loop is Java's most compact and commonly used loop structure. It combines initialization, condition, and update into a single line, making it ideal for situations where you know exactly how many times you want to repeat code. Understanding "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loops will make your code cleaner and more readable."
+    },
+    {
+      "type": "text",
+      "value": "The syntax of a "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loop places all three loop components in the header: initialization, condition, and update. These three parts are separated by semicolons inside the parentheses."
+    },
+    {
+      "type": "code",
+      "value": "for (initialization; condition; update) {\n    // Loop body\n}"
+    },
+    {
+      "type": "text",
+      "value": "Here's a simple example that prints numbers from 1 to 5:"
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 1; i <= 5; i++) {\n    System.out.println(i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "In this loop, "
+    },
+    {
+      "type": "code",
+      "value": "int i = 1"
+    },
+    {
+      "type": "text",
+      "value": " initializes the loop variable to "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ". The condition "
+    },
+    {
+      "type": "code",
+      "value": "i <= 5"
+    },
+    {
+      "type": "text",
+      "value": " is checked before each iteration. The update "
+    },
+    {
+      "type": "code",
+      "value": "i++"
+    },
+    {
+      "type": "text",
+      "value": " increments "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " after each iteration. This loop prints 1, 2, 3, 4, and 5."
+    },
+    {
+      "type": "text",
+      "value": "The execution flow of a "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loop follows these steps: First, the initialization runs once. Then, the condition is checked. If "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", the loop body executes. After the body, the update runs. Finally, Java returns to check the condition again. This cycle repeats until the condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "for (int count = 0; count < 3; count++) {\n    System.out.println(\"Iteration: \" + count);\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop starts with "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " at "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " and runs while "
+    },
+    {
+      "type": "code",
+      "value": "count < 3"
+    },
+    {
+      "type": "text",
+      "value": ". It prints \"Iteration: 0\", \"Iteration: 1\", and \"Iteration: 2\". After printing with "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " equal to "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ", the update makes "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " equal to "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": ", and the condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "The loop variable declared in the "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loop initialization has scope limited to the loop. This means the variable only exists within the loop and cannot be accessed outside of it."
+    },
+    {
+      "type": "code",
+      "value": "for (int x = 1; x <= 3; x++) {\n    System.out.println(x);\n}\n// x is not accessible here"
+    },
+    {
+      "type": "text",
+      "value": "The variable "
+    },
+    {
+      "type": "code",
+      "value": "x"
+    },
+    {
+      "type": "text",
+      "value": " exists only inside the "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loop. After the loop completes, attempting to use "
+    },
+    {
+      "type": "code",
+      "value": "x"
+    },
+    {
+      "type": "text",
+      "value": " causes a compilation error. This scope limitation helps prevent naming conflicts and keeps variables organized."
+    },
+    {
+      "type": "text",
+      "value": "You can count backward by using a decrement in the update and adjusting the condition accordingly."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 5; i >= 1; i--) {\n    System.out.println(i);\n}\nSystem.out.println(\"Liftoff!\");"
+    },
+    {
+      "type": "text",
+      "value": "This countdown loop starts at "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": " and decrements to "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ". The condition "
+    },
+    {
+      "type": "code",
+      "value": "i >= 1"
+    },
+    {
+      "type": "text",
+      "value": " keeps the loop running while "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " is greater than or equal to "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ". After printing 5, 4, 3, 2, and 1, the loop exits and \"Liftoff!\" prints."
+    },
+    {
+      "type": "text",
+      "value": "The update expression can use any arithmetic operation, not just incrementing or decrementing by "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 0; i <= 10; i += 2) {\n    System.out.println(i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop increments by "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": " each iteration, printing even numbers: 0, 2, 4, 6, 8, and 10. The update "
+    },
+    {
+      "type": "code",
+      "value": "i += 2"
+    },
+    {
+      "type": "text",
+      "value": " adds "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " after each iteration."
+    },
+    {
+      "type": "text",
+      "value": "Accumulator patterns work naturally in "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loops. You can calculate sums, products, or other aggregate values."
+    },
+    {
+      "type": "code",
+      "value": "int sum = 0;\nfor (int i = 1; i <= 10; i++) {\n    sum += i;\n}\nSystem.out.println(\"Sum: \" + sum);"
+    },
+    {
+      "type": "text",
+      "value": "This loop calculates the sum of numbers from "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "10"
+    },
+    {
+      "type": "text",
+      "value": ". The accumulator "
+    },
+    {
+      "type": "code",
+      "value": "sum"
+    },
+    {
+      "type": "text",
+      "value": " starts at "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " and adds each value of "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": ". The final result is "
+    },
+    {
+      "type": "code",
+      "value": "55"
+    },
+    {
+      "type": "text",
+      "value": " (1+2+3+4+5+6+7+8+9+10)."
+    },
+    {
+      "type": "text",
+      "value": "You can use "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loops to iterate over specific ranges by adjusting the initialization and condition."
+    },
+    {
+      "type": "code",
+      "value": "for (int age = 13; age <= 19; age++) {\n    System.out.println(\"Age: \" + age);\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop prints ages from "
+    },
+    {
+      "type": "code",
+      "value": "13"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "19"
+    },
+    {
+      "type": "text",
+      "value": ", representing teenage years. The initialization sets the starting point, and the condition determines when to stop."
+    },
+    {
+      "type": "text",
+      "value": "Counter patterns in "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loops track how many times something occurs during the loop's execution."
+    },
+    {
+      "type": "code",
+      "value": "int oddCount = 0;\nfor (int i = 1; i <= 20; i++) {\n    if (i % 2 != 0) {\n        oddCount++;\n    }\n}\nSystem.out.println(\"Odd numbers: \" + oddCount);"
+    },
+    {
+      "type": "text",
+      "value": "This loop counts odd numbers from "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "20"
+    },
+    {
+      "type": "text",
+      "value": ". When "
+    },
+    {
+      "type": "code",
+      "value": "i % 2 != 0"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " (indicating an odd number), "
+    },
+    {
+      "type": "code",
+      "value": "oddCount"
+    },
+    {
+      "type": "text",
+      "value": " increments. The final count is "
+    },
+    {
+      "type": "code",
+      "value": "10"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "String concatenation works well with "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loops to build strings by adding characters or words in each iteration."
+    },
+    {
+      "type": "code",
+      "value": "String result = \"\";\nfor (int i = 1; i <= 3; i++) {\n    result += \"*\";\n}\nSystem.out.println(result);"
+    },
+    {
+      "type": "text",
+      "value": "This loop builds a string of asterisks. Starting with an empty string, each iteration adds one asterisk. After three iterations, "
+    },
+    {
+      "type": "code",
+      "value": "result"
+    },
+    {
+      "type": "text",
+      "value": " contains \"***\"."
+    },
+    {
+      "type": "text",
+      "value": "You can calculate mathematical sequences using "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loops, such as powers of a number."
+    },
+    {
+      "type": "code",
+      "value": "int base = 2;\nfor (int exp = 0; exp <= 4; exp++) {\n    int result = (int) Math.pow(base, exp);\n    System.out.println(base + \"^\" + exp + \" = \" + result);\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop calculates powers of "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": " from "
+    },
+    {
+      "type": "code",
+      "value": "2^0"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "2^4"
+    },
+    {
+      "type": "text",
+      "value": ", printing 1, 2, 4, 8, and 16. The "
+    },
+    {
+      "type": "code",
+      "value": "Math.pow()"
+    },
+    {
+      "type": "text",
+      "value": " method computes the power, which you'll learn more about in later units."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loop is particularly useful when you know the exact number of iterations needed. If you're iterating a specific number of times, "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loops provide the clearest syntax."
+    },
+    {
+      "type": "code",
+      "value": "for (int rep = 1; rep <= 5; rep++) {\n    System.out.println(\"Repetition #\" + rep);\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop performs exactly five repetitions, numbered 1 through 5. The compact "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loop syntax makes the intent immediately clear: repeat something a specific number of times."
+    },
+    {
+      "type": "text",
+      "value": "Empty loop bodies are syntactically valid but rarely useful. The semicolon after the loop header creates an empty body."
+    },
+    {
+      "type": "code",
+      "value": "int total = 0;\nfor (int i = 1; i <= 10; total += i, i++);\nSystem.out.println(\"Total: \" + total);"
+    },
+    {
+      "type": "text",
+      "value": "This unusual loop performs all its work in the update section, adding "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "total"
+    },
+    {
+      "type": "text",
+      "value": " and incrementing "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " using the comma operator. While this works, placing logic inside the loop body is clearer and more conventional."
+    },
+    {
+      "type": "text",
+      "value": "Understanding "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loops gives you a powerful tool for counted iteration. The compact syntax keeps related loop components together, making code easier to read and maintain. Practice writing "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loops with different start values, conditions, and updates. In the next lesson, you'll learn about loop variables and initialization in greater detail."
+    }
+  ]
+}

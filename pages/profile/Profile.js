@@ -185,7 +185,7 @@ export default function Profile() {
 
                     <TouchableOpacity
                         style={styles.card}
-                        onPress={() => navigation.navigate("Home", { screen: "Bookmarks" })}
+                        onPress={() => navigation.navigate("MainTabs", { screen: "Bookmarks" })}
                     >
                     <View style={styles.groupLeftCard}>
                         <MaterialIcons name="bookmark" size={20} color={colors.goldIcon} />

@@ -1,0 +1,214 @@
+{
+  "lessonId": 61,
+  "title": "Loop Tracing and Dry-Run Practice",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is loop tracing?",
+      "options": [
+        { "type": "text", "value": "Manually executing loop code step by step to understand behavior" },
+        { "type": "text", "value": "Drawing pictures of loops" },
+        { "type": "text", "value": "Counting how many loops you have" },
+        { "type": "text", "value": "Deleting loops from code" }
+      ],
+      "answer": 0,
+      "explanation": "Loop tracing, or dry-running, is the process of manually executing loop code step by step to understand what the loop does and predict its output."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What tool helps organize variable values during tracing?",
+      "options": [
+        { "type": "text", "value": "A calculator" },
+        { "type": "text", "value": "A trace table with columns for variables and rows for iterations" },
+        { "type": "text", "value": "A graph" },
+        { "type": "text", "value": "A computer" }
+      ],
+      "answer": 1,
+      "explanation": "A trace table organizes tracing information with columns for each variable and rows for each iteration, making it easy to track changes."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What is the final value of sum?\n\nint sum = 0;\nfor (int i = 1; i <= 3; i++) {\n    sum += i;\n}",
+      "options": [
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "6" },
+        { "type": "text", "value": "1" }
+      ],
+      "answer": 2,
+      "explanation": "Tracing: sum = 0+1=1, then 1+2=3, then 3+3=6. Final value is 6."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What are the basic steps for tracing a loop?",
+      "options": [
+        { "type": "text", "value": "Identify initial values, check condition, execute body, update, repeat" },
+        { "type": "text", "value": "Just run the program" },
+        { "type": "text", "value": "Count to ten" },
+        { "type": "text", "value": "Write random numbers" }
+      ],
+      "answer": 0,
+      "explanation": "The basic steps are: identify initial values, check the condition, execute the body if true, perform the update, and repeat until the condition becomes false."
+    },
+    {
+      "id": 5,
+      "type": "code",
+      "question": "What does this loop print?\n\nfor (int i = 1; i <= 5; i++) {\n    if (i % 2 == 0) {\n        System.out.println(i);\n    }\n}",
+      "options": [
+        { "type": "text", "value": "2, 4" },
+        { "type": "text", "value": "1, 3, 5" },
+        { "type": "text", "value": "1, 2, 3, 4, 5" },
+        { "type": "text", "value": "5, 4, 3, 2, 1" }
+      ],
+      "answer": 0,
+      "explanation": "Tracing: i=1 (odd, no print), i=2 (even, prints 2), i=3 (odd, no print), i=4 (even, prints 4), i=5 (odd, no print). Output: 2, 4."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "How many lines of output does this produce?\n\nfor (int i = 1; i <= 2; i++) {\n    for (int j = 1; j <= 3; j++) {\n        System.out.println(i + \",\" + j);\n    }\n}",
+      "options": [
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "6" },
+        { "type": "text", "value": "3" }
+      ],
+      "answer": 2,
+      "explanation": "When i=1, inner loop prints 3 lines (1,1), (1,2), (1,3). When i=2, inner loop prints 3 more lines (2,1), (2,2), (2,3). Total: 6 lines."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "What does this loop print?\n\nfor (int i = 1; i <= 5; i++) {\n    System.out.println(i);\n    if (i == 3) {\n        break;\n    }\n}",
+      "options": [
+        { "type": "text", "value": "1, 2, 3, 4, 5" },
+        { "type": "text", "value": "1, 2" },
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "1, 2, 3" }
+      ],
+      "answer": 3,
+      "explanation": "Tracing: prints 1, prints 2, prints 3 then breaks. The break executes after printing 3, so output is 1, 2, 3."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What does this loop print?\n\nfor (int i = 1; i <= 4; i++) {\n    if (i == 2) {\n        continue;\n    }\n    System.out.println(i);\n}",
+      "options": [
+        { "type": "text", "value": "1, 2, 3, 4" },
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "1, 3, 4" },
+        { "type": "text", "value": "1, 2, 4" }
+      ],
+      "answer": 2,
+      "explanation": "Tracing: i=1 prints 1, i=2 continues (skips print), i=3 prints 3, i=4 prints 4. Output: 1, 3, 4."
+    },
+    {
+      "id": 9,
+      "type": "code",
+      "question": "What is the final value of product?\n\nint product = 1;\nfor (int i = 2; i <= 4; i++) {\n    product *= i;\n}",
+      "options": [
+        { "type": "text", "value": "24" },
+        { "type": "text", "value": "6" },
+        { "type": "text", "value": "8" },
+        { "type": "text", "value": "12" }
+      ],
+      "answer": 0,
+      "explanation": "Tracing: product = 1*2=2, then 2*3=6, then 6*4=24. Final value is 24."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What does this loop print?\n\nfor (int i = 0; i <= 10; i += 3) {\n    System.out.println(i);\n}",
+      "options": [
+        { "type": "text", "value": "0, 3, 6, 9, 12" },
+        { "type": "text", "value": "0, 3, 6, 9" },
+        { "type": "text", "value": "3, 6, 9" },
+        { "type": "text", "value": "0, 1, 2, 3..." }
+      ],
+      "answer": 1,
+      "explanation": "Tracing: prints 0, updates to 3, prints 3, updates to 6, prints 6, updates to 9, prints 9, updates to 12. Since 12 > 10, loop exits. Output: 0, 3, 6, 9."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "What is the final value of result?\n\nString result = \"\";\nfor (int i = 1; i <= 3; i++) {\n    result += \"*\";\n}",
+      "options": [
+        { "type": "text", "value": "\"***\"" },
+        { "type": "text", "value": "\"*\"" },
+        { "type": "text", "value": "\"**\"" },
+        { "type": "text", "value": "\"\"" }
+      ],
+      "answer": 0,
+      "explanation": "Tracing: result = \"\"+\"*\"=\"*\", then \"*\"+\"*\"=\"**\", then \"**\"+\"*\"=\"***\". Final value is \"***\"."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What does tracing help identify?",
+      "options": [
+        { "type": "text", "value": "Variable types" },
+        { "type": "text", "value": "Syntax errors" },
+        { "type": "text", "value": "Off-by-one errors and logic mistakes" },
+        { "type": "text", "value": "Missing semicolons" }
+      ],
+      "answer": 2,
+      "explanation": "Tracing helps identify off-by-one errors and logic mistakes by showing exactly which values the loop processes."
+    },
+    {
+      "id": 13,
+      "type": "code",
+      "question": "What is the final value of count?\n\nint count = 0;\nfor (int i = 0; i <= 5; i++) {\n    if (i % 2 == 1) {\n        count++;\n    }\n}",
+      "options": [
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "6" },
+        { "type": "text", "value": "3" }
+      ],
+      "answer": 3,
+      "explanation": "Tracing odd numbers from 0-5: i=1 (odd, count=1), i=3 (odd, count=2), i=5 (odd, count=3). Final count is 3."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "When tracing reveals unexpected behavior, what should you examine?",
+      "options": [
+        { "type": "text", "value": "Variable initialization, condition, update direction, and body results" },
+        { "type": "text", "value": "Only the variable names" },
+        { "type": "text", "value": "Only the print statements" },
+        { "type": "text", "value": "Nothing, just rewrite everything" }
+      ],
+      "answer": 0,
+      "explanation": "When tracing reveals problems, examine: Are variables initialized correctly? Does the condition check the right thing? Does the update move correctly? Does the body produce expected results?"
+    },
+    {
+      "id": 15,
+      "type": "code",
+      "question": "What error does tracing reveal in this loop intended to print 1-5?\n\nfor (int i = 1; i < 5; i++) {\n    System.out.println(i);\n}",
+      "options": [
+        { "type": "text", "value": "Prints too many values" },
+        { "type": "text", "value": "Prints in wrong order" },
+        { "type": "text", "value": "Missing 5 - should use i <= 5" },
+        { "type": "text", "value": "No error" }
+      ],
+      "answer": 2,
+      "explanation": "Tracing shows it prints 1, 2, 3, 4 but misses 5. The condition should be i <= 5 instead of i < 5 to include 5."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "Why should you practice tracing loops regularly?",
+      "options": [
+        { "type": "text", "value": "It's required by Java" },
+        { "type": "text", "value": "It makes programs run faster" },
+        { "type": "text", "value": "It uses less memory" },
+        { "type": "text", "value": "To develop intuition for loop execution and spot errors quickly" }
+      ],
+      "answer": 3,
+      "explanation": "Regular tracing practice develops intuition for how loops execute, making you faster at spotting errors and predicting behavior."
+    }
+  ]
+}

@@ -1,0 +1,446 @@
+{
+  "lessonId": 64,
+  "title": "Accumulators and Counters in Loops",
+  "content": [
+    {
+      "type": "text",
+      "value": "When working with loops, two of the most fundamental patterns you'll encounter are accumulators and counters. These variables help you track information as your loop processes data, making them essential tools for solving real-world programming problems."
+    },
+    {
+      "type": "text",
+      "value": "An accumulator is a variable that accumulates or collects values throughout the iterations of a loop. The most common use of an accumulator is to calculate a running total or sum. Think of it like a piggy bank - each time through the loop, you add more money to what's already there."
+    },
+    {
+      "type": "code",
+      "value": "int sum = 0;\nfor (int i = 1; i <= 5; i++) {\n    sum = sum + i;\n}\nSystem.out.println(\"Total: \" + sum);"
+    },
+    {
+      "type": "text",
+      "value": "In this example, the variable "
+    },
+    {
+      "type": "code",
+      "value": "sum"
+    },
+    {
+      "type": "text",
+      "value": " starts at "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " and accumulates the values 1 through 5. After the loop completes, "
+    },
+    {
+      "type": "code",
+      "value": "sum"
+    },
+    {
+      "type": "text",
+      "value": " contains 15, which is the total of all numbers from 1 to 5. The key characteristic of an accumulator is that it starts with an initial value (often "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ") and updates itself by adding, multiplying, or combining with new values each iteration."
+    },
+    {
+      "type": "text",
+      "value": "The shorthand operator "
+    },
+    {
+      "type": "code",
+      "value": "+="
+    },
+    {
+      "type": "text",
+      "value": " makes accumulator code more concise and is commonly used in professional Java programming. Instead of writing "
+    },
+    {
+      "type": "code",
+      "value": "sum = sum + i"
+    },
+    {
+      "type": "text",
+      "value": ", you can write "
+    },
+    {
+      "type": "code",
+      "value": "sum += i"
+    },
+    {
+      "type": "text",
+      "value": " to achieve the same result."
+    },
+    {
+      "type": "code",
+      "value": "int total = 0;\nfor (int i = 1; i <= 10; i++) {\n    total += i * 2;\n}\nSystem.out.println(\"Sum of even numbers: \" + total);"
+    },
+    {
+      "type": "text",
+      "value": "This accumulator adds up all even numbers from 2 to 20 by accumulating "
+    },
+    {
+      "type": "code",
+      "value": "i * 2"
+    },
+    {
+      "type": "text",
+      "value": " in each iteration. The "
+    },
+    {
+      "type": "code",
+      "value": "+="
+    },
+    {
+      "type": "text",
+      "value": " operator adds the right side to the current value of "
+    },
+    {
+      "type": "code",
+      "value": "total"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "A counter is a variable that counts how many times something occurs during loop execution. While loop control variables like "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " count iterations, separate counter variables track specific conditions or events. Counters typically start at "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " and increment by 1 each time a condition is met."
+    },
+    {
+      "type": "code",
+      "value": "int evenCount = 0;\nfor (int i = 1; i <= 20; i++) {\n    if (i % 2 == 0) {\n        evenCount++;\n    }\n}\nSystem.out.println(\"Number of even values: \" + evenCount);"
+    },
+    {
+      "type": "text",
+      "value": "Here, "
+    },
+    {
+      "type": "code",
+      "value": "evenCount"
+    },
+    {
+      "type": "text",
+      "value": " tracks how many even numbers exist between 1 and 20. The "
+    },
+    {
+      "type": "code",
+      "value": "++"
+    },
+    {
+      "type": "text",
+      "value": " operator increments the counter by 1 each time the condition "
+    },
+    {
+      "type": "code",
+      "value": "i % 2 == 0"
+    },
+    {
+      "type": "text",
+      "value": " is true. This counter will reach 10 by the end of the loop since there are 10 even numbers in that range."
+    },
+    {
+      "type": "text",
+      "value": "The increment operator "
+    },
+    {
+      "type": "code",
+      "value": "++"
+    },
+    {
+      "type": "text",
+      "value": " adds 1 to a variable, while the decrement operator "
+    },
+    {
+      "type": "code",
+      "value": "--"
+    },
+    {
+      "type": "text",
+      "value": " subtracts 1. These operators are shorthand for "
+    },
+    {
+      "type": "code",
+      "value": "counter = counter + 1"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "counter = counter - 1"
+    },
+    {
+      "type": "text",
+      "value": " respectively."
+    },
+    {
+      "type": "code",
+      "value": "int positiveCount = 0;\nint negativeCount = 0;\nint[] numbers = {5, -3, 8, -1, 0, 12, -7};\n\nfor (int i = 0; i < numbers.length; i++) {\n    if (numbers[i] > 0) {\n        positiveCount++;\n    } else if (numbers[i] < 0) {\n        negativeCount++;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This example uses two separate counters to track different categories. One counter tracks positive numbers while the other tracks negative numbers. Multiple counters can work simultaneously within the same loop to categorize data."
+    },
+    {
+      "type": "text",
+      "value": "Accumulators and counters often work together to solve complex problems. For example, calculating an average requires both accumulating a sum and counting how many values were added."
+    },
+    {
+      "type": "code",
+      "value": "int sum = 0;\nint count = 0;\nint[] scores = {85, 92, 78, 90, 88};\n\nfor (int i = 0; i < scores.length; i++) {\n    sum += scores[i];\n    count++;\n}\n\ndouble average = (double) sum / count;\nSystem.out.println(\"Average score: \" + average);"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "sum"
+    },
+    {
+      "type": "text",
+      "value": " accumulator adds all test scores while the "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " counter tracks how many scores were processed. Dividing the accumulated sum by the count gives us the average. Notice the cast to "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " to ensure decimal division rather than integer division."
+    },
+    {
+      "type": "text",
+      "value": "Accumulators can use operations other than addition. Multiplication accumulators are useful for calculating products or factorials."
+    },
+    {
+      "type": "code",
+      "value": "int product = 1;\nfor (int i = 1; i <= 5; i++) {\n    product *= i;\n}\nSystem.out.println(\"5 factorial: \" + product);"
+    },
+    {
+      "type": "text",
+      "value": "This accumulator starts at "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " (not "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ", since multiplying by "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " would make everything "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ") and multiplies by each value from 1 to 5. The "
+    },
+    {
+      "type": "code",
+      "value": "*="
+    },
+    {
+      "type": "text",
+      "value": " operator multiplies the current value of "
+    },
+    {
+      "type": "code",
+      "value": "product"
+    },
+    {
+      "type": "text",
+      "value": " by "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": ". The result is 120, which equals 5 factorial."
+    },
+    {
+      "type": "text",
+      "value": "When initializing accumulators, choose the appropriate starting value based on the operation. Addition and subtraction accumulators typically start at "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ", while multiplication accumulators start at "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ". For finding maximum values, start with the smallest possible value, and for minimum values, start with the largest possible value."
+    },
+    {
+      "type": "code",
+      "value": "int max = Integer.MIN_VALUE;\nint min = Integer.MAX_VALUE;\nint[] values = {45, 23, 67, 12, 89, 34};\n\nfor (int i = 0; i < values.length; i++) {\n    if (values[i] > max) {\n        max = values[i];\n    }\n    if (values[i] < min) {\n        min = values[i];\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This example uses "
+    },
+    {
+      "type": "code",
+      "value": "Integer.MIN_VALUE"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "Integer.MAX_VALUE"
+    },
+    {
+      "type": "text",
+      "value": " as starting points to find the maximum and minimum values in an array. These constants represent the smallest and largest possible "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " values in Java, ensuring any real value will update them appropriately."
+    },
+    {
+      "type": "text",
+      "value": "Counters can also track complex conditions by combining multiple boolean expressions. You might count how many numbers fall within a specific range or meet multiple criteria."
+    },
+    {
+      "type": "code",
+      "value": "int rangeCount = 0;\nfor (int i = 1; i <= 100; i++) {\n    if (i >= 25 && i <= 75) {\n        rangeCount++;\n    }\n}\nSystem.out.println(\"Numbers between 25 and 75: \" + rangeCount);"
+    },
+    {
+      "type": "text",
+      "value": "This counter tracks how many numbers fall between 25 and 75 inclusive. The logical AND operator "
+    },
+    {
+      "type": "code",
+      "value": "&&"
+    },
+    {
+      "type": "text",
+      "value": " ensures both conditions must be true before incrementing the counter."
+    },
+    {
+      "type": "text",
+      "value": "Common mistakes with accumulators include forgetting to initialize them or placing the initialization inside the loop, which would reset the value each iteration. Always initialize accumulators and counters before the loop begins."
+    },
+    {
+      "type": "code",
+      "value": "// INCORRECT - initialization inside loop\nfor (int i = 1; i <= 5; i++) {\n    int sum = 0;  // This resets sum every iteration!\n    sum += i;\n}\n\n// CORRECT - initialization before loop\nint sum = 0;\nfor (int i = 1; i <= 5; i++) {\n    sum += i;\n}"
+    },
+    {
+      "type": "text",
+      "value": "The first example shows a common error where "
+    },
+    {
+      "type": "code",
+      "value": "sum"
+    },
+    {
+      "type": "text",
+      "value": " is declared inside the loop, causing it to reset to "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " every iteration. The second example correctly initializes "
+    },
+    {
+      "type": "code",
+      "value": "sum"
+    },
+    {
+      "type": "text",
+      "value": " before the loop so it can accumulate values across all iterations."
+    },
+    {
+      "type": "text",
+      "value": "String accumulators work similarly to numeric ones, building up text by concatenating strings together throughout the loop."
+    },
+    {
+      "type": "code",
+      "value": "String result = \"\";\nfor (int i = 1; i <= 5; i++) {\n    result += i + \" \";\n}\nSystem.out.println(\"Numbers: \" + result);"
+    },
+    {
+      "type": "text",
+      "value": "This "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " accumulator starts with an empty string and adds each number followed by a space. The final result is a string containing all numbers separated by spaces."
+    },
+    {
+      "type": "text",
+      "value": "Understanding accumulators and counters is crucial because they appear in many loop-based algorithms you'll learn next, including finding common values, searching arrays, and processing collections. These patterns form the foundation for more advanced data processing techniques you'll encounter throughout AP Computer Science A."
+    }
+  ]
+}

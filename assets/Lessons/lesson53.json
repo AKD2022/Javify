@@ -1,0 +1,762 @@
+{
+  "lessonId": 53,
+  "title": "do-while Loop Basics",
+  "content": [
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loop is Java's second loop structure. It differs from a "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loop in one critical way: it checks the condition after executing the loop body rather than before. This guarantees the loop body executes at least once, even if the condition is initially "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "The syntax of a "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loop starts with the keyword "
+    },
+    {
+      "type": "code",
+      "value": "do"
+    },
+    {
+      "type": "text",
+      "value": ", followed by the code block in curly braces, then the keyword "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " with the condition in parentheses. Notice the semicolon after the condition, which is required."
+    },
+    {
+      "type": "code",
+      "value": "do {\n    // Code to execute\n} while (condition);"
+    },
+    {
+      "type": "text",
+      "value": "The execution flow of a "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loop follows this pattern: first, execute the loop body. Then, check the condition. If the condition is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", return to the beginning and execute the body again. If the condition is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", exit the loop."
+    },
+    {
+      "type": "code",
+      "value": "int count = 1;\ndo {\n    System.out.println(\"Count: \" + count);\n    count++;\n} while (count <= 3);"
+    },
+    {
+      "type": "text",
+      "value": "This loop prints numbers from 1 to 3. The body executes first, printing \"Count: 1\" and incrementing "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ". Then Java checks if "
+    },
+    {
+      "type": "code",
+      "value": "count <= 3"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". Since it is, the loop continues. This repeats until "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " reaches "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "The key distinction between "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " becomes clear when the condition is initially "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". A "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loop with a false condition never executes, but a "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loop always executes at least once."
+    },
+    {
+      "type": "code",
+      "value": "int number = 10;\ndo {\n    System.out.println(\"Number: \" + number);\n    number++;\n} while (number < 5);"
+    },
+    {
+      "type": "text",
+      "value": "Even though "
+    },
+    {
+      "type": "code",
+      "value": "number"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "10"
+    },
+    {
+      "type": "text",
+      "value": " and the condition "
+    },
+    {
+      "type": "code",
+      "value": "number < 5"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", the loop body executes once, printing \"Number: 10\". After this single execution, Java checks the condition, finds it "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", and terminates the loop."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loop is particularly useful for input validation, where you want to prompt the user at least once and continue prompting until they provide valid input."
+    },
+    {
+      "type": "code",
+      "value": "int userInput;\ndo {\n    System.out.println(\"Enter a number between 1 and 10:\");\n    userInput = 5; // Simulating user input\n} while (userInput < 1 || userInput > 10);"
+    },
+    {
+      "type": "text",
+      "value": "This pattern ensures the user sees the prompt at least once. The loop continues while the input is outside the valid range. When "
+    },
+    {
+      "type": "code",
+      "value": "userInput"
+    },
+    {
+      "type": "text",
+      "value": " is between "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "10"
+    },
+    {
+      "type": "text",
+      "value": ", the condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and the loop exits."
+    },
+    {
+      "type": "text",
+      "value": "Menu systems commonly use "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loops because you want to display the menu at least once and keep showing it until the user chooses to exit."
+    },
+    {
+      "type": "code",
+      "value": "int choice;\ndo {\n    System.out.println(\"1. Start\");\n    System.out.println(\"2. Options\");\n    System.out.println(\"3. Exit\");\n    choice = 2; // Simulating user choice\n    System.out.println(\"You chose: \" + choice);\n} while (choice != 3);"
+    },
+    {
+      "type": "text",
+      "value": "The menu displays first, then the user makes a choice. The loop continues until "
+    },
+    {
+      "type": "code",
+      "value": "choice"
+    },
+    {
+      "type": "text",
+      "value": " equals "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": ", which represents the exit option. This guarantees the user sees the menu at least once before the program ends."
+    },
+    {
+      "type": "text",
+      "value": "Countdown timers work well with "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loops when you want to ensure at least one number displays."
+    },
+    {
+      "type": "code",
+      "value": "int timer = 3;\ndo {\n    System.out.println(timer);\n    timer--;\n} while (timer > 0);\nSystem.out.println(\"Go!\");"
+    },
+    {
+      "type": "text",
+      "value": "This countdown starts at "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": " and counts down to "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ". After printing each number, "
+    },
+    {
+      "type": "code",
+      "value": "timer--"
+    },
+    {
+      "type": "text",
+      "value": " decrements the value. When "
+    },
+    {
+      "type": "code",
+      "value": "timer"
+    },
+    {
+      "type": "text",
+      "value": " reaches "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ", the condition "
+    },
+    {
+      "type": "code",
+      "value": "timer > 0"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and \"Go!\" prints."
+    },
+    {
+      "type": "text",
+      "value": "You can use accumulator patterns in "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loops just as you do in "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loops."
+    },
+    {
+      "type": "code",
+      "value": "int sum = 0;\nint i = 1;\ndo {\n    sum += i;\n    i++;\n} while (i <= 4);\nSystem.out.println(\"Sum: \" + sum);"
+    },
+    {
+      "type": "text",
+      "value": "This loop calculates the sum of numbers from "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": ". The accumulator "
+    },
+    {
+      "type": "code",
+      "value": "sum"
+    },
+    {
+      "type": "text",
+      "value": " starts at "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " and adds each value: 0+1=1, 1+2=3, 3+3=6, 6+4=10. The final sum is "
+    },
+    {
+      "type": "code",
+      "value": "10"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Boolean flags work effectively with "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loops for processes that must start and continue until a certain condition is met."
+    },
+    {
+      "type": "code",
+      "value": "boolean keepGoing = true;\nint attempts = 0;\n\ndo {\n    attempts++;\n    System.out.println(\"Attempt: \" + attempts);\n    if (attempts >= 3) {\n        keepGoing = false;\n    }\n} while (keepGoing);"
+    },
+    {
+      "type": "text",
+      "value": "This loop tracks attempts, executing at least once. After three attempts, "
+    },
+    {
+      "type": "code",
+      "value": "keepGoing"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and the loop terminates. The boolean flag provides flexible control over when the loop should stop."
+    },
+    {
+      "type": "text",
+      "value": "Remember that the semicolon after the condition is mandatory in "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loops. Forgetting it causes a compilation error."
+    },
+    {
+      "type": "code",
+      "value": "int x = 1;\ndo {\n    System.out.println(x);\n    x++;\n} while (x <= 2); // Semicolon required here"
+    },
+    {
+      "type": "text",
+      "value": "The semicolon completes the "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " statement. Without it, Java cannot parse the loop correctly. This is one of the distinctive syntax features of "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loops."
+    },
+    {
+      "type": "text",
+      "value": "You can increment by values other than "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " in "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loops, just like in "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loops."
+    },
+    {
+      "type": "code",
+      "value": "int value = 5;\ndo {\n    System.out.println(value);\n    value += 5;\n} while (value <= 15);"
+    },
+    {
+      "type": "text",
+      "value": "This loop prints multiples of "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": ": 5, 10, and 15. Each iteration increases "
+    },
+    {
+      "type": "code",
+      "value": "value"
+    },
+    {
+      "type": "text",
+      "value": " by "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": ". When "
+    },
+    {
+      "type": "code",
+      "value": "value"
+    },
+    {
+      "type": "text",
+      "value": " reaches "
+    },
+    {
+      "type": "code",
+      "value": "20"
+    },
+    {
+      "type": "text",
+      "value": ", the condition "
+    },
+    {
+      "type": "code",
+      "value": "value <= 15"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and the loop stops."
+    },
+    {
+      "type": "text",
+      "value": "Complex conditions work in "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loops just as they do in "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loops. You can combine multiple boolean expressions with logical operators."
+    },
+    {
+      "type": "code",
+      "value": "int score = 0;\nint lives = 3;\n\ndo {\n    score += 10;\n    lives--;\n    System.out.println(\"Score: \" + score + \", Lives: \" + lives);\n} while (score < 50 && lives > 0);"
+    },
+    {
+      "type": "text",
+      "value": "This game loop continues while the score is below "
+    },
+    {
+      "type": "code",
+      "value": "50"
+    },
+    {
+      "type": "text",
+      "value": " and lives remain above "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ". Both conditions must be "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " for the loop to continue. When either becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", the loop terminates."
+    },
+    {
+      "type": "text",
+      "value": "Choosing between "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " depends on whether you need the loop body to execute at least once. Use "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " when you want guaranteed first execution, such as prompting for input or displaying a menu. Use "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " when the initial condition might be "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and skipping execution is acceptable."
+    },
+    {
+      "type": "text",
+      "value": "Understanding "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loops expands your toolkit for handling repetition in Java. Practice recognizing situations where at-least-once execution is beneficial. In the next lesson, you'll learn about "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loops, which provide a more compact syntax for common loop patterns."
+    }
+  ]
+}

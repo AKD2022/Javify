@@ -116,10 +116,11 @@ export default function App() {
             {user ? (
               <>
                 <Stack.Screen
-                  name="Home"
+                  name="MainTabs"    
                   component={MainTabs}
                   options={{ headerShown: false }}
                 />
+
 
                 {/* Unit Screen with custom header */}
                 <Stack.Screen

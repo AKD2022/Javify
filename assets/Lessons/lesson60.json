@@ -1,0 +1,642 @@
+{
+  "lessonId": 60,
+  "title": "Infinite Loops and How to Avoid Them",
+  "content": [
+    {
+      "type": "text",
+      "value": "An infinite loop is a loop that never terminates because its condition never becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". Understanding what causes infinite loops and how to prevent them is essential for writing reliable programs. This lesson explores common infinite loop mistakes and strategies to avoid them."
+    },
+    {
+      "type": "text",
+      "value": "An infinite loop occurs when the loop condition remains "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " forever. The most common cause is forgetting to update the loop variable that the condition depends on."
+    },
+    {
+      "type": "code",
+      "value": "// Infinite loop - missing update\nint i = 0;\nwhile (i < 5) {\n    System.out.println(i);\n    // Missing: i++\n}"
+    },
+    {
+      "type": "text",
+      "value": "Without incrementing "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": ", the variable stays at "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " forever. The condition "
+    },
+    {
+      "type": "code",
+      "value": "i < 5"
+    },
+    {
+      "type": "text",
+      "value": " never becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", causing the loop to print "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " endlessly. Always verify that your loop includes an update that changes the variable used in the condition."
+    },
+    {
+      "type": "text",
+      "value": "Updating in the wrong direction creates infinite loops when the variable moves away from the termination condition instead of toward it."
+    },
+    {
+      "type": "code",
+      "value": "// Infinite loop - wrong direction\nfor (int i = 0; i < 10; i--) {\n    System.out.println(i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop starts at "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " and decrements with "
+    },
+    {
+      "type": "code",
+      "value": "i--"
+    },
+    {
+      "type": "text",
+      "value": ". Since "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " becomes negative and keeps decreasing, the condition "
+    },
+    {
+      "type": "code",
+      "value": "i < 10"
+    },
+    {
+      "type": "text",
+      "value": " remains "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " forever. The decrement moves "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " away from "
+    },
+    {
+      "type": "code",
+      "value": "10"
+    },
+    {
+      "type": "text",
+      "value": " instead of toward it."
+    },
+    {
+      "type": "text",
+      "value": "Using the wrong comparison operator can prevent the condition from ever becoming "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "// Infinite loop - wrong operator\nint count = 5;\nwhile (count != 0) {\n    System.out.println(count);\n    count -= 2;\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop decrements "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " by "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": " each iteration: 5, 3, 1, -1, -3... The value never equals exactly "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ", so "
+    },
+    {
+      "type": "code",
+      "value": "count != 0"
+    },
+    {
+      "type": "text",
+      "value": " remains "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " forever. Using "
+    },
+    {
+      "type": "code",
+      "value": "count > 0"
+    },
+    {
+      "type": "text",
+      "value": " instead would prevent this infinite loop."
+    },
+    {
+      "type": "text",
+      "value": "Conditions that are always "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " create intentional infinite loops, which are sometimes useful but dangerous if unintended."
+    },
+    {
+      "type": "code",
+      "value": "// Intentional infinite loop\nwhile (true) {\n    System.out.println(\"Running forever...\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "The condition "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " is always "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", so this loop never terminates on its own. Intentional infinite loops require a "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statement or external termination mechanism. Never write "
+    },
+    {
+      "type": "code",
+      "value": "while (true)"
+    },
+    {
+      "type": "text",
+      "value": " without a clear exit strategy."
+    },
+    {
+      "type": "text",
+      "value": "Modifying the wrong variable in the loop body causes the actual loop control variable to remain unchanged."
+    },
+    {
+      "type": "code",
+      "value": "// Infinite loop - wrong variable updated\nint i = 0;\nint j = 0;\nwhile (i < 5) {\n    System.out.println(i);\n    j++; // Should be i++\n}"
+    },
+    {
+      "type": "text",
+      "value": "The loop condition checks "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": ", but the update modifies "
+    },
+    {
+      "type": "code",
+      "value": "j"
+    },
+    {
+      "type": "text",
+      "value": " instead. Since "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " never changes, the condition stays "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". Always ensure you're updating the correct variable that controls the loop."
+    },
+    {
+      "type": "text",
+      "value": "Floating-point arithmetic can cause unexpected infinite loops due to rounding errors."
+    },
+    {
+      "type": "code",
+      "value": "// Potentially infinite loop with doubles\ndouble value = 0.0;\nwhile (value != 1.0) {\n    value += 0.1;\n    System.out.println(value);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Due to floating-point precision issues, "
+    },
+    {
+      "type": "code",
+      "value": "value"
+    },
+    {
+      "type": "text",
+      "value": " might never exactly equal "
+    },
+    {
+      "type": "code",
+      "value": "1.0"
+    },
+    {
+      "type": "text",
+      "value": ". It could be "
+    },
+    {
+      "type": "code",
+      "value": "0.9999999999"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "1.0000000001"
+    },
+    {
+      "type": "text",
+      "value": ". Use range checks like "
+    },
+    {
+      "type": "code",
+      "value": "value >= 1.0"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "Math.abs(value - 1.0) < 0.0001"
+    },
+    {
+      "type": "text",
+      "value": " instead of exact equality for floating-point comparisons."
+    },
+    {
+      "type": "text",
+      "value": "Complex conditions with logical errors can accidentally create infinite loops."
+    },
+    {
+      "type": "code",
+      "value": "// Infinite loop - logic error\nint x = 0;\nint y = 10;\nwhile (x < 5 || y > 0) {\n    x++;\n    // y never changes\n    System.out.println(\"x: \" + x + \", y: \" + y);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Even though "
+    },
+    {
+      "type": "code",
+      "value": "x"
+    },
+    {
+      "type": "text",
+      "value": " reaches "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": ", the OR condition "
+    },
+    {
+      "type": "code",
+      "value": "||"
+    },
+    {
+      "type": "text",
+      "value": " means the loop continues as long as "
+    },
+    {
+      "type": "code",
+      "value": "y > 0"
+    },
+    {
+      "type": "text",
+      "value": " remains "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". Since "
+    },
+    {
+      "type": "code",
+      "value": "y"
+    },
+    {
+      "type": "text",
+      "value": " never changes from "
+    },
+    {
+      "type": "code",
+      "value": "10"
+    },
+    {
+      "type": "text",
+      "value": ", the loop never terminates. Both variables in a complex condition must eventually lead to termination."
+    },
+    {
+      "type": "text",
+      "value": "Misplaced "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " statements in "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loops can skip the update, causing infinite loops."
+    },
+    {
+      "type": "code",
+      "value": "// Infinite loop - continue skips update\nint i = 0;\nwhile (i < 5) {\n    if (i % 2 == 0) {\n        continue; // Skips i++\n    }\n    System.out.println(i);\n    i++;\n}"
+    },
+    {
+      "type": "text",
+      "value": "When "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " (even), "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " executes, jumping back to the condition check without incrementing "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": ". The variable stays at "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " forever. Always place the update before any "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " statements in "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loops."
+    },
+    {
+      "type": "text",
+      "value": "To prevent infinite loops, always ask these questions: Does the loop variable change? Does it change in the right direction? Will the condition eventually become "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "?"
+    },
+    {
+      "type": "code",
+      "value": "// Good loop - all questions answered\nint count = 10;\nwhile (count > 0) {\n    System.out.println(count);\n    count--; // Changes, correct direction, reaches 0\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop satisfies all requirements. The variable "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " changes each iteration, it moves in the correct direction (toward "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": "), and the condition eventually becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " when "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " reaches "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Testing loops with small iteration counts helps catch infinite loops during development."
+    },
+    {
+      "type": "code",
+      "value": "// Test with small limit first\nfor (int i = 0; i < 5; i++) {\n    System.out.println(i);\n}\n// If this works, increase to larger values"
+    },
+    {
+      "type": "text",
+      "value": "Starting with a small limit like "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": " lets you verify the loop terminates correctly. If it runs infinitely, you'll notice quickly. Once confirmed working, you can safely increase the limit. Never test potentially infinite loops with huge iteration counts."
+    },
+    {
+      "type": "text",
+      "value": "Adding temporary print statements helps identify infinite loops during debugging."
+    },
+    {
+      "type": "code",
+      "value": "int i = 0;\nwhile (i < 100) {\n    System.out.println(\"Debug: i = \" + i); // Temporary debug output\n    // Loop body\n    i += 2;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Printing the loop variable's value each iteration makes it obvious if the variable isn't changing or is moving in the wrong direction. If you see the same value repeatedly, you've found your infinite loop. Remove these debug statements once the loop works correctly."
+    },
+    {
+      "type": "text",
+      "value": "Some infinite loops are intentional and serve specific purposes, like server main loops or game loops."
+    },
+    {
+      "type": "code",
+      "value": "// Intentional infinite loop with exit mechanism\nwhile (true) {\n    int choice = 1; // Simulate menu choice\n    if (choice == 0) {\n        System.out.println(\"Exiting...\");\n        break;\n    }\n    System.out.println(\"Processing choice: \" + choice);\n}"
+    },
+    {
+      "type": "text",
+      "value": "This intentional infinite loop runs until the user chooses to exit. The "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statement provides the exit mechanism. Intentional infinite loops are acceptable when they have clear, reliable ways to terminate."
+    },
+    {
+      "type": "text",
+      "value": "If your program freezes and stops responding, it's likely stuck in an infinite loop. Most development environments let you forcefully terminate the program. Learn your IDE's stop command to escape infinite loops during testing."
+    },
+    {
+      "type": "text",
+      "value": "Understanding infinite loops and their causes makes you a better programmer. Always verify your loops have proper updates that move toward termination. Test with small values first. Add debug output when troubleshooting. With these practices, you'll write loops that terminate reliably. In the next lesson, you'll practice loop tracing and dry-run techniques."
+    }
+  ]
+}

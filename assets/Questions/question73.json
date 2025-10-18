@@ -1,0 +1,214 @@
+{
+  "lessonId": 73,
+  "title": "Accessor (getter) Methods",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is an accessor method (getter)?",
+      "options": [
+        { "type": "text", "value": "A method that modifies instance variables" },
+        { "type": "text", "value": "A method that returns the value of an instance variable" },
+        { "type": "text", "value": "A method that deletes objects" },
+        { "type": "text", "value": "A method that creates new objects" }
+      ],
+      "answer": 0,
+      "explanation": "An accessor or getter method returns the value of an instance variable, allowing controlled access to an object's data."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What is the standard naming convention for a getter method?",
+      "options": [
+        { "type": "text", "value": "get followed by the variable name with first letter capitalized" },
+        { "type": "text", "value": "retrieve followed by the variable name" },
+        { "type": "text", "value": "access followed by the variable name" },
+        { "type": "text", "value": "read followed by the variable name" }
+      ],
+      "answer": 0,
+      "explanation": "Getter methods follow the pattern getVariableName(), where the first letter after 'get' is capitalized."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What naming convention is used for boolean getter methods?",
+      "options": [
+        { "type": "text", "value": "get followed by variable name" },
+        { "type": "text", "value": "is followed by variable name with first letter capitalized" },
+        { "type": "text", "value": "has followed by variable name" },
+        { "type": "text", "value": "check followed by variable name" }
+      ],
+      "answer": 1,
+      "explanation": "Boolean getters use the naming pattern isVariableName() or hasVariableName(), like isAlive() or isPremium()."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What is returned by a getter method?",
+      "options": [
+        { "type": "text", "value": "Always void" },
+        { "type": "text", "value": "Always a String" },
+        { "type": "text", "value": "A value matching the instance variable's type" },
+        { "type": "text", "value": "Always a boolean" }
+      ],
+      "answer": 2,
+      "explanation": "A getter returns a value of the same type as the instance variable it retrieves."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Can getters perform calculations on instance variables?",
+      "options": [
+        { "type": "text", "value": "No, they only return stored values" },
+        { "type": "text", "value": "Yes, getters can calculate and return derived values" },
+        { "type": "text", "value": "Only with primitive types" },
+        { "type": "text", "value": "Only in static methods" }
+      ],
+      "answer": 1,
+      "explanation": "Getters can perform calculations, transformations, or any computation before returning a value, not just return stored data."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What is a key advantage of using getters?",
+      "options": [
+        { "type": "text", "value": "They make code run faster" },
+        { "type": "text", "value": "They allow changing internal implementation without breaking external code" },
+        { "type": "text", "value": "They eliminate the need for instance variables" },
+        { "type": "text", "value": "They reduce file size" }
+      ],
+      "answer": 1,
+      "explanation": "Getters provide encapsulation, allowing you to change how data is stored internally without affecting code using the class."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "How do you call a getter method to retrieve a value?",
+      "options": [
+        { "type": "text", "value": "objectName.instanceVariable" },
+        { "type": "text", "value": "objectName.getInstanceVariable()" },
+        { "type": "text", "value": "getInstance(objectName)" },
+        { "type": "text", "value": "get(objectName.instanceVariable)" }
+      ],
+      "answer": 1,
+      "explanation": "You call a getter using objectName.getVariableName(), just like calling any method on an object."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "Can getters include validation when retrieving values?",
+      "options": [
+        { "type": "text", "value": "No, validation must be separate" },
+        { "type": "text", "value": "Yes, getters can validate and handle edge cases" },
+        { "type": "text", "value": "Only for arrays" },
+        { "type": "text", "value": "Only for primitives" }
+      ],
+      "answer": 1,
+      "explanation": "Getters can include conditional logic to validate data, handle edge cases, or return safe values for invalid conditions."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What does encapsulation mean in object-oriented programming?",
+      "options": [
+        { "type": "text", "value": "Making all variables public" },
+        { "type": "text", "value": "Hiding internal details and controlling access to data through methods" },
+        { "type": "text", "value": "Combining all methods in one class" },
+        { "type": "text", "value": "Using only primitive types" }
+      ],
+      "answer": 1,
+      "explanation": "Encapsulation is a core OOP principle where data is protected and accessed through controlled methods like getters."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "Can a getter method have parameters?",
+      "options": [
+        { "type": "text", "value": "Yes, getters often have multiple parameters" },
+        { "type": "text", "value": "No, getters typically have no parameters" },
+        { "type": "text", "value": "Only with arrays" },
+        { "type": "text", "value": "Only in static methods" }
+      ],
+      "answer": 1,
+      "explanation": "Most getters have no parameters; they simply return a single value. However, specialized getters like getTestScore(int index) can have parameters."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What does a getter return in a BankAccount class?",
+      "options": [
+        { "type": "text", "value": "It modifies the balance" },
+        { "type": "text", "value": "It returns the value of an instance variable like balance" },
+        { "type": "text", "value": "It creates a new account" },
+        { "type": "text", "value": "It deletes the account" }
+      ],
+      "answer": 1,
+      "explanation": "A getter retrieves and returns the current value of an instance variable, allowing safe read-only access."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "Can you have a getter for a calculated property that isn't directly stored?",
+      "options": [
+        { "type": "text", "value": "No, getters only return stored values" },
+        { "type": "text", "value": "Yes, getters can calculate and return derived properties" },
+        { "type": "text", "value": "Only for primitive types" },
+        { "type": "text", "value": "Only in static methods" }
+      ],
+      "answer": 1,
+      "explanation": "Getters can calculate values on-the-fly, like getArea() in a Rectangle class, even if the area isn't directly stored."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What is the relationship between getters and data protection?",
+      "options": [
+        { "type": "text", "value": "Getters expose all data without protection" },
+        { "type": "text", "value": "Getters provide controlled, read-only access to data" },
+        { "type": "text", "value": "Getters make data less secure" },
+        { "type": "text", "value": "Getters have no effect on data protection" }
+      ],
+      "answer": 1,
+      "explanation": "Getters allow you to provide read-only access to data while maintaining control over what and how information is revealed."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "How many getters should a well-designed class typically have?",
+      "options": [
+        { "type": "text", "value": "Exactly one getter" },
+        { "type": "text", "value": "One getter for each instance variable that needs to be accessed" },
+        { "type": "text", "value": "No getters are needed" },
+        { "type": "text", "value": "At least ten getters" }
+      ],
+      "answer": 1,
+      "explanation": "A well-designed class has a getter for every significant instance variable that external code needs to access safely."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What return statement does a getter for a String variable use?",
+      "options": [
+        { "type": "text", "value": "return void;" },
+        { "type": "text", "value": "return stringVariableName;" },
+        { "type": "text", "value": "return int;" },
+        { "type": "text", "value": "return boolean;" }
+      ],
+      "answer": 1,
+      "explanation": "A String getter uses return stringVariableName; to return the String value stored in the instance variable."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What is the primary purpose of getters in class design?",
+      "options": [
+        { "type": "text", "value": "To make code slower" },
+        { "type": "text", "value": "To provide encapsulation and controlled access to object data" },
+        { "type": "text", "value": "To eliminate instance variables" },
+        { "type": "text", "value": "To create more methods than needed" }
+      ],
+      "answer": 1,
+      "explanation": "Getters are fundamental to encapsulation, allowing safe, controlled access to instance variables while protecting data integrity."
+    }
+  ]
+}

@@ -1,0 +1,558 @@
+{
+  "lessonId": 63,
+  "title": "Looping Over Arrays (intro)",
+  "content": [
+    {
+      "type": "text",
+      "value": "Arrays and loops work together naturally. Arrays store collections of data, and loops process each element systematically. This lesson introduces the fundamental patterns for iterating over arrays, which you'll use constantly throughout your programming journey. You'll learn more about arrays in Unit 6."
+    },
+    {
+      "type": "text",
+      "value": "An array is a fixed-size collection that stores multiple values of the same type. Each value has a specific position called an index, starting from "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "int[] numbers = {10, 20, 30, 40, 50};\n// Index:        0   1   2   3   4"
+    },
+    {
+      "type": "text",
+      "value": "This array named "
+    },
+    {
+      "type": "code",
+      "value": "numbers"
+    },
+    {
+      "type": "text",
+      "value": " contains five integers. The first element "
+    },
+    {
+      "type": "code",
+      "value": "10"
+    },
+    {
+      "type": "text",
+      "value": " is at index "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ", the last element "
+    },
+    {
+      "type": "code",
+      "value": "50"
+    },
+    {
+      "type": "text",
+      "value": " is at index "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": ". The array's length is "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": ", so valid indices range from "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "The standard pattern for looping through an array uses a "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loop with an index variable starting at "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " and continuing while the index is less than the array's length."
+    },
+    {
+      "type": "code",
+      "value": "int[] scores = {85, 92, 78, 95, 88};\n\nfor (int i = 0; i < scores.length; i++) {\n    System.out.println(\"Score: \" + scores[i]);\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop processes every element. Starting at "
+    },
+    {
+      "type": "code",
+      "value": "i = 0"
+    },
+    {
+      "type": "text",
+      "value": " accesses the first element. The condition "
+    },
+    {
+      "type": "code",
+      "value": "i < scores.length"
+    },
+    {
+      "type": "text",
+      "value": " ensures the loop stops before exceeding valid indices. The notation "
+    },
+    {
+      "type": "code",
+      "value": "scores[i]"
+    },
+    {
+      "type": "text",
+      "value": " accesses the element at index "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "length"
+    },
+    {
+      "type": "text",
+      "value": " property tells you how many elements an array contains. It's a property, not a method, so there are no parentheses."
+    },
+    {
+      "type": "code",
+      "value": "String[] names = {\"Alice\", \"Bob\", \"Charlie\"};\nSystem.out.println(\"Array length: \" + names.length);\n\nfor (int i = 0; i < names.length; i++) {\n    System.out.println(names[i]);\n}"
+    },
+    {
+      "type": "text",
+      "value": "The array "
+    },
+    {
+      "type": "code",
+      "value": "names"
+    },
+    {
+      "type": "text",
+      "value": " has length "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": ", with valid indices "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ". Using "
+    },
+    {
+      "type": "code",
+      "value": "names.length"
+    },
+    {
+      "type": "text",
+      "value": " in the loop condition makes the code work for any array size."
+    },
+    {
+      "type": "text",
+      "value": "Accumulator patterns sum or collect values from arrays by processing each element in turn."
+    },
+    {
+      "type": "code",
+      "value": "int[] values = {5, 10, 15, 20};\nint sum = 0;\n\nfor (int i = 0; i < values.length; i++) {\n    sum += values[i];\n}\n\nSystem.out.println(\"Total: \" + sum);"
+    },
+    {
+      "type": "text",
+      "value": "This loop calculates the sum of all array elements. Starting with "
+    },
+    {
+      "type": "code",
+      "value": "sum = 0"
+    },
+    {
+      "type": "text",
+      "value": ", each iteration adds the current element to the running total. After processing all elements, "
+    },
+    {
+      "type": "code",
+      "value": "sum"
+    },
+    {
+      "type": "text",
+      "value": " contains "
+    },
+    {
+      "type": "code",
+      "value": "50"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Finding the maximum value in an array requires tracking the largest value seen so far."
+    },
+    {
+      "type": "code",
+      "value": "int[] numbers = {23, 67, 45, 89, 12};\nint max = numbers[0];\n\nfor (int i = 1; i < numbers.length; i++) {\n    if (numbers[i] > max) {\n        max = numbers[i];\n    }\n}\n\nSystem.out.println(\"Maximum: \" + max);"
+    },
+    {
+      "type": "text",
+      "value": "Initialize "
+    },
+    {
+      "type": "code",
+      "value": "max"
+    },
+    {
+      "type": "text",
+      "value": " with the first element. Then compare each remaining element. When you find a larger value, update "
+    },
+    {
+      "type": "code",
+      "value": "max"
+    },
+    {
+      "type": "text",
+      "value": ". Notice the loop starts at "
+    },
+    {
+      "type": "code",
+      "value": "i = 1"
+    },
+    {
+      "type": "text",
+      "value": " since we already used "
+    },
+    {
+      "type": "code",
+      "value": "numbers[0]"
+    },
+    {
+      "type": "text",
+      "value": " to initialize "
+    },
+    {
+      "type": "code",
+      "value": "max"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Counting elements that meet specific criteria uses a counter that increments when conditions are satisfied."
+    },
+    {
+      "type": "code",
+      "value": "int[] grades = {92, 85, 78, 95, 88, 76};\nint passing = 0;\n\nfor (int i = 0; i < grades.length; i++) {\n    if (grades[i] >= 80) {\n        passing++;\n    }\n}\n\nSystem.out.println(\"Passing grades: \" + passing);"
+    },
+    {
+      "type": "text",
+      "value": "This counts how many grades are "
+    },
+    {
+      "type": "code",
+      "value": "80"
+    },
+    {
+      "type": "text",
+      "value": " or higher. The counter "
+    },
+    {
+      "type": "code",
+      "value": "passing"
+    },
+    {
+      "type": "text",
+      "value": " starts at "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " and increments for each grade meeting the threshold. Final count: "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": " passing grades."
+    },
+    {
+      "type": "text",
+      "value": "Searching for specific values stops the loop early when found, using "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "int[] data = {10, 25, 30, 45, 50};\nint target = 30;\nboolean found = false;\n\nfor (int i = 0; i < data.length; i++) {\n    if (data[i] == target) {\n        System.out.println(\"Found at index: \" + i);\n        found = true;\n        break;\n    }\n}\n\nif (!found) {\n    System.out.println(\"Not found\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "This searches for "
+    },
+    {
+      "type": "code",
+      "value": "30"
+    },
+    {
+      "type": "text",
+      "value": " in the array. When found at index "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ", the "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statement exits immediately rather than checking remaining elements. The boolean flag tracks whether the value was found."
+    },
+    {
+      "type": "text",
+      "value": "Processing arrays backward requires starting at the last index and decrementing toward "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "int[] sequence = {1, 2, 3, 4, 5};\n\nfor (int i = sequence.length - 1; i >= 0; i--) {\n    System.out.println(sequence[i]);\n}"
+    },
+    {
+      "type": "text",
+      "value": "This prints elements in reverse order. Starting at "
+    },
+    {
+      "type": "code",
+      "value": "sequence.length - 1"
+    },
+    {
+      "type": "text",
+      "value": " gives the last valid index. Decrementing with "
+    },
+    {
+      "type": "code",
+      "value": "i--"
+    },
+    {
+      "type": "text",
+      "value": " and continuing while "
+    },
+    {
+      "type": "code",
+      "value": "i >= 0"
+    },
+    {
+      "type": "text",
+      "value": " processes all elements backward."
+    },
+    {
+      "type": "text",
+      "value": "Modifying array elements during iteration changes the stored values."
+    },
+    {
+      "type": "code",
+      "value": "int[] prices = {10, 20, 30, 40};\n\nfor (int i = 0; i < prices.length; i++) {\n    prices[i] = prices[i] * 2;\n}\n\n// Array now contains: {20, 40, 60, 80}"
+    },
+    {
+      "type": "text",
+      "value": "This doubles each price in the array. The assignment "
+    },
+    {
+      "type": "code",
+      "value": "prices[i] = prices[i] * 2"
+    },
+    {
+      "type": "text",
+      "value": " updates the element at index "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": ". After the loop completes, the array has been permanently modified."
+    },
+    {
+      "type": "text",
+      "value": "Calculating averages combines summing and counting."
+    },
+    {
+      "type": "code",
+      "value": "int[] testScores = {88, 92, 76, 95, 84};\nint sum = 0;\n\nfor (int i = 0; i < testScores.length; i++) {\n    sum += testScores[i];\n}\n\ndouble average = (double) sum / testScores.length;\nSystem.out.println(\"Average: \" + average);"
+    },
+    {
+      "type": "text",
+      "value": "First, sum all scores. Then divide by the array length to get the average. The cast "
+    },
+    {
+      "type": "code",
+      "value": "(double)"
+    },
+    {
+      "type": "text",
+      "value": " ensures floating-point division for an accurate result. Without it, integer division would truncate the decimal."
+    },
+    {
+      "type": "text",
+      "value": "Finding minimum values works like finding maximum, but comparing for smaller values."
+    },
+    {
+      "type": "code",
+      "value": "int[] temperatures = {72, 68, 75, 70, 65};\nint min = temperatures[0];\n\nfor (int i = 1; i < temperatures.length; i++) {\n    if (temperatures[i] < min) {\n        min = temperatures[i];\n    }\n}\n\nSystem.out.println(\"Minimum: \" + min);"
+    },
+    {
+      "type": "text",
+      "value": "Initialize "
+    },
+    {
+      "type": "code",
+      "value": "min"
+    },
+    {
+      "type": "text",
+      "value": " with the first element, then update it whenever you encounter a smaller value. This pattern mirrors maximum finding but with "
+    },
+    {
+      "type": "code",
+      "value": "<"
+    },
+    {
+      "type": "text",
+      "value": " instead of "
+    },
+    {
+      "type": "code",
+      "value": ">"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Empty arrays require careful handling to avoid errors."
+    },
+    {
+      "type": "code",
+      "value": "int[] empty = {};\n\nif (empty.length > 0) {\n    for (int i = 0; i < empty.length; i++) {\n        System.out.println(empty[i]);\n    }\n} else {\n    System.out.println(\"Array is empty\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Before processing, check if "
+    },
+    {
+      "type": "code",
+      "value": "length > 0"
+    },
+    {
+      "type": "text",
+      "value": ". The standard loop pattern handles empty arrays automatically (zero iterations), but operations like finding max or min need the initial element, which doesn't exist in empty arrays."
+    },
+    {
+      "type": "text",
+      "value": "Understanding array loops is fundamental to programming. These patterns appear constantly in real code. The standard "
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 0; i < array.length; i++)"
+    },
+    {
+      "type": "text",
+      "value": " pattern works reliably for any array size. Practice these techniques as you'll use them throughout Unit 6 when you study arrays in depth. In the next lesson, you'll learn about accumulators and counters in more detail."
+    }
+  ]
+}

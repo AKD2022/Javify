@@ -1,0 +1,766 @@
+{
+  "lessonId": 56,
+  "title": "Loop Conditions and Termination",
+  "content": [
+    {
+      "type": "text",
+      "value": "Loop conditions determine when loops continue and when they stop. Understanding how to write effective conditions is essential for creating loops that execute the right number of times and terminate properly. This lesson explores the mechanics of loop conditions and how they control termination."
+    },
+    {
+      "type": "text",
+      "value": "A loop condition is a boolean expression that Java evaluates to decide whether to continue looping. When the condition is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", the loop body executes. When it becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", the loop terminates and execution continues with the next statement after the loop."
+    },
+    {
+      "type": "code",
+      "value": "int count = 0;\nwhile (count < 5) {\n    System.out.println(count);\n    count++;\n}"
+    },
+    {
+      "type": "text",
+      "value": "The condition "
+    },
+    {
+      "type": "code",
+      "value": "count < 5"
+    },
+    {
+      "type": "text",
+      "value": " controls this loop. Java checks whether "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " is less than "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": " before each iteration. When "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " reaches "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": ", the condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and the loop stops."
+    },
+    {
+      "type": "text",
+      "value": "Loop termination occurs at the moment when the condition evaluates to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ". For termination to happen naturally, the loop must modify variables used in the condition so the condition eventually becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 10; i > 0; i--) {\n    System.out.println(i);\n}\nSystem.out.println(\"Done!\");"
+    },
+    {
+      "type": "text",
+      "value": "This loop continues while "
+    },
+    {
+      "type": "code",
+      "value": "i > 0"
+    },
+    {
+      "type": "text",
+      "value": " remains "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". The decrement "
+    },
+    {
+      "type": "code",
+      "value": "i--"
+    },
+    {
+      "type": "text",
+      "value": " moves "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " toward "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ". When "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ", the condition is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", termination occurs, and \"Done!\" prints."
+    },
+    {
+      "type": "text",
+      "value": "Choosing the right comparison operator affects which values are included in the loop. Using "
+    },
+    {
+      "type": "code",
+      "value": "<"
+    },
+    {
+      "type": "text",
+      "value": " versus "
+    },
+    {
+      "type": "code",
+      "value": "<="
+    },
+    {
+      "type": "text",
+      "value": " determines whether the boundary value is processed."
+    },
+    {
+      "type": "code",
+      "value": "// Using < excludes 5\nfor (int i = 1; i < 5; i++) {\n    System.out.println(i); // Prints: 1, 2, 3, 4\n}\n\n// Using <= includes 5\nfor (int i = 1; i <= 5; i++) {\n    System.out.println(i); // Prints: 1, 2, 3, 4, 5\n}"
+    },
+    {
+      "type": "text",
+      "value": "The first loop stops when "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " equals "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": " because "
+    },
+    {
+      "type": "code",
+      "value": "i < 5"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", excluding "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": " from the output. The second loop continues when "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " equals "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": " because "
+    },
+    {
+      "type": "code",
+      "value": "i <= 5"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", including "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": " in the output."
+    },
+    {
+      "type": "text",
+      "value": "Complex conditions combine multiple boolean expressions using logical operators. Both parts must work together to control loop execution correctly."
+    },
+    {
+      "type": "code",
+      "value": "int score = 0;\nint attempts = 0;\n\nwhile (score < 100 && attempts < 10) {\n    score += 15;\n    attempts++;\n    System.out.println(\"Score: \" + score + \", Attempts: \" + attempts);\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop continues while both conditions remain "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ": the score stays below "
+    },
+    {
+      "type": "code",
+      "value": "100"
+    },
+    {
+      "type": "text",
+      "value": " and attempts stay below "
+    },
+    {
+      "type": "code",
+      "value": "10"
+    },
+    {
+      "type": "text",
+      "value": ". When either condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", the entire expression becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and the loop terminates."
+    },
+    {
+      "type": "text",
+      "value": "Inequality conditions check that values are not equal, continuing the loop until a match is found."
+    },
+    {
+      "type": "code",
+      "value": "int guess = 5;\nint target = 7;\n\nwhile (guess != target) {\n    System.out.println(\"Guess: \" + guess);\n    guess++;\n}\nSystem.out.println(\"Found the target!\");"
+    },
+    {
+      "type": "text",
+      "value": "The condition "
+    },
+    {
+      "type": "code",
+      "value": "guess != target"
+    },
+    {
+      "type": "text",
+      "value": " remains "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " as long as "
+    },
+    {
+      "type": "code",
+      "value": "guess"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "target"
+    },
+    {
+      "type": "text",
+      "value": " differ. When "
+    },
+    {
+      "type": "code",
+      "value": "guess"
+    },
+    {
+      "type": "text",
+      "value": " reaches "
+    },
+    {
+      "type": "code",
+      "value": "7"
+    },
+    {
+      "type": "text",
+      "value": ", matching "
+    },
+    {
+      "type": "code",
+      "value": "target"
+    },
+    {
+      "type": "text",
+      "value": ", the condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and the loop exits."
+    },
+    {
+      "type": "text",
+      "value": "Boolean variable conditions provide flexible control when the termination criteria involve more than simple numeric comparisons."
+    },
+    {
+      "type": "code",
+      "value": "boolean searching = true;\nint index = 0;\nString[] names = {\"Alice\", \"Bob\", \"Charlie\"};\n\nwhile (searching && index < names.length) {\n    if (names[index].equals(\"Bob\")) {\n        System.out.println(\"Found at index: \" + index);\n        searching = false;\n    }\n    index++;\n}"
+    },
+    {
+      "type": "text",
+      "value": "The loop continues while "
+    },
+    {
+      "type": "code",
+      "value": "searching"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " and there are more elements to check. When the target is found, setting "
+    },
+    {
+      "type": "code",
+      "value": "searching"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " causes termination on the next condition check."
+    },
+    {
+      "type": "text",
+      "value": "Counting down requires conditions that check for values greater than or equal to a minimum."
+    },
+    {
+      "type": "code",
+      "value": "int countdown = 10;\nwhile (countdown >= 1) {\n    System.out.println(countdown);\n    countdown--;\n}\nSystem.out.println(\"Liftoff!\");"
+    },
+    {
+      "type": "text",
+      "value": "The condition "
+    },
+    {
+      "type": "code",
+      "value": "countdown >= 1"
+    },
+    {
+      "type": "text",
+      "value": " keeps the loop running as long as "
+    },
+    {
+      "type": "code",
+      "value": "countdown"
+    },
+    {
+      "type": "text",
+      "value": " is at least "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ". After printing "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ", the decrement makes "
+    },
+    {
+      "type": "code",
+      "value": "countdown"
+    },
+    {
+      "type": "text",
+      "value": " equal to "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ", and the condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Conditions with OR operators continue the loop when at least one condition is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "int temp = 65;\nboolean heaterOn = true;\n\nwhile (temp < 70 || heaterOn) {\n    System.out.println(\"Temperature: \" + temp);\n    temp++;\n    if (temp >= 70) {\n        heaterOn = false;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop continues while either the temperature is below "
+    },
+    {
+      "type": "code",
+      "value": "70"
+    },
+    {
+      "type": "text",
+      "value": " or the heater is on. Only when both "
+    },
+    {
+      "type": "code",
+      "value": "temp >= 70"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "heaterOn"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " does the condition become "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Off-by-one errors occur when conditions include or exclude boundary values incorrectly. Testing boundary cases helps identify these mistakes."
+    },
+    {
+      "type": "code",
+      "value": "// Wrong - misses index 4\nfor (int i = 0; i < 4; i++) {\n    System.out.println(\"Processing element \" + i);\n}\n\n// Correct - processes all 5 elements (0-4)\nfor (int i = 0; i < 5; i++) {\n    System.out.println(\"Processing element \" + i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "If you have five elements at indices "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " through "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": ", using "
+    },
+    {
+      "type": "code",
+      "value": "i < 4"
+    },
+    {
+      "type": "text",
+      "value": " stops one element too early. The condition "
+    },
+    {
+      "type": "code",
+      "value": "i < 5"
+    },
+    {
+      "type": "text",
+      "value": " correctly processes all elements."
+    },
+    {
+      "type": "text",
+      "value": "Empty string conditions check whether strings still have content."
+    },
+    {
+      "type": "code",
+      "value": "String text = \"Hello\";\nint index = 0;\n\nwhile (index < text.length()) {\n    System.out.println(text.charAt(index));\n    index++;\n}"
+    },
+    {
+      "type": "text",
+      "value": "The condition "
+    },
+    {
+      "type": "code",
+      "value": "index < text.length()"
+    },
+    {
+      "type": "text",
+      "value": " ensures the loop processes each character without going past the string's end. When "
+    },
+    {
+      "type": "code",
+      "value": "index"
+    },
+    {
+      "type": "text",
+      "value": " equals "
+    },
+    {
+      "type": "code",
+      "value": "text.length()"
+    },
+    {
+      "type": "text",
+      "value": ", the condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and the loop terminates safely."
+    },
+    {
+      "type": "text",
+      "value": "Sentinel values are special values that signal when to stop processing input."
+    },
+    {
+      "type": "code",
+      "value": "int value = 5;\nwhile (value != -1) {\n    System.out.println(\"Processing: \" + value);\n    value--;\n    if (value < -1) {\n        value = -1; // Set sentinel to exit\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The value "
+    },
+    {
+      "type": "code",
+      "value": "-1"
+    },
+    {
+      "type": "text",
+      "value": " acts as a sentinel. The loop continues until "
+    },
+    {
+      "type": "code",
+      "value": "value"
+    },
+    {
+      "type": "text",
+      "value": " equals "
+    },
+    {
+      "type": "code",
+      "value": "-1"
+    },
+    {
+      "type": "text",
+      "value": ", at which point "
+    },
+    {
+      "type": "code",
+      "value": "value != -1"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and termination occurs."
+    },
+    {
+      "type": "text",
+      "value": "Negated conditions can make loops harder to understand. When possible, restructure to use positive conditions."
+    },
+    {
+      "type": "code",
+      "value": "boolean finished = false;\n\n// Harder to read with negation\nwhile (!finished) {\n    System.out.println(\"Working...\");\n    finished = true; // Simulate completion\n}\n\n// Clearer with positive condition\nboolean working = true;\nwhile (working) {\n    System.out.println(\"Working...\");\n    working = false; // Simulate completion\n}"
+    },
+    {
+      "type": "text",
+      "value": "The first version uses "
+    },
+    {
+      "type": "code",
+      "value": "!finished"
+    },
+    {
+      "type": "text",
+      "value": ", which requires mental negation to understand. The second version uses "
+    },
+    {
+      "type": "code",
+      "value": "working"
+    },
+    {
+      "type": "text",
+      "value": ", making the condition more intuitive. Both work identically, but positive conditions are generally clearer."
+    },
+    {
+      "type": "text",
+      "value": "Understanding loop conditions and termination helps you write precise, correct loops. Always ensure your condition will eventually become "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " through the loop's updates. Test boundary cases to verify your conditions include or exclude values as intended. In the next lesson, you'll learn about incrementing and decrementing in loops."
+    }
+  ]
+}

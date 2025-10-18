@@ -1,12 +1,20 @@
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
-import { View, Text as RNText, StyleSheet, SafeAreaView, TouchableOpacity, TextInput, Platform } from "react-native";
+import { View, Text as RNText, StyleSheet, TouchableOpacity, TextInput, Platform } from "react-native";
 import { auth } from "../config/firebase";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import colors from "../assets/components/colors";
-import { Ionicons, MaterialIcons } from "@expo/vector-icons";
+import { FontAwesome, Ionicons, MaterialIcons } from "@expo/vector-icons";
 import GradientIconBackground from "../assets/components/gradientBackgroundIcon";
 import GradientButton from "../assets/components/gradientButton";
+import * as Google from "expo-auth-session/providers/google";
+import * as WebBrowser from "expo-web-browser";
+import { GoogleAuthProvider, signInWithCredential } from "firebase/auth";
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Icon } from "react-native-paper";
+
+
+WebBrowser.maybeCompleteAuthSession();
 
 export default function LoginScreen() {
 
@@ -18,6 +26,14 @@ export default function LoginScreen() {
   const Text = (props) => (
     <RNText {...props} style={[{ fontFamily: "Poppins-Regular" }, props.style]} />
   );
+
+  const [request, response, promptAsync] = Google.useAuthRequest({
+    expoClientId: "1008073691567-qab5c7kaf1so6fr5oc0hrvh83cgcfl80.apps.googleusercontent.com",
+    iosClientId: "1008073691567-e5na91uc1tbt94apc3210f14qveu0rbt.apps.googleusercontent.com",
+    androidClientId: "1008073691567-pdit4a0bjqkmr5niik5ccpeomvahpuk1.apps.googleusercontent.com",
+    scopes: ["profile", "email"],
+  });
+
 
   const handleLogin = async () => {
     try {
@@ -36,6 +52,22 @@ export default function LoginScreen() {
     });
     return unsubscribe;
   }, []);
+
+  useEffect(() => {
+    if (response?.type === "success") {
+      const { authentication } = response;
+
+      const credential = GoogleAuthProvider.credential(
+        null,
+        authentication.accessToken
+      );
+
+      signInWithCredential(auth, credential)
+        .then(() => console.log("Signed in with Google!"))
+        .catch(err => setError(err.message));
+    }
+  }, [response]);
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -87,7 +119,7 @@ export default function LoginScreen() {
         </TouchableOpacity>
 
         <View style={{ width: "100%" }}>
-          <GradientButton title={"Sign In"} style={styles.loginButton} onPress={handleLogin}/>
+          <GradientButton title={"Sign In"} style={styles.loginButton} onPress={handleLogin} />
         </View>
 
         <View style={styles.bottomLinks}>
@@ -96,6 +128,18 @@ export default function LoginScreen() {
             <Text style={styles.signUpText}>Sign Up</Text>
           </TouchableOpacity>
         </View>
+
+
+        {/* 
+        <View>
+          <GradientButton
+            icon={"google"}
+            onPress={async () => await promptAsync()}
+            style={styles.signInWithGoogle}
+          />
+        </View>
+        */}
+
 
       </View>
     </SafeAreaView>
@@ -187,7 +231,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     width: "100%",
     overflow: "hidden",
-    fontSize: 16, 
+    fontSize: 16,
   },
 
   forgotPasswordText: {
@@ -214,8 +258,15 @@ const styles = StyleSheet.create({
     lineHeight: 20,
     fontSize: 16,
   },
+
   newPages: {
     fontSize: 16,
     lineHeight: 20,
   },
+
+  signInWithGoogle: {
+    marginTop: 15,
+    borderRadius: 50,
+  },
+
 });

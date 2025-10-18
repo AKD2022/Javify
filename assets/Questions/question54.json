@@ -1,0 +1,214 @@
+{
+  "lessonId": 54,
+  "title": "for Loop Basics",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What three components does a for loop header contain?",
+      "options": [
+        { "type": "text", "value": "Initialization, condition, and update" },
+        { "type": "text", "value": "Start, middle, and end" },
+        { "type": "text", "value": "Input, process, and output" },
+        { "type": "text", "value": "Variables, methods, and classes" }
+      ],
+      "answer": 0,
+      "explanation": "A for loop header contains three components separated by semicolons: initialization, condition, and update."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What separates the three components in a for loop header?",
+      "options": [
+        { "type": "text", "value": "Commas" },
+        { "type": "text", "value": "Semicolons" },
+        { "type": "text", "value": "Colons" },
+        { "type": "text", "value": "Periods" }
+      ],
+      "answer": 1,
+      "explanation": "Semicolons separate the initialization, condition, and update components in a for loop header."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "How many times does this loop execute?\n\nfor (int i = 1; i <= 5; i++) {\n    System.out.println(i);\n}",
+      "options": [
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "6" },
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "Infinite" }
+      ],
+      "answer": 2,
+      "explanation": "A for loop executes in this order: initialization (once), then repeatedly: condition check, body (if true), update, then back to condition check."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What is the scope of a variable declared in a for loop initialization?",
+      "options": [
+        { "type": "text", "value": "The entire program" },
+        { "type": "text", "value": "The entire class" },
+        { "type": "text", "value": "The entire method" },
+        { "type": "text", "value": "Limited to the loop only" }
+      ],
+      "answer": 3,
+      "explanation": "A variable declared in the for loop initialization has scope limited to the loop and cannot be accessed outside of it."
+    },
+    {
+      "id": 5,
+      "type": "code",
+      "question": "What does this loop print?\n\nfor (int i = 5; i >= 1; i--) {\n    System.out.println(i);\n}",
+      "options": [
+        { "type": "text", "value": "5, 4, 3, 2, 1" },
+        { "type": "text", "value": "1, 2, 3, 4, 5" },
+        { "type": "text", "value": "5, 4, 3, 2, 1, 0" },
+        { "type": "text", "value": "Nothing" }
+      ],
+      "answer": 0,
+      "explanation": "The loop counts down from 5 to 1 using i--. When i becomes 0, the condition i >= 1 is false and the loop stops."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What values does this loop print?\n\nfor (int i = 0; i <= 10; i += 2) {\n    System.out.println(i);\n}",
+      "options": [
+        { "type": "text", "value": "0, 1, 2, 3..." },
+        { "type": "text", "value": "0, 2, 4, 6, 8, 10" },
+        { "type": "text", "value": "2, 4, 6, 8, 10" },
+        { "type": "text", "value": "0, 2, 4, 6, 8" }
+      ],
+      "answer": 1,
+      "explanation": "The loop increments by 2 each iteration (i += 2), printing even numbers from 0 to 10."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "When is a for loop most useful?",
+      "options": [
+        { "type": "text", "value": "When you need input validation" },
+        { "type": "text", "value": "When you know the exact number of iterations needed" },
+        { "type": "text", "value": "When you want random repetition" },
+        { "type": "text", "value": "When you need infinite loops" }
+      ],
+      "answer": 1,
+      "explanation": "For loops are most useful when you know the exact number of iterations needed, providing clear and compact syntax."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What is the final value of sum?\n\nint sum = 0;\nfor (int i = 1; i <= 10; i++) {\n    sum += i;\n}",
+      "options": [
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "45" },
+        { "type": "text", "value": "100" },
+        { "type": "text", "value": "55" }
+      ],
+      "answer": 3,
+      "explanation": "The loop calculates the sum of numbers from 1 to 10: 1+2+3+4+5+6+7+8+9+10 = 55."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Can the update expression in a for loop use operations other than ++ or --?",
+      "options": [
+        { "type": "text", "value": "Yes, any arithmetic operation works" },
+        { "type": "text", "value": "No, only ++ and -- are allowed" },
+        { "type": "text", "value": "Only multiplication" },
+        { "type": "text", "value": "Only division" }
+      ],
+      "answer": 0,
+      "explanation": "The update expression can use any arithmetic operation, not just incrementing or decrementing by 1."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What does this loop count?\n\nint oddCount = 0;\nfor (int i = 1; i <= 20; i++) {\n    if (i % 2 != 0) {\n        oddCount++;\n    }\n}",
+      "options": [
+        { "type": "text", "value": "Even numbers" },
+        { "type": "text", "value": "Odd numbers" },
+        { "type": "text", "value": "All numbers" },
+        { "type": "text", "value": "Prime numbers" }
+      ],
+      "answer": 1,
+      "explanation": "The loop counts odd numbers from 1 to 20. When i % 2 != 0 is true (odd number), oddCount increments."
+    },
+    {
+      "id": 11,
+      "type": "code",
+      "question": "How many iterations does this loop perform?\n\nfor (int count = 0; count < 3; count++) {\n    System.out.println(count);\n}",
+      "options": [
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "Infinite" }
+      ],
+      "answer": 2,
+      "explanation": "The loop executes 3 times with count values of 0, 1, and 2. When count becomes 3, the condition count < 3 is false."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What does this string building loop create?\n\nString result = \"\";\nfor (int i = 1; i <= 3; i++) {\n    result += \"*\";\n}",
+      "options": [
+        { "type": "text", "value": "\"*\"" },
+        { "type": "text", "value": "\"**\"" },
+        { "type": "text", "value": "\"***\"" },
+        { "type": "text", "value": "\"****\"" }
+      ],
+      "answer": 2,
+      "explanation": "Starting with an empty string, the loop adds one asterisk each iteration for 3 iterations, resulting in \"***\"."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "How many times does the initialization section of a for loop execute?",
+      "options": [
+        { "type": "text", "value": "Once" },
+        { "type": "text", "value": "Every iteration" },
+        { "type": "text", "value": "Twice" },
+        { "type": "text", "value": "Never" }
+      ],
+      "answer": 0,
+      "explanation": "The initialization section runs once at the beginning of the loop, before any iterations occur."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What range of ages does this loop print?\n\nfor (int age = 13; age <= 19; age++) {\n    System.out.println(age);\n}",
+      "options": [
+        { "type": "text", "value": "13 to 19" },
+        { "type": "text", "value": "13 to 18" },
+        { "type": "text", "value": "14 to 19" },
+        { "type": "text", "value": "1 to 19" }
+      ],
+      "answer": 0,
+      "explanation": "The loop prints ages from 13 to 19 inclusive, representing teenage years, based on the initialization and condition."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "In what order does a for loop execute its components?",
+      "options": [
+        { "type": "text", "value": "Condition, initialization, body, update" },
+        { "type": "text", "value": "Update, condition, body, initialization" },
+        { "type": "text", "value": "Initialization, condition, body, update" },
+        { "type": "text", "value": "Body, initialization, condition, update" }
+      ],
+      "answer": 2,
+      "explanation": "The loop executes 5 times with i values of 1, 2, 3, 4, and 5. When i becomes 6, the condition i <= 5 is false."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "How many repetitions does this loop perform?\n\nfor (int rep = 1; rep <= 5; rep++) {\n    System.out.println(\"Repetition #\" + rep);\n}",
+      "options": [
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "6" },
+        { "type": "text", "value": "Infinite" },
+        { "type": "text", "value": "5" }
+      ],
+      "answer": 3,
+      "explanation": "The loop performs exactly 5 repetitions, numbered 1 through 5, based on the initialization at 1 and condition rep <= 5."
+    }
+  ]
+}

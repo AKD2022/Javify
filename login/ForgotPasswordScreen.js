@@ -1,5 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Text as RNText } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Text as RNText } from "react-native";
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { TextInput } from "react-native";
 import { Platform } from "react-native";
 import { auth } from "../config/firebase";

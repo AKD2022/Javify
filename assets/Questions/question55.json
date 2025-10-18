@@ -1,0 +1,214 @@
+{
+  "lessonId": 55,
+  "title": "Loop Variables and Initialization",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is a loop variable?",
+      "options": [
+        { "type": "text", "value": "A variable that controls loop execution by changing with each iteration" },
+        { "type": "text", "value": "A variable that never changes" },
+        { "type": "text", "value": "A constant value" },
+        { "type": "text", "value": "A method parameter" }
+      ],
+      "answer": 0,
+      "explanation": "A loop variable controls loop execution by changing with each iteration, determining when the loop continues or terminates."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What does initialization mean?",
+      "options": [
+        { "type": "text", "value": "Deleting a variable" },
+        { "type": "text", "value": "Assigning a starting value to a variable before the loop begins" },
+        { "type": "text", "value": "Ending a loop" },
+        { "type": "text", "value": "Creating a method" }
+      ],
+      "answer": 1,
+      "explanation": "Initialization means assigning a starting value to a loop variable before the loop begins, which is crucial for proper loop operation."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "Where can loop variables be initialized in a for loop?",
+      "options": [
+        { "type": "text", "value": "Only outside the loop" },
+        { "type": "text", "value": "Only after the loop" },
+        { "type": "text", "value": "In the loop header or using an existing variable" },
+        { "type": "text", "value": "Never" }
+      ],
+      "answer": 2,
+      "explanation": "In for loops, you can initialize variables either in the loop header (limiting scope to the loop) or use an existing variable declared outside."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "What is the scope of variable x?\n\nfor (int x = 0; x < 3; x++) {\n    System.out.println(x);\n}",
+      "options": [
+        { "type": "text", "value": "The entire program" },
+        { "type": "text", "value": "The entire class" },
+        { "type": "text", "value": "The entire method" },
+        { "type": "text", "value": "Limited to the loop only" }
+      ],
+      "answer": 3,
+      "explanation": "When a variable is declared in the for loop header, its scope is limited to the loop only and cannot be accessed outside."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "Why should accumulator variables for summing be initialized to 0?",
+      "options": [
+        { "type": "text", "value": "Because adding to zero gives correct sums" },
+        { "type": "text", "value": "It's a random choice" },
+        { "type": "text", "value": "To make code faster" },
+        { "type": "text", "value": "It's required by Java" }
+      ],
+      "answer": 0,
+      "explanation": "Accumulators for summing should be initialized to 0 because adding to zero gives correct sums, making 0 the additive identity."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "Why should product variables be initialized to 1 instead of 0?",
+      "options": [
+        { "type": "text", "value": "It looks better" },
+        { "type": "text", "value": "Because multiplying by zero would zero out all results" },
+        { "type": "text", "value": "It's faster" },
+        { "type": "text", "value": "It's a tradition" }
+      ],
+      "answer": 1,
+      "explanation": "Product variables should initialize to 1 (the multiplicative identity) because multiplying by zero would zero out all results."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "What is the final value of product?\n\nint product = 1;\nfor (int i = 1; i <= 5; i++) {\n    product *= i;\n}",
+      "options": [
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "15" },
+        { "type": "text", "value": "120" },
+        { "type": "text", "value": "24" }
+      ],
+      "answer": 2,
+      "explanation": "The loop calculates 5 factorial (5! = 1×2×3×4×5 = 120), starting from product = 1 and multiplying by each value."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "How many times does this loop execute?\n\nfor (int i = 6; i <= 5; i++) {\n    System.out.println(i);\n}",
+      "options": [
+        { "type": "text", "value": "0 times" },
+        { "type": "text", "value": "1 time" },
+        { "type": "text", "value": "5 times" },
+        { "type": "text", "value": "6 times" }
+      ],
+      "answer": 0,
+      "explanation": "The loop never executes because i starts at 6, making the condition i <= 5 immediately false. This is an initialization error."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Can a for loop initialize multiple variables?",
+      "options": [
+        { "type": "text", "value": "Yes, separated by commas in the initialization section" },
+        { "type": "text", "value": "No, only one variable allowed" },
+        { "type": "text", "value": "Only in while loops" },
+        { "type": "text", "value": "Only with special syntax" }
+      ],
+      "answer": 0,
+      "explanation": "A for loop can initialize multiple variables separated by commas in the initialization section, though this should be used sparingly."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What range does this loop process?\n\nfor (int i = 0; i < 5; i++) {\n    System.out.println(i);\n}",
+      "options": [
+        { "type": "text", "value": "1 to 5" },
+        { "type": "text", "value": "0 to 4" },
+        { "type": "text", "value": "0 to 5" },
+        { "type": "text", "value": "1 to 4" }
+      ],
+      "answer": 1,
+      "explanation": "Starting at 0 with condition i < 5 processes the range 0 to 4 inclusive, printing 0, 1, 2, 3, and 4."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Where does initialization happen in a while loop?",
+      "options": [
+        { "type": "text", "value": "Inside the loop body" },
+        { "type": "text", "value": "After the loop" },
+        { "type": "text", "value": "Before the loop begins, as a separate statement" },
+        { "type": "text", "value": "In the condition" }
+      ],
+      "answer": 2,
+      "explanation": "In while loops, initialization happens before the loop begins as a separate statement, outside the loop structure."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What is the final value of total?\n\nint total = 0;\nfor (int i = 1; i <= 10; i++) {\n    total += i;\n}",
+      "options": [
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "45" },
+        { "type": "text", "value": "55" },
+        { "type": "text", "value": "100" }
+      ],
+      "answer": 2,
+      "explanation": "The loop calculates the sum 1+2+3+4+5+6+7+8+9+10 = 55, starting from total = 0."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What is the conventional loop variable name for simple counting loops?",
+      "options": [
+        { "type": "text", "value": "counter" },
+        { "type": "text", "value": "loop" },
+        { "type": "text", "value": "x" },
+        { "type": "text", "value": "i" }
+      ],
+      "answer": 3,
+      "explanation": "The single letter 'i' is the conventional loop variable name for simple counting loops, followed by 'j' and 'k' for nested loops."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "Can boolean variables be used as loop variables?",
+      "options": [
+        { "type": "text", "value": "Yes, they control loops based on changing conditions" },
+        { "type": "text", "value": "No, only integers can be loop variables" },
+        { "type": "text", "value": "Only in for loops" },
+        { "type": "text", "value": "Only in do-while loops" }
+      ],
+      "answer": 0,
+      "explanation": "Boolean variables can control loops based on conditions that change during execution, providing flexible loop control."
+    },
+    {
+      "id": 15,
+      "type": "code",
+      "question": "What happens in this multi-variable for loop?\n\nfor (int i = 0, j = 10; i < j; i++, j--) {\n    System.out.println(\"i: \" + i + \", j: \" + j);\n}",
+      "options": [
+        { "type": "text", "value": "Only i changes" },
+        { "type": "text", "value": "Only j changes" },
+        { "type": "text", "value": "i increments and j decrements until they meet" },
+        { "type": "text", "value": "Compilation error" }
+      ],
+      "answer": 2,
+      "explanation": "Both i and j are initialized and updated. Each iteration, i increments and j decrements, creating a converging pattern until i < j becomes false."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What happens if you forget to initialize a loop variable?",
+      "options": [
+        { "type": "text", "value": "The loop runs forever" },
+        { "type": "text", "value": "The loop runs normally" },
+        { "type": "text", "value": "Nothing happens" },
+        { "type": "text", "value": "Compilation error or unexpected behavior" }
+      ],
+      "answer": 3,
+      "explanation": "Forgetting to initialize a loop variable causes compilation failures or unexpected behavior because the loop doesn't know where to start."
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "lessonId": 65,
+  "title": "Common Loop Algorithms (sum, max, min)",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What value should a sum accumulator be initialized to?",
+      "options": [
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "The first array element" },
+        { "type": "text", "value": "-1" }
+      ],
+      "answer": 0,
+      "explanation": "Sum accumulators start at 0 to ensure no extra value is included in the total when adding elements."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "When finding a maximum value, what is a safe initial value?",
+      "options": [
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "Integer.MIN_VALUE or the first array element" },
+        { "type": "text", "value": "Integer.MAX_VALUE" },
+        { "type": "text", "value": "1" }
+      ],
+      "answer": 1,
+      "explanation": "Using Integer.MIN_VALUE (smallest possible int) or the first array element ensures any real value can become the maximum."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "Which comparison operator is used to find a minimum value?",
+      "options": [
+        { "type": "text", "value": ">" },
+        { "type": "text", "value": "==" },
+        { "type": "text", "value": "<" },
+        { "type": "text", "value": ">=" }
+      ],
+      "answer": 2,
+      "explanation": "The < operator checks if a value is smaller than the current minimum, updating it when a smaller value is found."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "To calculate an average, what must you do after finding the sum?",
+      "options": [
+        { "type": "text", "value": "Multiply by the number of elements" },
+        { "type": "text", "value": "Add the number of elements" },
+        { "type": "text", "value": "Subtract the number of elements" },
+        { "type": "text", "value": "Divide by the number of elements" }
+      ],
+      "answer": 3,
+      "explanation": "Average is calculated by dividing the sum by the count (number) of elements that were added together."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "When initializing max to the first array element, which index should the loop start at?",
+      "options": [
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "-1" }
+      ],
+      "answer": 0,
+      "explanation": "If max is initialized to the element at index 0, the loop should start at index 1 to avoid comparing the first element with itself."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What is the proper initial value when finding a minimum with Integer constants?",
+      "options": [
+        { "type": "text", "value": "Integer.MIN_VALUE" },
+        { "type": "text", "value": "Integer.MAX_VALUE" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "1" }
+      ],
+      "answer": 1,
+      "explanation": "Integer.MAX_VALUE (largest possible int) ensures any real value in the array will be smaller and update the minimum."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "Why cast to double when calculating an average from int values?",
+      "options": [
+        { "type": "text", "value": "To make the code faster" },
+        { "type": "text", "value": "To prevent overflow" },
+        { "type": "text", "value": "To get a decimal result instead of integer division" },
+        { "type": "text", "value": "It's not necessary" }
+      ],
+      "answer": 2,
+      "explanation": "Casting to double ensures decimal division occurs, preserving fractional parts of the average instead of truncating to an integer."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "Can you find both maximum and minimum in a single loop?",
+      "options": [
+        { "type": "text", "value": "No, you need separate loops" },
+        { "type": "text", "value": "Only with nested loops" },
+        { "type": "text", "value": "Only for small arrays" },
+        { "type": "text", "value": "Yes, by tracking both variables and updating them independently" }
+      ],
+      "answer": 3,
+      "explanation": "You can track both max and min in one loop, updating each variable independently when their respective conditions are met."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What does Integer.MIN_VALUE represent?",
+      "options": [
+        { "type": "text", "value": "The smallest possible int value in Java" },
+        { "type": "text", "value": "The value 0" },
+        { "type": "text", "value": "The largest possible int value in Java" },
+        { "type": "text", "value": "The value -1" }
+      ],
+      "answer": 0,
+      "explanation": "Integer.MIN_VALUE is a constant representing the smallest (most negative) integer value Java can store."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "How do you track the position of a maximum value in an array?",
+      "options": [
+        { "type": "text", "value": "Use a boolean flag" },
+        { "type": "text", "value": "Store the index in a separate variable and update it when max updates" },
+        { "type": "text", "value": "Use the loop control variable" },
+        { "type": "text", "value": "Create a new array" }
+      ],
+      "answer": 1,
+      "explanation": "Store the index in a separate variable and update both the max value and its index together whenever a new maximum is found."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What initial value should a double sum accumulator use?",
+      "options": [
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "0.0" },
+        { "type": "text", "value": "1.0" }
+      ],
+      "answer": 2,
+      "explanation": "Double sum accumulators should initialize to 0.0 (a double literal) to match the decimal data type being accumulated."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What constant is used for initializing a double maximum?",
+      "options": [
+        { "type": "text", "value": "Integer.MIN_VALUE" },
+        { "type": "text", "value": "Double.MAX_VALUE" },
+        { "type": "text", "value": "Double.MIN_VALUE" },
+        { "type": "text", "value": "Double.NEGATIVE_INFINITY" }
+      ],
+      "answer": 3,
+      "explanation": "Double.NEGATIVE_INFINITY ensures any real double value will be larger than the initial maximum value."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "How can you sum only positive numbers from an array?",
+      "options": [
+        { "type": "text", "value": "Add a conditional check before accumulating each value" },
+        { "type": "text", "value": "Use a different loop type" },
+        { "type": "text", "value": "Initialize sum to 1" },
+        { "type": "text", "value": "Sort the array first" }
+      ],
+      "answer": 0,
+      "explanation": "Adding a condition like if (value > 0) before accumulating filters out unwanted values, summing only those that meet the criteria."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What constant represents the largest possible double value?",
+      "options": [
+        { "type": "text", "value": "Double.MAX_VALUE" },
+        { "type": "text", "value": "Double.POSITIVE_INFINITY" },
+        { "type": "text", "value": "Integer.MAX_VALUE" },
+        { "type": "text", "value": "Double.MIN_VALUE" }
+      ],
+      "answer": 1,
+      "explanation": "Double.POSITIVE_INFINITY represents infinity and is larger than any finite double value, useful for initializing minimum searches."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "When might you need a boolean flag alongside a max/min algorithm?",
+      "options": [
+        { "type": "text", "value": "Always" },
+        { "type": "text", "value": "Never" },
+        { "type": "text", "value": "When finding values that meet specific conditions that might not exist" },
+        { "type": "text", "value": "Only with arrays larger than 10 elements" }
+      ],
+      "answer": 2,
+      "explanation": "A boolean flag tracks whether any qualifying values were found, allowing you to handle cases where no elements meet the search criteria."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What does the modulo operator % do in the context of finding even numbers?",
+      "options": [
+        { "type": "text", "value": "Divides two numbers" },
+        { "type": "text", "value": "Multiplies two numbers" },
+        { "type": "text", "value": "Adds two numbers" },
+        { "type": "text", "value": "Returns the remainder after division, used to check divisibility" }
+      ],
+      "answer": 3,
+      "explanation": "The % operator returns the remainder of division; checking if number % 2 == 0 determines if a number is even (divisible by 2 with no remainder)."
+    }
+  ]
+}

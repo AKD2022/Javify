@@ -1,0 +1,214 @@
+{
+  "lessonId": 66,
+  "title": "Using Multiple Loop Variables",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "How do you declare multiple variables in a for loop initialization?",
+      "options": [
+        { "type": "text", "value": "Separate them with commas" },
+        { "type": "text", "value": "Use separate for loops" },
+        { "type": "text", "value": "Use semicolons" },
+        { "type": "text", "value": "Declare them on separate lines" }
+      ],
+      "answer": 0,
+      "explanation": "Multiple variables in a for loop initialization are separated by commas, like: for (int i = 0, j = 10; ...)."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "When processing an array from both ends toward the middle, which condition typically stops the loop?",
+      "options": [
+        { "type": "text", "value": "left == right" },
+        { "type": "text", "value": "left < right" },
+        { "type": "text", "value": "left > right" },
+        { "type": "text", "value": "left != right" }
+      ],
+      "answer": 1,
+      "explanation": "The condition left < right stops when the pointers meet or cross, ensuring each pair is processed exactly once."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "To compare consecutive elements in an array, how should the two loop variables be positioned?",
+      "options": [
+        { "type": "text", "value": "Both start at 0" },
+        { "type": "text", "value": "Both start at the end" },
+        { "type": "text", "value": "One position apart (i at 0, j at 1)" },
+        { "type": "text", "value": "At opposite ends" }
+      ],
+      "answer": 2,
+      "explanation": "Starting one variable at 0 and the other at 1 keeps them one position apart, allowing comparison of adjacent elements."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "How do you update multiple variables in a for loop's increment section?",
+      "options": [
+        { "type": "text", "value": "Use semicolons between them" },
+        { "type": "text", "value": "Create nested loops" },
+        { "type": "text", "value": "Use AND operators" },
+        { "type": "text", "value": "Separate them with commas" }
+      ],
+      "answer": 3,
+      "explanation": "The increment section uses commas to separate multiple update expressions, like: i++, j--."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "When working with two arrays of different lengths simultaneously, which operator ensures the loop stops when either array ends?",
+      "options": [
+        { "type": "text", "value": "&&" },
+        { "type": "text", "value": "==" },
+        { "type": "text", "value": "!=" },
+        { "type": "text", "value": "<" }
+      ],
+      "answer": 0,
+      "explanation": "The && operator ensures both conditions are true; using i < array1.length && j < array2.length stops when either array is exhausted."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What happens when you increment one variable by 1 and another by 2 each iteration?",
+      "options": [
+        { "type": "text", "value": "Compilation error" },
+        { "type": "text", "value": "One variable advances twice as fast as the other" },
+        { "type": "text", "value": "Both advance at the same rate" },
+        { "type": "text", "value": "The loop never terminates" }
+      ],
+      "answer": 1,
+      "explanation": "Different increment amounts make variables advance at different rates, with the variable incrementing by 2 moving twice as fast."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "In an array reversal algorithm using two variables, what is needed to swap elements?",
+      "options": [
+        { "type": "text", "value": "A new array" },
+        { "type": "text", "value": "A nested loop" },
+        { "type": "text", "value": "A temporary variable to hold one value during the swap" },
+        { "type": "text", "value": "A boolean flag" }
+      ],
+      "answer": 2,
+      "explanation": "A temporary variable temporarily stores one element's value so both elements can be swapped without losing data."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "If you want a loop to continue until both arrays are completely processed (even if different lengths), which operator should you use?",
+      "options": [
+        { "type": "text", "value": "&&" },
+        { "type": "text", "value": "==" },
+        { "type": "text", "value": "<" },
+        { "type": "text", "value": "||" }
+      ],
+      "answer": 3,
+      "explanation": "The || (OR) operator continues the loop as long as at least one condition is true, processing until both arrays are exhausted."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Can you declare variables of different types (int and double) together in a for loop initialization?",
+      "options": [
+        { "type": "text", "value": "No, they must be declared before the loop and the initialization section left empty" },
+        { "type": "text", "value": "Yes, using commas" },
+        { "type": "text", "value": "Yes, using semicolons" },
+        { "type": "text", "value": "Only with nested loops" }
+      ],
+      "answer": 0,
+      "explanation": "Variables in a for loop initialization must share the same type. Different types must be declared before the loop."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "When one loop variable doubles and another halves each iteration, what pattern do they create?",
+      "options": [
+        { "type": "text", "value": "Parallel movement" },
+        { "type": "text", "value": "A converging pattern where values meet in the middle" },
+        { "type": "text", "value": "An infinite loop" },
+        { "type": "text", "value": "A static pattern" }
+      ],
+      "answer": 1,
+      "explanation": "When one variable grows exponentially and another shrinks exponentially, they converge toward each other and meet in the middle."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "In a two-pointer algorithm searching for pairs that sum to a target, what determines which pointer moves?",
+      "options": [
+        { "type": "text", "value": "Both always move together" },
+        { "type": "text", "value": "Neither moves" },
+        { "type": "text", "value": "The comparison of current sum to target determines movement" },
+        { "type": "text", "value": "Random selection" }
+      ],
+      "answer": 2,
+      "explanation": "The algorithm conditionally moves pointers based on whether the current sum is less than, greater than, or equal to the target."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What is the purpose of leaving the update section empty in some multiple variable loops?",
+      "options": [
+        { "type": "text", "value": "It's a syntax error" },
+        { "type": "text", "value": "To make the loop infinite" },
+        { "type": "text", "value": "To prevent variables from changing" },
+        { "type": "text", "value": "To allow conditional updates inside the loop body" }
+      ],
+      "answer": 3,
+      "explanation": "An empty update section allows the loop body to control when and how variables change based on conditions rather than automatic updates."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "When starting with left at 0 and right at array.length - 1, what do these variables typically represent?",
+      "options": [
+        { "type": "text", "value": "Pointers at opposite ends of the array" },
+        { "type": "text", "value": "Unrelated indices" },
+        { "type": "text", "value": "Array sizes" },
+        { "type": "text", "value": "Loop counters" }
+      ],
+      "answer": 0,
+      "explanation": "These variables represent pointers starting at the beginning and end of an array, often used to work from both ends toward the middle."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What advantage do multiple loop variables provide when comparing elements at different array positions?",
+      "options": [
+        { "type": "text", "value": "Faster execution" },
+        { "type": "text", "value": "Track multiple positions simultaneously without nested loops" },
+        { "type": "text", "value": "Automatic sorting" },
+        { "type": "text", "value": "Memory savings" }
+      ],
+      "answer": 1,
+      "explanation": "Multiple variables allow tracking different positions in one loop, avoiding the complexity and overhead of nested loops."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "If you want to compare elements that are exactly 3 positions apart, how would you initialize the variables?",
+      "options": [
+        { "type": "text", "value": "Both at 0" },
+        { "type": "text", "value": "Both at 3" },
+        { "type": "text", "value": "One at 0 and one at 3" },
+        { "type": "text", "value": "One at 1 and one at 2" }
+      ],
+      "answer": 2,
+      "explanation": "Starting one variable at 0 and another at 3 creates a fixed distance of 3 positions between them for comparison."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What does the expression j += 2 do in the increment section?",
+      "options": [
+        { "type": "text", "value": "Sets j equal to 2" },
+        { "type": "text", "value": "Adds 2 to j and assigns the result back to j" },
+        { "type": "text", "value": "Divides j by 2" },
+        { "type": "text", "value": "Compares j to 2" }
+      ],
+      "answer": 1,
+      "explanation": "The += operator adds 2 to the current value of j, making j advance by 2 each iteration instead of by 1."
+    }
+  ]
+}

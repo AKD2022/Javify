@@ -1,0 +1,214 @@
+{
+  "lessonId": 52,
+  "title": "while Loop Basics",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "When does a while loop check its condition?",
+      "options": [
+        { "type": "text", "value": "Before each iteration" },
+        { "type": "text", "value": "After each iteration" },
+        { "type": "text", "value": "Only once at the start" },
+        { "type": "text", "value": "Only at the end" }
+      ],
+      "answer": 0,
+      "explanation": "A while loop checks its condition before each iteration. If the condition is true, the loop body executes; if false, the loop terminates."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What happens if a while loop's condition is initially false?",
+      "options": [
+        { "type": "text", "value": "The program crashes" },
+        { "type": "text", "value": "The loop body never executes" },
+        { "type": "text", "value": "The loop runs once" },
+        { "type": "text", "value": "It becomes an infinite loop" }
+      ],
+      "answer": 1,
+      "explanation": "If the condition is initially false, the loop body never executes at all. While loops can execute zero times."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "How many times does this loop execute?\n\nint count = 1;\nwhile (count <= 3) {\n    System.out.println(count);\n    count++;\n}",
+      "options": [
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "Infinite" }
+      ],
+      "answer": 2,
+      "explanation": "The loop executes 3 times with count values of 1, 2, and 3. When count becomes 4, the condition count <= 3 is false and the loop stops."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What do the ++ and -- operators do?",
+      "options": [
+        { "type": "text", "value": "Multiply and divide by 2" },
+        { "type": "text", "value": "Compare two values" },
+        { "type": "text", "value": "Check equality" },
+        { "type": "text", "value": "Add or subtract 1 from a variable" }
+      ],
+      "answer": 3,
+      "explanation": "The ++ operator adds 1 to a variable (increment), and the -- operator subtracts 1 (decrement). They're commonly used in loop updates."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What is an accumulator in a loop?",
+      "options": [
+        { "type": "text", "value": "A variable that builds up a value across multiple iterations" },
+        { "type": "text", "value": "A type of loop" },
+        { "type": "text", "value": "A method call" },
+        { "type": "text", "value": "A boolean condition" }
+      ],
+      "answer": 0,
+      "explanation": "An accumulator is a variable that builds up a value across multiple iterations, such as calculating a sum or product."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "What does this loop print?\n\nint countdown = 5;\nwhile (countdown > 0) {\n    System.out.println(countdown);\n    countdown--;\n}",
+      "options": [
+        { "type": "text", "value": "1, 2, 3, 4, 5" },
+        { "type": "text", "value": "5, 4, 3, 2, 1" },
+        { "type": "text", "value": "5, 4, 3, 2, 1, 0" },
+        { "type": "text", "value": "0, 1, 2, 3, 4, 5" }
+      ],
+      "answer": 1,
+      "explanation": "The loop counts down from 5 to 1. When countdown reaches 0, the condition countdown > 0 becomes false and the loop stops."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "Can you use complex boolean expressions in a while loop condition?",
+      "options": [
+        { "type": "text", "value": "No, only simple comparisons" },
+        { "type": "text", "value": "Only with numbers" },
+        { "type": "text", "value": "Yes, any boolean expression works" },
+        { "type": "text", "value": "Only with && operator" }
+      ],
+      "answer": 2,
+      "explanation": "You can use any boolean expression as a while loop condition, including complex conditions combining multiple checks with logical operators."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What is the final value of sum after this loop?\n\nint sum = 0;\nint i = 1;\nwhile (i <= 5) {\n    sum += i;\n    i++;\n}",
+      "options": [
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "20" },
+        { "type": "text", "value": "15" }
+      ],
+      "answer": 3,
+      "explanation": "The loop calculates 0+1+2+3+4+5=15. The accumulator sum adds each value of i from 1 to 5."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What is a counter pattern in loops?",
+      "options": [
+        { "type": "text", "value": "Tracking how many times a loop executes or items meet criteria" },
+        { "type": "text", "value": "A type of variable" },
+        { "type": "text", "value": "A loop that never ends" },
+        { "type": "text", "value": "A way to multiply values" }
+      ],
+      "answer": 0,
+      "explanation": "A counter pattern tracks how many times a loop has executed or how many items meet certain criteria by incrementing by 1 each time."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What does this loop print?\n\nint number = 10;\nwhile (number < 5) {\n    System.out.println(number);\n    number++;\n}",
+      "options": [
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "Nothing" },
+        { "type": "text", "value": "10, 11, 12..." },
+        { "type": "text", "value": "5" }
+      ],
+      "answer": 1,
+      "explanation": "Since number starts at 10, the condition number < 5 is immediately false. The loop body never executes, so nothing prints."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Can boolean variables control while loops?",
+      "options": [
+        { "type": "text", "value": "No, only numbers can" },
+        { "type": "text", "value": "Only with if statements" },
+        { "type": "text", "value": "Yes, they provide flexible loop control" },
+        { "type": "text", "value": "Only in for loops" }
+      ],
+      "answer": 2,
+      "explanation": "Boolean variables can control while loops, providing flexibility for conditions that aren't simple numeric comparisons."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What values does this loop print?\n\nint value = 2;\nwhile (value <= 16) {\n    System.out.println(value);\n    value *= 2;\n}",
+      "options": [
+        { "type": "text", "value": "2, 3, 4, 5..." },
+        { "type": "text", "value": "2, 4, 6, 8..." },
+        { "type": "text", "value": "2, 4, 8, 16" },
+        { "type": "text", "value": "2, 4, 8, 16, 32" }
+      ],
+      "answer": 2,
+      "explanation": "The loop doubles value each iteration, printing powers of 2: 2, 4, 8, and 16. When value becomes 32, the condition is false and the loop stops."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What must the loop update do for proper termination?",
+      "options": [
+        { "type": "text", "value": "Print values" },
+        { "type": "text", "value": "Create variables" },
+        { "type": "text", "value": "Delete memory" },
+        { "type": "text", "value": "Move the loop variable toward the termination condition" }
+      ],
+      "answer": 3,
+      "explanation": "The loop update must move the loop variable toward the termination condition to ensure the loop eventually terminates naturally."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "How many even numbers does this loop count?\n\nint evenCount = 0;\nint num = 1;\nwhile (num <= 10) {\n    if (num % 2 == 0) {\n        evenCount++;\n    }\n    num++;\n}",
+      "options": [
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "6" }
+      ],
+      "answer": 0,
+      "explanation": "The loop counts even numbers from 1 to 10: 2, 4, 6, 8, and 10, which equals 5 even numbers total."
+    },
+    {
+      "id": 15,
+      "type": "code",
+      "question": "What happens after this loop completes?\n\nint score = 0;\nwhile (score < 100) {\n    score += 10;\n}\nSystem.out.println(\"Done\");",
+      "options": [
+        { "type": "text", "value": "The loop never ends" },
+        { "type": "text", "value": "The program crashes" },
+        { "type": "text", "value": "\"Done\" prints" },
+        { "type": "text", "value": "Nothing happens" }
+      ],
+      "answer": 2,
+      "explanation": "The loop terminates when score reaches 100, then execution continues with the next statement, printing \"Done\"."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "How does a while loop differ from an if statement?",
+      "options": [
+        { "type": "text", "value": "They are the same" },
+        { "type": "text", "value": "while uses different operators" },
+        { "type": "text", "value": "if statements are faster" },
+        { "type": "text", "value": "while repeatedly executes its code block, if executes once" }
+      ],
+      "answer": 3,
+      "explanation": "While loops repeatedly execute their code block as long as the condition is true, whereas if statements execute their code block at most once."
+    }
+  ]
+}

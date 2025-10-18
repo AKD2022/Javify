@@ -1,0 +1,214 @@
+{
+  "lessonId": 70,
+  "title": "Defining a Class and Instance Variables",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is the basic structure for defining a class?",
+      "options": [
+        { "type": "text", "value": "public class followed by the class name and instance variables inside curly braces" },
+        { "type": "text", "value": "private method with variables" },
+        { "type": "text", "value": "object definition with methods only" },
+        { "type": "text", "value": "interface declaration" }
+      ],
+      "answer": 0,
+      "explanation": "A class is defined with public class ClassName { }, containing instance variables that describe each object's data."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What types can instance variables be?",
+      "options": [
+        { "type": "text", "value": "Only primitive types" },
+        { "type": "text", "value": "Primitive types, reference types like String, and arrays" },
+        { "type": "text", "value": "Only String" },
+        { "type": "text", "value": "Only methods" }
+      ],
+      "answer": 1,
+      "explanation": "Instance variables can be any type: primitives (int, double, boolean), reference types (String, other objects), or arrays."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What is the default value for a numeric instance variable?",
+      "options": [
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "Undefined" }
+      ],
+      "answer": 2,
+      "explanation": "Numeric instance variables default to 0 (or 0.0 for doubles) when an object is created if not explicitly initialized."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What is the default value for a boolean instance variable?",
+      "options": [
+        { "type": "text", "value": "true" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "false" },
+        { "type": "text", "value": "0" }
+      ],
+      "answer": 2,
+      "explanation": "Boolean instance variables default to false when an object is created if not explicitly initialized."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What is the default value for a reference type instance variable (like String)?",
+      "options": [
+        { "type": "text", "value": "Empty string \"\"" },
+        { "type": "text", "value": "null" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "false" }
+      ],
+      "answer": 1,
+      "explanation": "Reference type instance variables default to null when an object is created if not explicitly initialized."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "How do you initialize an instance variable with a starting value?",
+      "options": [
+        { "type": "text", "value": "Use the new keyword" },
+        { "type": "text", "value": "Assign a value when declaring the variable, like int age = 18;" },
+        { "type": "text", "value": "Use a constructor method" },
+        { "type": "text", "value": "Create an array" }
+      ],
+      "answer": 1,
+      "explanation": "You can initialize instance variables at declaration by assigning a value: type variableName = value;"
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What does good class design emphasize?",
+      "options": [
+        { "type": "text", "value": "As many instance variables as possible" },
+        { "type": "text", "value": "Only instance variables; no methods" },
+        { "type": "text", "value": "Including only data that meaningfully represents the object's state" },
+        { "type": "text", "value": "Using only primitive types" }
+      ],
+      "answer": 2,
+      "explanation": "Good class design includes only instance variables that are relevant and necessary to represent what the object is."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "How do you access an instance variable of an object?",
+      "options": [
+        { "type": "text", "value": "variableName only" },
+        { "type": "text", "value": "objectReference.variableName" },
+        { "type": "text", "value": "new objectReference.variableName" },
+        { "type": "text", "value": "[variableName]" }
+      ],
+      "answer": 1,
+      "explanation": "You access instance variables using the dot operator: objectReference.variableName, like myCar.color"
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "If two objects are created from the same class, do their instance variables share the same data?",
+      "options": [
+        { "type": "text", "value": "Yes, they share all data" },
+        { "type": "text", "value": "Yes, but only for primitive types" },
+        { "type": "text", "value": "No, each object has its own independent instance variables" },
+        { "type": "text", "value": "Only if they reference the same array" }
+      ],
+      "answer": 2,
+      "explanation": "Each object created from a class has its own independent copies of all instance variables."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "How do you create an object from a class?",
+      "options": [
+        { "type": "text", "value": "Use the class keyword" },
+        { "type": "text", "value": "Use the new keyword followed by the class name and parentheses" },
+        { "type": "text", "value": "Call a static method" },
+        { "type": "text", "value": "Use the Object class" }
+      ],
+      "answer": 1,
+      "explanation": "Objects are created using the new keyword: ClassName objectName = new ClassName();"
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Can you store multiple objects of the same class in an array?",
+      "options": [
+        { "type": "text", "value": "No, arrays only hold primitive types" },
+        { "type": "text", "value": "Only with special syntax" },
+        { "type": "text", "value": "Yes, you can create an array of objects" },
+        { "type": "text", "value": "Only for String types" }
+      ],
+      "answer": 2,
+      "explanation": "You can create arrays of objects: ClassName[] arrayName = new ClassName[size];"
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What does it mean when an instance variable is null?",
+      "options": [
+        { "type": "text", "value": "It equals 0" },
+        { "type": "text", "value": "It is empty" },
+        { "type": "text", "value": "It holds no reference to any object" },
+        { "type": "text", "value": "It is false" }
+      ],
+      "answer": 2,
+      "explanation": "null means a reference variable doesn't point to any object; it holds no value and no memory address."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "Can one object be stored as an instance variable in another object?",
+      "options": [
+        { "type": "text", "value": "No, not allowed" },
+        { "type": "text", "value": "Only with static keywords" },
+        { "type": "text", "value": "Yes, objects can contain other objects as instance variables" },
+        { "type": "text", "value": "Only through arrays" }
+      ],
+      "answer": 2,
+      "explanation": "Objects can be nested as instance variables, allowing composition where complex objects contain simpler ones."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "How do you access a variable in a nested object?",
+      "options": [
+        { "type": "text", "value": "Use a single dot: objectVariable" },
+        { "type": "text", "value": "Chain dots: outerObject.innerObject.variable" },
+        { "type": "text", "value": "Use brackets: [outerObject][innerObject]" },
+        { "type": "text", "value": "Use arrow: outerObject->innerObject" }
+      ],
+      "answer": 1,
+      "explanation": "Nested object variables are accessed by chaining dot operators: outerObject.innerObject.variable"
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What determines whether two objects are different?",
+      "options": [
+        { "type": "text", "value": "Their class name" },
+        { "type": "text", "value": "They share the same instance variables" },
+        { "type": "text", "value": "Their independent instance variable values and separate memory locations" },
+        { "type": "text", "value": "The order they were created" }
+      ],
+      "answer": 2,
+      "explanation": "Objects are different because they occupy separate memory locations and have their own independent instance variable values."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What is the purpose of instance variables in a class?",
+      "options": [
+        { "type": "text", "value": "To define methods only" },
+        { "type": "text", "value": "To store the state and data of each object created from the class" },
+        { "type": "text", "value": "To create new objects automatically" },
+        { "type": "text", "value": "To eliminate the need for methods" }
+      ],
+      "answer": 1,
+      "explanation": "Instance variables store the unique data and state for each object, making each instance distinct from others."
+    }
+  ]
+}

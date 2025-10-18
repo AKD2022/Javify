@@ -1,0 +1,910 @@
+{
+  "lessonId": 61,
+  "title": "Loop Tracing and Dry-Run Practice",
+  "content": [
+    {
+      "type": "text",
+      "value": "Loop tracing, also called dry-running, is the process of manually executing loop code step by step on paper or mentally. This essential debugging skill helps you understand what loops do, predict their output, and identify logic errors. Mastering loop tracing makes you a more effective programmer."
+    },
+    {
+      "type": "text",
+      "value": "To trace a loop, you track the value of each variable at each step of execution. Creating a trace table organizes this information clearly, with columns for each variable and rows for each iteration."
+    },
+    {
+      "type": "code",
+      "value": "int sum = 0;\nfor (int i = 1; i <= 3; i++) {\n    sum += i;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Tracing this loop creates a table showing how "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "sum"
+    },
+    {
+      "type": "text",
+      "value": " change. Before iteration 1: "
+    },
+    {
+      "type": "code",
+      "value": "i = 1"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "sum = 0"
+    },
+    {
+      "type": "text",
+      "value": ". After iteration 1: "
+    },
+    {
+      "type": "code",
+      "value": "i = 2"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "sum = 1"
+    },
+    {
+      "type": "text",
+      "value": ". After iteration 2: "
+    },
+    {
+      "type": "code",
+      "value": "i = 3"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "sum = 3"
+    },
+    {
+      "type": "text",
+      "value": ". After iteration 3: "
+    },
+    {
+      "type": "code",
+      "value": "i = 4"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "sum = 6"
+    },
+    {
+      "type": "text",
+      "value": ". The loop then exits because "
+    },
+    {
+      "type": "code",
+      "value": "i <= 3"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "The basic steps for tracing any loop are: identify initial values, check the condition, execute the body if "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ", perform the update, and repeat until the condition becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "int count = 5;\nwhile (count > 0) {\n    System.out.println(count);\n    count--;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Start with "
+    },
+    {
+      "type": "code",
+      "value": "count = 5"
+    },
+    {
+      "type": "text",
+      "value": ". Check: "
+    },
+    {
+      "type": "code",
+      "value": "5 > 0"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". Execute: print "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": ", decrement to "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": ". Check: "
+    },
+    {
+      "type": "code",
+      "value": "4 > 0"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": ". Continue this process through values 4, 3, 2, and 1. When "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ", the condition is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " and the loop exits."
+    },
+    {
+      "type": "text",
+      "value": "Tracing loops with conditions inside the body requires checking both the loop condition and the internal condition."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 1; i <= 5; i++) {\n    if (i % 2 == 0) {\n        System.out.println(i);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Iteration 1: "
+    },
+    {
+      "type": "code",
+      "value": "i = 1"
+    },
+    {
+      "type": "text",
+      "value": ", check "
+    },
+    {
+      "type": "code",
+      "value": "1 % 2 == 0"
+    },
+    {
+      "type": "text",
+      "value": " (false), nothing prints. Iteration 2: "
+    },
+    {
+      "type": "code",
+      "value": "i = 2"
+    },
+    {
+      "type": "text",
+      "value": ", check "
+    },
+    {
+      "type": "code",
+      "value": "2 % 2 == 0"
+    },
+    {
+      "type": "text",
+      "value": " (true), prints "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ". Iteration 3: "
+    },
+    {
+      "type": "code",
+      "value": "i = 3"
+    },
+    {
+      "type": "text",
+      "value": ", check "
+    },
+    {
+      "type": "code",
+      "value": "3 % 2 == 0"
+    },
+    {
+      "type": "text",
+      "value": " (false), nothing prints. Continue through "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": " (prints) and "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": " (doesn't print)."
+    },
+    {
+      "type": "text",
+      "value": "Tracing nested loops requires tracking the inner loop completely for each outer loop iteration."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 1; i <= 2; i++) {\n    for (int j = 1; j <= 3; j++) {\n        System.out.println(i + \",\" + j);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "When "
+    },
+    {
+      "type": "code",
+      "value": "i = 1"
+    },
+    {
+      "type": "text",
+      "value": ", the inner loop runs completely: prints (1,1), (1,2), (1,3). Then "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": " and the inner loop resets to "
+    },
+    {
+      "type": "code",
+      "value": "j = 1"
+    },
+    {
+      "type": "text",
+      "value": ", running through (2,1), (2,2), (2,3). Total output: six lines."
+    },
+    {
+      "type": "text",
+      "value": "Tracing loops with "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " requires noting when the loop exits early."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 1; i <= 5; i++) {\n    System.out.println(i);\n    if (i == 3) {\n        break;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Iteration 1: prints "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ", checks "
+    },
+    {
+      "type": "code",
+      "value": "1 == 3"
+    },
+    {
+      "type": "text",
+      "value": " (false), continues. Iteration 2: prints "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ", checks "
+    },
+    {
+      "type": "code",
+      "value": "2 == 3"
+    },
+    {
+      "type": "text",
+      "value": " (false), continues. Iteration 3: prints "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": ", checks "
+    },
+    {
+      "type": "code",
+      "value": "3 == 3"
+    },
+    {
+      "type": "text",
+      "value": " (true), executes "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": ", exits loop immediately. Output: 1, 2, 3."
+    },
+    {
+      "type": "text",
+      "value": "Tracing loops with "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " means noting when iterations skip remaining code."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 1; i <= 4; i++) {\n    if (i == 2) {\n        continue;\n    }\n    System.out.println(i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Iteration 1: "
+    },
+    {
+      "type": "code",
+      "value": "i = 1"
+    },
+    {
+      "type": "text",
+      "value": ", checks "
+    },
+    {
+      "type": "code",
+      "value": "1 == 2"
+    },
+    {
+      "type": "text",
+      "value": " (false), prints "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ". Iteration 2: "
+    },
+    {
+      "type": "code",
+      "value": "i = 2"
+    },
+    {
+      "type": "text",
+      "value": ", checks "
+    },
+    {
+      "type": "code",
+      "value": "2 == 2"
+    },
+    {
+      "type": "text",
+      "value": " (true), executes "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": ", skips print. Iterations 3 and 4: print "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": ". Output: 1, 3, 4."
+    },
+    {
+      "type": "text",
+      "value": "Accumulator patterns require careful tracking of how values build up across iterations."
+    },
+    {
+      "type": "code",
+      "value": "int product = 1;\nfor (int i = 2; i <= 4; i++) {\n    product *= i;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Before loop: "
+    },
+    {
+      "type": "code",
+      "value": "product = 1"
+    },
+    {
+      "type": "text",
+      "value": ". Iteration 1: "
+    },
+    {
+      "type": "code",
+      "value": "i = 2"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "product = 1 * 2 = 2"
+    },
+    {
+      "type": "text",
+      "value": ". Iteration 2: "
+    },
+    {
+      "type": "code",
+      "value": "i = 3"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "product = 2 * 3 = 6"
+    },
+    {
+      "type": "text",
+      "value": ". Iteration 3: "
+    },
+    {
+      "type": "code",
+      "value": "i = 4"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "product = 6 * 4 = 24"
+    },
+    {
+      "type": "text",
+      "value": ". Final value: "
+    },
+    {
+      "type": "code",
+      "value": "product = 24"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Loops with complex updates require tracking all changes that happen in the update step."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 0; i <= 10; i += 3) {\n    System.out.println(i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Iteration 1: "
+    },
+    {
+      "type": "code",
+      "value": "i = 0"
+    },
+    {
+      "type": "text",
+      "value": ", prints "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ", updates to "
+    },
+    {
+      "type": "code",
+      "value": "i = 3"
+    },
+    {
+      "type": "text",
+      "value": ". Iteration 2: "
+    },
+    {
+      "type": "code",
+      "value": "i = 3"
+    },
+    {
+      "type": "text",
+      "value": ", prints "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": ", updates to "
+    },
+    {
+      "type": "code",
+      "value": "i = 6"
+    },
+    {
+      "type": "text",
+      "value": ". Iteration 3: "
+    },
+    {
+      "type": "code",
+      "value": "i = 6"
+    },
+    {
+      "type": "text",
+      "value": ", prints "
+    },
+    {
+      "type": "code",
+      "value": "6"
+    },
+    {
+      "type": "text",
+      "value": ", updates to "
+    },
+    {
+      "type": "code",
+      "value": "i = 9"
+    },
+    {
+      "type": "text",
+      "value": ". Iteration 4: "
+    },
+    {
+      "type": "code",
+      "value": "i = 9"
+    },
+    {
+      "type": "text",
+      "value": ", prints "
+    },
+    {
+      "type": "code",
+      "value": "9"
+    },
+    {
+      "type": "text",
+      "value": ", updates to "
+    },
+    {
+      "type": "code",
+      "value": "i = 12"
+    },
+    {
+      "type": "text",
+      "value": ". Check: "
+    },
+    {
+      "type": "code",
+      "value": "12 <= 10"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": ", loop exits."
+    },
+    {
+      "type": "text",
+      "value": "String concatenation in loops requires tracking how strings build character by character or word by word."
+    },
+    {
+      "type": "code",
+      "value": "String result = \"\";\nfor (int i = 1; i <= 3; i++) {\n    result += \"*\";\n}"
+    },
+    {
+      "type": "text",
+      "value": "Before loop: "
+    },
+    {
+      "type": "code",
+      "value": "result = \"\""
+    },
+    {
+      "type": "text",
+      "value": ". Iteration 1: "
+    },
+    {
+      "type": "code",
+      "value": "result = \"\" + \"*\" = \"*\""
+    },
+    {
+      "type": "text",
+      "value": ". Iteration 2: "
+    },
+    {
+      "type": "code",
+      "value": "result = \"*\" + \"*\" = \"**\""
+    },
+    {
+      "type": "text",
+      "value": ". Iteration 3: "
+    },
+    {
+      "type": "code",
+      "value": "result = \"**\" + \"*\" = \"***\""
+    },
+    {
+      "type": "text",
+      "value": ". Final value: "
+    },
+    {
+      "type": "code",
+      "value": "result = \"***\""
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Tracing helps identify off-by-one errors by showing exactly which values the loop processes."
+    },
+    {
+      "type": "code",
+      "value": "// Intended to print 1-5\nfor (int i = 1; i < 5; i++) {\n    System.out.println(i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Tracing reveals: prints "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": ". Missing "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": " because condition should be "
+    },
+    {
+      "type": "code",
+      "value": "i <= 5"
+    },
+    {
+      "type": "text",
+      "value": " not "
+    },
+    {
+      "type": "code",
+      "value": "i < 5"
+    },
+    {
+      "type": "text",
+      "value": ". Tracing makes the error obvious by showing actual values."
+    },
+    {
+      "type": "text",
+      "value": "When tracing reveals unexpected behavior, examine each step carefully. Check: Are variables initialized correctly? Does the condition check the right thing? Does the update move in the right direction? Does the body produce expected results?"
+    },
+    {
+      "type": "code",
+      "value": "int count = 0;\nfor (int i = 0; i <= 5; i++) {\n    if (i % 2 == 1) {\n        count++;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Trace to verify: "
+    },
+    {
+      "type": "code",
+      "value": "i = 0"
+    },
+    {
+      "type": "text",
+      "value": " (even, count stays 0), "
+    },
+    {
+      "type": "code",
+      "value": "i = 1"
+    },
+    {
+      "type": "text",
+      "value": " (odd, count becomes 1), "
+    },
+    {
+      "type": "code",
+      "value": "i = 2"
+    },
+    {
+      "type": "text",
+      "value": " (even, count stays 1), "
+    },
+    {
+      "type": "code",
+      "value": "i = 3"
+    },
+    {
+      "type": "text",
+      "value": " (odd, count becomes 2), "
+    },
+    {
+      "type": "code",
+      "value": "i = 4"
+    },
+    {
+      "type": "text",
+      "value": " (even, count stays 2), "
+    },
+    {
+      "type": "code",
+      "value": "i = 5"
+    },
+    {
+      "type": "text",
+      "value": " (odd, count becomes 3). Final: "
+    },
+    {
+      "type": "code",
+      "value": "count = 3"
+    },
+    {
+      "type": "text",
+      "value": ", counting odd numbers correctly."
+    },
+    {
+      "type": "text",
+      "value": "Practice tracing loops regularly to develop intuition for how loops execute. Start with simple loops and gradually work toward more complex scenarios. The more you trace, the faster you'll spot errors and predict behavior. This skill proves invaluable during exams and debugging sessions."
+    },
+    {
+      "type": "text",
+      "value": "Mastering loop tracing transforms you from someone who guesses at loop behavior to someone who knows precisely what loops do. This precision makes debugging faster, code reviews more effective, and your own code more reliable. In the next lesson, you'll learn about off-by-one errors and common bugs in loops."
+    }
+  ]
+}

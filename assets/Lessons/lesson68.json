@@ -1,0 +1,286 @@
+{
+  "lessonId": 68,
+  "title": "Recap and Mini Quiz on Unit 4 Concepts",
+  "content": [
+    {
+      "type": "text",
+      "value": "Unit 4 has introduced you to loops and iteration, one of the most fundamental concepts in programming. You've learned how to repeat code blocks efficiently, control when repetition occurs, and use advanced techniques to solve complex problems. This lesson reviews the essential concepts from Unit 4 and provides guidance for reinforcing your understanding."
+    },
+    {
+      "type": "text",
+      "value": "The three primary loop structures you've mastered are the "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loop, "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loop, and "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loop. Each has specific use cases. The "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loop executes as long as a condition is true, making it ideal when you don't know how many iterations are needed. The "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loop guarantees at least one execution before checking the condition. The "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loop is best for counting iterations, with initialization, condition, and update in one line."
+    },
+    {
+      "type": "code",
+      "value": "// while loop - condition checked first\nint count = 0;\nwhile (count < 5) {\n    System.out.println(count);\n    count++;\n}\n\n// do-while loop - condition checked last\nint num = 0;\ndo {\n    System.out.println(num);\n    num++;\n} while (num < 5);\n\n// for loop - counting iterations\nfor (int i = 0; i < 5; i++) {\n    System.out.println(i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "All three produce the same output (0 through 4), but they're structured differently. Choose based on your specific scenario: unknown iteration count suggests "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": ", guaranteed first execution suggests "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": ", and known count suggests "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Loop control statements "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " modify loop behavior. The "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statement immediately exits a loop, while "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " skips to the next iteration."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 0; i < 10; i++) {\n    if (i == 5) {\n        break;  // Exit loop when i equals 5\n    }\n    System.out.println(i);\n}\n\nfor (int i = 0; i < 5; i++) {\n    if (i == 2) {\n        continue;  // Skip this iteration when i equals 2\n    }\n    System.out.println(i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "The first loop prints 0 through 4, then breaks. The second loop prints 0, 1, 3, 4 (skipping 2). These statements help create more efficient and flexible loop logic."
+    },
+    {
+      "type": "text",
+      "value": "Infinite loops occur when the loop condition never becomes false. They're a common mistake but sometimes intentional."
+    },
+    {
+      "type": "code",
+      "value": "// Unintentional infinite loop - AVOID THIS\nint x = 0;\nwhile (x < 10) {\n    System.out.println(x);\n    // x is never updated, so x < 10 is always true\n}\n\n// Intentional infinite loop - controlled by break\nwhile (true) {\n    String input = getUserInput();\n    if (input.equals(\"quit\")) {\n        break;\n    }\n    processInput(input);\n}"
+    },
+    {
+      "type": "text",
+      "value": "The first example is an error because "
+    },
+    {
+      "type": "code",
+      "value": "x"
+    },
+    {
+      "type": "text",
+      "value": " never changes. The second is intentional—using "
+    },
+    {
+      "type": "code",
+      "value": "while (true)"
+    },
+    {
+      "type": "text",
+      "value": " with a "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " is a legitimate pattern when the exit condition depends on user input or other runtime factors."
+    },
+    {
+      "type": "text",
+      "value": "Accumulators and counters are essential patterns for processing data. Accumulators collect running totals while counters track occurrences."
+    },
+    {
+      "type": "code",
+      "value": "// Accumulator pattern - collecting sums\nint sum = 0;\nfor (int i = 1; i <= 5; i++) {\n    sum += i;\n}\n\n// Counter pattern - tracking occurrences\nint evenCount = 0;\nfor (int i = 1; i <= 10; i++) {\n    if (i % 2 == 0) {\n        evenCount++;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The accumulator "
+    },
+    {
+      "type": "code",
+      "value": "sum"
+    },
+    {
+      "type": "text",
+      "value": " holds 15 after adding 1 through 5. The counter "
+    },
+    {
+      "type": "code",
+      "value": "evenCount"
+    },
+    {
+      "type": "text",
+      "value": " holds 5 after counting even numbers from 1 to 10."
+    },
+    {
+      "type": "text",
+      "value": "Common loop algorithms solve recurring problems efficiently. You've learned sum, average, maximum, and minimum algorithms."
+    },
+    {
+      "type": "code",
+      "value": "int[] data = {5, 12, 8, 20, 3};\n\n// Sum\nint sum = 0;\nfor (int val : data) sum += val;  // Result: 48\n\n// Average\nint total = 0;\nfor (int val : data) total += val;\ndouble avg = (double) total / data.length;  // Result: 9.6\n\n// Maximum\nint max = data[0];\nfor (int i = 1; i < data.length; i++) {\n    if (data[i] > max) max = data[i];  // Result: 20\n}\n\n// Minimum\nint min = data[0];\nfor (int i = 1; i < data.length; i++) {\n    if (data[i] < min) min = data[i];  // Result: 3\n}"
+    },
+    {
+      "type": "text",
+      "value": "These algorithms appear throughout programming and become intuitive with practice."
+    },
+    {
+      "type": "text",
+      "value": "Multiple loop variables enable sophisticated patterns. Two variables can work from opposite ends of an array, move at different speeds, or track parallel arrays."
+    },
+    {
+      "type": "code",
+      "value": "// Two-pointer pattern - working from both ends\nint[] arr = {1, 2, 3, 4, 5};\nfor (int left = 0, right = arr.length - 1; left < right; left++, right--) {\n    // Swap elements\n    int temp = arr[left];\n    arr[left] = arr[right];\n    arr[right] = temp;\n}\n\n// Different speeds - comparing elements apart\nfor (int i = 0, j = 2; j < arr.length; i++, j++) {\n    if (arr[i] == arr[j]) {\n        System.out.println(\"Match found\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Multiple variables multiply problem-solving capabilities without resorting to nested loops when appropriate."
+    },
+    {
+      "type": "text",
+      "value": "Nested loops solve multi-dimensional problems. Common patterns include iterating through 2D arrays, creating patterns, and comparing elements across different positions."
+    },
+    {
+      "type": "code",
+      "value": "// Iterating through a 2D array\nint[][] matrix = {{1, 2}, {3, 4}, {5, 6}};\nfor (int row = 0; row < matrix.length; row++) {\n    for (int col = 0; col < matrix[row].length; col++) {\n        System.out.print(matrix[row][col] + \" \");\n    }\n}\n\n// Creating a pattern\nfor (int i = 1; i <= 3; i++) {\n    for (int j = 0; j < i; j++) {\n        System.out.print(\"* \");\n    }\n    System.out.println();\n}"
+    },
+    {
+      "type": "text",
+      "value": "Nested loops multiply total iterations (outer × inner), so efficiency becomes important with large datasets."
+    },
+    {
+      "type": "text",
+      "value": "Loop tracing—mentally executing loops step by step—is essential for debugging. Trace through complex loops to understand their behavior and identify errors."
+    },
+    {
+      "type": "code",
+      "value": "int result = 0;\nfor (int i = 0; i < 3; i++) {\n    result += i * 2;\n}\n// Trace:\n// i=0: result = 0 + (0*2) = 0\n// i=1: result = 0 + (1*2) = 2\n// i=2: result = 2 + (2*2) = 6\n// Final result: 6"
+    },
+    {
+      "type": "text",
+      "value": "Off-by-one errors occur when loop boundaries are incorrect. Starting at the wrong index or using the wrong comparison operator causes these subtle bugs."
+    },
+    {
+      "type": "code",
+      "value": "// Off-by-one error - processes one too many\nfor (int i = 0; i <= 5; i++) {  // Should be i < 5\n    // This runs 6 times instead of 5\n}\n\n// Correct - processes exactly 5 times\nfor (int i = 0; i < 5; i++) {\n    // This runs exactly 5 times\n}"
+    },
+    {
+      "type": "text",
+      "value": "Pay careful attention to loop boundaries. When working with arrays, remember that valid indices run from "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "length - 1"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Key concepts to reinforce before moving to Unit 5:"
+    },
+    {
+      "type": "code",
+      "value": "1. Choose the appropriate loop type for your problem\n2. Always initialize accumulators/counters before loops\n3. Use break to exit early and continue to skip iterations\n4. Debug loops by tracing execution manually\n5. Watch for off-by-one errors in loop boundaries\n6. Understand that nested loops multiply iterations\n7. Use multiple loop variables to solve complex problems\n8. Remember that inner loops reset for each outer iteration"
+    },
+    {
+      "type": "text",
+      "value": "Unit 4 has built your foundation in loop mechanics and iteration patterns. These concepts will underpin everything you learn in Unit 5 about writing and using classes and objects. The algorithmic thinking you've developed—breaking problems into repeated steps, managing state across iterations, and solving problems systematically—applies far beyond loops. Take time to solidify your understanding, practice complex loop patterns, and identify which techniques work best for different scenarios."
+    }
+  ]
+}

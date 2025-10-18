@@ -1,0 +1,215 @@
+{
+  "lessonId": 56,
+  "title": "Loop Conditions and Termination",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is a loop condition?",
+      "options": [
+        { "type": "text", "value": "A boolean expression that determines whether to continue looping" },
+        { "type": "text", "value": "A variable declaration" },
+        { "type": "text", "value": "A method call" },
+        { "type": "text", "value": "A print statement" }
+      ],
+      "answer": 0,
+      "explanation": "A loop condition is a boolean expression that Java evaluates to decide whether to continue looping (true) or terminate (false)."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "When does loop termination occur?",
+      "options": [
+        { "type": "text", "value": "After one iteration" },
+        { "type": "text", "value": "When the condition evaluates to false" },
+        { "type": "text", "value": "When a variable is declared" },
+        { "type": "text", "value": "At the start of the program" }
+      ],
+      "answer": 1,
+      "explanation": "Loop termination occurs when the condition evaluates to false, causing execution to continue with the next statement after the loop."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What values does this loop print?\n\nfor (int i = 1; i < 5; i++) {\n    System.out.println(i);\n}",
+      "options": [
+        { "type": "text", "value": "1, 2, 3, 4, 5" },
+        { "type": "text", "value": "0, 1, 2, 3, 4" },
+        { "type": "text", "value": "1, 2, 3, 4" },
+        { "type": "text", "value": "1, 2, 3, 4, 5, 6" }
+      ],
+      "answer": 2,
+      "explanation": "The condition countdown >= 1 keeps the loop running as long as countdown is at least 1. When countdown becomes 0, the condition is false."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "What values does this loop print?\n\nfor (int i = 1; i <= 5; i++) {\n    System.out.println(i);\n}",
+      "options": [
+        { "type": "text", "value": "1, 2, 3, 4" },
+        { "type": "text", "value": "0, 1, 2, 3, 4, 5" },
+        { "type": "text", "value": "1, 2, 3, 4, 5, 6" },
+        { "type": "text", "value": "1, 2, 3, 4, 5" }
+      ],
+      "answer": 3,
+      "explanation": "Using i <= 5 includes 5 in the output. The loop prints 1, 2, 3, 4, and 5, stopping when i equals 6."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What happens with complex conditions using AND (&&)?",
+      "options": [
+        { "type": "text", "value": "Loop terminates when any condition becomes false" },
+        { "type": "text", "value": "Loop never terminates" },
+        { "type": "text", "value": "Only the first condition matters" },
+        { "type": "text", "value": "Loop runs once" }
+      ],
+      "answer": 0,
+      "explanation": "With AND (&&), the loop terminates when any condition becomes false because all conditions must be true for the loop to continue."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "When does this loop terminate?\n\nint guess = 5;\nint target = 7;\nwhile (guess != target) {\n    guess++;\n}",
+      "options": [
+        { "type": "text", "value": "Never" },
+        { "type": "text", "value": "When guess equals target (7)" },
+        { "type": "text", "value": "After one iteration" },
+        { "type": "text", "value": "Immediately" }
+      ],
+      "answer": 1,
+      "explanation": "The loop continues while guess != target is true. When guess reaches 7, matching target, the condition becomes false and the loop terminates."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What are off-by-one errors?",
+      "options": [
+        { "type": "text", "value": "Syntax errors" },
+        { "type": "text", "value": "Memory errors" },
+        { "type": "text", "value": "Conditions that incorrectly include or exclude boundary values" },
+        { "type": "text", "value": "Variable naming errors" }
+      ],
+      "answer": 2,
+      "explanation": "Off-by-one errors occur when conditions include or exclude boundary values incorrectly, causing loops to run one time too many or too few."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "How many elements does this loop process if there are 5 elements (indices 0-4)?\n\nfor (int i = 0; i < 4; i++) {\n    System.out.println(i);\n}",
+      "options": [
+        { "type": "text", "value": "5 elements" },
+        { "type": "text", "value": "3 elements" },
+        { "type": "text", "value": "6 elements" },
+        { "type": "text", "value": "4 elements" }
+      ],
+      "answer": 3,
+      "explanation": "Using i < 4 processes indices 0, 1, 2, and 3, which is 4 elements. It misses index 4, stopping one element too early for a 5-element array."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What is a sentinel value?",
+      "options": [
+        { "type": "text", "value": "A special value that signals when to stop processing" },
+        { "type": "text", "value": "The first value in a loop" },
+        { "type": "text", "value": "A constant" },
+        { "type": "text", "value": "A data type" }
+      ],
+      "answer": 0,
+      "explanation": "A sentinel value is a special value that signals when to stop processing input, often used in loop conditions to trigger termination."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What happens with OR conditions?\n\nwhile (temp < 70 || heaterOn)",
+      "options": [
+        { "type": "text", "value": "Loop continues when both conditions are true" },
+        { "type": "text", "value": "Loop continues when at least one condition is true" },
+        { "type": "text", "value": "Loop never runs" },
+        { "type": "text", "value": "Loop runs once" }
+      ],
+      "answer": 1,
+      "explanation": "With OR (||), the loop continues when at least one condition is true. Only when both become false does the loop terminate."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Why are positive conditions generally clearer than negated conditions?",
+      "options": [
+        { "type": "text", "value": "They run faster" },
+        { "type": "text", "value": "They use less memory" },
+        { "type": "text", "value": "They don't require mental negation to understand" },
+        { "type": "text", "value": "They are required by Java" }
+      ],
+      "answer": 2,
+      "explanation": "Positive conditions are clearer because they don't require mental negation to understand, making the code more intuitive and readable."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What does this countdown condition do?\n\nwhile (countdown >= 1)",
+      "options": [
+        { "type": "text", "value": "Counts up from 1" },
+        { "type": "text", "value": "Keeps running while countdown is negative" },
+        { "type": "text", "value": "Keeps running while countdown is at least 1" },
+        { "type": "text", "value": "Runs once" }
+      ],
+      "answer": 2,
+      "explanation": "Using i < 5 excludes 5 from the output. The loop prints 1, 2, 3, and 4, stopping when i equals 5."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What must happen for natural loop termination to occur?",
+      "options": [
+        { "type": "text", "value": "The program must restart" },
+        { "type": "text", "value": "Variables must be deleted" },
+        { "type": "text", "value": "The loop must modify variables so the condition eventually becomes false" },
+        { "type": "text", "value": "Nothing needs to happen" }
+      ],
+      "answer": 2,
+      "explanation": "For natural termination, the loop must modify variables used in the condition so the condition eventually becomes false."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What protects this loop from going past the string's end?\n\nwhile (index < text.length())",
+      "options": [
+        { "type": "text", "value": "The condition checks index is less than the string length" },
+        { "type": "text", "value": "Nothing protects it" },
+        { "type": "text", "value": "The string grows automatically" },
+        { "type": "text", "value": "Java adds extra characters" }
+      ],
+      "answer": 0,
+      "explanation": "The condition index < text.length() ensures the loop processes each character without going past the string's end by checking the index against the length."
+    },
+    {
+      "id": 15,
+      "type": "code",
+      "question": "When does this complex condition terminate?\n\nwhile (score < 100 && attempts < 10)",
+      "options": [
+        { "type": "text", "value": "When score reaches 100 only" },
+        { "type": "text", "value": "When attempts reaches 10 only" },
+        { "type": "text", "value": "When either score reaches 100 or attempts reaches 10" },
+        { "type": "text", "value": "Never" }
+      ],
+      "answer": 2,
+      "explanation": "With AND (&&), the loop terminates when either condition becomes false - when score reaches 100 OR when attempts reaches 10."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "How should you verify conditions include or exclude values correctly?",
+      "options": [
+        { "type": "text", "value": "Guess and hope" },
+        { "type": "text", "value": "Ignore boundary values" },
+        { "type": "text", "value": "Never check" },
+        { "type": "text", "value": "Test boundary cases" }
+      ],
+      "answer": 3,
+      "explanation": "Test boundary cases to verify your conditions include or exclude values as intended, helping identify off-by-one errors."
+    }
+  ]
+}
+   

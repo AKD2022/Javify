@@ -1,0 +1,214 @@
+{
+  "lessonId": 64,
+  "title": "Accumulators and Counters in Loops",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is an accumulator variable?",
+      "options": [
+        { "type": "text", "value": "A variable that collects or accumulates values throughout loop iterations" },
+        { "type": "text", "value": "A variable that only counts iterations" },
+        { "type": "text", "value": "A variable that stores the loop control value" },
+        { "type": "text", "value": "A variable that resets after each iteration" }
+      ],
+      "answer": 0,
+      "explanation": "An accumulator is a variable that accumulates or collects values throughout the iterations of a loop, like building up a running total or sum."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What is the typical starting value for a sum accumulator?",
+      "options": [
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "-1" },
+        { "type": "text", "value": "The first array element" }
+      ],
+      "answer": 1,
+      "explanation": "Sum accumulators typically start at 0 so that adding values doesn't include any extra initial amount."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What does the += operator do?",
+      "options": [
+        { "type": "text", "value": "Multiplies and assigns" },
+        { "type": "text", "value": "Divides and assigns" },
+        { "type": "text", "value": "Adds the right side to the variable and assigns the result" },
+        { "type": "text", "value": "Increments by 1" }
+      ],
+      "answer": 2,
+      "explanation": "The += operator adds the value on the right side to the current value of the variable and stores the result back in that variable."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What is a counter variable used for?",
+      "options": [
+        { "type": "text", "value": "Storing array values" },
+        { "type": "text", "value": "Accumulating sums" },
+        { "type": "text", "value": "Storing the loop index" },
+        { "type": "text", "value": "Counting how many times a specific condition occurs" }
+      ],
+      "answer": 3,
+      "explanation": "A counter variable tracks how many times something specific occurs during loop execution, separate from the loop control variable."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What does the ++ operator do?",
+      "options": [
+        { "type": "text", "value": "Adds 1 to a variable" },
+        { "type": "text", "value": "Adds 2 to a variable" },
+        { "type": "text", "value": "Multiplies by 2" },
+        { "type": "text", "value": "Doubles the variable value" }
+      ],
+      "answer": 0,
+      "explanation": "The ++ operator increments (adds 1 to) a variable, which is shorthand for variable = variable + 1."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "To calculate an average, you need both an accumulator and what else?",
+      "options": [
+        { "type": "text", "value": "Another accumulator" },
+        { "type": "text", "value": "A counter to track how many values were added" },
+        { "type": "text", "value": "A maximum value" },
+        { "type": "text", "value": "A minimum value" }
+      ],
+      "answer": 1,
+      "explanation": "Calculating an average requires accumulating the sum and counting how many values were added, then dividing sum by count."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What is the typical starting value for a multiplication accumulator?",
+      "options": [
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "10" },
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "-1" }
+      ],
+      "answer": 2,
+      "explanation": "Multiplication accumulators start at 1 because starting at 0 would make the product always 0 regardless of what you multiply."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What does the *= operator do?",
+      "options": [
+        { "type": "text", "value": "Adds and assigns" },
+        { "type": "text", "value": "Subtracts and assigns" },
+        { "type": "text", "value": "Divides and assigns" },
+        { "type": "text", "value": "Multiplies the variable by the right side and assigns the result" }
+      ],
+      "answer": 3,
+      "explanation": "The *= operator multiplies the current value of the variable by the value on the right side and stores the result."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "When finding a maximum value, what should the initial value be?",
+      "options": [
+        { "type": "text", "value": "The smallest possible value like Integer.MIN_VALUE" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "100" }
+      ],
+      "answer": 0,
+      "explanation": "Starting with the smallest possible value ensures any real value in your data will be larger and update the maximum appropriately."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What does the -- operator do?",
+      "options": [
+        { "type": "text", "value": "Adds 1" },
+        { "type": "text", "value": "Subtracts 1 from a variable" },
+        { "type": "text", "value": "Divides by 2" },
+        { "type": "text", "value": "Multiplies by -1" }
+      ],
+      "answer": 1,
+      "explanation": "The -- operator decrements (subtracts 1 from) a variable, which is shorthand for variable = variable - 1."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Where should you initialize an accumulator or counter?",
+      "options": [
+        { "type": "text", "value": "Inside the loop body" },
+        { "type": "text", "value": "After the loop ends" },
+        { "type": "text", "value": "Before the loop begins" },
+        { "type": "text", "value": "In the loop header" }
+      ],
+      "answer": 2,
+      "explanation": "Accumulators and counters must be initialized before the loop begins so they don't reset to their initial value each iteration."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What happens if you initialize a sum accumulator inside the loop?",
+      "options": [
+        { "type": "text", "value": "It works correctly" },
+        { "type": "text", "value": "It causes a syntax error" },
+        { "type": "text", "value": "The program crashes" },
+        { "type": "text", "value": "It resets to the initial value every iteration, preventing accumulation" }
+      ],
+      "answer": 3,
+      "explanation": "Initializing inside the loop causes the variable to reset each iteration, so it never accumulates values across multiple iterations."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "Can you use multiple counters in the same loop?",
+      "options": [
+        { "type": "text", "value": "Yes, you can track multiple conditions with separate counters" },
+        { "type": "text", "value": "No, only one counter is allowed per loop" },
+        { "type": "text", "value": "Yes, but only with nested loops" },
+        { "type": "text", "value": "No, it causes a compilation error" }
+      ],
+      "answer": 0,
+      "explanation": "Multiple counters can work simultaneously in the same loop to categorize or track different conditions separately."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What type of accumulator builds up text throughout a loop?",
+      "options": [
+        { "type": "text", "value": "int accumulator" },
+        { "type": "text", "value": "String accumulator" },
+        { "type": "text", "value": "double accumulator" },
+        { "type": "text", "value": "boolean accumulator" }
+      ],
+      "answer": 1,
+      "explanation": "String accumulators concatenate text together throughout the loop, building up a longer string with each iteration."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "When finding a minimum value, what should the initial value be?",
+      "options": [
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "The largest possible value like Integer.MAX_VALUE" },
+        { "type": "text", "value": "-1" }
+      ],
+      "answer": 2,
+      "explanation": "Starting with the largest possible value ensures any real value in your data will be smaller and update the minimum appropriately."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What logical operator is used when a counter should increment only if multiple conditions are all true?",
+      "options": [
+        { "type": "text", "value": "||" },
+        { "type": "text", "value": "!" },
+        { "type": "text", "value": "==" },
+        { "type": "text", "value": "&&" }
+      ],
+      "answer": 3,
+      "explanation": "The && (logical AND) operator ensures all conditions must be true before executing code like incrementing a counter."
+    }
+  ]
+}

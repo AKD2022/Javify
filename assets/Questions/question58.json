@@ -1,0 +1,214 @@
+{
+  "lessonId": 58,
+  "title": "Nested Loops Introduction",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is a nested loop?",
+      "options": [
+        { "type": "text", "value": "A loop placed inside another loop" },
+        { "type": "text", "value": "A loop that never ends" },
+        { "type": "text", "value": "A loop with no body" },
+        { "type": "text", "value": "A loop that runs once" }
+      ],
+      "answer": 0,
+      "explanation": "A nested loop is a loop placed inside another loop, allowing multi-dimensional iteration and processing of complex data structures."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "How many times does the inner loop complete for each iteration of the outer loop?",
+      "options": [
+        { "type": "text", "value": "Once" },
+        { "type": "text", "value": "All its iterations" },
+        { "type": "text", "value": "Never" },
+        { "type": "text", "value": "Twice" }
+      ],
+      "answer": 1,
+      "explanation": "The inner loop completes all its iterations for each single iteration of the outer loop."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "How many total iterations occur in this code?\n\nfor (int i = 1; i <= 3; i++) {\n    for (int j = 1; j <= 2; j++) {\n        System.out.println(i + \", \" + j);\n    }\n}",
+      "options": [
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "6" },
+        { "type": "text", "value": "2" }
+      ],
+      "answer": 2,
+      "explanation": "The outer loop runs 3 times, and for each of those, the inner loop runs 2 times. Total: 3 × 2 = 6 iterations."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "If the outer loop runs m times and the inner loop runs n times, what is the total number of inner loop executions?",
+      "options": [
+        { "type": "text", "value": "m + n" },
+        { "type": "text", "value": "m - n" },
+        { "type": "text", "value": "m ÷ n" },
+        { "type": "text", "value": "m × n" }
+      ],
+      "answer": 3,
+      "explanation": "The total number of iterations equals the product of the iteration counts: m × n."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "In a rectangular pattern, what does the outer loop typically control?",
+      "options": [
+        { "type": "text", "value": "Rows" },
+        { "type": "text", "value": "Characters" },
+        { "type": "text", "value": "Colors" },
+        { "type": "text", "value": "Nothing" }
+      ],
+      "answer": 0,
+      "explanation": "The outer loop typically controls rows, while the inner loop controls columns in rectangular patterns."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "How many total iterations occur?\n\nfor (int i = 1; i <= 4; i++) {\n    for (int j = 1; j <= 5; j++) {\n        // code\n    }\n}",
+      "options": [
+        { "type": "text", "value": "9" },
+        { "type": "text", "value": "20" },
+        { "type": "text", "value": "15" },
+        { "type": "text", "value": "10" }
+      ],
+      "answer": 1,
+      "explanation": "The outer loop runs 4 times, the inner loop runs 5 times for each outer iteration. Total: 4 × 5 = 20."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "Can the inner loop's condition reference the outer loop's variable?",
+      "options": [
+        { "type": "text", "value": "No, they must be independent" },
+        { "type": "text", "value": "Only in for loops" },
+        { "type": "text", "value": "Yes, creating patterns where inner behavior depends on outer value" },
+        { "type": "text", "value": "Only in while loops" }
+      ],
+      "answer": 2,
+      "explanation": "Yes, the inner loop can reference the outer loop's variable, creating patterns where the inner loop's behavior depends on the outer loop's current value."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What pattern does this create?\n\nfor (int i = 1; i <= 4; i++) {\n    for (int j = 1; j <= i; j++) {\n        System.out.print(\"*\");\n    }\n    System.out.println();\n}",
+      "options": [
+        { "type": "text", "value": "A rectangle" },
+        { "type": "text", "value": "A single line" },
+        { "type": "text", "value": "A circle" },
+        { "type": "text", "value": "A triangle" }
+      ],
+      "answer": 3,
+      "explanation": "This creates a triangular pattern where each row has as many asterisks as its row number, with the condition j <= i tying the loops together."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Can you use different loop types for nested loops?",
+      "options": [
+        { "type": "text", "value": "Yes, any combination of loop types works" },
+        { "type": "text", "value": "No, they must be the same type" },
+        { "type": "text", "value": "Only for and while" },
+        { "type": "text", "value": "Only while and do-while" }
+      ],
+      "answer": 0,
+      "explanation": "You can use any loop type for nested loops. Combining different loop types (while, for, do-while) is perfectly valid."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What are the conventional variable names for nested loops?",
+      "options": [
+        { "type": "text", "value": "x, y, z" },
+        { "type": "text", "value": "i, j, k" },
+        { "type": "text", "value": "a, b, c" },
+        { "type": "text", "value": "loop1, loop2, loop3" }
+      ],
+      "answer": 1,
+      "explanation": "Conventional variable names for nested loops are i (outer), j (first inner), and k (deeper nesting), though descriptive names work better for complex scenarios."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Where should you declare counter variables if you need to access them after nested loops finish?",
+      "options": [
+        { "type": "text", "value": "Inside the inner loop" },
+        { "type": "text", "value": "Inside the outer loop" },
+        { "type": "text", "value": "Outside both loops" },
+        { "type": "text", "value": "In the condition" }
+      ],
+      "answer": 2,
+      "explanation": "Declare counter variables outside both loops if you need to access them after the loops finish, ensuring they remain in scope."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "How many total pairs are generated?\n\nfor (int x = 1; x <= 3; x++) {\n    for (int y = 1; y <= 3; y++) {\n        System.out.println(x + \", \" + y);\n    }\n}",
+      "options": [
+        { "type": "text", "value": "6" },
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "9" },
+        { "type": "text", "value": "12" }
+      ],
+      "answer": 2,
+      "explanation": "The loops generate all combinations of x and y values: 3 × 3 = 9 total pairs."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "When should you use nested loops?",
+      "options": [
+        { "type": "text", "value": "Always" },
+        { "type": "text", "value": "Never" },
+        { "type": "text", "value": "Only for printing" },
+        { "type": "text", "value": "When processing combinations, grids, or multi-level hierarchies" }
+      ],
+      "answer": 3,
+      "explanation": "Use nested loops when you need to process combinations, grids, or multi-level hierarchies where one level of iteration isn't sufficient."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What happens to the inner loop variable for each outer loop iteration?\n\nfor (int i = 1; i <= 3; i++) {\n    for (int j = 1; j <= 3; j++) {\n        System.out.print(j);\n    }\n}",
+      "options": [
+        { "type": "text", "value": "It resets to its initial value" },
+        { "type": "text", "value": "It continues from where it left off" },
+        { "type": "text", "value": "It doubles" },
+        { "type": "text", "value": "It stays the same" }
+      ],
+      "answer": 0,
+      "explanation": "The inner loop variable resets to its initial value for each new iteration of the outer loop, creating repeated sequences."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What should you be mindful of with nested loops?",
+      "options": [
+        { "type": "text", "value": "Variable names only" },
+        { "type": "text", "value": "Indentation only" },
+        { "type": "text", "value": "The total iteration count, as iterations multiply" },
+        { "type": "text", "value": "Nothing special" }
+      ],
+      "answer": 2,
+      "explanation": "Be mindful of the total iteration count as iterations multiply with nested loops, which can become computationally expensive with large ranges."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "How many rows and columns does this create?\n\nfor (int row = 1; row <= 3; row++) {\n    for (int col = 1; col <= 4; col++) {\n        System.out.print(\"* \");\n    }\n    System.out.println();\n}",
+      "options": [
+        { "type": "text", "value": "4 rows, 3 columns" },
+        { "type": "text", "value": "7 rows, 7 columns" },
+        { "type": "text", "value": "1 row, 12 columns" },
+        { "type": "text", "value": "3 rows, 4 columns" }
+      ],
+      "answer": 3,
+      "explanation": "The outer loop runs 3 times (rows) and the inner loop runs 4 times (columns), creating a 3 × 4 rectangle."
+    }
+  ]
+}

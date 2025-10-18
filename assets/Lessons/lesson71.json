@@ -1,0 +1,326 @@
+{
+  "lessonId": 71,
+  "title": "Writing Constructors",
+  "content": [
+    {
+      "type": "text",
+      "value": "A constructor is a special method that runs automatically when you create a new object. It initializes the object's instance variables to meaningful starting values, ensuring every object begins in a valid state. Without constructors, you'd need to manually set each instance variable after creating every object, which is error-prone and tedious."
+    },
+    {
+      "type": "text",
+      "value": "A constructor has the same name as the class and no return type (not even "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": "). It uses the "
+    },
+    {
+      "type": "code",
+      "value": "public"
+    },
+    {
+      "type": "text",
+      "value": " keyword to make it accessible from outside the class."
+    },
+    {
+      "type": "code",
+      "value": "public class Circle {\n    double radius;\n    \n    // Constructor\n    public Circle(double r) {\n        radius = r;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This "
+    },
+    {
+      "type": "code",
+      "value": "Circle"
+    },
+    {
+      "type": "text",
+      "value": " constructor accepts a parameter "
+    },
+    {
+      "type": "code",
+      "value": "r"
+    },
+    {
+      "type": "text",
+      "value": " and assigns it to the instance variable "
+    },
+    {
+      "type": "code",
+      "value": "radius"
+    },
+    {
+      "type": "text",
+      "value": ". Notice the constructor name matches the class name exactly."
+    },
+    {
+      "type": "text",
+      "value": "When you use the "
+    },
+    {
+      "type": "code",
+      "value": "new"
+    },
+    {
+      "type": "text",
+      "value": " keyword, Java automatically calls the constructor, passing arguments in parentheses."
+    },
+    {
+      "type": "code",
+      "value": "Circle myCircle = new Circle(5.0);\nSystem.out.println(myCircle.radius);  // 5.0"
+    },
+    {
+      "type": "text",
+      "value": "The constructor runs immediately, setting "
+    },
+    {
+      "type": "code",
+      "value": "radius"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "5.0"
+    },
+    {
+      "type": "text",
+      "value": ". The object is fully initialized before the variable assignment completes."
+    },
+    {
+      "type": "text",
+      "value": "Constructors can accept multiple parameters, allowing flexible initialization."
+    },
+    {
+      "type": "code",
+      "value": "public class Rectangle {\n    double width;\n    double height;\n    String color;\n    \n    // Constructor with three parameters\n    public Rectangle(double w, double h, String c) {\n        width = w;\n        height = h;\n        color = c;\n    }\n}\n\nRectangle myRect = new Rectangle(10.0, 5.0, \"blue\");\nSystem.out.println(myRect.width);   // 10.0\nSystem.out.println(myRect.height);  // 5.0\nSystem.out.println(myRect.color);   // blue"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Rectangle"
+    },
+    {
+      "type": "text",
+      "value": " constructor accepts three parameters and initializes all three instance variables. Each object is created with all its data properly set."
+    },
+    {
+      "type": "text",
+      "value": "It's common practice to use the same parameter names as the instance variables being initialized. When names match, use "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " to distinguish the instance variable from the parameter."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    String name;\n    int studentID;\n    double gpa;\n    \n    public Student(String name, int studentID, double gpa) {\n        this.name = name;           // this.name is the instance variable\n        this.studentID = studentID; // this.studentID is the instance variable\n        this.gpa = gpa;             // this.gpa is the instance variable\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Using "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " clarifies which "
+    },
+    {
+      "type": "code",
+      "value": "name"
+    },
+    {
+      "type": "text",
+      "value": " you're referring to: "
+    },
+    {
+      "type": "code",
+      "value": "this.name"
+    },
+    {
+      "type": "text",
+      "value": " is the object's attribute, while "
+    },
+    {
+      "type": "code",
+      "value": "name"
+    },
+    {
+      "type": "text",
+      "value": " is the parameter."
+    },
+    {
+      "type": "text",
+      "value": "A class can have multiple constructors with different parameter lists, a feature called constructor overloading. Java distinguishes them by the number and types of parameters."
+    },
+    {
+      "type": "code",
+      "value": "public class Dog {\n    String name;\n    int age;\n    String breed;\n    \n    // Constructor with all parameters\n    public Dog(String name, int age, String breed) {\n        this.name = name;\n        this.age = age;\n        this.breed = breed;\n    }\n    \n    // Constructor with only name\n    public Dog(String name) {\n        this.name = name;\n        this.age = 0;\n        this.breed = \"Unknown\";\n    }\n    \n    // Constructor with no parameters\n    public Dog() {\n        this.name = \"Unnamed\";\n        this.age = 0;\n        this.breed = \"Unknown\";\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Each "
+    },
+    {
+      "type": "code",
+      "value": "Dog"
+    },
+    {
+      "type": "text",
+      "value": " constructor serves different needs. You can create a dog with full information, just a name, or use default values."
+    },
+    {
+      "type": "code",
+      "value": "Dog dog1 = new Dog(\"Max\", 3, \"Labrador\");\nDog dog2 = new Dog(\"Buddy\");\nDog dog3 = new Dog();"
+    },
+    {
+      "type": "text",
+      "value": "Each constructor call initializes the object appropriately. "
+    },
+    {
+      "type": "code",
+      "value": "dog1"
+    },
+    {
+      "type": "text",
+      "value": " has full details, "
+    },
+    {
+      "type": "code",
+      "value": "dog2"
+    },
+    {
+      "type": "text",
+      "value": " has a name with defaults, and "
+    },
+    {
+      "type": "code",
+      "value": "dog3"
+    },
+    {
+      "type": "text",
+      "value": " uses all defaults."
+    },
+    {
+      "type": "text",
+      "value": "The no-parameter constructor (default constructor) is useful when you want to create objects with default values."
+    },
+    {
+      "type": "code",
+      "value": "public class Account {\n    String accountNumber;\n    double balance;\n    boolean isActive;\n    \n    // Default constructor\n    public Account() {\n        accountNumber = \"0000\";\n        balance = 0.0;\n        isActive = true;\n    }\n}\n\nAccount acc = new Account();\nSystem.out.println(acc.balance);  // 0.0"
+    },
+    {
+      "type": "text",
+      "value": "Calling "
+    },
+    {
+      "type": "code",
+      "value": "new Account()"
+    },
+    {
+      "type": "text",
+      "value": " with no arguments runs the default constructor, establishing reasonable initial values."
+    },
+    {
+      "type": "text",
+      "value": "Constructors can perform complex initialization beyond simply assigning parameters. You can include calculations, conditionals, or even call methods."
+    },
+    {
+      "type": "code",
+      "value": "public class BankAccount {\n    String accountHolder;\n    double balance;\n    double interestRate;\n    \n    public BankAccount(String holder, double initialBalance, double rate) {\n        this.accountHolder = holder;\n        // Validate and set balance\n        if (initialBalance >= 0) {\n            this.balance = initialBalance;\n        } else {\n            this.balance = 0.0;\n        }\n        this.interestRate = rate;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This constructor validates the initial balance, only accepting non-negative values. If a negative amount is provided, it defaults to "
+    },
+    {
+      "type": "code",
+      "value": "0.0"
+    },
+    {
+      "type": "text",
+      "value": ", ensuring the account starts in a valid state."
+    },
+    {
+      "type": "text",
+      "value": "A constructor must not have a return type, not even "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": ". This distinguishes constructors from regular methods."
+    },
+    {
+      "type": "code",
+      "value": "// INCORRECT - constructor cannot have return type\npublic void Circle(double radius) {  // WRONG!\n    this.radius = radius;\n}\n\n// CORRECT - no return type\npublic Circle(double radius) {  // RIGHT\n    this.radius = radius;\n}"
+    },
+    {
+      "type": "text",
+      "value": "The first example won't compile as a constructor because it specifies "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": ". The second correctly omits any return type."
+    },
+    {
+      "type": "text",
+      "value": "If you don't write any constructor in your class, Java automatically provides a default no-parameter constructor that initializes variables to their default values. However, once you define even one constructor, this automatic default is no longer available."
+    },
+    {
+      "type": "code",
+      "value": "public class Vehicle {\n    String model;\n    \n    public Vehicle(String model) {\n        this.model = model;\n    }\n}\n\n// This will NOT work - no default constructor exists\nVehicle v = new Vehicle();  // Compilation error!\n\n// This works\nVehicle v = new Vehicle(\"Tesla\");  // Correct"
+    },
+    {
+      "type": "text",
+      "value": "If you want both parameterized and no-parameter constructors, you must explicitly write both. You can't rely on the automatic default if you've defined any constructor."
+    },
+    {
+      "type": "text",
+      "value": "Constructors enable consistency and reduce errors. Instead of relying on users to remember which variables to set, the constructor guarantees proper initialization."
+    },
+    {
+      "type": "code",
+      "value": "public class Person {\n    String firstName;\n    String lastName;\n    int age;\n    \n    public Person(String firstName, String lastName, int age) {\n        this.firstName = firstName;\n        this.lastName = lastName;\n        if (age >= 0 && age <= 150) {\n            this.age = age;\n        } else {\n            this.age = 0;  // Default to 0 for invalid ages\n        }\n    }\n}\n\nPerson p = new Person(\"John\", \"Doe\", 25);"
+    },
+    {
+      "type": "text",
+      "value": "Every "
+    },
+    {
+      "type": "code",
+      "value": "Person"
+    },
+    {
+      "type": "text",
+      "value": " object starts properly initialized with valid data. The validation logic ensures age is reasonable."
+    },
+    {
+      "type": "text",
+      "value": "Understanding constructors is essential to writing robust object-oriented code. They serve as gatekeepers for object creation, controlling how objects are initialized and what states they can begin in. As you progress through Unit 5, you'll use constructors in every class you write, making mastery of this concept critical to your success."
+    }
+  ]
+}

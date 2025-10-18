@@ -1,0 +1,714 @@
+{
+  "lessonId": 59,
+  "title": "Using break and continue",
+  "content": [
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " keywords provide precise control over loop execution. They allow you to exit loops early or skip specific iterations based on conditions, making your loops more flexible and efficient."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statement immediately terminates the loop, causing execution to jump to the first statement after the loop. It's useful when you've found what you're looking for and don't need to continue iterating."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 1; i <= 10; i++) {\n    System.out.println(i);\n    if (i == 5) {\n        break;\n    }\n}\nSystem.out.println(\"Loop ended\");"
+    },
+    {
+      "type": "text",
+      "value": "This loop prints numbers from "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": ". When "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " equals "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": ", the "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statement executes, immediately exiting the loop. The program then prints \"Loop ended\" and continues with any code after the loop."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " statement skips the rest of the current iteration and moves to the next one. It doesn't exit the loop entirely but rather jumps to the update step and condition check."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 1; i <= 5; i++) {\n    if (i == 3) {\n        continue;\n    }\n    System.out.println(i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop prints "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": ", skipping "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": ". When "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " equals "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": ", the "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " statement causes the print statement to be skipped. The loop then proceeds to increment "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": " and continues normally."
+    },
+    {
+      "type": "text",
+      "value": "Using "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " in search operations stops the loop as soon as the target is found, improving efficiency."
+    },
+    {
+      "type": "code",
+      "value": "int[] numbers = {5, 12, 8, 19, 3};\nint target = 8;\nboolean found = false;\n\nfor (int i = 0; i < numbers.length; i++) {\n    if (numbers[i] == target) {\n        System.out.println(\"Found \" + target + \" at index \" + i);\n        found = true;\n        break;\n    }\n}\n\nif (!found) {\n    System.out.println(\"Not found\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "This search loop checks each element until it finds "
+    },
+    {
+      "type": "code",
+      "value": "8"
+    },
+    {
+      "type": "text",
+      "value": ". When found at index "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ", the "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statement exits the loop immediately rather than unnecessarily checking the remaining elements. This optimization matters when searching large datasets."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " statement works well for skipping invalid data or special cases."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 1; i <= 10; i++) {\n    if (i % 2 == 0) {\n        continue;\n    }\n    System.out.println(\"Odd number: \" + i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop processes only odd numbers. When "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " is even (divisible by "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": "), the "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " statement skips the print statement and moves to the next iteration. Only odd values get printed."
+    },
+    {
+      "type": "text",
+      "value": "In nested loops, "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " only exits the innermost loop containing it. The outer loops continue executing normally."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 1; i <= 3; i++) {\n    System.out.println(\"Outer: \" + i);\n    for (int j = 1; j <= 5; j++) {\n        if (j == 3) {\n            break;\n        }\n        System.out.println(\"  Inner: \" + j);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statement exits only the inner loop when "
+    },
+    {
+      "type": "code",
+      "value": "j"
+    },
+    {
+      "type": "text",
+      "value": " reaches "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": ". For each outer loop iteration, the inner loop prints "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ", then breaks. The outer loop continues through all three iterations."
+    },
+    {
+      "type": "text",
+      "value": "Similarly, "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " in nested loops affects only the loop it's inside. It skips to the next iteration of that specific loop."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 1; i <= 3; i++) {\n    for (int j = 1; j <= 4; j++) {\n        if (j == 2) {\n            continue;\n        }\n        System.out.print(j + \" \");\n    }\n    System.out.println();\n}"
+    },
+    {
+      "type": "text",
+      "value": "For each outer iteration, the inner loop skips "
+    },
+    {
+      "type": "code",
+      "value": "j = 2"
+    },
+    {
+      "type": "text",
+      "value": " but prints "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": ". This creates three lines, each missing the "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statement works with "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "do-while"
+    },
+    {
+      "type": "text",
+      "value": " loops just as it does with "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loops."
+    },
+    {
+      "type": "code",
+      "value": "int count = 0;\nwhile (true) {\n    count++;\n    System.out.println(\"Count: \" + count);\n    if (count >= 5) {\n        break;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This creates an intentional infinite loop with "
+    },
+    {
+      "type": "code",
+      "value": "while (true)"
+    },
+    {
+      "type": "text",
+      "value": ", but the "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statement provides the exit mechanism. When "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " reaches "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": ", the loop terminates. This pattern is useful when the exit condition is complex or checked in the middle of the loop body."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " statement also works with all loop types."
+    },
+    {
+      "type": "code",
+      "value": "int i = 0;\nwhile (i < 5) {\n    i++;\n    if (i == 3) {\n        continue;\n    }\n    System.out.println(\"Value: \" + i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "This "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loop prints values "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ", "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": ", skipping "
+    },
+    {
+      "type": "code",
+      "value": "3"
+    },
+    {
+      "type": "text",
+      "value": ". Notice that the increment happens before the "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " check to avoid an infinite loop. Always ensure your loop variable updates before any "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " statement in "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loops."
+    },
+    {
+      "type": "text",
+      "value": "Combining "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " with boolean flags provides clear control flow."
+    },
+    {
+      "type": "code",
+      "value": "boolean done = false;\nfor (int i = 1; i <= 100 && !done; i++) {\n    if (i * i > 50) {\n        System.out.println(\"First number whose square exceeds 50: \" + i);\n        done = true;\n        break;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This loop finds the first number whose square exceeds "
+    },
+    {
+      "type": "code",
+      "value": "50"
+    },
+    {
+      "type": "text",
+      "value": ". The boolean flag "
+    },
+    {
+      "type": "code",
+      "value": "done"
+    },
+    {
+      "type": "text",
+      "value": " in the condition provides an additional exit mechanism, though the "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " already exits the loop. Using both makes the intent clear."
+    },
+    {
+      "type": "text",
+      "value": "Input validation loops often use "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " to exit once valid input is received."
+    },
+    {
+      "type": "code",
+      "value": "while (true) {\n    int input = 5; // Simulate user input\n    if (input >= 1 && input <= 10) {\n        System.out.println(\"Valid input: \" + input);\n        break;\n    }\n    System.out.println(\"Invalid. Try again.\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "This pattern creates a loop that continues until valid input is provided. The "
+    },
+    {
+      "type": "code",
+      "value": "while (true)"
+    },
+    {
+      "type": "text",
+      "value": " ensures the loop keeps running, and "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " provides the exit when the input meets requirements. In practice, you'd read actual user input instead of the simulated value."
+    },
+    {
+      "type": "text",
+      "value": "Overusing "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " can make code harder to understand. Use them judiciously when they genuinely improve clarity or efficiency."
+    },
+    {
+      "type": "code",
+      "value": "// Unclear with multiple breaks\nfor (int i = 0; i < 10; i++) {\n    if (i == 3) break;\n    if (i == 5) break;\n    System.out.println(i);\n}\n\n// Clearer with a single condition\nfor (int i = 0; i < 10 && i != 3 && i != 5; i++) {\n    System.out.println(i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "The first version uses multiple "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " statements, making the exit conditions less obvious. The second version incorporates the conditions into the loop header, making the termination criteria immediately visible. Choose the approach that makes your intent clearest."
+    },
+    {
+      "type": "text",
+      "value": "Understanding "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " gives you powerful tools for controlling loop execution. Use "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " to exit early when a goal is achieved, and use "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " to skip specific iterations based on conditions. In the next lesson, you'll learn about infinite loops and how to avoid them."
+    }
+  ]
+}

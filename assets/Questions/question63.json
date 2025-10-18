@@ -1,0 +1,214 @@
+{
+  "lessonId": 63,
+  "title": "Looping Over Arrays (intro)",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is an array?",
+      "options": [
+        { "type": "text", "value": "A fixed-size collection that stores multiple values of the same type" },
+        { "type": "text", "value": "A type of loop" },
+        { "type": "text", "value": "A method" },
+        { "type": "text", "value": "A conditional statement" }
+      ],
+      "answer": 0,
+      "explanation": "An array is a fixed-size collection that stores multiple values of the same type, with each value having a specific position called an index."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What is the index of the first element in an array?",
+      "options": [
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "-1" },
+        { "type": "text", "value": "Depends on the array" }
+      ],
+      "answer": 1,
+      "explanation": "Array indices start at 0, so the first element is at index 0, the second at index 1, and so on."
+    },
+    {
+      "id": 3,
+      "type": "code",
+      "question": "What is the standard pattern for looping through an array?\n\nint[] arr = {1, 2, 3};",
+      "options": [
+        { "type": "text", "value": "for (int i = 1; i <= arr.length; i++)" },
+        { "type": "text", "value": "for (int i = 0; i <= arr.length; i++)" },
+        { "type": "text", "value": "for (int i = 0; i < arr.length; i++)" },
+        { "type": "text", "value": "for (int i = 1; i < arr.length; i++)" }
+      ],
+      "answer": 2,
+      "explanation": "The standard pattern is for (int i = 0; i < arr.length; i++), starting at 0 and continuing while i is less than the length."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What is array.length?",
+      "options": [
+        { "type": "text", "value": "A method that returns the number of elements" },
+        { "type": "text", "value": "The first element" },
+        { "type": "text", "value": "The last element" },
+        { "type": "text", "value": "A property that tells how many elements the array contains" }
+      ],
+      "answer": 3,
+      "explanation": "array.length is a property (not a method) that tells you how many elements an array contains. No parentheses needed."
+    },
+    {
+      "id": 5,
+      "type": "code",
+      "question": "What is the final value of sum?\n\nint[] values = {5, 10, 15, 20};\nint sum = 0;\nfor (int i = 0; i < values.length; i++) {\n    sum += values[i];\n}",
+      "options": [
+        { "type": "text", "value": "50" },
+        { "type": "text", "value": "20" },
+        { "type": "text", "value": "35" },
+        { "type": "text", "value": "40" }
+      ],
+      "answer": 0,
+      "explanation": "The loop adds 5+10+15+20 = 50. This is an accumulator pattern summing all array elements."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "Why does this max-finding loop start at i=1?\n\nint[] numbers = {23, 67, 45};\nint max = numbers[0];\nfor (int i = 1; i < numbers.length; i++) {\n    if (numbers[i] > max) {\n        max = numbers[i];\n    }\n}",
+      "options": [
+        { "type": "text", "value": "It's wrong - should start at 0" },
+        { "type": "text", "value": "Because numbers[0] was already used to initialize max" },
+        { "type": "text", "value": "To skip the first element" },
+        { "type": "text", "value": "Random choice" }
+      ],
+      "answer": 1,
+      "explanation": "The loop starts at i=1 because numbers[0] was already used to initialize max, so comparing it again would be redundant."
+    },
+    {
+      "id": 7,
+      "type": "code",
+      "question": "How many elements meet the criteria?\n\nint[] grades = {92, 85, 78, 95, 88, 76};\nint passing = 0;\nfor (int i = 0; i < grades.length; i++) {\n    if (grades[i] >= 80) {\n        passing++;\n    }\n}",
+      "options": [
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "6" },
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "4" }
+      ],
+      "answer": 3,
+      "explanation": "Four grades are >= 80: 92, 85, 95, and 88. The counter increments for each grade meeting the threshold."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "When searching for a value in an array, what should you do when found?",
+      "options": [
+        { "type": "text", "value": "Continue searching" },
+        { "type": "text", "value": "Restart the loop" },
+        { "type": "text", "value": "Delete the array" },
+        { "type": "text", "value": "Use break to exit early" }
+      ],
+      "answer": 3,
+      "explanation": "When searching for a value and finding it, use break to exit early rather than unnecessarily checking remaining elements."
+    },
+    {
+      "id": 9,
+      "type": "code",
+      "question": "How do you loop through an array backward?\n\nint[] arr = {1, 2, 3, 4, 5};",
+      "options": [
+        { "type": "text", "value": "for (int i = arr.length; i >= 0; i--)" },
+        { "type": "text", "value": "for (int i = arr.length - 1; i >= 0; i--)" },
+        { "type": "text", "value": "for (int i = arr.length; i > 0; i--)" },
+        { "type": "text", "value": "for (int i = 0; i < arr.length; i++)" }
+      ],
+      "answer": 1,
+      "explanation": "Start at arr.length - 1 (the last valid index) and decrement while i >= 0 to process all elements backward."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What happens to the array after this loop?\n\nint[] prices = {10, 20, 30};\nfor (int i = 0; i < prices.length; i++) {\n    prices[i] = prices[i] * 2;\n}",
+      "options": [
+        { "type": "text", "value": "Nothing changes" },
+        { "type": "text", "value": "Array becomes {20, 40, 60}" },
+        { "type": "text", "value": "Array is deleted" },
+        { "type": "text", "value": "Array becomes {10, 20, 30, 20, 40, 60}" }
+      ],
+      "answer": 1,
+      "explanation": "Each element is doubled during iteration, permanently modifying the array to {20, 40, 60}."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "How do you calculate an average from an array?",
+      "options": [
+        { "type": "text", "value": "Just use the length" },
+        { "type": "text", "value": "Sum all elements and divide by the array length" },
+        { "type": "text", "value": "Find the middle element" },
+        { "type": "text", "value": "Count the elements" }
+      ],
+      "answer": 1,
+      "explanation": "To calculate an average, sum all elements in the array and divide by the array length."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What is the final value of min?\n\nint[] temps = {72, 68, 75, 70, 65};\nint min = temps[0];\nfor (int i = 1; i < temps.length; i++) {\n    if (temps[i] < min) {\n        min = temps[i];\n    }\n}",
+      "options": [
+        { "type": "text", "value": "72" },
+        { "type": "text", "value": "68" },
+        { "type": "text", "value": "65" },
+        { "type": "text", "value": "70" }
+      ],
+      "answer": 2,
+      "explanation": "The loop finds the minimum value in the array, which is 65. It updates min whenever a smaller value is found."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "Why should you check if an array length > 0 before finding max or min?",
+      "options": [
+        { "type": "text", "value": "It makes code faster" },
+        { "type": "text", "value": "Empty arrays have no first element to initialize with" },
+        { "type": "text", "value": "It's not necessary" },
+        { "type": "text", "value": "To use less memory" }
+      ],
+      "answer": 1,
+      "explanation": "Finding max or min requires initializing with the first element, which doesn't exist in empty arrays. Check length > 0 first."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What does this notation access?\n\nint[] data = {10, 20, 30};\nSystem.out.println(data[1]);",
+      "options": [
+        { "type": "text", "value": "The element at index 1 (value 20)" },
+        { "type": "text", "value": "The first element" },
+        { "type": "text", "value": "The length" },
+        { "type": "text", "value": "The last element" }
+      ],
+      "answer": 0,
+      "explanation": "The notation data[1] accesses the element at index 1, which is the value 20 (the second element)."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What cast is needed when calculating decimal averages from integer arrays?",
+      "options": [
+        { "type": "text", "value": "(int)" },
+        { "type": "text", "value": "(String)" },
+        { "type": "text", "value": "(double)" },
+        { "type": "text", "value": "No cast needed" }
+      ],
+      "answer": 2,
+      "explanation": "Use (double) cast to ensure floating-point division for accurate averages. Without it, integer division truncates decimals."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "If an array has length 5, what are the valid indices?",
+      "options": [
+        { "type": "text", "value": "1 to 5" },
+        { "type": "text", "value": "0 to 5" },
+        { "type": "text", "value": "1 to 4" },
+        { "type": "text", "value": "0 to 4" }
+      ],
+      "answer": 3,
+      "explanation": "An array with length 5 has valid indices from 0 to 4 (length - 1). Arrays are zero-indexed."
+    }
+  ]
+}

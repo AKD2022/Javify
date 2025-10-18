@@ -1,6 +1,6 @@
 import { getDoc, doc } from 'firebase/firestore';
 import { db } from '../../config/firebase';
-import { units } from '../home/HomeScreen'
+import { units } from '../utils/units';
 
 let scores = {}; // { lessonId: score }
 

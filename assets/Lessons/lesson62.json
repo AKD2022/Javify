@@ -1,0 +1,574 @@
+{
+  "lessonId": 62,
+  "title": "Off-by-One Errors and Common Bugs",
+  "content": [
+    {
+      "type": "text",
+      "value": "Off-by-one errors are among the most common and frustrating bugs in programming. They occur when a loop iterates one time too many or one time too few, processing incorrect data or missing important values. Understanding these errors and how to prevent them will save you countless debugging hours."
+    },
+    {
+      "type": "text",
+      "value": "An off-by-one error happens when your loop boundary is incorrect by exactly one iteration. The classic example involves using "
+    },
+    {
+      "type": "code",
+      "value": "<"
+    },
+    {
+      "type": "text",
+      "value": " when you should use "
+    },
+    {
+      "type": "code",
+      "value": "<="
+    },
+    {
+      "type": "text",
+      "value": ", or vice versa."
+    },
+    {
+      "type": "code",
+      "value": "// Wrong - misses the last element\nint[] numbers = {10, 20, 30, 40, 50};\nfor (int i = 0; i < 4; i++) {\n    System.out.println(numbers[i]);\n}\n\n// Correct - processes all elements\nfor (int i = 0; i < 5; i++) {\n    System.out.println(numbers[i]);\n}"
+    },
+    {
+      "type": "text",
+      "value": "The incorrect loop uses "
+    },
+    {
+      "type": "code",
+      "value": "i < 4"
+    },
+    {
+      "type": "text",
+      "value": ", processing indices 0, 1, 2, and 3, but missing index 4. The array has 5 elements at indices 0-4, so the condition should be "
+    },
+    {
+      "type": "code",
+      "value": "i < 5"
+    },
+    {
+      "type": "text",
+      "value": ". This single-digit mistake causes the last element to be ignored."
+    },
+    {
+      "type": "text",
+      "value": "Starting at the wrong index creates off-by-one errors when you begin at "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " instead of "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " for arrays, or vice versa."
+    },
+    {
+      "type": "code",
+      "value": "// Wrong - skips first element\nint[] values = {5, 10, 15, 20};\nfor (int i = 1; i < values.length; i++) {\n    System.out.println(values[i]);\n}\n\n// Correct - starts at index 0\nfor (int i = 0; i < values.length; i++) {\n    System.out.println(values[i]);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Arrays in Java are zero-indexed, meaning the first element is at index "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ". Starting at "
+    },
+    {
+      "type": "code",
+      "value": "i = 1"
+    },
+    {
+      "type": "text",
+      "value": " skips the first element. Unless you have a specific reason to skip elements, always start array loops at "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Confusing "
+    },
+    {
+      "type": "code",
+      "value": "<"
+    },
+    {
+      "type": "text",
+      "value": " with "
+    },
+    {
+      "type": "code",
+      "value": "<="
+    },
+    {
+      "type": "text",
+      "value": " is the most frequent cause of off-by-one errors in counting loops."
+    },
+    {
+      "type": "code",
+      "value": "// Wrong - only counts to 9\nfor (int i = 1; i < 10; i++) {\n    System.out.println(i);\n}\n\n// Correct - counts to 10\nfor (int i = 1; i <= 10; i++) {\n    System.out.println(i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "If you want to count from "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "10"
+    },
+    {
+      "type": "text",
+      "value": " inclusive, use "
+    },
+    {
+      "type": "code",
+      "value": "i <= 10"
+    },
+    {
+      "type": "text",
+      "value": ". The condition "
+    },
+    {
+      "type": "code",
+      "value": "i < 10"
+    },
+    {
+      "type": "text",
+      "value": " stops at "
+    },
+    {
+      "type": "code",
+      "value": "9"
+    },
+    {
+      "type": "text",
+      "value": ", excluding the target value. Always ask yourself: should the boundary value be included or excluded?"
+    },
+    {
+      "type": "text",
+      "value": "Using "
+    },
+    {
+      "type": "code",
+      "value": ">"
+    },
+    {
+      "type": "text",
+      "value": " versus "
+    },
+    {
+      "type": "code",
+      "value": ">="
+    },
+    {
+      "type": "text",
+      "value": " causes similar problems in countdown loops."
+    },
+    {
+      "type": "code",
+      "value": "// Wrong - stops at 1, doesn't print 0\nfor (int i = 5; i > 0; i--) {\n    System.out.println(i);\n}\n\n// Correct - includes 0\nfor (int i = 5; i >= 0; i--) {\n    System.out.println(i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "The first loop prints 5, 4, 3, 2, 1 but misses "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " because "
+    },
+    {
+      "type": "code",
+      "value": "i > 0"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " when "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " reaches "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": ". If zero should be included, use "
+    },
+    {
+      "type": "code",
+      "value": "i >= 0"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Mismatching loop bounds with array or string lengths creates dangerous off-by-one errors that cause index out of bounds exceptions."
+    },
+    {
+      "type": "code",
+      "value": "// Wrong - causes error\nString text = \"Hello\";\nfor (int i = 0; i <= text.length(); i++) {\n    System.out.println(text.charAt(i)); // Error at i=5\n}\n\n// Correct\nfor (int i = 0; i < text.length(); i++) {\n    System.out.println(text.charAt(i));\n}"
+    },
+    {
+      "type": "text",
+      "value": "The string \"Hello\" has length "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": " but valid indices "
+    },
+    {
+      "type": "code",
+      "value": "0-4"
+    },
+    {
+      "type": "text",
+      "value": ". Using "
+    },
+    {
+      "type": "code",
+      "value": "i <= text.length()"
+    },
+    {
+      "type": "text",
+      "value": " tries to access index "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": ", which doesn't exist. Always use "
+    },
+    {
+      "type": "code",
+      "value": "i < length"
+    },
+    {
+      "type": "text",
+      "value": " for arrays and strings, never "
+    },
+    {
+      "type": "code",
+      "value": "i <= length"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Range calculations with loops often produce off-by-one errors when computing how many iterations occur."
+    },
+    {
+      "type": "code",
+      "value": "// How many numbers from 1 to 10?\n// Wrong: 10 - 1 = 9\n// Correct: 10 - 1 + 1 = 10\n\nfor (int i = 1; i <= 10; i++) {\n    // Executes 10 times, not 9\n}"
+    },
+    {
+      "type": "text",
+      "value": "The range from "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "10"
+    },
+    {
+      "type": "text",
+      "value": " inclusive contains "
+    },
+    {
+      "type": "code",
+      "value": "10"
+    },
+    {
+      "type": "text",
+      "value": " numbers, not "
+    },
+    {
+      "type": "code",
+      "value": "9"
+    },
+    {
+      "type": "text",
+      "value": ". The formula is "
+    },
+    {
+      "type": "code",
+      "value": "end - start + 1"
+    },
+    {
+      "type": "text",
+      "value": " for inclusive ranges. Forgetting the "
+    },
+    {
+      "type": "code",
+      "value": "+1"
+    },
+    {
+      "type": "text",
+      "value": " is a classic off-by-one mistake."
+    },
+    {
+      "type": "text",
+      "value": "Nested loops multiply the impact of off-by-one errors, as the mistake affects every outer loop iteration."
+    },
+    {
+      "type": "code",
+      "value": "// Wrong - processes wrong grid size\nfor (int row = 0; row < 3; row++) {\n    for (int col = 0; col < 4; col++) { // Should be 3\n        System.out.print(\"* \");\n    }\n    System.out.println();\n}"
+    },
+    {
+      "type": "text",
+      "value": "This attempts to create a "
+    },
+    {
+      "type": "code",
+      "value": "3×3"
+    },
+    {
+      "type": "text",
+      "value": " grid but the column loop runs "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": " times, creating a "
+    },
+    {
+      "type": "code",
+      "value": "3×4"
+    },
+    {
+      "type": "text",
+      "value": " rectangle instead. The off-by-one error in the inner loop affects all three rows."
+    },
+    {
+      "type": "text",
+      "value": "Preventing off-by-one errors requires testing boundary values systematically. Always test with the first element, last element, and empty collections."
+    },
+    {
+      "type": "code",
+      "value": "// Test cases for array loop:\nint[] empty = {};\nint[] single = {5};\nint[] multiple = {1, 2, 3};\n\n// Loop should handle all three correctly"
+    },
+    {
+      "type": "text",
+      "value": "Testing edge cases reveals off-by-one errors quickly. An empty array should process "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " elements, a single-element array should process "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ", and so on. If your loop fails on these edge cases, you likely have an off-by-one error."
+    },
+    {
+      "type": "text",
+      "value": "Drawing out small examples helps visualize whether boundary values should be included or excluded."
+    },
+    {
+      "type": "code",
+      "value": "// Want to print 1, 2, 3\n// Start: 1, End: 3\n// Should 3 be included? YES\n// Therefore use i <= 3\n\nfor (int i = 1; i <= 3; i++) {\n    System.out.println(i);\n}"
+    },
+    {
+      "type": "text",
+      "value": "Writing out what you want to happen makes the correct condition obvious. If you want the end value printed, use "
+    },
+    {
+      "type": "code",
+      "value": "<="
+    },
+    {
+      "type": "text",
+      "value": ". If you want to stop before it, use "
+    },
+    {
+      "type": "code",
+      "value": "<"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Using "
+    },
+    {
+      "type": "code",
+      "value": "length"
+    },
+    {
+      "type": "text",
+      "value": " properties correctly prevents most array-related off-by-one errors."
+    },
+    {
+      "type": "code",
+      "value": "int[] data = {10, 20, 30};\n\n// Correct pattern: i < array.length\nfor (int i = 0; i < data.length; i++) {\n    System.out.println(data[i]);\n}\n\n// Arrays: length is a property\n// Strings: length() is a method"
+    },
+    {
+      "type": "text",
+      "value": "The pattern "
+    },
+    {
+      "type": "code",
+      "value": "i < array.length"
+    },
+    {
+      "type": "text",
+      "value": " works for any array size. Since valid indices are "
+    },
+    {
+      "type": "code",
+      "value": "0"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "length-1"
+    },
+    {
+      "type": "text",
+      "value": ", using "
+    },
+    {
+      "type": "code",
+      "value": "<"
+    },
+    {
+      "type": "text",
+      "value": " ensures you never exceed bounds. Remember: arrays use "
+    },
+    {
+      "type": "code",
+      "value": ".length"
+    },
+    {
+      "type": "text",
+      "value": " (property), strings use "
+    },
+    {
+      "type": "code",
+      "value": ".length()"
+    },
+    {
+      "type": "text",
+      "value": " (method)."
+    },
+    {
+      "type": "text",
+      "value": "Common debugging questions help identify off-by-one errors: Does the loop process all elements? Does it skip the first or last? Does it try to access invalid indices?"
+    },
+    {
+      "type": "code",
+      "value": "// Debugging checklist:\n// - Does it start at the right index?\n// - Does it end at the right index?\n// - Are all elements processed?\n// - Are any elements processed twice?"
+    },
+    {
+      "type": "text",
+      "value": "When loops behave unexpectedly, run through this checklist. Trace the first and last iterations manually. Verify the starting index makes sense. Confirm the ending condition includes or excludes values as intended."
+    },
+    {
+      "type": "text",
+      "value": "Another common bug involves incrementing by the wrong amount, though technically not an off-by-one error."
+    },
+    {
+      "type": "code",
+      "value": "// Wrong - skips odd numbers\nfor (int i = 0; i < 10; i += 2) {\n    System.out.println(i);\n}\n\n// If you wanted all numbers, use i++"
+    },
+    {
+      "type": "text",
+      "value": "Incrementing by "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": " processes only even numbers. While not strictly an off-by-one error, it's a related mistake where the loop's step size doesn't match intentions."
+    },
+    {
+      "type": "text",
+      "value": "Understanding off-by-one errors and boundary conditions separates careful programmers from careless ones. Always test edge cases, think carefully about whether boundaries should be inclusive or exclusive, and use standard patterns like "
+    },
+    {
+      "type": "code",
+      "value": "i < length"
+    },
+    {
+      "type": "text",
+      "value": " for arrays. In the next lesson, you'll learn about loop tracing over arrays, which you'll study in detail in Unit 6."
+    }
+  ]
+}

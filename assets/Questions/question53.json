@@ -1,0 +1,214 @@
+{
+  "lessonId": 53,
+  "title": "do-while Loop Basics",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "When does a do-while loop check its condition?",
+      "options": [
+        { "type": "text", "value": "After executing the loop body" },
+        { "type": "text", "value": "Before executing the loop body" },
+        { "type": "text", "value": "Never" },
+        { "type": "text", "value": "Only once at the start" }
+      ],
+      "answer": 0,
+      "explanation": "A do-while loop checks its condition after executing the loop body, which guarantees the body executes at least once."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "How many times does a do-while loop execute if the condition is initially false?",
+      "options": [
+        { "type": "text", "value": "0 times" },
+        { "type": "text", "value": "At least once" },
+        { "type": "text", "value": "Infinite times" },
+        { "type": "text", "value": "Twice" }
+      ],
+      "answer": 1,
+      "explanation": "A do-while loop always executes at least once, even if the condition is initially false, because it checks the condition after execution."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What is required at the end of a do-while loop statement?",
+      "options": [
+        { "type": "text", "value": "Nothing special" },
+        { "type": "text", "value": "A comma" },
+        { "type": "text", "value": "A semicolon" },
+        { "type": "text", "value": "An exclamation mark" }
+      ],
+      "answer": 2,
+      "explanation": "A semicolon is required after the condition in a do-while loop. Forgetting it causes a compilation error."
+    },
+    {
+      "id": 4,
+      "type": "code",
+      "question": "What does this loop print?\n\nint number = 10;\ndo {\n    System.out.println(number);\n    number++;\n} while (number < 5);",
+      "options": [
+        { "type": "text", "value": "Nothing" },
+        { "type": "text", "value": "10, 11, 12..." },
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "10" }
+      ],
+      "answer": 3,
+      "explanation": "Even though the condition is false, the loop body executes once, printing 10. Then the condition is checked, found false, and the loop terminates."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What is a common use case for do-while loops?",
+      "options": [
+        { "type": "text", "value": "Input validation that requires at least one prompt" },
+        { "type": "text", "value": "Declaring variables" },
+        { "type": "text", "value": "Creating classes" },
+        { "type": "text", "value": "Defining methods" }
+      ],
+      "answer": 0,
+      "explanation": "do-while loops are commonly used for input validation because you want to prompt the user at least once and continue until valid input is provided."
+    },
+    {
+      "id": 6,
+      "type": "code",
+      "question": "How many times does this loop execute?\n\nint count = 1;\ndo {\n    System.out.println(count);\n    count++;\n} while (count <= 3);",
+      "options": [
+        { "type": "text", "value": "2" },
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "1" }
+      ],
+      "answer": 1,
+      "explanation": "The loop executes 3 times with count values of 1, 2, and 3. After the third iteration, count becomes 4 and the condition is false."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "Why are menu systems commonly implemented with do-while loops?",
+      "options": [
+        { "type": "text", "value": "They run faster" },
+        { "type": "text", "value": "They use less memory" },
+        { "type": "text", "value": "You want to display the menu at least once" },
+        { "type": "text", "value": "They are easier to type" }
+      ],
+      "answer": 2,
+      "explanation": "Menu systems use do-while loops because you want to display the menu at least once and keep showing it until the user chooses to exit."
+    },
+    {
+      "id": 8,
+      "type": "code",
+      "question": "What is the final value of sum?\n\nint sum = 0;\nint i = 1;\ndo {\n    sum += i;\n    i++;\n} while (i <= 4);",
+      "options": [
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "15" },
+        { "type": "text", "value": "10" }
+      ],
+      "answer": 3,
+      "explanation": "The loop calculates 0+1+2+3+4=10. The accumulator adds each value from 1 to 4."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What is the key difference between while and do-while loops?",
+      "options": [
+        { "type": "text", "value": "do-while checks condition after execution, while checks before" },
+        { "type": "text", "value": "They are identical" },
+        { "type": "text", "value": "while is faster" },
+        { "type": "text", "value": "do-while uses different operators" }
+      ],
+      "answer": 0,
+      "explanation": "The key difference is that do-while checks its condition after executing the loop body, while a while loop checks before execution."
+    },
+    {
+      "id": 10,
+      "type": "code",
+      "question": "What does this countdown loop print?\n\nint timer = 3;\ndo {\n    System.out.println(timer);\n    timer--;\n} while (timer > 0);",
+      "options": [
+        { "type": "text", "value": "3, 2, 1, 0" },
+        { "type": "text", "value": "3, 2, 1" },
+        { "type": "text", "value": "1, 2, 3" },
+        { "type": "text", "value": "0, 1, 2, 3" }
+      ],
+      "answer": 1,
+      "explanation": "The loop prints 3, 2, and 1. After printing 1, timer decrements to 0, making the condition timer > 0 false and terminating the loop."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Can boolean flags be used to control do-while loops?",
+      "options": [
+        { "type": "text", "value": "No, only numbers can control loops" },
+        { "type": "text", "value": "Only in while loops" },
+        { "type": "text", "value": "Yes, they provide flexible loop control" },
+        { "type": "text", "value": "Only with if statements" }
+      ],
+      "answer": 2,
+      "explanation": "Boolean flags work effectively with do-while loops for processes that must start and continue until a certain condition is met."
+    },
+    {
+      "id": 12,
+      "type": "code",
+      "question": "What values does this loop print?\n\nint value = 5;\ndo {\n    System.out.println(value);\n    value += 5;\n} while (value <= 15);",
+      "options": [
+        { "type": "text", "value": "5, 10" },
+        { "type": "text", "value": "5" },
+        { "type": "text", "value": "5, 10, 15" },
+        { "type": "text", "value": "10, 15, 20" }
+      ],
+      "answer": 2,
+      "explanation": "The loop prints multiples of 5: 5, 10, and 15. When value reaches 20, the condition value <= 15 becomes false and the loop stops."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "When should you use a do-while loop instead of a while loop?",
+      "options": [
+        { "type": "text", "value": "Always use do-while" },
+        { "type": "text", "value": "Never use do-while" },
+        { "type": "text", "value": "When you want faster performance" },
+        { "type": "text", "value": "When you need the loop body to execute at least once" }
+      ],
+      "answer": 3,
+      "explanation": "Use a do-while loop when you need the loop body to execute at least once, regardless of the initial condition."
+    },
+    {
+      "id": 14,
+      "type": "code",
+      "question": "What happens in this loop with complex conditions?\n\nint score = 0;\nint lives = 3;\ndo {\n    score += 10;\n    lives--;\n} while (score < 50 && lives > 0);",
+      "options": [
+        { "type": "text", "value": "Loop continues until either score >= 50 or lives <= 0" },
+        { "type": "text", "value": "Loop never ends" },
+        { "type": "text", "value": "Loop runs once" },
+        { "type": "text", "value": "Compilation error" }
+      ],
+      "answer": 0,
+      "explanation": "The loop continues while both conditions are true (score < 50 AND lives > 0). When either condition becomes false, the loop terminates."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "Can you use accumulator patterns in do-while loops?",
+      "options": [
+        { "type": "text", "value": "No, only in for loops" },
+        { "type": "text", "value": "No, only in while loops" },
+        { "type": "text", "value": "Yes, just as you do in while loops" },
+        { "type": "text", "value": "Only with special syntax" }
+      ],
+      "answer": 2,
+      "explanation": "You can use accumulator patterns in do-while loops just as you do in while loops to build up values across iterations."
+    },
+    {
+      "id": 16,
+      "type": "code",
+      "question": "How many times does this loop execute?\n\nint x = 1;\ndo {\n    System.out.println(x);\n    x++;\n} while (x <= 2);",
+      "options": [
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "Infinite" },
+        { "type": "text", "value": "2" }
+      ],
+      "answer": 3,
+      "explanation": "The loop executes 2 times with x values of 1 and 2. After the second iteration, x becomes 3 and the condition x <= 2 is false."
+    }
+  ]
+}

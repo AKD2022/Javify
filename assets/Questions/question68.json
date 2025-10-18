@@ -1,0 +1,214 @@
+{
+  "lessonId": 68,
+  "title": "Recap and Mini Quiz on Unit 4 Concepts",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "Which loop type checks its condition before executing the loop body?",
+      "options": [
+        { "type": "text", "value": "while and for loops" },
+        { "type": "text", "value": "do-while loops" },
+        { "type": "text", "value": "Only nested loops" },
+        { "type": "text", "value": "All loop types" }
+      ],
+      "answer": 0,
+      "explanation": "Both while and for loops check their condition first, potentially executing zero times if the condition is false from the start."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What does the break statement do in a loop?",
+      "options": [
+        { "type": "text", "value": "Skips the current iteration" },
+        { "type": "text", "value": "Immediately exits the loop" },
+        { "type": "text", "value": "Pauses the loop" },
+        { "type": "text", "value": "Resets the loop counter" }
+      ],
+      "answer": 1,
+      "explanation": "The break statement immediately terminates loop execution, bypassing any remaining iterations."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What does the continue statement do in a loop?",
+      "options": [
+        { "type": "text", "value": "Exits the entire loop" },
+        { "type": "text", "value": "Skips the rest of the current iteration and jumps to the next one" },
+        { "type": "text", "value": "Pauses execution" },
+        { "type": "text", "value": "Resets all variables" }
+      ],
+      "answer": 2,
+      "explanation": "The continue statement skips remaining statements in the loop body and jumps to the next iteration."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "An accumulator initialized to 0 and updated with += is commonly used for what?",
+      "options": [
+        { "type": "text", "value": "Counting specific conditions" },
+        { "type": "text", "value": "Calculating running totals or sums" },
+        { "type": "text", "value": "Tracking array indices" },
+        { "type": "text", "value": "Creating loop patterns" }
+      ],
+      "answer": 1,
+      "explanation": "Accumulators starting at 0 and using += collect running totals by adding each element during iteration."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "In the expression for (int i = 0, j = 10; i < j; i++, j--), what happens each iteration?",
+      "options": [
+        { "type": "text", "value": "i stays at 0, j stays at 10" },
+        { "type": "text", "value": "i increments and j decrements, moving toward each other" },
+        { "type": "text", "value": "Both i and j increment" },
+        { "type": "text", "value": "i resets to 0, j resets to 10" }
+      ],
+      "answer": 1,
+      "explanation": "With i++ and j--, the variables move toward each other: i increases while j decreases, until they meet when the condition i < j becomes false."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "How many total times does a nested loop execute with outer loop 4 times and inner loop 3 times?",
+      "options": [
+        { "type": "text", "value": "4" },
+        { "type": "text", "value": "3" },
+        { "type": "text", "value": "7" },
+        { "type": "text", "value": "12" }
+      ],
+      "answer": 3,
+      "explanation": "The total iterations equal outer count multiplied by inner count: 4 × 3 = 12 total inner loop executions."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "When initializing the maximum value in an array, what should you start with?",
+      "options": [
+        { "type": "text", "value": "0" },
+        { "type": "text", "value": "1" },
+        { "type": "text", "value": "The first array element or Integer.MIN_VALUE" },
+        { "type": "text", "value": "The array length" }
+      ],
+      "answer": 2,
+      "explanation": "Starting with the first element or Integer.MIN_VALUE ensures any real array value can become the maximum."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What error occurs if you declare the same variable name in nested loops?",
+      "options": [
+        { "type": "text", "value": "Runtime error" },
+        { "type": "text", "value": "Logical error" },
+        { "type": "text", "value": "Compilation error" },
+        { "type": "text", "value": "No error, it works fine" }
+      ],
+      "answer": 2,
+      "explanation": "Java does not allow declaring the same variable name twice in overlapping scopes, causing a compilation error."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What is an off-by-one error?",
+      "options": [
+        { "type": "text", "value": "A mathematical calculation mistake" },
+        { "type": "text", "value": "Using i > 5 instead of i < 5, causing loop to execute wrong number of times" },
+        { "type": "text", "value": "Using wrong variable names" },
+        { "type": "text", "value": "Forgetting to initialize a variable" }
+      ],
+      "answer": 1,
+      "explanation": "Off-by-one errors occur when loop boundaries are incorrect, causing one too many or one too few iterations."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What makes a loop infinite?",
+      "options": [
+        { "type": "text", "value": "The loop condition is never updated to become false" },
+        { "type": "text", "value": "Too many iterations" },
+        { "type": "text", "value": "Using break statement" },
+        { "type": "text", "value": "A compilation error" }
+      ],
+      "answer": 0,
+      "explanation": "An infinite loop occurs when the loop condition never becomes false because the controlling variable never changes or changes incorrectly."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "When should you use a do-while loop instead of a while loop?",
+      "options": [
+        { "type": "text", "value": "When you need faster execution" },
+        { "type": "text", "value": "When you want the loop body to execute at least once before checking the condition" },
+        { "type": "text", "value": "When you have multiple conditions" },
+        { "type": "text", "value": "When counting iterations" }
+      ],
+      "answer": 1,
+      "explanation": "The do-while loop guarantees at least one execution because it checks the condition after running the body, unlike while loops."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What is the purpose of loop tracing?",
+      "options": [
+        { "type": "text", "value": "To make loops run faster" },
+        { "type": "text", "value": "To mentally execute loops step-by-step to understand behavior and find bugs" },
+        { "type": "text", "value": "To count loop iterations" },
+        { "type": "text", "value": "To avoid using nested loops" }
+      ],
+      "answer": 1,
+      "explanation": "Loop tracing involves executing loops mentally step-by-step to understand what happens and identify logical errors."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "For an array of length 5, what is the valid index range?",
+      "options": [
+        { "type": "text", "value": "1 to 5" },
+        { "type": "text", "value": "0 to 6" },
+        { "type": "text", "value": "0 to 4" },
+        { "type": "text", "value": "1 to 4" }
+      ],
+      "answer": 2,
+      "explanation": "Array indices run from 0 to length-1, so a length 5 array has valid indices 0, 1, 2, 3, and 4."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What is a counter variable typically used for?",
+      "options": [
+        { "type": "text", "value": "Collecting running totals" },
+        { "type": "text", "value": "Tracking how many times a condition occurs" },
+        { "type": "text", "value": "Storing loop indices" },
+        { "type": "text", "value": "Declaring 2D arrays" }
+      ],
+      "answer": 1,
+      "explanation": "Counter variables track the number of occurrences of specific conditions, starting at 0 and incrementing when conditions are met."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "When working with a 2D array in nested loops, which loop should control rows?",
+      "options": [
+        { "type": "text", "value": "The inner loop" },
+        { "type": "text", "value": "Whichever is faster" },
+        { "type": "text", "value": "The outer loop" },
+        { "type": "text", "value": "It doesn't matter" }
+      ],
+      "answer": 2,
+      "explanation": "The outer loop should control rows while the inner loop controls columns, enabling systematic row-by-row traversal of the matrix."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What is the most efficient loop type for iterating a known number of times?",
+      "options": [
+        { "type": "text", "value": "while loop" },
+        { "type": "text", "value": "do-while loop" },
+        { "type": "text", "value": "for loop" },
+        { "type": "text", "value": "All are equally efficient" }
+      ],
+      "answer": 2,
+      "explanation": "The for loop is most appropriate for counting iterations because it contains initialization, condition, and update in one concise line."
+    }
+  ]
+}

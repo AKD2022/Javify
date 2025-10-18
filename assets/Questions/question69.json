@@ -1,0 +1,214 @@
+{
+  "lessonId": 69,
+  "title": "Introduction to Classes and Objects",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is a class in Java?",
+      "options": [
+        { "type": "text", "value": "A blueprint that defines the structure and behavior of objects" },
+        { "type": "text", "value": "A method that performs calculations" },
+        { "type": "text", "value": "A type of variable" },
+        { "type": "text", "value": "A collection of related methods" }
+      ],
+      "answer": 0,
+      "explanation": "A class is a blueprint or template defining what data (instance variables) and behaviors (methods) objects created from that class will have."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What is an object?",
+      "options": [
+        { "type": "text", "value": "A method inside a class" },
+        { "type": "text", "value": "A specific instance of a class with actual values" },
+        { "type": "text", "value": "A type of variable" },
+        { "type": "text", "value": "A blueprint for data" }
+      ],
+      "answer": 1,
+      "explanation": "An object is a concrete instance of a class created using the new keyword, with specific values for its instance variables."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What keyword is used to create a new object?",
+      "options": [
+        { "type": "text", "value": "class" },
+        { "type": "text", "value": "new" },
+        { "type": "text", "value": "Object" },
+        { "type": "text", "value": "create" }
+      ],
+      "answer": 2,
+      "explanation": "The new keyword creates a new instance of a class, allocating memory for the object and initializing it."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What are instance variables?",
+      "options": [
+        { "type": "text", "value": "Methods that perform actions" },
+        { "type": "text", "value": "Variables declared inside a class that belong to each object" },
+        { "type": "text", "value": "Variables used in loops" },
+        { "type": "text", "value": "Static values that don't change" }
+      ],
+      "answer": 1,
+      "explanation": "Instance variables are variables declared inside a class that store data for each individual object created from that class."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What does the dot operator do when working with objects?",
+      "options": [
+        { "type": "text", "value": "Ends a statement" },
+        { "type": "text", "value": "Accesses instance variables and methods of an object" },
+        { "type": "text", "value": "Declares new variables" },
+        { "type": "text", "value": "Creates new objects" }
+      ],
+      "answer": 1,
+      "explanation": "The dot operator (.) is used to access instance variables and call methods on a specific object."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "If you create two objects from the same class, what is true?",
+      "options": [
+        { "type": "text", "value": "They share the same instance variables" },
+        { "type": "text", "value": "Each has its own independent set of instance variables" },
+        { "type": "text", "value": "They cannot both exist simultaneously" },
+        { "type": "text", "value": "One is a copy of the other" }
+      ],
+      "answer": 1,
+      "explanation": "Each object created from a class is independent, with its own separate instance variables that don't affect other objects."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What does the keyword this reference?",
+      "options": [
+        { "type": "text", "value": "The class definition" },
+        { "type": "text", "value": "The current object" },
+        { "type": "text", "value": "The previous object" },
+        { "type": "text", "value": "A method parameter" }
+      ],
+      "answer": 1,
+      "explanation": "The this keyword explicitly refers to the current object, used inside methods and constructors to access that specific object's data."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What does the statement Car myCar = new Car(); do?",
+      "options": [
+        { "type": "text", "value": "Declares a Car class" },
+        { "type": "text", "value": "Creates a new Car object and stores a reference to it in myCar" },
+        { "type": "text", "value": "Copies an existing Car" },
+        { "type": "text", "value": "Deletes a Car object" }
+      ],
+      "answer": 1,
+      "explanation": "This statement creates a new Car object using the new keyword and stores a reference to it in the variable myCar."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "Are objects reference types or primitive types?",
+      "options": [
+        { "type": "text", "value": "Primitive types" },
+        { "type": "text", "value": "Reference types" },
+        { "type": "text", "value": "Neither" },
+        { "type": "text", "value": "Both equally" }
+      ],
+      "answer": 1,
+      "explanation": "Objects are reference types, meaning variables hold references (addresses) to objects rather than the objects themselves."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What happens when you assign one object reference to another?",
+      "options": [
+        { "type": "text", "value": "A copy of the object is created" },
+        { "type": "text", "value": "Both variables point to the same object in memory" },
+        { "type": "text", "value": "The second variable creates a new class" },
+        { "type": "text", "value": "The first object is deleted" }
+      ],
+      "answer": 1,
+      "explanation": "Assigning one object reference to another makes both variables reference the same object, not creating a copy."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "Can methods inside a class access instance variables?",
+      "options": [
+        { "type": "text", "value": "No, they are separate" },
+        { "type": "text", "value": "Only if they are static" },
+        { "type": "text", "value": "Yes, methods can access and modify instance variables of their object" },
+        { "type": "text", "value": "Only through the new keyword" }
+      ],
+      "answer": 2,
+      "explanation": "Methods inside a class have direct access to the instance variables of that class for the current object."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What does it mean to instantiate a class?",
+      "options": [
+        { "type": "text", "value": "To write the class definition" },
+        { "type": "text", "value": "To create an object from the class" },
+        { "type": "text", "value": "To declare a variable" },
+        { "type": "text", "value": "To call a method" }
+      ],
+      "answer": 1,
+      "explanation": "Instantiation is the process of creating an object from a class using the new keyword."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "Can a class contain other objects as instance variables?",
+      "options": [
+        { "type": "text", "value": "No, only primitive types" },
+        { "type": "text", "value": "Only if they are simple types" },
+        { "type": "text", "value": "Yes, objects can contain other objects as instance variables" },
+        { "type": "text", "value": "Only with static references" }
+      ],
+      "answer": 2,
+      "explanation": "A class can have other objects as instance variables, allowing composition where complex objects are built from simpler parts."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What is the relationship between a class and an object?",
+      "options": [
+        { "type": "text", "value": "They are the same thing" },
+        { "type": "text", "value": "A class is a blueprint; an object is an instance of that blueprint" },
+        { "type": "text", "value": "Objects define classes" },
+        { "type": "text", "value": "They are unrelated" }
+      ],
+      "answer": 1,
+      "explanation": "A class serves as a blueprint defining structure and behavior, while an object is a specific instance with actual data values."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "How do you access a specific instance variable of an object?",
+      "options": [
+        { "type": "text", "value": "variableName" },
+        { "type": "text", "value": "object.variableName" },
+        { "type": "text", "value": "object->variableName" },
+        { "type": "text", "value": "object[variableName]" }
+      ],
+      "answer": 1,
+      "explanation": "You access instance variables using the dot operator: object.variableName, where object is the specific object reference."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What is the primary advantage of using object-oriented programming?",
+      "options": [
+        { "type": "text", "value": "Programs run faster" },
+        { "type": "text", "value": "Organizing related data and behaviors into cohesive units makes code more maintainable and reusable" },
+        { "type": "text", "value": "It requires less memory" },
+        { "type": "text", "value": "It eliminates the need for methods" }
+      ],
+      "answer": 1,
+      "explanation": "Object-oriented programming groups related data and behaviors together, improving code organization, maintainability, and reusability."
+    }
+  ]
+}

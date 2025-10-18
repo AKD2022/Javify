@@ -1,0 +1,522 @@
+{
+  "lessonId": 58,
+  "title": "Nested Loops Introduction",
+  "content": [
+    {
+      "type": "text",
+      "value": "Nested loops are loops placed inside other loops. They allow you to process multi-dimensional data, create patterns, and handle complex repetitive tasks that require multiple levels of iteration. Understanding nested loops opens up powerful programming techniques for working with grids, tables, and hierarchical data."
+    },
+    {
+      "type": "text",
+      "value": "A nested loop consists of an outer loop and one or more inner loops. The inner loop completes all its iterations for each single iteration of the outer loop."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 1; i <= 3; i++) {\n    for (int j = 1; j <= 2; j++) {\n        System.out.println(\"i=\" + i + \", j=\" + j);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This code has an outer loop controlled by "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " and an inner loop controlled by "
+    },
+    {
+      "type": "code",
+      "value": "j"
+    },
+    {
+      "type": "text",
+      "value": ". For each value of "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " (1, 2, 3), the inner loop runs completely through all values of "
+    },
+    {
+      "type": "code",
+      "value": "j"
+    },
+    {
+      "type": "text",
+      "value": " (1, 2). This produces six total iterations."
+    },
+    {
+      "type": "text",
+      "value": "The execution pattern of nested loops follows a specific order: the outer loop initializes, checks its condition, and enters. Then the inner loop runs completely. After the inner loop finishes, the outer loop updates and checks its condition again. This cycle repeats until the outer loop terminates."
+    },
+    {
+      "type": "code",
+      "value": "for (int outer = 1; outer <= 2; outer++) {\n    System.out.println(\"Outer loop: \" + outer);\n    for (int inner = 1; inner <= 3; inner++) {\n        System.out.println(\"  Inner loop: \" + inner);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "When "
+    },
+    {
+      "type": "code",
+      "value": "outer"
+    },
+    {
+      "type": "text",
+      "value": " equals "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ", the inner loop runs three times printing \"Inner loop: 1\", \"Inner loop: 2\", and \"Inner loop: 3\". Then "
+    },
+    {
+      "type": "code",
+      "value": "outer"
+    },
+    {
+      "type": "text",
+      "value": " becomes "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ", and the inner loop runs three more times. The indentation in the output helps visualize the nesting structure."
+    },
+    {
+      "type": "text",
+      "value": "The total number of iterations in nested loops equals the product of the iteration counts. If the outer loop runs "
+    },
+    {
+      "type": "code",
+      "value": "m"
+    },
+    {
+      "type": "text",
+      "value": " times and the inner loop runs "
+    },
+    {
+      "type": "code",
+      "value": "n"
+    },
+    {
+      "type": "text",
+      "value": " times, the inner loop body executes "
+    },
+    {
+      "type": "code",
+      "value": "m × n"
+    },
+    {
+      "type": "text",
+      "value": " times total."
+    },
+    {
+      "type": "code",
+      "value": "int count = 0;\nfor (int i = 1; i <= 4; i++) {\n    for (int j = 1; j <= 5; j++) {\n        count++;\n    }\n}\nSystem.out.println(\"Total iterations: \" + count);"
+    },
+    {
+      "type": "text",
+      "value": "The outer loop runs "
+    },
+    {
+      "type": "code",
+      "value": "4"
+    },
+    {
+      "type": "text",
+      "value": " times, and for each of those, the inner loop runs "
+    },
+    {
+      "type": "code",
+      "value": "5"
+    },
+    {
+      "type": "text",
+      "value": " times. The total is "
+    },
+    {
+      "type": "code",
+      "value": "4 × 5 = 20"
+    },
+    {
+      "type": "text",
+      "value": " iterations. The variable "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " tracks this, reaching "
+    },
+    {
+      "type": "code",
+      "value": "20"
+    },
+    {
+      "type": "text",
+      "value": " by the end."
+    },
+    {
+      "type": "text",
+      "value": "Creating rectangular patterns demonstrates how nested loops work with rows and columns. The outer loop typically controls rows, while the inner loop controls columns."
+    },
+    {
+      "type": "code",
+      "value": "for (int row = 1; row <= 3; row++) {\n    for (int col = 1; col <= 4; col++) {\n        System.out.print(\"* \");\n    }\n    System.out.println();\n}"
+    },
+    {
+      "type": "text",
+      "value": "This creates a "
+    },
+    {
+      "type": "code",
+      "value": "3 × 4"
+    },
+    {
+      "type": "text",
+      "value": " rectangle of asterisks. For each row, the inner loop prints four asterisks across. The "
+    },
+    {
+      "type": "code",
+      "value": "System.out.println()"
+    },
+    {
+      "type": "text",
+      "value": " after the inner loop moves to the next line, creating the row structure."
+    },
+    {
+      "type": "text",
+      "value": "Multiplication tables are classic examples of nested loop applications, where each combination of outer and inner values produces a result."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 1; i <= 5; i++) {\n    for (int j = 1; j <= 5; j++) {\n        System.out.print(i * j + \"\\t\");\n    }\n    System.out.println();\n}"
+    },
+    {
+      "type": "text",
+      "value": "This generates a "
+    },
+    {
+      "type": "code",
+      "value": "5 × 5"
+    },
+    {
+      "type": "text",
+      "value": " multiplication table. Each position shows the product of its row number "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " and column number "
+    },
+    {
+      "type": "code",
+      "value": "j"
+    },
+    {
+      "type": "text",
+      "value": ". The tab character "
+    },
+    {
+      "type": "code",
+      "value": "\\t"
+    },
+    {
+      "type": "text",
+      "value": " creates spacing between numbers."
+    },
+    {
+      "type": "text",
+      "value": "The inner loop can reference the outer loop's variable, creating patterns where the inner loop's behavior depends on the outer loop's current value."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 1; i <= 4; i++) {\n    for (int j = 1; j <= i; j++) {\n        System.out.print(\"*\");\n    }\n    System.out.println();\n}"
+    },
+    {
+      "type": "text",
+      "value": "This creates a triangular pattern where each row has as many asterisks as its row number. When "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": ", the inner loop runs once. When "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " is "
+    },
+    {
+      "type": "code",
+      "value": "2"
+    },
+    {
+      "type": "text",
+      "value": ", it runs twice. The condition "
+    },
+    {
+      "type": "code",
+      "value": "j <= i"
+    },
+    {
+      "type": "text",
+      "value": " ties the inner loop to the outer loop's value."
+    },
+    {
+      "type": "text",
+      "value": "You can use any loop type for nested loops. Combining different loop types is perfectly valid."
+    },
+    {
+      "type": "code",
+      "value": "int i = 1;\nwhile (i <= 2) {\n    for (int j = 1; j <= 3; j++) {\n        System.out.println(\"i=\" + i + \", j=\" + j);\n    }\n    i++;\n}"
+    },
+    {
+      "type": "text",
+      "value": "This uses a "
+    },
+    {
+      "type": "code",
+      "value": "while"
+    },
+    {
+      "type": "text",
+      "value": " loop as the outer loop and a "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loop as the inner loop. The combination works identically to using two "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loops. Choose loop types based on what makes sense for each level."
+    },
+    {
+      "type": "text",
+      "value": "Variable naming in nested loops conventionally uses "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " for the outermost loop, "
+    },
+    {
+      "type": "code",
+      "value": "j"
+    },
+    {
+      "type": "text",
+      "value": " for the first inner loop, and "
+    },
+    {
+      "type": "code",
+      "value": "k"
+    },
+    {
+      "type": "text",
+      "value": " for deeper nesting. Descriptive names work better for complex scenarios."
+    },
+    {
+      "type": "code",
+      "value": "for (int row = 0; row < 3; row++) {\n    for (int col = 0; col < 3; col++) {\n        System.out.print(\"(\" + row + \",\" + col + \") \");\n    }\n    System.out.println();\n}"
+    },
+    {
+      "type": "text",
+      "value": "Using "
+    },
+    {
+      "type": "code",
+      "value": "row"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "col"
+    },
+    {
+      "type": "text",
+      "value": " instead of "
+    },
+    {
+      "type": "code",
+      "value": "i"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "j"
+    },
+    {
+      "type": "text",
+      "value": " makes the code more readable. Each position prints its coordinates, showing how the loops traverse a grid."
+    },
+    {
+      "type": "text",
+      "value": "Counting with nested loops requires careful placement of counter variables. Declare counters outside the loops if you need to access them after the loops finish."
+    },
+    {
+      "type": "code",
+      "value": "int pairCount = 0;\nfor (int x = 1; x <= 3; x++) {\n    for (int y = 1; y <= 3; y++) {\n        pairCount++;\n        System.out.println(\"Pair: (\" + x + \",\" + y + \")\");\n    }\n}\nSystem.out.println(\"Total pairs: \" + pairCount);"
+    },
+    {
+      "type": "text",
+      "value": "The counter "
+    },
+    {
+      "type": "code",
+      "value": "pairCount"
+    },
+    {
+      "type": "text",
+      "value": " is declared outside both loops. It counts all combinations of "
+    },
+    {
+      "type": "code",
+      "value": "x"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "y"
+    },
+    {
+      "type": "text",
+      "value": " values. Since there are "
+    },
+    {
+      "type": "code",
+      "value": "3 × 3 = 9"
+    },
+    {
+      "type": "text",
+      "value": " combinations, "
+    },
+    {
+      "type": "code",
+      "value": "pairCount"
+    },
+    {
+      "type": "text",
+      "value": " reaches "
+    },
+    {
+      "type": "code",
+      "value": "9"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Simple number patterns help visualize how nested loops traverse their ranges."
+    },
+    {
+      "type": "code",
+      "value": "for (int i = 1; i <= 3; i++) {\n    for (int j = 1; j <= 3; j++) {\n        System.out.print(j + \" \");\n    }\n    System.out.println();\n}"
+    },
+    {
+      "type": "text",
+      "value": "This prints the numbers "
+    },
+    {
+      "type": "code",
+      "value": "1 2 3"
+    },
+    {
+      "type": "text",
+      "value": " on each of three lines. The inner loop variable "
+    },
+    {
+      "type": "code",
+      "value": "j"
+    },
+    {
+      "type": "text",
+      "value": " resets to "
+    },
+    {
+      "type": "code",
+      "value": "1"
+    },
+    {
+      "type": "text",
+      "value": " for each new iteration of the outer loop, creating repeated sequences."
+    },
+    {
+      "type": "text",
+      "value": "Understanding when to use nested loops comes with practice. Any time you need to process combinations, grids, or multi-level hierarchies, nested loops provide the structure. The outer loop typically represents the major grouping, while inner loops handle details within each group."
+    },
+    {
+      "type": "text",
+      "value": "Nested loops are powerful but can become computationally expensive as the number of iterations multiplies. Be mindful of the total iteration count, especially when working with large ranges. In the next lesson, you'll learn about using the "
+    },
+    {
+      "type": "code",
+      "value": "break"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "continue"
+    },
+    {
+      "type": "text",
+      "value": " keywords to control loop flow more precisely."
+    }
+  ]
+}
