@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text as RNText, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
+import { View, Text as RNText, StyleSheet, ScrollView } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { quizzes } from '../utils/quizRegistry';
 import colors from '../../assets/components/colors';
@@ -7,6 +7,7 @@ import { ProgressBar } from 'react-native-paper';
 import { TouchableOpacity } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Platform } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function ExplanationScreen() {
     const route = useRoute();

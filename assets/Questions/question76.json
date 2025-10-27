@@ -1,0 +1,406 @@
+{
+    "lessonId": 76,
+    "title": "Writing Methods with Parameters and Return Values",
+    "questions": [
+        {
+            "id": 1,
+            "type": "text",
+            "question": "What is a method signature?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "The access modifier, return type, method name, and parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "Just the method name"
+                },
+                {
+                    "type": "text",
+                    "value": "Only the parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "The method body"
+                }
+            ],
+            "answer": 0,
+            "explanation": "A method signature includes the access modifier, return type, method name, and parameter list that define the method's structure."
+        },
+        {
+            "id": 2,
+            "type": "text",
+            "question": "What do parameters allow methods to do?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Display output only"
+                },
+                {
+                    "type": "text",
+                    "value": "Accept different inputs each time they're called, making methods flexible"
+                },
+                {
+                    "type": "text",
+                    "value": "Return multiple values"
+                },
+                {
+                    "type": "text",
+                    "value": "Eliminate instance variables"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Parameters enable methods to accept different inputs, making them reusable with varying data."
+        },
+        {
+            "id": 3,
+            "type": "text",
+            "question": "What is a return value?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "A parameter passed to a method"
+                },
+                {
+                    "type": "text",
+                    "value": "The method name"
+                },
+                {
+                    "type": "text",
+                    "value": "A value that a method sends back to the caller"
+                },
+                {
+                    "type": "text",
+                    "value": "The access modifier"
+                }
+            ],
+            "answer": 2,
+            "explanation": "A return value is the result that a method sends back to whoever called it, specified by the return statement."
+        },
+        {
+            "id": 4,
+            "type": "text",
+            "question": "How many parameters can a method have?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Exactly one"
+                },
+                {
+                    "type": "text",
+                    "value": "A maximum of five"
+                },
+                {
+                    "type": "text",
+                    "value": "Parameters are never allowed"
+                },
+                {
+                    "type": "text",
+                    "value": "Zero, one, or multiple parameters separated by commas"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Methods can have zero parameters, one parameter, or multiple parameters separated by commas."
+        },
+        {
+            "id": 5,
+            "type": "text",
+            "question": "What does void mean as a return type?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "The method returns an empty String"
+                },
+                {
+                    "type": "text",
+                    "value": "The method does not return a value"
+                },
+                {
+                    "type": "text",
+                    "value": "The method returns null"
+                },
+                {
+                    "type": "text",
+                    "value": "The method returns zero"
+                }
+            ],
+            "answer": 1,
+            "explanation": "void indicates a method performs actions but does not return a value to the caller."
+        },
+        {
+            "id": 6,
+            "type": "text",
+            "question": "What must the returned value match?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "The parameter type"
+                },
+                {
+                    "type": "text",
+                    "value": "Any type"
+                },
+                {
+                    "type": "text",
+                    "value": "The method's declared return type"
+                },
+                {
+                    "type": "text",
+                    "value": "The first parameter"
+                }
+            ],
+            "answer": 2,
+            "explanation": "The returned value must match the method's return type exactly (or be convertible to it)."
+        },
+        {
+            "id": 7,
+            "type": "text",
+            "question": "How do you call a method with parameters?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "methodName"
+                },
+                {
+                    "type": "text",
+                    "value": "call methodName"
+                },
+                {
+                    "type": "text",
+                    "value": "methodName[]"
+                },
+                {
+                    "type": "text",
+                    "value": "methodName(argument1, argument2)"
+                }
+            ],
+            "answer": 3,
+            "explanation": "You call a method with parameters by including the arguments in parentheses: methodName(arg1, arg2)."
+        },
+        {
+            "id": 8,
+            "type": "text",
+            "question": "What is the difference between parameters and arguments?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "They are the same thing"
+                },
+                {
+                    "type": "text",
+                    "value": "Parameters are in the method definition; arguments are values passed when calling"
+                },
+                {
+                    "type": "text",
+                    "value": "Arguments are always numbers"
+                },
+                {
+                    "type": "text",
+                    "value": "Parameters are always Strings"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Parameters are part of the method definition; arguments are the actual values passed when the method is called."
+        },
+        {
+            "id": 9,
+            "type": "text",
+            "question": "Can a method call other methods on the same object?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, methods work independently"
+                },
+                {
+                    "type": "text",
+                    "value": "Only static methods can call other methods"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, using this.methodName() or just methodName()"
+                },
+                {
+                    "type": "text",
+                    "value": "Only from within constructors"
+                }
+            ],
+            "answer": 2,
+            "explanation": "Methods can call other methods on the same object using this.methodName() or simply methodName()."
+        },
+        {
+            "id": 10,
+            "type": "text",
+            "question": "What is single responsibility in method design?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Only one method per class"
+                },
+                {
+                    "type": "text",
+                    "value": "Each method should have one clear purpose or task"
+                },
+                {
+                    "type": "text",
+                    "value": "Methods cannot call other methods"
+                },
+                {
+                    "type": "text",
+                    "value": "All methods must return void"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Single responsibility means each method should do one thing well, making it reusable and maintainable."
+        },
+        {
+            "id": 11,
+            "type": "text",
+            "question": "Should helper methods typically be public or private?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Always public"
+                },
+                {
+                    "type": "text",
+                    "value": "Always private"
+                },
+                {
+                    "type": "text",
+                    "value": "Public if complex"
+                },
+                {
+                    "type": "text",
+                    "value": "It doesn't matter"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Helper methods should be private to hide implementation details and keep the public interface clean."
+        },
+        {
+            "id": 12,
+            "type": "text",
+            "question": "What should method parameter names do?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Be single letters only"
+                },
+                {
+                    "type": "text",
+                    "value": "Be very short to save typing"
+                },
+                {
+                    "type": "text",
+                    "value": "Be descriptive to indicate what they represent"
+                },
+                {
+                    "type": "text",
+                    "value": "Match the method name"
+                }
+            ],
+            "answer": 2,
+            "explanation": "Descriptive parameter names clarify the method's purpose and make code more readable."
+        },
+        {
+            "id": 13,
+            "type": "text",
+            "question": "Can methods contain loops and conditional logic?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, methods can only have simple statements"
+                },
+                {
+                    "type": "text",
+                    "value": "Only in getters"
+                },
+                {
+                    "type": "text",
+                    "value": "Only for void methods"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, methods can have complex logic including loops and conditionals"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Methods can contain any Java code including loops, conditionals, and complex logic to accomplish their purpose."
+        },
+        {
+            "id": 14,
+            "type": "text",
+            "question": "What happens if a method signature specifies a return type other than void?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "The method must contain a return statement with a value of that type"
+                },
+                {
+                    "type": "text",
+                    "value": "The method cannot have parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "The return statement is optional"
+                },
+                {
+                    "type": "text",
+                    "value": "Only constructors can have return types"
+                }
+            ],
+            "answer": 0,
+            "explanation": "If a method has a return type, it must have a return statement that sends back a value of that type."
+        },
+        {
+            "id": 15,
+            "type": "text",
+            "question": "Can methods validate their inputs?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, validation happens outside methods"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, methods should validate inputs and handle edge cases"
+                },
+                {
+                    "type": "text",
+                    "value": "Only getters can validate"
+                },
+                {
+                    "type": "text",
+                    "value": "Only setters can validate"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Methods should validate their inputs to ensure they're working with valid data and handle edge cases appropriately."
+        },
+        {
+            "id": 16,
+            "type": "text",
+            "question": "What is the advantage of well-designed methods?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "They make programs run faster"
+                },
+                {
+                    "type": "text",
+                    "value": "They eliminate the need for classes"
+                },
+                {
+                    "type": "text",
+                    "value": "They prevent all errors"
+                },
+                {
+                    "type": "text",
+                    "value": "They are easier to understand, test, reuse, and maintain"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Well-designed methods with clear purposes are easier to understand, test, reuse, and modify."
+        }
+    ]
+}

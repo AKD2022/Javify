@@ -1,0 +1,262 @@
+{
+  "lessonId": 77,
+  "title": "Static Variables and Static Methods",
+  "content": [
+    {
+      "type": "text",
+      "value": "Until now, every variable and method you've created belongs to individual objects. Static members (variables and methods) are different—they belong to the class itself rather than to any specific instance. This means static data is shared across all objects of the class, and static methods can be called without creating an object."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": " keyword designates a variable or method as static. Static variables are declared with "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": " before the type."
+    },
+    {
+      "type": "code",
+      "value": "public class Counter {\n    private static int count = 0;  // Static variable - shared by all instances\n    private int instanceValue = 0; // Instance variable - unique to each object\n    \n    public Counter() {\n        count++;  // Increment shared counter\n    }\n    \n    public static int getCount() {\n        return count;  // Access static variable\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " variable is static—it exists once for the class, shared by all instances. When a new "
+    },
+    {
+      "type": "code",
+      "value": "Counter"
+    },
+    {
+      "type": "text",
+      "value": " is created, the shared "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": " increments."
+    },
+    {
+      "type": "code",
+      "value": "Counter c1 = new Counter();\nCounter c2 = new Counter();\nCounter c3 = new Counter();\n\nSystem.out.println(Counter.getCount());  // 3\nSystem.out.println(c1.getCount());       // Also 3 (accessing shared static)"
+    },
+    {
+      "type": "text",
+      "value": "All three objects share the same "
+    },
+    {
+      "type": "code",
+      "value": "count"
+    },
+    {
+      "type": "text",
+      "value": ". You can access static members through the class name or an instance, but accessing through the class name is preferred."
+    },
+    {
+      "type": "text",
+      "value": "Static methods are called on the class, not on instances. They can't access instance variables directly because they don't belong to any specific object."
+    },
+    {
+      "type": "code",
+      "value": "public class MathHelper {\n    public static int add(int a, int b) {\n        return a + b;\n    }\n    \n    public static boolean isEven(int number) {\n        return number % 2 == 0;\n    }\n    \n    public static double celsiusToFahrenheit(double celsius) {\n        return (celsius * 9/5) + 32;\n    }\n}\n\n// Call static methods on the class\nint sum = MathHelper.add(5, 3);           // 8\nboolean even = MathHelper.isEven(4);      // true\ndouble temp = MathHelper.celsiusToFahrenheit(25);  // 77"
+    },
+    {
+      "type": "text",
+      "value": "Static methods are called using the class name followed by a dot. No object creation is needed."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "main()"
+    },
+    {
+      "type": "text",
+      "value": " method is static, which is why you can run programs without creating objects first."
+    },
+    {
+      "type": "code",
+      "value": "public class Application {\n    // Static main - called by the JVM without creating an object\n    public static void main(String[] args) {\n        System.out.println(\"Program started\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The JVM calls "
+    },
+    {
+      "type": "code",
+      "value": "main()"
+    },
+    {
+      "type": "text",
+      "value": " directly without instantiating the class, which is only possible because "
+    },
+    {
+      "type": "code",
+      "value": "main()"
+    },
+    {
+      "type": "text",
+      "value": " is static."
+    },
+    {
+      "type": "text",
+      "value": "Static variables are useful for tracking information across all instances of a class."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    private static int totalStudents = 0;  // Shared counter\n    private String name;\n    private int studentID;\n    \n    public Student(String name) {\n        this.name = name;\n        totalStudents++;  // Increment when any student is created\n        this.studentID = totalStudents;  // Use counter for unique ID\n    }\n    \n    public static int getTotalStudents() {\n        return totalStudents;\n    }\n    \n    public int getStudentID() {\n        return studentID;\n    }\n}\n\nStudent s1 = new Student(\"Alice\");\nStudent s2 = new Student(\"Bob\");\nStudent s3 = new Student(\"Charlie\");\n\nSystem.out.println(Student.getTotalStudents());  // 3"
+    },
+    {
+      "type": "text",
+      "value": "Each student gets a unique ID based on the shared "
+    },
+    {
+      "type": "code",
+      "value": "totalStudents"
+    },
+    {
+      "type": "text",
+      "value": " counter. This demonstrates how static variables coordinate across instances."
+    },
+    {
+      "type": "text",
+      "value": "Static methods can't access instance variables or call instance methods directly because they don't have access to a specific object."
+    },
+    {
+      "type": "code",
+      "value": "public class Example {\n    private int instanceVar = 5;  // Instance variable\n    private static int staticVar = 10;  // Static variable\n    \n    public static void staticMethod() {\n        System.out.println(staticVar);      // OK - accessing static variable\n        // System.out.println(instanceVar); // ERROR - can't access instance variable\n    }\n    \n    public void instanceMethod() {\n        System.out.println(staticVar);      // OK - instance method can access static\n        System.out.println(instanceVar);    // OK - instance method can access instance\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Static methods can only access static variables and call other static methods. Instance methods can access both static and instance members."
+    },
+    {
+      "type": "text",
+      "value": "Constants are commonly static. The "
+    },
+    {
+      "type": "code",
+      "value": "final"
+    },
+    {
+      "type": "text",
+      "value": " keyword prevents modification."
+    },
+    {
+      "type": "code",
+      "value": "public class MathConstants {\n    public static final double PI = 3.14159;\n    public static final double E = 2.71828;\n    public static final int MAX_ATTEMPTS = 3;\n    public static final String APP_VERSION = \"1.0.0\";\n}\n\n// Use constants\ndouble circumference = 2 * MathConstants.PI * radius;\nint attempts = MathConstants.MAX_ATTEMPTS;"
+    },
+    {
+      "type": "text",
+      "value": "Public static constants are accessible throughout your program. The "
+    },
+    {
+      "type": "code",
+      "value": "final"
+    },
+    {
+      "type": "text",
+      "value": " keyword ensures they can't be modified after initialization."
+    },
+    {
+      "type": "text",
+      "value": "Many Java library classes provide static utility methods. For example, "
+    },
+    {
+      "type": "code",
+      "value": "Math.sqrt()"
+    },
+    {
+      "type": "code",
+      "value": "Integer.parseInt()"
+    },
+    {
+      "type": "text",
+      "value": ", and "
+    },
+    {
+      "type": "code",
+      "value": "Arrays.sort()"
+    },
+    {
+      "type": "text",
+      "value": " are static methods."
+    },
+    {
+      "type": "code",
+      "value": "double sqrtResult = Math.sqrt(16);      // 4.0\nint number = Integer.parseInt(\"42\");    // 42\ndouble power = Math.pow(2, 3);          // 8.0"
+    },
+    {
+      "type": "text",
+      "value": "These are called directly on the class without creating objects."
+    },
+    {
+      "type": "text",
+      "value": "Static initialization blocks run once when the class is first loaded, useful for complex static variable initialization."
+    },
+    {
+      "type": "code",
+      "value": "public class Configuration {\n    public static int[] primes;\n    \n    static {  // Static initialization block\n        primes = new int[]{2, 3, 5, 7, 11, 13, 17, 19, 23, 29};\n        System.out.println(\"Configuration initialized\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The code in the static block runs once when "
+    },
+    {
+      "type": "code",
+      "value": "Configuration"
+    },
+    {
+      "type": "text",
+      "value": " is first loaded, before any objects are created."
+    },
+    {
+      "type": "text",
+      "value": "Use static variables sparingly. They can make code harder to test and understand. Overusing static violates object-oriented principles. Generally, only use static for:"
+    },
+    {
+      "type": "code",
+      "value": "1. Truly shared counters or totals across instances\n2. Utility methods (like Math methods)\n3. Constants (final static variables)\n4. Singletons (single instance pattern)\n5. Factory methods for creating objects"
+    },
+    {
+      "type": "text",
+      "value": "Here's a practical example combining instance and static members:"
+    },
+    {
+      "type": "code",
+      "value": "public class BankAccount {\n    private static final double INTEREST_RATE = 0.05;  // Static constant\n    private static int nextAccountNumber = 1000;       // Static counter\n    \n    private int accountNumber;  // Instance variable\n    private double balance;     // Instance variable\n    \n    public BankAccount(double initialBalance) {\n        this.accountNumber = nextAccountNumber++;\n        this.balance = initialBalance;\n    }\n    \n    public void applyInterest() {\n        balance *= (1 + INTEREST_RATE);  // Use static constant\n    }\n    \n    public int getAccountNumber() {\n        return accountNumber;\n    }\n    \n    public double getBalance() {\n        return balance;\n    }\n    \n    public static double getInterestRate() {\n        return INTEREST_RATE;\n    }\n}\n\nBankAccount acc1 = new BankAccount(1000);\nBankAccount acc2 = new BankAccount(2000);\n\nSystem.out.println(acc1.getAccountNumber());  // 1000\nSystem.out.println(acc2.getAccountNumber());  // 1001\nSystem.out.println(BankAccount.getInterestRate());  // 0.05"
+    },
+    {
+      "type": "text",
+      "value": "This class uses static for the interest rate (constant) and account number generation (shared counter), while keeping balance as instance data. Each account has its own balance and account number, but they share the interest rate."
+    },
+    {
+      "type": "text",
+      "value": "Understanding static is crucial for working with Java libraries and writing utility classes. However, remember that most of your class design should focus on instance variables and methods. Static is a tool for special cases, not the foundation of object-oriented design."
+    }
+  ]
+}

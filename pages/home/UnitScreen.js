@@ -21,18 +21,17 @@ const UnitScreen = ({ route }) => {
                 renderItem={({ item, index }) => {
                     const prevLesson = unit.lessons[index - 1];
                     const isLocked =
-                        index > 0 && (!scoresState[prevLesson.id] || scoresState[prevLesson.id] < 4);
+                        index > 0 && (scoresState[prevLesson?.id] || 0) < 4;
 
                     return (
                         <LessonCard
                             lesson={item}
-                            score={scoresState[item.id]}
+                            score={scoresState[item.id] ?? null}
                             locked={isLocked}
                         />
                     );
                 }}
             />
-
         </View>
     );
 };

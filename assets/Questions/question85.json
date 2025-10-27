@@ -1,0 +1,214 @@
+{
+  "lessonId": 85,
+  "title": "Writing Classes for Simple Data Structures",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is a simple data structure class?",
+      "options": [
+        { "type": "text", "value": "A class that bundles related data together with methods that operate on it" },
+        { "type": "text", "value": "A class with only one method" },
+        { "type": "text", "value": "A class without constructors" },
+        { "type": "text", "value": "A class that only stores primitives" }
+      ],
+      "answer": 0,
+      "explanation": "A data structure class organizes related information into cohesive units with operations that work on that data."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "What should a Point class contain for 2D coordinates?",
+      "options": [
+        { "type": "text", "value": "Only x coordinate" },
+        { "type": "text", "value": "x and y coordinates with getters, setters, and useful methods" },
+        { "type": "text", "value": "Only methods, no data" },
+        { "type": "text", "value": "Static variables only" }
+      ],
+      "answer": 1,
+      "explanation": "A Point class should bundle x and y coordinates with accessors and operations like distance calculations."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "Why include methods like getArea() in a Rectangle class?",
+      "options": [
+        { "type": "text", "value": "To slow down the program" },
+        { "type": "text", "value": "Methods are not needed" },
+        { "type": "text", "value": "To encapsulate common operations on the data" },
+        { "type": "text", "value": "To prevent object creation" }
+      ],
+      "answer": 2,
+      "explanation": "Methods like getArea() encapsulate common calculations, making the class more useful and reusable."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "Why validate data in constructors for data structures?",
+      "options": [
+        { "type": "text", "value": "To make code slower" },
+        { "type": "text", "value": "Validation is not necessary" },
+        { "type": "text", "value": "To add extra code" },
+        { "type": "text", "value": "To ensure objects are always in valid states" }
+      ],
+      "answer": 3,
+      "explanation": "Validation in constructors prevents invalid data from creating objects in inconsistent states."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What does a Time class typically store?",
+      "options": [
+        { "type": "text", "value": "Hours, minutes, and seconds with conversion methods" },
+        { "type": "text", "value": "Only seconds" },
+        { "type": "text", "value": "Date information" },
+        { "type": "text", "value": "Time zones only" }
+      ],
+      "answer": 0,
+      "explanation": "A Time class stores hours, minutes, and seconds, often with methods for conversions and arithmetic."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "What is the clamp() helper method used for in a Color class?",
+      "options": [
+        { "type": "text", "value": "To delete colors" },
+        { "type": "text", "value": "To ensure RGB values stay within valid ranges (0-255)" },
+        { "type": "text", "value": "To create new colors" },
+        { "type": "text", "value": "To convert to grayscale" }
+      ],
+      "answer": 1,
+      "explanation": "The clamp() method constrains RGB values to the valid 0-255 range, preventing invalid color values."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "Why implement equals() for data structure classes?",
+      "options": [
+        { "type": "text", "value": "It's required by Java" },
+        { "type": "text", "value": "To make code run faster" },
+        { "type": "text", "value": "To allow meaningful comparison based on data content" },
+        { "type": "text", "value": "To prevent object creation" }
+      ],
+      "answer": 2,
+      "explanation": "Implementing equals() enables comparison based on data values rather than memory addresses."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What does the final keyword do in instance variables?",
+      "options": [
+        { "type": "text", "value": "Makes them faster" },
+        { "type": "text", "value": "Makes them public" },
+        { "type": "text", "value": "Makes them static" },
+        { "type": "text", "value": "Prevents reassignment after initialization" }
+      ],
+      "answer": 3,
+      "explanation": "The final keyword makes instance variables immutable—they cannot be reassigned after initialization."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What is an immutable class?",
+      "options": [
+        { "type": "text", "value": "A class whose object values cannot change after creation" },
+        { "type": "text", "value": "A class without methods" },
+        { "type": "text", "value": "A class with only static members" },
+        { "type": "text", "value": "A class that cannot be instantiated" }
+      ],
+      "answer": 0,
+      "explanation": "Immutable classes use final fields and no setters; operations return new objects instead of modifying existing ones."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "How do immutable classes handle operations that would modify data?",
+      "options": [
+        { "type": "text", "value": "They throw exceptions" },
+        { "type": "text", "value": "They return new objects with the modified values" },
+        { "type": "text", "value": "They prevent all operations" },
+        { "type": "text", "value": "They modify the original" }
+      ],
+      "answer": 1,
+      "explanation": "Immutable classes return new objects with modified values instead of changing existing objects."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "What advantage does bundling data in classes provide?",
+      "options": [
+        { "type": "text", "value": "Slower execution" },
+        { "type": "text", "value": "More variables to manage" },
+        { "type": "text", "value": "Cleaner, more maintainable code compared to separate variables" },
+        { "type": "text", "value": "Increased memory usage" }
+      ],
+      "answer": 2,
+      "explanation": "Bundling related data in classes creates cleaner, more maintainable code compared to managing separate variables."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "Should data structure classes include toString()?",
+      "options": [
+        { "type": "text", "value": "No, never" },
+        { "type": "text", "value": "Only for large classes" },
+        { "type": "text", "value": "Only if required" },
+        { "type": "text", "value": "Yes, for readable string representations of the data" }
+      ],
+      "answer": 3,
+      "explanation": "toString() provides readable string representations, making debugging and display much easier."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What makes a Rectangle class useful beyond just storing dimensions?",
+      "options": [
+        { "type": "text", "value": "It stores more data" },
+        { "type": "text", "value": "It prevents errors" },
+        { "type": "text", "value": "Methods that calculate area, perimeter, and check containment" },
+        { "type": "text", "value": "It uses less memory" }
+      ],
+      "answer": 2,
+      "explanation": "Utility methods like getArea(), getPerimeter(), and contains() make the class functional and reusable."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What is the benefit of validation in data structure constructors?",
+      "options": [
+        { "type": "text", "value": "Makes code longer" },
+        { "type": "text", "value": "Prevents bugs from invalid data entering the system" },
+        { "type": "text", "value": "Slows down construction" },
+        { "type": "text", "value": "Eliminates the need for getters" }
+      ],
+      "answer": 1,
+      "explanation": "Validation catches invalid data early, preventing bugs from propagating through the system."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "How do data structure classes improve code maintainability?",
+      "options": [
+        { "type": "text", "value": "By using more memory" },
+        { "type": "text", "value": "By grouping related data and operations into cohesive, reusable units" },
+        { "type": "text", "value": "By making code longer" },
+        { "type": "text", "value": "By preventing modifications" }
+      ],
+      "answer": 1,
+      "explanation": "Data structures group related information with operations, creating reusable components that make programs easier to understand."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What role do data structure classes play in larger systems?",
+      "options": [
+        { "type": "text", "value": "They slow down systems" },
+        { "type": "text", "value": "They form reusable building blocks that make complex programs manageable" },
+        { "type": "text", "value": "They prevent system growth" },
+        { "type": "text", "value": "They are only for small programs" }
+      ],
+      "answer": 1,
+      "explanation": "Well-designed data structures are reusable building blocks that make complex systems easier to build and maintain."
+    }
+  ]
+}

@@ -1,0 +1,406 @@
+{
+    "lessonId": 79,
+    "title": "Writing toString() Methods",
+    "questions": [
+        {
+            "id": 1,
+            "type": "text",
+            "question": "What does the default toString() method return?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "A cryptic string like ClassName@hexcode"
+                },
+                {
+                    "type": "text",
+                    "value": "The object's field values"
+                },
+                {
+                    "type": "text",
+                    "value": "The object's name"
+                },
+                {
+                    "type": "text",
+                    "value": "An empty string"
+                }
+            ],
+            "answer": 0,
+            "explanation": "The default toString() returns a string combining the class name, @ symbol, and the object's hashcode in hexadecimal."
+        },
+        {
+            "id": 2,
+            "type": "text",
+            "question": "Why override toString()?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "To make the code run faster"
+                },
+                {
+                    "type": "text",
+                    "value": "To provide a meaningful string representation of an object's state"
+                },
+                {
+                    "type": "text",
+                    "value": "To eliminate instance variables"
+                },
+                {
+                    "type": "text",
+                    "value": "To prevent object creation"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Overriding toString() provides readable output for debugging and display, showing an object's important data."
+        },
+        {
+            "id": 3,
+            "type": "text",
+            "question": "What annotation is used when overriding toString()?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "@Overwrite"
+                },
+                {
+                    "type": "text",
+                    "value": "@SuperMethod"
+                },
+                {
+                    "type": "text",
+                    "value": "@Override"
+                },
+                {
+                    "type": "text",
+                    "value": "@Method"
+                }
+            ],
+            "answer": 2,
+            "explanation": "The @Override annotation signals that you're intentionally overriding a parent class method."
+        },
+        {
+            "id": 4,
+            "type": "text",
+            "question": "When is toString() called automatically?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Only when explicitly called"
+                },
+                {
+                    "type": "text",
+                    "value": "Only in main methods"
+                },
+                {
+                    "type": "text",
+                    "value": "Never automatically"
+                },
+                {
+                    "type": "text",
+                    "value": "When printing objects or concatenating with strings"
+                }
+            ],
+            "answer": 3,
+            "explanation": "System.out.println() and string concatenation automatically call toString() on objects."
+        },
+        {
+            "id": 5,
+            "type": "text",
+            "question": "What is a common format for toString() output?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "ClassName{field1=value1, field2=value2}"
+                },
+                {
+                    "type": "text",
+                    "value": "field1field2field3"
+                },
+                {
+                    "type": "text",
+                    "value": "Just the class name"
+                },
+                {
+                    "type": "text",
+                    "value": "Random format"
+                }
+            ],
+            "answer": 0,
+            "explanation": "A standard format includes the class name and displays instance variables as key-value pairs in curly braces."
+        },
+        {
+            "id": 6,
+            "type": "text",
+            "question": "Can toString() handle nested objects?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, only primitive types"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, by calling their toString() methods"
+                },
+                {
+                    "type": "text",
+                    "value": "Only with static methods"
+                },
+                {
+                    "type": "text",
+                    "value": "Only with arrays"
+                }
+            ],
+            "answer": 1,
+            "explanation": "toString() can display nested objects by calling their toString() methods, creating a complete hierarchy."
+        },
+        {
+            "id": 7,
+            "type": "text",
+            "question": "What is the best way to handle arrays in toString()?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Ignore arrays entirely"
+                },
+                {
+                    "type": "text",
+                    "value": "Use only string concatenation"
+                },
+                {
+                    "type": "text",
+                    "value": "Use StringBuilder for efficient string building"
+                },
+                {
+                    "type": "text",
+                    "value": "Arrays cannot be displayed"
+                }
+            ],
+            "answer": 2,
+            "explanation": "StringBuilder is more efficient than string concatenation, especially when iterating through arrays."
+        },
+        {
+            "id": 8,
+            "type": "text",
+            "question": "What should you NOT include in toString()?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Any information"
+                },
+                {
+                    "type": "text",
+                    "value": "Field names"
+                },
+                {
+                    "type": "text",
+                    "value": "The class name"
+                },
+                {
+                    "type": "text",
+                    "value": "Sensitive data like passwords or private keys"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Never expose sensitive information like passwords, tokens, or authentication credentials in toString()."
+        },
+        {
+            "id": 9,
+            "type": "text",
+            "question": "Can you use String.format() in toString()?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, only string concatenation allowed"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, for precise formatting like decimal places"
+                },
+                {
+                    "type": "text",
+                    "value": "Only in static methods"
+                },
+                {
+                    "type": "text",
+                    "value": "Only for primitive types"
+                }
+            ],
+            "answer": 1,
+            "explanation": "String.format() allows precise formatting in toString(), useful for displaying numbers with specific precision."
+        },
+        {
+            "id": 10,
+            "type": "text",
+            "question": "Is toString() required for every class?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Yes, every class must have it"
+                },
+                {
+                    "type": "text",
+                    "value": "No, but it's a best practice for data classes"
+                },
+                {
+                    "type": "text",
+                    "value": "Only for utility classes"
+                },
+                {
+                    "type": "text",
+                    "value": "Never, it's never used"
+                }
+            ],
+            "answer": 1,
+            "explanation": "toString() is optional but best practice for any class whose objects you'll debug or display."
+        },
+        {
+            "id": 11,
+            "type": "text",
+            "question": "What does toString() return?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "void"
+                },
+                {
+                    "type": "text",
+                    "value": "An integer"
+                },
+                {
+                    "type": "text",
+                    "value": "A String representation of the object"
+                },
+                {
+                    "type": "text",
+                    "value": "A boolean"
+                }
+            ],
+            "answer": 2,
+            "explanation": "toString() returns a String object that represents the current state of the object."
+        },
+        {
+            "id": 12,
+            "type": "text",
+            "question": "How is toString() useful for debugging?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "It doesn't help with debugging"
+                },
+                {
+                    "type": "text",
+                    "value": "It prevents errors"
+                },
+                {
+                    "type": "text",
+                    "value": "It speeds up execution"
+                },
+                {
+                    "type": "text",
+                    "value": "It displays readable object state, making data inspection easy"
+                }
+            ],
+            "answer": 3,
+            "explanation": "A good toString() makes debugging easier by showing an object's current state in a readable format."
+        },
+        {
+            "id": 13,
+            "type": "text",
+            "question": "What does StringBuilder do in toString()?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Builds objects"
+                },
+                {
+                    "type": "text",
+                    "value": "Efficiently constructs strings by appending without creating new String objects"
+                },
+                {
+                    "type": "text",
+                    "value": "Prevents string concatenation"
+                },
+                {
+                    "type": "text",
+                    "value": "Encrypts the output"
+                }
+            ],
+            "answer": 1,
+            "explanation": "StringBuilder efficiently builds strings through append operations, more efficient than repeated concatenation."
+        },
+        {
+            "id": 14,
+            "type": "text",
+            "question": "Can IDEs automatically generate toString()?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, it must be written manually"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, but understanding manual creation is valuable"
+                },
+                {
+                    "type": "text",
+                    "value": "Only in certain languages"
+                },
+                {
+                    "type": "text",
+                    "value": "Only for static methods"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Many IDEs can auto-generate toString(), but learning to write it manually helps you understand the concept."
+        },
+        {
+            "id": 15,
+            "type": "text",
+            "question": "When printing an array of objects, what advantage does toString() provide?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No advantage"
+                },
+                {
+                    "type": "text",
+                    "value": "Makes arrays run faster"
+                },
+                {
+                    "type": "text",
+                    "value": "Shows each object's readable state instead of memory addresses"
+                },
+                {
+                    "type": "text",
+                    "value": "Prevents printing"
+                }
+            ],
+            "answer": 2,
+            "explanation": "A good toString() transforms arrays of objects into readable, debuggable output."
+        },
+        {
+            "id": 16,
+            "type": "text",
+            "question": "What is the benefit of a well-implemented toString()?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "None; it's just for display"
+                },
+                {
+                    "type": "text",
+                    "value": "Improves performance"
+                },
+                {
+                    "type": "text",
+                    "value": "Prevents object creation"
+                },
+                {
+                    "type": "text",
+                    "value": "Creates self-documenting, maintainable classes that are easier to debug"
+                }
+            ],
+            "answer": 3,
+            "explanation": "A meaningful toString() makes code self-documenting and dramatically improves debugging capability."
+        }
+    ]
+}

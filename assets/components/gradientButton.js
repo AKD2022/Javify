@@ -32,7 +32,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
     alignItems: 'center',
     justifyContent: 'center',
-    display: "flex",
     flexDirection: "row"
   },
 
@@ -45,7 +44,6 @@ const styles = StyleSheet.create({
   icon: {
     alignItems: "center",
     display: "flex"
-
   }
 
 });

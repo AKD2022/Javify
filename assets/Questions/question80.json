@@ -1,0 +1,406 @@
+{
+    "lessonId": 80,
+    "title": "Writing equals() Methods",
+    "questions": [
+        {
+            "id": 1,
+            "type": "text",
+            "question": "What does the == operator compare for objects?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Their memory addresses (references)"
+                },
+                {
+                    "type": "text",
+                    "value": "Their data content"
+                },
+                {
+                    "type": "text",
+                    "value": "Their type"
+                },
+                {
+                    "type": "text",
+                    "value": "Their size"
+                }
+            ],
+            "answer": 0,
+            "explanation": "The == operator compares object references (memory addresses), not their content. Two objects with identical data are different if they're separate objects."
+        },
+        {
+            "id": 2,
+            "type": "text",
+            "question": "What purpose does equals() serve?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "It compares memory addresses"
+                },
+                {
+                    "type": "text",
+                    "value": "It compares object data content to determine meaningful equality"
+                },
+                {
+                    "type": "text",
+                    "value": "It creates objects"
+                },
+                {
+                    "type": "text",
+                    "value": "It deletes objects"
+                }
+            ],
+            "answer": 1,
+            "explanation": "equals() defines what it means for two objects to be equal based on their data, not their memory location."
+        },
+        {
+            "id": 3,
+            "type": "text",
+            "question": "What is the first step in a proper equals() implementation?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Check if fields are equal"
+                },
+                {
+                    "type": "text",
+                    "value": "Cast to the correct type"
+                },
+                {
+                    "type": "text",
+                    "value": "Check if the other object is the same instance using this"
+                },
+                {
+                    "type": "text",
+                    "value": "Check if null"
+                }
+            ],
+            "answer": 2,
+            "explanation": "The first check should be if (this == other) return true; because an object always equals itself."
+        },
+        {
+            "id": 4,
+            "type": "text",
+            "question": "What operator checks if an object is of the correct type?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "=="
+                },
+                {
+                    "type": "text",
+                    "value": "typeof"
+                },
+                {
+                    "type": "text",
+                    "value": "is"
+                },
+                {
+                    "type": "text",
+                    "value": "instanceof"
+                }
+            ],
+            "answer": 3,
+            "explanation": "The instanceof operator checks if an object is an instance of a specific class before casting."
+        },
+        {
+            "id": 5,
+            "type": "text",
+            "question": "How should you compare String fields in equals()?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Use the equals() method"
+                },
+                {
+                    "type": "text",
+                    "value": "Use the == operator"
+                },
+                {
+                    "type": "text",
+                    "value": "Use compareTo()"
+                },
+                {
+                    "type": "text",
+                    "value": "Strings cannot be compared"
+                }
+            ],
+            "answer": 0,
+            "explanation": "String fields must be compared using equals() because == compares references, not content."
+        },
+        {
+            "id": 6,
+            "type": "text",
+            "question": "Can primitive types use == in equals()?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, they must use equals()"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, primitives store values so == is safe"
+                },
+                {
+                    "type": "text",
+                    "value": "Only for integers"
+                },
+                {
+                    "type": "text",
+                    "value": "Only for booleans"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Primitive types store actual values, not references, so == safely compares their content."
+        },
+        {
+            "id": 7,
+            "type": "text",
+            "question": "What should equals() return when the parameter is null?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "true"
+                },
+                {
+                    "type": "text",
+                    "value": "null"
+                },
+                {
+                    "type": "text",
+                    "value": "false"
+                },
+                {
+                    "type": "text",
+                    "value": "Throw an exception"
+                }
+            ],
+            "answer": 2,
+            "explanation": "equals() should return false when comparing to null, as no object can be equal to null."
+        },
+        {
+            "id": 8,
+            "type": "text",
+            "question": "What does the parameter type Object mean?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Only Object instances can be compared"
+                },
+                {
+                    "type": "text",
+                    "value": "It limits comparisons to Objects"
+                },
+                {
+                    "type": "text",
+                    "value": "It prevents comparison with other types"
+                },
+                {
+                    "type": "text",
+                    "value": "equals() inherits from Object class, so parameter must be typed Object"
+                }
+            ],
+            "answer": 3,
+            "explanation": "The equals() method signature requires an Object parameter because it overrides the inherited method."
+        },
+        {
+            "id": 9,
+            "type": "text",
+            "question": "How do you compare nested objects in equals()?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Call their equals() methods recursively"
+                },
+                {
+                    "type": "text",
+                    "value": "Use == operator"
+                },
+                {
+                    "type": "text",
+                    "value": "Nested objects cannot be compared"
+                },
+                {
+                    "type": "text",
+                    "value": "Use Objects.deepEquals()"
+                }
+            ],
+            "answer": 0,
+            "explanation": "Call the nested object's equals() method to enable deep comparison of composed objects."
+        },
+        {
+            "id": 10,
+            "type": "text",
+            "question": "How do you compare arrays in equals()?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Use == operator"
+                },
+                {
+                    "type": "text",
+                    "value": "Use Arrays.equals() or loop through elements"
+                },
+                {
+                    "type": "text",
+                    "value": "Arrays cannot be compared"
+                },
+                {
+                    "type": "text",
+                    "value": "Use contains()"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Arrays.equals() compares array contents element-by-element, or you can loop manually."
+        },
+        {
+            "id": 11,
+            "type": "text",
+            "question": "What method safely compares fields that might be null?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "equals()"
+                },
+                {
+                    "type": "text",
+                    "value": "compareTo()"
+                },
+                {
+                    "type": "text",
+                    "value": "java.util.Objects.equals()"
+                },
+                {
+                    "type": "text",
+                    "value": "equals() is not null-safe"
+                }
+            ],
+            "answer": 2,
+            "explanation": "Objects.equals() handles null values safely, returning true if both are null."
+        },
+        {
+            "id": 12,
+            "type": "text",
+            "question": "Should you override hashCode() when overriding equals()?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, only equals() matters"
+                },
+                {
+                    "type": "text",
+                    "value": "Only if using String fields"
+                },
+                {
+                    "type": "text",
+                    "value": "Never override hashCode()"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, equal objects must have equal hash codes"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Equal objects must have equal hash codes for proper behavior with collections like HashMap."
+        },
+        {
+            "id": 13,
+            "type": "text",
+            "question": "When comparing to wrong type, what should equals() do?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Return false"
+                },
+                {
+                    "type": "text",
+                    "value": "Return true"
+                },
+                {
+                    "type": "text",
+                    "value": "Throw an exception"
+                },
+                {
+                    "type": "text",
+                    "value": "Crash"
+                }
+            ],
+            "answer": 0,
+            "explanation": "equals() should return false when comparing objects of different types."
+        },
+        {
+            "id": 14,
+            "type": "text",
+            "question": "What should you consider when deciding which fields define equality?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Always compare all fields"
+                },
+                {
+                    "type": "text",
+                    "value": "Include only fields significant to identity"
+                },
+                {
+                    "type": "text",
+                    "value": "Only compare changing fields"
+                },
+                {
+                    "type": "text",
+                    "value": "Never include fields"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Choose fields that define the object's identity; changing other fields shouldn't affect equality."
+        },
+        {
+            "id": 15,
+            "type": "text",
+            "question": "What annotation should equals() use?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "@Overwrite"
+                },
+                {
+                    "type": "text",
+                    "value": "@Equal"
+                },
+                {
+                    "type": "text",
+                    "value": "@Override"
+                },
+                {
+                    "type": "text",
+                    "value": "No annotation needed"
+                }
+            ],
+            "answer": 2,
+            "explanation": "The @Override annotation signals that equals() intentionally overrides the parent method."
+        },
+        {
+            "id": 16,
+            "type": "text",
+            "question": "Why is implementing equals() correctly important?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "It makes code run faster"
+                },
+                {
+                    "type": "text",
+                    "value": "It prevents errors"
+                },
+                {
+                    "type": "text",
+                    "value": "It simplifies syntax"
+                },
+                {
+                    "type": "text",
+                    "value": "It enables meaningful object comparison and correct collection behavior"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Correct equals() implementation enables meaningful object comparison and proper behavior with collections."
+        }
+    ]
+}

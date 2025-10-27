@@ -1,0 +1,262 @@
+{
+  "lessonId": 81,
+  "title": "Using Objects in Arrays",
+  "content": [
+    {
+      "type": "text",
+      "value": "Arrays aren't limited to primitive types like "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": "—they can store references to objects. An array of objects allows you to organize multiple instances of a class, making it possible to manage collections of related data with methods and behaviors. This is fundamental to building systems that handle multiple entities like students, products, or accounts."
+    },
+    {
+      "type": "text",
+      "value": "Declaring an array of objects follows the same syntax as primitive arrays, but uses the class name as the type."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    private String name;\n    private int studentID;\n    \n    public Student(String name, int id) {\n        this.name = name;\n        this.studentID = id;\n    }\n    \n    public String getName() {\n        return name;\n    }\n}\n\n// Declare and initialize array\nStudent[] students = new Student[3];\n\n// Create individual objects\nstudents[0] = new Student(\"Alice\", 101);\nstudents[1] = new Student(\"Bob\", 102);\nstudents[2] = new Student(\"Charlie\", 103);"
+    },
+    {
+      "type": "text",
+      "value": "The declaration "
+    },
+    {
+      "type": "code",
+      "value": "Student[]"
+    },
+    {
+      "type": "text",
+      "value": " creates an array that holds "
+    },
+    {
+      "type": "code",
+      "value": "Student"
+    },
+    {
+      "type": "text",
+      "value": " references. Initially, all elements are "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " until you assign actual objects."
+    },
+    {
+      "type": "text",
+      "value": "You can initialize an object array inline using array initializer syntax."
+    },
+    {
+      "type": "code",
+      "value": "public class Book {\n    private String title;\n    private double price;\n    \n    public Book(String title, double price) {\n        this.title = title;\n        this.price = price;\n    }\n    \n    public String getTitle() {\n        return title;\n    }\n}\n\n// Inline initialization\nBook[] books = {\n    new Book(\"Java Basics\", 29.99),\n    new Book(\"Python Guide\", 34.99),\n    new Book(\"C++ Programming\", 39.99)\n};"
+    },
+    {
+      "type": "text",
+      "value": "This creates and populates the array in one statement, convenient when you know all objects at creation time."
+    },
+    {
+      "type": "text",
+      "value": "Accessing objects in an array uses bracket notation, and you call methods on those objects using the dot operator."
+    },
+    {
+      "type": "code",
+      "value": "Student[] students = new Student[3];\nstudents[0] = new Student(\"Alice\", 101);\nstudents[1] = new Student(\"Bob\", 102);\nstudents[2] = new Student(\"Charlie\", 103);\n\n// Access and call methods\nSystem.out.println(students[0].getName());  // Alice\nSystem.out.println(students[1].getName());  // Bob\nSystem.out.println(students[2].getName());  // Charlie"
+    },
+    {
+      "type": "text",
+      "value": "The expression "
+    },
+    {
+      "type": "code",
+      "value": "students[0]"
+    },
+    {
+      "type": "text",
+      "value": " accesses the object at index 0, and "
+    },
+    {
+      "type": "code",
+      "value": ".getName()"
+    },
+    {
+      "type": "text",
+      "value": " calls that object's method."
+    },
+    {
+      "type": "text",
+      "value": "Looping through object arrays works like primitive arrays. Use a standard "
+    },
+    {
+      "type": "code",
+      "value": "for"
+    },
+    {
+      "type": "text",
+      "value": " loop or enhanced "
+    },
+    {
+      "type": "code",
+      "value": "for-each"
+    },
+    {
+      "type": "text",
+      "value": " loop."
+    },
+    {
+      "type": "code",
+      "value": "public class Product {\n    private String name;\n    private double price;\n    \n    public Product(String name, double price) {\n        this.name = name;\n        this.price = price;\n    }\n    \n    public double getPrice() {\n        return price;\n    }\n}\n\nProduct[] products = {\n    new Product(\"Laptop\", 999.99),\n    new Product(\"Mouse\", 29.99),\n    new Product(\"Keyboard\", 79.99)\n};\n\n// Standard for loop\nfor (int i = 0; i < products.length; i++) {\n    System.out.println(products[i].getPrice());\n}\n\n// Enhanced for loop\nfor (Product p : products) {\n    System.out.println(p.getPrice());\n}"
+    },
+    {
+      "type": "text",
+      "value": "Both loops print each product's price. The enhanced "
+    },
+    {
+      "type": "code",
+      "value": "for-each"
+    },
+    {
+      "type": "text",
+      "value": " loop is cleaner when you don't need the index."
+    },
+    {
+      "type": "text",
+      "value": "You can perform calculations and data processing on object arrays just like primitive arrays."
+    },
+    {
+      "type": "code",
+      "value": "public class Employee {\n    private String name;\n    private double salary;\n    \n    public Employee(String name, double salary) {\n        this.name = name;\n        this.salary = salary;\n    }\n    \n    public double getSalary() {\n        return salary;\n    }\n}\n\nEmployee[] employees = {\n    new Employee(\"Alice\", 60000),\n    new Employee(\"Bob\", 55000),\n    new Employee(\"Charlie\", 65000)\n};\n\n// Calculate total salary\ndouble totalSalary = 0;\nfor (Employee emp : employees) {\n    totalSalary += emp.getSalary();\n}\n\nSystem.out.println(\"Total: $\" + totalSalary);  // $180000.0"
+    },
+    {
+      "type": "text",
+      "value": "This accumulator pattern works with objects by calling their getter methods within the loop."
+    },
+    {
+      "type": "text",
+      "value": "Finding specific objects in an array requires comparing object properties."
+    },
+    {
+      "type": "code",
+      "value": "public class Car {\n    private String model;\n    private int year;\n    \n    public Car(String model, int year) {\n        this.model = model;\n        this.year = year;\n    }\n    \n    public String getModel() {\n        return model;\n    }\n    \n    public int getYear() {\n        return year;\n    }\n}\n\nCar[] cars = {\n    new Car(\"Tesla Model 3\", 2022),\n    new Car(\"Ford Mustang\", 2021),\n    new Car(\"Honda Civic\", 2023)\n};\n\n// Find car by model\nString searchModel = \"Ford Mustang\";\nCar foundCar = null;\n\nfor (Car car : cars) {\n    if (car.getModel().equals(searchModel)) {\n        foundCar = car;\n        break;\n    }\n}\n\nif (foundCar != null) {\n    System.out.println(\"Found: \" + foundCar.getYear());  // 2021\n}"
+    },
+    {
+      "type": "text",
+      "value": "The search compares each object's model using "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " and stores the matching object."
+    },
+    {
+      "type": "text",
+      "value": "Remember that array elements initially contain "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": ". Accessing methods on "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " causes "
+    },
+    {
+      "type": "code",
+      "value": "NullPointerException"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "Student[] students = new Student[5];\nstudents[0] = new Student(\"Alice\", 101);\n// students[1] through students[4] are null\n\n// Safe iteration with null check\nfor (int i = 0; i < students.length; i++) {\n    if (students[i] != null) {\n        System.out.println(students[i].getName());\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Always check for "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " before accessing object methods if the array might contain uninitialized elements."
+    },
+    {
+      "type": "text",
+      "value": "You can modify objects within an array through their methods."
+    },
+    {
+      "type": "code",
+      "value": "public class BankAccount {\n    private String accountNumber;\n    private double balance;\n    \n    public BankAccount(String number, double balance) {\n        this.accountNumber = number;\n        this.balance = balance;\n    }\n    \n    public void deposit(double amount) {\n        if (amount > 0) {\n            this.balance += amount;\n        }\n    }\n    \n    public double getBalance() {\n        return balance;\n    }\n}\n\nBankAccount[] accounts = {\n    new BankAccount(\"ACC001\", 1000),\n    new BankAccount(\"ACC002\", 2000),\n    new BankAccount(\"ACC003\", 1500)\n};\n\n// Deposit to all accounts\nfor (BankAccount account : accounts) {\n    account.deposit(100);\n}\n\nSystem.out.println(accounts[0].getBalance());  // 1100"
+    },
+    {
+      "type": "text",
+      "value": "Changes made through methods affect the actual objects in the array."
+    },
+    {
+      "type": "text",
+      "value": "Object arrays can be passed to methods and returned from methods."
+    },
+    {
+      "type": "code",
+      "value": "public class Grade {\n    private String subject;\n    private int score;\n    \n    public Grade(String subject, int score) {\n        this.subject = subject;\n        this.score = score;\n    }\n    \n    public int getScore() {\n        return score;\n    }\n}\n\npublic class GradeAnalyzer {\n    public double calculateAverage(Grade[] grades) {\n        if (grades.length == 0) return 0;\n        \n        int sum = 0;\n        for (Grade grade : grades) {\n            sum += grade.getScore();\n        }\n        return (double) sum / grades.length;\n    }\n    \n    public Grade[] getPassingGrades(Grade[] grades) {\n        int count = 0;\n        for (Grade grade : grades) {\n            if (grade.getScore() >= 60) count++;\n        }\n        \n        Grade[] passing = new Grade[count];\n        int index = 0;\n        for (Grade grade : grades) {\n            if (grade.getScore() >= 60) {\n                passing[index++] = grade;\n            }\n        }\n        return passing;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "These methods accept and return object arrays, enabling flexible data processing."
+    },
+    {
+      "type": "text",
+      "value": "Sorting object arrays requires comparing objects. You can implement custom sorting logic based on object properties."
+    },
+    {
+      "type": "code",
+      "value": "public class Person {\n    private String name;\n    private int age;\n    \n    public Person(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n    \n    public int getAge() {\n        return age;\n    }\n    \n    public String getName() {\n        return name;\n    }\n}\n\n// Simple bubble sort by age\nPerson[] people = {\n    new Person(\"Alice\", 25),\n    new Person(\"Bob\", 30),\n    new Person(\"Charlie\", 20)\n};\n\nfor (int i = 0; i < people.length - 1; i++) {\n    for (int j = 0; j < people.length - i - 1; j++) {\n        if (people[j].getAge() > people[j + 1].getAge()) {\n            Person temp = people[j];\n            people[j] = people[j + 1];\n            people[j + 1] = temp;\n        }\n    }\n}\n\n// Now sorted by age\nfor (Person p : people) {\n    System.out.println(p.getName() + \": \" + p.getAge());\n}"
+    },
+    {
+      "type": "text",
+      "value": "The sorting compares objects using their "
+    },
+    {
+      "type": "code",
+      "value": "getAge()"
+    },
+    {
+      "type": "text",
+      "value": " values and swaps object references."
+    },
+    {
+      "type": "text",
+      "value": "Object arrays combined with well-designed classes enable building complex data structures and systems. Understanding how to create, populate, traverse, and manipulate object arrays is essential for managing collections of related entities in your programs."
+    }
+  ]
+}

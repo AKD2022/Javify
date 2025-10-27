@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react';
-import { View, Text as RNText, TouchableOpacity, StyleSheet, SafeAreaView, Alert, Platform } from 'react-native';
+import { View, Text as RNText, TouchableOpacity, StyleSheet, Alert, Platform, ScrollView } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { quizzes } from '../utils/quizRegistry';
 import { auth, db } from '../../config/firebase';
@@ -9,6 +9,8 @@ import colors from '../../assets/components/colors';
 import { ProgressBar } from 'react-native-paper';
 import { updateDoc } from 'firebase/firestore';
 import { increment } from 'firebase/firestore';
+import { SafeAreaView } from 'react-native-safe-area-context';
+
 
 export default function QuizScreen() {
   const navigation = useNavigation();
@@ -308,43 +310,47 @@ export default function QuizScreen() {
         <ProgressBar progress={currentQuestionIndex / 4} style={styles.progressBar} theme={{ colors: { surfaceVariant: colors.unfilledProgressBar } }} />
       </View>
 
-      <View style={styles.questionContainer}>
-        <View style={styles.questionHeader}>
-          {currentQuestion.type === "code" ? (
-            <Text style={styles.codeText}>{currentQuestion.question}</Text>
-          ) : (
-            <Text style={styles.questionText}>{currentQuestion.question}</Text>
-          )}
+      <ScrollView
+        style={{ flex: 1 }}
+        contentContainerStyle={{ paddingBottom: 150 }} // prevents cut-off
+        showsVerticalScrollIndicator={false}
+      >
 
-          <TouchableOpacity onPress={handleBookmark} style={styles.inlineBookmarkButton}>
-            <MaterialIcons name={bookmarkedQuestions[currentQuestion.id] ? "bookmark" : "bookmark-border"} size={24} color={colors.bookmark} />
-          </TouchableOpacity>
+        <View style={styles.questionContainer}>
+          <View style={styles.questionHeader}>
+            {currentQuestion.type === "code" ? (
+              <Text style={styles.codeText}>{currentQuestion.question}</Text>
+            ) : (
+              <Text style={styles.questionText}>{currentQuestion.question}</Text>
+            )}
+
+            <TouchableOpacity onPress={handleBookmark} style={styles.inlineBookmarkButton}>
+              <MaterialIcons name={bookmarkedQuestions[currentQuestion.id] ? "bookmark" : "bookmark-border"} size={24} color={colors.bookmark} />
+            </TouchableOpacity>
+          </View>
+
+          {currentQuestion.options.map((option, idx) => {
+            const isSelected = selectedAnswers[currentQuestion.id] === idx;
+            return (
+              <TouchableOpacity
+                key={idx}
+                style={styles.optionButton}
+                onPress={() => handleSelectOption(idx)}
+              >
+                <View style={[styles.circle, isSelected && styles.circleSelected]} />
+                <View style={styles.optionContent}>
+                  {option.type === "code" ? (
+                    <Text style={styles.codeText}>{option.value}</Text>
+                  ) : (
+                    <Text style={styles.optionText}>{option.value}</Text>
+                  )}
+                </View>
+              </TouchableOpacity>
+            );
+          })}
         </View>
 
-        {currentQuestion.options.map((option, idx) => {
-          const isSelected = selectedAnswers[currentQuestion.id] === idx;
-          return (
-            <TouchableOpacity
-              key={idx}
-              style={styles.optionButton}
-              onPress={() => handleSelectOption(idx)}
-              activeOpacity={0.8}
-            >
-              <View style={[styles.circle, isSelected && styles.circleSelected]} />
-              <View style={styles.optionContent}>
-                {option.type === "code" ? (
-                  <Text style={styles.codeText}>{option.value}</Text>
-                ) : (
-                  <Text style={styles.optionText}>{option.value}</Text>
-                )}
-              </View>
-            </TouchableOpacity>
-          );
-        })}
-
-
-
-      </View>
+      </ScrollView>
 
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.backButton} onPress={handleBack} disabled={currentQuestionIndex === 0}>
@@ -374,12 +380,6 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 10,
     alignItems: "center",
-    justifyContent: "center",
-    ...Platform.select({
-      ios: {
-        margin: 20,
-      }
-    })
   },
 
   questionText: {
@@ -424,15 +424,15 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     flexWrap: 'wrap',
     textAlign: 'left',
-    marginHorizontal: 10,
+    marginHorizontal: 21,
   },
-
 
   navigationButtons: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 40,
     padding: 40,
+    marginRight: 50,
   },
 
   circle: {
@@ -479,7 +479,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 10,
     backgroundColor: colors.startQuizBackground,
-    width: "70%",
+    width: "68%",
     paddingVertical: 10,
     paddingHorizontal: 12,
   },
@@ -491,13 +491,7 @@ const styles = StyleSheet.create({
   progress: {
     display: "flex",
     marginBottom: 10,
-    marginTop: 20,
     alignItems: "right",
-    ...Platform.select({
-      ios: {
-        margin: 20,
-      }
-    })
   },
 
   progressBar: {
@@ -507,10 +501,9 @@ const styles = StyleSheet.create({
 
   questionHeader: {
     flexDirection: 'row',
-    justifyContent: 'space-evenly',
+    justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 12,
-    paddingLeft: 10,
     paddingRight: 10,
   },
 

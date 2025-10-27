@@ -1,0 +1,214 @@
+{
+    "lessonId": 82,
+    "title": "Copy Constructors and Cloning Intro",
+    "questions": [
+        {
+            "id": 1,
+            "type": "text",
+            "question": "What happens when you assign one object variable to another?",
+            "options": [
+                { "type": "text", "value": "You copy the reference, not the object itself" },
+                { "type": "text", "value": "You create a new independent object" },
+                { "type": "text", "value": "You delete the original object" },
+                { "type": "text", "value": "You merge both objects" }
+            ],
+            "answer": 0,
+            "explanation": "Assignment copies the reference (memory address), making both variables point to the same object."
+        },
+        {
+            "id": 2,
+            "type": "text",
+            "question": "What is a copy constructor?",
+            "options": [
+                { "type": "text", "value": "A method that deletes objects" },
+                { "type": "text", "value": "A constructor that creates a new object initialized with values from an existing object" },
+                { "type": "text", "value": "A constructor that merges two objects" },
+                { "type": "text", "value": "A constructor without parameters" }
+            ],
+            "answer": 1,
+            "explanation": "A copy constructor takes an existing object as a parameter and creates a new object with identical field values."
+        },
+        {
+            "id": 3,
+            "type": "text",
+            "question": "What parameter does a copy constructor accept?",
+            "options": [
+                { "type": "text", "value": "No parameters" },
+                { "type": "text", "value": "A String parameter" },
+                { "type": "text", "value": "An object of the same class type" },
+                { "type": "text", "value": "Multiple primitive parameters" }
+            ],
+            "answer": 2,
+            "explanation": "A copy constructor accepts an object of the same class type to copy its field values."
+        },
+        {
+            "id": 4,
+            "type": "text",
+            "question": "What does shallow copying do?",
+            "options": [
+                { "type": "text", "value": "Creates new objects for all fields" },
+                { "type": "text", "value": "Deletes the original object" },
+                { "type": "text", "value": "Merges objects together" },
+                { "type": "text", "value": "Copies field values directly, including references" }
+            ],
+            "answer": 3,
+            "explanation": "Shallow copying copies field values directly; for objects, this means copying references, not creating new objects."
+        },
+        {
+            "id": 5,
+            "type": "text",
+            "question": "Is shallow copying safe for primitive types and immutable objects?",
+            "options": [
+                { "type": "text", "value": "Yes, primitives and immutable objects like String are safe to shallow copy" },
+                { "type": "text", "value": "Only for booleans" },
+                { "type": "text", "value": "No, never use shallow copying" },
+                { "type": "text", "value": "Only for integers" }
+            ],
+            "answer": 0,
+            "explanation": "Shallow copying is safe for primitives (values copied) and immutable objects like String (cannot be changed)."
+        },
+        {
+            "id": 6,
+            "type": "text",
+            "question": "What problem occurs with shallow copying of mutable objects?",
+            "options": [
+                { "type": "text", "value": "Creates too many objects" },
+                { "type": "text", "value": "Both objects share references to the same nested object" },
+                { "type": "text", "value": "The copy is faster" },
+                { "type": "text", "value": "No problems occur" }
+            ],
+            "answer": 1,
+            "explanation": "Shallow copying mutable objects means both the original and copy share the same nested object, causing unintended coupling."
+        },
+        {
+            "id": 7,
+            "type": "text",
+            "question": "What is deep copying?",
+            "options": [
+                { "type": "text", "value": "Copying only primitive fields" },
+                { "type": "text", "value": "Copying references only" },
+                { "type": "text", "value": "Creating new objects for nested mutable objects, ensuring complete independence" },
+                { "type": "text", "value": "Deleting nested objects" }
+            ],
+            "answer": 2,
+            "explanation": "Deep copying creates new objects for all nested mutable objects, ensuring the copy is completely independent."
+        },
+        {
+            "id": 8,
+            "type": "text",
+            "question": "How do you deep copy a nested object in a copy constructor?",
+            "options": [
+                { "type": "text", "value": "Copy the reference directly" },
+                { "type": "text", "value": "Set it to null" },
+                { "type": "text", "value": "Ignore nested objects" },
+                { "type": "text", "value": "Create a new object using that object's copy constructor" }
+            ],
+            "answer": 3,
+            "explanation": "Deep copy by creating a new object using the nested object's copy constructor: new ClassName(other.nestedObject)."
+        },
+        {
+            "id": 9,
+            "type": "text",
+            "question": "How should arrays be handled in copy constructors?",
+            "options": [
+                { "type": "text", "value": "Create a new array and copy elements" },
+                { "type": "text", "value": "Copy the array reference directly" },
+                { "type": "text", "value": "Set array to null" },
+                { "type": "text", "value": "Arrays cannot be copied" }
+            ],
+            "answer": 0,
+            "explanation": "Create a new array of the same size and copy each element to ensure independence."
+        },
+        {
+            "id": 10,
+            "type": "text",
+            "question": "What happens if two objects share the same mutable nested object after shallow copying?",
+            "options": [
+                { "type": "text", "value": "They are independent" },
+                { "type": "text", "value": "Modifying through one affects the other" },
+                { "type": "text", "value": "The program crashes" },
+                { "type": "text", "value": "The nested object is deleted" }
+            ],
+            "answer": 1,
+            "explanation": "Shared nested objects mean changes through one object affect the other since they reference the same object."
+        },
+        {
+            "id": 11,
+            "type": "text",
+            "question": "Why are copy constructors useful when passing objects to methods?",
+            "options": [
+                { "type": "text", "value": "They make methods run faster" },
+                { "type": "text", "value": "They are not useful for methods" },
+                { "type": "text", "value": "They ensure the original object isn't accidentally modified" },
+                { "type": "text", "value": "They eliminate the need for parameters" }
+            ],
+            "answer": 2,
+            "explanation": "Copy constructors create independent copies, protecting the original from modifications made inside methods."
+        },
+        {
+            "id": 12,
+            "type": "text",
+            "question": "How do you call a copy constructor?",
+            "options": [
+                { "type": "text", "value": "ClassName copy = original;" },
+                { "type": "text", "value": "ClassName copy = copy(original);" },
+                { "type": "text", "value": "ClassName copy = clone(original);" },
+                { "type": "text", "value": "ClassName copy = new ClassName(original);" }
+            ],
+            "answer": 3,
+            "explanation": "Call a copy constructor like any constructor: ClassName copy = new ClassName(existingObject);"
+        },
+        {
+            "id": 13,
+            "type": "text",
+            "question": "Can a class have both a regular constructor and a copy constructor?",
+            "options": [
+                { "type": "text", "value": "Yes, they are overloaded constructors with different parameters" },
+                { "type": "text", "value": "No, only one constructor is allowed" },
+                { "type": "text", "value": "Only for primitive types" },
+                { "type": "text", "value": "Only if the class is static" }
+            ],
+            "answer": 0,
+            "explanation": "A class can have multiple constructors, including regular and copy constructors, differentiated by their parameters."
+        },
+        {
+            "id": 14,
+            "type": "text",
+            "question": "What makes String safe for shallow copying?",
+            "options": [
+                { "type": "text", "value": "It is a primitive type" },
+                { "type": "text", "value": "String has a special copy method" },
+                { "type": "text", "value": "String is immutable and cannot be changed" },
+                { "type": "text", "value": "String is never copied" }
+            ],
+            "answer": 2,
+            "explanation": "String is immutable—once created, it cannot be modified—so sharing references is safe."
+        },
+        {
+            "id": 15,
+            "type": "text",
+            "question": "What type of independence does deep copying provide?",
+            "options": [
+                { "type": "text", "value": "Partial independence" },
+                { "type": "text", "value": "Independence only for primitives" },
+                { "type": "text", "value": "Complete independence between original and copy" },
+                { "type": "text", "value": "No independence" }
+            ],
+            "answer": 2,
+            "explanation": "Deep copying creates new objects for all nested mutable components, ensuring complete independence."
+        },
+        {
+            "id": 16,
+            "type": "text",
+            "question": "Why is understanding copy constructors important?",
+            "options": [
+                { "type": "text", "value": "To make programs run faster" },
+                { "type": "text", "value": "To eliminate the need for classes" },
+                { "type": "text", "value": "To reduce memory usage" },
+                { "type": "text", "value": "To write robust programs that properly handle object duplication" }
+            ],
+            "answer": 3,
+            "explanation": "Copy constructors are essential for creating true copies of objects, preventing unintended shared state and ensuring robust programs."
+        }
+    ]
+}

@@ -1,0 +1,406 @@
+{
+    "lessonId": 78,
+    "title": "Method Overloading in Classes",
+    "questions": [
+        {
+            "id": 1,
+            "type": "text",
+            "question": "What is method overloading?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Having multiple methods with the same name but different parameter lists"
+                },
+                {
+                    "type": "text",
+                    "value": "Calling methods multiple times"
+                },
+                {
+                    "type": "text",
+                    "value": "Having methods that override parent class methods"
+                },
+                {
+                    "type": "text",
+                    "value": "Creating methods that return multiple values"
+                }
+            ],
+            "answer": 0,
+            "explanation": "Method overloading allows multiple methods with the same name to coexist if they have different parameter lists."
+        },
+        {
+            "id": 2,
+            "type": "text",
+            "question": "How does Java determine which overloaded method to call?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Based on the return type"
+                },
+                {
+                    "type": "text",
+                    "value": "Based on the number, types, and order of parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "Based on the method name length"
+                },
+                {
+                    "type": "text",
+                    "value": "Randomly"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Java matches the argument types and number to find the correct overloaded method."
+        },
+        {
+            "id": 3,
+            "type": "text",
+            "question": "Can return type alone determine method overloading?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Yes, different return types allow overloading"
+                },
+                {
+                    "type": "text",
+                    "value": "Only if parameters are also different"
+                },
+                {
+                    "type": "text",
+                    "value": "No, only parameter list determines overloading"
+                },
+                {
+                    "type": "text",
+                    "value": "Return type is the only thing that matters"
+                }
+            ],
+            "answer": 2,
+            "explanation": "Return type alone cannot determine overloading; the parameter list must differ for valid overloading."
+        },
+        {
+            "id": 4,
+            "type": "text",
+            "question": "What determines if two methods are different overloads?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Different method names"
+                },
+                {
+                    "type": "text",
+                    "value": "Different return types"
+                },
+                {
+                    "type": "text",
+                    "value": "Different access modifiers"
+                },
+                {
+                    "type": "text",
+                    "value": "Different parameter count, types, or order"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Valid overloads must have different parameter lists (different count, types, or order)."
+        },
+        {
+            "id": 5,
+            "type": "text",
+            "question": "Can constructors be overloaded?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Yes, constructors can be overloaded like methods"
+                },
+                {
+                    "type": "text",
+                    "value": "No, only one constructor per class"
+                },
+                {
+                    "type": "text",
+                    "value": "Only in static classes"
+                },
+                {
+                    "type": "text",
+                    "value": "Only with different return types"
+                }
+            ],
+            "answer": 0,
+            "explanation": "Constructors can be overloaded with different parameter lists, allowing flexible object creation."
+        },
+        {
+            "id": 6,
+            "type": "text",
+            "question": "What advantage does method overloading provide?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Makes code run faster"
+                },
+                {
+                    "type": "text",
+                    "value": "Users call one method name with different data types"
+                },
+                {
+                    "type": "text",
+                    "value": "Eliminates the need for parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "Prevents code errors"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Overloading provides a consistent interface where the same method name works with different parameter types."
+        },
+        {
+            "id": 7,
+            "type": "text",
+            "question": "Can the order of parameters matter in overloading?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, order doesn't matter"
+                },
+                {
+                    "type": "text",
+                    "value": "Only for static methods"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, methods with different parameter order are different overloads"
+                },
+                {
+                    "type": "text",
+                    "value": "Only for primitive types"
+                }
+            ],
+            "answer": 2,
+            "explanation": "Parameter order determines different overloads; a method(String, int) is different from method(int, String)."
+        },
+        {
+            "id": 8,
+            "type": "text",
+            "question": "Can overloading be used with static methods?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, overloading only works with instance methods"
+                },
+                {
+                    "type": "text",
+                    "value": "Only with one overload per class"
+                },
+                {
+                    "type": "text",
+                    "value": "Only if combined with instance methods"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, static methods can be overloaded"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Static methods can be overloaded just like instance methods, with different parameter lists."
+        },
+        {
+            "id": 9,
+            "type": "text",
+            "question": "What are varargs in method parameters?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Variable arguments allowing any number of parameters of one type"
+                },
+                {
+                    "type": "text",
+                    "value": "Variable return types"
+                },
+                {
+                    "type": "text",
+                    "value": "Variable class names"
+                },
+                {
+                    "type": "text",
+                    "value": "Virtual arguments"
+                }
+            ],
+            "answer": 0,
+            "explanation": "Varargs (type...) allows a method to accept zero or more arguments of a specified type."
+        },
+        {
+            "id": 10,
+            "type": "text",
+            "question": "How are varargs treated internally?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "As individual parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "As an array of that type"
+                },
+                {
+                    "type": "text",
+                    "value": "As optional parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "As special objects"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Varargs are internally converted to an array, allowing the method to iterate through all provided arguments."
+        },
+        {
+            "id": 11,
+            "type": "text",
+            "question": "When Java has both specific method and varargs, which is called?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Always the varargs"
+                },
+                {
+                    "type": "text",
+                    "value": "Always the specific method"
+                },
+                {
+                    "type": "text",
+                    "value": "The specific method is preferred"
+                },
+                {
+                    "type": "text",
+                    "value": "Random selection"
+                }
+            ],
+            "answer": 2,
+            "explanation": "Java prefers specific method matches over varargs, providing more predictable behavior."
+        },
+        {
+            "id": 12,
+            "type": "text",
+            "question": "What does System.out.println() demonstrate?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "That methods cannot be overloaded"
+                },
+                {
+                    "type": "text",
+                    "value": "That all methods must have the same name"
+                },
+                {
+                    "type": "text",
+                    "value": "That only static methods can be called"
+                },
+                {
+                    "type": "text",
+                    "value": "That method overloading works for different data types"
+                }
+            ],
+            "answer": 3,
+            "explanation": "println() has many overloaded versions for different types (int, String, double, etc.), demonstrating practical overloading."
+        },
+        {
+            "id": 13,
+            "type": "text",
+            "question": "Can overloading combine with other methods?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Yes, overloading can combine with specific methods and varargs"
+                },
+                {
+                    "type": "text",
+                    "value": "No, overloading must be isolated"
+                },
+                {
+                    "type": "text",
+                    "value": "Only with varargs"
+                },
+                {
+                    "type": "text",
+                    "value": "Only with static methods"
+                }
+            ],
+            "answer": 0,
+            "explanation": "Overloading can combine specific parameter versions with varargs for maximum flexibility."
+        },
+        {
+            "id": 14,
+            "type": "text",
+            "question": "When should you NOT use method overloading?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "For similar operations on different types"
+                },
+                {
+                    "type": "text",
+                    "value": "When methods do fundamentally different things"
+                },
+                {
+                    "type": "text",
+                    "value": "For flexibility"
+                },
+                {
+                    "type": "text",
+                    "value": "Never; always use overloading"
+                }
+            ],
+            "answer": 1,
+            "explanation": "If methods perform different operations, give them different names rather than overloading."
+        },
+        {
+            "id": 15,
+            "type": "text",
+            "question": "What makes method overloading useful?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "It confuses programmers intentionally"
+                },
+                {
+                    "type": "text",
+                    "value": "It eliminates the need for classes"
+                },
+                {
+                    "type": "text",
+                    "value": "It provides consistent naming for similar operations on different types"
+                },
+                {
+                    "type": "text",
+                    "value": "It makes code run faster"
+                }
+            ],
+            "answer": 2,
+            "explanation": "Overloading improves usability by letting programmers use one familiar method name with various data types."
+        },
+        {
+            "id": 16,
+            "type": "text",
+            "question": "How do you write a varargs parameter?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "type[] paramName"
+                },
+                {
+                    "type": "text",
+                    "value": "type* paramName"
+                },
+                {
+                    "type": "text",
+                    "value": "type paramName..."
+                },
+                {
+                    "type": "text",
+                    "value": "type... paramName"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Varargs use the syntax type... paramName, where the three dots indicate variable arguments."
+        }
+    ]
+}

@@ -25,7 +25,7 @@ const colors = {
     black: "#000",
     gray: "#d8dae0",
 
-    unfilledProgressBar: "#6c6c6c53",
+    unfilledProgressBar: "#c4c1c153",
 
     linkColor: "#3B82F6",
     signUpInputBackgroundColor: "#E5E7EB",

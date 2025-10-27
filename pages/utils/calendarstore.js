@@ -7,7 +7,7 @@ import { Alert } from 'react-native';
 
 let calendarItems = {};
 
-export const loadCalendar = async (user, lessonScores) => {
+export const loadCalendar = async (user, lessonScores = {}) => {
   if (!user) return;
 
   calendarItems = {}; // clear previous cache
@@ -30,7 +30,7 @@ export const loadCalendar = async (user, lessonScores) => {
 
       const dateStr = lessonDate.toISOString().split('T')[0];
       if (!calendarItems[dateStr]) calendarItems[dateStr] = [];
-      calendarItems[dateStr].push({ id: data.lessonId, name: `Lesson ${data.lessonId.replace('lesson','')}` });
+      calendarItems[dateStr].push({ id: data.lessonId, name: `Lesson ${data.lessonId.replace('lesson', '')}` });
     });
     console.log('Loaded calendar from Firestore:', calendarItems);
     return;
@@ -54,22 +54,28 @@ export const loadCalendar = async (user, lessonScores) => {
 
   let currentDate = new Date(startDate);
 
+  const writePromises = [];
+
   for (const unit of units) {
     for (const lesson of unit.lessons) {
       if (lessonScores[lesson.id] === 4) continue;
 
       const dateStr = currentDate.toISOString().split('T')[0];
       if (!calendarItems[dateStr]) calendarItems[dateStr] = [];
-      calendarItems[dateStr].push({ id: lesson.id, name: lesson.title || `Lesson ${lesson.id.replace('lesson','')}` });
+      calendarItems[dateStr].push({ id: lesson.id, name: lesson.title || `Lesson ${lesson.id.replace('lesson', '')}` });
 
-      // Save to Firestore
-      await setDoc(doc(calendarRef, lesson.id), { lessonId: lesson.id, date: dateStr });
+      // schedule Firestore write
+      writePromises.push(setDoc(doc(calendarRef, lesson.id), { lessonId: lesson.id, date: dateStr }));
 
       if (calendarItems[dateStr].length >= lessonsPerDay) {
         currentDate.setDate(currentDate.getDate() + 1);
       }
     }
   }
+
+  // wait for all writes at once
+  await Promise.all(writePromises);
+
 
   console.log('Built new calendar:', calendarItems);
 };
@@ -78,5 +84,5 @@ export const getCalendarItems = () => ({ ...calendarItems });
 
 export const addOrUpdateCalendarItem = (lessonId, dateStr) => {
   if (!calendarItems[dateStr]) calendarItems[dateStr] = [];
-  calendarItems[dateStr].push({ id: lessonId, name: `Lesson ${lessonId.replace('lesson','')}` });
+  calendarItems[dateStr].push({ id: lessonId, name: `Lesson ${lessonId.replace('lesson', '')}` });
 };

@@ -11,11 +11,11 @@ import { TouchableOpacity } from 'react-native'
 import { CommonActions } from '@react-navigation/native'
 import colors from '../../assets/components/colors'
 import GradientButton from '../../assets/components/gradientButton'
-import { MaterialIcons } from '@expo/vector-icons'
+import { Ionicons, MaterialIcons } from '@expo/vector-icons'
 
 export default function DateSelectionScreen() {
     registerTranslation('en-GB', enGB)
-    
+
     const [startDateLocal, setStartDateLocal] = useState(undefined);
     const [endDateLocal, setEndDateLocal] = useState(undefined);
     const [startOpen, setStartOpen] = useState(false);
@@ -24,7 +24,7 @@ export default function DateSelectionScreen() {
 
     const Text = (props) => (
         <RNText {...props} style={[{ fontFamily: 'Poppins-Regular' }, props.style]} />
-      );
+    );
 
     const onDismissStartSingle = useCallback(() => {
         setStartOpen(false);
@@ -62,9 +62,9 @@ export default function DateSelectionScreen() {
     return (
         <SafeAreaView style={styles.container}>
 
-            <View style={{alignItems: "center"}}>
-                <MaterialIcons name="calendar-today" color={colors.gray} size={50}/>
-                <Text style={{color: colors.gray, paddingBottom: 20, }}>Select a starting date and an end date</Text>
+            <View style={{ alignItems: "center" }}>
+                <MaterialIcons name="calendar-today" color={colors.gray} size={50} />
+                <Text style={{ color: colors.gray, paddingBottom: 20, }}>Select a starting date and an end date</Text>
             </View>
 
             <TouchableOpacity onPress={() => setStartOpen(true)} uppercase={true} mode="outlined" style={styles.floatingButton}>
@@ -97,8 +97,8 @@ export default function DateSelectionScreen() {
                 onConfirm={onConfirmEndSingle}
             />
 
-            <GradientButton  title={"Confirm Dates"} onPress={() => navigation.navigate("Home")} style={styles.confirmButton}/>
-                
+            <GradientButton title={"Confirm Dates"} onPress={() => navigation.navigate("MainTabs")} style={styles.buttonText}/>
+
         </SafeAreaView>
     )
 }
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
         padding: 20,
         alignItems: "center",
         justifyContent: "center",
-        textAlign: "left",
+        textAlign: "center",
     },
 
     floatingButton: {
@@ -127,6 +127,8 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.3,
         shadowRadius: 2,
+        alignItems: "center",
+        justifyContent: "center"
     },
 
     confirmButton: {
@@ -134,19 +136,21 @@ const styles = StyleSheet.create({
         backgroundColor: colors.basicButton,
         width: "100%",
         padding: 15,
-        textAlign: "center",
-        alignItems: "center",
         borderRadius: 10,
         elevation: 5,
         shadowColor: '#000',
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.3,
         shadowRadius: 2,
+        
     },
 
     buttonText: {
         color: '#fff',
         fontSize: 16,
-        fontFamily: "Poppins-Bold"
+        fontFamily: "Poppins-Bold",
+        textAlign: "center",
+        borderRadius: 10, 
+
     },
 });

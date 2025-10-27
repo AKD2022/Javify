@@ -1,0 +1,406 @@
+{
+    "lessonId": 74,
+    "title": "Mutator (setter) Methods",
+    "questions": [
+        {
+            "id": 1,
+            "type": "text",
+            "question": "What is a mutator method (setter)?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "A method that modifies the value of an instance variable"
+                },
+                {
+                    "type": "text",
+                    "value": "A method that returns instance variable values"
+                },
+                {
+                    "type": "text",
+                    "value": "A method that creates new objects"
+                },
+                {
+                    "type": "text",
+                    "value": "A method that deletes objects"
+                }
+            ],
+            "answer": 0,
+            "explanation": "A setter (mutator) modifies instance variable values, allowing controlled changes to an object's state."
+        },
+        {
+            "id": 2,
+            "type": "text",
+            "question": "What is the standard naming convention for a setter method?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "modify followed by the variable name"
+                },
+                {
+                    "type": "text",
+                    "value": "set followed by the variable name with first letter capitalized"
+                },
+                {
+                    "type": "text",
+                    "value": "change followed by the variable name"
+                },
+                {
+                    "type": "text",
+                    "value": "update followed by the variable name"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Setter methods follow the pattern setVariableName(), where the first letter after 'set' is capitalized."
+        },
+        {
+            "id": 3,
+            "type": "text",
+            "question": "What is the return type of a setter method?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "The same type as the instance variable"
+                },
+                {
+                    "type": "text",
+                    "value": "String"
+                },
+                {
+                    "type": "text",
+                    "value": "void"
+                },
+                {
+                    "type": "text",
+                    "value": "boolean"
+                }
+            ],
+            "answer": 2,
+            "explanation": "Setter methods always return void because they modify state rather than return values."
+        },
+        {
+            "id": 4,
+            "type": "text",
+            "question": "How many parameters does a typical setter method have?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "Multiple parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "Setters never have parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "One parameter of the same type as the instance variable"
+                }
+            ],
+            "answer": 3,
+            "explanation": "A standard setter takes one parameter of the same type as the instance variable it modifies."
+        },
+        {
+            "id": 5,
+            "type": "text",
+            "question": "What is the primary purpose of validation in setters?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "To prevent invalid data from entering an object"
+                },
+                {
+                    "type": "text",
+                    "value": "To make code run faster"
+                },
+                {
+                    "type": "text",
+                    "value": "To eliminate instance variables"
+                },
+                {
+                    "type": "text",
+                    "value": "To call getters automatically"
+                }
+            ],
+            "answer": 0,
+            "explanation": "Validation in setters acts as a gatekeeper, ensuring only acceptable values are stored in instance variables."
+        },
+        {
+            "id": 6,
+            "type": "text",
+            "question": "What happens if a setter receives an invalid value?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "It always accepts the value"
+                },
+                {
+                    "type": "text",
+                    "value": "It might silently reject the value and keep the current value unchanged"
+                },
+                {
+                    "type": "text",
+                    "value": "It deletes the object"
+                },
+                {
+                    "type": "text",
+                    "value": "It always crashes"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Well-designed setters validate input and silently reject invalid values, preserving the object's state."
+        },
+        {
+            "id": 7,
+            "type": "text",
+            "question": "How do you call a setter method to modify a value?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "objectName.variableName = value"
+                },
+                {
+                    "type": "text",
+                    "value": "set(objectName.variableName)"
+                },
+                {
+                    "type": "text",
+                    "value": "objectName.setVariableName(value)"
+                },
+                {
+                    "type": "text",
+                    "value": "objectName.set(value)"
+                }
+            ],
+            "answer": 2,
+            "explanation": "You call a setter using objectName.setVariableName(value), passing the new value as an argument."
+        },
+        {
+            "id": 8,
+            "type": "text",
+            "question": "Can a setter perform operations beyond simple assignment?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, setters only assign values"
+                },
+                {
+                    "type": "text",
+                    "value": "Only with primitive types"
+                },
+                {
+                    "type": "text",
+                    "value": "Only in static methods"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, setters can perform calculations, update related variables, and trigger side effects"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Setters can perform complex operations, such as updating multiple variables or recording when changes occur."
+        },
+        {
+            "id": 9,
+            "type": "text",
+            "question": "Why use setters instead of directly modifying instance variables?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Setters enable validation, encapsulation, and controlled modification"
+                },
+                {
+                    "type": "text",
+                    "value": "Setters are slower so make code seem intentional"
+                },
+                {
+                    "type": "text",
+                    "value": "Setters eliminate the need for variables"
+                },
+                {
+                    "type": "text",
+                    "value": "There is no advantage; they are equivalent"
+                }
+            ],
+            "answer": 0,
+            "explanation": "Setters provide encapsulation, allow validation, and prevent invalid data from corrupting object state."
+        },
+        {
+            "id": 10,
+            "type": "text",
+            "question": "What is an object invariant?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "A method that never changes"
+                },
+                {
+                    "type": "text",
+                    "value": "A property that must always be true about an object"
+                },
+                {
+                    "type": "text",
+                    "value": "A type of getter"
+                },
+                {
+                    "type": "text",
+                    "value": "A variable that stores an object"
+                }
+            ],
+            "answer": 1,
+            "explanation": "An invariant is a property that must remain true; setters help maintain invariants by validating changes."
+        },
+        {
+            "id": 11,
+            "type": "text",
+            "question": "Can you use this in a setter like you do in a getter?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, this only works in getters"
+                },
+                {
+                    "type": "text",
+                    "value": "Only for primitive types"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, this helps distinguish instance variables from parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "Only in constructors"
+                }
+            ],
+            "answer": 2,
+            "explanation": "Using this in setters distinguishes instance variables from parameters, preventing bugs when names match."
+        },
+        {
+            "id": 12,
+            "type": "text",
+            "question": "What is the difference between setName and setname?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "They are equivalent"
+                },
+                {
+                    "type": "text",
+                    "value": "setname is more efficient"
+                },
+                {
+                    "type": "text",
+                    "value": "setName only works with Strings"
+                },
+                {
+                    "type": "text",
+                    "value": "setName follows Java naming conventions; setname does not"
+                }
+            ],
+            "answer": 3,
+            "explanation": "setName follows Java naming conventions (camelCase with capital letter after 'set'); setname is non-standard and unprofessional."
+        },
+        {
+            "id": 13,
+            "type": "text",
+            "question": "How do you implement a setter that accepts only positive numbers?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "public void setNumber(int n) { if (n > 0) { this.number = n; } }"
+                },
+                {
+                    "type": "text",
+                    "value": "public void setNumber(int n) { number = n; }"
+                },
+                {
+                    "type": "text",
+                    "value": "public int setNumber(int n) { return n; }"
+                },
+                {
+                    "type": "text",
+                    "value": "Setters cannot validate"
+                }
+            ],
+            "answer": 0,
+            "explanation": "A validating setter uses an if statement to check the value before assigning it to the instance variable."
+        },
+        {
+            "id": 14,
+            "type": "text",
+            "question": "What is the relationship between getters and setters?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "They are unrelated"
+                },
+                {
+                    "type": "text",
+                    "value": "Getters and setters work together to provide controlled access to instance variables"
+                },
+                {
+                    "type": "text",
+                    "value": "Getters are always faster"
+                },
+                {
+                    "type": "text",
+                    "value": "Only getters are necessary"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Getters and setters form a complete encapsulation pattern: getters provide read access, setters provide validated write access."
+        },
+        {
+            "id": 15,
+            "type": "text",
+            "question": "Can a setter modify multiple instance variables?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, setters modify only one variable"
+                },
+                {
+                    "type": "text",
+                    "value": "Only if using static methods"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, a setter can modify multiple related variables"
+                },
+                {
+                    "type": "text",
+                    "value": "Only for primitive types"
+                }
+            ],
+            "answer": 2,
+            "explanation": "A setter can modify multiple instance variables if necessary, such as updating both a value and a timestamp."
+        },
+        {
+            "id": 16,
+            "type": "text",
+            "question": "What makes a setter effective at maintaining data integrity?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Its name contains 'set'"
+                },
+                {
+                    "type": "text",
+                    "value": "It always accepts every value"
+                },
+                {
+                    "type": "text",
+                    "value": "It returns the modified value"
+                },
+                {
+                    "type": "text",
+                    "value": "It validates all changes and prevents invalid states"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Effective setters validate input, enforce constraints, and prevent invalid data from corrupting object state."
+        }
+    ]
+}

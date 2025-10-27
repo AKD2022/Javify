@@ -1,0 +1,442 @@
+{
+  "lessonId": 87,
+  "title": "Recap and Mini Project: Design a Class",
+  "content": [
+    {
+      "type": "text",
+      "value": "You've learned the fundamentals of writing classes and working with objects throughout this unit. Now it's time to apply everything together by designing a complete class from scratch. This lesson guides you through the process of creating a well-structured class that demonstrates proper encapsulation, constructors, methods, and object-oriented design principles."
+    },
+    {
+      "type": "text",
+      "value": "Designing a class begins with identifying what data the class needs to store and what behaviors it should provide. Consider a "
+    },
+    {
+      "type": "code",
+      "value": "Book"
+    },
+    {
+      "type": "text",
+      "value": " class that represents books in a library system. A book has properties like title, author, page count, and whether it's currently checked out. These properties become your instance variables."
+    },
+    {
+      "type": "code",
+      "value": "public class Book {\n    private String title;\n    private String author;\n    private int pageCount;\n    private boolean isCheckedOut;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Notice how all instance variables use the "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "text",
+      "value": " access modifier. Encapsulation protects your data from direct outside access, forcing users of your class to interact with it through well-defined methods. This design principle gives you control over how data gets modified and ensures objects remain in valid states."
+    },
+    {
+      "type": "text",
+      "value": "Every class needs at least one constructor to initialize new objects. Your constructor should accept parameters for essential information and set up the object in a valid initial state. For a book, the title, author, and page count are essential, while the checked-out status starts as "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " since new books aren't borrowed yet."
+    },
+    {
+      "type": "code",
+      "value": "public Book(String title, String author, int pageCount) {\n    this.title = title;\n    this.author = author;\n    this.pageCount = pageCount;\n    this.isCheckedOut = false;\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " keyword distinguishes between parameters and instance variables when they share the same names. Using "
+    },
+    {
+      "type": "code",
+      "value": "this.title"
+    },
+    {
+      "type": "text",
+      "value": " refers to the instance variable, while "
+    },
+    {
+      "type": "code",
+      "value": "title"
+    },
+    {
+      "type": "text",
+      "value": " alone refers to the parameter. This pattern appears in nearly every constructor you'll write."
+    },
+    {
+      "type": "text",
+      "value": "Accessor methods, commonly called getters, allow controlled read access to your private instance variables. Each getter returns the value of one instance variable without modifying anything. These methods typically follow a naming pattern: "
+    },
+    {
+      "type": "code",
+      "value": "get"
+    },
+    {
+      "type": "text",
+      "value": " followed by the capitalized variable name."
+    },
+    {
+      "type": "code",
+      "value": "public String getTitle() {\n    return title;\n}\n\npublic String getAuthor() {\n    return author;\n}\n\npublic int getPageCount() {\n    return pageCount;\n}\n\npublic boolean isCheckedOut() {\n    return isCheckedOut;\n}"
+    },
+    {
+      "type": "text",
+      "value": "For "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " variables, the getter often starts with "
+    },
+    {
+      "type": "code",
+      "value": "is"
+    },
+    {
+      "type": "text",
+      "value": " instead of "
+    },
+    {
+      "type": "code",
+      "value": "get"
+    },
+    {
+      "type": "text",
+      "value": ", making the code read more naturally. Calling "
+    },
+    {
+      "type": "code",
+      "value": "book.isCheckedOut()"
+    },
+    {
+      "type": "text",
+      "value": " sounds better than "
+    },
+    {
+      "type": "code",
+      "value": "book.getIsCheckedOut()"
+    },
+    {
+      "type": "text",
+      "value": ", even though both would work technically."
+    },
+    {
+      "type": "text",
+      "value": "Mutator methods, known as setters, allow controlled write access to modify instance variables. However, you shouldn't blindly create setters for every variable. Some properties, like a book's title or author, probably shouldn't change after the book is created. The checked-out status, though, needs to change when books get borrowed or returned."
+    },
+    {
+      "type": "code",
+      "value": "public void checkOut() {\n    if (!isCheckedOut) {\n        isCheckedOut = true;\n        System.out.println(title + \" has been checked out.\");\n    } else {\n        System.out.println(title + \" is already checked out.\");\n    }\n}\n\npublic void returnBook() {\n    if (isCheckedOut) {\n        isCheckedOut = false;\n        System.out.println(title + \" has been returned.\");\n    } else {\n        System.out.println(title + \" was not checked out.\");\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "These methods provide more meaningful behavior than a simple setter. Instead of just changing the "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " value, they check the current state and provide feedback. This demonstrates how methods can enforce business logic and prevent invalid operations."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "toString()"
+    },
+    {
+      "type": "text",
+      "value": " method creates a string representation of your object that's useful for debugging and displaying information. This method should return a clear, readable summary of the object's current state, including key instance variables."
+    },
+    {
+      "type": "code",
+      "value": "public String toString() {\n    String status = isCheckedOut ? \"Checked Out\" : \"Available\";\n    return \"Book[title=\" + title + \", author=\" + author + \n           \", pages=\" + pageCount + \", status=\" + status + \"]\";\n}"
+    },
+    {
+      "type": "text",
+      "value": "With "
+    },
+    {
+      "type": "code",
+      "value": "toString()"
+    },
+    {
+      "type": "text",
+      "value": " implemented, you can print book objects directly and get meaningful output. The ternary operator ("
+    },
+    {
+      "type": "code",
+      "value": "? :"
+    },
+    {
+      "type": "text",
+      "value": ") provides a concise way to set the status string based on the "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": " value, making the output more user-friendly than just printing "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " or "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " method determines whether two book objects represent the same book. For books, you might consider them equal if they have the same title and author, regardless of other properties. This method takes an "
+    },
+    {
+      "type": "code",
+      "value": "Object"
+    },
+    {
+      "type": "text",
+      "value": " parameter and returns a "
+    },
+    {
+      "type": "code",
+      "value": "boolean"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "public boolean equals(Object other) {\n    if (other instanceof Book) {\n        Book otherBook = (Book) other;\n        return this.title.equals(otherBook.title) && \n               this.author.equals(otherBook.author);\n    }\n    return false;\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "instanceof"
+    },
+    {
+      "type": "text",
+      "value": " operator checks whether the parameter is actually a "
+    },
+    {
+      "type": "code",
+      "value": "Book"
+    },
+    {
+      "type": "text",
+      "value": " object before attempting to compare. If it is, you cast it to "
+    },
+    {
+      "type": "code",
+      "value": "Book"
+    },
+    {
+      "type": "text",
+      "value": " type so you can access its title and author. This pattern prevents errors when comparing objects of different types."
+    },
+    {
+      "type": "text",
+      "value": "Now you can create and use "
+    },
+    {
+      "type": "code",
+      "value": "Book"
+    },
+    {
+      "type": "text",
+      "value": " objects in a test program. Creating several books and calling various methods demonstrates whether your class works correctly across different scenarios."
+    },
+    {
+      "type": "code",
+      "value": "public class LibraryTest {\n    public static void main(String[] args) {\n        Book book1 = new Book(\"To Kill a Mockingbird\", \"Harper Lee\", 324);\n        Book book2 = new Book(\"1984\", \"George Orwell\", 328);\n        Book book3 = new Book(\"To Kill a Mockingbird\", \"Harper Lee\", 324);\n        \n        System.out.println(book1);\n        System.out.println(book2);\n        \n        book1.checkOut();\n        System.out.println(book1);\n        \n        book1.returnBook();\n        System.out.println(book1);\n        \n        System.out.println(\"book1 equals book3? \" + book1.equals(book3));\n        System.out.println(\"book1 equals book2? \" + book1.equals(book2));\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This test program creates three book objects and exercises the class's functionality. It prints books to test "
+    },
+    {
+      "type": "code",
+      "value": "toString()"
+    },
+    {
+      "type": "text",
+      "value": ", checks out and returns a book to test those methods, and compares books using "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": ". Running this reveals whether your class behaves correctly."
+    },
+    {
+      "type": "text",
+      "value": "When designing your own classes, follow this process: identify what data needs storage as instance variables, determine what access modifiers protect that data appropriately, write a constructor that initializes objects to valid states, create accessor methods for reading data, add mutator methods or specialized behavior methods for modifying data safely, implement "
+    },
+    {
+      "type": "code",
+      "value": "toString()"
+    },
+    {
+      "type": "text",
+      "value": " for debugging and display purposes, and consider adding "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " if objects need comparison."
+    },
+    {
+      "type": "text",
+      "value": "A well-designed class has clear responsibilities, maintains encapsulation by keeping instance variables private, provides meaningful methods rather than just basic getters and setters, validates inputs to prevent invalid states, and includes helpful methods like "
+    },
+    {
+      "type": "code",
+      "value": "toString()"
+    },
+    {
+      "type": "text",
+      "value": " for debugging."
+    },
+    {
+      "type": "text",
+      "value": "Consider another example: a "
+    },
+    {
+      "type": "code",
+      "value": "Student"
+    },
+    {
+      "type": "text",
+      "value": " class for tracking grades. This class stores a student's name and an array of test scores, providing methods to add scores, calculate averages, and determine letter grades."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    private String name;\n    private int[] scores;\n    private int scoreCount;\n    \n    public Student(String name) {\n        this.name = name;\n        this.scores = new int[10];\n        this.scoreCount = 0;\n    }\n    \n    public void addScore(int score) {\n        if (scoreCount < scores.length) {\n            scores[scoreCount] = score;\n            scoreCount++;\n        } else {\n            System.out.println(\"Cannot add more scores\");\n        }\n    }\n    \n    public double getAverage() {\n        if (scoreCount == 0) {\n            return 0.0;\n        }\n        int sum = 0;\n        for (int i = 0; i < scoreCount; i++) {\n            sum += scores[i];\n        }\n        return (double) sum / scoreCount;\n    }\n    \n    public String getLetterGrade() {\n        double avg = getAverage();\n        if (avg >= 90) return \"A\";\n        else if (avg >= 80) return \"B\";\n        else if (avg >= 70) return \"C\";\n        else if (avg >= 60) return \"D\";\n        else return \"F\";\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This "
+    },
+    {
+      "type": "code",
+      "value": "Student"
+    },
+    {
+      "type": "text",
+      "value": " class demonstrates more complex behavior. The "
+    },
+    {
+      "type": "code",
+      "value": "addScore()"
+    },
+    {
+      "type": "text",
+      "value": " method validates that there's room for more scores. The "
+    },
+    {
+      "type": "code",
+      "value": "getAverage()"
+    },
+    {
+      "type": "text",
+      "value": " method handles the case where no scores exist yet, preventing division by zero. The "
+    },
+    {
+      "type": "code",
+      "value": "getLetterGrade()"
+    },
+    {
+      "type": "text",
+      "value": " method builds on "
+    },
+    {
+      "type": "code",
+      "value": "getAverage()"
+    },
+    {
+      "type": "text",
+      "value": ", showing how methods can use other methods within the same class."
+    },
+    {
+      "type": "text",
+      "value": "As you design classes, think about what operations users of your class will need to perform. Don't just provide raw access to data through getters and setters. Instead, create methods that perform meaningful operations and maintain your object in valid states. A good class hides implementation details while providing a clean, intuitive interface for others to use."
+    },
+    {
+      "type": "text",
+      "value": "Now it's your turn to practice. Design a class of your choice - perhaps a "
+    },
+    {
+      "type": "code",
+      "value": "BankAccount"
+    },
+    {
+      "type": "text",
+      "value": " with deposit and withdrawal methods, a "
+    },
+    {
+      "type": "code",
+      "value": "Movie"
+    },
+    {
+      "type": "text",
+      "value": " with rating and review tracking, or a "
+    },
+    {
+      "type": "code",
+      "value": "GameCharacter"
+    },
+    {
+      "type": "text",
+      "value": " with health and inventory management. Apply all the principles you've learned: encapsulation, constructors, meaningful methods, input validation, and helpful utility methods. Test your class thoroughly to ensure it works as intended."
+    }
+  ]
+}

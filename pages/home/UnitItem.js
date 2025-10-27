@@ -9,24 +9,28 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 const UnitItem = ({ unit, scoresState, unitIndex, units }) => {
   const navigation = useNavigation();
-  const nextLesson = unit.lessons.find((lesson) => !scoresState[lesson.id] || scoresState[lesson.id] < 4) 
-  || unit.lessons[0];
-
-
+  
   const Text = (props) => (
     <RNText {...props} style={[{ fontFamily: "Poppins-Regular" }, props.style]} />
   );
 
-  // Calculate progress
-  const totalLessons = unit.lessons.length;
-  const completedLessons = unit.lessons.filter(
-    (lesson) => scoresState[lesson.id] >= 4
-  ).length;
+  // Calculate progress with null checks
+  const totalLessons = unit.lessons?.length || 0;
+  const completedLessons = unit.lessons?.filter(
+    (lesson) => (scoresState[lesson.id] || 0) >= 4  // Changed: Added || 0
+  ).length || 0;
   const progress = totalLessons > 0 ? completedLessons / totalLessons : 0;
 
-  // Lock logic: previous unit must be complete
+  // Find next lesson with null check
+  const nextLesson = unit.lessons?.find(
+    (lesson) => !scoresState[lesson.id] || scoresState[lesson.id] < 4
+  ) || unit.lessons?.[0];
+
+  // Lock logic with null checks
   const isLocked = unitIndex > 0
-    ? !units[unitIndex - 1].lessons.every((lesson) => scoresState[lesson.id] >= 4)
+    ? !(units[unitIndex - 1]?.lessons?.every(
+        (lesson) => (scoresState[lesson.id] || 0) >= 4  // Changed: Added || 0
+      ) || false)
     : false;
 
   // Icon setup
@@ -53,7 +57,14 @@ const UnitItem = ({ unit, scoresState, unitIndex, units }) => {
       style={styles.box}
       onPress={() => {
         if (!isLocked) {
-          navigation.navigate('UnitScreen', { unit, scoresState, unitIndex, units, totalLessons: unit.lessons.length,  lesson: nextLesson });
+          navigation.navigate('UnitScreen', { 
+            unit, 
+            scoresState, 
+            unitIndex, 
+            units, 
+            totalLessons: unit.lessons?.length || 0,
+            lesson: nextLesson 
+          });
         }
       }}
       disabled={isLocked}
@@ -70,7 +81,6 @@ const UnitItem = ({ unit, scoresState, unitIndex, units }) => {
             {completedLessons}/{totalLessons} Completed
           </Text>
         </Text>
-
 
         <MaterialIcons name={'keyboard-arrow-right'} style={styles.arrow} />
       </View>

@@ -1,0 +1,314 @@
+{
+  "lessonId": 84,
+  "title": "Common Mistakes with Classes and Objects",
+  "content": [
+    {
+      "type": "text",
+      "value": "As you learn object-oriented programming, certain mistakes appear repeatedly. Understanding these common pitfalls helps you avoid frustration and write better code. This lesson highlights frequent errors involving classes, objects, constructors, and methods, along with strategies for preventing them."
+    },
+    {
+      "type": "text",
+      "value": "One of the most common mistakes is confusing classes with objects. A class is a blueprint; an object is an instance created from that blueprint."
+    },
+    {
+      "type": "code",
+      "value": "// WRONG - trying to call methods on the class\nStudent.getName();  // ERROR\n\n// CORRECT - call methods on objects\nStudent student = new Student(\"Alice\", 101);\nstudent.getName();  // Works"
+    },
+    {
+      "type": "text",
+      "value": "You can't call instance methods on the class name—you need an actual object. Only static methods can be called directly on the class."
+    },
+    {
+      "type": "text",
+      "value": "Forgetting "
+    },
+    {
+      "type": "code",
+      "value": "new"
+    },
+    {
+      "type": "text",
+      "value": " when creating objects is another frequent error."
+    },
+    {
+      "type": "code",
+      "value": "// WRONG - declares reference without creating object\nStudent student;\nstudent.getName();  // NullPointerException\n\n// CORRECT - create the object\nStudent student = new Student(\"Bob\", 102);\nstudent.getName();  // Works"
+    },
+    {
+      "type": "text",
+      "value": "Declaring a reference doesn't create an object. You must use "
+    },
+    {
+      "type": "code",
+      "value": "new"
+    },
+    {
+      "type": "text",
+      "value": " to actually instantiate the object."
+    },
+    {
+      "type": "text",
+      "value": "Accessing "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " references causes "
+    },
+    {
+      "type": "code",
+      "value": "NullPointerException"
+    },
+    {
+      "type": "text",
+      "value": ", one of the most common runtime errors."
+    },
+    {
+      "type": "code",
+      "value": "Student student = null;\nstudent.getName();  // NullPointerException\n\n// FIX - check for null before accessing\nif (student != null) {\n    student.getName();\n}"
+    },
+    {
+      "type": "text",
+      "value": "Always check for "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " before calling methods or accessing fields on potentially uninitialized references."
+    },
+    {
+      "type": "text",
+      "value": "Confusing "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " with "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " leads to unexpected behavior."
+    },
+    {
+      "type": "code",
+      "value": "Student s1 = new Student(\"Charlie\", 103);\nStudent s2 = new Student(\"Charlie\", 103);\n\n// WRONG - compares references, not content\nif (s1 == s2) {  // false (different objects)\n    System.out.println(\"Same student\");\n}\n\n// CORRECT - compares content (if equals() is overridden)\nif (s1.equals(s2)) {\n    System.out.println(\"Same student\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Use "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " only for primitive types or checking if two references point to the same object. Use "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " for content comparison."
+    },
+    {
+      "type": "text",
+      "value": "Making instance variables "
+    },
+    {
+      "type": "code",
+      "value": "public"
+    },
+    {
+      "type": "text",
+      "value": " violates encapsulation and leads to maintenance problems."
+    },
+    {
+      "type": "code",
+      "value": "// BAD - public instance variables\npublic class Person {\n    public String name;  // Anyone can modify directly\n    public int age;      // No validation possible\n}\n\n// GOOD - private with getters/setters\npublic class Person {\n    private String name;\n    private int age;\n    \n    public void setAge(int age) {\n        if (age >= 0) {  // Validation\n            this.age = age;\n        }\n    }\n    \n    public int getAge() {\n        return age;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Keep instance variables "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "text",
+      "value": " and provide controlled access through getters and setters with validation."
+    },
+    {
+      "type": "text",
+      "value": "Forgetting "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " when parameter names match instance variables causes silent bugs."
+    },
+    {
+      "type": "code",
+      "value": "public class Book {\n    private String title;\n    \n    // WRONG - assigns parameter to itself\n    public Book(String title) {\n        title = title;  // BUG! Instance variable stays uninitialized\n    }\n    \n    // CORRECT - use this\n    public Book(String title) {\n        this.title = title;  // Assigns to instance variable\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Without "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": ", the parameter shadows the instance variable, causing assignment to the wrong thing."
+    },
+    {
+      "type": "text",
+      "value": "Giving constructors a return type turns them into regular methods, not constructors."
+    },
+    {
+      "type": "code",
+      "value": "public class Car {\n    // WRONG - has return type, not a constructor\n    public void Car() {  // This is just a method named Car\n        // ...\n    }\n    \n    // CORRECT - no return type\n    public Car() {  // This is a constructor\n        // ...\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Constructors must have no return type, not even "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Modifying object state through getters is poor design."
+    },
+    {
+      "type": "code",
+      "value": "// BAD - getter modifies state\npublic String getName() {\n    this.accessCount++;  // Modifying in a getter!\n    return name;\n}\n\n// GOOD - getters only return values\npublic String getName() {\n    return name;\n}"
+    },
+    {
+      "type": "text",
+      "value": "Getters should return values without side effects. Modification belongs in setters or other mutator methods."
+    },
+    {
+      "type": "text",
+      "value": "Returning mutable objects directly from getters exposes internal state."
+    },
+    {
+      "type": "code",
+      "value": "public class Course {\n    private int[] grades;\n    \n    // RISKY - returns reference to internal array\n    public int[] getGrades() {\n        return grades;  // Caller can modify internal array!\n    }\n    \n    // SAFER - return a copy\n    public int[] getGrades() {\n        return grades.clone();\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Returning direct references to mutable objects allows external code to modify internal state. Return defensive copies instead."
+    },
+    {
+      "type": "text",
+      "value": "Using "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": " inappropriately causes design problems."
+    },
+    {
+      "type": "code",
+      "value": "// BAD - making everything static\npublic class Calculator {\n    public static int value;  // Shared by all!\n    \n    public static void add(int x) {\n        value += x;  // All instances affect same value\n    }\n}\n\n// GOOD - use instance variables\npublic class Calculator {\n    private int value;\n    \n    public void add(int x) {\n        this.value += x;  // Each instance independent\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Reserve "
+    },
+    {
+      "type": "code",
+      "value": "static"
+    },
+    {
+      "type": "text",
+      "value": " for truly shared data or utility methods. Most class members should be instance-specific."
+    },
+    {
+      "type": "text",
+      "value": "Failing to override "
+    },
+    {
+      "type": "code",
+      "value": "toString()"
+    },
+    {
+      "type": "text",
+      "value": " makes debugging harder."
+    },
+    {
+      "type": "code",
+      "value": "public class Point {\n    private int x;\n    private int y;\n    \n    // Missing toString() - prints Point@4aa298b7\n}\n\npublic class Point {\n    private int x;\n    private int y;\n    \n    @Override\n    public String toString() {\n        return \"Point(\" + x + \", \" + y + \")\";  // Readable output\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Always implement "
+    },
+    {
+      "type": "code",
+      "value": "toString()"
+    },
+    {
+      "type": "text",
+      "value": " for classes you'll debug or display. It dramatically improves code readability."
+    },
+    {
+      "type": "text",
+      "value": "Creating too many responsibilities in one class violates the Single Responsibility Principle."
+    },
+    {
+      "type": "code",
+      "value": "// BAD - class doing too much\npublic class Student {\n    private String name;\n    \n    public void enrollInCourse() { }\n    public void calculateGrades() { }\n    public void sendEmail() { }  // Email sending doesn't belong here!\n    public void printTranscript() { }  // Printing doesn't belong here!\n}\n\n// BETTER - focused responsibilities\npublic class Student {\n    private String name;\n    \n    public void enrollInCourse() { }\n    public void calculateGrades() { }\n}\n\npublic class EmailService {\n    public void sendEmail(Student student) { }\n}\n\npublic class TranscriptPrinter {\n    public void print(Student student) { }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Keep classes focused on a single area of responsibility. Split unrelated functionality into separate classes."
+    },
+    {
+      "type": "text",
+      "value": "Not validating data in setters allows invalid states."
+    },
+    {
+      "type": "code",
+      "value": "// BAD - no validation\npublic void setAge(int age) {\n    this.age = age;  // Allows negative ages!\n}\n\n// GOOD - validate input\npublic void setAge(int age) {\n    if (age >= 0 && age <= 150) {\n        this.age = age;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Always validate data in setters to maintain object invariants and prevent invalid states."
+    },
+    {
+      "type": "text",
+      "value": "Learning from these common mistakes accelerates your mastery of object-oriented programming. Focus on encapsulation, proper use of constructors, null checking, and the distinction between classes and objects. These practices form the foundation of professional Java development."
+    }
+  ]
+}

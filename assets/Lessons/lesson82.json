@@ -1,0 +1,266 @@
+{
+  "lessonId": 82,
+  "title": "Copy Constructors and Cloning Intro",
+  "content": [
+    {
+      "type": "text",
+      "value": "When you assign one object variable to another, you copy the reference, not the object itself. Both variables point to the same object. Sometimes you need a completely independent copy—a new object with the same data. A copy constructor creates a new object initialized with values from an existing object, giving you true duplication rather than reference sharing."
+    },
+    {
+      "type": "code",
+      "value": "public class Point {\n    private int x;\n    private int y;\n    \n    public Point(int x, int y) {\n        this.x = x;\n        this.y = y;\n    }\n}\n\nPoint p1 = new Point(5, 10);\nPoint p2 = p1;  // Copies reference, not the object\n\n// p1 and p2 point to the SAME object"
+    },
+    {
+      "type": "text",
+      "value": "The assignment "
+    },
+    {
+      "type": "code",
+      "value": "p2 = p1"
+    },
+    {
+      "type": "text",
+      "value": " makes both variables reference the same "
+    },
+    {
+      "type": "code",
+      "value": "Point"
+    },
+    {
+      "type": "text",
+      "value": " object. Changes through "
+    },
+    {
+      "type": "code",
+      "value": "p2"
+    },
+    {
+      "type": "text",
+      "value": " affect "
+    },
+    {
+      "type": "code",
+      "value": "p1"
+    },
+    {
+      "type": "text",
+      "value": " and vice versa."
+    },
+    {
+      "type": "text",
+      "value": "A copy constructor takes an existing object as a parameter and creates a new object with identical field values."
+    },
+    {
+      "type": "code",
+      "value": "public class Point {\n    private int x;\n    private int y;\n    \n    // Regular constructor\n    public Point(int x, int y) {\n        this.x = x;\n        this.y = y;\n    }\n    \n    // Copy constructor\n    public Point(Point other) {\n        this.x = other.x;\n        this.y = other.y;\n    }\n    \n    public void setX(int x) {\n        this.x = x;\n    }\n    \n    public int getX() {\n        return x;\n    }\n}\n\nPoint p1 = new Point(5, 10);\nPoint p2 = new Point(p1);  // Creates independent copy\n\np2.setX(20);\nSystem.out.println(p1.getX());  // 5 (unchanged)\nSystem.out.println(p2.getX());  // 20 (changed)"
+    },
+    {
+      "type": "text",
+      "value": "The copy constructor creates a completely new "
+    },
+    {
+      "type": "code",
+      "value": "Point"
+    },
+    {
+      "type": "text",
+      "value": " with the same data. Modifying "
+    },
+    {
+      "type": "code",
+      "value": "p2"
+    },
+    {
+      "type": "text",
+      "value": " doesn't affect "
+    },
+    {
+      "type": "code",
+      "value": "p1"
+    },
+    {
+      "type": "text",
+      "value": " because they're separate objects."
+    },
+    {
+      "type": "text",
+      "value": "Copy constructors follow a simple pattern: accept an object of the same type as a parameter and copy each field."
+    },
+    {
+      "type": "code",
+      "value": "public class Book {\n    private String title;\n    private String author;\n    private int pages;\n    \n    public Book(String title, String author, int pages) {\n        this.title = title;\n        this.author = author;\n        this.pages = pages;\n    }\n    \n    // Copy constructor\n    public Book(Book original) {\n        this.title = original.title;\n        this.author = original.author;\n        this.pages = original.pages;\n    }\n}\n\nBook book1 = new Book(\"Java Basics\", \"John Smith\", 350);\nBook book2 = new Book(book1);  // Independent copy"
+    },
+    {
+      "type": "text",
+      "value": "Each field from "
+    },
+    {
+      "type": "code",
+      "value": "original"
+    },
+    {
+      "type": "text",
+      "value": " is copied to the new object, creating a duplicate with identical data."
+    },
+    {
+      "type": "text",
+      "value": "Shallow copying copies field values directly. For primitive types and immutable objects like "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": ", this works perfectly."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    private String name;  // String is immutable\n    private int age;      // Primitive type\n    \n    public Student(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n    \n    // Shallow copy constructor\n    public Student(Student other) {\n        this.name = other.name;  // Safe: String is immutable\n        this.age = other.age;    // Safe: primitive type\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Shallow copying is safe here because "
+    },
+    {
+      "type": "code",
+      "value": "String"
+    },
+    {
+      "type": "text",
+      "value": " is immutable and "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " is a primitive."
+    },
+    {
+      "type": "text",
+      "value": "When a class contains mutable objects, shallow copying creates a problem. The copied object's reference points to the same nested object."
+    },
+    {
+      "type": "code",
+      "value": "public class Address {\n    private String street;\n    private String city;\n    \n    public Address(String street, String city) {\n        this.street = street;\n        this.city = city;\n    }\n    \n    public void setCity(String city) {\n        this.city = city;\n    }\n    \n    public String getCity() {\n        return city;\n    }\n}\n\npublic class Person {\n    private String name;\n    private Address address;  // Mutable object\n    \n    public Person(String name, Address address) {\n        this.name = name;\n        this.address = address;\n    }\n    \n    // SHALLOW copy - PROBLEM!\n    public Person(Person other) {\n        this.name = other.name;\n        this.address = other.address;  // Copies reference only!\n    }\n    \n    public Address getAddress() {\n        return address;\n    }\n}\n\nAddress addr = new Address(\"123 Main St\", \"Springfield\");\nPerson p1 = new Person(\"Alice\", addr);\nPerson p2 = new Person(p1);  // Shallow copy\n\np2.getAddress().setCity(\"Shelbyville\");\nSystem.out.println(p1.getAddress().getCity());  // Shelbyville (!)"
+    },
+    {
+      "type": "text",
+      "value": "Both "
+    },
+    {
+      "type": "code",
+      "value": "p1"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "p2"
+    },
+    {
+      "type": "text",
+      "value": " share the same "
+    },
+    {
+      "type": "code",
+      "value": "Address"
+    },
+    {
+      "type": "text",
+      "value": " object. Modifying through "
+    },
+    {
+      "type": "code",
+      "value": "p2"
+    },
+    {
+      "type": "text",
+      "value": " affects "
+    },
+    {
+      "type": "code",
+      "value": "p1"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Deep copying creates new objects for nested mutable objects, ensuring complete independence."
+    },
+    {
+      "type": "code",
+      "value": "public class Address {\n    private String street;\n    private String city;\n    \n    public Address(String street, String city) {\n        this.street = street;\n        this.city = city;\n    }\n    \n    // Address copy constructor\n    public Address(Address other) {\n        this.street = other.street;\n        this.city = other.city;\n    }\n    \n    public void setCity(String city) {\n        this.city = city;\n    }\n    \n    public String getCity() {\n        return city;\n    }\n}\n\npublic class Person {\n    private String name;\n    private Address address;\n    \n    public Person(String name, Address address) {\n        this.name = name;\n        this.address = address;\n    }\n    \n    // DEEP copy - creates new Address\n    public Person(Person other) {\n        this.name = other.name;\n        this.address = new Address(other.address);  // New Address object!\n    }\n    \n    public Address getAddress() {\n        return address;\n    }\n}\n\nAddress addr = new Address(\"123 Main St\", \"Springfield\");\nPerson p1 = new Person(\"Alice\", addr);\nPerson p2 = new Person(p1);  // Deep copy\n\np2.getAddress().setCity(\"Shelbyville\");\nSystem.out.println(p1.getAddress().getCity());  // Springfield (unchanged!)"
+    },
+    {
+      "type": "text",
+      "value": "The deep copy creates a new "
+    },
+    {
+      "type": "code",
+      "value": "Address"
+    },
+    {
+      "type": "text",
+      "value": " for "
+    },
+    {
+      "type": "code",
+      "value": "p2"
+    },
+    {
+      "type": "text",
+      "value": ". Now both "
+    },
+    {
+      "type": "code",
+      "value": "Person"
+    },
+    {
+      "type": "text",
+      "value": " objects are truly independent."
+    },
+    {
+      "type": "text",
+      "value": "Arrays require special handling in copy constructors. You must create a new array and copy elements."
+    },
+    {
+      "type": "code",
+      "value": "public class IntList {\n    private int[] data;\n    \n    public IntList(int[] data) {\n        this.data = data;\n    }\n    \n    // Copy constructor with array deep copy\n    public IntList(IntList other) {\n        this.data = new int[other.data.length];\n        for (int i = 0; i < other.data.length; i++) {\n            this.data[i] = other.data[i];\n        }\n    }\n    \n    public void set(int index, int value) {\n        data[index] = value;\n    }\n    \n    public int get(int index) {\n        return data[index];\n    }\n}\n\nIntList list1 = new IntList(new int[]{1, 2, 3});\nIntList list2 = new IntList(list1);\n\nlist2.set(0, 99);\nSystem.out.println(list1.get(0));  // 1 (unchanged)"
+    },
+    {
+      "type": "text",
+      "value": "Creating a new array and copying elements ensures the arrays are independent."
+    },
+    {
+      "type": "text",
+      "value": "Copy constructors are particularly useful when passing objects to methods or returning objects from methods, ensuring the original isn't accidentally modified."
+    },
+    {
+      "type": "code",
+      "value": "public class BankAccount {\n    private String accountNumber;\n    private double balance;\n    \n    public BankAccount(String number, double balance) {\n        this.accountNumber = number;\n        this.balance = balance;\n    }\n    \n    // Copy constructor\n    public BankAccount(BankAccount other) {\n        this.accountNumber = other.accountNumber;\n        this.balance = other.balance;\n    }\n    \n    public double getBalance() {\n        return balance;\n    }\n    \n    // Returns a copy, not the original\n    public BankAccount getCopy() {\n        return new BankAccount(this);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "getCopy()"
+    },
+    {
+      "type": "text",
+      "value": " method returns an independent copy, protecting the original object from external modification."
+    },
+    {
+      "type": "text",
+      "value": "Understanding copy constructors and the difference between shallow and deep copying is essential for writing robust object-oriented programs. When objects contain other mutable objects or arrays, deep copying ensures true independence between original and copy."
+    }
+  ]
+}

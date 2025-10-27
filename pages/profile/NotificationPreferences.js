@@ -1,10 +1,11 @@
-import { View, Text as RNText, StyleSheet, Switch, Alert, Platform, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
+import { View, Text as RNText, StyleSheet, Switch, Alert, Platform } from 'react-native';
+import React, { useState, useEffect } from 'react';
 import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Menu, Button } from 'react-native-paper';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import colors from '../../assets/components/colors';
 
 export default function NotificationPreferences() {
@@ -20,6 +21,31 @@ export default function NotificationPreferences() {
 
     const [deliveryMenuVisible, setDeliveryMenuVisible] = useState(false);
     const [timeMenuVisible, setTimeMenuVisible] = useState(false);
+
+    // Load saved preferences
+    useEffect(() => {
+        const loadPreferences = async () => {
+            try {
+                const notif = await AsyncStorage.getItem('notificationsEnabled');
+                if (notif === 'true') setIsEnabled(true);
+
+                const calendar = await AsyncStorage.getItem('calendarEnabled');
+                if (calendar === 'true') setCalendarEnabled(true);
+
+                const streak = await AsyncStorage.getItem('streakEnabled');
+                if (streak === 'true') setStreakEnabled(true);
+
+                const delivery = await AsyncStorage.getItem('deliveryMethod');
+                if (delivery) setDeliveryMethod(delivery);
+
+                const time = await AsyncStorage.getItem('reminderTime');
+                if (time) setReminderTime(time);
+            } catch (e) {
+                console.error('Failed to load preferences', e);
+            }
+        };
+        loadPreferences();
+    }, []);
 
     const requestPermissions = async () => {
         if (Device.isDevice) {
@@ -56,18 +82,26 @@ export default function NotificationPreferences() {
     const toggleNotifications = async () => {
         if (!isEnabled) {
             const granted = await requestPermissions();
-            if (granted) setIsEnabled(true);
-            else Alert.alert('Permission required', 'Enable notifications in settings');
+            if (granted) {
+                setIsEnabled(true);
+                await AsyncStorage.setItem('notificationsEnabled', 'true');
+            } else {
+                Alert.alert('Permission required', 'Enable notifications in settings');
+            }
         } else {
             await cancelNotifications();
             setIsEnabled(false);
             setCalendarEnabled(false);
             setStreakEnabled(false);
+            await AsyncStorage.setItem('notificationsEnabled', 'false');
+            await AsyncStorage.setItem('calendarEnabled', 'false');
+            await AsyncStorage.setItem('streakEnabled', 'false');
         }
     };
 
     const toggleCalendar = async (value) => {
         setCalendarEnabled(value);
+        await AsyncStorage.setItem('calendarEnabled', value ? 'true' : 'false');
         if (value) await scheduleNotification('📅 Calendar Reminder', 'Check your study calendar for today!');
         else {
             await cancelNotifications();
@@ -77,11 +111,24 @@ export default function NotificationPreferences() {
 
     const toggleStreak = async (value) => {
         setStreakEnabled(value);
+        await AsyncStorage.setItem('streakEnabled', value ? 'true' : 'false');
         if (value) await scheduleNotification('🔥 Streak Reminder', 'Don’t break your streak today!');
         else {
             await cancelNotifications();
             if (calendarEnabled) await scheduleNotification('📅 Calendar Reminder', 'Check your study calendar for today!');
         }
+    };
+
+    const setDelivery = async (method) => {
+        setDeliveryMethod(method);
+        await AsyncStorage.setItem('deliveryMethod', method);
+        setDeliveryMenuVisible(false);
+    };
+
+    const setTime = async (time) => {
+        setReminderTime(time);
+        await AsyncStorage.setItem('reminderTime', time);
+        setTimeMenuVisible(false);
     };
 
     const notificationIcon = isEnabled ? 'notifications-on' : 'notifications-off';
@@ -158,9 +205,9 @@ export default function NotificationPreferences() {
                             </Button>
                         }
                     >
-                        <Menu.Item onPress={() => { setDeliveryMethod('sound'); setDeliveryMenuVisible(false); }} title="Sound" />
-                        <Menu.Item onPress={() => { setDeliveryMethod('vibration'); setDeliveryMenuVisible(false); }} title="Vibration" />
-                        <Menu.Item onPress={() => { setDeliveryMethod('silent'); setDeliveryMenuVisible(false); }} title="Silent" />
+                        <Menu.Item onPress={() => setDelivery('sound')} title="Sound" />
+                        <Menu.Item onPress={() => setDelivery('vibration')} title="Vibration" />
+                        <Menu.Item onPress={() => setDelivery('silent')} title="Silent" />
                     </Menu>
                 </View>
 
@@ -182,10 +229,10 @@ export default function NotificationPreferences() {
                             </Button>
                         }
                     >
-                        <Menu.Item onPress={() => { setReminderTime('09:00'); setTimeMenuVisible(false); }} title="9:00 AM" />
-                        <Menu.Item onPress={() => { setReminderTime('12:00'); setTimeMenuVisible(false); }} title="12:00 PM" />
-                        <Menu.Item onPress={() => { setReminderTime('18:00'); setTimeMenuVisible(false); }} title="6:00 PM" />
-                        <Menu.Item onPress={() => { setReminderTime('21:00'); setTimeMenuVisible(false); }} title="9:00 PM" />
+                        <Menu.Item onPress={() => setTime('09:00')} title="9:00 AM" />
+                        <Menu.Item onPress={() => setTime('12:00')} title="12:00 PM" />
+                        <Menu.Item onPress={() => setTime('18:00')} title="6:00 PM" />
+                        <Menu.Item onPress={() => setTime('21:00')} title="9:00 PM" />
                     </Menu>
                 </View>
             </View>

@@ -1,0 +1,214 @@
+{
+    "lessonId": 81,
+    "title": "Using Objects in Arrays",
+    "questions": [
+        {
+            "id": 1,
+            "type": "text",
+            "question": "How do you declare an array of objects?",
+            "options": [
+                { "type": "text", "value": "ClassName[] arrayName = new ClassName[size];" },
+                { "type": "text", "value": "Object[] arrayName = new Object[size];" },
+                { "type": "text", "value": "array<ClassName> arrayName;" },
+                { "type": "text", "value": "ClassName arrayName[size];" }
+            ],
+            "answer": 0,
+            "explanation": "Object arrays are declared with ClassName[] arrayName = new ClassName[size]; just like primitive arrays."
+        },
+        {
+            "id": 2,
+            "type": "text",
+            "question": "What is the initial value of elements in a newly created object array?",
+            "options": [
+                { "type": "text", "value": "0" },
+                { "type": "text", "value": "null" },
+                { "type": "text", "value": "Empty string" },
+                { "type": "text", "value": "Default constructor values" }
+            ],
+            "answer": 1,
+            "explanation": "Object array elements are initially null until you assign actual object references to them."
+        },
+        {
+            "id": 3,
+            "type": "text",
+            "question": "How do you access a method on an object in an array?",
+            "options": [
+                { "type": "text", "value": "arrayName.methodName()" },
+                { "type": "text", "value": "arrayName[index]->methodName()" },
+                { "type": "text", "value": "arrayName[index].methodName()" },
+                { "type": "text", "value": "arrayName->methodName(index)" }
+            ],
+            "answer": 2,
+            "explanation": "Use bracket notation to access the object, then dot operator to call its method: arrayName[index].methodName()."
+        },
+        {
+            "id": 4,
+            "type": "text",
+            "question": "Can you use enhanced for loops with object arrays?",
+            "options": [
+                { "type": "text", "value": "Only with ArrayList" },
+                { "type": "text", "value": "Only for primitive arrays" },
+                { "type": "text", "value": "No, only standard for loops work" },
+                { "type": "text", "value": "Yes, for (ClassName obj : arrayName) works" }
+            ],
+            "answer": 3,
+            "explanation": "Enhanced for-each loops work with object arrays: for (ClassName obj : arrayName) is valid syntax."
+        },
+        {
+            "id": 5,
+            "type": "text",
+            "question": "What happens if you call a method on a null array element?",
+            "options": [
+                { "type": "text", "value": "NullPointerException is thrown" },
+                { "type": "text", "value": "Nothing happens" },
+                { "type": "text", "value": "The array becomes empty" },
+                { "type": "text", "value": "The method returns null" }
+            ],
+            "answer": 0,
+            "explanation": "Calling a method on null throws NullPointerException; always check for null before accessing methods."
+        },
+        {
+            "id": 6,
+            "type": "text",
+            "question": "How do you initialize an object array inline?",
+            "options": [
+                { "type": "text", "value": "Use curly braces with objects" },
+                { "type": "text", "value": "Use curly braces with new objects: {new ClassName(), new ClassName()}" },
+                { "type": "text", "value": "Use parentheses with objects" },
+                { "type": "text", "value": "Inline initialization is not possible" }
+            ],
+            "answer": 1,
+            "explanation": "Use array initializer syntax with curly braces: ClassName[] arr = {new ClassName(), new ClassName()};"
+        },
+        {
+            "id": 7,
+            "type": "text",
+            "question": "Can you perform calculations on object arrays?",
+            "options": [
+                { "type": "text", "value": "No, only primitive arrays support calculations" },
+                { "type": "text", "value": "Only with special array types" },
+                { "type": "text", "value": "Yes, by calling getter methods and accumulating values" },
+                { "type": "text", "value": "Only with static methods" }
+            ],
+            "answer": 2,
+            "explanation": "You can perform calculations by calling object methods in loops and accumulating returned values."
+        },
+        {
+            "id": 8,
+            "type": "text",
+            "question": "How do you find a specific object in an array?",
+            "options": [
+                { "type": "text", "value": "Use the find() method" },
+                { "type": "text", "value": "Use == operator directly on objects" },
+                { "type": "text", "value": "Objects cannot be searched" },
+                { "type": "text", "value": "Loop through and compare object properties using getters" }
+            ],
+            "answer": 3,
+            "explanation": "Loop through the array and compare object properties retrieved via getter methods."
+        },
+        {
+            "id": 9,
+            "type": "text",
+            "question": "Can you modify objects within an array?",
+            "options": [
+                { "type": "text", "value": "Yes, call setter methods or other mutator methods on the objects" },
+                { "type": "text", "value": "No, array elements are immutable" },
+                { "type": "text", "value": "Only with primitive arrays" },
+                { "type": "text", "value": "Only if the array is not final" }
+            ],
+            "answer": 0,
+            "explanation": "You can modify objects by calling their methods; changes affect the actual objects stored in the array."
+        },
+        {
+            "id": 10,
+            "type": "text",
+            "question": "Can object arrays be passed to methods?",
+            "options": [
+                { "type": "text", "value": "No, only primitive arrays can be passed" },
+                { "type": "text", "value": "Yes, using ClassName[] as the parameter type" },
+                { "type": "text", "value": "Only if marked as static" },
+                { "type": "text", "value": "Only for certain class types" }
+            ],
+            "answer": 1,
+            "explanation": "Object arrays can be passed to methods with ClassName[] as the parameter type, just like primitive arrays."
+        },
+        {
+            "id": 11,
+            "type": "text",
+            "question": "Can methods return object arrays?",
+            "options": [
+                { "type": "text", "value": "No, methods cannot return arrays" },
+                { "type": "text", "value": "Only for primitive arrays" },
+                { "type": "text", "value": "Yes, using ClassName[] as the return type" },
+                { "type": "text", "value": "Only with void return type" }
+            ],
+            "answer": 2,
+            "explanation": "Methods can return object arrays by specifying ClassName[] as the return type."
+        },
+        {
+            "id": 12,
+            "type": "text",
+            "question": "How do you sort objects in an array?",
+            "options": [
+                { "type": "text", "value": "Use == comparison" },
+                { "type": "text", "value": "Use the built-in sort() method" },
+                { "type": "text", "value": "Objects cannot be sorted" },
+                { "type": "text", "value": "Compare object properties and swap references" }
+            ],
+            "answer": 3,
+            "explanation": "Sort by comparing object properties (via getters) and swapping object references based on the comparison."
+        },
+        {
+            "id": 13,
+            "type": "text",
+            "question": "What should you check before accessing methods on array elements?",
+            "options": [
+                { "type": "text", "value": "Whether the element is null" },
+                { "type": "text", "value": "The array length" },
+                { "type": "text", "value": "The method return type" },
+                { "type": "text", "value": "Nothing; all elements are guaranteed valid" }
+            ],
+            "answer": 0,
+            "explanation": "Always check if (arrayName[index] != null) before calling methods to avoid NullPointerException."
+        },
+        {
+            "id": 14,
+            "type": "text",
+            "question": "What type of data can object arrays organize?",
+            "options": [
+                { "type": "text", "value": "Only primitive types" },
+                { "type": "text", "value": "Multiple instances of a class with related data and behaviors" },
+                { "type": "text", "value": "Only String objects" },
+                { "type": "text", "value": "Only static data" }
+            ],
+            "answer": 1,
+            "explanation": "Object arrays organize multiple instances of a class, enabling management of collections with related data and behaviors."
+        },
+        {
+            "id": 15,
+            "type": "text",
+            "question": "When swapping objects in an array during sorting, what are you swapping?",
+            "options": [
+                { "type": "text", "value": "The objects themselves" },
+                { "type": "text", "value": "The object data" },
+                { "type": "text", "value": "The object references (memory addresses)" },
+                { "type": "text", "value": "The array indices" }
+            ],
+            "answer": 2,
+            "explanation": "You swap references (memory addresses) stored in the array, not the actual objects."
+        },
+        {
+            "id": 16,
+            "type": "text",
+            "question": "What is the advantage of using object arrays?",
+            "options": [
+                { "type": "text", "value": "They are faster than primitive arrays" },
+                { "type": "text", "value": "They use less memory" },
+                { "type": "text", "value": "They prevent errors" },
+                { "type": "text", "value": "They organize complex data with methods and behaviors in a collection" }
+            ],
+            "answer": 3,
+            "explanation": "Object arrays enable organizing complex entities with both data and behaviors, making systems more manageable and powerful."
+        }
+    ]
+}

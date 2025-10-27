@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { View, Text as RNText, StyleSheet, SafeAreaView, ActivityIndicator, Platform } from "react-native";
+import { View, Text as RNText, StyleSheet, ActivityIndicator, Platform } from "react-native";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { auth, db } from "../../config/firebase";
 import { doc, getDoc } from "firebase/firestore";
@@ -7,8 +7,12 @@ import { TouchableOpacity } from "react-native";
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { lesson } from '../utils/lessonRegistry';
 import colors from "../../assets/components/colors";
+import { SafeAreaView, useSafeAreaInsets } from "react-native-safe-area-context";
+
+
 
 export default function ViewScoreScreen() {
+  const insets = useSafeAreaInsets();
   const route = useRoute();
 
   const { lessonId, questionId1, questionId2, questionId3, questionId4, selectedAnswer1,
@@ -76,9 +80,12 @@ export default function ViewScoreScreen() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={styles.floatingActionButton} onPress={() => navigation.navigate("Home")}>
-        <MaterialIcons name="home" size={25} color={colors.bookmark}/>
+    <SafeAreaView style={styles.container} edges={["top", "bottom"]}>
+      <TouchableOpacity
+        style={[styles.floatingActionButton, { top: insets.top + 30}]}
+        onPress={() => navigation.navigate("MainTabs")}
+      >
+        <MaterialIcons name="home" size={25} color={colors.bookmark} />
       </TouchableOpacity>
 
 
@@ -169,16 +176,10 @@ export default function ViewScoreScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingBottom: 50,
-    marginTop: 150,
-    justifyContent: "flex-start",
+    paddingBottom: 100,
+    justifyContent: "center",
     alignItems: "center",
     padding: 20,
-    ...Platform.select({
-      ios: {
-        marginHorizontal: 20,
-      }
-    })
   },
 
   percentage: {
@@ -191,7 +192,6 @@ const styles = StyleSheet.create({
   },
 
   performanceBreakdown: {
-    marginTop: 20,
     marginHorizontal: 20,
     borderRadius: 25,
     borderWidth: 1,
@@ -258,7 +258,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.gray,
     padding: 20,
-    width: "100%",
+    width: "100%"
   },
 
   title: {
@@ -274,10 +274,10 @@ const styles = StyleSheet.create({
     bottom: 0,
     paddingVertical: 25,
     paddingBottom: 45,
-    paddingHorizontal: 50,
-    width: "120%",
+    width: "200%",
     gap: 10,
     backgroundColor: colors.white,
+    paddingHorizontal: 200,
   },
 
   button: {
@@ -292,15 +292,14 @@ const styles = StyleSheet.create({
   },
 
   floatingActionButton: {
-    position: "absolute", 
-    top: -60, 
-    ...Platform.select({
-      ios: { right: 10 }, 
-      android: { right: 25, }
-    }), 
-    backgroundColor: colors.bookmarkBackground, 
-    padding: 20, 
+    position: "absolute",
+    right: 20,              
+    backgroundColor: colors.bookmarkBackground,
+    padding: 18,
     borderRadius: 50,
+    elevation: 6,
+    zIndex: 999,           
   },
+
 
 });

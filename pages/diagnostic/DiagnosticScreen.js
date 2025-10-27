@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text as RNText, TouchableOpacity, StyleSheet, SafeAreaView, Platform } from 'react-native';
+import { View, Text as RNText, TouchableOpacity, StyleSheet, Platform } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { db, auth } from '../../config/firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import { useNavigation } from '@react-navigation/native';
 import colors from '../../assets/components/colors';
 import { ProgressBar } from 'react-native-paper';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const diagnosticData = require('../../assets/Diagnostic/Diagnostic.json');
 

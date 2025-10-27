@@ -1,214 +1,406 @@
 {
-  "lessonId": 71,
-  "title": "Writing Constructors",
-  "questions": [
-    {
-      "id": 1,
-      "type": "text",
-      "question": "What is a constructor?",
-      "options": [
-        { "type": "text", "value": "A special method that runs automatically when you create a new object and initializes instance variables" },
-        { "type": "text", "value": "A method that returns a value" },
-        { "type": "text", "value": "A method that deletes objects" },
-        { "type": "text", "value": "A type of variable" }
-      ],
-      "answer": 0,
-      "explanation": "A constructor is a special method that initializes an object's instance variables to meaningful starting values when the object is created."
-    },
-    {
-      "id": 2,
-      "type": "text",
-      "question": "What must the constructor name be?",
-      "options": [
-        { "type": "text", "value": "init()" },
-        { "type": "text", "value": "The same as the class name" },
-        { "type": "text", "value": "Any name the programmer chooses" },
-        { "type": "text", "value": "construct()" }
-      ],
-      "answer": 1,
-      "explanation": "A constructor must have the exact same name as the class it belongs to."
-    },
-    {
-      "id": 3,
-      "type": "text",
-      "question": "What is the return type of a constructor?",
-      "options": [
-        { "type": "text", "value": "void" },
-        { "type": "text", "value": "int" },
-        { "type": "text", "value": "No return type (not even void)" },
-        { "type": "text", "value": "Object" }
-      ],
-      "answer": 2,
-      "explanation": "Constructors have no return type, not even void. This distinguishes them from regular methods."
-    },
-    {
-      "id": 4,
-      "type": "text",
-      "question": "How many parameters can a constructor have?",
-      "options": [
-        { "type": "text", "value": "Exactly one parameter" },
-        { "type": "text", "value": "Zero or more parameters" },
-        { "type": "text", "value": "Only zero parameters" },
-        { "type": "text", "value": "Exactly three parameters" }
-      ],
-      "answer": 1,
-      "explanation": "Constructors can have zero, one, or multiple parameters depending on what data needs to initialize the object."
-    },
-    {
-      "id": 5,
-      "type": "text",
-      "question": "When does a constructor run?",
-      "options": [
-        { "type": "text", "value": "When the program starts" },
-        { "type": "text", "value": "Automatically when new is used to create an object" },
-        { "type": "text", "value": "When you call it explicitly" },
-        { "type": "text", "value": "At the end of the program" }
-      ],
-      "answer": 1,
-      "explanation": "A constructor runs automatically when you use the new keyword to create an object."
-    },
-    {
-      "id": 6,
-      "type": "text",
-      "question": "What is constructor overloading?",
-      "options": [
-        { "type": "text", "value": "Having multiple constructors with the same parameter list" },
-        { "type": "text", "value": "Multiple constructors with different parameter lists or numbers of parameters" },
-        { "type": "text", "value": "Creating too many objects" },
-        { "type": "text", "value": "Using the same constructor twice" }
-      ],
-      "answer": 1,
-      "explanation": "Constructor overloading allows a class to have multiple constructors with different parameter lists to support different initialization scenarios."
-    },
-    {
-      "id": 7,
-      "type": "text",
-      "question": "What is the purpose of using this in a constructor?",
-      "options": [
-        { "type": "text", "value": "To end the constructor" },
-        { "type": "text", "value": "To distinguish instance variables from parameters when names match" },
-        { "type": "text", "value": "To create a new object" },
-        { "type": "text", "value": "To call another constructor" }
-      ],
-      "answer": 1,
-      "explanation": "The this keyword distinguishes instance variables from parameters when they share the same name: this.name refers to the instance variable."
-    },
-    {
-      "id": 8,
-      "type": "text",
-      "question": "What is a default constructor?",
-      "options": [
-        { "type": "text", "value": "A constructor that takes one parameter" },
-        { "type": "text", "value": "A constructor with no parameters that initializes variables to default values" },
-        { "type": "text", "value": "The first constructor in a class" },
-        { "type": "text", "value": "A constructor that returns void" }
-      ],
-      "answer": 1,
-      "explanation": "A default constructor is a no-parameter constructor that initializes instance variables to their default values."
-    },
-    {
-      "id": 9,
-      "type": "text",
-      "question": "What happens if you define one constructor in a class?",
-      "options": [
-        { "type": "text", "value": "Java still provides an automatic default constructor" },
-        { "type": "text", "value": "Java's automatic default constructor is no longer available" },
-        { "type": "text", "value": "All objects use the parameterized constructor" },
-        { "type": "text", "value": "The constructor is optional" }
-      ],
-      "answer": 1,
-      "explanation": "Once you define any constructor, Java's automatic default constructor is no longer provided, so you must explicitly write one if needed."
-    },
-    {
-      "id": 10,
-      "type": "text",
-      "question": "Can a constructor include validation logic?",
-      "options": [
-        { "type": "text", "value": "No, constructors only assign values" },
-        { "type": "text", "value": "Yes, constructors can include conditionals and calculations" },
-        { "type": "text", "value": "Only in default constructors" },
-        { "type": "text", "value": "Only with parameters" }
-      ],
-      "answer": 1,
-      "explanation": "Constructors can perform complex initialization including validation, conditionals, and calculations to ensure objects start in valid states."
-    },
-    {
-      "id": 11,
-      "type": "text",
-      "question": "How do you call a constructor to create an object?",
-      "options": [
-        { "type": "text", "value": "ClassName();" },
-        { "type": "text", "value": "ClassName objectName = new ClassName();" },
-        { "type": "text", "value": "construct(ClassName);" },
-        { "type": "text", "value": "ClassName.new();" }
-      ],
-      "answer": 1,
-      "explanation": "You create an object and call its constructor using: ClassName objectName = new ClassName(parameters);"
-    },
-    {
-      "id": 12,
-      "type": "text",
-      "question": "What distinguishes different overloaded constructors?",
-      "options": [
-        { "type": "text", "value": "Their names" },
-        { "type": "text", "value": "The number and types of their parameters" },
-        { "type": "text", "value": "Their return types" },
-        { "type": "text", "value": "The order they are written in the class" }
-      ],
-      "answer": 1,
-      "explanation": "Java distinguishes overloaded constructors by their parameter list: the number and types of parameters must differ."
-    },
-    {
-      "id": 13,
-      "type": "text",
-      "question": "What makes a constructor valid for creating an object with arguments?",
-      "options": [
-        { "type": "text", "value": "It has a return type" },
-        { "type": "text", "value": "It has the class name with matching parameters" },
-        { "type": "text", "value": "It uses the void keyword" },
-        { "type": "text", "value": "It is static" }
-      ],
-      "answer": 1,
-      "explanation": "A valid constructor must have the class name and matching parameter types that correspond to the arguments passed when calling new."
-    },
-    {
-      "id": 14,
-      "type": "text",
-      "question": "Can constructors ensure objects start in valid states?",
-      "options": [
-        { "type": "text", "value": "No, only methods can validate data" },
-        { "type": "text", "value": "Yes, constructors can include validation and conditionals" },
-        { "type": "text", "value": "Only with default constructors" },
-        { "type": "text", "value": "Only with parameters" }
-      ],
-      "answer": 1,
-      "explanation": "Constructors can validate input, set default values for invalid data, and ensure every object begins in a consistent, valid state."
-    },
-    {
-      "id": 15,
-      "type": "text",
-      "question": "What happens when you create an object without explicitly writing a constructor?",
-      "options": [
-        { "type": "text", "value": "Java provides an automatic default constructor" },
-        { "type": "text", "value": "You must write at least one constructor" },
-        { "type": "text", "value": "Objects cannot be created" },
-        { "type": "text", "value": "All variables remain null" }
-      ],
-      "answer": 0,
-      "explanation": "If you don't write any constructor, Java automatically provides a default no-parameter constructor that initializes variables to default values."
-    },
-    {
-      "id": 16,
-      "type": "text",
-      "question": "What is an advantage of using constructors?",
-      "options": [
-        { "type": "text", "value": "They make code run faster" },
-        { "type": "text", "value": "They ensure consistent object initialization and reduce errors" },
-        { "type": "text", "value": "They eliminate the need for instance variables" },
-        { "type": "text", "value": "They allow objects to create other objects" }
-      ],
-      "answer": 1,
-      "explanation": "Constructors ensure every object is initialized consistently with valid data, reducing errors and eliminating manual initialization steps."
-    }
-  ]
+    "lessonId": 71,
+    "title": "Writing Constructors",
+    "questions": [
+        {
+            "id": 1,
+            "type": "text",
+            "question": "What is a constructor?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "A special method that runs automatically when you create a new object and initializes instance variables"
+                },
+                {
+                    "type": "text",
+                    "value": "A method that returns a value"
+                },
+                {
+                    "type": "text",
+                    "value": "A method that deletes objects"
+                },
+                {
+                    "type": "text",
+                    "value": "A type of variable"
+                }
+            ],
+            "answer": 0,
+            "explanation": "A constructor is a special method that initializes an object's instance variables to meaningful starting values when the object is created."
+        },
+        {
+            "id": 2,
+            "type": "text",
+            "question": "What must the constructor name be?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "init()"
+                },
+                {
+                    "type": "text",
+                    "value": "The same as the class name"
+                },
+                {
+                    "type": "text",
+                    "value": "Any name the programmer chooses"
+                },
+                {
+                    "type": "text",
+                    "value": "construct()"
+                }
+            ],
+            "answer": 1,
+            "explanation": "A constructor must have the exact same name as the class it belongs to."
+        },
+        {
+            "id": 3,
+            "type": "text",
+            "question": "What is the return type of a constructor?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "void"
+                },
+                {
+                    "type": "text",
+                    "value": "int"
+                },
+                {
+                    "type": "text",
+                    "value": "No return type (not even void)"
+                },
+                {
+                    "type": "text",
+                    "value": "Object"
+                }
+            ],
+            "answer": 2,
+            "explanation": "Constructors have no return type, not even void. This distinguishes them from regular methods."
+        },
+        {
+            "id": 4,
+            "type": "text",
+            "question": "How many parameters can a constructor have?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Exactly one parameter"
+                },
+                {
+                    "type": "text",
+                    "value": "Only zero parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "Exactly three parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "Zero or more parameters"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Constructors can have zero, one, or multiple parameters depending on what data needs to initialize the object."
+        },
+        {
+            "id": 5,
+            "type": "text",
+            "question": "When does a constructor run?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Automatically when new is used to create an object"
+                },
+                {
+                    "type": "text",
+                    "value": "When the program starts"
+                },
+                {
+                    "type": "text",
+                    "value": "When you call it explicitly"
+                },
+                {
+                    "type": "text",
+                    "value": "At the end of the program"
+                }
+            ],
+            "answer": 0,
+            "explanation": "A constructor runs automatically when you use the new keyword to create an object."
+        },
+        {
+            "id": 6,
+            "type": "text",
+            "question": "What is constructor overloading?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Having multiple constructors with the same parameter list"
+                },
+                {
+                    "type": "text",
+                    "value": "Multiple constructors with different parameter lists or numbers of parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "Creating too many objects"
+                },
+                {
+                    "type": "text",
+                    "value": "Using the same constructor twice"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Constructor overloading allows a class to have multiple constructors with different parameter lists to support different initialization scenarios."
+        },
+        {
+            "id": 7,
+            "type": "text",
+            "question": "What is the purpose of using this in a constructor?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "To end the constructor"
+                },
+                {
+                    "type": "text",
+                    "value": "To create a new object"
+                },
+                {
+                    "type": "text",
+                    "value": "To distinguish instance variables from parameters when names match"
+                },
+                {
+                    "type": "text",
+                    "value": "To call another constructor"
+                }
+            ],
+            "answer": 2,
+            "explanation": "The this keyword distinguishes instance variables from parameters when they share the same name: this.name refers to the instance variable."
+        },
+        {
+            "id": 8,
+            "type": "text",
+            "question": "What is a default constructor?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "A constructor that takes one parameter"
+                },
+                {
+                    "type": "text",
+                    "value": "The first constructor in a class"
+                },
+                {
+                    "type": "text",
+                    "value": "A constructor that returns void"
+                },
+                {
+                    "type": "text",
+                    "value": "A constructor with no parameters that initializes variables to default values"
+                }
+            ],
+            "answer": 3,
+            "explanation": "A default constructor is a no-parameter constructor that initializes instance variables to their default values."
+        },
+        {
+            "id": 9,
+            "type": "text",
+            "question": "What happens if you define one constructor in a class?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Java's automatic default constructor is no longer available"
+                },
+                {
+                    "type": "text",
+                    "value": "Java still provides an automatic default constructor"
+                },
+                {
+                    "type": "text",
+                    "value": "All objects use the parameterized constructor"
+                },
+                {
+                    "type": "text",
+                    "value": "The constructor is optional"
+                }
+            ],
+            "answer": 0,
+            "explanation": "Once you define any constructor, Java's automatic default constructor is no longer provided, so you must explicitly write one if needed."
+        },
+        {
+            "id": 10,
+            "type": "text",
+            "question": "Can a constructor include validation logic?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, constructors only assign values"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, constructors can include conditionals and calculations"
+                },
+                {
+                    "type": "text",
+                    "value": "Only in default constructors"
+                },
+                {
+                    "type": "text",
+                    "value": "Only with parameters"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Constructors can perform complex initialization including validation, conditionals, and calculations to ensure objects start in valid states."
+        },
+        {
+            "id": 11,
+            "type": "text",
+            "question": "How do you call a constructor to create an object?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "ClassName();"
+                },
+                {
+                    "type": "text",
+                    "value": "construct(ClassName);"
+                },
+                {
+                    "type": "text",
+                    "value": "ClassName objectName = new ClassName();"
+                },
+                {
+                    "type": "text",
+                    "value": "ClassName.new();"
+                }
+            ],
+            "answer": 2,
+            "explanation": "You create an object and call its constructor using: ClassName objectName = new ClassName(parameters);"
+        },
+        {
+            "id": 12,
+            "type": "text",
+            "question": "What distinguishes different overloaded constructors?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Their names"
+                },
+                {
+                    "type": "text",
+                    "value": "Their return types"
+                },
+                {
+                    "type": "text",
+                    "value": "The order they are written in the class"
+                },
+                {
+                    "type": "text",
+                    "value": "The number and types of their parameters"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Java distinguishes overloaded constructors by their parameter list: the number and types of parameters must differ."
+        },
+        {
+            "id": 13,
+            "type": "text",
+            "question": "What makes a constructor valid for creating an object with arguments?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "It has the class name with matching parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "It has a return type"
+                },
+                {
+                    "type": "text",
+                    "value": "It uses the void keyword"
+                },
+                {
+                    "type": "text",
+                    "value": "It is static"
+                }
+            ],
+            "answer": 0,
+            "explanation": "A valid constructor must have the class name and matching parameter types that correspond to the arguments passed when calling new."
+        },
+        {
+            "id": 14,
+            "type": "text",
+            "question": "Can constructors ensure objects start in valid states?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, only methods can validate data"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, constructors can include validation and conditionals"
+                },
+                {
+                    "type": "text",
+                    "value": "Only with default constructors"
+                },
+                {
+                    "type": "text",
+                    "value": "Only with parameters"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Constructors can validate input, set default values for invalid data, and ensure every object begins in a consistent, valid state."
+        },
+        {
+            "id": 15,
+            "type": "text",
+            "question": "What happens when you create an object without explicitly writing a constructor?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "You must write at least one constructor"
+                },
+                {
+                    "type": "text",
+                    "value": "Objects cannot be created"
+                },
+                {
+                    "type": "text",
+                    "value": "Java provides an automatic default constructor"
+                },
+                {
+                    "type": "text",
+                    "value": "All variables remain null"
+                }
+            ],
+            "answer": 2,
+            "explanation": "If you don't write any constructor, Java automatically provides a default no-parameter constructor that initializes variables to default values."
+        },
+        {
+            "id": 16,
+            "type": "text",
+            "question": "What is an advantage of using constructors?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "They make code run faster"
+                },
+                {
+                    "type": "text",
+                    "value": "They eliminate the need for instance variables"
+                },
+                {
+                    "type": "text",
+                    "value": "They allow objects to create other objects"
+                },
+                {
+                    "type": "text",
+                    "value": "They ensure consistent object initialization and reduce errors"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Constructors ensure every object is initialized consistently with valid data, reducing errors and eliminating manual initialization steps."
+        }
+    ]
 }

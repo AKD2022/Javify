@@ -1,0 +1,174 @@
+{
+  "lessonId": 86,
+  "title": "Testing and Debugging Classes",
+  "content": [
+    {
+      "type": "text",
+      "value": "Writing a class is only half the battle - ensuring it works correctly requires systematic testing and effective debugging techniques. Professional programmers spend significant time verifying their code behaves as expected in all scenarios. This lesson explores strategies for testing classes thoroughly and debugging issues when they arise."
+    },
+    {
+      "type": "text",
+      "value": "Testing begins with creating test cases that exercise different aspects of your class. A good testing approach examines typical use cases, boundary conditions, and edge cases. For a "
+    },
+    {
+      "type": "code",
+      "value": "Rectangle"
+    },
+    {
+      "type": "text",
+      "value": " class, you would test with normal dimensions, zero values, and negative numbers to ensure your class handles all inputs appropriately."
+    },
+    {
+      "type": "code",
+      "value": "public class Rectangle {\n    private double width;\n    private double height;\n    \n    public Rectangle(double width, double height) {\n        this.width = width;\n        this.height = height;\n    }\n    \n    public double getArea() {\n        return width * height;\n    }\n    \n    public double getPerimeter() {\n        return 2 * (width + height);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "When testing this "
+    },
+    {
+      "type": "code",
+      "value": "Rectangle"
+    },
+    {
+      "type": "text",
+      "value": " class, you should create multiple test objects with different values. Start with straightforward positive numbers, then try edge cases like very small decimals or large values. Testing reveals whether your methods produce correct results across various inputs."
+    },
+    {
+      "type": "code",
+      "value": "public class RectangleTest {\n    public static void main(String[] args) {\n        // Test case 1: Normal values\n        Rectangle r1 = new Rectangle(5.0, 3.0);\n        System.out.println(\"Area: \" + r1.getArea());\n        System.out.println(\"Perimeter: \" + r1.getPerimeter());\n        \n        // Test case 2: Square (equal sides)\n        Rectangle r2 = new Rectangle(4.0, 4.0);\n        System.out.println(\"Square area: \" + r2.getArea());\n        \n        // Test case 3: Very small values\n        Rectangle r3 = new Rectangle(0.1, 0.1);\n        System.out.println(\"Tiny area: \" + r3.getArea());\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "A comprehensive test driver, like the one above, creates several objects and verifies the output matches expected values. Running this code lets you quickly confirm whether your class methods work correctly. If any output seems wrong, you've identified a bug that needs fixing."
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "toString()"
+    },
+    {
+      "type": "text",
+      "value": " method proves invaluable for debugging because it lets you easily inspect an object's state. Adding a well-designed "
+    },
+    {
+      "type": "code",
+      "value": "toString()"
+    },
+    {
+      "type": "text",
+      "value": " method to every class makes debugging significantly easier, as you can print objects directly to see their current values."
+    },
+    {
+      "type": "code",
+      "value": "public String toString() {\n    return \"Rectangle[width=\" + width + \", height=\" + height + \"]\";\n}"
+    },
+    {
+      "type": "text",
+      "value": "With this "
+    },
+    {
+      "type": "code",
+      "value": "toString()"
+    },
+    {
+      "type": "text",
+      "value": " method added to the "
+    },
+    {
+      "type": "code",
+      "value": "Rectangle"
+    },
+    {
+      "type": "text",
+      "value": " class, you can simply print the object itself rather than calling individual getter methods. This provides a quick snapshot of the object's complete state during debugging."
+    },
+    {
+      "type": "code",
+      "value": "Rectangle r = new Rectangle(5.0, 3.0);\nSystem.out.println(r);  // Prints: Rectangle[width=5.0, height=3.0]"
+    },
+    {
+      "type": "text",
+      "value": "When debugging, the first step involves identifying exactly where the problem occurs. Print statements strategically placed throughout your methods help track the flow of execution and reveal unexpected values. Start by printing parameters when methods are called, then print intermediate calculation results."
+    },
+    {
+      "type": "code",
+      "value": "public double getArea() {\n    System.out.println(\"Calculating area with width=\" + width + \", height=\" + height);\n    double area = width * height;\n    System.out.println(\"Computed area=\" + area);\n    return area;\n}"
+    },
+    {
+      "type": "text",
+      "value": "These debug print statements help you trace exactly what values your variables hold and whether calculations produce expected results. Once you've identified and fixed the bug, remove these debugging statements to keep your code clean."
+    },
+    {
+      "type": "text",
+      "value": "Common bugs in classes often involve incorrect use of "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " keyword, forgetting to return values from non-"
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " methods, or mixing up instance variables with local variables. When a method doesn't work as expected, verify that you're accessing the correct variables and that your method signature matches what you intended."
+    },
+    {
+      "type": "code",
+      "value": "public void setWidth(double width) {\n    // Common mistake: forgetting 'this'\n    width = width;  // This assigns the parameter to itself!\n    \n    // Correct version:\n    this.width = width;  // This assigns to the instance variable\n}"
+    },
+    {
+      "type": "text",
+      "value": "Another frequent issue involves null pointer exceptions when working with objects. Before calling methods on an object reference, ensure the reference actually points to an object. Attempting to call methods on "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " causes your program to crash with a "
+    },
+    {
+      "type": "code",
+      "value": "NullPointerException"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "Rectangle r = null;\n// r.getArea();  // This would cause NullPointerException\n\nif (r != null) {\n    System.out.println(r.getArea());  // Safe approach\n} else {\n    System.out.println(\"Rectangle object is null\");\n}"
+    },
+    {
+      "type": "text",
+      "value": "Testing should also verify that your class properly handles invalid inputs. Defensive programming involves checking parameters in constructors and mutator methods, potentially throwing exceptions or setting default values when inputs are inappropriate."
+    },
+    {
+      "type": "code",
+      "value": "public Rectangle(double width, double height) {\n    if (width <= 0 || height <= 0) {\n        System.out.println(\"Warning: Invalid dimensions, using 1.0\");\n        this.width = 1.0;\n        this.height = 1.0;\n    } else {\n        this.width = width;\n        this.height = height;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "When testing classes that interact with other classes, create simple versions of those related classes first. This isolation helps you test one class at a time without complications from other parts of your program. Once individual classes work correctly, test them together to verify they integrate properly."
+    },
+    {
+      "type": "text",
+      "value": "Keep a checklist when testing classes: verify all constructors initialize variables correctly, confirm getter methods return accurate values, test setter methods actually update instance variables, ensure methods with return types always return appropriate values, and check that your class behaves reasonably with unexpected inputs. Systematic testing using this checklist catches most common bugs before they become larger problems."
+    },
+    {
+      "type": "text",
+      "value": "Effective debugging requires patience and systematic investigation. When you encounter a bug, reproduce it consistently first, then isolate the problematic section of code, add diagnostic output to understand what's happening, fix the issue, and finally test again to confirm the fix works. This methodical approach solves bugs much faster than random code changes hoping something fixes the problem."
+    }
+  ]
+}

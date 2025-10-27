@@ -1,0 +1,278 @@
+{
+  "lessonId": 83,
+  "title": "Garbage Collection and Object Lifecycles",
+  "content": [
+    {
+      "type": "text",
+      "value": "Unlike languages like C or C++ where you manually manage memory, Java automatically handles memory allocation and deallocation through garbage collection. When you create an object, Java allocates memory. When an object is no longer reachable, the garbage collector automatically reclaims that memory. Understanding object lifecycles and garbage collection helps you write efficient programs and avoid memory-related issues."
+    },
+    {
+      "type": "text",
+      "value": "An object's lifecycle has three stages: creation, use, and garbage collection. Creation happens when you use the "
+    },
+    {
+      "type": "code",
+      "value": "new"
+    },
+    {
+      "type": "text",
+      "value": " keyword."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    private String name;\n    private int studentID;\n    \n    public Student(String name, int id) {\n        this.name = name;\n        this.studentID = id;\n        System.out.println(\"Student created: \" + name);\n    }\n}\n\nStudent alice = new Student(\"Alice\", 101);  // Object created"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "new"
+    },
+    {
+      "type": "text",
+      "value": " keyword allocates memory for the object, the constructor initializes it, and the reference is stored in "
+    },
+    {
+      "type": "code",
+      "value": "alice"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "An object becomes eligible for garbage collection when it's no longer reachable—when no reference variables point to it."
+    },
+    {
+      "type": "code",
+      "value": "Student bob = new Student(\"Bob\", 102);  // Object created\nbob = null;  // Object no longer reachable, eligible for GC"
+    },
+    {
+      "type": "text",
+      "value": "Setting "
+    },
+    {
+      "type": "code",
+      "value": "bob"
+    },
+    {
+      "type": "text",
+      "value": " to "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " removes the reference to the "
+    },
+    {
+      "type": "code",
+      "value": "Student"
+    },
+    {
+      "type": "text",
+      "value": " object. With no references pointing to it, the object becomes unreachable and eligible for garbage collection."
+    },
+    {
+      "type": "text",
+      "value": "Reassigning a reference also makes the original object eligible for garbage collection if no other references exist."
+    },
+    {
+      "type": "code",
+      "value": "Student student = new Student(\"Charlie\", 103);  // First object\nstudent = new Student(\"Diana\", 104);  // Second object\n// First object (Charlie) is now unreachable, eligible for GC"
+    },
+    {
+      "type": "text",
+      "value": "The original object for Charlie loses its reference when "
+    },
+    {
+      "type": "code",
+      "value": "student"
+    },
+    {
+      "type": "text",
+      "value": " is reassigned to Diana."
+    },
+    {
+      "type": "text",
+      "value": "When a reference goes out of scope, objects it referenced may become eligible for garbage collection."
+    },
+    {
+      "type": "code",
+      "value": "public void processStudent() {\n    Student temp = new Student(\"Eve\", 105);\n    // Use temp...\n}  // temp goes out of scope here\n// If no other references exist, Eve's object is eligible for GC"
+    },
+    {
+      "type": "text",
+      "value": "Local variables exist only within their method. When the method ends, "
+    },
+    {
+      "type": "code",
+      "value": "temp"
+    },
+    {
+      "type": "text",
+      "value": " goes out of scope and the object it referenced becomes unreachable."
+    },
+    {
+      "type": "text",
+      "value": "Multiple references can point to the same object. The object remains reachable until all references are removed."
+    },
+    {
+      "type": "code",
+      "value": "Student s1 = new Student(\"Frank\", 106);\nStudent s2 = s1;  // s2 also references the same object\nStudent s3 = s1;  // s3 also references the same object\n\ns1 = null;  // Object still reachable through s2 and s3\ns2 = null;  // Object still reachable through s3\ns3 = null;  // NOW object is unreachable, eligible for GC"
+    },
+    {
+      "type": "text",
+      "value": "All three references must be removed before the object becomes unreachable."
+    },
+    {
+      "type": "text",
+      "value": "The garbage collector runs automatically in the background. You cannot force immediate garbage collection, though you can suggest it using "
+    },
+    {
+      "type": "code",
+      "value": "System.gc()"
+    },
+    {
+      "type": "text",
+      "value": " (not recommended in normal code)."
+    },
+    {
+      "type": "code",
+      "value": "Student student = new Student(\"Grace\", 107);\nstudent = null;  // Eligible for GC\n\nSystem.gc();  // Suggests garbage collection (not guaranteed)"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "System.gc()"
+    },
+    {
+      "type": "text",
+      "value": " method is a suggestion to the JVM, not a command. The garbage collector decides when to actually run."
+    },
+    {
+      "type": "text",
+      "value": "Objects in arrays remain reachable as long as the array is reachable."
+    },
+    {
+      "type": "code",
+      "value": "Student[] students = new Student[3];\nstudents[0] = new Student(\"Henry\", 108);\nstudents[1] = new Student(\"Ivy\", 109);\nstudents[2] = new Student(\"Jack\", 110);\n\nstudents[0] = null;  // Henry's object becomes eligible for GC\nstudents = null;     // Array and remaining objects (Ivy, Jack) become eligible"
+    },
+    {
+      "type": "text",
+      "value": "Setting array elements to "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " makes those objects eligible. Setting the array itself to "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " makes all remaining objects eligible."
+    },
+    {
+      "type": "text",
+      "value": "Circular references don't prevent garbage collection. If a group of objects reference each other but none are reachable from active code, the entire group becomes eligible."
+    },
+    {
+      "type": "code",
+      "value": "public class Node {\n    Node next;\n    String data;\n    \n    public Node(String data) {\n        this.data = data;\n    }\n}\n\nNode n1 = new Node(\"A\");\nNode n2 = new Node(\"B\");\nn1.next = n2;\nn2.next = n1;  // Circular reference\n\nn1 = null;\nn2 = null;\n// Despite circular references, both objects are now eligible for GC"
+    },
+    {
+      "type": "text",
+      "value": "Modern garbage collectors handle circular references correctly. If the entire group is unreachable, it's collected."
+    },
+    {
+      "type": "text",
+      "value": "Instance variables keep objects alive. If an object contains a reference to another object, the referenced object remains reachable."
+    },
+    {
+      "type": "code",
+      "value": "public class Course {\n    private Student[] enrolledStudents;\n    \n    public Course(int size) {\n        enrolledStudents = new Student[size];\n    }\n}\n\nCourse math = new Course(30);\nmath.enrolledStudents[0] = new Student(\"Kelly\", 111);\n// Kelly's object remains reachable through math -> enrolledStudents[0]"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Student"
+    },
+    {
+      "type": "text",
+      "value": " object for Kelly stays alive as long as the "
+    },
+    {
+      "type": "code",
+      "value": "Course"
+    },
+    {
+      "type": "text",
+      "value": " object "
+    },
+    {
+      "type": "code",
+      "value": "math"
+    },
+    {
+      "type": "text",
+      "value": " is reachable."
+    },
+    {
+      "type": "text",
+      "value": "Garbage collection frees memory occupied by unreachable objects, preventing memory leaks and allowing programs to run indefinitely without exhausting memory."
+    },
+    {
+      "type": "code",
+      "value": "// Potential memory problem without garbage collection\nfor (int i = 0; i < 1000000; i++) {\n    Student s = new Student(\"Student\" + i, i);\n    // Without GC, this would consume massive memory\n    // With GC, unreachable objects are cleaned up\n}"
+    },
+    {
+      "type": "text",
+      "value": "Each loop iteration creates a new object. The previous iteration's object becomes unreachable and is eventually collected, preventing memory exhaustion."
+    },
+    {
+      "type": "text",
+      "value": "You don't need to explicitly delete objects in Java. The garbage collector handles cleanup automatically. This eliminates entire categories of bugs related to manual memory management like dangling pointers and double-free errors."
+    },
+    {
+      "type": "text",
+      "value": "Best practices for working with garbage collection: set references to "
+    },
+    {
+      "type": "code",
+      "value": "null"
+    },
+    {
+      "type": "text",
+      "value": " when done with large objects, avoid keeping unnecessary references, and let local variables go out of scope naturally. Don't call "
+    },
+    {
+      "type": "code",
+      "value": "System.gc()"
+    },
+    {
+      "type": "text",
+      "value": " in normal code—trust the garbage collector."
+    },
+    {
+      "type": "text",
+      "value": "Understanding garbage collection helps you write memory-efficient programs. While you don't manually free memory, being aware of object lifecycles helps you avoid unintentionally keeping objects alive longer than necessary, which can cause memory pressure in large applications."
+    }
+  ]
+}

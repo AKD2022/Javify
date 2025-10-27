@@ -1,10 +1,11 @@
 import React, { useState, useLayoutEffect } from 'react';
-import { View, Text as RNText, TouchableOpacity, StyleSheet, SafeAreaView, Alert } from 'react-native';
+import { View, Text as RNText, TouchableOpacity, StyleSheet, Alert } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import colors from '../../assets/components/colors';
 import { auth, db } from '../../config/firebase';
 import { doc, getDoc, setDoc } from 'firebase/firestore';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function ShowBookmarkedQuestionScreen() {
   const route = useRoute();

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text as RNText, StyleSheet, SafeAreaView, TouchableOpacity, TextInput, Platform, Alert, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard } from "react-native";
+import { View, Text as RNText, StyleSheet, TouchableOpacity, TextInput, Platform, Alert, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard } from "react-native";
 import { auth } from "../../config/firebase";
 import { updateProfile } from "firebase/auth";
 import { useNavigation } from "@react-navigation/native";
@@ -9,6 +9,7 @@ import GradientButton from "../../assets/components/gradientButton";
 import GradientIconBackground from "../../assets/components/gradientBackgroundIcon";
 import { Ionicons } from "@expo/vector-icons";
 import RNRestart from 'react-native-restart';
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ChangeUsername() {
     const [newUsername, setNewUsername] = useState("");

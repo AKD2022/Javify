@@ -1,0 +1,386 @@
+{
+  "lessonId": 80,
+  "title": "Writing equals() Methods",
+  "content": [
+    {
+      "type": "text",
+      "value": "By default, the "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " operator compares object references (memory addresses), not their contents. Two objects with identical data are considered different if they're separate objects. The "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " method allows you to define what it means for two objects to be \"equal\" based on their data content rather than their memory location."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    private int studentID;\n    private String name;\n    \n    public Student(int id, String name) {\n        this.studentID = id;\n        this.name = name;\n    }\n}\n\nStudent s1 = new Student(101, \"Alice\");\nStudent s2 = new Student(101, \"Alice\");\n\nSystem.out.println(s1 == s2);           // false (different objects)\nSystem.out.println(s1.equals(s2));      // false (no custom equals)"
+    },
+    {
+      "type": "text",
+      "value": "Even though "
+    },
+    {
+      "type": "code",
+      "value": "s1"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "s2"
+    },
+    {
+      "type": "text",
+      "value": " have identical data, both comparisons return "
+    },
+    {
+      "type": "code",
+      "value": "false"
+    },
+    {
+      "type": "text",
+      "value": " because the default "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " only checks if they're the same object."
+    },
+    {
+      "type": "text",
+      "value": "Overriding "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " requires careful implementation. A proper "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " should:"
+    },
+    {
+      "type": "code",
+      "value": "1. Check if the other object is the same instance (use this)\n2. Check if the other object is the same type\n3. Cast to the correct type\n4. Compare all relevant fields"
+    },
+    {
+      "type": "code",
+      "value": "public class Book {\n    private String title;\n    private String author;\n    private int pages;\n    \n    public Book(String title, String author, int pages) {\n        this.title = title;\n        this.author = author;\n        this.pages = pages;\n    }\n    \n    @Override\n    public boolean equals(Object other) {\n        // Step 1: Check if same instance\n        if (this == other) {\n            return true;\n        }\n        \n        // Step 2: Check if null or wrong type\n        if (other == null || !(other instanceof Book)) {\n            return false;\n        }\n        \n        // Step 3: Cast to correct type\n        Book otherBook = (Book) other;\n        \n        // Step 4: Compare fields\n        return this.title.equals(otherBook.title) &&\n               this.author.equals(otherBook.author) &&\n               this.pages == otherBook.pages;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "instanceof"
+    },
+    {
+      "type": "text",
+      "value": " operator checks if the object is of the correct type before casting."
+    },
+    {
+      "type": "code",
+      "value": "Book b1 = new Book(\"Java Basics\", \"John Smith\", 350);\nBook b2 = new Book(\"Java Basics\", \"John Smith\", 350);\nBook b3 = new Book(\"Python Guide\", \"Jane Doe\", 400);\n\nSystem.out.println(b1.equals(b2));  // true (same data)\nSystem.out.println(b1.equals(b3));  // false (different data)\nSystem.out.println(b1 == b2);       // false (different objects)"
+    },
+    {
+      "type": "text",
+      "value": "Now "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " correctly returns "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " for objects with identical data, while "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " still compares references."
+    },
+    {
+      "type": "text",
+      "value": "The parameter is typed as "
+    },
+    {
+      "type": "code",
+      "value": "Object"
+    },
+    {
+      "type": "text",
+      "value": " because "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " is inherited from the "
+    },
+    {
+      "type": "code",
+      "value": "Object"
+    },
+    {
+      "type": "text",
+      "value": " class. You must match this signature exactly to properly override."
+    },
+    {
+      "type": "text",
+      "value": "When comparing String fields, use the "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " method because "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " compares String references, not their content."
+    },
+    {
+      "type": "code",
+      "value": "// WRONG - compares String references\nif (this.name == other.name) {  // May be false even for equal strings\n    // ...\n}\n\n// CORRECT - compares String content\nif (this.name.equals(other.name)) {  // Compares actual text\n    // ...\n}"
+    },
+    {
+      "type": "text",
+      "value": "Primitive types can use "
+    },
+    {
+      "type": "code",
+      "value": "=="
+    },
+    {
+      "type": "text",
+      "value": " safely since they store values, not references."
+    },
+    {
+      "type": "code",
+      "code": "public class Person {\n    private String name;      // Reference type - use equals()\n    private int age;          // Primitive type - use ==\n    private double height;    // Primitive type - use ==\n    \n    @Override\n    public boolean equals(Object other) {\n        if (this == other) return true;\n        if (other == null || !(other instanceof Person)) return false;\n        \n        Person otherPerson = (Person) other;\n        \n        return this.name.equals(otherPerson.name) &&    // String: use equals()\n               this.age == otherPerson.age &&            // int: use ==\n               this.height == otherPerson.height;        // double: use ==\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Mix the comparison operators appropriately based on field types."
+    },
+    {
+      "type": "text",
+      "value": "When a class contains other objects, call their "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " methods recursively."
+    },
+    {
+      "type": "code",
+      "value": "public class Address {\n    private String street;\n    private String city;\n    \n    @Override\n    public boolean equals(Object other) {\n        if (this == other) return true;\n        if (other == null || !(other instanceof Address)) return false;\n        \n        Address otherAddr = (Address) other;\n        return this.street.equals(otherAddr.street) &&\n               this.city.equals(otherAddr.city);\n    }\n}\n\npublic class Employee {\n    private String name;\n    private Address address;  // Another object\n    \n    @Override\n    public boolean equals(Object other) {\n        if (this == other) return true;\n        if (other == null || !(other instanceof Employee)) return false;\n        \n        Employee otherEmp = (Employee) other;\n        return this.name.equals(otherEmp.name) &&\n               this.address.equals(otherEmp.address);  // Calls Address.equals()\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The nested object's "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " method is called automatically, enabling deep comparison."
+    },
+    {
+      "type": "text",
+      "value": "Comparing arrays requires looping through elements or using "
+    },
+    {
+      "type": "code",
+      "value": "Arrays.equals()"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "import java.util.Arrays;\n\npublic class IntArray {\n    private int[] data;\n    \n    public IntArray(int[] data) {\n        this.data = data;\n    }\n    \n    @Override\n    public boolean equals(Object other) {\n        if (this == other) return true;\n        if (other == null || !(other instanceof IntArray)) return false;\n        \n        IntArray otherArray = (IntArray) other;\n        return Arrays.equals(this.data, otherArray.data);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Arrays.equals()"
+    },
+    {
+      "type": "text",
+      "value": " method compares array contents element-by-element."
+    },
+    {
+      "type": "text",
+      "value": "Including null-safe checking prevents crashes when comparing null references."
+    },
+    {
+      "type": "code",
+      "value": "public class Product {\n    private String name;\n    private String description;  // May be null\n    \n    @Override\n    public boolean equals(Object other) {\n        if (this == other) return true;\n        if (other == null || !(other instanceof Product)) return false;\n        \n        Product otherProduct = (Product) other;\n        \n        // Null-safe comparison using Objects.equals()\n        return this.name.equals(otherProduct.name) &&\n               java.util.Objects.equals(this.description, otherProduct.description);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Objects.equals()"
+    },
+    {
+      "type": "text",
+      "value": " method handles null values safely, returning "
+    },
+    {
+      "type": "code",
+      "value": "true"
+    },
+    {
+      "type": "text",
+      "value": " if both are null."
+    },
+    {
+      "type": "text",
+      "value": "When you override "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": ", you should also override "
+    },
+    {
+      "type": "code",
+      "value": "hashCode()"
+    },
+    {
+      "type": "text",
+      "value": " to maintain the contract that equal objects have equal hash codes. This is crucial for collections like "
+    },
+    {
+      "type": "code",
+      "value": "HashMap"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "HashSet"
+    },
+    {
+      "type": "text",
+      "value": " (covered in later lessons)."
+    },
+    {
+      "type": "code",
+      "value": "public class Item {\n    private String id;\n    private String name;\n    \n    @Override\n    public boolean equals(Object other) {\n        if (this == other) return true;\n        if (other == null || !(other instanceof Item)) return false;\n        \n        Item otherItem = (Item) other;\n        return this.id.equals(otherItem.id);\n    }\n    \n    @Override\n    public int hashCode() {\n        return id.hashCode();  // Equal objects have equal hash codes\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This pattern ensures consistency between "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "hashCode()"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "When implementing "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": ", decide which fields are significant for equality. For a bank account, the account number might be the unique identifier, while balance isn't part of identity."
+    },
+    {
+      "type": "code",
+      "value": "public class Account {\n    private String accountNumber;  // Unique identifier\n    private double balance;        // Not part of identity\n    \n    @Override\n    public boolean equals(Object other) {\n        if (this == other) return true;\n        if (other == null || !(other instanceof Account)) return false;\n        \n        Account otherAccount = (Account) other;\n        // Only compare account number - balance changes don't affect equality\n        return this.accountNumber.equals(otherAccount.accountNumber);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This design makes sense—two accounts with the same number are the same account, even if balances differ."
+    },
+    {
+      "type": "text",
+      "value": "Writing correct "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " methods is critical for working with collections and comparing objects meaningfully. It's a fundamental skill that separates programs that work from programs that work correctly."
+    }
+  ]
+}

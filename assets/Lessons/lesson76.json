@@ -1,0 +1,278 @@
+{
+  "lessonId": 76,
+  "title": "Writing Methods with Parameters and Return Values",
+  "content": [
+    {
+      "type": "text",
+      "value": "Methods are the actions that objects can perform. While getters and setters are specialized methods for accessing data, general-purpose methods implement behavior and solve problems. A well-designed method accepts input through parameters and returns results through return values, making it reusable and flexible."
+    },
+    {
+      "type": "text",
+      "value": "A method signature defines a method's structure: access modifier, return type, method name, and parameters. Understanding each component helps you write clear, correct methods."
+    },
+    {
+      "type": "code",
+      "value": "public class Calculator {\n    // Method signature: public [return type] [method name] ([parameters])\n    public int add(int a, int b) {\n        return a + b;\n    }\n    \n    public double divide(double numerator, double denominator) {\n        if (denominator != 0) {\n            return numerator / denominator;\n        }\n        return 0.0;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "add()"
+    },
+    {
+      "type": "text",
+      "value": " method accepts two "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " parameters and returns an "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ". The "
+    },
+    {
+      "type": "code",
+      "value": "divide()"
+    },
+    {
+      "type": "text",
+      "value": " method takes two "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": " parameters, validates input, and returns a "
+    },
+    {
+      "type": "code",
+      "value": "double"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Parameters allow methods to accept different inputs each time they're called, making methods flexible and reusable."
+    },
+    {
+      "type": "code",
+      "value": "public class StringProcessor {\n    public String repeat(String text, int times) {\n        String result = \"\";\n        for (int i = 0; i < times; i++) {\n            result += text;\n        }\n        return result;\n    }\n}\n\nStringProcessor processor = new StringProcessor();\nSystem.out.println(processor.repeat(\"Hi\", 3));      // HiHiHi\nSystem.out.println(processor.repeat(\"Hello\", 2));  // HelloHello"
+    },
+    {
+      "type": "text",
+      "value": "The same "
+    },
+    {
+      "type": "code",
+      "value": "repeat()"
+    },
+    {
+      "type": "text",
+      "value": " method works with different strings and repetition counts. Parameters enable this flexibility."
+    },
+    {
+      "type": "text",
+      "value": "Methods can have zero, one, or multiple parameters. Parameters are separated by commas, each with a type and name."
+    },
+    {
+      "type": "code",
+      "value": "public class Person {\n    private String name;\n    private int age;\n    \n    // No parameters\n    public void celebrate() {\n        System.out.println(name + \" is celebrating!\");\n    }\n    \n    // One parameter\n    public void greet(String greeting) {\n        System.out.println(greeting + \", \" + name);\n    }\n    \n    // Multiple parameters\n    public String introduce(String title, String organization) {\n        return \"I am \" + name + \", a \" + title + \" at \" + organization;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Methods can also return different types. The return type appears before the method name."
+    },
+    {
+      "type": "code",
+      "value": "public class Converter {\n    // Returns int\n    public int stringToInt(String str) {\n        return Integer.parseInt(str);\n    }\n    \n    // Returns String\n    public String doubleToString(double value) {\n        return String.valueOf(value);\n    }\n    \n    // Returns boolean\n    public boolean isEven(int number) {\n        return number % 2 == 0;\n    }\n    \n    // Returns void (no return value)\n    public void printMessage(String message) {\n        System.out.println(message);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "return"
+    },
+    {
+      "type": "text",
+      "value": " statement sends a value back to the caller. The returned value must match the method's return type."
+    },
+    {
+      "type": "code",
+      "value": "public class Rectangle {\n    private double width;\n    private double height;\n    \n    public Rectangle(double w, double h) {\n        this.width = w;\n        this.height = h;\n    }\n    \n    public double getArea() {\n        return width * height;  // Must return double\n    }\n    \n    public double getPerimeter() {\n        return 2 * (width + height);  // Must return double\n    }\n    \n    public boolean isSquare() {\n        return width == height;  // Must return boolean\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Each method returns the correct type. The caller receives the value and can use it."
+    },
+    {
+      "type": "code",
+      "value": "Rectangle rect = new Rectangle(5, 3);\ndouble area = rect.getArea();        // Receives 15.0\ndouble perimeter = rect.getPerimeter();  // Receives 16.0\nboolean square = rect.isSquare();    // Receives false"
+    },
+    {
+      "type": "text",
+      "value": "Methods with return type "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " don't return values; they perform actions or modify state."
+    },
+    {
+      "type": "code",
+      "value": "public class BankAccount {\n    private double balance;\n    \n    public void deposit(double amount) {\n        if (amount > 0) {\n            balance += amount;\n        }\n    }\n    \n    public void withdraw(double amount) {\n        if (amount > 0 && amount <= balance) {\n            balance -= amount;\n        }\n    }\n    \n    public void printBalance() {\n        System.out.println(\"Balance: $\" + balance);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "These "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " methods modify the account's state or display information but don't return values."
+    },
+    {
+      "type": "text",
+      "value": "Parameter names are important for clarity. Use descriptive names that indicate what the parameter represents."
+    },
+    {
+      "type": "code",
+      "value": "// Poor naming - unclear parameters\npublic double calculate(double x, double y, double z) {\n    return x + y * z;\n}\n\n// Good naming - clear parameters\npublic double calculatePrice(double basePrice, double quantity, double taxRate) {\n    return (basePrice * quantity) * (1 + taxRate);\n}"
+    },
+    {
+      "type": "text",
+      "value": "The second version's parameter names make the method's purpose obvious."
+    },
+    {
+      "type": "text",
+      "value": "Methods can have conditional logic, loops, and complex operations within their bodies."
+    },
+    {
+      "type": "code",
+      "value": "public class Statistics {\n    public double average(int[] numbers) {\n        if (numbers.length == 0) {\n            return 0;\n        }\n        int sum = 0;\n        for (int num : numbers) {\n            sum += num;\n        }\n        return (double) sum / numbers.length;\n    }\n    \n    public int findMax(int[] numbers) {\n        if (numbers.length == 0) {\n            return Integer.MIN_VALUE;\n        }\n        int max = numbers[0];\n        for (int i = 1; i < numbers.length; i++) {\n            if (numbers[i] > max) {\n                max = numbers[i];\n            }\n        }\n        return max;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "These methods contain loops and conditional logic to produce meaningful results from arrays."
+    },
+    {
+      "type": "text",
+      "value": "Methods can call other methods on the same object using "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "public class Employee {\n    private String name;\n    private double salary;\n    private int yearsWorked;\n    \n    public void giveRaise(double percentage) {\n        double raiseAmount = this.calculateRaise(percentage);\n        this.salary += raiseAmount;\n    }\n    \n    private double calculateRaise(double percentage) {\n        return salary * percentage / 100;\n    }\n    \n    public void promoteAndRaise() {\n        this.yearsWorked++;\n        this.giveRaise(10);  // 10% raise\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "giveRaise()"
+    },
+    {
+      "type": "text",
+      "value": " method calls the private "
+    },
+    {
+      "type": "code",
+      "value": "calculateRaise()"
+    },
+    {
+      "type": "text",
+      "value": " helper method. The "
+    },
+    {
+      "type": "code",
+      "value": "promoteAndRaise()"
+    },
+    {
+      "type": "text",
+      "value": " method calls "
+    },
+    {
+      "type": "code",
+      "value": "giveRaise()"
+    },
+    {
+      "type": "text",
+      "value": ", demonstrating method composition."
+    },
+    {
+      "type": "text",
+      "value": "Good method design follows several principles. Methods should have a single, clear responsibility. They should be documented with meaningful names and reasonable size (not too long). They should validate inputs and handle edge cases."
+    },
+    {
+      "type": "code",
+      "value": "public class Validator {\n    // Single responsibility: validate email\n    public boolean isValidEmail(String email) {\n        return email != null && email.contains(\"@\") && email.contains(\".\");\n    }\n    \n    // Single responsibility: validate age\n    public boolean isValidAge(int age) {\n        return age >= 0 && age <= 150;\n    }\n    \n    // Single responsibility: validate password\n    public boolean isStrongPassword(String password) {\n        if (password == null || password.length() < 8) {\n            return false;\n        }\n        boolean hasUpper = false;\n        boolean hasLower = false;\n        boolean hasDigit = false;\n        for (char c : password.toCharArray()) {\n            if (Character.isUpperCase(c)) hasUpper = true;\n            if (Character.isLowerCase(c)) hasLower = true;\n            if (Character.isDigit(c)) hasDigit = true;\n        }\n        return hasUpper && hasLower && hasDigit;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Each method has one clear responsibility: validating a specific type of input. This makes methods reusable and testable."
+    },
+    {
+      "type": "text",
+      "value": "Methods should typically be public only if they're part of the class's intended interface. Helper methods should be "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "code",
+      "value": "public class DataProcessor {\n    // Public method - part of the interface\n    public String processData(String input) {\n        String cleaned = this.removeWhitespace(input);\n        String validated = this.validateFormat(cleaned);\n        return this.formatOutput(validated);\n    }\n    \n    // Private helper methods\n    private String removeWhitespace(String str) {\n        return str.replaceAll(\"\\\\s+\", \"\");\n    }\n    \n    private String validateFormat(String str) {\n        // Validation logic\n        return str;\n    }\n    \n    private String formatOutput(String str) {\n        // Formatting logic\n        return str.toUpperCase();\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "processData()"
+    },
+    {
+      "type": "text",
+      "value": " method is the public interface. The helper methods are private, hidden from users who just want to process data."
+    },
+    {
+      "type": "text",
+      "value": "Mastering method design is essential for creating robust, maintainable classes. Well-designed methods with clear parameters and return values make your code easier to understand, test, and modify. As you advance, you'll encounter more sophisticated method patterns, but these fundamentals—accepting parameters, returning values, and having single responsibilities—remain constant."
+    }
+  ]
+}

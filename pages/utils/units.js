@@ -107,7 +107,7 @@ export const units = [
     },
     {
         id: 'unit2',
-        title: 'Using Objects & Methods',
+        title: 'Unit 2: Using Objects & Methods',
         lessons: [
             {
                 id: "lesson21",
@@ -188,7 +188,7 @@ export const units = [
     },
     {
         id: 'unit3',
-        title: 'Control Structures',
+        title: 'Unit 3: Control Structures',
         lessons: [
             {
                 id: "lesson36",
@@ -269,7 +269,7 @@ export const units = [
     },
     {
         id: 'unit4',
-        title: 'Loops and Iteration',
+        title: 'Unit 4: Loops and Iteration',
         lessons: [
             {
                 id: "lesson51",
@@ -364,7 +364,7 @@ export const units = [
     },
     {
         id: 'unit5',
-        title: 'Writing Classes & Objects',
+        title: 'Unit 5: Writing Classes & Objects',
         lessons: [
             {
                 id: "lesson69",
@@ -390,6 +390,76 @@ export const units = [
                 id: "lesson73",
                 title: "Accessor (getter) Methods",
                 description: "Learn to create methods that safely retrieve instance variable values while maintaining encapsulation."
+            },
+            {
+                id: "lesson74",
+                title: "Mutator (setter) Methods",
+                description: "Learn to create methods that safely modify instance variable values while enforcing data validation."
+            },
+            {
+                id: "lesson75",
+                title: "Encapsulation and Access Modifiers",
+                description: "Master access control to enforce proper use of classes and protect internal implementation details."
+            },
+            {
+                id: "lesson76",
+                title: "Writing Methods with Parameters and Return Values",
+                description: "Master method design by learning to write methods that accept parameters and return meaningful results."
+            },
+            {
+                id: "lesson77",
+                title: "Static Variables and Static Methods",
+                description: "Learn to use static members to create class-level data and methods that belong to the class rather than instances."
+            },
+            {
+                id: "lesson78",
+                title: "Method Overloading in Classes",
+                description: "Master method overloading to create flexible methods with the same name but different parameters."
+            },
+            {
+                id: "lesson79",
+                title: "Writing toString() Methods",
+                description: "Learn to create meaningful string representations of objects for better debugging and display."
+            },
+            {
+                id: "lesson80",
+                title: "Writing equals() Methods",
+                description: "Learn to implement object equality comparisons to determine when two objects represent the same data."
+            },
+            {
+                id: "lesson81",
+                title: "Using Objects in Arrays",
+                description: "Learn to create and manipulate arrays containing objects for organizing complex data structures."
+            },
+            {
+                id: "lesson82",
+                title: "Copy Constructors and Cloning Intro",
+                description: "Learn to create independent copies of objects using copy constructors and understand shallow vs. deep copying."
+            },
+            {
+                id: "lesson83",
+                title: "Garbage Collection and Object Lifecycles",
+                description: "Understand how Java manages memory through automatic garbage collection and object lifecycles."
+            },
+            {
+                id: "lesson84",
+                title: "Common Mistakes with Classes and Objects",
+                description: "Learn to identify and avoid common pitfalls when designing and using classes in object-oriented programming."
+            },
+            {
+                id: "lesson85",
+                title: "Writing Classes for Simple Data Structures",
+                description: "Learn to design classes that organize and manage collections of related data effectively."
+            },
+            {
+                id: "lesson86",
+                title: "Testing and Debugging Classes",
+                description: "Learn systematic approaches to testing classes and debugging common issues with objects"
+            },
+            {
+                id: "lesson87",
+                title: "Recap and Mini Project: Design a Class",
+                description: "Apply everything you've learned by designing complete, well-structured classes from scratch"
             },
         ]
     },

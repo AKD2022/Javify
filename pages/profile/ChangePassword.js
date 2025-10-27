@@ -3,7 +3,6 @@ import {
     View,
     Text as RNText,
     StyleSheet,
-    SafeAreaView,
     TouchableOpacity,
     TextInput,
     Platform,
@@ -20,6 +19,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import GradientButton from "../../assets/components/gradientButton";
 import GradientIconBackground from "../../assets/components/gradientBackgroundIcon";
 import { Ionicons } from "@expo/vector-icons";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function ChangePassword() {
     const [currentPassword, setCurrentPassword] = useState("");

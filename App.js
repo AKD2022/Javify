@@ -9,6 +9,8 @@ import { View, Text, ActivityIndicator } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Provider as PaperProvider } from 'react-native-paper';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { auth } from './config/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
 
 import HomeScreen from './pages/home/HomeScreen';
 import QuizScreen from './pages/lesson/QuizScreen';
@@ -31,11 +33,9 @@ import ProgressReport from './pages/profile/ProgressReport';
 import NotificationPreferences from './pages/profile/NotificationPreferences';
 import ChangeUsername from './pages/profile/ChangeUsername';
 import ChangePassword from './pages/profile/ChangePassword';
-
-import { auth } from './config/firebase';
-import { onAuthStateChanged } from 'firebase/auth';
 import UnitHeader from './assets/components/unitHeader';
 import colors from './assets/components/colors';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -103,232 +103,239 @@ export default function App() {
   if (!fontsLoaded || loading) return <SplashScreen />;
 
   return (
-    <PaperProvider>
-      <GestureHandlerRootView style={{ flex: 1 }}>
-        <NavigationContainer>
-          <Stack.Navigator
-            screenOptions={{
-              headerStyle: { backgroundColor: '#0F2577' },
-              headerTintColor: '#fff',
-              headerTitleAlign: 'center',
-            }}
-          >
-            {user ? (
-              <>
-                <Stack.Screen
-                  name="MainTabs"    
-                  component={MainTabs}
-                  options={{ headerShown: false }}
-                />
+    <SafeAreaProvider>
+      <PaperProvider>
+        <GestureHandlerRootView style={{ flex: 1 }}>
+          <NavigationContainer>
+            <Stack.Navigator
+              screenOptions={{
+                headerStyle: { backgroundColor: '#0F2577' },
+                headerTintColor: '#fff',
+                headerTitleAlign: 'center',
+              }}
+            >
+              {user ? (
+                <>
+                  <Stack.Screen
+                    name="MainTabs"
+                    component={MainTabs}
+                    options={{ headerShown: false }}
+                  />
 
+                  <Stack.Screen
+                    name="UnitScreen"
+                    component={UnitScreen}
+                    options={({ route }) => ({
+                      headerStyle: {
+                        backgroundColor: colors.white,
+                        height: 200,
+                      },
+                      headerTitle: () => (
+                        <UnitHeader
+                          title={route.params.unit.title}
+                          subTitle={`${route.params.unit.lessons.length} Lessons`}
+                        />
+                      ),
+                      headerTitleAlign: 'center',
+                      headerTintColor: colors.black,
+                      headerBackTitleVisible: false,
+                      headerBackButtonDisplayMode: "minimal",
+                      headerTitleContainerStyle: {
+                        height: 200,
+                        justifyContent: 'center',
+                      },
+                    })}
+                  />
 
-                {/* Unit Screen with custom header */}
-                <Stack.Screen
-                  name="UnitScreen"
-                  component={UnitScreen}
-                  options={({ route }) => ({
-                    headerStyle: {
-                      backgroundColor: colors.white,
-                      height: 200,
-                    },
-                    headerTitle: () => (
-                      <UnitHeader
-                        title={route.params.unit.title}
-                        subTitle={`${route.params.unit.lessons.length} Lessons`}
-                      />
-                    ),
-                    headerTitleAlign: 'center',
-                    headerTintColor: colors.black,
-                    headerBackTitleVisible: false,
-                    headerBackButtonDisplayMode: "minimal",
-                    headerTitleContainerStyle: {
-                      height: 200,
-                      justifyContent: 'center',
-                    },
-                  })}
-                />
+                  <Stack.Screen
+                    name="LessonScreen"
+                    component={LessonScreen}
+                    options={({ route }) => ({
+                      headerTitle: `Lesson ${route.params.lessonId}`,
+                      headerStyle: { backgroundColor: colors.defaultBackground },
+                      headerTitleAlign: 'center',
+                      headerTintColor: colors.black,
+                      headerBackTitleVisible: false,
+                      headerBackButtonDisplayMode: "minimal",
+                      headerTitleContainerStyle: {
+                        justifyContent: 'center',
+                      },
+                    })}
+                  />
 
-                <Stack.Screen
-                  name="LessonScreen"
-                  component={LessonScreen}
-                  options={({ route }) => ({
-                    headerTitle: `Lesson ${route.params.lessonId}`, // fixed
-                    headerStyle: { backgroundColor: colors.defaultBackground },
-                    headerTitleAlign: 'center',
-                    headerTintColor: colors.black,
-                    headerBackTitleVisible: false,
-                    headerBackButtonDisplayMode: "minimal",
-                    headerTitleContainerStyle: {
-                      // remove excessive height
-                      justifyContent: 'center',
-                    },
-                  })}
-                />
+                  <Stack.Screen
+                    name="QuizScreen"
+                    component={QuizScreen}
+                    options={({ route }) => ({
+                      headerTitle: `Quiz for Lesson ${route.params.lessonId}`,
+                      headerStyle: { backgroundColor: colors.defaultBackground },
+                      headerTitleAlign: 'center',
+                      headerTintColor: colors.black,
+                      headerBackTitleVisible: false,
+                      headerBackButtonDisplayMode: "minimal",
+                    })}
+                  />
 
+                  <Stack.Screen
+                    name="ViewScore"
+                    component={ViewScoreScreen}
+                    options={{ headerShown: false }}
+                  />
 
-                <Stack.Screen
-                  name="QuizScreen"
-                  component={QuizScreen}
-                  options={({ route }) => ({
-                    headerTitle: `Quiz for Lesson ${route.params.lessonId}`,
-                    headerStyle: { backgroundColor: colors.defaultBackground },
-                    headerTitleAlign: 'center',
-                    headerTintColor: colors.black,
-                    headerBackTitleVisible: false,
-                    headerBackButtonDisplayMode: "minimal",
-                  })}
-                />
-                <Stack.Screen
-                  name="ViewScore"
-                  component={ViewScoreScreen}
-                  options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                  name="CalendarScreen"
-                  component={CalendarScreen}
-                  options={{ title: 'Calendar' }}
-                />
-                <Stack.Screen
-                  name="BookmarkedQuestionsScreen"
-                  component={BookmarkedQuestionsScreen}
-                  options={{ title: 'Bookmarks' }}
-                />
-                <Stack.Screen
-                  name="BookmarkedLessonsScreen"
-                  component={BookmarkedLessonsScreen}
-                  options={{ title: 'Bookmarks' }}
-                />
-                <Stack.Screen
-                  name="ShowBookmarkedQuestion"
-                  component={ShowBookmarkedQuestion}
-                  options={{
-                    headerShown: true,
-                    headerTitle: "Boomkarked Question",
-                    headerStyle: {
-                      backgroundColor: colors.white,
-                    },
-                    headerTintColor: colors.black,
-                    headerTitleAlign: "center",
-                    headerBackButtonDisplayMode: "minimal",
-                  }}
-                />
-                <Stack.Screen
-                  name="BookmarksScreen"
-                  component={BookmarksScreen}
-                  options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                  name="DiagnosticScreen"
-                  component={DiagnosticScreen}
-                  options={({ route }) => ({
-                    headerTitle: `Diagnostic`,
-                    headerStyle: { backgroundColor: colors.defaultBackground },
-                    headerTitleAlign: 'center',
-                    headerTintColor: colors.black,
-                    headerBackTitleVisible: false,
-                    headerBackButtonDisplayMode: "minimal",
-                  })}
-                />
-                <Stack.Screen
-                  name="DateSelectionScreen"
-                  component={DateSelectionScreen}
-                  options={({ route }) => ({
-                    headerTitle: `Select Dates`,
-                    headerStyle: { backgroundColor: colors.defaultBackground },
-                    headerTitleAlign: 'center',
-                    headerTintColor: colors.black,
-                    headerBackTitleVisible: false,
-                    headerBackButtonDisplayMode: "minimal",
-                    headerBackVisible: false,
-                  })}
-                />
-                <Stack.Screen
-                  name="ExplanationScreen"
-                  component={ExplanationScreen}
-                  options={{
-                    headerShown: true,
-                    headerTitle: "Explanations",
-                    headerStyle: {
-                      backgroundColor: colors.white,
-                    },
-                    headerTintColor: colors.black,
-                    headerTitleAlign: "center",
-                  }}
-                />
-                <Stack.Screen
-                  name="Profile"
-                  component={Profile}
-                  options={({ route }) => ({
-                    headerTitle: `Profile`,
-                    headerStyle: { backgroundColor: colors.defaultBackground },
-                    headerTitleAlign: 'center',
-                    headerTintColor: colors.black,
-                    headerBackTitleVisible: false,
-                    headerBackButtonDisplayMode: "minimal",
-                  })}
-                />
-                <Stack.Screen
-                  name="ProgressReport"
-                  component={ProgressReport}
-                  options={({ route }) => ({
-                    headerTitle: `Progress Report`,
-                    headerStyle: { backgroundColor: colors.defaultBackground },
-                    headerTitleAlign: 'center',
-                    headerTintColor: colors.black,
-                    headerBackTitleVisible: false,
-                    headerBackButtonDisplayMode: "minimal",
-                  })}
-                />
+                  <Stack.Screen
+                    name="CalendarScreen"
+                    component={CalendarScreen}
+                    options={{ title: 'Calendar' }}
+                  />
 
-                <Stack.Screen
-                  name="NotificationPreferences"
-                  component={NotificationPreferences}
-                  options={({ route }) => ({
-                    headerTitle: `Notification Preferences`,
-                    headerStyle: { backgroundColor: colors.defaultBackground },
-                    headerTitleAlign: 'center',
-                    headerTintColor: colors.black,
-                    headerBackTitleVisible: false,
-                    headerBackButtonDisplayMode: "minimal",
-                  })}
-                />
+                  <Stack.Screen
+                    name="BookmarkedQuestionsScreen"
+                    component={BookmarkedQuestionsScreen}
+                    options={{ title: 'Bookmarks' }}
+                  />
 
-                <Stack.Screen
-                  name="ChangeUsername"
-                  component={ChangeUsername}
-                  options={{ headerShown: false }}
-                />
+                  <Stack.Screen
+                    name="BookmarkedLessonsScreen"
+                    component={BookmarkedLessonsScreen}
+                    options={{ title: 'Bookmarks' }}
+                  />
 
-                <Stack.Screen
-                  name="ChangePassword"
-                  component={ChangePassword}
-                  options={{ headerShown: false }}
-                />
+                  <Stack.Screen
+                    name="ShowBookmarkedQuestion"
+                    component={ShowBookmarkedQuestion}
+                    options={{
+                      headerShown: true,
+                      headerTitle: "Bookmarked Question",
+                      headerStyle: {
+                        backgroundColor: colors.white,
+                      },
+                      headerTintColor: colors.black,
+                      headerTitleAlign: "center",
+                      headerBackButtonDisplayMode: "minimal",
+                    }}
+                  />
 
+                  <Stack.Screen
+                    name="BookmarksScreen"
+                    component={BookmarksScreen}
+                    options={{ headerShown: false }}
+                  />
 
-              </>
-            ) : (
-              <>
-                <Stack.Screen
-                  name="Login"
-                  component={Login}
-                  options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                  name="SignUp"
-                  component={SignUp}
-                  options={{ headerShown: false }}
-                />
-                <Stack.Screen
-                  name="ForgotPassword"
-                  component={ForgotPassword}
-                  options={{ headerShown: false }}
-                />
-              </>
-            )}
-          </Stack.Navigator>
-        </NavigationContainer>
-      </GestureHandlerRootView>
-    </PaperProvider>
+                  <Stack.Screen
+                    name="DiagnosticScreen"
+                    component={DiagnosticScreen}
+                    options={({ route }) => ({
+                      headerTitle: `Diagnostic`,
+                      headerStyle: { backgroundColor: colors.defaultBackground },
+                      headerTitleAlign: 'center',
+                      headerTintColor: colors.black,
+                      headerBackTitleVisible: false,
+                      headerBackButtonDisplayMode: "minimal",
+                    })}
+                  />
+
+                  <Stack.Screen
+                    name="DateSelectionScreen"
+                    component={DateSelectionScreen}
+                    options={({ route }) => ({
+                      headerTitle: `Select Dates`,
+                      headerStyle: { backgroundColor: colors.defaultBackground },
+                      headerTitleAlign: 'center',
+                      headerTintColor: colors.black,
+                      headerBackTitleVisible: false,
+                      headerBackButtonDisplayMode: "minimal",
+                      headerBackVisible: false,
+                    })}
+                  />
+
+                  <Stack.Screen
+                    name="ExplanationScreen"
+                    component={ExplanationScreen}
+                    options={{
+                      headerShown: true,
+                      headerTitle: "Explanations",
+                      headerStyle: {
+                        backgroundColor: colors.white,
+                      },
+                      headerTintColor: colors.black,
+                      headerTitleAlign: "center",
+                    }}
+                  />
+
+                  <Stack.Screen
+                    name="Profile"
+                    component={Profile}
+                    options={({ route }) => ({
+                      headerTitle: `Profile`,
+                      headerStyle: { backgroundColor: colors.defaultBackground },
+                      headerTitleAlign: 'center',
+                      headerTintColor: colors.black,
+                      headerBackTitleVisible: false,
+                      headerBackButtonDisplayMode: "minimal",
+                    })}
+                  />
+
+                  <Stack.Screen
+                    name="ProgressReport"
+                    component={ProgressReport}
+                    options={({ route }) => ({
+                      headerTitle: `Progress Report`,
+                      headerStyle: { backgroundColor: colors.defaultBackground },
+                      headerTitleAlign: 'center',
+                      headerTintColor: colors.black,
+                      headerBackTitleVisible: false,
+                      headerBackButtonDisplayMode: "minimal",
+                    })}
+                  />
+
+                  <Stack.Screen
+                    name="NotificationPreferences"
+                    component={NotificationPreferences}
+                    options={({ route }) => ({
+                      headerTitle: `Notification Preferences`,
+                      headerStyle: { backgroundColor: colors.defaultBackground },
+                      headerTitleAlign: 'center',
+                      headerTintColor: colors.black,
+                      headerBackTitleVisible: false,
+                      headerBackButtonDisplayMode: "minimal",
+                    })}
+                  />
+
+                  <Stack.Screen
+                    name="ChangeUsername"
+                    component={ChangeUsername}
+                    options={{ headerShown: false }}
+                  />
+
+                  <Stack.Screen
+                    name="ChangePassword"
+                    component={ChangePassword}
+                    options={{ headerShown: false }}
+                  />
+                </>
+              ) : (
+                <>
+                  <Stack.Screen
+                    name="Login"
+                    component={Login}
+                    options={{ headerShown: false }}
+                  />
+                  <Stack.Screen
+                    name="SignUp"
+                    component={SignUp}
+                    options={{ headerShown: false }}
+                  />
+                  <Stack.Screen
+                    name="ForgotPassword"
+                    component={ForgotPassword}
+                    options={{ headerShown: false }}
+                  />
+                </>
+              )}
+            </Stack.Navigator>
+          </NavigationContainer>
+        </GestureHandlerRootView>
+      </PaperProvider>
+    </SafeAreaProvider>
   );
 }

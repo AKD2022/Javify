@@ -1,0 +1,214 @@
+{
+  "lessonId": 87,
+  "title": "Recap and Mini Project: Design a Class",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is the first step when designing a class?",
+      "options": [
+        { "type": "text", "value": "Identifying what data to store and what behaviors to provide" },
+        { "type": "text", "value": "Writing the main method" },
+        { "type": "text", "value": "Creating getter methods" },
+        { "type": "text", "value": "Testing the class" }
+      ],
+      "answer": 0,
+      "explanation": "Designing a class starts with identifying what data the class needs to store and what behaviors it should provide. This guides all other design decisions."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "Which access modifier should instance variables typically use for proper encapsulation?",
+      "options": [
+        { "type": "text", "value": "public" },
+        { "type": "text", "value": "private" },
+        { "type": "text", "value": "protected" },
+        { "type": "text", "value": "No modifier" }
+      ],
+      "answer": 1,
+      "explanation": "Instance variables should typically be private to maintain encapsulation, protecting data from direct outside access and forcing interaction through methods."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What does the ternary operator allow you to do concisely?",
+      "options": [
+        { "type": "text", "value": "Create loops" },
+        { "type": "text", "value": "Define classes" },
+        { "type": "text", "value": "Set values based on a condition" },
+        { "type": "text", "value": "Call multiple methods" }
+      ],
+      "answer": 2,
+      "explanation": "The ternary operator (? :) provides a concise way to set values based on a condition, offering a shorthand for simple if-else logic."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What does the instanceof operator check?",
+      "options": [
+        { "type": "text", "value": "If a variable is null" },
+        { "type": "text", "value": "If two objects are equal" },
+        { "type": "text", "value": "If a number is positive" },
+        { "type": "text", "value": "If an object is of a specific type" }
+      ],
+      "answer": 3,
+      "explanation": "The instanceof operator checks whether an object is of a specific type before casting or comparing, preventing type-related errors."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "What naming pattern do getter methods typically follow?",
+      "options": [
+        { "type": "text", "value": "get followed by the capitalized variable name" },
+        { "type": "text", "value": "set followed by the variable name" },
+        { "type": "text", "value": "The same name as the variable" },
+        { "type": "text", "value": "retrieve followed by the variable name" }
+      ],
+      "answer": 0,
+      "explanation": "Getter methods typically follow the pattern 'get' followed by the capitalized variable name, making them easy to identify and use consistently."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "For boolean variables, what prefix is often used for getter methods instead of 'get'?",
+      "options": [
+        { "type": "text", "value": "has" },
+        { "type": "text", "value": "is" },
+        { "type": "text", "value": "check" },
+        { "type": "text", "value": "bool" }
+      ],
+      "answer": 1,
+      "explanation": "For boolean variables, getters often start with 'is' instead of 'get', making code read more naturally like book.isCheckedOut()."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "Should you create setter methods for every instance variable?",
+      "options": [
+        { "type": "text", "value": "Yes, always" },
+        { "type": "text", "value": "Only for public variables" },
+        { "type": "text", "value": "No, only for properties that should change after object creation" },
+        { "type": "text", "value": "Only for boolean variables" }
+      ],
+      "answer": 2,
+      "explanation": "You shouldn't create setters for every variable. Only create them for properties that should legitimately change after the object is created."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What parameter type does the equals() method accept?",
+      "options": [
+        { "type": "text", "value": "String" },
+        { "type": "text", "value": "int" },
+        { "type": "text", "value": "The same class type" },
+        { "type": "text", "value": "Object" }
+      ],
+      "answer": 3,
+      "explanation": "The equals() method takes an Object parameter, allowing it to compare with any type. You then use instanceof to check the actual type."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What should a constructor do for a new object?",
+      "options": [
+        { "type": "text", "value": "Initialize the object to a valid initial state" },
+        { "type": "text", "value": "Only print messages" },
+        { "type": "text", "value": "Delete old objects" },
+        { "type": "text", "value": "Create arrays" }
+      ],
+      "answer": 0,
+      "explanation": "A constructor should accept parameters for essential information and initialize the object to a valid initial state with all necessary values set."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What is the purpose of the toString() method?",
+      "options": [
+        { "type": "text", "value": "To delete the object" },
+        { "type": "text", "value": "To create a string representation useful for debugging and display" },
+        { "type": "text", "value": "To convert numbers to text" },
+        { "type": "text", "value": "To compare objects" }
+      ],
+      "answer": 1,
+      "explanation": "The toString() method creates a readable string representation of an object's current state, making it invaluable for debugging and displaying information."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "When designing classes, what should methods provide instead of just raw data access?",
+      "options": [
+        { "type": "text", "value": "Nothing extra" },
+        { "type": "text", "value": "Only getters" },
+        { "type": "text", "value": "Meaningful operations that maintain valid states" },
+        { "type": "text", "value": "Direct variable access" }
+      ],
+      "answer": 2,
+      "explanation": "Methods should provide meaningful operations rather than just raw data access, performing useful tasks while maintaining objects in valid states."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "What should methods that modify data do to prevent invalid operations?",
+      "options": [
+        { "type": "text", "value": "Accept any input" },
+        { "type": "text", "value": "Never check anything" },
+        { "type": "text", "value": "Always throw exceptions" },
+        { "type": "text", "value": "Check current state and validate inputs" }
+      ],
+      "answer": 3,
+      "explanation": "Methods that modify data should check the current state and validate inputs to enforce business logic and prevent invalid operations."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What does the 'this' keyword help distinguish in constructors?",
+      "options": [
+        { "type": "text", "value": "Between parameters and instance variables with the same names" },
+        { "type": "text", "value": "Between different classes" },
+        { "type": "text", "value": "Between methods" },
+        { "type": "text", "value": "Between public and private" }
+      ],
+      "answer": 0,
+      "explanation": "The 'this' keyword distinguishes between parameters and instance variables when they share the same names, clarifying which variable you're referencing."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "Why should getAverage() check if scoreCount is zero before calculating?",
+      "options": [
+        { "type": "text", "value": "To make code longer" },
+        { "type": "text", "value": "To prevent division by zero" },
+        { "type": "text", "value": "To slow down execution" },
+        { "type": "text", "value": "To use more memory" }
+      ],
+      "answer": 1,
+      "explanation": "Checking if scoreCount is zero prevents division by zero errors when no scores exist yet, demonstrating defensive programming."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "What characteristic makes a class well-designed?",
+      "options": [
+        { "type": "text", "value": "Having many public variables" },
+        { "type": "text", "value": "Never validating inputs" },
+        { "type": "text", "value": "Having clear responsibilities and maintaining encapsulation" },
+        { "type": "text", "value": "Using only getters and setters" }
+      ],
+      "answer": 2,
+      "explanation": "A well-designed class has clear responsibilities, maintains encapsulation with private variables, validates inputs, and provides meaningful methods."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What should you do after designing a new class?",
+      "options": [
+        { "type": "text", "value": "Never use it" },
+        { "type": "text", "value": "Delete it immediately" },
+        { "type": "text", "value": "Only write one method" },
+        { "type": "text", "value": "Test it thoroughly to ensure it works as intended" }
+      ],
+      "answer": 3,
+      "explanation": "After designing a class, you should test it thoroughly with various scenarios to ensure all methods work correctly and the class behaves as intended."
+    }
+  ]
+}

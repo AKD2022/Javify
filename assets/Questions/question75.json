@@ -1,0 +1,406 @@
+{
+    "lessonId": 75,
+    "title": "Encapsulation and Access Modifiers",
+    "questions": [
+        {
+            "id": 1,
+            "type": "text",
+            "question": "What is encapsulation?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Bundling data and methods together while controlling access to that data"
+                },
+                {
+                    "type": "text",
+                    "value": "Creating public variables"
+                },
+                {
+                    "type": "text",
+                    "value": "Deleting instance variables"
+                },
+                {
+                    "type": "text",
+                    "value": "Making all methods private"
+                }
+            ],
+            "answer": 0,
+            "explanation": "Encapsulation bundles data and methods together and controls access through access modifiers, protecting data integrity."
+        },
+        {
+            "id": 2,
+            "type": "text",
+            "question": "What does the public modifier mean?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Accessible only within the class"
+                },
+                {
+                    "type": "text",
+                    "value": "Accessible from anywhere"
+                },
+                {
+                    "type": "text",
+                    "value": "Accessible only within the same package"
+                },
+                {
+                    "type": "text",
+                    "value": "Accessible from subclasses only"
+                }
+            ],
+            "answer": 1,
+            "explanation": "The public modifier makes a class member accessible from anywhere in the program."
+        },
+        {
+            "id": 3,
+            "type": "text",
+            "question": "What does the private modifier mean?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Accessible from anywhere"
+                },
+                {
+                    "type": "text",
+                    "value": "Accessible only by the programmer"
+                },
+                {
+                    "type": "text",
+                    "value": "Accessible only within the same class"
+                },
+                {
+                    "type": "text",
+                    "value": "Accessible from subclasses"
+                }
+            ],
+            "answer": 2,
+            "explanation": "The private modifier restricts access to only within the class where it is declared."
+        },
+        {
+            "id": 4,
+            "type": "text",
+            "question": "Why should instance variables typically be private?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "To make code run faster"
+                },
+                {
+                    "type": "text",
+                    "value": "Because public variables don't work"
+                },
+                {
+                    "type": "text",
+                    "value": "To eliminate getters and setters"
+                },
+                {
+                    "type": "text",
+                    "value": "To prevent direct access and enforce controlled modification through methods"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Making instance variables private prevents bypass of validation and encapsulates implementation details."
+        },
+        {
+            "id": 5,
+            "type": "text",
+            "question": "What pattern is used when instance variables are private?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Private variables with public getters and setters"
+                },
+                {
+                    "type": "text",
+                    "value": "Public variables with no methods"
+                },
+                {
+                    "type": "text",
+                    "value": "Only constructors are needed"
+                },
+                {
+                    "type": "text",
+                    "value": "Direct variable access from outside"
+                }
+            ],
+            "answer": 0,
+            "explanation": "Private instance variables paired with public getters and setters is the standard encapsulation pattern."
+        },
+        {
+            "id": 6,
+            "type": "text",
+            "question": "Can methods be private?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, all methods must be public"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, private methods are helper functions not part of the public interface"
+                },
+                {
+                    "type": "text",
+                    "value": "Only static methods can be private"
+                },
+                {
+                    "type": "text",
+                    "value": "Only in constructors"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Private methods hide implementation details and serve as internal helpers not accessible outside the class."
+        },
+        {
+            "id": 7,
+            "type": "text",
+            "question": "What is a public interface of a class?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "All instance variables"
+                },
+                {
+                    "type": "text",
+                    "value": "All methods including private ones"
+                },
+                {
+                    "type": "text",
+                    "value": "The public methods and constructors exposed to users"
+                },
+                {
+                    "type": "text",
+                    "value": "Only getters"
+                }
+            ],
+            "answer": 2,
+            "explanation": "A class's public interface consists of its public methods and constructors that users interact with."
+        },
+        {
+            "id": 8,
+            "type": "text",
+            "question": "Can a constructor be private?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, constructors must always be public"
+                },
+                {
+                    "type": "text",
+                    "value": "Only if there are no parameters"
+                },
+                {
+                    "type": "text",
+                    "value": "Only for static classes"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, private constructors can prevent direct instantiation (advanced pattern)"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Private constructors prevent direct object creation, used in advanced patterns like Singleton."
+        },
+        {
+            "id": 9,
+            "type": "text",
+            "question": "What is the 'Principle of Least Privilege'?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Expose only what's necessary; hide everything else"
+                },
+                {
+                    "type": "text",
+                    "value": "Make everything public for ease of use"
+                },
+                {
+                    "type": "text",
+                    "value": "All methods must be equally accessible"
+                },
+                {
+                    "type": "text",
+                    "value": "Private is always better than public"
+                }
+            ],
+            "answer": 0,
+            "explanation": "This principle dictates minimizing exposure of implementation details, exposing only necessary functionality."
+        },
+        {
+            "id": 10,
+            "type": "text",
+            "question": "How does encapsulation protect data?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "It doesn't protect data"
+                },
+                {
+                    "type": "text",
+                    "value": "By forcing access through validated getters and setters"
+                },
+                {
+                    "type": "text",
+                    "value": "By making everything public"
+                },
+                {
+                    "type": "text",
+                    "value": "By eliminating variables"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Encapsulation protects data by requiring modification through methods that can validate and enforce constraints."
+        },
+        {
+            "id": 11,
+            "type": "text",
+            "question": "Can you access a private variable directly from outside a class?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Yes, private is just a suggestion"
+                },
+                {
+                    "type": "text",
+                    "value": "Only in the main method"
+                },
+                {
+                    "type": "text",
+                    "value": "No, attempting to access causes a compilation error"
+                },
+                {
+                    "type": "text",
+                    "value": "Only with getters"
+                }
+            ],
+            "answer": 2,
+            "explanation": "Private members cannot be accessed from outside the class; the compiler prevents it."
+        },
+        {
+            "id": 12,
+            "type": "text",
+            "question": "What is an advantage of encapsulation for code maintenance?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "It makes code slower"
+                },
+                {
+                    "type": "text",
+                    "value": "It eliminates the need for documentation"
+                },
+                {
+                    "type": "text",
+                    "value": "It reduces the number of methods needed"
+                },
+                {
+                    "type": "text",
+                    "value": "You can change internal implementation without affecting external code"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Encapsulation allows changing internal implementation without breaking code that uses the class's public interface."
+        },
+        {
+            "id": 13,
+            "type": "text",
+            "question": "Should sensitive data like passwords have public getters?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "No, sensitive data should not have public getters"
+                },
+                {
+                    "type": "text",
+                    "value": "Yes, all data should be accessible"
+                },
+                {
+                    "type": "text",
+                    "value": "Only if encrypted"
+                },
+                {
+                    "type": "text",
+                    "value": "Only for administrators"
+                }
+            ],
+            "answer": 0,
+            "explanation": "Sensitive data should remain private with no public accessor to prevent unauthorized exposure."
+        },
+        {
+            "id": 14,
+            "type": "text",
+            "question": "What is the relationship between access modifiers and encapsulation?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "They are unrelated"
+                },
+                {
+                    "type": "text",
+                    "value": "Access modifiers are tools that implement encapsulation"
+                },
+                {
+                    "type": "text",
+                    "value": "Encapsulation requires no access modifiers"
+                },
+                {
+                    "type": "text",
+                    "value": "Only public and private exist"
+                }
+            ],
+            "answer": 1,
+            "explanation": "Access modifiers (public/private) are the mechanism used to achieve encapsulation."
+        },
+        {
+            "id": 15,
+            "type": "text",
+            "question": "Can every instance variable have both a getter and setter?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Yes, always provide both"
+                },
+                {
+                    "type": "text",
+                    "value": "Setters are always required but getters are optional"
+                },
+                {
+                    "type": "text",
+                    "value": "Provide getters and setters only as needed; some variables may have only one or neither"
+                },
+                {
+                    "type": "text",
+                    "value": "Neither should ever be provided"
+                }
+            ],
+            "answer": 2,
+            "explanation": "Provide accessors based on what external code needs; not every variable requires both getter and setter."
+        },
+        {
+            "id": 16,
+            "type": "text",
+            "question": "What does a well-designed class's encapsulation accomplish?",
+            "options": [
+                {
+                    "type": "text",
+                    "value": "Makes code more difficult to use"
+                },
+                {
+                    "type": "text",
+                    "value": "Eliminates the need for methods"
+                },
+                {
+                    "type": "text",
+                    "value": "Prevents all modification of objects"
+                },
+                {
+                    "type": "text",
+                    "value": "Protects data integrity, hides complexity, and enables flexibility"
+                }
+            ],
+            "answer": 3,
+            "explanation": "Good encapsulation protects data, hides internal complexity, and allows implementation changes without affecting users."
+        }
+    ]
+}

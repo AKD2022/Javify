@@ -10,8 +10,9 @@ import GradientButton from "../assets/components/gradientButton";
 import * as Google from "expo-auth-session/providers/google";
 import * as WebBrowser from "expo-web-browser";
 import { GoogleAuthProvider, signInWithCredential } from "firebase/auth";
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Icon } from "react-native-paper";
+import { SafeAreaView } from 'react-native-safe-area-context'
+import { KeyboardAvoidingView } from "react-native";
+import { TouchableWithoutFeedback, Keyboard, ScrollView } from "react-native";
 
 
 WebBrowser.maybeCompleteAuthSession();
@@ -71,78 +72,83 @@ export default function LoginScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <View style={styles.loginContainer}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={{ flex: 1 }}
+      >
+        <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+          <ScrollView
+            contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }}
+            keyboardShouldPersistTaps="handled"
+            showsVerticalScrollIndicator={false}
+          >
 
-        <View style={styles.headerBox}>
-          <GradientIconBackground icon={<Ionicons name="person" size={21} color={colors.white} />} />
-          <Text style={styles.headerText}>Welcome Back</Text>
-          <Text style={styles.headerSubtext}>Sign in to your account</Text>
-        </View>
-
-        {/* Email Input */}
-        <View style={styles.inputTitle}>
-          <Text style={styles.inputTitleText}>Email</Text>
-        </View>
-        <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.inputWithIcon}
-            placeholder="Enter your email"
-            placeholderTextColor={"#ADAEBC"}
-            value={email}
-            onChangeText={setEmail}
-            keyboardType="email-address"
-            autoCapitalize="none"
-          />
-          <MaterialIcons name="email" size={20} color="#888" />
-        </View>
-
-        {/* Password Input */}
-        <View style={styles.inputTitle}>
-          <Text style={styles.inputTitleText}>Password</Text>
-        </View>
-        <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.inputWithIcon}
-            placeholder="Enter your password"
-            placeholderTextColor={"#ADAEBC"}
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry
-          />
-          <Ionicons name="lock-closed" size={20} color="#888" />
-        </View>
-
-        {error ? <Text style={{ color: "red", marginBottom: 10 }}>{error}</Text> : null}
-
-        <TouchableOpacity style={styles.forgotPasswordContainer} onPress={() => navigation.navigate("ForgotPassword")}>
-          <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
-        </TouchableOpacity>
-
-        <View style={{ width: "100%" }}>
-          <GradientButton title={"Sign In"} style={styles.loginButton} onPress={handleLogin} />
-        </View>
-
-        <View style={styles.bottomLinks}>
-          <Text style={styles.newPages}>Don't have an account?</Text>
-          <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
-            <Text style={styles.signUpText}>Sign Up</Text>
-          </TouchableOpacity>
-        </View>
+            <View style={styles.loginContainer}>
 
 
-        {/* 
-        <View>
-          <GradientButton
-            icon={"google"}
-            onPress={async () => await promptAsync()}
-            style={styles.signInWithGoogle}
-          />
-        </View>
-        */}
+              <View style={styles.headerBox}>
+                <GradientIconBackground icon={<Ionicons name="person" size={21} color={colors.white} />} />
+                <Text style={styles.headerText}>Welcome Back</Text>
+                <Text style={styles.headerSubtext}>Sign in to your account</Text>
+              </View>
 
+              {/* Email Input */}
+              <View style={styles.inputTitle}>
+                <Text style={styles.inputTitleText}>Email</Text>
+              </View>
+              <View style={styles.inputContainer}>
+                <TextInput
+                  style={styles.inputWithIcon}
+                  placeholder="Enter your email"
+                  placeholderTextColor={"#ADAEBC"}
+                  value={email}
+                  onChangeText={setEmail}
+                  keyboardType="email-address"
+                  autoCapitalize="none"
+                />
+                <MaterialIcons name="email" size={20} color="#888" />
+              </View>
 
-      </View>
+              {/* Password Input */}
+              <View style={styles.inputTitle}>
+                <Text style={styles.inputTitleText}>Password</Text>
+              </View>
+              <View style={styles.inputContainer}>
+                <TextInput
+                  style={styles.inputWithIcon}
+                  placeholder="Enter your password"
+                  placeholderTextColor={"#ADAEBC"}
+                  value={password}
+                  onChangeText={setPassword}
+                  secureTextEntry
+                />
+                <Ionicons name="lock-closed" size={20} color="#888" />
+              </View>
+
+              {error ? <Text style={{ color: "red", marginBottom: 10 }}>{error}</Text> : null}
+
+              <TouchableOpacity style={styles.forgotPasswordContainer} onPress={() => navigation.navigate("ForgotPassword")}>
+                <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
+              </TouchableOpacity>
+
+              <View style={{ width: "100%" }}>
+                <GradientButton title={"Sign In"} style={styles.loginButton} onPress={handleLogin} />
+              </View>
+
+              <View style={styles.bottomLinks}>
+                <Text style={styles.newPages}>Don't have an account?</Text>
+                <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
+                  <Text style={styles.signUpText}>Sign Up</Text>
+                </TouchableOpacity>
+              </View>
+
+            </View>
+
+          </ScrollView>
+        </TouchableWithoutFeedback>
+      </KeyboardAvoidingView>
     </SafeAreaView>
+
   );
 }
 
@@ -164,7 +170,7 @@ const styles = StyleSheet.create({
     padding: 25,
     ...Platform.select({
       ios: {
-        marginTop: 50,
+        marginTop: 30,
         marginBottom: 75,
         shadowColor: colors.black,
         shadowOffset: { height: 10 },
@@ -172,7 +178,7 @@ const styles = StyleSheet.create({
         shadowRadius: 5,
       },
       android: {
-        marginTop: 125,
+        marginTop: 50, 
         marginBottom: 100,
       }
     })
@@ -195,6 +201,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: 15,
     fontSize: 16,
+    color: colors.black,
   },
 
   inputTitle: {

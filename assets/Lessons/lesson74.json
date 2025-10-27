@@ -1,0 +1,242 @@
+{
+  "lessonId": 74,
+  "title": "Mutator (setter) Methods",
+  "content": [
+    {
+      "type": "text",
+      "value": "A mutator method, commonly called a setter, is a method that modifies the value of an instance variable. While getters provide read-only access, setters enable controlled modification of object state. Like getters, setters support encapsulation by allowing you to add validation, enforce constraints, and maintain data integrity when values change."
+    },
+    {
+      "type": "text",
+      "value": "Setters are essential for preventing invalid data from entering your objects. Instead of allowing direct modification of instance variables, setters act as gatekeepers, checking that new values are acceptable before accepting them."
+    },
+    {
+      "type": "text",
+      "value": "A basic setter method has a return type of "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": ", a name following the pattern "
+    },
+    {
+      "type": "code",
+      "value": "set"
+    },
+    {
+      "type": "text",
+      "value": " followed by the variable name (capitalized), and a single parameter of the same type as the instance variable."
+    },
+    {
+      "type": "code",
+      "value": "public class Circle {\n    double radius;\n    \n    // Setter\n    public void setRadius(double r) {\n        if (r > 0) {\n            radius = r;\n        }\n    }\n    \n    // Getter\n    public double getRadius() {\n        return radius;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This setter includes validation: it only accepts positive radius values. If someone tries to set a negative or zero radius, the setter silently rejects it, keeping the current radius unchanged."
+    },
+    {
+      "type": "text",
+      "value": "Using "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " in setters is important when the parameter name matches the instance variable name."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    String name;\n    int age;\n    double gpa;\n    \n    // Setters using this\n    public void setName(String name) {\n        this.name = name;\n    }\n    \n    public void setAge(int age) {\n        if (age >= 0 && age <= 150) {\n            this.age = age;\n        }\n    }\n    \n    public void setGpa(double gpa) {\n        if (gpa >= 0.0 && gpa <= 4.0) {\n            this.gpa = gpa;\n        }\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Each setter uses "
+    },
+    {
+      "type": "code",
+      "value": "this"
+    },
+    {
+      "type": "text",
+      "value": " to distinguish the instance variable from the parameter. The "
+    },
+    {
+      "type": "code",
+      "value": "setAge()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "setGpa()"
+    },
+    {
+      "type": "text",
+      "value": " methods include validation to ensure reasonable values."
+    },
+    {
+      "type": "text",
+      "value": "Calling a setter modifies an object's state. Pass a new value to the setter method."
+    },
+    {
+      "type": "code",
+      "value": "Student student = new Student();\nstudent.setName(\"Alice\");\nstudent.setAge(20);\nstudent.setGpa(3.8);\n\nSystem.out.println(student.name);  // Alice\nSystem.out.println(student.age);   // 20\nSystem.out.println(student.gpa);   // 3.8"
+    },
+    {
+      "type": "text",
+      "value": "The setter calls update the object's instance variables. If a setter rejects a value (due to validation), the variable remains unchanged."
+    },
+    {
+      "type": "text",
+      "value": "Validation is the primary power of setters. Without setters, malicious or careless code could set invalid values. With setters, you control what's acceptable."
+    },
+    {
+      "type": "code",
+      "value": "public class BankAccount {\n    String accountNumber;\n    double balance;\n    \n    public BankAccount(String number) {\n        this.accountNumber = number;\n        this.balance = 0.0;\n    }\n    \n    public double getBalance() {\n        return balance;\n    }\n    \n    // Setter with validation - balance can never be negative\n    public void setBalance(double newBalance) {\n        if (newBalance >= 0) {\n            this.balance = newBalance;\n        }\n    }\n}\n\nBankAccount account = new BankAccount(\"ACC001\");\naccount.setBalance(1000.0);  // Valid: balance becomes 1000\naccount.setBalance(-500.0);  // Invalid: balance stays 1000"
+    },
+    {
+      "type": "text",
+      "value": "The setter prevents setting a negative balance. This maintains data integrity—your bank account balance will never become negative through the setter."
+    },
+    {
+      "type": "text",
+      "value": "Setters can perform complex operations beyond simple assignment. They might update related variables, perform calculations, or trigger side effects."
+    },
+    {
+      "type": "code",
+      "value": "public class Rectangle {\n    double width;\n    double height;\n    double lastModified;  // Track when rectangle changed\n    \n    public void setWidth(double width) {\n        if (width > 0) {\n            this.width = width;\n            this.lastModified = System.currentTimeMillis();\n        }\n    }\n    \n    public void setHeight(double height) {\n        if (height > 0) {\n            this.height = height;\n            this.lastModified = System.currentTimeMillis();\n        }\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "These setters do more than assign values—they also update "
+    },
+    {
+      "type": "code",
+      "value": "lastModified"
+    },
+    {
+      "type": "text",
+      "value": " using "
+    },
+    {
+      "type": "code",
+      "value": "System.currentTimeMillis()"
+    },
+    {
+      "type": "text",
+      "value": " to track when the object last changed. This side effect happens automatically whenever a setter is called."
+    },
+    {
+      "type": "text",
+      "value": "A complete class design includes both getters and setters working together. Getters provide read access, setters provide write access, and validation protects data integrity."
+    },
+    {
+      "type": "code",
+      "value": "public class GameCharacter {\n    String name;\n    int health;\n    int maxHealth = 100;\n    int experience = 0;\n    \n    public GameCharacter(String name) {\n        this.name = name;\n        this.health = maxHealth;\n    }\n    \n    // Getters\n    public String getName() {\n        return name;\n    }\n    \n    public int getHealth() {\n        return health;\n    }\n    \n    public int getExperience() {\n        return experience;\n    }\n    \n    // Setters with validation\n    public void setHealth(int newHealth) {\n        if (newHealth >= 0 && newHealth <= maxHealth) {\n            this.health = newHealth;\n        }\n    }\n    \n    public void addExperience(int exp) {\n        if (exp > 0) {\n            this.experience += exp;\n        }\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "addExperience()"
+    },
+    {
+      "type": "text",
+      "value": " method is a specialized setter that increments experience rather than replacing it. This pattern is common for properties that should only increase."
+    },
+    {
+      "type": "text",
+      "value": "Setters can prevent certain modifications by silently ignoring invalid requests. Alternatively, they might throw exceptions (which you'll learn about later) to alert callers to problems."
+    },
+    {
+      "type": "code",
+      "value": "public class Temperature {\n    double celsius;\n    \n    // Silently reject invalid values\n    public void setTemperature(double temp) {\n        if (temp >= -273.15) {  // Absolute zero in Celsius\n            this.celsius = temp;\n        }\n    }\n    \n    // Alternative: enforce precision\n    public void setTemperatureRounded(double temp) {\n        if (temp >= -273.15) {\n            this.celsius = Math.round(temp * 10) / 10.0;  // Round to 1 decimal\n        }\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "setTemperatureRounded()"
+    },
+    {
+      "type": "text",
+      "value": " method shows how setters can process values before storing them—in this case, rounding to one decimal place."
+    },
+    {
+      "type": "text",
+      "value": "Naming conventions for setters follow the pattern "
+    },
+    {
+      "type": "code",
+      "value": "set"
+    },
+    {
+      "type": "text",
+      "value": " followed by the capitalized variable name. Parameter names typically match the variable name."
+    },
+    {
+      "type": "code",
+      "value": "public class Person {\n    String firstName;\n    String lastName;\n    int age;\n    \n    public void setFirstName(String firstName) {\n        this.firstName = firstName;\n    }\n    \n    public void setLastName(String lastName) {\n        this.lastName = lastName;\n    }\n    \n    public void setAge(int age) {\n        if (age >= 0) {\n            this.age = age;\n        }\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Each setter follows the standard naming convention. The return type is always "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " since setters modify state rather than return values."
+    },
+    {
+      "type": "text",
+      "value": "A key difference between getters and setters: getters return values and have return types, while setters return "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": " and take a parameter."
+    },
+    {
+      "type": "code",
+      "value": "public class Product {\n    String name;\n    double price;\n    int quantity;\n    \n    // Getter - returns value, no parameters\n    public String getName() {\n        return name;\n    }\n    \n    // Setter - returns void, takes parameter\n    public void setName(String name) {\n        this.name = name;\n    }\n    \n    // Getter - returns value\n    public double getPrice() {\n        return price;\n    }\n    \n    // Setter - returns void, takes parameter with validation\n    public void setPrice(double price) {\n        if (price > 0) {\n            this.price = price;\n        }\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Notice the clear pattern: getters retrieve values and have specific return types, setters modify values and return "
+    },
+    {
+      "type": "code",
+      "value": "void"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Setters are crucial for maintaining object invariants—properties that must always be true about an object. By controlling all modifications through setters, you guarantee invariants are maintained."
+    },
+    {
+      "type": "text",
+      "value": "Understanding setters completes your knowledge of basic encapsulation. Getters and setters work together to provide a controlled interface to your objects' data, protecting integrity while allowing safe access. This pattern is used in virtually every professional Java class you'll encounter, making mastery of this concept fundamental to becoming a skilled programmer."
+    }
+  ]
+}

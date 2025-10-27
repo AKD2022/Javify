@@ -1,0 +1,218 @@
+{
+  "lessonId": 78,
+  "title": "Method Overloading in Classes",
+  "content": [
+    {
+      "type": "text",
+      "value": "Method overloading allows a class to have multiple methods with the same name but different parameter lists. Java distinguishes between overloaded methods by their parameter count, types, or order. This flexibility makes APIs more intuitive and methods more reusable, as users can call the same method name with different data types."
+    },
+    {
+      "type": "text",
+      "value": "Constructors are the most familiar example of overloading—a class can have multiple constructors with different parameters. Methods work the same way."
+    },
+    {
+      "type": "code",
+      "value": "public class Calculator {\n    // Overloaded add methods\n    public int add(int a, int b) {\n        return a + b;\n    }\n    \n    public double add(double a, double b) {\n        return a + b;\n    }\n    \n    public int add(int a, int b, int c) {\n        return a + b + c;\n    }\n}\n\nCalculator calc = new Calculator();\nSystem.out.println(calc.add(5, 3));           // Calls first method: 8\nSystem.out.println(calc.add(5.5, 3.2));       // Calls second method: 8.7\nSystem.out.println(calc.add(5, 3, 2));        // Calls third method: 10"
+    },
+    {
+      "type": "text",
+      "value": "All three methods are named "
+    },
+    {
+      "type": "code",
+      "value": "add"
+    },
+    {
+      "type": "text",
+      "value": ", but they have different parameter lists. Java determines which one to call based on the arguments provided."
+    },
+    {
+      "type": "text",
+      "value": "Java chooses which overloaded method to call based on method signature matching. It looks at the number, types, and order of arguments."
+    },
+    {
+      "type": "code",
+      "value": "public class TypeDemo {\n    public void process(String text) {\n        System.out.println(\"String: \" + text);\n    }\n    \n    public void process(int number) {\n        System.out.println(\"Integer: \" + number);\n    }\n    \n    public void process(double value) {\n        System.out.println(\"Double: \" + value);\n    }\n}\n\nTypeDemo demo = new TypeDemo();\ndemo.process(\"Hello\");   // Calls String version\ndemo.process(42);        // Calls int version\ndemo.process(3.14);      // Calls double version"
+    },
+    {
+      "type": "text",
+      "value": "Java matches the argument type to the correct method. Each call invokes the appropriate overloaded version."
+    },
+    {
+      "type": "text",
+      "value": "The order of parameters matters for overloading. Methods with different parameter orders are different."
+    },
+    {
+      "type": "code",
+      "value": "public class OrderMatters {\n    public void display(String name, int age) {\n        System.out.println(\"Name: \" + name + \", Age: \" + age);\n    }\n    \n    public void display(int age, String name) {\n        System.out.println(\"Age: \" + age + \", Name: \" + name);\n    }\n}\n\nOrderMatters demo = new OrderMatters();\ndemo.display(\"Alice\", 25);  // Calls first: Name: Alice, Age: 25\ndemo.display(25, \"Bob\");     // Calls second: Age: 25, Name: Bob"
+    },
+    {
+      "type": "text",
+      "value": "Though the methods do the same thing, their different parameter orders make them distinct, allowing different method versions."
+    },
+    {
+      "type": "text",
+      "value": "Return type alone does NOT determine overloading. Methods must differ in parameter list, not just return type."
+    },
+    {
+      "type": "code",
+      "value": "// INCORRECT - NOT valid overloading\npublic class BadOverload {\n    public int getValue() { return 5; }\n    public double getValue() { return 5.0; }  // ERROR! Same parameters\n}\n\n// CORRECT - Valid overloading\npublic class GoodOverload {\n    public int getValue(int x) { return x; }\n    public double getValue(double x) { return x; }  // Different parameters\n}"
+    },
+    {
+      "type": "text",
+      "value": "The first example fails because both methods have the same parameters (none). The second succeeds because the parameter types differ."
+    },
+    {
+      "type": "text",
+      "value": "Method overloading creates flexible, user-friendly APIs. Instead of names like "
+    },
+    {
+      "type": "code",
+      "value": "addInts()"
+    },
+    {
+      "type": "code",
+      "value": "addDoubles()"
+    },
+    {
+      "type": "code",
+      "value": "addThreeInts()"
+    },
+    {
+      "type": "text",
+      "value": ", users just call "
+    },
+    {
+      "type": "code",
+      "value": "add()"
+    },
+    {
+      "type": "text",
+      "value": " with whatever data they have."
+    },
+    {
+      "type": "code",
+      "value": "public class Print {\n    public void print(String text) {\n        System.out.println(text);\n    }\n    \n    public void print(int number) {\n        System.out.println(number);\n    }\n    \n    public void print(double value) {\n        System.out.println(value);\n    }\n    \n    public void print(boolean flag) {\n        System.out.println(flag);\n    }\n    \n    public void print(int[] array) {\n        System.out.print(\"Array: \");\n        for (int val : array) {\n            System.out.print(val + \" \");\n        }\n        System.out.println();\n    }\n}\n\nPrint p = new Print();\np.print(\"Hello\");              // String version\np.print(42);                  // int version\np.print(3.14);                // double version\np.print(true);                // boolean version\np.print(new int[]{1, 2, 3});  // array version"
+    },
+    {
+      "type": "text",
+      "value": "A single "
+    },
+    {
+      "type": "code",
+      "value": "print()"
+    },
+    {
+      "type": "text",
+      "value": " method name handles different types beautifully. This matches how "
+    },
+    {
+      "type": "code",
+      "value": "System.out.println()"
+    },
+    {
+      "type": "text",
+      "value": " works—it has many overloaded versions for different types."
+    },
+    {
+      "type": "text",
+      "value": "Overloading works with both instance and static methods."
+    },
+    {
+      "type": "code",
+      "value": "public class MathUtil {\n    // Overloaded static methods\n    public static int max(int a, int b) {\n        return a > b ? a : b;\n    }\n    \n    public static double max(double a, double b) {\n        return a > b ? a : b;\n    }\n    \n    public static int max(int a, int b, int c) {\n        return Math.max(a, Math.max(b, c));\n    }\n}\n\nint m1 = MathUtil.max(5, 3);           // 5\ndouble m2 = MathUtil.max(5.5, 3.2);    // 5.5\nint m3 = MathUtil.max(5, 3, 7);        // 7"
+    },
+    {
+      "type": "text",
+      "value": "These static methods are overloaded—same name, different parameters."
+    },
+    {
+      "type": "text",
+      "value": "Varargs (variable arguments) add another dimension to overloading, allowing methods to accept any number of arguments of a single type."
+    },
+    {
+      "type": "code",
+      "value": "public class Sum {\n    // Varargs - accepts 0 or more ints\n    public int sum(int... numbers) {\n        int total = 0;\n        for (int num : numbers) {\n            total += num;\n        }\n        return total;\n    }\n}\n\nSum s = new Sum();\nSystem.out.println(s.sum());          // 0\nSystem.out.println(s.sum(5));         // 5\nSystem.out.println(s.sum(5, 3, 2));   // 10\nSystem.out.println(s.sum(1, 2, 3, 4, 5, 6));  // 21"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "int..."
+    },
+    {
+      "type": "text",
+      "value": " syntax means the method accepts any number of "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": " arguments, internally treated as an array."
+    },
+    {
+      "type": "text",
+      "value": "Overloading can be combined with varargs and other methods for maximum flexibility."
+    },
+    {
+      "type": "code",
+      "value": "public class Flexible {\n    // Specific methods\n    public void process(String text) {\n        System.out.println(\"Processing: \" + text);\n    }\n    \n    public void process(int number) {\n        System.out.println(\"Processing: \" + number);\n    }\n    \n    // Varargs method\n    public void process(int... numbers) {\n        System.out.println(\"Processing \" + numbers.length + \" numbers\");\n    }\n    \n    // Method with multiple specific parameters\n    public void process(String name, int age) {\n        System.out.println(\"Processing: \" + name + \" age \" + age);\n    }\n}\n\nFlexible f = new Flexible();\nf.process(\"Hello\");              // String version\nf.process(42);                   // int version (not varargs)\nf.process(1, 2, 3);             // Varargs version\nf.process(\"Alice\", 25);          // Two-parameter version"
+    },
+    {
+      "type": "text",
+      "value": "When calling with a single "
+    },
+    {
+      "type": "code",
+      "value": "int"
+    },
+    {
+      "type": "text",
+      "value": ", Java chooses the specific "
+    },
+    {
+      "type": "code",
+      "value": "process(int)"
+    },
+    {
+      "type": "text",
+      "value": " method over the varargs version because specific matches are preferred."
+    },
+    {
+      "type": "text",
+      "value": "A practical example of overloading in a real class:"
+    },
+    {
+      "type": "code",
+      "value": "public class Rectangle {\n    private double width;\n    private double height;\n    \n    // Constructor overloading\n    public Rectangle() {\n        this.width = 1.0;\n        this.height = 1.0;\n    }\n    \n    public Rectangle(double side) {\n        this.width = side;\n        this.height = side;\n    }\n    \n    public Rectangle(double width, double height) {\n        this.width = width;\n        this.height = height;\n    }\n    \n    // Method overloading\n    public double getArea() {\n        return width * height;\n    }\n    \n    public double getArea(double scaleFactor) {\n        return (width * scaleFactor) * (height * scaleFactor);\n    }\n    \n    // Overloaded setters\n    public void setDimensions(double side) {\n        this.width = side;\n        this.height = side;\n    }\n    \n    public void setDimensions(double width, double height) {\n        this.width = width;\n        this.height = height;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This "
+    },
+    {
+      "type": "code",
+      "value": "Rectangle"
+    },
+    {
+      "type": "text",
+      "value": " class demonstrates overloading in constructors and methods, providing flexible ways to create and manipulate rectangles."
+    },
+    {
+      "type": "text",
+      "value": "Benefits of method overloading include improved API usability, consistency across similar operations, and reduced cognitive load on programmers. Instead of remembering different method names, users remember one name that works with various inputs."
+    },
+    {
+      "type": "text",
+      "value": "However, don't overuse overloading. Too many overloaded versions of a method can make code confusing. Only overload when methods perform similar operations on different types of data. If methods do fundamentally different things, give them different names."
+    },
+    {
+      "type": "text",
+      "value": "Mastering method overloading is essential for writing flexible, professional Java code. It's used throughout the Java Standard Library and is a hallmark of well-designed APIs. Understanding how Java resolves overloaded method calls helps you write better code and use Java libraries more effectively."
+    }
+  ]
+}

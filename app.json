@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "APCSA_REACT",
+    "name": "Javify",
     "slug": "APCSA_REACT",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "assets/icon.png",
     "scheme": "apcsareact",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -19,14 +19,14 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
       "package": "com.anonymous.APCSA_REACT"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "assets/favicon.png"
     },
     "extra": {
       "eas": {
@@ -36,6 +36,7 @@
     "plugins": [
       "expo-font",
       "expo-web-browser"
-    ]
+    ],
+    "owner": "dasikura"
   }
 }

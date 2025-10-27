@@ -17,15 +17,14 @@ import { ProgressBar } from 'react-native-paper';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { parseISO, isAfter } from 'date-fns';
-import { Text as RNText } from 'react-native';
+import { Text as RNText, ActivityIndicator } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { FontAwesome } from "@expo/vector-icons";
 import { onSnapshot } from 'firebase/firestore';
 import { units } from '../utils/units';
-
-
+import { Image } from 'react-native-svg';
 
 const HomeScreen = ({ navigation }) => {
   const [user, setUser] = useState(null);
@@ -36,8 +35,20 @@ const HomeScreen = ({ navigation }) => {
   const navigation_ = useNavigation();
   const [profileIcon, setProfileIcon] = useState("person");
   const [streak, setStreak] = useState(0);
+  const [isLoading, setIsLoading] = useState(true); // Add loading state
 
+  const Text = (props) => (
+    <RNText {...props} style={[{ fontFamily: 'Poppins-Regular' }, props.style]} />
+  );
 
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  // Profile icon listener
   useEffect(() => {
     if (!user) return;
 
@@ -52,107 +63,89 @@ const HomeScreen = ({ navigation }) => {
   }, [user]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      if (!user) return;
-      const userRef = doc(db, "users", user.uid);
-      const snap = await getDoc(userRef);
-
-      if (snap.exists()) {
-        const data = snap.data();
-        const today = new Date().toISOString().split("T")[0];
-        const yesterday = new Date();
-        yesterday.setDate(yesterday.getDate() - 1);
-        const yStr = yesterday.toISOString().split("T")[0];
-
-        if (data.lastCompletedDate === today) {
-          setStreak(data.streak || 0);
-        } else {
-          // Not today → reset
-          setStreak(0);
-        }
-
-      }
-    };
-
-    fetchData();
-  }, [user]);
-
-
-
-  const Text = (props) => (
-    <RNText {...props} style={[{ fontFamily: 'Poppins-Regular' }, props.style]} />
-  );
-
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-    return () => unsubscribe();
-  }, []);
-
-  useEffect(() => {
     if (!user) return;
 
-    const fetchScores = async () => {
-      await loadScores(user);
-      setScoresState(getScores());
-    };
+    const fetchAllData = async () => {
+      setIsLoading(true);
+      try {
+        const userRef = doc(db, "users", user.uid);
 
-    fetchScores();
-  }, [user]);
+        const [userSnap] = await Promise.all([
+          getDoc(userRef),
+          loadScores(user)
+        ]);
 
-  useEffect(() => {
-    if (!user) return;
+        if (userSnap.exists()) {
+          const data = userSnap.data();
+          const today = new Date().toISOString().split("T")[0];
 
-    const loadCalendarAndNextLesson = async () => {
-      const scores = getScores();
-      await loadCalendar(user, scores);
-      const items = getCalendarItems();
-      setCalendarItems(items);
+          const lastDate = data.lastCompletedDate;
+          const todayStr = new Date().toISOString().split("T")[0];
 
-      const todayStr = new Date().toISOString().split('T')[0];
+          const yesterday = new Date();
+          yesterday.setDate(yesterday.getDate() - 1);
+          const yStr = yesterday.toISOString().split("T")[0];
 
-      let nextLesson = null;
-
-      if (Object.keys(items).length > 0) {
-        const futureDates = Object.keys(items)
-          .filter((date) => isAfter(parseISO(date), parseISO(todayStr)))
-          .sort();
-
-        const nextDate = futureDates.length > 0 ? futureDates[0] : todayStr;
-
-        if (items[nextDate]?.length > 0) {
-          const lessonId = items[nextDate][0].id;
-          const lessonData = units
-            .flatMap(u => u.lessons)
-            .find(l => l.id === lessonId);
-
-          if (lessonData) {
-            const unitTitle = units.find(u => u.lessons.some(l => l.id === lessonId))?.title;
-            nextLesson = { ...lessonData, unitTitle, date: nextDate };
+          if (lastDate === todayStr || lastDate === yStr) {
+            setStreak(data.streak || 0);
+          } else {
+            setStreak(0);
           }
+
         }
 
-      }
+        const scores = getScores();
+        setScoresState(scores);
 
-      if (!nextLesson) {
-        for (let unit of units) {
-          for (let lesson of unit.lessons) {
-            if (!scores[lesson.id] || scores[lesson.id] < 4) {
-              nextLesson = { ...lesson, unitTitle: unit.title };
-              break;
+        await loadCalendar(user, scores);
+        const items = getCalendarItems() || {};
+        setCalendarItems(items);
+
+        const todayStr = new Date().toISOString().split('T')[0];
+        let nextLesson = null;
+
+        if (Object.keys(items).length > 0) {
+          const futureDates = Object.keys(items)
+            .filter((date) => isAfter(parseISO(date), parseISO(todayStr)))
+            .sort();
+
+          const nextDate = futureDates.length > 0 ? futureDates[0] : todayStr;
+
+          if (items[nextDate]?.length > 0) {
+            const lessonId = items[nextDate][0].id;
+            const lessonData = units
+              .flatMap(u => u.lessons)
+              .find(l => l.id === lessonId);
+
+            if (lessonData) {
+              const unitTitle = units.find(u => u.lessons.some(l => l.id === lessonId))?.title;
+              nextLesson = { ...lessonData, unitTitle, date: nextDate };
             }
           }
-          if (nextLesson) break;
         }
+
+        if (!nextLesson) {
+          for (let unit of units) {
+            for (let lesson of unit.lessons) {
+              if (!scores[lesson.id] || scores[lesson.id] < 4) {
+                nextLesson = { ...lesson, unitTitle: unit.title };
+                break;
+              }
+            }
+            if (nextLesson) break;
+          }
+        }
+
+        setCurrentLesson(nextLesson);
+      } catch (error) {
+        console.error("Error loading data:", error);
+      } finally {
+        setIsLoading(false);
       }
-
-
-      setCurrentLesson(nextLesson);
     };
 
-    loadCalendarAndNextLesson();
-  }, [user, scoresState]);
+    fetchAllData();
+  }, [user]);
 
   const toggleUnit = (unitId) => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
@@ -171,14 +164,14 @@ const HomeScreen = ({ navigation }) => {
     return !allPrevCompleted;
   };
 
-
   const currentUnitId =
     Object.keys(openUnits).find((id) => openUnits[id]) || units[0].id;
   const currentUnit = units.find((unit) => unit.id === currentUnitId) || units[0];
   const totalLessons = currentUnit.lessons.length;
   const completedLessons = currentUnit.lessons.filter(
-    (lesson) => scoresState[lesson.id] >= 4
+    (lesson) => (scoresState[lesson.id] || 0) >= 4
   ).length;
+
   const unitProgress = totalLessons > 0 ? completedLessons / totalLessons : 0;
   const unitProgressPercentage = Math.round(unitProgress * 100);
 
@@ -187,7 +180,17 @@ const HomeScreen = ({ navigation }) => {
     fireColor = colors.white;
   }
 
-  console.log("Streak: " + streak)
+  console.log("Streak: " + streak);
+
+  // Show loading spinner while data is loading
+  if (isLoading) {
+    return (
+      <SafeAreaView style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
+        <Image source={require('../../assets/icon.png')} />
+      </SafeAreaView>
+
+    );
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -215,8 +218,6 @@ const HomeScreen = ({ navigation }) => {
               style={styles.profileIcon}
             />
           </TouchableOpacity>
-
-
         </View>
 
         {/* Progress Bar */}
@@ -261,12 +262,11 @@ const HomeScreen = ({ navigation }) => {
         style={{ borderRadius: 10, overflow: 'hidden', marginTop: 10 }}
         disabled={!currentLesson}
         onPress={() => {
-          if (currentLesson) {
-            navigation.navigate('LessonScreen', {
-              lessonId: currentLesson.id.replace('lesson', ''),
-              lessonTitle: currentLesson.title,
-            });
-          }
+          if (!currentLesson?.id) return;
+          navigation.navigate('LessonScreen', {
+            lessonId: (currentLesson.id || '').replace('lesson', ''),
+            lessonTitle: currentLesson.title || '',
+          });
         }}
       >
         <LinearGradient
@@ -295,7 +295,6 @@ const HomeScreen = ({ navigation }) => {
                 </Text>
               </View>
 
-              {/* Right arrow */}
               <MaterialIcons
                 name={currentLesson.locked ? 'lock' : 'arrow-forward'}
                 size={22}
@@ -320,77 +319,64 @@ const styles = StyleSheet.create({
     padding: 20,
     borderRadius: 20,
   },
-
   welcomeTextSubcontainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between'
   },
-
   welcomeTextColumn: {
     flexDirection: 'column'
   },
-
   welcomeTextHeader: {
     fontSize: 20,
     color: colors.white,
     fontFamily: 'Poppins-Bold',
     paddingBottom: 2
   },
-
   welcomeTextSubheader: {
     fontSize: 16,
     color: colors.white,
     marginBottom: 15
   },
-
   profileIcon: {
     backgroundColor: colors.semiTransparentBackground,
     borderRadius: 50,
     padding: 10
   },
-
   progressBarContainer: {
     marginTop: 10,
     padding: 10,
     backgroundColor: colors.semiTransparentBackground,
     borderRadius: 10
   },
-
   progressBarTextContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 5
   },
-
   progressBarText: {
     color: colors.white
   },
-
   progressBarPercentage: {
     color: colors.white
   },
-
   currentLesson: {
     marginTop: 10,
     padding: 20,
     borderRadius: 10,
     width: '100%'
   },
-
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center'
   },
-
   icon: {
     backgroundColor: colors.semiTransparentBackground,
     borderRadius: 50,
     padding: 10
   },
-
 });
 
 export default HomeScreen;

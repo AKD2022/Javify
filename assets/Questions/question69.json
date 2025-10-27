@@ -34,8 +34,8 @@
       "question": "What keyword is used to create a new object?",
       "options": [
         { "type": "text", "value": "class" },
-        { "type": "text", "value": "new" },
         { "type": "text", "value": "Object" },
+        { "type": "text", "value": "new" },
         { "type": "text", "value": "create" }
       ],
       "answer": 2,
@@ -47,11 +47,11 @@
       "question": "What are instance variables?",
       "options": [
         { "type": "text", "value": "Methods that perform actions" },
-        { "type": "text", "value": "Variables declared inside a class that belong to each object" },
         { "type": "text", "value": "Variables used in loops" },
-        { "type": "text", "value": "Static values that don't change" }
+        { "type": "text", "value": "Static values that don't change" },
+        { "type": "text", "value": "Variables declared inside a class that belong to each object" }
       ],
-      "answer": 1,
+      "answer": 3,
       "explanation": "Instance variables are variables declared inside a class that store data for each individual object created from that class."
     },
     {
@@ -59,12 +59,12 @@
       "type": "text",
       "question": "What does the dot operator do when working with objects?",
       "options": [
-        { "type": "text", "value": "Ends a statement" },
         { "type": "text", "value": "Accesses instance variables and methods of an object" },
         { "type": "text", "value": "Declares new variables" },
-        { "type": "text", "value": "Creates new objects" }
+        { "type": "text", "value": "Creates new objects" },
+        { "type": "text", "value": "Ends a statement" }
       ],
-      "answer": 1,
+      "answer": 0,
       "explanation": "The dot operator (.) is used to access instance variables and call methods on a specific object."
     },
     {
@@ -86,11 +86,11 @@
       "question": "What does the keyword this reference?",
       "options": [
         { "type": "text", "value": "The class definition" },
-        { "type": "text", "value": "The current object" },
         { "type": "text", "value": "The previous object" },
+        { "type": "text", "value": "The current object" },
         { "type": "text", "value": "A method parameter" }
       ],
-      "answer": 1,
+      "answer": 2,
       "explanation": "The this keyword explicitly refers to the current object, used inside methods and constructors to access that specific object's data."
     },
     {
@@ -99,11 +99,11 @@
       "question": "What does the statement Car myCar = new Car(); do?",
       "options": [
         { "type": "text", "value": "Declares a Car class" },
-        { "type": "text", "value": "Creates a new Car object and stores a reference to it in myCar" },
         { "type": "text", "value": "Copies an existing Car" },
-        { "type": "text", "value": "Deletes a Car object" }
+        { "type": "text", "value": "Deletes a Car object" },
+        { "type": "text", "value": "Creates a new Car object and stores a reference to it in myCar" }
       ],
-      "answer": 1,
+      "answer": 3,
       "explanation": "This statement creates a new Car object using the new keyword and stores a reference to it in the variable myCar."
     },
     {
@@ -111,12 +111,12 @@
       "type": "text",
       "question": "Are objects reference types or primitive types?",
       "options": [
-        { "type": "text", "value": "Primitive types" },
         { "type": "text", "value": "Reference types" },
+        { "type": "text", "value": "Primitive types" },
         { "type": "text", "value": "Neither" },
         { "type": "text", "value": "Both equally" }
       ],
-      "answer": 1,
+      "answer": 0,
       "explanation": "Objects are reference types, meaning variables hold references (addresses) to objects rather than the objects themselves."
     },
     {
@@ -137,10 +137,10 @@
       "type": "text",
       "question": "Can methods inside a class access instance variables?",
       "options": [
-        { "type": "text", "value": "No, they are separate" },
+        { "type": "text", "value": "Only through the new keyword" },
         { "type": "text", "value": "Only if they are static" },
         { "type": "text", "value": "Yes, methods can access and modify instance variables of their object" },
-        { "type": "text", "value": "Only through the new keyword" }
+        { "type": "text", "value": "No, they are separate" }
       ],
       "answer": 2,
       "explanation": "Methods inside a class have direct access to the instance variables of that class for the current object."
@@ -151,11 +151,11 @@
       "question": "What does it mean to instantiate a class?",
       "options": [
         { "type": "text", "value": "To write the class definition" },
-        { "type": "text", "value": "To create an object from the class" },
         { "type": "text", "value": "To declare a variable" },
-        { "type": "text", "value": "To call a method" }
+        { "type": "text", "value": "To call a method" },
+        { "type": "text", "value": "To create an object from the class" }
       ],
-      "answer": 1,
+      "answer": 3,
       "explanation": "Instantiation is the process of creating an object from a class using the new keyword."
     },
     {
@@ -163,12 +163,12 @@
       "type": "text",
       "question": "Can a class contain other objects as instance variables?",
       "options": [
+        { "type": "text", "value": "Yes, objects can contain other objects as instance variables" },
         { "type": "text", "value": "No, only primitive types" },
         { "type": "text", "value": "Only if they are simple types" },
-        { "type": "text", "value": "Yes, objects can contain other objects as instance variables" },
         { "type": "text", "value": "Only with static references" }
       ],
-      "answer": 2,
+      "answer": 0,
       "explanation": "A class can have other objects as instance variables, allowing composition where complex objects are built from simpler parts."
     },
     {
@@ -190,11 +190,11 @@
       "question": "How do you access a specific instance variable of an object?",
       "options": [
         { "type": "text", "value": "variableName" },
-        { "type": "text", "value": "object.variableName" },
         { "type": "text", "value": "object->variableName" },
+        { "type": "text", "value": "object.variableName" },
         { "type": "text", "value": "object[variableName]" }
       ],
-      "answer": 1,
+      "answer": 2,
       "explanation": "You access instance variables using the dot operator: object.variableName, where object is the specific object reference."
     },
     {
@@ -203,11 +203,11 @@
       "question": "What is the primary advantage of using object-oriented programming?",
       "options": [
         { "type": "text", "value": "Programs run faster" },
-        { "type": "text", "value": "Organizing related data and behaviors into cohesive units makes code more maintainable and reusable" },
         { "type": "text", "value": "It requires less memory" },
-        { "type": "text", "value": "It eliminates the need for methods" }
+        { "type": "text", "value": "It eliminates the need for methods" },
+        { "type": "text", "value": "Organizing related data and behaviors into cohesive units makes code more maintainable and reusable" }
       ],
-      "answer": 1,
+      "answer": 3,
       "explanation": "Object-oriented programming groups related data and behaviors together, improving code organization, maintainability, and reusability."
     }
   ]

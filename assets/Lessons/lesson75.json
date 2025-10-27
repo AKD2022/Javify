@@ -1,0 +1,346 @@
+{
+  "lessonId": 75,
+  "title": "Encapsulation and Access Modifiers",
+  "content": [
+    {
+      "type": "text",
+      "value": "Encapsulation is a core principle of object-oriented programming that bundles data and methods together while controlling access to that data. Access modifiers are keywords that specify which parts of your program can access classes, methods, and variables. Together, they form the foundation of data protection and proper class design."
+    },
+    {
+      "type": "text",
+      "value": "The primary access modifiers in Java are "
+    },
+    {
+      "type": "code",
+      "value": "public"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "text",
+      "value": ". The "
+    },
+    {
+      "type": "code",
+      "value": "public"
+    },
+    {
+      "type": "text",
+      "value": " modifier makes something accessible from anywhere. The "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "text",
+      "value": " modifier restricts access to only within the class where it's declared."
+    },
+    {
+      "type": "code",
+      "value": "public class BankAccount {\n    private String accountNumber;  // Only accessible within this class\n    private double balance;        // Only accessible within this class\n    \n    public BankAccount(String number) {  // Accessible from anywhere\n        this.accountNumber = number;\n        this.balance = 0.0;\n    }\n    \n    public double getBalance() {  // Accessible from anywhere\n        return balance;\n    }\n    \n    public void deposit(double amount) {  // Accessible from anywhere\n        if (amount > 0) {\n            this.balance += amount;\n        }\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The instance variables are "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "text",
+      "value": ", preventing direct access from outside the class. The constructor and methods are "
+    },
+    {
+      "type": "code",
+      "value": "public"
+    },
+    {
+      "type": "text",
+      "value": ", allowing the outside world to use the class through its public interface."
+    },
+    {
+      "type": "text",
+      "value": "Making instance variables "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "text",
+      "value": " is a best practice that protects data from unwanted or erroneous modification."
+    },
+    {
+      "type": "code",
+      "value": "// BAD - public variables, no protection\npublic class Car {\n    public String model;\n    public double price;\n}\n\nCar myCar = new Car();\nmyCar.price = -5000;  // WRONG! No validation, but allowed\n\n// GOOD - private variables with controlled access\npublic class Car {\n    private String model;\n    private double price;\n    \n    public void setPrice(double price) {\n        if (price > 0) {\n            this.price = price;\n        }\n    }\n}\n\nCar myCar = new Car();\nmyCar.setPrice(-5000);  // Rejected by validation"
+    },
+    {
+      "type": "text",
+      "value": "The bad example allows invalid data. The good example prevents it through encapsulation."
+    },
+    {
+      "type": "text",
+      "value": "When instance variables are "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "text",
+      "value": ", you must provide "
+    },
+    {
+      "type": "code",
+      "value": "public"
+    },
+    {
+      "type": "text",
+      "value": " getters and setters for controlled access."
+    },
+    {
+      "type": "code",
+      "value": "public class Student {\n    private String name;\n    private int studentID;\n    private double gpa;\n    \n    // Getters - public read access\n    public String getName() {\n        return name;\n    }\n    \n    public int getStudentID() {\n        return studentID;\n    }\n    \n    public double getGPA() {\n        return gpa;\n    }\n    \n    // Setters - public write access with validation\n    public void setName(String name) {\n        if (name != null && !name.isEmpty()) {\n            this.name = name;\n        }\n    }\n    \n    public void setGPA(double gpa) {\n        if (gpa >= 0.0 && gpa <= 4.0) {\n            this.gpa = gpa;\n        }\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This pattern—private variables with public getters and setters—is called the "
+    },
+    {
+      "type": "code",
+      "value": "public"
+    },
+    {
+      "type": "text",
+      "value": " interface pattern. It separates what's visible to the outside (the public methods) from what's hidden (the private data)."
+    },
+    {
+      "type": "text",
+      "value": "Not all variables need getters. You might have "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "text",
+      "value": " variables used only internally, without public accessors."
+    },
+    {
+      "type": "code",
+      "value": "public class Employee {\n    private String name;       // Private, needs getter\n    private double salary;     // Private, needs getter\n    private String ssn;        // Private, NO public getter (sensitive)\n    private long lastLogin;    // Private, internal use only\n    \n    public String getName() {\n        return name;\n    }\n    \n    public double getSalary() {\n        return salary;\n    }\n    \n    // No getter for SSN - too sensitive\n    // lastLogin is updated internally only, no getter needed\n    \n    public void login() {\n        this.lastLogin = System.currentTimeMillis();\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "ssn"
+    },
+    {
+      "type": "text",
+      "value": " (Social Security Number) has no public getter—it's too sensitive to expose. The "
+    },
+    {
+      "type": "code",
+      "value": "lastLogin"
+    },
+    {
+      "type": "text",
+      "value": " is internal bookkeeping with no public accessor."
+    },
+    {
+      "type": "text",
+      "value": "Methods can also be "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "text",
+      "value": " to hide helper functionality from outside code."
+    },
+    {
+      "type": "code",
+      "value": "public class Calculator {\n    public double calculateTotal(double[] prices) {\n        double total = 0;\n        for (double price : prices) {\n            total += this.applyTax(price);\n        }\n        return total;\n    }\n    \n    // Private helper method - not part of the public interface\n    private double applyTax(double amount) {\n        return amount * 1.08;  // 8% tax\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "applyTax()"
+    },
+    {
+      "type": "text",
+      "value": " method is "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "text",
+      "value": " because it's an implementation detail. Users of "
+    },
+    {
+      "type": "code",
+      "value": "Calculator"
+    },
+    {
+      "type": "text",
+      "value": " should only call "
+    },
+    {
+      "type": "code",
+      "value": "calculateTotal()"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Constructors are typically "
+    },
+    {
+      "type": "code",
+      "value": "public"
+    },
+    {
+      "type": "text",
+      "value": " so objects can be created from outside the class. However, you can have "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "code",
+      "value": "constructors for advanced patterns."
+    },
+    {
+      "type": "code",
+      "value": "public class Singleton {\n    private static Singleton instance;\n    \n    // Private constructor - prevents direct instantiation\n    private Singleton() {\n    }\n    \n    // Public method to get the single instance\n    public static Singleton getInstance() {\n        if (instance == null) {\n            instance = new Singleton();\n        }\n        return instance;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This Singleton class has a "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "text",
+      "value": " constructor, preventing random object creation. Instead, users call "
+    },
+    {
+      "type": "code",
+      "value": "getInstance()"
+    },
+    {
+      "type": "text",
+      "value": " to get a controlled single instance."
+    },
+    {
+      "type": "text",
+      "value": "Encapsulation provides multiple benefits. It hides complexity, protects data integrity, allows flexibility in implementation changes, and makes code more maintainable."
+    },
+    {
+      "type": "code",
+      "value": "// Well-encapsulated class\npublic class Date {\n    private int month;\n    private int day;\n    private int year;\n    \n    public Date(int month, int day, int year) {\n        if (isValidDate(month, day, year)) {\n            this.month = month;\n            this.day = day;\n            this.year = year;\n        }\n    }\n    \n    public void setMonth(int month) {\n        if (month >= 1 && month <= 12) {\n            this.month = month;\n        }\n    }\n    \n    public int getMonth() {\n        return month;\n    }\n    \n    // Private helper method\n    private boolean isValidDate(int m, int d, int y) {\n        return m >= 1 && m <= 12 && d >= 1 && d <= 31;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This "
+    },
+    {
+      "type": "code",
+      "value": "Date"
+    },
+    {
+      "type": "text",
+      "value": " class encapsulates date logic. Users interact only through the public interface. The validation and helper methods are private, hiding implementation details."
+    },
+    {
+      "type": "text",
+      "value": "A class's public interface should be clear and limited—expose only what's necessary for users. Everything else should be "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "text",
+      "value": ". This principle is called the \"Principle of Least Privilege.\""
+    },
+    {
+      "type": "code",
+      "value": "// Poor design - too much exposed\npublic class Circle {\n    public double radius;\n    public void calculateArea() { }\n    public void calculateCircumference() { }\n    public void setRadius(double r) { }\n}\n\n// Better design - clean public interface\npublic class Circle {\n    private double radius;\n    \n    public void setRadius(double r) {\n        if (r > 0) this.radius = r;\n    }\n    \n    public double getRadius() { return radius; }\n    public double getArea() { return Math.PI * radius * radius; }\n    public double getCircumference() { return 2 * Math.PI * radius; }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The second version hides the radius and exposes only what users need: setting the radius and getting calculated values."
+    },
+    {
+      "type": "text",
+      "value": "Encapsulation enables flexibility. If you later change how data is stored internally, you only update the class—users of your class don't need to change their code."
+    },
+    {
+      "type": "code",
+      "value": "// Implementation Version 1: stores in Celsius\npublic class Temperature {\n    private double celsius;\n    \n    public void setCelsius(double c) { this.celsius = c; }\n    public double getCelsius() { return celsius; }\n}\n\n// Can later change to Version 2: stores in Fahrenheit\n// Users don't need to change their code—only the implementation changes\npublic class Temperature {\n    private double fahrenheit;\n    \n    public void setCelsius(double c) { this.fahrenheit = (c * 9/5) + 32; }\n    public double getCelsius() { return (fahrenheit - 32) * 5/9; }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Because the temperature data is encapsulated, switching from Celsius to Fahrenheit storage is internal. Users continue calling "
+    },
+    {
+      "type": "code",
+      "value": "setCelsius()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "getCelsius()"
+    },
+    {
+      "type": "text",
+      "value": " without noticing the change."
+    },
+    {
+      "type": "text",
+      "value": "Mastering encapsulation and access modifiers is crucial for writing professional Java code. These tools protect your data, enforce correct usage, and make your classes robust and maintainable. Every class you write should carefully consider what's "
+    },
+    {
+      "type": "code",
+      "value": "public"
+    },
+    {
+      "type": "text",
+      "value": " and what's "
+    },
+    {
+      "type": "code",
+      "value": "private"
+    },
+    {
+      "type": "text",
+      "value": ", designing a clean interface while hiding complexity."
+    }
+  ]
+}

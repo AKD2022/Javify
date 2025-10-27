@@ -1,0 +1,202 @@
+{
+  "lessonId": 85,
+  "title": "Writing Classes for Simple Data Structures",
+  "content": [
+    {
+      "type": "text",
+      "value": "Simple data structures organize related information into cohesive units. Instead of managing separate variables for related data, you create classes that bundle data together with methods that operate on it. This approach makes code more maintainable, easier to understand, and less error-prone. Learning to design effective data structure classes is fundamental to building robust applications."
+    },
+    {
+      "type": "text",
+      "value": "A simple data structure class starts with identifying what data belongs together. For a point in 2D space, you need x and y coordinates."
+    },
+    {
+      "type": "code",
+      "value": "public class Point {\n    private int x;\n    private int y;\n    \n    public Point(int x, int y) {\n        this.x = x;\n        this.y = y;\n    }\n    \n    public int getX() {\n        return x;\n    }\n    \n    public int getY() {\n        return y;\n    }\n    \n    public void setX(int x) {\n        this.x = x;\n    }\n    \n    public void setY(int y) {\n        this.y = y;\n    }\n    \n    @Override\n    public String toString() {\n        return \"(\" + x + \", \" + y + \")\";\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "This "
+    },
+    {
+      "type": "code",
+      "value": "Point"
+    },
+    {
+      "type": "text",
+      "value": " class bundles coordinates with accessors and a readable string representation. Using it is cleaner than managing separate variables."
+    },
+    {
+      "type": "code",
+      "value": "// Without Point class - messy\nint x1 = 5, y1 = 10;\nint x2 = 15, y2 = 20;\n\n// With Point class - clean\nPoint p1 = new Point(5, 10);\nPoint p2 = new Point(15, 20);"
+    },
+    {
+      "type": "text",
+      "value": "Data structure classes should include methods that perform common operations on that data."
+    },
+    {
+      "type": "code",
+      "value": "public class Point {\n    private int x;\n    private int y;\n    \n    public Point(int x, int y) {\n        this.x = x;\n        this.y = y;\n    }\n    \n    // Calculate distance from this point to another\n    public double distanceTo(Point other) {\n        int dx = this.x - other.x;\n        int dy = this.y - other.y;\n        return Math.sqrt(dx * dx + dy * dy);\n    }\n    \n    // Move the point by an offset\n    public void translate(int dx, int dy) {\n        this.x += dx;\n        this.y += dy;\n    }\n    \n    public int getX() { return x; }\n    public int getY() { return y; }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Methods like "
+    },
+    {
+      "type": "code",
+      "value": "distanceTo()"
+    },
+    {
+      "type": "text",
+      "value": " and "
+    },
+    {
+      "type": "code",
+      "value": "translate()"
+    },
+    {
+      "type": "text",
+      "value": " make the class more useful by encapsulating common operations."
+    },
+    {
+      "type": "text",
+      "value": "A rectangle data structure needs position and dimensions."
+    },
+    {
+      "type": "code",
+      "value": "public class Rectangle {\n    private int x;        // Top-left x coordinate\n    private int y;        // Top-left y coordinate\n    private int width;\n    private int height;\n    \n    public Rectangle(int x, int y, int width, int height) {\n        this.x = x;\n        this.y = y;\n        this.width = width;\n        this.height = height;\n    }\n    \n    public int getArea() {\n        return width * height;\n    }\n    \n    public int getPerimeter() {\n        return 2 * (width + height);\n    }\n    \n    public boolean contains(int px, int py) {\n        return px >= x && px <= x + width &&\n               py >= y && py <= y + height;\n    }\n    \n    public int getX() { return x; }\n    public int getY() { return y; }\n    public int getWidth() { return width; }\n    public int getHeight() { return height; }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Rectangle"
+    },
+    {
+      "type": "text",
+      "value": " class provides calculated properties like area and perimeter, plus utility methods like "
+    },
+    {
+      "type": "code",
+      "value": "contains()"
+    },
+    {
+      "type": "text",
+      "value": "."
+    },
+    {
+      "type": "text",
+      "value": "Date structures benefit from validation in constructors and setters."
+    },
+    {
+      "type": "code",
+      "value": "public class Date {\n    private int month;\n    private int day;\n    private int year;\n    \n    public Date(int month, int day, int year) {\n        if (month < 1 || month > 12) {\n            throw new IllegalArgumentException(\"Invalid month\");\n        }\n        if (day < 1 || day > 31) {\n            throw new IllegalArgumentException(\"Invalid day\");\n        }\n        if (year < 1900) {\n            throw new IllegalArgumentException(\"Invalid year\");\n        }\n        \n        this.month = month;\n        this.day = day;\n        this.year = year;\n    }\n    \n    public int getMonth() { return month; }\n    public int getDay() { return day; }\n    public int getYear() { return year; }\n    \n    @Override\n    public String toString() {\n        return month + \"/\" + day + \"/\" + year;\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "Validation ensures objects are always in valid states, preventing bugs from invalid data."
+    },
+    {
+      "type": "text",
+      "value": "Time data structures track hours, minutes, and seconds."
+    },
+    {
+      "type": "code",
+      "value": "public class Time {\n    private int hours;\n    private int minutes;\n    private int seconds;\n    \n    public Time(int hours, int minutes, int seconds) {\n        if (hours < 0 || hours > 23) hours = 0;\n        if (minutes < 0 || minutes > 59) minutes = 0;\n        if (seconds < 0 || seconds > 59) seconds = 0;\n        \n        this.hours = hours;\n        this.minutes = minutes;\n        this.seconds = seconds;\n    }\n    \n    public int toSeconds() {\n        return hours * 3600 + minutes * 60 + seconds;\n    }\n    \n    public void addSeconds(int s) {\n        int total = toSeconds() + s;\n        this.hours = (total / 3600) % 24;\n        this.minutes = (total % 3600) / 60;\n        this.seconds = total % 60;\n    }\n    \n    @Override\n    public String toString() {\n        return String.format(\"%02d:%02d:%02d\", hours, minutes, seconds);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Time"
+    },
+    {
+      "type": "text",
+      "value": " class handles time arithmetic, converting to seconds and back for calculations."
+    },
+    {
+      "type": "text",
+      "value": "Color data structures represent RGB values."
+    },
+    {
+      "type": "code",
+      "value": "public class Color {\n    private int red;\n    private int green;\n    private int blue;\n    \n    public Color(int red, int green, int blue) {\n        this.red = clamp(red);\n        this.green = clamp(green);\n        this.blue = clamp(blue);\n    }\n    \n    private int clamp(int value) {\n        if (value < 0) return 0;\n        if (value > 255) return 255;\n        return value;\n    }\n    \n    public Color lighter() {\n        return new Color(\n            (int)(red * 1.2),\n            (int)(green * 1.2),\n            (int)(blue * 1.2)\n        );\n    }\n    \n    public int getRed() { return red; }\n    public int getGreen() { return green; }\n    public int getBlue() { return blue; }\n    \n    @Override\n    public String toString() {\n        return \"RGB(\" + red + \", \" + green + \", \" + blue + \")\";\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "Color"
+    },
+    {
+      "type": "text",
+      "value": " class uses helper methods like "
+    },
+    {
+      "type": "code",
+      "value": "clamp()"
+    },
+    {
+      "type": "text",
+      "value": " to ensure values stay within valid ranges."
+    },
+    {
+      "type": "text",
+      "value": "Implementing "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": " allows meaningful comparison of data structures."
+    },
+    {
+      "type": "code",
+      "value": "public class Point {\n    private int x;\n    private int y;\n    \n    public Point(int x, int y) {\n        this.x = x;\n        this.y = y;\n    }\n    \n    @Override\n    public boolean equals(Object other) {\n        if (this == other) return true;\n        if (other == null || !(other instanceof Point)) return false;\n        \n        Point p = (Point) other;\n        return this.x == p.x && this.y == p.y;\n    }\n    \n    public int getX() { return x; }\n    public int getY() { return y; }\n}"
+    },
+    {
+      "type": "text",
+      "value": "With "
+    },
+    {
+      "type": "code",
+      "value": "equals()"
+    },
+    {
+      "type": "text",
+      "value": ", you can properly compare points based on their coordinates rather than memory addresses."
+    },
+    {
+      "type": "text",
+      "value": "Data structures can be immutable, where values can't change after creation."
+    },
+    {
+      "type": "code",
+      "value": "public class ImmutablePoint {\n    private final int x;\n    private final int y;\n    \n    public ImmutablePoint(int x, int y) {\n        this.x = x;\n        this.y = y;\n    }\n    \n    // No setters - values can't change\n    \n    public int getX() { return x; }\n    public int getY() { return y; }\n    \n    // Return new objects instead of modifying\n    public ImmutablePoint translate(int dx, int dy) {\n        return new ImmutablePoint(x + dx, y + dy);\n    }\n}"
+    },
+    {
+      "type": "text",
+      "value": "The "
+    },
+    {
+      "type": "code",
+      "value": "final"
+    },
+    {
+      "type": "text",
+      "value": " keyword prevents reassignment. Operations return new objects rather than modifying existing ones."
+    },
+    {
+      "type": "text",
+      "value": "Well-designed data structure classes form the building blocks of larger systems. By bundling related data with meaningful operations, you create reusable, maintainable components that make complex programs easier to understand and modify."
+    }
+  ]
+}

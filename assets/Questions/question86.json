@@ -1,0 +1,214 @@
+{
+  "lessonId": 86,
+  "title": "Testing and Debugging Classes",
+  "questions": [
+    {
+      "id": 1,
+      "type": "text",
+      "question": "What is the first step in effective debugging when you encounter a bug?",
+      "options": [
+        { "type": "text", "value": "Reproduce the bug consistently" },
+        { "type": "text", "value": "Rewrite the entire class" },
+        { "type": "text", "value": "Delete all print statements" },
+        { "type": "text", "value": "Ask someone else to fix it" }
+      ],
+      "answer": 0,
+      "explanation": "Effective debugging begins by reproducing the bug consistently so you can observe it reliably. This allows you to isolate and fix the issue systematically."
+    },
+    {
+      "id": 2,
+      "type": "text",
+      "question": "Which method is most valuable for debugging because it allows you to inspect an object's state?",
+      "options": [
+        { "type": "text", "value": "equals()" },
+        { "type": "text", "value": "toString()" },
+        { "type": "text", "value": "compareTo()" },
+        { "type": "text", "value": "hashCode()" }
+      ],
+      "answer": 1,
+      "explanation": "The toString() method is invaluable for debugging because it provides a quick snapshot of an object's complete state, making it easy to inspect values."
+    },
+    {
+      "id": 3,
+      "type": "text",
+      "question": "What should you test after verifying typical use cases for a class?",
+      "options": [
+        { "type": "text", "value": "Only positive numbers" },
+        { "type": "text", "value": "Random values" },
+        { "type": "text", "value": "Boundary conditions and edge cases" },
+        { "type": "text", "value": "String values only" }
+      ],
+      "answer": 2,
+      "explanation": "After testing typical use cases, you should test boundary conditions and edge cases like zero, negative numbers, or extreme values to ensure comprehensive coverage."
+    },
+    {
+      "id": 4,
+      "type": "text",
+      "question": "What error occurs when you attempt to call a method on a reference that points to nothing?",
+      "options": [
+        { "type": "text", "value": "ArrayIndexOutOfBoundsException" },
+        { "type": "text", "value": "NumberFormatException" },
+        { "type": "text", "value": "ArithmeticException" },
+        { "type": "text", "value": "NullPointerException" }
+      ],
+      "answer": 3,
+      "explanation": "A NullPointerException occurs when you try to call methods on a reference that is null, meaning it doesn't point to any object."
+    },
+    {
+      "id": 5,
+      "type": "text",
+      "question": "When testing a class, what type of test driver should you create?",
+      "options": [
+        { "type": "text", "value": "One that creates multiple objects with different values" },
+        { "type": "text", "value": "One that only tests one object" },
+        { "type": "text", "value": "One without any output" },
+        { "type": "text", "value": "One that tests other classes instead" }
+      ],
+      "answer": 0,
+      "explanation": "A comprehensive test driver creates multiple objects with different values to verify the class works correctly across various inputs and scenarios."
+    },
+    {
+      "id": 6,
+      "type": "text",
+      "question": "Where should you strategically place print statements when debugging?",
+      "options": [
+        { "type": "text", "value": "Only at the end of methods" },
+        { "type": "text", "value": "Throughout methods to track execution flow and values" },
+        { "type": "text", "value": "Never use print statements" },
+        { "type": "text", "value": "Only in constructors" }
+      ],
+      "answer": 1,
+      "explanation": "Strategic print statements throughout methods help track execution flow, parameter values, and intermediate results, making it easier to identify where problems occur."
+    },
+    {
+      "id": 7,
+      "type": "text",
+      "question": "What is a common mistake when writing setter methods?",
+      "options": [
+        { "type": "text", "value": "Using too many parameters" },
+        { "type": "text", "value": "Making them static" },
+        { "type": "text", "value": "Forgetting to use 'this' keyword to distinguish instance variables" },
+        { "type": "text", "value": "Returning void" }
+      ],
+      "answer": 2,
+      "explanation": "A common mistake in setters is forgetting the 'this' keyword, which causes the parameter to assign to itself instead of updating the instance variable."
+    },
+    {
+      "id": 8,
+      "type": "text",
+      "question": "What should you do before calling methods on an object reference to avoid crashes?",
+      "options": [
+        { "type": "text", "value": "Print the object" },
+        { "type": "text", "value": "Convert it to a string" },
+        { "type": "text", "value": "Call toString() first" },
+        { "type": "text", "value": "Check if the reference is not null" }
+      ],
+      "answer": 3,
+      "explanation": "Before calling methods on an object reference, check that it's not null to prevent NullPointerException crashes. This is defensive programming."
+    },
+    {
+      "id": 9,
+      "type": "text",
+      "question": "What does defensive programming involve when handling parameters?",
+      "options": [
+        { "type": "text", "value": "Checking for invalid inputs and handling them appropriately" },
+        { "type": "text", "value": "Accepting any value without checking" },
+        { "type": "text", "value": "Never using parameters" },
+        { "type": "text", "value": "Always throwing exceptions" }
+      ],
+      "answer": 0,
+      "explanation": "Defensive programming checks parameters for invalid inputs and handles them appropriately, either by setting defaults or providing warnings, making code more robust."
+    },
+    {
+      "id": 10,
+      "type": "text",
+      "question": "What should you print when a toString() method is properly implemented?",
+      "options": [
+        { "type": "text", "value": "Only the class name" },
+        { "type": "text", "value": "A representation showing the object's current state" },
+        { "type": "text", "value": "Nothing at all" },
+        { "type": "text", "value": "The memory address only" }
+      ],
+      "answer": 1,
+      "explanation": "A well-designed toString() method returns a string representation showing the object's current state, including key instance variable values for easy inspection."
+    },
+    {
+      "id": 11,
+      "type": "text",
+      "question": "When testing classes that interact with other classes, what approach helps isolate issues?",
+      "options": [
+        { "type": "text", "value": "Test everything together at once" },
+        { "type": "text", "value": "Never test interacting classes" },
+        { "type": "text", "value": "Create simple versions and test one class at a time first" },
+        { "type": "text", "value": "Only test the main class" }
+      ],
+      "answer": 2,
+      "explanation": "Testing classes in isolation by creating simple versions first helps identify issues without complications from other code. Once individual classes work, test them together."
+    },
+    {
+      "id": 12,
+      "type": "text",
+      "question": "After fixing a bug, what should you do next?",
+      "options": [
+        { "type": "text", "value": "Assume it's fixed and move on" },
+        { "type": "text", "value": "Delete the entire class" },
+        { "type": "text", "value": "Add more bugs to test" },
+        { "type": "text", "value": "Test again to confirm the fix works" }
+      ],
+      "answer": 3,
+      "explanation": "After fixing a bug, always test again to confirm the fix works correctly and didn't introduce new problems. This completes the debugging cycle."
+    },
+    {
+      "id": 13,
+      "type": "text",
+      "question": "What type of test case examines zero values, negative numbers, or extreme inputs?",
+      "options": [
+        { "type": "text", "value": "Edge cases and boundary conditions" },
+        { "type": "text", "value": "Normal cases only" },
+        { "type": "text", "value": "Random cases" },
+        { "type": "text", "value": "String cases" }
+      ],
+      "answer": 0,
+      "explanation": "Edge cases and boundary conditions test unusual inputs like zero, negative numbers, or extreme values to ensure the class handles all scenarios properly."
+    },
+    {
+      "id": 14,
+      "type": "text",
+      "question": "What should you do with debug print statements after finding and fixing a bug?",
+      "options": [
+        { "type": "text", "value": "Keep them forever" },
+        { "type": "text", "value": "Remove them to keep code clean" },
+        { "type": "text", "value": "Add more of them" },
+        { "type": "text", "value": "Convert them to comments" }
+      ],
+      "answer": 1,
+      "explanation": "Once you've identified and fixed a bug, remove debugging print statements to keep your code clean and maintain professional code quality."
+    },
+    {
+      "id": 15,
+      "type": "text",
+      "question": "Which of the following should be on your testing checklist for classes?",
+      "options": [
+        { "type": "text", "value": "Only test constructors" },
+        { "type": "text", "value": "Only test one method" },
+        { "type": "text", "value": "Verify constructors, getters, setters, and return values all work correctly" },
+        { "type": "text", "value": "Skip testing entirely" }
+      ],
+      "answer": 2,
+      "explanation": "A complete testing checklist includes verifying constructors initialize correctly, getters return accurate values, setters update variables, and all methods behave appropriately."
+    },
+    {
+      "id": 16,
+      "type": "text",
+      "question": "What is the benefit of adding diagnostic output during debugging?",
+      "options": [
+        { "type": "text", "value": "It makes code run faster" },
+        { "type": "text", "value": "It reduces memory usage" },
+        { "type": "text", "value": "It makes code shorter" },
+        { "type": "text", "value": "It helps understand what's happening with values and execution flow" }
+      ],
+      "answer": 3,
+      "explanation": "Diagnostic output during debugging helps you understand what values variables hold and how execution flows through your code, making it easier to identify problems."
+    }
+  ]
+}
