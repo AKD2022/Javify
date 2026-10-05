@@ -1,214 +1,408 @@
 {
   "lessonId": 19,
-  "title": "Return Types and Parameters",
+  "title": "2.4 Nested if Statements",
+  "topic": "2.4",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What does a return type specify in a method?",
+      "question": "What is a nested if statement?",
       "options": [
-        { "type": "text", "value": "What kind of data the method sends back to the caller" },
-        { "type": "text", "value": "How many parameters the method has" },
-        { "type": "text", "value": "The method's name" },
-        { "type": "text", "value": "Whether the method is public or private" }
+        {
+          "type": "text",
+          "value": "An if inside another branch"
+        },
+        {
+          "type": "text",
+          "value": "Two method declarations"
+        },
+        {
+          "type": "text",
+          "value": "Any if with a long condition"
+        },
+        {
+          "type": "text",
+          "value": "A loop with no body"
+        }
       ],
       "answer": 0,
-      "explanation": "A return type specifies what kind of data a method will send back to the code that called it."
+      "explanation": "Nesting makes one decision depend on entry into an outer branch."
     },
     {
-      "id": 2,
-      "type": "code",
-      "question": "What keyword is used to send a value back from a method?",
+      "id": "v2-2",
+      "type": "text",
+      "question": "How many bodies run in an if / else if / else chain?",
       "options": [
-        { "type": "text", "value": "send" },
-        { "type": "text", "value": "return" },
-        { "type": "text", "value": "give" },
-        { "type": "text", "value": "output" }
+        {
+          "type": "text",
+          "value": "None if any condition is true"
+        },
+        {
+          "type": "text",
+          "value": "At most one selected branch"
+        },
+        {
+          "type": "text",
+          "value": "Every true branch"
+        },
+        {
+          "type": "text",
+          "value": "Always two"
+        }
       ],
       "answer": 1,
-      "explanation": "The 'return' keyword is used to send a value back from a method to the calling code."
+      "explanation": "The first true condition selects its branch and skips the rest of the chain."
     },
     {
-      "id": 3,
-      "type": "code",
-      "question": "What happens after a return statement executes?",
+      "id": "v2-3",
+      "type": "text",
+      "question": "Why can ordering matter in an else-if chain?",
       "options": [
-        { "type": "text", "value": "The program continues to the next line" },
-        { "type": "text", "value": "The program crashes" },
-        { "type": "text", "value": "The method execution ends immediately" },
-        { "type": "text", "value": "Nothing special happens" }
+        {
+          "type": "text",
+          "value": "Only the last test is evaluated"
+        },
+        {
+          "type": "text",
+          "value": "Every branch always runs"
+        },
+        {
+          "type": "text",
+          "value": "An earlier broad condition can hide a later specific one"
+        },
+        {
+          "type": "text",
+          "value": "Java sorts the tests automatically"
+        }
       ],
       "answer": 2,
-      "explanation": "When a return statement executes, the method ends immediately and control returns to the calling code."
+      "explanation": "Once a branch is selected, later conditions are not tested."
     },
     {
-      "id": 4,
-      "type": "code",
-      "question": "What is the result of this code?\nint result = addNumbers(10, 5); // addNumbers returns 15",
+      "id": "v2-4",
+      "type": "text",
+      "question": "Without braces, which if does an else pair with?",
       "options": [
-        { "type": "text", "value": "result equals 10" },
-        { "type": "text", "value": "result equals 5" },
-        { "type": "text", "value": "result equals 105" },
-        { "type": "text", "value": "result equals 15" }
+        {
+          "type": "text",
+          "value": "Always the first if in the method"
+        },
+        {
+          "type": "text",
+          "value": "Every preceding if"
+        },
+        {
+          "type": "text",
+          "value": "The nearest loop"
+        },
+        {
+          "type": "text",
+          "value": "The nearest unmatched if"
+        }
       ],
       "answer": 3,
-      "explanation": "The variable result stores the returned value from addNumbers(10, 5), which is 15."
+      "explanation": "The language pairing rule is independent of indentation."
     },
     {
-      "id": 5,
+      "id": "v2-5",
       "type": "text",
-      "question": "What are parameters in a method?",
+      "question": "What does adding explicit braces improve in nested selection?",
       "options": [
-        { "type": "text", "value": "Input variables that receive data when the method is called" },
-        { "type": "text", "value": "The method's return value" },
-        { "type": "text", "value": "Variables outside the method" },
-        { "type": "text", "value": "The method's name" }
+        {
+          "type": "text",
+          "value": "It makes branch ownership clear"
+        },
+        {
+          "type": "text",
+          "value": "It changes true to false"
+        },
+        {
+          "type": "text",
+          "value": "It removes all conditions"
+        },
+        {
+          "type": "text",
+          "value": "It forces both branches to execute"
+        }
       ],
       "answer": 0,
-      "explanation": "Parameters are input variables that receive data (arguments) when the method is called, allowing the method to work with different values."
+      "explanation": "Clear grouping prevents misleading indentation and dangling-else mistakes."
     },
     {
-      "id": 6,
+      "id": "v2-6",
       "type": "text",
-      "question": "What return type should a method that checks if a number is positive use?",
+      "question": "In if (a) { if (b) action(); }, when does action run?",
       "options": [
-        { "type": "text", "value": "int" },
-        { "type": "text", "value": "boolean" },
-        { "type": "text", "value": "String" },
-        { "type": "text", "value": "double" }
+        {
+          "type": "text",
+          "value": "On every execution"
+        },
+        {
+          "type": "text",
+          "value": "When both a and b are true"
+        },
+        {
+          "type": "text",
+          "value": "Whenever a is false"
+        },
+        {
+          "type": "text",
+          "value": "Whenever b is false"
+        }
       ],
       "answer": 1,
-      "explanation": "A method that checks conditions should return boolean (true or false) to indicate whether the condition is met."
+      "explanation": "The inner statement is reached only through a true outer condition."
     },
     {
-      "id": 7,
+      "id": "v2-7",
       "type": "text",
-      "question": "What is 'pass by value' in Java parameter passing?",
+      "question": "When is the final else in a chain selected?",
       "options": [
-        { "type": "text", "value": "Parameters can be changed permanently" },
-        { "type": "text", "value": "Methods receive copies of the argument values" },
-        { "type": "text", "value": "Parameters are shared between methods" },
-        { "type": "text", "value": "Methods receive references to original variables" }
+        {
+          "type": "text",
+          "value": "Before any test"
+        },
+        {
+          "type": "text",
+          "value": "Only after a return"
+        },
+        {
+          "type": "text",
+          "value": "When all preceding tests were false"
+        },
+        {
+          "type": "text",
+          "value": "When the first test was true"
+        }
       ],
       "answer": 2,
-      "explanation": "Pass by value means methods receive copies of argument values, so changes to parameters don't affect the original variables."
+      "explanation": "The final else is the fallback path."
     },
     {
-      "id": 8,
-      "type": "code",
-      "question": "How many return statements can execute in a single method call?",
-      "options": [
-        { "type": "text", "value": "Zero" },
-        { "type": "text", "value": "One" },
-        { "type": "text", "value": "Two" },
-        { "type": "text", "value": "Unlimited" }
-      ],
-      "answer": 1,
-      "explanation": "Only one return statement can execute per method call because return immediately ends the method execution."
-    },
-    {
-      "id": 9,
-      "type": "code",
-      "question": "Which method declaration is correct for a method that calculates area?",
-      "options": [
-        { "type": "code", "value": "public static double calculateArea(double length, double width)" },
-        { "type": "code", "value": "public static void calculateArea(double length, double width)" },
-        { "type": "code", "value": "calculateArea double(double length, double width)" },
-        { "type": "code", "value": "public calculateArea(length, width)" }
-      ],
-      "answer": 0,
-      "explanation": "A method that calculates area should return a double value and have properly typed parameters: public static double calculateArea(double length, double width)."
-    },
-    {
-      "id": 10,
+      "id": "v2-8",
       "type": "text",
-      "question": "What must match between a method's return type and return statement?",
+      "question": "Which threshold order correctly handles score >= 90 before score >= 80?",
       "options": [
-        { "type": "text", "value": "The data type of the returned value" },
-        { "type": "text", "value": "The number of parameters" },
-        { "type": "text", "value": "The method name" },
-        { "type": "text", "value": "The access modifier" }
-      ],
-      "answer": 0,
-      "explanation": "The data type of the value in the return statement must match the method's declared return type."
-    },
-    {
-      "id": 11,
-      "type": "code",
-      "question": "What can you do with a method's return value?",
-      "options": [
-        { "type": "text", "value": "Only print it" },
-        { "type": "text", "value": "Store it in a variable, use it in expressions, or pass it to other methods" },
-        { "type": "text", "value": "Only store it in a variable" },
-        { "type": "text", "value": "Nothing special" }
-      ],
-      "answer": 1,
-      "explanation": "Method return values can be stored in variables, used directly in expressions, or passed as arguments to other methods."
-    },
-    {
-      "id": 12,
-      "type": "code",
-      "question": "What is method chaining?",
-      "options": [
-        { "type": "text", "value": "Connecting methods with cables" },
-        { "type": "text", "value": "Writing very long methods" },
-        { "type": "text", "value": "Using the return value of one method as an argument for another" },
-        { "type": "text", "value": "Using the return value of one method as an argument for another" }
+        {
+          "type": "text",
+          "value": "Test 80 first and return immediately"
+        },
+        {
+          "type": "text",
+          "value": "Always use two independent ifs"
+        },
+        {
+          "type": "text",
+          "value": "Ignore equality at both thresholds"
+        },
+        {
+          "type": "text",
+          "value": "Test 90 first, then 80"
+        }
       ],
       "answer": 3,
-      "explanation": "Method chaining uses the return value of one method as an argument for another method, creating compact code like getGrade(calculateAverage(85, 90, 88))."
+      "explanation": "Descending thresholds keep the broader 80 test from capturing 90-plus scores."
     },
     {
-      "id": 13,
-      "type": "text",
-      "question": "What should a method return to indicate an error condition?",
+      "id": "v2-9",
+      "type": "code",
+      "question": "What is result?\nint x = 4;\nint result = 0;\nif (x > 5) {\n  if (x < 9) result = 1;\n  else result = 2;\n}",
       "options": [
-        { "type": "text", "value": "A special value like -1 or empty string" },
-        { "type": "text", "value": "Nothing" },
-        { "type": "text", "value": "A random number" },
-        { "type": "text", "value": "The method name" }
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "-1"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
       ],
       "answer": 0,
-      "explanation": "Methods often return special values like -1 for invalid indices or empty strings to indicate error conditions."
+      "explanation": "First decide whether the outer branch is entered, then evaluate the inner test."
     },
     {
-      "id": 14,
-      "type": "text",
-      "question": "What is a helper method?",
+      "id": "v2-10",
+      "type": "code",
+      "question": "What is result?\nint x = 4;\nint result;\nif (x >= 9) result = 3;\nelse if (x >= 6) result = 2;\nelse result = 1;",
       "options": [
-        { "type": "text", "value": "A method that helps other programmers" },
-        { "type": "text", "value": "A small, focused method that performs specific tasks for other methods" },
-        { "type": "text", "value": "A method that fixes errors" },
-        { "type": "text", "value": "A method that prints help text" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        }
       ],
       "answer": 1,
-      "explanation": "A helper method is a small, focused method that performs specific tasks and returns values used by other methods."
+      "explanation": "Only the first matching branch runs."
     },
     {
-      "id": 15,
+      "id": "v2-11",
       "type": "code",
-      "question": "What's required for all non-void methods?",
+      "question": "What is result?\nint x = 6;\nint result = 0;\nif (x > 5) {\n  if (x < 9) result = 1;\n  else result = 2;\n}",
       "options": [
-        { "type": "text", "value": "At least one parameter" },
-        { "type": "text", "value": "A return statement on all possible code paths" },
-        { "type": "text", "value": "Multiple return statements" },
-        { "type": "text", "value": "Static keyword" }
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        }
       ],
       "answer": 2,
-      "explanation": "All non-void methods must have return statements on all possible code paths to ensure they always return a value."
+      "explanation": "First decide whether the outer branch is entered, then evaluate the inner test."
     },
     {
-      "id": 16,
+      "id": "v2-12",
       "type": "code",
-      "question": "What happens to the original variable when passed to a method parameter?",
+      "question": "What is result?\nint x = 6;\nint result;\nif (x >= 9) result = 3;\nelse if (x >= 6) result = 2;\nelse result = 1;",
       "options": [
-        { "type": "text", "value": "It gets deleted" },
-        { "type": "text", "value": "It can be modified by the method" },
-        { "type": "text", "value": "It becomes null" },
-        { "type": "text", "value": "It remains unchanged (pass by value)" }
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        }
       ],
       "answer": 3,
-      "explanation": "In Java's pass-by-value system, the original variable remains unchanged because the method works with a copy of the value."
+      "explanation": "Only the first matching branch runs."
+    },
+    {
+      "id": "v2-13",
+      "type": "code",
+      "question": "What is result?\nint x = 8;\nint result = 0;\nif (x > 5) {\n  if (x < 9) result = 1;\n  else result = 2;\n}",
+      "options": [
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        }
+      ],
+      "answer": 0,
+      "explanation": "First decide whether the outer branch is entered, then evaluate the inner test."
+    },
+    {
+      "id": "v2-14",
+      "type": "code",
+      "question": "What is result?\nint x = 8;\nint result;\nif (x >= 9) result = 3;\nelse if (x >= 6) result = 2;\nelse result = 1;",
+      "options": [
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        }
+      ],
+      "answer": 1,
+      "explanation": "Only the first matching branch runs."
+    },
+    {
+      "id": "v2-15",
+      "type": "code",
+      "question": "What is result?\nint x = 10;\nint result = 0;\nif (x > 5) {\n  if (x < 9) result = 1;\n  else result = 2;\n}",
+      "options": [
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
+      ],
+      "answer": 2,
+      "explanation": "First decide whether the outer branch is entered, then evaluate the inner test."
+    },
+    {
+      "id": "v2-16",
+      "type": "code",
+      "question": "What is result?\nint x = 10;\nint result;\nif (x >= 9) result = 3;\nelse if (x >= 6) result = 2;\nelse result = 1;",
+      "options": [
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Only the first matching branch runs."
     }
   ]
 }

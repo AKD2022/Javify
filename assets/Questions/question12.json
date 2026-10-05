@@ -1,214 +1,408 @@
 {
   "lessonId": 12,
-  "title": "Input and Output Basics (System.out, Scanner intro)",
+  "title": "1.12 Objects: Instances of Classes",
+  "topic": "1.12",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "Which method prints text and moves to the next line?",
+      "question": "What is a class?",
       "options": [
-        { "type": "text", "value": "System.out.println()" },
-        { "type": "text", "value": "System.out.print()" },
-        { "type": "text", "value": "System.out.write()" },
-        { "type": "text", "value": "System.out.display()" }
+        {
+          "type": "text",
+          "value": "A definition of the state and behavior of its objects"
+        },
+        {
+          "type": "text",
+          "value": "One specific object only"
+        },
+        {
+          "type": "text",
+          "value": "A primitive value"
+        },
+        {
+          "type": "text",
+          "value": "A loop condition"
+        }
       ],
       "answer": 0,
-      "explanation": "System.out.println() prints text and automatically moves the cursor to the next line."
+      "explanation": "A class defines a type and the operations its instances support."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "Which method prints text without moving to the next line?",
+      "question": "What is an object?",
       "options": [
-        { "type": "text", "value": "System.out.println()" },
-        { "type": "text", "value": "System.out.print()" },
-        { "type": "text", "value": "System.out.line()" },
-        { "type": "text", "value": "System.out.show()" }
+        {
+          "type": "text",
+          "value": "Always a number"
+        },
+        {
+          "type": "text",
+          "value": "An instance of a class"
+        },
+        {
+          "type": "text",
+          "value": "Only a method name"
+        },
+        {
+          "type": "text",
+          "value": "Only a source file"
+        }
       ],
       "answer": 1,
-      "explanation": "System.out.print() prints text without adding a newline, allowing subsequent output on the same line."
+      "explanation": "An object is a particular instance with its own identity and state."
     },
     {
-      "id": 3,
+      "id": "v2-3",
       "type": "text",
-      "question": "What import statement is needed to use Scanner?",
+      "question": "Which describes object state?",
       "options": [
-        { "type": "text", "value": "import java.io.Scanner;" },
-        { "type": "text", "value": "import java.lang.Scanner;" },
-        { "type": "text", "value": "import java.util.Scanner;" },
-        { "type": "text", "value": "import javax.Scanner;" }
+        {
+          "type": "text",
+          "value": "Only package imports"
+        },
+        {
+          "type": "text",
+          "value": "Only compilation errors"
+        },
+        {
+          "type": "text",
+          "value": "Values stored in its instance variables"
+        },
+        {
+          "type": "text",
+          "value": "Only its method names"
+        }
       ],
       "answer": 2,
-      "explanation": "Scanner is located in the java.util package, so you need: import java.util.Scanner;"
+      "explanation": "Instance fields hold information describing the object."
     },
     {
-      "id": 4,
-      "type": "code",
-      "question": "How do you create a Scanner for keyboard input?",
+      "id": "v2-4",
+      "type": "text",
+      "question": "Which describes object behavior?",
       "options": [
-        { "type": "code", "value": "Scanner input = new Scanner();" },
-        { "type": "code", "value": "Scanner input = new Scanner(keyboard);" },
-        { "type": "code", "value": "Scanner input = new Scanner(System.out);" },
-        { "type": "code", "value": "Scanner input = new Scanner(System.in);" }
+        {
+          "type": "text",
+          "value": "Only the spelling of its variable name"
+        },
+        {
+          "type": "text",
+          "value": "Only comments"
+        },
+        {
+          "type": "text",
+          "value": "Only a constructor parameter"
+        },
+        {
+          "type": "text",
+          "value": "Operations provided by its methods"
+        }
       ],
       "answer": 3,
-      "explanation": "System.in represents keyboard input, so you create: Scanner input = new Scanner(System.in);"
+      "explanation": "Methods implement actions or observations associated with objects."
     },
     {
-      "id": 5,
+      "id": "v2-5",
       "type": "text",
-      "question": "Which Scanner method reads an entire line of text?",
+      "question": "Two Counter objects are constructed separately. Must their counts always match?",
       "options": [
-        { "type": "text", "value": "nextLine()" },
-        { "type": "text", "value": "next()" },
-        { "type": "text", "value": "readLine()" },
-        { "type": "text", "value": "getLine()" }
+        {
+          "type": "text",
+          "value": "No, each can have independent instance state"
+        },
+        {
+          "type": "text",
+          "value": "Yes, because the class is shared"
+        },
+        {
+          "type": "text",
+          "value": "Yes, because Java copies every update"
+        },
+        {
+          "type": "text",
+          "value": "Only if both references are local"
+        }
       ],
       "answer": 0,
-      "explanation": "nextLine() reads an entire line of text, including spaces, until the user presses Enter."
+      "explanation": "Separate objects normally have separate instance-field storage."
     },
     {
-      "id": 6,
+      "id": "v2-6",
       "type": "text",
-      "question": "Which Scanner method reads only the next word?",
+      "question": "A variable declared Counter c stores what?",
       "options": [
-        { "type": "text", "value": "nextLine()" },
-        { "type": "text", "value": "next()" },
-        { "type": "text", "value": "nextWord()" },
-        { "type": "text", "value": "readWord()" }
+        {
+          "type": "text",
+          "value": "Every Counter object"
+        },
+        {
+          "type": "text",
+          "value": "A reference to a Counter object or null"
+        },
+        {
+          "type": "text",
+          "value": "The class source code"
+        },
+        {
+          "type": "text",
+          "value": "Only a primitive count"
+        }
       ],
       "answer": 1,
-      "explanation": "next() reads the next word (token), stopping at whitespace like spaces or tabs."
+      "explanation": "Reference variables identify objects rather than directly storing all object fields."
     },
     {
-      "id": 7,
+      "id": "v2-7",
       "type": "text",
-      "question": "Which Scanner method reads an integer?",
+      "question": "What does null mean for a reference variable?",
       "options": [
-        { "type": "text", "value": "nextNumber()" },
-        { "type": "text", "value": "readInt()" },
-        { "type": "text", "value": "nextInt()" },
-        { "type": "text", "value": "getInt()" }
+        {
+          "type": "text",
+          "value": "It is a new object with zero fields"
+        },
+        {
+          "type": "text",
+          "value": "It is the class itself"
+        },
+        {
+          "type": "text",
+          "value": "It refers to no object"
+        },
+        {
+          "type": "text",
+          "value": "It is an empty String"
+        }
       ],
       "answer": 2,
-      "explanation": "nextInt() reads the next integer value from the input stream."
+      "explanation": "A null reference cannot act as the receiver of an instance-method call."
     },
     {
-      "id": 8,
-      "type": "code",
-      "question": "What does this code output?\nSystem.out.print(\"Hello \");\nSystem.out.print(\"World!\");",
-      "options": [
-        { "type": "text", "value": "Hello\nWorld!" },
-        { "type": "text", "value": "Hello World!" },
-        { "type": "text", "value": "HelloWorld!" },
-        { "type": "text", "value": "Hello  World!" }
-      ],
-      "answer": 1,
-      "explanation": "print() doesn't add newlines, so both strings appear on the same line: \"Hello World!\""
-    },
-    {
-      "id": 9,
+      "id": "v2-8",
       "type": "text",
-      "question": "Which Scanner method reads a decimal number?",
+      "question": "What happens when an instance method is called through null?",
       "options": [
-        { "type": "text", "value": "nextFloat()" },
-        { "type": "text", "value": "nextDouble()" },
-        { "type": "text", "value": "nextDecimal()" },
-        { "type": "text", "value": "nextNumber()" }
+        {
+          "type": "text",
+          "value": "A new object is created"
+        },
+        {
+          "type": "text",
+          "value": "The method always returns zero"
+        },
+        {
+          "type": "text",
+          "value": "The compiler inserts a constructor"
+        },
+        {
+          "type": "text",
+          "value": "NullPointerException"
+        }
       ],
-      "answer": 1,
-      "explanation": "nextDouble() reads decimal numbers (floating-point values) from the input."
+      "answer": 3,
+      "explanation": "There is no receiver object on which to invoke the method."
     },
     {
-      "id": 10,
-      "type": "code",
-      "question": "What combines text and variables in output?",
+      "id": "v2-9",
+      "type": "text",
+      "question": "Two separately created Counter objects happen to have equal field values. What is still true?",
       "options": [
-        { "type": "text", "value": "String concatenation with +" },
-        { "type": "text", "value": "String multiplication with *" },
-        { "type": "text", "value": "String division with /" },
-        { "type": "text", "value": "String subtraction with -" }
+        {
+          "type": "text",
+          "value": "They can be distinct objects"
+        },
+        {
+          "type": "text",
+          "value": "They must be the same object"
+        },
+        {
+          "type": "text",
+          "value": "Their references are automatically null"
+        },
+        {
+          "type": "text",
+          "value": "Their class names differ"
+        }
       ],
       "answer": 0,
-      "explanation": "The + operator concatenates strings and converts variables to strings for display."
+      "explanation": "Equal state does not imply identical object identity."
     },
     {
-      "id": 11,
+      "id": "v2-10",
       "type": "text",
-      "question": "Which Scanner method reads true/false values?",
+      "question": "Given Counter a = new Counter(); and Counter b = a;, what is the relationship?",
       "options": [
-        { "type": "text", "value": "nextBool()" },
-        { "type": "text", "value": "nextBoolean()" },
-        { "type": "text", "value": "readBoolean()" },
-        { "type": "text", "value": "getBool()" }
+        {
+          "type": "text",
+          "value": "Two constructors run"
+        },
+        {
+          "type": "text",
+          "value": "a and b refer to the same object"
+        },
+        {
+          "type": "text",
+          "value": "b is automatically a deep copy"
+        },
+        {
+          "type": "text",
+          "value": "a is set to null"
+        }
       ],
       "answer": 1,
-      "explanation": "nextBoolean() reads boolean values (true or false) from the input."
+      "explanation": "Reference assignment copies the reference, creating an alias."
     },
     {
-      "id": 12,
+      "id": "v2-11",
       "type": "text",
-      "question": "What should you do after nextInt() before using nextLine()?",
+      "question": "Two separately created Timer objects happen to have equal field values. What is still true?",
       "options": [
-        { "type": "text", "value": "Nothing special" },
-        { "type": "text", "value": "Call nextLine() to consume the newline" },
-        { "type": "text", "value": "Wait 1 second" },
-        { "type": "text", "value": "Reset the Scanner" }
+        {
+          "type": "text",
+          "value": "Their references are automatically null"
+        },
+        {
+          "type": "text",
+          "value": "Their class names differ"
+        },
+        {
+          "type": "text",
+          "value": "They can be distinct objects"
+        },
+        {
+          "type": "text",
+          "value": "They must be the same object"
+        }
       ],
-      "answer": 1,
-      "explanation": "After nextInt(), call nextLine() to consume the remaining newline character before reading text."
+      "answer": 2,
+      "explanation": "Equal state does not imply identical object identity."
     },
     {
-      "id": 13,
-      "type": "code",
-      "question": "What does System.out.println(5 + 3) display?",
+      "id": "v2-12",
+      "type": "text",
+      "question": "Given Timer a = new Timer(); and Timer b = a;, what is the relationship?",
       "options": [
-        { "type": "text", "value": "8" },
-        { "type": "text", "value": "53" },
-        { "type": "text", "value": "5 + 3" },
-        { "type": "text", "value": "5+3" }
+        {
+          "type": "text",
+          "value": "b is automatically a deep copy"
+        },
+        {
+          "type": "text",
+          "value": "a is set to null"
+        },
+        {
+          "type": "text",
+          "value": "Two constructors run"
+        },
+        {
+          "type": "text",
+          "value": "a and b refer to the same object"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Reference assignment copies the reference, creating an alias."
+    },
+    {
+      "id": "v2-13",
+      "type": "text",
+      "question": "Two separately created Account objects happen to have equal field values. What is still true?",
+      "options": [
+        {
+          "type": "text",
+          "value": "They can be distinct objects"
+        },
+        {
+          "type": "text",
+          "value": "They must be the same object"
+        },
+        {
+          "type": "text",
+          "value": "Their references are automatically null"
+        },
+        {
+          "type": "text",
+          "value": "Their class names differ"
+        }
       ],
       "answer": 0,
-      "explanation": "The expression 5 + 3 is evaluated first, resulting in 8, which is then displayed."
+      "explanation": "Equal state does not imply identical object identity."
     },
     {
-      "id": 14,
+      "id": "v2-14",
       "type": "text",
-      "question": "What's a good practice when finished with a Scanner?",
+      "question": "Given Account a = new Account(); and Account b = a;, what is the relationship?",
       "options": [
-        { "type": "text", "value": "Delete it" },
-        { "type": "text", "value": "Close it with close()" },
-        { "type": "text", "value": "Reset it" },
-        { "type": "text", "value": "Nothing needed" }
+        {
+          "type": "text",
+          "value": "Two constructors run"
+        },
+        {
+          "type": "text",
+          "value": "a and b refer to the same object"
+        },
+        {
+          "type": "text",
+          "value": "b is automatically a deep copy"
+        },
+        {
+          "type": "text",
+          "value": "a is set to null"
+        }
       ],
       "answer": 1,
-      "explanation": "It's good practice to call close() on Scanner objects when finished to free system resources."
+      "explanation": "Reference assignment copies the reference, creating an alias."
     },
     {
-      "id": 15,
-      "type": "code",
-      "question": "What does \"Enter your age: \" represent in a program?",
+      "id": "v2-15",
+      "type": "text",
+      "question": "Two separately created Player objects happen to have equal field values. What is still true?",
       "options": [
-        { "type": "text", "value": "Variable name" },
-        { "type": "text", "value": "Method call" },
-        { "type": "text", "value": "User prompt" },
-        { "type": "text", "value": "Error message" }
+        {
+          "type": "text",
+          "value": "Their references are automatically null"
+        },
+        {
+          "type": "text",
+          "value": "Their class names differ"
+        },
+        {
+          "type": "text",
+          "value": "They can be distinct objects"
+        },
+        {
+          "type": "text",
+          "value": "They must be the same object"
+        }
       ],
       "answer": 2,
-      "explanation": "\"Enter your age: \" is a user prompt that tells the user what type of input is expected."
+      "explanation": "Equal state does not imply identical object identity."
     },
     {
-      "id": 16,
-      "type": "code",
-      "question": "What does this create: Scanner input = new Scanner(System.in);",
+      "id": "v2-16",
+      "type": "text",
+      "question": "Given Player a = new Player(); and Player b = a;, what is the relationship?",
       "options": [
-        { "type": "text", "value": "A file reader" },
-        { "type": "text", "value": "An output stream" },
-        { "type": "text", "value": "A keyboard input reader" },
-        { "type": "text", "value": "A network connection" }
+        {
+          "type": "text",
+          "value": "b is automatically a deep copy"
+        },
+        {
+          "type": "text",
+          "value": "a is set to null"
+        },
+        {
+          "type": "text",
+          "value": "Two constructors run"
+        },
+        {
+          "type": "text",
+          "value": "a and b refer to the same object"
+        }
       ],
-      "answer": 2,
-      "explanation": "This creates a Scanner object that reads input from the keyboard (System.in)."
+      "answer": 3,
+      "explanation": "Reference assignment copies the reference, creating an alias."
     }
   ]
 }

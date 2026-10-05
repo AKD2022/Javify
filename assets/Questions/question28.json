@@ -1,214 +1,408 @@
 {
   "lessonId": 28,
-  "title": "Introduction to the Java Standard Library",
+  "title": "3.1 Abstraction and Program Design",
+  "topic": "3.1",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What is the Java Standard Library?",
+      "question": "What does abstraction help a programmer do?",
       "options": [
-        { "type": "text", "value": "A collection of pre-written classes and methods that come built-in with Java" },
-        { "type": "text", "value": "A website for downloading Java" },
-        { "type": "text", "value": "A book about Java programming" },
-        { "type": "text", "value": "A code editor for Java" }
+        {
+          "type": "text",
+          "value": "Use essential behavior without tracking every implementation detail"
+        },
+        {
+          "type": "text",
+          "value": "Ignore all requirements"
+        },
+        {
+          "type": "text",
+          "value": "Eliminate all methods"
+        },
+        {
+          "type": "text",
+          "value": "Make every field public"
+        }
       ],
       "answer": 0,
-      "explanation": "The Java Standard Library is a vast collection of pre-written classes and methods built into Java that you can use to perform common tasks efficiently."
+      "explanation": "An abstraction exposes the relevant contract and hides details that callers need not know."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "What is a package in Java?",
+      "question": "Which is a good responsibility for a BankAccount class?",
       "options": [
-        { "type": "text", "value": "A compressed file" },
-        { "type": "text", "value": "A group of related classes organized together" },
-        { "type": "text", "value": "A type of variable" },
-        { "type": "text", "value": "A loop structure" }
+        {
+          "type": "text",
+          "value": "Replace the compiler"
+        },
+        {
+          "type": "text",
+          "value": "Maintain a balance and provide account operations"
+        },
+        {
+          "type": "text",
+          "value": "Render every unrelated screen and manage all files"
+        },
+        {
+          "type": "text",
+          "value": "Store unrelated weather data"
+        }
       ],
       "answer": 1,
-      "explanation": "A package is like a folder that contains groups of related classes with similar purposes, helping to organize the Java Standard Library."
+      "explanation": "A cohesive class groups related state and behavior."
     },
     {
-      "id": 3,
+      "id": "v2-3",
       "type": "text",
-      "question": "Which package is automatically imported into every Java program?",
+      "question": "Why decompose a problem into smaller methods?",
       "options": [
-        { "type": "text", "value": "java.util" },
-        { "type": "text", "value": "java.io" },
-        { "type": "text", "value": "java.lang" },
-        { "type": "text", "value": "java.text" }
+        {
+          "type": "text",
+          "value": "To avoid all parameters"
+        },
+        {
+          "type": "text",
+          "value": "To remove documentation"
+        },
+        {
+          "type": "text",
+          "value": "To separate responsibilities and make reasoning/testing easier"
+        },
+        {
+          "type": "text",
+          "value": "To guarantee fewer instructions at run time"
+        }
       ],
       "answer": 2,
-      "explanation": "The java.lang package is automatically imported into every Java program, which is why you can use classes like String, Math, and System without import statements."
+      "explanation": "Smaller focused operations can be understood and tested independently."
     },
     {
-      "id": 4,
+      "id": "v2-4",
       "type": "text",
-      "question": "What keyword is used to make classes from other packages available in your program?",
+      "question": "What should be decided before implementing a public method?",
       "options": [
-        { "type": "text", "value": "include" },
-        { "type": "text", "value": "using" },
-        { "type": "text", "value": "require" },
-        { "type": "text", "value": "import" }
+        {
+          "type": "text",
+          "value": "Only its indentation"
+        },
+        {
+          "type": "text",
+          "value": "Only its file size"
+        },
+        {
+          "type": "text",
+          "value": "Only the developer’s initials"
+        },
+        {
+          "type": "text",
+          "value": "Its parameters, result, behavior, and preconditions"
+        }
       ],
       "answer": 3,
-      "explanation": "The import statement at the top of your program tells Java which classes you want to use from packages other than java.lang."
+      "explanation": "A contract guides both implementation and client use."
     },
     {
-      "id": 5,
+      "id": "v2-5",
       "type": "text",
-      "question": "Which package contains utility classes like Scanner, ArrayList, and Random?",
+      "question": "What does encapsulation protect?",
       "options": [
-        { "type": "text", "value": "java.util" },
-        { "type": "text", "value": "java.lang" },
-        { "type": "text", "value": "java.io" },
-        { "type": "text", "value": "java.text" }
+        {
+          "type": "text",
+          "value": "An object’s representation behind controlled operations"
+        },
+        {
+          "type": "text",
+          "value": "Only source-file names"
+        },
+        {
+          "type": "text",
+          "value": "Only loop counters"
+        },
+        {
+          "type": "text",
+          "value": "Only comments"
+        }
       ],
       "answer": 0,
-      "explanation": "The java.util package contains utility classes that are extremely useful for everyday programming, including Scanner, ArrayList, and Random."
+      "explanation": "Clients interact with the public interface rather than depending on internal fields."
     },
     {
-      "id": 6,
+      "id": "v2-6",
       "type": "text",
-      "question": "How do you call methods in the Math class?",
+      "question": "Why is a private representation useful?",
       "options": [
-        { "type": "text", "value": "Create a Math object first" },
-        { "type": "text", "value": "Call them directly on the class name because they are static" },
-        { "type": "text", "value": "Import them individually" },
-        { "type": "text", "value": "Use the new keyword" }
+        {
+          "type": "text",
+          "value": "It removes the need for testing"
+        },
+        {
+          "type": "text",
+          "value": "It can change while the public contract stays stable"
+        },
+        {
+          "type": "text",
+          "value": "It makes invalid states impossible automatically"
+        },
+        {
+          "type": "text",
+          "value": "It prevents any methods from reading state"
+        }
       ],
       "answer": 1,
-      "explanation": "All methods in the Math class are static, meaning you call them directly on the class name (like Math.sqrt()) without creating an object."
+      "explanation": "Hiding representation reduces dependencies between clients and implementation."
     },
     {
-      "id": 7,
+      "id": "v2-7",
       "type": "text",
-      "question": "What is the purpose of wrapper classes like Integer and Double?",
+      "question": "What is a class invariant?",
       "options": [
-        { "type": "text", "value": "To make programs run faster" },
-        { "type": "text", "value": "To compress data" },
-        { "type": "text", "value": "To provide object versions of primitive types with useful methods" },
-        { "type": "text", "value": "To import packages" }
+        {
+          "type": "text",
+          "value": "A package import"
+        },
+        {
+          "type": "text",
+          "value": "A compiler version"
+        },
+        {
+          "type": "text",
+          "value": "A condition the object’s valid states should preserve"
+        },
+        {
+          "type": "text",
+          "value": "An arbitrary temporary value"
+        }
       ],
       "answer": 2,
-      "explanation": "Wrapper classes provide object versions of primitive types (like Integer for int, Double for double) and include useful methods for working with these types."
+      "explanation": "Constructors and public methods should establish or maintain valid-state conditions."
     },
     {
-      "id": 8,
+      "id": "v2-8",
       "type": "text",
-      "question": "Which method converts a String to an int?",
+      "question": "Which is an example invariant for a capacity-limited container?",
       "options": [
-        { "type": "text", "value": "String.toInt()" },
-        { "type": "text", "value": "convert()" },
-        { "type": "text", "value": "toInteger()" },
-        { "type": "text", "value": "Integer.parseInt()" }
+        {
+          "type": "text",
+          "value": "size must always be negative"
+        },
+        {
+          "type": "text",
+          "value": "Every method is static"
+        },
+        {
+          "type": "text",
+          "value": "The class has no constructor"
+        },
+        {
+          "type": "text",
+          "value": "0 <= size && size <= capacity"
+        }
       ],
       "answer": 3,
-      "explanation": "Integer.parseInt() is the method used to convert a String representation of a number into an int value."
+      "explanation": "The logical size must remain within the stated capacity limits."
     },
     {
-      "id": 9,
+      "id": "v2-9",
       "type": "text",
-      "question": "What does Math.pow(2, 3) return?",
+      "question": "Which test focuses on a method’s contract?",
       "options": [
-        { "type": "text", "value": "8.0" },
-        { "type": "text", "value": "6.0" },
-        { "type": "text", "value": "5.0" },
-        { "type": "text", "value": "9.0" }
+        {
+          "type": "text",
+          "value": "Check its output and state changes for valid boundary inputs"
+        },
+        {
+          "type": "text",
+          "value": "Only count its source lines"
+        },
+        {
+          "type": "text",
+          "value": "Only rename its variables"
+        },
+        {
+          "type": "text",
+          "value": "Only compare comment lengths"
+        }
       ],
       "answer": 0,
-      "explanation": "Math.pow(2, 3) calculates 2 raised to the power of 3, which equals 8.0 (2 × 2 × 2)."
+      "explanation": "Observable behavior should satisfy the documented requirements."
     },
     {
-      "id": 10,
+      "id": "v2-10",
       "type": "text",
-      "question": "Which Character class method checks if a character is a digit?",
+      "question": "What is a benefit of a descriptive method name?",
       "options": [
-        { "type": "text", "value": "checkDigit()" },
-        { "type": "text", "value": "isDigit()" },
-        { "type": "text", "value": "digitCheck()" },
-        { "type": "text", "value": "isNumber()" }
+        {
+          "type": "text",
+          "value": "It guarantees no side effects"
+        },
+        {
+          "type": "text",
+          "value": "It communicates the operation’s purpose"
+        },
+        {
+          "type": "text",
+          "value": "It changes arithmetic precision"
+        },
+        {
+          "type": "text",
+          "value": "It removes type checks"
+        }
       ],
       "answer": 1,
-      "explanation": "Character.isDigit() checks if a character is a digit and returns a boolean value (true if it's a digit, false otherwise)."
+      "explanation": "Names are part of an interface understood by client programmers."
     },
     {
-      "id": 11,
+      "id": "v2-11",
       "type": "text",
-      "question": "What symbol can be used to import all classes from a package?",
+      "question": "A class diagram can show which information?",
       "options": [
-        { "type": "text", "value": "#" },
-        { "type": "text", "value": "&" },
-        { "type": "text", "value": "*" },
-        { "type": "text", "value": "+" }
+        {
+          "type": "text",
+          "value": "Only compiled bytecode"
+        },
+        {
+          "type": "text",
+          "value": "Only network traffic"
+        },
+        {
+          "type": "text",
+          "value": "Attributes, constructors, and method signatures"
+        },
+        {
+          "type": "text",
+          "value": "Only current run-time values"
+        }
       ],
       "answer": 2,
-      "explanation": "The asterisk (*) wildcard can be used to import all classes from a package, though importing specific classes is generally better practice."
+      "explanation": "A diagram can summarize the structure and interface of a design."
     },
     {
-      "id": 12,
+      "id": "v2-12",
       "type": "text",
-      "question": "What does System.currentTimeMillis() return?",
+      "question": "Which method has a focused responsibility?",
       "options": [
-        { "type": "text", "value": "The current date as a String" },
-        { "type": "text", "value": "The current hour" },
-        { "type": "text", "value": "The program execution time" },
-        { "type": "text", "value": "The current time in milliseconds" }
+        {
+          "type": "text",
+          "value": "doEverythingForTheApplication()"
+        },
+        {
+          "type": "text",
+          "value": "processUnknownStuff()"
+        },
+        {
+          "type": "text",
+          "value": "changeAllObjects()"
+        },
+        {
+          "type": "text",
+          "value": "calculateSubtotal(quantity, price)"
+        }
       ],
       "answer": 3,
-      "explanation": "System.currentTimeMillis() returns the current time in milliseconds, which is useful for timing operations and timestamps."
+      "explanation": "A focused method has a clear operation and a limited contract."
     },
     {
-      "id": 13,
+      "id": "v2-13",
       "type": "text",
-      "question": "What does Math.ceil(4.3) return?",
+      "question": "When should a helper method usually be private?",
       "options": [
-        { "type": "text", "value": "5.0" },
-        { "type": "text", "value": "4.0" },
-        { "type": "text", "value": "4.3" },
-        { "type": "text", "value": "4.5" }
+        {
+          "type": "text",
+          "value": "When it is an implementation detail not needed by clients"
+        },
+        {
+          "type": "text",
+          "value": "Whenever it returns int"
+        },
+        {
+          "type": "text",
+          "value": "Whenever it has two parameters"
+        },
+        {
+          "type": "text",
+          "value": "Never"
+        }
       ],
       "answer": 0,
-      "explanation": "Math.ceil() returns the smallest integer greater than or equal to the given number, so ceil(4.3) returns 5.0 (rounding up)."
+      "explanation": "Access should reflect the intended public interface."
     },
     {
-      "id": 14,
+      "id": "v2-14",
       "type": "text",
-      "question": "Which method would you use to sort an array?",
+      "question": "What does a caller rely on when implementation changes?",
       "options": [
-        { "type": "text", "value": "Array.organize()" },
-        { "type": "text", "value": "Arrays.sort()" },
-        { "type": "text", "value": "System.sort()" },
-        { "type": "text", "value": "Math.sort()" }
+        {
+          "type": "text",
+          "value": "The number of comments"
+        },
+        {
+          "type": "text",
+          "value": "The public method contract"
+        },
+        {
+          "type": "text",
+          "value": "The exact private local variable names"
+        },
+        {
+          "type": "text",
+          "value": "The exact source-line order"
+        }
       ],
       "answer": 1,
-      "explanation": "Arrays.sort() from the java.util.Arrays class is used to sort arrays in ascending order."
+      "explanation": "Stable observable behavior lets internal details evolve safely."
     },
     {
-      "id": 15,
+      "id": "v2-15",
       "type": "text",
-      "question": "What is the benefit of using the Java Standard Library?",
+      "question": "What should constructor design ensure?",
       "options": [
-        { "type": "text", "value": "It makes programs larger" },
-        { "type": "text", "value": "It requires more code" },
-        { "type": "text", "value": "It makes Java slower" },
-        { "type": "text", "value": "It reduces development time by providing tested, optimized code" }
+        {
+          "type": "text",
+          "value": "Every class has only one object"
+        },
+        {
+          "type": "text",
+          "value": "All methods return void"
+        },
+        {
+          "type": "text",
+          "value": "New objects begin in a valid state"
+        },
+        {
+          "type": "text",
+          "value": "Every field is always public"
+        }
+      ],
+      "answer": 2,
+      "explanation": "Initialization should establish the state assumptions that later methods rely on."
+    },
+    {
+      "id": "v2-16",
+      "type": "text",
+      "question": "What is a useful first step when modeling a real-world entity?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Copy every possible real-world detail"
+        },
+        {
+          "type": "text",
+          "value": "Choose random method names"
+        },
+        {
+          "type": "text",
+          "value": "Write code before reading requirements"
+        },
+        {
+          "type": "text",
+          "value": "Identify its relevant state and behaviors for the problem"
+        }
       ],
       "answer": 3,
-      "explanation": "Using the Java Standard Library reduces development time and improves code quality by leveraging tested and optimized code instead of writing everything from scratch."
-    },
-    {
-      "id": 16,
-      "type": "text",
-      "question": "Where can you find comprehensive documentation for the Java Standard Library?",
-      "options": [
-        { "type": "text", "value": "docs.oracle.com" },
-        { "type": "text", "value": "wikipedia.org" },
-        { "type": "text", "value": "github.com" },
-        { "type": "text", "value": "stackoverflow.com" }
-      ],
-      "answer": 0,
-      "explanation": "Oracle provides comprehensive documentation at docs.oracle.com that describes every class, method, and package in the Java Standard Library in detail."
+      "explanation": "A model includes the aspects needed for the task, not every detail of reality."
     }
   ]
 }

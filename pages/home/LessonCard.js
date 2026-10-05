@@ -106,13 +106,13 @@ const LessonCard = ({ lesson, score, locked, description }) => {
 
           <View style={styles.cardContent}>
             <View>
-              <Text style={styles.title}>{lesson.title}</Text>
+              <Text style={styles.title}>{`Lesson ${lesson.number}: ${lesson.title}`}</Text>
               <Text style={styles.description}>{lesson.description}</Text>
             </View>
             <Text style={[styles.indicator, { color: statusColor }]}>{status}</Text>
 
             <ProgressBar
-              progress={score / 4}
+              progress={Math.max(0, Math.min(1, (score ?? 0) / 4))}
               color={colors.incompleteLessonProgressBar}
               style={{ height: 8, borderRadius: 20, marginTop: 5 }}
               theme={{ colors: { surfaceVariant: colors.unfilledProgressBar } }}

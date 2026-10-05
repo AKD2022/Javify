@@ -1,214 +1,408 @@
 {
   "lessonId": 16,
-  "title": "Naming Conventions and Reserved Keywords",
+  "title": "2.1 Algorithms with Selection and Repetition",
+  "topic": "2.1",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What characters can Java identifiers start with?",
+      "question": "What does selection allow an algorithm to do?",
       "options": [
-        { "type": "text", "value": "Letter, underscore, or dollar sign" },
-        { "type": "text", "value": "Only letters" },
-        { "type": "text", "value": "Any character" },
-        { "type": "text", "value": "Numbers only" }
+        {
+          "type": "text",
+          "value": "Choose actions based on a condition"
+        },
+        {
+          "type": "text",
+          "value": "Repeat forever without a test"
+        },
+        {
+          "type": "text",
+          "value": "Ignore all input"
+        },
+        {
+          "type": "text",
+          "value": "Declare every variable static"
+        }
       ],
       "answer": 0,
-      "explanation": "Java identifiers must start with a letter, underscore (_), or dollar sign ($), but cannot start with digits."
+      "explanation": "Selection chooses among paths using a boolean condition."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "What naming convention do Java variables use?",
+      "question": "What does iteration provide?",
       "options": [
-        { "type": "text", "value": "PascalCase" },
-        { "type": "text", "value": "camelCase" },
-        { "type": "text", "value": "snake_case" },
-        { "type": "text", "value": "ALL_UPPERCASE" }
+        {
+          "type": "text",
+          "value": "Only String comparison"
+        },
+        {
+          "type": "text",
+          "value": "Repeated execution of a group of steps"
+        },
+        {
+          "type": "text",
+          "value": "Automatic correctness"
+        },
+        {
+          "type": "text",
+          "value": "Only object construction"
+        }
       ],
       "answer": 1,
-      "explanation": "Java variables use camelCase: start with lowercase, capitalize subsequent words (e.g., studentName)."
+      "explanation": "Iteration repeats work under a loop’s control."
     },
     {
-      "id": 3,
+      "id": "v2-3",
       "type": "text",
-      "question": "What naming convention do Java classes use?",
+      "question": "Which task most directly needs selection?",
       "options": [
-        { "type": "text", "value": "camelCase" },
-        { "type": "text", "value": "snake_case" },
-        { "type": "text", "value": "PascalCase" },
-        { "type": "text", "value": "ALL_UPPERCASE" }
+        {
+          "type": "text",
+          "value": "Declare one constant"
+        },
+        {
+          "type": "text",
+          "value": "Assign a literal"
+        },
+        {
+          "type": "text",
+          "value": "Apply a discount only when a total reaches a threshold"
+        },
+        {
+          "type": "text",
+          "value": "Print a fixed heading"
+        }
       ],
       "answer": 2,
-      "explanation": "Java classes use PascalCase: every word starts with a capital letter (e.g., StudentRecord)."
+      "explanation": "A threshold condition determines whether the discount action occurs."
     },
     {
-      "id": 4,
-      "type": "code",
-      "question": "Which variable name follows Java conventions?",
+      "id": "v2-4",
+      "type": "text",
+      "question": "Which task most directly needs iteration?",
       "options": [
-        { "type": "code", "value": "STUDENT_AGE" },
-        { "type": "code", "value": "Student_Age" },
-        { "type": "code", "value": "student_age" },
-        { "type": "code", "value": "studentAge" }
+        {
+          "type": "text",
+          "value": "Declare a single variable"
+        },
+        {
+          "type": "text",
+          "value": "Return one literal"
+        },
+        {
+          "type": "text",
+          "value": "Import a class"
+        },
+        {
+          "type": "text",
+          "value": "Process each of many scores using the same steps"
+        }
       ],
       "answer": 3,
-      "explanation": "Variables should use camelCase: studentAge starts lowercase with subsequent words capitalized."
+      "explanation": "Repeated processing is naturally expressed by a loop."
     },
     {
-      "id": 5,
+      "id": "v2-5",
       "type": "text",
-      "question": "What naming convention do Java constants use?",
+      "question": "What is a loop termination condition?",
       "options": [
-        { "type": "text", "value": "ALL_UPPERCASE_WITH_UNDERSCORES" },
-        { "type": "text", "value": "camelCase" },
-        { "type": "text", "value": "PascalCase" },
-        { "type": "text", "value": "lowercase" }
+        {
+          "type": "text",
+          "value": "A condition that determines when repetition ends"
+        },
+        {
+          "type": "text",
+          "value": "The longest variable name"
+        },
+        {
+          "type": "text",
+          "value": "The class filename"
+        },
+        {
+          "type": "text",
+          "value": "Any comment"
+        }
       ],
       "answer": 0,
-      "explanation": "Constants use ALL_UPPERCASE letters with underscores separating words (e.g., MAX_SCORE)."
+      "explanation": "The loop must eventually reach a state where continued repetition is not required."
     },
     {
-      "id": 6,
+      "id": "v2-6",
       "type": "text",
-      "question": "Which of these is a Java reserved keyword?",
+      "question": "What is a trace table useful for?",
       "options": [
-        { "type": "text", "value": "main" },
-        { "type": "text", "value": "class" },
-        { "type": "text", "value": "length" },
-        { "type": "text", "value": "String" }
+        {
+          "type": "text",
+          "value": "Compiling bytecode"
+        },
+        {
+          "type": "text",
+          "value": "Recording variable values after each step or iteration"
+        },
+        {
+          "type": "text",
+          "value": "Renaming all methods"
+        },
+        {
+          "type": "text",
+          "value": "Replacing every condition with true"
+        }
       ],
       "answer": 1,
-      "explanation": "The word 'class' is a reserved keyword used to define classes. 'main' is just a method name."
+      "explanation": "State recorded in a table makes control flow and updates visible."
     },
     {
-      "id": 7,
-      "type": "code",
-      "question": "Which identifier is invalid?",
+      "id": "v2-7",
+      "type": "text",
+      "question": "Why define valid inputs before designing an algorithm?",
       "options": [
-        { "type": "code", "value": "_value" },
-        { "type": "code", "value": "$amount" },
-        { "type": "code", "value": "2ndPlace" },
-        { "type": "code", "value": "score123" }
+        {
+          "type": "text",
+          "value": "So every input becomes valid"
+        },
+        {
+          "type": "text",
+          "value": "So variable types do not matter"
+        },
+        {
+          "type": "text",
+          "value": "So its assumptions and boundary cases are clear"
+        },
+        {
+          "type": "text",
+          "value": "So testing is unnecessary"
+        }
       ],
       "answer": 2,
-      "explanation": "Identifiers cannot start with a digit. '2ndPlace' is invalid because it starts with '2'."
+      "explanation": "An algorithm’s correctness depends on the problem and its input constraints."
     },
     {
-      "id": 8,
+      "id": "v2-8",
       "type": "text",
-      "question": "What case convention do package names use?",
+      "question": "Can two different algorithms solve the same problem?",
       "options": [
-        { "type": "text", "value": "PascalCase" },
-        { "type": "text", "value": "camelCase" },
-        { "type": "text", "value": "ALL_UPPERCASE" },
-        { "type": "text", "value": "all lowercase" }
+        {
+          "type": "text",
+          "value": "No, Java permits only one"
+        },
+        {
+          "type": "text",
+          "value": "Only if their source is identical"
+        },
+        {
+          "type": "text",
+          "value": "Only without loops"
+        },
+        {
+          "type": "text",
+          "value": "Yes, with potentially different efficiency"
+        }
       ],
       "answer": 3,
-      "explanation": "Package names use all lowercase letters, often based on reversed domain names."
+      "explanation": "Different sequences of steps can produce the same specified result."
     },
     {
-      "id": 9,
+      "id": "v2-9",
       "type": "text",
-      "question": "Which is NOT a primitive data type keyword?",
+      "question": "A robot moves one square per repetition. Starting at position 0, where is it after 2 repetitions?",
       "options": [
-        { "type": "text", "value": "String" },
-        { "type": "text", "value": "int" },
-        { "type": "text", "value": "boolean" },
-        { "type": "text", "value": "double" }
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 0,
-      "explanation": "String is a class (reference type), not a primitive data type keyword like int, boolean, or double."
+      "explanation": "Each repetition adds one to the position."
     },
     {
-      "id": 10,
+      "id": "v2-10",
       "type": "text",
-      "question": "Which keyword controls method visibility?",
+      "question": "A total starts at 0. Repeat \"add 3 to total\" exactly 2 times. What is the result?",
       "options": [
-        { "type": "text", "value": "static" },
-        { "type": "text", "value": "public" },
-        { "type": "text", "value": "final" },
-        { "type": "text", "value": "void" }
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 1,
-      "explanation": "The 'public' keyword is an access modifier that controls the visibility of methods and variables."
+      "explanation": "An accumulator adds three on every repetition."
     },
     {
-      "id": 11,
+      "id": "v2-11",
       "type": "text",
-      "question": "Which keyword is used for inheritance?",
+      "question": "A robot moves one square per repetition. Starting at position 0, where is it after 4 repetitions?",
       "options": [
-        { "type": "text", "value": "implements" },
-        { "type": "text", "value": "extends" },
-        { "type": "text", "value": "inherits" },
-        { "type": "text", "value": "super" }
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 2,
-      "explanation": "The 'extends' keyword is used to create inheritance relationships between classes."
+      "explanation": "Each repetition adds one to the position."
     },
     {
-      "id": 12,
-      "type": "code",
-      "question": "Which class name follows Java conventions?",
+      "id": "v2-12",
+      "type": "text",
+      "question": "A total starts at 0. Repeat \"add 3 to total\" exactly 4 times. What is the result?",
       "options": [
-        { "type": "code", "value": "bankAccount" },
-        { "type": "code", "value": "bank_account" },
-        { "type": "code", "value": "BANKACCOUNT" },
-        { "type": "code", "value": "BankAccount" }
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        }
       ],
       "answer": 3,
-      "explanation": "Class names should use PascalCase: BankAccount with each word starting with a capital letter."
+      "explanation": "An accumulator adds three on every repetition."
     },
     {
-      "id": 13,
+      "id": "v2-13",
       "type": "text",
-      "question": "What makes a good variable name?",
+      "question": "A robot moves one square per repetition. Starting at position 0, where is it after 6 repetitions?",
       "options": [
-        { "type": "text", "value": "It's descriptive and explains the variable's purpose" },
-        { "type": "text", "value": "It's as short as possible" },
-        { "type": "text", "value": "It uses numbers" },
-        { "type": "text", "value": "It's in all capitals" }
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
       ],
       "answer": 0,
-      "explanation": "Good variable names are descriptive and clearly explain what the variable represents or contains."
+      "explanation": "Each repetition adds one to the position."
     },
     {
-      "id": 14,
-      "type": "code",
-      "question": "Which constant declaration follows Java conventions?",
+      "id": "v2-14",
+      "type": "text",
+      "question": "A total starts at 0. Repeat \"add 3 to total\" exactly 6 times. What is the result?",
       "options": [
-        { "type": "code", "value": "final int maxScore = 100;" },
-        { "type": "code", "value": "final int MAX_SCORE = 100;" },
-        { "type": "code", "value": "final int Max_Score = 100;" },
-        { "type": "code", "value": "final int MaxScore = 100;" }
+        {
+          "type": "text",
+          "value": "21"
+        },
+        {
+          "type": "text",
+          "value": "18"
+        },
+        {
+          "type": "text",
+          "value": "19"
+        },
+        {
+          "type": "text",
+          "value": "17"
+        }
       ],
       "answer": 1,
-      "explanation": "Constants should be declared with ALL_UPPERCASE letters and underscores: MAX_SCORE."
+      "explanation": "An accumulator adds three on every repetition."
     },
     {
-      "id": 15,
+      "id": "v2-15",
       "type": "text",
-      "question": "Which keyword handles exceptions?",
+      "question": "A robot moves one square per repetition. Starting at position 0, where is it after 8 repetitions?",
       "options": [
-        { "type": "text", "value": "handle" },
-        { "type": "text", "value": "error" },
-        { "type": "text", "value": "catch" },
-        { "type": "text", "value": "exception" }
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
       ],
       "answer": 2,
-      "explanation": "The 'catch' keyword is used in exception handling to catch and handle exceptions that occur."
+      "explanation": "Each repetition adds one to the position."
     },
     {
-      "id": 16,
+      "id": "v2-16",
       "type": "text",
-      "question": "Why should you avoid using reserved keywords as identifiers?",
+      "question": "A total starts at 0. Repeat \"add 3 to total\" exactly 8 times. What is the result?",
       "options": [
-        { "type": "text", "value": "They make programs run slowly" },
-        { "type": "text", "value": "They use extra memory" },
-        { "type": "text", "value": "They make code hard to read" },
-        { "type": "text", "value": "They cause compilation errors" }
+        {
+          "type": "text",
+          "value": "25"
+        },
+        {
+          "type": "text",
+          "value": "23"
+        },
+        {
+          "type": "text",
+          "value": "27"
+        },
+        {
+          "type": "text",
+          "value": "24"
+        }
       ],
       "answer": 3,
-      "explanation": "Reserved keywords have special meanings in Java and cannot be used as identifiers - this causes compilation errors."
+      "explanation": "An accumulator adds three on every repetition."
     }
   ]
 }

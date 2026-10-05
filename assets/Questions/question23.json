@@ -1,214 +1,408 @@
 {
   "lessonId": 23,
-  "title": "String Immutability and Methods like substring(), length()",
+  "title": "2.8 for Loops",
+  "topic": "2.8",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What does String immutability mean?",
+      "question": "What is the execution order of a basic for loop?",
       "options": [
-        { "type": "text", "value": "Once created, a String object's content cannot be changed" },
-        { "type": "text", "value": "Strings can only store numbers" },
-        { "type": "text", "value": "Strings cannot be compared" },
-        { "type": "text", "value": "Strings use less memory" }
+        {
+          "type": "text",
+          "value": "Initialize, test, body, update, test again"
+        },
+        {
+          "type": "text",
+          "value": "Body, initialize, test, update"
+        },
+        {
+          "type": "text",
+          "value": "Update, body, initialize, stop"
+        },
+        {
+          "type": "text",
+          "value": "Test once, repeat body without updates"
+        }
       ],
       "answer": 0,
-      "explanation": "String immutability means that once a String object is created, its content cannot be modified. Operations create new String objects."
+      "explanation": "Initialization happens once, then the test/body/update cycle repeats."
     },
     {
-      "id": 2,
-      "type": "code",
-      "question": "After this code executes, what does 'original' contain?\nString original = \"Hello\";\nString modified = original + \" World\";",
+      "id": "v2-2",
+      "type": "text",
+      "question": "How often does the initialization clause normally execute?",
       "options": [
-        { "type": "text", "value": "\"Hello World\"" },
-        { "type": "text", "value": "\"Hello\"" },
-        { "type": "text", "value": "\"World\"" },
-        { "type": "text", "value": "null" }
+        {
+          "type": "text",
+          "value": "Never"
+        },
+        {
+          "type": "text",
+          "value": "Once when the loop is entered"
+        },
+        {
+          "type": "text",
+          "value": "Before every body"
+        },
+        {
+          "type": "text",
+          "value": "After every update"
+        }
       ],
       "answer": 1,
-      "explanation": "Due to String immutability, the original String remains unchanged. Concatenation creates a new String object."
+      "explanation": "Initialization sets up the loop before the first condition test."
     },
     {
-      "id": 3,
-      "type": "code",
-      "question": "What does \"Programming\".length() return?",
+      "id": "v2-3",
+      "type": "text",
+      "question": "When does the update clause normally run?",
       "options": [
-        { "type": "text", "value": "10" },
-        { "type": "text", "value": "9" },
-        { "type": "text", "value": "11" },
-        { "type": "text", "value": "12" }
+        {
+          "type": "text",
+          "value": "Only when the first test is false"
+        },
+        {
+          "type": "text",
+          "value": "Only once after all repetitions"
+        },
+        {
+          "type": "text",
+          "value": "After each completed body iteration"
+        },
+        {
+          "type": "text",
+          "value": "Before initialization"
+        }
       ],
       "answer": 2,
-      "explanation": "The length() method counts all characters. \"Programming\" has 11 characters: P-r-o-g-r-a-m-m-i-n-g."
+      "explanation": "The update precedes the next condition test."
     },
     {
-      "id": 4,
-      "type": "code",
-      "question": "What does \"Java\".substring(2) return?",
+      "id": "v2-4",
+      "type": "text",
+      "question": "How many times does for (int i = 0; i < 0; i++) execute its body?",
       "options": [
-        { "type": "text", "value": "\"Ja\"" },
-        { "type": "text", "value": "\"av\"" },
-        { "type": "text", "value": "\"va\"" },
-        { "type": "text", "value": "\"Java\"" }
+        {
+          "type": "text",
+          "value": "One"
+        },
+        {
+          "type": "text",
+          "value": "Two"
+        },
+        {
+          "type": "text",
+          "value": "Forever"
+        },
+        {
+          "type": "text",
+          "value": "Zero"
+        }
       ],
       "answer": 3,
-      "explanation": "substring(2) returns characters from index 2 to the end. Starting from index 2 ('v'), we get \"va\"."
+      "explanation": "The initial condition is false."
     },
     {
-      "id": 5,
-      "type": "code",
-      "question": "What does \"Computer\".substring(1, 4) return?",
+      "id": "v2-5",
+      "type": "text",
+      "question": "What is the scope of i declared in for (int i = 0; ...)?",
       "options": [
-        { "type": "text", "value": "\"omp\"" },
-        { "type": "text", "value": "\"Com\"" },
-        { "type": "text", "value": "\"ompu\"" },
-        { "type": "text", "value": "\"Comp\"" }
+        {
+          "type": "text",
+          "value": "The loop’s control and body"
+        },
+        {
+          "type": "text",
+          "value": "Every method in the class"
+        },
+        {
+          "type": "text",
+          "value": "Only the next source file"
+        },
+        {
+          "type": "text",
+          "value": "The whole project"
+        }
       ],
       "answer": 0,
-      "explanation": "substring(1, 4) returns characters from index 1 up to (not including) index 4: 'o'-'m'-'p'."
+      "explanation": "A loop-local variable is not available after the loop finishes."
     },
     {
-      "id": 6,
+      "id": "v2-6",
       "type": "text",
-      "question": "What happens when String methods like toUpperCase() are called?",
+      "question": "Which loop visits 0 through 4?",
       "options": [
-        { "type": "text", "value": "The original string is modified in place" },
-        { "type": "text", "value": "A new String object is created with the modified content" },
-        { "type": "text", "value": "The string becomes null" },
-        { "type": "text", "value": "An error occurs" }
+        {
+          "type": "text",
+          "value": "for (int i = 5; i < 0; i--)"
+        },
+        {
+          "type": "text",
+          "value": "for (int i = 0; i < 5; i++)"
+        },
+        {
+          "type": "text",
+          "value": "for (int i = 0; i <= 5; i++)"
+        },
+        {
+          "type": "text",
+          "value": "for (int i = 1; i < 5; i++)"
+        }
       ],
       "answer": 1,
-      "explanation": "Due to immutability, String methods create and return new String objects rather than modifying the original."
+      "explanation": "The exclusive bound 5 yields exactly five indices."
     },
     {
-      "id": 7,
-      "type": "code",
-      "question": "What does \"   \".length() return (three spaces)?",
-      "options": [
-        { "type": "text", "value": "0" },
-        { "type": "text", "value": "1" },
-        { "type": "text", "value": "2" },
-        { "type": "text", "value": "3" }
-      ],
-      "answer": 3,
-      "explanation": "The length() method counts all characters, including spaces. Three spaces give a length of 3."
-    },
-    {
-      "id": 8,
-      "type": "code",
-      "question": "In substring(startIndex, endIndex), which index is included in the result?",
-      "options": [
-        { "type": "text", "value": "Both startIndex and endIndex" },
-        { "type": "text", "value": "Only startIndex (endIndex is exclusive)" },
-        { "type": "text", "value": "Only endIndex (startIndex is exclusive)" },
-        { "type": "text", "value": "Neither index is included" }
-      ],
-      "answer": 1,
-      "explanation": "In substring(start, end), the start index is inclusive but the end index is exclusive (not included)."
-    },
-    {
-      "id": 9,
-      "type": "code",
-      "question": "How do you safely extract the last 3 characters from a string?",
-      "options": [
-        { "type": "code", "value": "str.substring(str.length() - 3)" },
-        { "type": "code", "value": "str.substring(3)" },
-        { "type": "code", "value": "str.substring(0, 3)" },
-        { "type": "code", "value": "str.substring(-3)" }
-      ],
-      "answer": 0,
-      "explanation": "To get the last 3 characters, start from (length - 3) and go to the end: str.substring(str.length() - 3)."
-    },
-    {
-      "id": 10,
+      "id": "v2-7",
       "type": "text",
-      "question": "Why must you assign the result of string methods to a variable?",
+      "question": "Which update is appropriate for a countdown with condition i > 0?",
       "options": [
-        { "type": "text", "value": "Because strings are immutable and methods create new objects" },
-        { "type": "text", "value": "Because of Java syntax rules" },
-        { "type": "text", "value": "Because strings use more memory" },
-        { "type": "text", "value": "Because methods are slower" }
-      ],
-      "answer": 0,
-      "explanation": "Since strings are immutable, methods return new String objects. You must assign the result to use the modified version."
-    },
-    {
-      "id": 11,
-      "type": "code",
-      "question": "What does \"\".length() return (empty string)?",
-      "options": [
-        { "type": "text", "value": "-1" },
-        { "type": "text", "value": "0" },
-        { "type": "text", "value": "1" },
-        { "type": "text", "value": "null" }
-      ],
-      "answer": 1,
-      "explanation": "An empty string has no characters, so its length is 0."
-    },
-    {
-      "id": 12,
-      "type": "text",
-      "question": "What happens if you use invalid indices with substring()?",
-      "options": [
-        { "type": "text", "value": "Returns null" },
-        { "type": "text", "value": "Returns empty string" },
-        { "type": "text", "value": "StringIndexOutOfBoundsException is thrown" },
-        { "type": "text", "value": "The program continues normally" }
+        {
+          "type": "text",
+          "value": "i = i"
+        },
+        {
+          "type": "text",
+          "value": "i += 2"
+        },
+        {
+          "type": "text",
+          "value": "i--"
+        },
+        {
+          "type": "text",
+          "value": "i++"
+        }
       ],
       "answer": 2,
-      "explanation": "Using invalid indices with substring() throws a StringIndexOutOfBoundsException at runtime."
+      "explanation": "Decrement moves a positive counter toward zero."
     },
     {
-      "id": 13,
-      "type": "code",
-      "question": "What's wrong with this code? str.trim(); (assuming str needs trimming)",
-      "options": [
-        { "type": "text", "value": "The result is not assigned to a variable" },
-        { "type": "text", "value": "Wrong method name" },
-        { "type": "text", "value": "Missing parameters" },
-        { "type": "text", "value": "Nothing is wrong" }
-      ],
-      "answer": 0,
-      "explanation": "Since strings are immutable, trim() creates a new String. You must assign the result: str = str.trim();"
-    },
-    {
-      "id": 14,
+      "id": "v2-8",
       "type": "text",
-      "question": "What is the performance concern with string concatenation in loops?",
+      "question": "Can a for loop be rewritten as a while loop with equivalent control flow?",
       "options": [
-        { "type": "text", "value": "Each concatenation creates a new String object" },
-        { "type": "text", "value": "Loops don't work with strings" },
-        { "type": "text", "value": "Strings become too long" },
-        { "type": "text", "value": "Memory is automatically freed" }
-      ],
-      "answer": 0,
-      "explanation": "Due to immutability, each concatenation creates a new String object, which can be inefficient in loops."
-    },
-    {
-      "id": 15,
-      "type": "code",
-      "question": "What does \"Hello\".substring(0, 0) return?",
-      "options": [
-        { "type": "text", "value": "\"H\"" },
-        { "type": "text", "value": "\"\"" },
-        { "type": "text", "value": "\"Hello\"" },
-        { "type": "text", "value": "Error" }
-      ],
-      "answer": 1,
-      "explanation": "substring(0, 0) starts at index 0 but excludes index 0, resulting in an empty string \"\"."
-    },
-    {
-      "id": 16,
-      "type": "text",
-      "question": "What is string pooling in relation to immutability?",
-      "options": [
-        { "type": "text", "value": "A way to modify strings" },
-        { "type": "text", "value": "A method to delete strings" },
-        { "type": "text", "value": "A performance feature where strings can be shared" },
-        { "type": "text", "value": "An optimization that shares identical string literals in memory" }
+        {
+          "type": "text",
+          "value": "No, for loops use a different arithmetic system"
+        },
+        {
+          "type": "text",
+          "value": "Only if there are no variables"
+        },
+        {
+          "type": "text",
+          "value": "Only for one iteration"
+        },
+        {
+          "type": "text",
+          "value": "Yes, with corresponding initialization, condition, and update"
+        }
       ],
       "answer": 3,
-      "explanation": "String pooling is a Java optimization where identical string literals share the same memory location, enabled by immutability."
+      "explanation": "Both structures can express the same repetitive algorithm when updates are placed correctly."
+    },
+    {
+      "id": "v2-9",
+      "type": "code",
+      "question": "How many body executions?\nfor (int i = 0; i < 3; i++) { work(); }",
+      "options": [
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
+      ],
+      "answer": 0,
+      "explanation": "The visited values are 0 through n - 1."
+    },
+    {
+      "id": "v2-10",
+      "type": "code",
+      "question": "How many body executions?\nfor (int i = 1; i <= 3; i += 2) { work(); }",
+      "options": [
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        }
+      ],
+      "answer": 1,
+      "explanation": "The loop visits the odd integers from 1 through this odd inclusive bound."
+    },
+    {
+      "id": "v2-11",
+      "type": "code",
+      "question": "How many body executions?\nfor (int i = 0; i < 5; i++) { work(); }",
+      "options": [
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
+      ],
+      "answer": 2,
+      "explanation": "The visited values are 0 through n - 1."
+    },
+    {
+      "id": "v2-12",
+      "type": "code",
+      "question": "How many body executions?\nfor (int i = 1; i <= 5; i += 2) { work(); }",
+      "options": [
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
+      ],
+      "answer": 3,
+      "explanation": "The loop visits the odd integers from 1 through this odd inclusive bound."
+    },
+    {
+      "id": "v2-13",
+      "type": "code",
+      "question": "How many body executions?\nfor (int i = 0; i < 7; i++) { work(); }",
+      "options": [
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        }
+      ],
+      "answer": 0,
+      "explanation": "The visited values are 0 through n - 1."
+    },
+    {
+      "id": "v2-14",
+      "type": "code",
+      "question": "How many body executions?\nfor (int i = 1; i <= 7; i += 2) { work(); }",
+      "options": [
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
+      ],
+      "answer": 1,
+      "explanation": "The loop visits the odd integers from 1 through this odd inclusive bound."
+    },
+    {
+      "id": "v2-15",
+      "type": "code",
+      "question": "How many body executions?\nfor (int i = 0; i < 9; i++) { work(); }",
+      "options": [
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        }
+      ],
+      "answer": 2,
+      "explanation": "The visited values are 0 through n - 1."
+    },
+    {
+      "id": "v2-16",
+      "type": "code",
+      "question": "How many body executions?\nfor (int i = 1; i <= 9; i += 2) { work(); }",
+      "options": [
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
+      ],
+      "answer": 3,
+      "explanation": "The loop visits the odd integers from 1 through this odd inclusive bound."
     }
   ]
 }

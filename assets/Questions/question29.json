@@ -1,214 +1,406 @@
 {
   "lessonId": 29,
-  "title": "Using the Math Class in Depth",
+  "title": "Impact of Program Design",
   "questions": [
     {
       "id": 1,
       "type": "text",
-      "question": "How do you call methods from the Math class?",
+      "question": "A study app requests contacts although it never uses them. What should the designer do?",
       "options": [
-        { "type": "text", "value": "Directly on the class name because they are static" },
-        { "type": "text", "value": "After creating a Math object" },
-        { "type": "text", "value": "By importing them individually" },
-        { "type": "text", "value": "Using the new keyword" }
+        {
+          "type": "text",
+          "value": "Remove the unnecessary permission"
+        },
+        {
+          "type": "text",
+          "value": "Collect contacts for future use"
+        },
+        {
+          "type": "text",
+          "value": "Hide the permission in a menu"
+        },
+        {
+          "type": "text",
+          "value": "Publish the contacts"
+        }
       ],
       "answer": 0,
-      "explanation": "All methods in the Math class are static, meaning you call them directly on the class name (like Math.sqrt(25)) without creating an object."
+      "explanation": "Collect only data required for the stated purpose."
     },
     {
       "id": 2,
       "type": "text",
-      "question": "What does Math.PI represent?",
+      "question": "Which improves access for students who cannot distinguish red and green?",
       "options": [
-        { "type": "text", "value": "3.0" },
-        { "type": "text", "value": "3.141592653589793" },
-        { "type": "text", "value": "2.718281828459045" },
-        { "type": "text", "value": "3.14" }
+        {
+          "type": "text",
+          "value": "Make red brighter"
+        },
+        {
+          "type": "text",
+          "value": "Add text labels and shapes"
+        },
+        {
+          "type": "text",
+          "value": "Use color alone"
+        },
+        {
+          "type": "text",
+          "value": "Remove all feedback"
+        }
       ],
       "answer": 1,
-      "explanation": "Math.PI is a constant that represents the mathematical constant pi, approximately equal to 3.141592653589793."
+      "explanation": "Multiple cues convey information without depending on color vision."
     },
     {
       "id": 3,
       "type": "text",
-      "question": "What does Math.abs(-15) return?",
+      "question": "Before reusing an online code library, what should a developer check?",
       "options": [
-        { "type": "text", "value": "-15" },
-        { "type": "text", "value": "0" },
-        { "type": "text", "value": "15" },
-        { "type": "text", "value": "-15.0" }
+        {
+          "type": "text",
+          "value": "Whether the code is short"
+        },
+        {
+          "type": "text",
+          "value": "Whether its author is famous"
+        },
+        {
+          "type": "text",
+          "value": "Its license and attribution requirements"
+        },
+        {
+          "type": "text",
+          "value": "Only its download count"
+        }
       ],
       "answer": 2,
-      "explanation": "Math.abs() returns the absolute value of a number, removing any negative sign, so Math.abs(-15) returns 15."
+      "explanation": "Availability online does not remove intellectual-property conditions."
     },
     {
       "id": 4,
       "type": "text",
-      "question": "What does Math.pow(2, 3) calculate?",
+      "question": "A predictive tool performs poorly for a minority group. What is the best response?",
       "options": [
-        { "type": "text", "value": "6" },
-        { "type": "text", "value": "5" },
-        { "type": "text", "value": "9" },
-        { "type": "text", "value": "8.0" }
+        {
+          "type": "text",
+          "value": "Hide group results"
+        },
+        {
+          "type": "text",
+          "value": "Collect less evaluation data"
+        },
+        {
+          "type": "text",
+          "value": "Assume the users are wrong"
+        },
+        {
+          "type": "text",
+          "value": "Investigate data and outcomes for that group"
+        }
       ],
       "answer": 3,
-      "explanation": "Math.pow(2, 3) raises 2 to the power of 3, which equals 8.0 (2 × 2 × 2). The method returns a double value."
+      "explanation": "Evaluate impacts across affected groups and address unequal errors."
     },
     {
       "id": 5,
       "type": "text",
-      "question": "What does Math.sqrt(25) return?",
+      "question": "A school deploys facial recognition for attendance. What should be considered?",
       "options": [
-        { "type": "text", "value": "5.0" },
-        { "type": "text", "value": "12.5" },
-        { "type": "text", "value": "625" },
-        { "type": "text", "value": "50" }
+        {
+          "type": "text",
+          "value": "Consent, necessity, security, and alternatives"
+        },
+        {
+          "type": "text",
+          "value": "Only animation quality"
+        },
+        {
+          "type": "text",
+          "value": "Only processor speed"
+        },
+        {
+          "type": "text",
+          "value": "Only the file format"
+        }
       ],
       "answer": 0,
-      "explanation": "Math.sqrt() calculates the square root of a number, so Math.sqrt(25) returns 5.0 because 5 × 5 = 25."
+      "explanation": "Design decisions affect privacy, access, and people beyond the developer."
     },
     {
       "id": 6,
       "type": "text",
-      "question": "What does Math.max(10, 20) return?",
+      "question": "Which practice improves accessibility for screen-reader users?",
       "options": [
-        { "type": "text", "value": "10" },
-        { "type": "text", "value": "20" },
-        { "type": "text", "value": "30" },
-        { "type": "text", "value": "15" }
+        {
+          "type": "text",
+          "value": "Instructions based only on position"
+        },
+        {
+          "type": "text",
+          "value": "Meaningful labels on controls"
+        },
+        {
+          "type": "text",
+          "value": "Unlabeled icon buttons"
+        },
+        {
+          "type": "text",
+          "value": "Text embedded only in images"
+        }
       ],
       "answer": 1,
-      "explanation": "Math.max() returns the larger of two values, so Math.max(10, 20) returns 20."
+      "explanation": "Assistive technologies need a clear semantic description of controls."
     },
     {
       "id": 7,
       "type": "text",
-      "question": "What does Math.ceil(4.3) return?",
+      "question": "What should a program specification describe?",
       "options": [
-        { "type": "text", "value": "4.0" },
-        { "type": "text", "value": "4.3" },
-        { "type": "text", "value": "5.0" },
-        { "type": "text", "value": "4.5" }
+        {
+          "type": "text",
+          "value": "Only the final file size"
+        },
+        {
+          "type": "text",
+          "value": "Only the developer name"
+        },
+        {
+          "type": "text",
+          "value": "Expected behavior and constraints"
+        },
+        {
+          "type": "text",
+          "value": "Only variable names"
+        }
       ],
       "answer": 2,
-      "explanation": "Math.ceil() rounds up to the nearest integer, so Math.ceil(4.3) returns 5.0 (the ceiling value)."
+      "explanation": "A specification communicates requirements before implementation."
     },
     {
       "id": 8,
       "type": "text",
-      "question": "What does Math.floor(4.7) return?",
+      "question": "A new feature increases energy consumption substantially. What should be evaluated?",
       "options": [
-        { "type": "text", "value": "5.0" },
-        { "type": "text", "value": "5" },
-        { "type": "text", "value": "4.7" },
-        { "type": "text", "value": "4.0" }
+        {
+          "type": "text",
+          "value": "Only its color scheme"
+        },
+        {
+          "type": "text",
+          "value": "Only its release date"
+        },
+        {
+          "type": "text",
+          "value": "Whether comments can be removed"
+        },
+        {
+          "type": "text",
+          "value": "Its benefit relative to resource use"
+        }
       ],
       "answer": 3,
-      "explanation": "Math.floor() rounds down to the nearest integer, so Math.floor(4.7) returns 4.0 (the floor value)."
+      "explanation": "Responsible design includes environmental and resource impacts."
     },
     {
       "id": 9,
       "type": "text",
-      "question": "What type of value does Math.random() return?",
+      "question": "What is an unintended consequence?",
       "options": [
-        { "type": "text", "value": "A double value greater than or equal to 0.0 and less than 1.0" },
-        { "type": "text", "value": "An int from 0 to 100" },
-        { "type": "text", "value": "A boolean value" },
-        { "type": "text", "value": "A long value" }
+        {
+          "type": "text",
+          "value": "An effect the designers did not anticipate"
+        },
+        {
+          "type": "text",
+          "value": "A syntax error only"
+        },
+        {
+          "type": "text",
+          "value": "A documented requirement"
+        },
+        {
+          "type": "text",
+          "value": "A compiler optimization"
+        }
       ],
       "answer": 0,
-      "explanation": "Math.random() generates a random double value that is greater than or equal to 0.0 and less than 1.0."
+      "explanation": "Systems can affect people in ways beyond the intended purpose."
     },
     {
       "id": 10,
       "type": "text",
-      "question": "What is the formula to generate a random int from min to max (inclusive)?",
+      "question": "Which supports informed consent?",
       "options": [
-        { "type": "text", "value": "(int) (Math.random() * max) + min" },
-        { "type": "text", "value": "(int) (Math.random() * (max - min + 1)) + min" },
-        { "type": "text", "value": "(int) Math.random() + min" },
-        { "type": "text", "value": "(int) (Math.random() * min) + max" }
+        {
+          "type": "text",
+          "value": "Collect first and explain later"
+        },
+        {
+          "type": "text",
+          "value": "Explain what is collected and how it is used"
+        },
+        {
+          "type": "text",
+          "value": "Preselect every permission"
+        },
+        {
+          "type": "text",
+          "value": "Use vague descriptions"
+        }
       ],
       "answer": 1,
-      "explanation": "To generate a random int from min to max inclusive, use (int) (Math.random() * (max - min + 1)) + min, where (max - min + 1) is the range."
+      "explanation": "Users need understandable information and a meaningful choice."
     },
     {
       "id": 11,
       "type": "text",
-      "question": "Do trigonometric functions in Math work with degrees or radians?",
+      "question": "Why involve diverse users in testing?",
       "options": [
-        { "type": "text", "value": "Degrees" },
-        { "type": "text", "value": "Either one" },
-        { "type": "text", "value": "Radians" },
-        { "type": "text", "value": "Neither" }
+        {
+          "type": "text",
+          "value": "To eliminate all requirements"
+        },
+        {
+          "type": "text",
+          "value": "To avoid documentation"
+        },
+        {
+          "type": "text",
+          "value": "To discover different needs and barriers"
+        },
+        {
+          "type": "text",
+          "value": "To guarantee no bugs"
+        }
       ],
       "answer": 2,
-      "explanation": "Trigonometric functions like Math.sin(), Math.cos(), and Math.tan() work with angles measured in radians, not degrees."
+      "explanation": "Different experiences reveal assumptions that a narrow team may miss."
     },
     {
       "id": 12,
       "type": "text",
-      "question": "Which method converts degrees to radians?",
+      "question": "Which best respects intellectual property?",
       "options": [
-        { "type": "text", "value": "Math.degToRad()" },
-        { "type": "text", "value": "Math.convertToRadians()" },
-        { "type": "text", "value": "Math.radians()" },
-        { "type": "text", "value": "Math.toRadians()" }
+        {
+          "type": "text",
+          "value": "Copy anything publicly visible"
+        },
+        {
+          "type": "text",
+          "value": "Remove author names"
+        },
+        {
+          "type": "text",
+          "value": "Rename copied code to claim authorship"
+        },
+        {
+          "type": "text",
+          "value": "Use permitted material and give required credit"
+        }
       ],
       "answer": 3,
-      "explanation": "Math.toRadians() converts an angle measured in degrees to radians for use with trigonometric functions."
+      "explanation": "Licenses and attribution apply even when material is easy to copy."
     },
     {
       "id": 13,
       "type": "text",
-      "question": "What does Math.cbrt(27) return?",
+      "question": "Why document limitations of an automated recommendation?",
       "options": [
-        { "type": "text", "value": "3.0" },
-        { "type": "text", "value": "9.0" },
-        { "type": "text", "value": "81.0" },
-        { "type": "text", "value": "5.196" }
+        {
+          "type": "text",
+          "value": "To help users interpret results appropriately"
+        },
+        {
+          "type": "text",
+          "value": "To prove results are always right"
+        },
+        {
+          "type": "text",
+          "value": "To eliminate all user choices"
+        },
+        {
+          "type": "text",
+          "value": "To hide uncertainty"
+        }
       ],
       "answer": 0,
-      "explanation": "Math.cbrt() calculates the cube root of a number, so Math.cbrt(27) returns 3.0 because 3 × 3 × 3 = 27."
+      "explanation": "Transparent limitations support responsible use."
     },
     {
       "id": 14,
       "type": "text",
-      "question": "What type does Math.round() return?",
+      "question": "A design excludes users with slow internet. What is a useful response?",
       "options": [
-        { "type": "text", "value": "int" },
-        { "type": "text", "value": "long" },
-        { "type": "text", "value": "double" },
-        { "type": "text", "value": "float" }
+        {
+          "type": "text",
+          "value": "Ignore affected users"
+        },
+        {
+          "type": "text",
+          "value": "Reduce required bandwidth and test slower connections"
+        },
+        {
+          "type": "text",
+          "value": "Require a new phone"
+        },
+        {
+          "type": "text",
+          "value": "Remove error messages"
+        }
       ],
       "answer": 1,
-      "explanation": "Math.round() returns a long value (the nearest integer), unlike Math.ceil() and Math.floor() which return double values."
+      "explanation": "Access depends on device and network constraints as well as interface design."
     },
     {
       "id": 15,
       "type": "text",
-      "question": "What does Math.min(10, 20) return?",
+      "question": "Who can be a stakeholder in a public software system?",
       "options": [
-        { "type": "text", "value": "20" },
-        { "type": "text", "value": "30" },
-        { "type": "text", "value": "15" },
-        { "type": "text", "value": "10" }
+        {
+          "type": "text",
+          "value": "Only paying customers"
+        },
+        {
+          "type": "text",
+          "value": "Only investors"
+        },
+        {
+          "type": "text",
+          "value": "Anyone affected by its operation"
+        },
+        {
+          "type": "text",
+          "value": "Only the programmer"
+        }
       ],
-      "answer": 3,
-      "explanation": "Math.min() returns the smaller of two values, so Math.min(10, 20) returns 10."
+      "answer": 2,
+      "explanation": "Impacts extend beyond the team and direct users."
     },
     {
       "id": 16,
       "type": "text",
-      "question": "What does Math.log10(100) return?",
+      "question": "What should happen when testing reveals a harmful design assumption?",
       "options": [
-        { "type": "text", "value": "2.0" },
-        { "type": "text", "value": "10.0" },
-        { "type": "text", "value": "100.0" },
-        { "type": "text", "value": "4.605" }
+        {
+          "type": "text",
+          "value": "Preserve it because code is finished"
+        },
+        {
+          "type": "text",
+          "value": "Delete the test"
+        },
+        {
+          "type": "text",
+          "value": "Change the documentation to conceal it"
+        },
+        {
+          "type": "text",
+          "value": "Revise the design and retest"
+        }
       ],
-      "answer": 0,
-      "explanation": "Math.log10() calculates the base-10 logarithm, so Math.log10(100) returns 2.0 because 10^2 = 100."
+      "answer": 3,
+      "explanation": "Testing informs iterative improvement of behavior and impacts."
     }
   ]
 }

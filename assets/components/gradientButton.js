@@ -4,18 +4,18 @@ import { LinearGradient } from 'expo-linear-gradient';
 import colors from './colors';
 import { FontAwesome } from '@expo/vector-icons';
 
-const GradientButton = ({ title, onPress, style, textStyle, icon }) => {
+const GradientButton = ({ title, onPress, style, textStyle, icon, disabled = false }) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.buttonContainer}>
+    <TouchableOpacity accessibilityRole="button" disabled={disabled} onPress={onPress} style={[styles.buttonContainer, disabled && { opacity: 0.5 }]}>
       <LinearGradient
         colors={[colors.gradientButtonStart, colors.gradientButtonEnd]}
         start={{ x: 0, y: 0 }}
         end={{ x: 1, y: 0 }}
         style={[styles.gradient, style]}
       >
-        <View style={styles.icon}>
+        {icon ? <View style={styles.icon}>
           <FontAwesome name={icon} size={24} color={colors.white}/>
-        </View>
+        </View> : null}
         <Text style={[styles.buttonText, textStyle]}>{title}</Text>
       </LinearGradient>
     </TouchableOpacity>
@@ -25,9 +25,12 @@ const GradientButton = ({ title, onPress, style, textStyle, icon }) => {
 const styles = StyleSheet.create({
   buttonContainer: {
     overflow: 'hidden',
+    borderRadius: 16,
   },
 
   gradient: {
+    borderRadius: 16,
+    minHeight: 52,
     paddingVertical: 15,
     paddingHorizontal: 25,
     alignItems: 'center',

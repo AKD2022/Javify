@@ -1,214 +1,406 @@
 {
   "lessonId": 6,
-  "title": "boolean Data Type and Logical Values",
+  "title": "Compound Assignment Operators",
   "questions": [
     {
       "id": 1,
-      "type": "text",
-      "question": "What are the only two values a boolean variable can store?",
+      "type": "code",
+      "question": "What is x?\nint x = 5;\nx += 3;",
       "options": [
-        { "type": "text", "value": "true and false" },
-        { "type": "text", "value": "0 and 1" },
-        { "type": "text", "value": "yes and no" },
-        { "type": "text", "value": "on and off" }
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        }
       ],
       "answer": 0,
-      "explanation": "Boolean variables can only store the literal values true and false (lowercase) in Java."
+      "explanation": "Add 3 to the current value and store the result in x."
     },
     {
       "id": 2,
       "type": "code",
-      "question": "What is the result of: 5 == 5",
+      "question": "What is x?\nint x = 5;\nx *= 2;",
       "options": [
-        { "type": "text", "value": "5" },
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "10" },
-        { "type": "text", "value": "equal" }
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
       ],
       "answer": 1,
-      "explanation": "The equality operator (==) compares two values and returns true when they are equal."
+      "explanation": "Multiply the current value by 2 before assigning it."
     },
     {
       "id": 3,
       "type": "code",
-      "question": "What is the result of: 7 > 10",
+      "question": "What is x?\nint x = 5;\nx /= 2;",
       "options": [
-        { "type": "text", "value": "7" },
-        { "type": "text", "value": "10" },
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "-3" }
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
       ],
       "answer": 2,
-      "explanation": "7 is not greater than 10, so the comparison 7 > 10 evaluates to false."
+      "explanation": "Both operands are int, so division discards the fractional part."
     },
     {
       "id": 4,
       "type": "code",
-      "question": "What is the result of: !true",
+      "question": "What is x?\nint x = 5;\nx %= 3;\nx++;",
       "options": [
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "1" },
-        { "type": "text", "value": "0" },
-        { "type": "text", "value": "false" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
       ],
       "answer": 3,
-      "explanation": "The logical NOT operator (!) flips the boolean value, so !true becomes false."
+      "explanation": "First store the remainder after division by 3, then increment once."
     },
     {
       "id": 5,
       "type": "code",
-      "question": "What is the result of: true && false",
+      "question": "What is x?\nint x = 8;\nx += 3;",
       "options": [
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "null" },
-        { "type": "text", "value": "error" }
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "14"
+        }
       ],
       "answer": 0,
-      "explanation": "The logical AND (&&) operator returns true only when both operands are true. Since one is false, the result is false."
+      "explanation": "Add 3 to the current value and store the result in x."
     },
     {
       "id": 6,
       "type": "code",
-      "question": "What is the result of: true || false",
+      "question": "What is x?\nint x = 8;\nx *= 2;",
       "options": [
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "null" },
-        { "type": "text", "value": "error" }
+        {
+          "type": "text",
+          "value": "19"
+        },
+        {
+          "type": "text",
+          "value": "16"
+        },
+        {
+          "type": "text",
+          "value": "17"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        }
       ],
       "answer": 1,
-      "explanation": "The logical OR (||) operator returns true when at least one operand is true."
+      "explanation": "Multiply the current value by 2 before assigning it."
     },
     {
       "id": 7,
       "type": "code",
-      "question": "What is the result of: 15 >= 15",
+      "question": "What is x?\nint x = 8;\nx /= 2;",
       "options": [
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "15" },
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "0" }
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 2,
-      "explanation": "The >= operator returns true when the left value is greater than OR equal to the right value. 15 equals 15."
+      "explanation": "Both operands are int, so division discards the fractional part."
     },
     {
       "id": 8,
       "type": "code",
-      "question": "What is the result of: 8 != 8",
+      "question": "What is x?\nint x = 8;\nx %= 3;\nx++;",
       "options": [
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "8" },
-        { "type": "text", "value": "0" },
-        { "type": "text", "value": "false" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
       ],
       "answer": 3,
-      "explanation": "The != operator checks if values are NOT equal. Since 8 equals 8, the result is false."
+      "explanation": "First store the remainder after division by 3, then increment once."
     },
     {
       "id": 9,
-      "type": "text",
-      "question": "Which operator should be used to compare String content?",
+      "type": "code",
+      "question": "What is x?\nint x = 11;\nx += 3;",
       "options": [
-        { "type": "text", "value": "equals()" },
-        { "type": "text", "value": "==" },
-        { "type": "text", "value": "!=" },
-        { "type": "text", "value": "compare()" }
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "17"
+        }
       ],
       "answer": 0,
-      "explanation": "Use equals() method to compare String content. The == operator compares object references, not content."
+      "explanation": "Add 3 to the current value and store the result in x."
     },
     {
       "id": 10,
       "type": "code",
-      "question": "What is the result of: false && true",
+      "question": "What is x?\nint x = 11;\nx *= 2;",
       "options": [
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "null" },
-        { "type": "text", "value": "error" }
+        {
+          "type": "text",
+          "value": "25"
+        },
+        {
+          "type": "text",
+          "value": "22"
+        },
+        {
+          "type": "text",
+          "value": "23"
+        },
+        {
+          "type": "text",
+          "value": "21"
+        }
       ],
       "answer": 1,
-      "explanation": "The AND operator (&&) requires both operands to be true. Since the first is false, the result is false."
+      "explanation": "Multiply the current value by 2 before assigning it."
     },
     {
       "id": 11,
       "type": "code",
-      "question": "What is the result of: false || false",
+      "question": "What is x?\nint x = 11;\nx /= 2;",
       "options": [
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "null" },
-        { "type": "text", "value": "error" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 2,
-      "explanation": "The OR operator (||) returns true when at least one operand is true. Both are false, so result is false."
+      "explanation": "Both operands are int, so division discards the fractional part."
     },
     {
       "id": 12,
-      "type": "text",
-      "question": "What is short-circuit evaluation?",
+      "type": "code",
+      "question": "What is x?\nint x = 11;\nx %= 3;\nx++;",
       "options": [
-        { "type": "text", "value": "Faster boolean operations" },
-        { "type": "text", "value": "Shorter variable names" },
-        { "type": "text", "value": "Reduced memory usage" },
-        { "type": "text", "value": "Skipping evaluation of second operand when result is determined" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
       ],
       "answer": 3,
-      "explanation": "Short-circuit evaluation stops evaluating the second operand when the result is already determined by the first."
+      "explanation": "First store the remainder after division by 3, then increment once."
     },
     {
       "id": 13,
       "type": "code",
-      "question": "What is the result of: !false",
+      "question": "What is x?\nint x = 14;\nx += 3;",
       "options": [
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "null" },
-        { "type": "text", "value": "error" }
+        {
+          "type": "text",
+          "value": "17"
+        },
+        {
+          "type": "text",
+          "value": "18"
+        },
+        {
+          "type": "text",
+          "value": "16"
+        },
+        {
+          "type": "text",
+          "value": "20"
+        }
       ],
       "answer": 0,
-      "explanation": "The NOT operator (!) flips the boolean value, so !false becomes true."
+      "explanation": "Add 3 to the current value and store the result in x."
     },
     {
       "id": 14,
       "type": "code",
-      "question": "What is the result of: 12 < 20",
+      "question": "What is x?\nint x = 14;\nx *= 2;",
       "options": [
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "12" },
-        { "type": "text", "value": "20" }
+        {
+          "type": "text",
+          "value": "31"
+        },
+        {
+          "type": "text",
+          "value": "28"
+        },
+        {
+          "type": "text",
+          "value": "29"
+        },
+        {
+          "type": "text",
+          "value": "27"
+        }
       ],
       "answer": 1,
-      "explanation": "12 is less than 20, so the comparison 12 < 20 evaluates to true."
+      "explanation": "Multiply the current value by 2 before assigning it."
     },
     {
       "id": 15,
-      "type": "text",
-      "question": "Who is the boolean data type named after?",
+      "type": "code",
+      "question": "What is x?\nint x = 14;\nx /= 2;",
       "options": [
-        { "type": "text", "value": "James Boolean" },
-        { "type": "text", "value": "George Boole" },
-        { "type": "text", "value": "Alan Turing" },
-        { "type": "text", "value": "Ada Lovelace" }
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        }
       ],
       "answer": 2,
-      "explanation": "The boolean data type is named after George Boole, who developed Boolean algebra."
+      "explanation": "Both operands are int, so division discards the fractional part."
     },
     {
       "id": 16,
       "type": "code",
-      "question": "What is the result of: true && true",
+      "question": "What is x?\nint x = 14;\nx %= 3;\nx++;",
       "options": [
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "null" },
-        { "type": "text", "value": "error" },
-        { "type": "text", "value": "true" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
       ],
       "answer": 3,
-      "explanation": "The AND operator (&&) returns true when both operands are true, which is the case here."
+      "explanation": "First store the remainder after division by 3, then increment once."
     }
   ]
 }

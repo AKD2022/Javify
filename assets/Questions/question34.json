@@ -1,214 +1,408 @@
 {
   "lessonId": 34,
-  "title": "Static vs Instance Methods and Variables",
+  "title": "3.7 Class Variables and Methods",
+  "topic": "3.7",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What is the key difference between instance and static variables?",
+      "question": "What does a static field represent?",
       "options": [
-        { "type": "text", "value": "Instance variables belong to individual objects, static variables are shared by all objects" },
-        { "type": "text", "value": "Instance variables are faster" },
-        { "type": "text", "value": "Static variables are private" },
-        { "type": "text", "value": "Instance variables can't be changed" }
+        {
+          "type": "text",
+          "value": "One class-level variable shared by its instances"
+        },
+        {
+          "type": "text",
+          "value": "A separate copy in every object"
+        },
+        {
+          "type": "text",
+          "value": "A parameter local to one call"
+        },
+        {
+          "type": "text",
+          "value": "A value that cannot change"
+        }
       ],
       "answer": 0,
-      "explanation": "Instance variables belong to individual objects (each object has its own copy), while static variables are shared by all objects of the class (only one copy exists)."
+      "explanation": "static describes association with the class, not immutability."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "How do you declare a static variable?",
+      "question": "What does an instance field represent?",
       "options": [
-        { "type": "text", "value": "Using the const keyword" },
-        { "type": "text", "value": "Using the static keyword" },
-        { "type": "text", "value": "Using the shared keyword" },
-        { "type": "text", "value": "Using the class keyword" }
+        {
+          "type": "text",
+          "value": "Only a local loop counter"
+        },
+        {
+          "type": "text",
+          "value": "Per-object state"
+        },
+        {
+          "type": "text",
+          "value": "Exactly one value for the entire class"
+        },
+        {
+          "type": "text",
+          "value": "Only a compile-time constant"
+        }
       ],
       "answer": 1,
-      "explanation": "Static variables are declared with the static keyword, indicating that the variable belongs to the class rather than to individual objects."
+      "explanation": "Each object has its own instance-field storage."
     },
     {
-      "id": 3,
+      "id": "v2-3",
       "type": "text",
-      "question": "What happens when you change a static variable?",
+      "question": "Can a static method directly use this?",
       "options": [
-        { "type": "text", "value": "Only the current object sees the change" },
-        { "type": "text", "value": "An error occurs" },
-        { "type": "text", "value": "All objects see the change because they share the same variable" },
-        { "type": "text", "value": "The variable becomes an instance variable" }
+        {
+          "type": "text",
+          "value": "Only for public fields"
+        },
+        {
+          "type": "text",
+          "value": "Only after a return"
+        },
+        {
+          "type": "text",
+          "value": "No"
+        },
+        {
+          "type": "text",
+          "value": "Yes, always"
+        }
       ],
       "answer": 2,
-      "explanation": "When you change a static variable, all objects see the change because they all share the same variable in memory."
+      "explanation": "A static method has no particular receiver object."
     },
     {
-      "id": 4,
+      "id": "v2-4",
       "type": "text",
-      "question": "How should you access static variables?",
+      "question": "Can a static method access an instance field through an explicit object reference?",
       "options": [
-        { "type": "text", "value": "Through an object only" },
-        { "type": "text", "value": "Using the new keyword" },
-        { "type": "text", "value": "Through the this keyword" },
-        { "type": "text", "value": "Using the class name" }
+        {
+          "type": "text",
+          "value": "No, never"
+        },
+        {
+          "type": "text",
+          "value": "Only if the field is final"
+        },
+        {
+          "type": "text",
+          "value": "Only when the reference is null"
+        },
+        {
+          "type": "text",
+          "value": "Yes, subject to access rules"
+        }
       ],
       "answer": 3,
-      "explanation": "Static variables should be accessed using the class name to make it clear that the variable is static, not through an object reference."
+      "explanation": "An explicit receiver identifies which object’s state is being accessed."
     },
     {
-      "id": 5,
+      "id": "v2-5",
       "type": "text",
-      "question": "Can instance methods access static variables?",
+      "question": "Which is conventional syntax for a static method call?",
       "options": [
-        { "type": "text", "value": "Yes, instance methods can access both instance and static variables" },
-        { "type": "text", "value": "No, never" },
-        { "type": "text", "value": "Only with special keywords" },
-        { "type": "text", "value": "Only in constructors" }
+        {
+          "type": "text",
+          "value": "ClassName.methodName()"
+        },
+        {
+          "type": "text",
+          "value": "new static.methodName()"
+        },
+        {
+          "type": "text",
+          "value": "this.ClassName()"
+        },
+        {
+          "type": "text",
+          "value": "methodName.ClassName()"
+        }
       ],
       "answer": 0,
-      "explanation": "Instance methods can access both instance variables and static variables because they belong to an object which has access to class-level data."
+      "explanation": "The class name communicates that the call is class-level."
     },
     {
-      "id": 6,
+      "id": "v2-6",
       "type": "text",
-      "question": "Can static methods directly access instance variables?",
+      "question": "Does static alone make a field constant?",
       "options": [
-        { "type": "text", "value": "Yes, always" },
-        { "type": "text", "value": "No, they can only access static variables and other static methods" },
-        { "type": "text", "value": "Only with the this keyword" },
-        { "type": "text", "value": "Only in the main method" }
+        {
+          "type": "text",
+          "value": "Only for String"
+        },
+        {
+          "type": "text",
+          "value": "No"
+        },
+        {
+          "type": "text",
+          "value": "Yes, always"
+        },
+        {
+          "type": "text",
+          "value": "Only for int"
+        }
       ],
       "answer": 1,
-      "explanation": "Static methods can only directly access static variables and other static methods because they belong to the class, not to any specific object."
+      "explanation": "final, not static, restricts reassignment after initialization."
     },
     {
-      "id": 7,
+      "id": "v2-7",
       "type": "text",
-      "question": "How are static methods called?",
+      "question": "When an instance method changes a static field, who observes that shared value?",
       "options": [
-        { "type": "text", "value": "Through an object only" },
-        { "type": "text", "value": "Through the this keyword" },
-        { "type": "text", "value": "Using the class name" },
-        { "type": "text", "value": "They cannot be called" }
+        {
+          "type": "text",
+          "value": "Only its constructor parameter"
+        },
+        {
+          "type": "text",
+          "value": "No method can read it"
+        },
+        {
+          "type": "text",
+          "value": "Other code accessing the same class field"
+        },
+        {
+          "type": "text",
+          "value": "Only that object forever"
+        }
       ],
       "answer": 2,
-      "explanation": "Static methods are called using the class name (like ClassName.methodName()) because they belong to the class rather than to any specific object."
+      "explanation": "The field has one shared class-level value."
     },
     {
-      "id": 8,
+      "id": "v2-8",
       "type": "text",
-      "question": "Why is the main() method static?",
+      "question": "What is a typical use for a static field?",
       "options": [
-        { "type": "text", "value": "To make it faster" },
-        { "type": "text", "value": "To save memory" },
-        { "type": "text", "value": "To make it private" },
-        { "type": "text", "value": "Because Java needs to call it before any objects are created" }
+        {
+          "type": "text",
+          "value": "A separate name for each player"
+        },
+        {
+          "type": "text",
+          "value": "A separate balance for each account"
+        },
+        {
+          "type": "text",
+          "value": "A local subtotal for one invocation"
+        },
+        {
+          "type": "text",
+          "value": "A count of objects created by the class"
+        }
       ],
       "answer": 3,
-      "explanation": "The main() method is static because Java needs to call it to start the program before any objects have been created."
+      "explanation": "A class-wide count should be shared rather than duplicated per object."
     },
     {
-      "id": 9,
+      "id": "v2-9",
       "type": "text",
-      "question": "Can static methods use the this keyword?",
+      "question": "A class field static int created starts at 0. Each constructor increments it once. What is created after 2 new objects?",
       "options": [
-        { "type": "text", "value": "No, because this refers to an object and static methods don't belong to any object" },
-        { "type": "text", "value": "Yes, always" },
-        { "type": "text", "value": "Only in constructors" },
-        { "type": "text", "value": "Only for static variables" }
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 0,
-      "explanation": "Static methods cannot use the this keyword because this refers to the current object, and static methods don't belong to any specific object."
+      "explanation": "Every constructor call updates the same shared counter."
     },
     {
-      "id": 10,
+      "id": "v2-10",
       "type": "text",
-      "question": "If a static method needs to work with instance variables, how can it do so?",
+      "question": "Counter has static int total = 0 and per-object int count = 0. One object increments its count 2 times. A second untouched object has what count?",
       "options": [
-        { "type": "text", "value": "It can't" },
-        { "type": "text", "value": "It must receive an object as a parameter" },
-        { "type": "text", "value": "By using the this keyword" },
-        { "type": "text", "value": "By making the variables static" }
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "-1"
+        }
       ],
       "answer": 1,
-      "explanation": "If a static method needs to work with instance variables, it must receive an object as a parameter and then access the instance variables through that object."
+      "explanation": "Updating one instance field does not change the other instance’s field."
     },
     {
-      "id": 11,
+      "id": "v2-11",
       "type": "text",
-      "question": "Which methods in the Math class are static?",
+      "question": "A class field static int created starts at 0. Each constructor increments it once. What is created after 3 new objects?",
       "options": [
-        { "type": "text", "value": "None of them" },
-        { "type": "text", "value": "Only sqrt()" },
-        { "type": "text", "value": "All of them" },
-        { "type": "text", "value": "Only the trigonometric functions" }
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        }
       ],
       "answer": 2,
-      "explanation": "All methods in the Math class are static, which is why you call them using Math.methodName() rather than creating a Math object."
+      "explanation": "Every constructor call updates the same shared counter."
     },
     {
-      "id": 12,
+      "id": "v2-12",
       "type": "text",
-      "question": "When should you use static variables?",
+      "question": "Counter has static int total = 0 and per-object int count = 0. One object increments its count 3 times. A second untouched object has what count?",
       "options": [
-        { "type": "text", "value": "Always" },
-        { "type": "text", "value": "Never" },
-        { "type": "text", "value": "For variables unique to each object" },
-        { "type": "text", "value": "When you need data shared across all objects of a class" }
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "-1"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        }
       ],
       "answer": 3,
-      "explanation": "Use static variables when you need data that's shared across all objects of a class, such as counters, constants, or configuration values."
+      "explanation": "Updating one instance field does not change the other instance’s field."
     },
     {
-      "id": 13,
+      "id": "v2-13",
       "type": "text",
-      "question": "How are constants typically declared in Java?",
+      "question": "A class field static int created starts at 0. Each constructor increments it once. What is created after 4 new objects?",
       "options": [
-        { "type": "text", "value": "static final" },
-        { "type": "text", "value": "const" },
-        { "type": "text", "value": "constant" },
-        { "type": "text", "value": "readonly" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        }
       ],
       "answer": 0,
-      "explanation": "Constants in Java are typically declared as static final variables. The final keyword means the value cannot be changed, and static means all objects share the same value."
+      "explanation": "Every constructor call updates the same shared counter."
     },
     {
-      "id": 14,
+      "id": "v2-14",
       "type": "text",
-      "question": "Can instance methods call static methods?",
+      "question": "Counter has static int total = 0 and per-object int count = 0. One object increments its count 4 times. A second untouched object has what count?",
       "options": [
-        { "type": "text", "value": "No, never" },
-        { "type": "text", "value": "Yes, instance methods can call both instance and static methods" },
-        { "type": "text", "value": "Only with special permissions" },
-        { "type": "text", "value": "Only in constructors" }
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "-1"
+        }
       ],
       "answer": 1,
-      "explanation": "Instance methods can call both instance methods and static methods because they have access to both instance-level and class-level functionality."
+      "explanation": "Updating one instance field does not change the other instance’s field."
     },
     {
-      "id": 15,
+      "id": "v2-15",
       "type": "text",
-      "question": "When should you use static methods?",
+      "question": "A class field static int created starts at 0. Each constructor increments it once. What is created after 5 new objects?",
       "options": [
-        { "type": "text", "value": "Always" },
-        { "type": "text", "value": "Never" },
-        { "type": "text", "value": "For methods that work with instance variables" },
-        { "type": "text", "value": "When the method doesn't need to access instance variables or performs a utility operation" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
+      ],
+      "answer": 2,
+      "explanation": "Every constructor call updates the same shared counter."
+    },
+    {
+      "id": "v2-16",
+      "type": "text",
+      "question": "Counter has static int total = 0 and per-object int count = 0. One object increments its count 5 times. A second untouched object has what count?",
+      "options": [
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "-1"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        }
       ],
       "answer": 3,
-      "explanation": "Use static methods when the method doesn't need to access instance variables or when it performs a utility operation that doesn't depend on object state."
-    },
-    {
-      "id": 16,
-      "type": "text",
-      "question": "What is a common mistake when working with static methods?",
-      "options": [
-        { "type": "text", "value": "Trying to access instance variables from static methods" },
-        { "type": "text", "value": "Calling them on objects" },
-        { "type": "text", "value": "Making them public" },
-        { "type": "text", "value": "Using parameters" }
-      ],
-      "answer": 0,
-      "explanation": "A common mistake is trying to access instance variables from static methods, which causes a compilation error because static methods don't belong to any specific object."
+      "explanation": "Updating one instance field does not change the other instance’s field."
     }
   ]
 }

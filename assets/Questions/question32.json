@@ -1,214 +1,408 @@
 {
   "lessonId": 32,
-  "title": "Object References and Memory",
+  "title": "3.5 Writing Methods",
+  "topic": "3.5",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What does an object variable store?",
+      "question": "What must a non-void method provide on every reachable normal completion path?",
       "options": [
-        { "type": "text", "value": "A reference to the object's location in memory, not the object itself" },
-        { "type": "text", "value": "The actual object data" },
-        { "type": "text", "value": "A copy of the object" },
-        { "type": "text", "value": "The object's class name" }
+        {
+          "type": "text",
+          "value": "A return value compatible with its declared type"
+        },
+        {
+          "type": "text",
+          "value": "A print statement only"
+        },
+        {
+          "type": "text",
+          "value": "A new object every time"
+        },
+        {
+          "type": "text",
+          "value": "A static field"
+        }
       ],
       "answer": 0,
-      "explanation": "Unlike primitive types that store actual values, object variables store references (memory addresses) that point to where the object's data is located."
+      "explanation": "A returned value is required wherever normal execution can finish."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "What happens when you assign one object variable to another?",
+      "question": "What does return do?",
       "options": [
-        { "type": "text", "value": "The object is deleted" },
-        { "type": "text", "value": "You copy the reference, so both variables point to the same object" },
-        { "type": "text", "value": "A new object is created" },
-        { "type": "text", "value": "The first variable becomes null" }
+        {
+          "type": "text",
+          "value": "Prints every local variable"
+        },
+        {
+          "type": "text",
+          "value": "Ends the current method invocation, optionally supplying a value"
+        },
+        {
+          "type": "text",
+          "value": "Always ends the whole application"
+        },
+        {
+          "type": "text",
+          "value": "Restarts the loop"
+        }
       ],
       "answer": 1,
-      "explanation": "When you assign one object variable to another, you copy the reference, not the object. Both variables now point to the same object in memory."
+      "explanation": "Control returns to the caller; later statements in that invocation are skipped."
     },
     {
-      "id": 3,
+      "id": "v2-3",
       "type": "text",
-      "question": "What does null represent?",
+      "question": "What is an accessor?",
       "options": [
-        { "type": "text", "value": "Zero" },
-        { "type": "text", "value": "An empty string" },
-        { "type": "text", "value": "A reference that doesn't point to any object" },
-        { "type": "text", "value": "A deleted object" }
+        {
+          "type": "text",
+          "value": "A constructor alias"
+        },
+        {
+          "type": "text",
+          "value": "A package declaration"
+        },
+        {
+          "type": "text",
+          "value": "A method that reports information about state"
+        },
+        {
+          "type": "text",
+          "value": "A method that always deletes state"
+        }
       ],
       "answer": 2,
-      "explanation": "null is a special reference value that means the variable doesn't point to any object. It's like an empty reference that points to nothing."
+      "explanation": "Accessors provide observations through the interface."
     },
     {
-      "id": 4,
+      "id": "v2-4",
       "type": "text",
-      "question": "What does == check when comparing object variables?",
+      "question": "What is a mutator?",
       "options": [
-        { "type": "text", "value": "If the objects have the same content" },
-        { "type": "text", "value": "If the objects are the same type" },
-        { "type": "text", "value": "If the objects have the same methods" },
-        { "type": "text", "value": "If two references point to the same object in memory" }
+        {
+          "type": "text",
+          "value": "Any method returning int"
+        },
+        {
+          "type": "text",
+          "value": "Every static method"
+        },
+        {
+          "type": "text",
+          "value": "Only a constructor"
+        },
+        {
+          "type": "text",
+          "value": "A method that changes object state"
+        }
       ],
       "answer": 3,
-      "explanation": "The == operator checks if two references point to the same object in memory, not if the objects have the same content."
+      "explanation": "Mutators update the receiver’s representation in a controlled way."
     },
     {
-      "id": 5,
+      "id": "v2-5",
       "type": "text",
-      "question": "Which method should you use to compare String content?",
+      "question": "Do primitive parameters automatically change the caller’s variables when assigned?",
       "options": [
-        { "type": "text", "value": "equals()" },
-        { "type": "text", "value": "==" },
-        { "type": "text", "value": "compare()" },
-        { "type": "text", "value": "same()" }
+        {
+          "type": "text",
+          "value": "No, parameter values are copies"
+        },
+        {
+          "type": "text",
+          "value": "Yes, always"
+        },
+        {
+          "type": "text",
+          "value": "Only for int"
+        },
+        {
+          "type": "text",
+          "value": "Only for public methods"
+        }
       ],
       "answer": 0,
-      "explanation": "You should always use the equals() method to compare String content, not == which compares references."
+      "explanation": "Java passes primitive argument values by value."
     },
     {
-      "id": 6,
+      "id": "v2-6",
       "type": "text",
-      "question": "When you pass an object to a method, what does the method receive?",
+      "question": "What is a helper method useful for?",
       "options": [
-        { "type": "text", "value": "A copy of the object" },
-        { "type": "text", "value": "A copy of the reference to the same object" },
-        { "type": "text", "value": "Nothing" },
-        { "type": "text", "value": "The original reference" }
+        {
+          "type": "text",
+          "value": "Avoiding every test"
+        },
+        {
+          "type": "text",
+          "value": "Implementing a focused subtask reused by other methods"
+        },
+        {
+          "type": "text",
+          "value": "Bypassing all access rules"
+        },
+        {
+          "type": "text",
+          "value": "Giving two methods the same signature"
+        }
       ],
       "answer": 1,
-      "explanation": "When you pass an object to a method, you're passing a copy of the reference. The method receives a reference to the same object."
+      "explanation": "Helpers support decomposition and reduce duplicated logic."
     },
     {
-      "id": 7,
+      "id": "v2-7",
       "type": "text",
-      "question": "If you modify an object inside a method, does it affect the original object?",
+      "question": "Which correctly returns a double average of int sum and count?",
       "options": [
-        { "type": "text", "value": "No, never" },
-        { "type": "text", "value": "Only for primitive types" },
-        { "type": "text", "value": "Yes, because the method has a reference to the same object" },
-        { "type": "text", "value": "Only if you return it" }
+        {
+          "type": "text",
+          "value": "System.out.println(sum / count); only"
+        },
+        {
+          "type": "text",
+          "value": "return count == 0;"
+        },
+        {
+          "type": "text",
+          "value": "return (double) sum / count;"
+        },
+        {
+          "type": "text",
+          "value": "return sum / count; always"
+        }
       ],
       "answer": 2,
-      "explanation": "Changes made to an object inside a method affect the original object because the method receives a reference to the same object in memory."
+      "explanation": "Casting before division preserves the fractional part when count is nonzero."
     },
     {
-      "id": 8,
+      "id": "v2-8",
       "type": "text",
-      "question": "What happens when an object has no references pointing to it?",
+      "question": "Does printing a value satisfy an int method’s return requirement?",
       "options": [
-        { "type": "text", "value": "It causes an error" },
-        { "type": "text", "value": "It stays in memory forever" },
-        { "type": "text", "value": "It must be manually deleted" },
-        { "type": "text", "value": "It becomes eligible for garbage collection" }
+        {
+          "type": "text",
+          "value": "Yes, for any int"
+        },
+        {
+          "type": "text",
+          "value": "Only in constructors"
+        },
+        {
+          "type": "text",
+          "value": "Only for positive numbers"
+        },
+        {
+          "type": "text",
+          "value": "No"
+        }
       ],
       "answer": 3,
-      "explanation": "When an object has no references pointing to it, it becomes eligible for garbage collection. Java's garbage collector automatically frees up the memory."
+      "explanation": "Printing is a side effect; returning supplies a value to the caller."
     },
     {
-      "id": 9,
-      "type": "text",
-      "question": "What exception occurs when you try to use a null reference?",
+      "id": "v2-9",
+      "type": "code",
+      "question": "What does f(2) return?\nint f(int x) {\n  if (x > 5) return x * 2;\n  return x + 1;\n}",
       "options": [
-        { "type": "text", "value": "NullPointerException" },
-        { "type": "text", "value": "NullReferenceException" },
-        { "type": "text", "value": "EmptyObjectException" },
-        { "type": "text", "value": "InvalidReferenceException" }
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 0,
-      "explanation": "A NullPointerException occurs when you try to access methods or variables on a null reference (a reference that doesn't point to any object)."
+      "explanation": "A true branch returns immediately; otherwise execution reaches the fallback return."
     },
     {
-      "id": 10,
-      "type": "text",
-      "question": "If multiple references point to the same object and you modify it through one reference, what happens?",
+      "id": "v2-10",
+      "type": "code",
+      "question": "What is n after change(n)?\nvoid change(int value) { value += 10; }\n// caller:\nint n = 2;\nchange(n);",
       "options": [
-        { "type": "text", "value": "Only that reference sees the change" },
-        { "type": "text", "value": "All references see the change because they point to the same object" },
-        { "type": "text", "value": "The other references become null" },
-        { "type": "text", "value": "An error occurs" }
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        }
       ],
       "answer": 1,
-      "explanation": "When multiple references point to the same object, modifying the object through any reference affects all references because they all point to the same object in memory."
+      "explanation": "Assignment changes only the copied parameter, not the caller’s primitive variable."
     },
     {
-      "id": 11,
-      "type": "text",
-      "question": "What do array elements contain when you create an array of objects?",
+      "id": "v2-11",
+      "type": "code",
+      "question": "What does f(4) return?\nint f(int x) {\n  if (x > 5) return x * 2;\n  return x + 1;\n}",
       "options": [
-        { "type": "text", "value": "The actual objects" },
-        { "type": "text", "value": "Copies of objects" },
-        { "type": "text", "value": "References to objects" },
-        { "type": "text", "value": "Class definitions" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 2,
-      "explanation": "Arrays of objects store references to objects, not the objects themselves. Each array element contains a reference that points to an object."
+      "explanation": "A true branch returns immediately; otherwise execution reaches the fallback return."
     },
     {
-      "id": 12,
-      "type": "text",
-      "question": "What is the initial value of array elements in an uninitialized object array?",
+      "id": "v2-12",
+      "type": "code",
+      "question": "What is n after change(n)?\nvoid change(int value) { value += 10; }\n// caller:\nint n = 4;\nchange(n);",
       "options": [
-        { "type": "text", "value": "0" },
-        { "type": "text", "value": "Empty objects" },
-        { "type": "text", "value": "Default constructors" },
-        { "type": "text", "value": "null" }
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        }
       ],
       "answer": 3,
-      "explanation": "When you create an array of objects without initializing the elements, each element contains null until you assign an object to it."
+      "explanation": "Assignment changes only the copied parameter, not the caller’s primitive variable."
     },
     {
-      "id": 13,
-      "type": "text",
-      "question": "How do primitive variable assignments differ from object variable assignments?",
+      "id": "v2-13",
+      "type": "code",
+      "question": "What does f(6) return?\nint f(int x) {\n  if (x > 5) return x * 2;\n  return x + 1;\n}",
       "options": [
-        { "type": "text", "value": "Primitives copy values, objects copy references" },
-        { "type": "text", "value": "They work the same way" },
-        { "type": "text", "value": "Primitives copy references, objects copy values" },
-        { "type": "text", "value": "Primitives use more memory" }
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        }
       ],
       "answer": 0,
-      "explanation": "Primitive assignments copy the actual value creating independent variables, while object assignments copy the reference so both variables point to the same object."
+      "explanation": "A true branch returns immediately; otherwise execution reaches the fallback return."
     },
     {
-      "id": 14,
-      "type": "text",
-      "question": "If you reassign a parameter inside a method to a new object, does it affect the original reference?",
+      "id": "v2-14",
+      "type": "code",
+      "question": "What is n after change(n)?\nvoid change(int value) { value += 10; }\n// caller:\nint n = 6;\nchange(n);",
       "options": [
-        { "type": "text", "value": "Yes, always" },
-        { "type": "text", "value": "No, the original reference outside the method is unchanged" },
-        { "type": "text", "value": "Only for String objects" },
-        { "type": "text", "value": "Only if you return it" }
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 1,
-      "explanation": "If you reassign a parameter inside a method to point to a new object, it only changes the local reference. The original reference outside the method is unchanged."
+      "explanation": "Assignment changes only the copied parameter, not the caller’s primitive variable."
     },
     {
-      "id": 15,
-      "type": "text",
-      "question": "What is the safest way to avoid NullPointerException?",
+      "id": "v2-15",
+      "type": "code",
+      "question": "What does f(8) return?\nint f(int x) {\n  if (x > 5) return x * 2;\n  return x + 1;\n}",
       "options": [
-        { "type": "text", "value": "Never use objects" },
-        { "type": "text", "value": "Always use primitive types" },
-        { "type": "text", "value": "Initialize all objects in constructors" },
-        { "type": "text", "value": "Check if a reference is not null before using it" }
+        {
+          "type": "text",
+          "value": "15"
+        },
+        {
+          "type": "text",
+          "value": "19"
+        },
+        {
+          "type": "text",
+          "value": "16"
+        },
+        {
+          "type": "text",
+          "value": "17"
+        }
+      ],
+      "answer": 2,
+      "explanation": "A true branch returns immediately; otherwise execution reaches the fallback return."
+    },
+    {
+      "id": "v2-16",
+      "type": "code",
+      "question": "What is n after change(n)?\nvoid change(int value) { value += 10; }\n// caller:\nint n = 8;\nchange(n);",
+      "options": [
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        }
       ],
       "answer": 3,
-      "explanation": "The safest way to avoid NullPointerException is to check if a reference is not null before attempting to access its methods or variables."
-    },
-    {
-      "id": 16,
-      "type": "text",
-      "question": "What does the new keyword do?",
-      "options": [
-        { "type": "text", "value": "Allocates memory for an object and returns a reference to that memory" },
-        { "type": "text", "value": "Creates a primitive variable" },
-        { "type": "text", "value": "Copies an existing object" },
-        { "type": "text", "value": "Deletes old objects" }
-      ],
-      "answer": 0,
-      "explanation": "The new keyword allocates memory for the object and returns a reference to that memory location, which gets stored in the object variable."
+      "explanation": "Assignment changes only the copied parameter, not the caller’s primitive variable."
     }
   ]
 }

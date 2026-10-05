@@ -1,214 +1,406 @@
 {
   "lessonId": 37,
-  "title": "Relational Operators (==, !=, >, <, >=, <=)",
+  "title": "Ethical and Social Issues Around Data Collection",
   "questions": [
     {
       "id": 1,
       "type": "text",
-      "question": "What do relational operators produce?",
+      "question": "A survey samples only app users to estimate all students' access to phones. What is the concern?",
       "options": [
-        { "type": "text", "value": "A boolean result (true or false)" },
-        { "type": "text", "value": "An integer" },
-        { "type": "text", "value": "A string" },
-        { "type": "text", "value": "A double" }
+        {
+          "type": "text",
+          "value": "Selection bias"
+        },
+        {
+          "type": "text",
+          "value": "Integer overflow"
+        },
+        {
+          "type": "text",
+          "value": "A guaranteed random sample"
+        },
+        {
+          "type": "text",
+          "value": "Duplicate variable names"
+        }
       ],
       "answer": 0,
-      "explanation": "Relational operators compare two values and produce a boolean result - either true or false depending on whether the relationship holds."
+      "explanation": "Students without app access are excluded from the sample."
     },
     {
       "id": 2,
       "type": "text",
-      "question": "How many relational operators does Java provide?",
+      "question": "Which best reduces risk if student records leak?",
       "options": [
-        { "type": "text", "value": "4" },
-        { "type": "text", "value": "6" },
-        { "type": "text", "value": "8" },
-        { "type": "text", "value": "10" }
+        {
+          "type": "text",
+          "value": "Make records public"
+        },
+        {
+          "type": "text",
+          "value": "Collect fewer identifiers and limit retention"
+        },
+        {
+          "type": "text",
+          "value": "Collect additional identifiers"
+        },
+        {
+          "type": "text",
+          "value": "Store passwords beside records"
+        }
       ],
       "answer": 1,
-      "explanation": "Java provides six relational operators: ==, !=, >, <, >=, and <=."
+      "explanation": "Data minimization limits exposure of unnecessary personal details."
     },
     {
       "id": 3,
       "type": "text",
-      "question": "What does the == operator check?",
+      "question": "What does anonymization attempt to remove?",
       "options": [
-        { "type": "text", "value": "Assignment" },
-        { "type": "text", "value": "Greater than" },
-        { "type": "text", "value": "If two values are equal" },
-        { "type": "text", "value": "If two values are different" }
+        {
+          "type": "text",
+          "value": "All missing values"
+        },
+        {
+          "type": "text",
+          "value": "Every duplicate row"
+        },
+        {
+          "type": "text",
+          "value": "Information that can identify individuals"
+        },
+        {
+          "type": "text",
+          "value": "Every numeric value"
+        }
       ],
       "answer": 2,
-      "explanation": "The == operator checks if two values are equal, returning true if they're the same and false if they're different."
+      "explanation": "Anonymization reduces identification risk, though combinations of fields can still reveal identity."
     },
     {
       "id": 4,
       "type": "text",
-      "question": "What is the difference between = and ==?",
+      "question": "Can removing names alone guarantee anonymity?",
       "options": [
-        { "type": "text", "value": "They're the same" },
-        { "type": "text", "value": "= is for strings only" },
-        { "type": "text", "value": "== is faster" },
-        { "type": "text", "value": "= assigns a value, == compares two values" }
+        {
+          "type": "text",
+          "value": "Yes, always"
+        },
+        {
+          "type": "text",
+          "value": "Yes, if rows are sorted"
+        },
+        {
+          "type": "text",
+          "value": "Yes, if dates remain"
+        },
+        {
+          "type": "text",
+          "value": "No, other fields may identify a person"
+        }
       ],
       "answer": 3,
-      "explanation": "The = operator assigns a value to a variable (assignment), while == compares two values for equality (comparison)."
+      "explanation": "Combining location, age, and other attributes can permit re-identification."
     },
     {
       "id": 5,
       "type": "text",
-      "question": "What does the != operator check?",
+      "question": "What should users know before contributing personal data?",
       "options": [
-        { "type": "text", "value": "If two values are not equal" },
-        { "type": "text", "value": "If two values are equal" },
-        { "type": "text", "value": "If a value is negative" },
-        { "type": "text", "value": "If a value is null" }
+        {
+          "type": "text",
+          "value": "The purpose, use, and sharing of the data"
+        },
+        {
+          "type": "text",
+          "value": "Only the file extension"
+        },
+        {
+          "type": "text",
+          "value": "Only the programmer language"
+        },
+        {
+          "type": "text",
+          "value": "Nothing if participation is free"
+        }
       ],
       "answer": 0,
-      "explanation": "The != operator checks if two values are not equal, returning true if they're different and false if they're the same."
+      "explanation": "Clear information supports informed consent."
     },
     {
       "id": 6,
       "type": "text",
-      "question": "What does (15 > 10) evaluate to?",
+      "question": "Which is a risk of a nonrepresentative training data set?",
       "options": [
-        { "type": "text", "value": "15" },
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "10" },
-        { "type": "text", "value": "5" }
+        {
+          "type": "text",
+          "value": "Compilation failure"
+        },
+        {
+          "type": "text",
+          "value": "Unequal error rates across groups"
+        },
+        {
+          "type": "text",
+          "value": "Automatic elimination of bias"
+        },
+        {
+          "type": "text",
+          "value": "Guaranteed perfect predictions"
+        }
       ],
       "answer": 1,
-      "explanation": "The expression (15 > 10) evaluates to true because 15 is indeed greater than 10."
+      "explanation": "A model may not generalize well to underrepresented groups."
     },
     {
       "id": 7,
       "type": "text",
-      "question": "What does (8 < 8) evaluate to?",
+      "question": "What should a report do with uncertainty?",
       "options": [
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "8" },
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "0" }
+        {
+          "type": "text",
+          "value": "Replace it with zeros"
+        },
+        {
+          "type": "text",
+          "value": "Treat it as proof of causation"
+        },
+        {
+          "type": "text",
+          "value": "Describe it and avoid unsupported conclusions"
+        },
+        {
+          "type": "text",
+          "value": "Hide it"
+        }
       ],
       "answer": 2,
-      "explanation": "The expression (8 < 8) evaluates to false because 8 is not strictly less than 8 (they're equal)."
+      "explanation": "Responsible interpretation communicates limits of the evidence."
     },
     {
       "id": 8,
       "type": "text",
-      "question": "What does >= check?",
+      "question": "Two measurements are correlated. What follows?",
       "options": [
-        { "type": "text", "value": "Only greater than" },
-        { "type": "text", "value": "Only equal to" },
-        { "type": "text", "value": "Less than or equal to" },
-        { "type": "text", "value": "Greater than or equal to" }
+        {
+          "type": "text",
+          "value": "One must cause the other"
+        },
+        {
+          "type": "text",
+          "value": "The data must be wrong"
+        },
+        {
+          "type": "text",
+          "value": "The values must be identical"
+        },
+        {
+          "type": "text",
+          "value": "Causation is not established by correlation alone"
+        }
       ],
       "answer": 3,
-      "explanation": "The >= operator checks if the left value is greater than or equal to the right value, returning true if either condition holds."
+      "explanation": "Confounding factors or chance can explain a relationship."
     },
     {
       "id": 9,
       "type": "text",
-      "question": "What does (10 >= 10) evaluate to?",
+      "question": "What is a good retention policy?",
       "options": [
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "10" },
-        { "type": "text", "value": "0" }
+        {
+          "type": "text",
+          "value": "Keep data only as long as needed for an agreed purpose"
+        },
+        {
+          "type": "text",
+          "value": "Keep all personal data forever"
+        },
+        {
+          "type": "text",
+          "value": "Delete documentation only"
+        },
+        {
+          "type": "text",
+          "value": "Let anyone decide without records"
+        }
       ],
       "answer": 0,
-      "explanation": "The expression (10 >= 10) evaluates to true because 10 is equal to 10, satisfying the 'equal to' part of 'greater than or equal to'."
+      "explanation": "A retention limit reduces exposure and respects the collection purpose."
     },
     {
       "id": 10,
       "type": "text",
-      "question": "What does <= check?",
+      "question": "Who should access sensitive student records?",
       "options": [
-        { "type": "text", "value": "Only less than" },
-        { "type": "text", "value": "Less than or equal to" },
-        { "type": "text", "value": "Greater than or equal to" },
-        { "type": "text", "value": "Not equal to" }
+        {
+          "type": "text",
+          "value": "Every programmer online"
+        },
+        {
+          "type": "text",
+          "value": "Only authorized people with a legitimate need"
+        },
+        {
+          "type": "text",
+          "value": "Anyone with the link"
+        },
+        {
+          "type": "text",
+          "value": "Every app user"
+        }
       ],
       "answer": 1,
-      "explanation": "The <= operator checks if the left value is less than or equal to the right value, returning true if either condition holds."
+      "explanation": "Access restrictions protect confidentiality."
     },
     {
       "id": 11,
       "type": "text",
-      "question": "Can relational operators compare different numeric types?",
+      "question": "A public data set has a license. What must a developer do?",
       "options": [
-        { "type": "text", "value": "No, types must match exactly" },
-        { "type": "text", "value": "Only int and double" },
-        { "type": "text", "value": "Yes, Java automatically converts them for comparison" },
-        { "type": "text", "value": "Only with explicit casting" }
+        {
+          "type": "text",
+          "value": "Remove the source name"
+        },
+        {
+          "type": "text",
+          "value": "Assume all commercial use is allowed"
+        },
+        {
+          "type": "text",
+          "value": "Follow its reuse conditions"
+        },
+        {
+          "type": "text",
+          "value": "Ignore it because it is public"
+        }
       ],
       "answer": 2,
-      "explanation": "Relational operators work with all numeric types, and Java will automatically convert them for comparison when comparing different numeric types."
+      "explanation": "Public access and unrestricted reuse are different."
     },
     {
       "id": 12,
       "type": "text",
-      "question": "In expressions with arithmetic and relational operators, which happens first?",
+      "question": "Why record the source and collection date?",
       "options": [
-        { "type": "text", "value": "Relational operators" },
-        { "type": "text", "value": "They happen simultaneously" },
-        { "type": "text", "value": "It depends on the expression" },
-        { "type": "text", "value": "Arithmetic operations" }
+        {
+          "type": "text",
+          "value": "To guarantee the values are correct"
+        },
+        {
+          "type": "text",
+          "value": "To avoid all cleaning"
+        },
+        {
+          "type": "text",
+          "value": "To make bias impossible"
+        },
+        {
+          "type": "text",
+          "value": "To assess context, reliability, and relevance"
+        }
       ],
       "answer": 3,
-      "explanation": "Arithmetic operations are evaluated first, then the comparison is performed. For example, in (x + 5 > 10), x + 5 is calculated before comparing to 10."
+      "explanation": "Provenance helps evaluate whether data fits the question."
     },
     {
       "id": 13,
       "type": "text",
-      "question": "For char values, what do relational operators compare?",
+      "question": "A dashboard hides unfavorable observations. What is the issue?",
       "options": [
-        { "type": "text", "value": "Their Unicode values" },
-        { "type": "text", "value": "Their ASCII values only" },
-        { "type": "text", "value": "Their alphabetical position only" },
-        { "type": "text", "value": "Their string representations" }
+        {
+          "type": "text",
+          "value": "Misleading selective reporting"
+        },
+        {
+          "type": "text",
+          "value": "Better random sampling"
+        },
+        {
+          "type": "text",
+          "value": "Safer type casting"
+        },
+        {
+          "type": "text",
+          "value": "Necessary anonymization"
+        }
       ],
       "answer": 0,
-      "explanation": "For char values, relational operators compare based on their Unicode values, which orders characters alphabetically with uppercase before lowercase."
+      "explanation": "Omitting relevant observations can distort conclusions."
     },
     {
       "id": 14,
       "type": "text",
-      "question": "Should you use == to compare String content?",
+      "question": "Which collection choice respects privacy?",
       "options": [
-        { "type": "text", "value": "Yes, always" },
-        { "type": "text", "value": "No, use equals() method instead because == compares references" },
-        { "type": "text", "value": "Only for short strings" },
-        { "type": "text", "value": "Only in loops" }
+        {
+          "type": "text",
+          "value": "Retain raw identifiers without purpose"
+        },
+        {
+          "type": "text",
+          "value": "Use aggregated counts when individual records are unnecessary"
+        },
+        {
+          "type": "text",
+          "value": "Publish full birth dates"
+        },
+        {
+          "type": "text",
+          "value": "Collect home addresses by default"
+        }
       ],
       "answer": 1,
-      "explanation": "For String objects, you should NOT use == to compare content. Use the equals() method instead, as == compares object references, not the actual text."
+      "explanation": "Aggregate data can meet a need with less personal exposure."
     },
     {
       "id": 15,
       "type": "text",
-      "question": "Where are relational operators commonly used?",
+      "question": "A consent form permits research only. Can the data automatically be sold for advertising?",
       "options": [
-        { "type": "text", "value": "Only in loops" },
-        { "type": "text", "value": "Only in methods" },
-        { "type": "text", "value": "Only with integers" },
-        { "type": "text", "value": "In conditional statements to control program flow" }
+        {
+          "type": "text",
+          "value": "Yes, if stored in Java"
+        },
+        {
+          "type": "text",
+          "value": "Yes, if the file is small"
+        },
+        {
+          "type": "text",
+          "value": "No, that is a different use requiring appropriate authorization"
+        },
+        {
+          "type": "text",
+          "value": "Yes, if names are removed"
+        }
       ],
-      "answer": 3,
-      "explanation": "Relational operators are commonly used in conditional statements to control program flow, determining which code should execute based on value comparisons."
+      "answer": 2,
+      "explanation": "Secondary use must respect the agreed purpose and permissions."
     },
     {
       "id": 16,
       "type": "text",
-      "question": "What is a common mistake when using relational operators?",
+      "question": "What should happen after discovering a data error that changes a published result?",
       "options": [
-        { "type": "text", "value": "Using = instead of == for comparison" },
-        { "type": "text", "value": "Using too many parentheses" },
-        { "type": "text", "value": "Comparing only integers" },
-        { "type": "text", "value": "Using them in loops" }
+        {
+          "type": "text",
+          "value": "Keep the original result secret"
+        },
+        {
+          "type": "text",
+          "value": "Delete all source information"
+        },
+        {
+          "type": "text",
+          "value": "Ignore the error if the chart looks good"
+        },
+        {
+          "type": "text",
+          "value": "Correct the data and communicate the revised result"
+        }
       ],
-      "answer": 0,
-      "explanation": "A common mistake is using = (assignment) instead of == (comparison), which assigns a value instead of comparing it."
+      "answer": 3,
+      "explanation": "Accountable analysis corrects significant mistakes transparently."
     }
   ]
 }

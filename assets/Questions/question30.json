@@ -1,214 +1,408 @@
 {
   "lessonId": 30,
-  "title": "Wrapper Classes (Integer, Double, Boolean) Intro",
+  "title": "3.3 Anatomy of a Class",
+  "topic": "3.3",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What is the purpose of wrapper classes in Java?",
+      "question": "Where are instance variables normally declared?",
       "options": [
-        { "type": "text", "value": "To provide object versions of primitive types with utility methods" },
-        { "type": "text", "value": "To make primitives run faster" },
-        { "type": "text", "value": "To compress data" },
-        { "type": "text", "value": "To replace all primitive types" }
+        {
+          "type": "text",
+          "value": "In the class body, outside methods and constructors"
+        },
+        {
+          "type": "text",
+          "value": "Only inside a loop"
+        },
+        {
+          "type": "text",
+          "value": "Only in an import statement"
+        },
+        {
+          "type": "text",
+          "value": "Only in main parameters"
+        }
       ],
       "answer": 0,
-      "explanation": "Wrapper classes provide object versions of primitive types (like Integer for int, Double for double) and include useful utility methods for working with these values."
+      "explanation": "Instance fields belong to each object and are declared at class scope."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "What is the wrapper class for the int primitive type?",
+      "question": "What does private on a field mean?",
       "options": [
-        { "type": "text", "value": "Int" },
-        { "type": "text", "value": "Integer" },
-        { "type": "text", "value": "IntObject" },
-        { "type": "text", "value": "Number" }
+        {
+          "type": "text",
+          "value": "The field has no type"
+        },
+        {
+          "type": "text",
+          "value": "Direct access is restricted to the declaring class"
+        },
+        {
+          "type": "text",
+          "value": "The field cannot change at all"
+        },
+        {
+          "type": "text",
+          "value": "The field is shared by every object"
+        }
       ],
       "answer": 1,
-      "explanation": "The Integer class is the wrapper class for the int primitive type, providing object-based functionality for integer values."
+      "explanation": "Private controls visibility, not mutability or whether the field is static."
     },
     {
-      "id": 3,
+      "id": "v2-3",
       "type": "text",
-      "question": "What is autoboxing in Java?",
+      "question": "What does a public method offer?",
       "options": [
-        { "type": "text", "value": "Compressing variables" },
-        { "type": "text", "value": "Creating boxes in memory" },
-        { "type": "text", "value": "Automatic conversion from primitive to wrapper object" },
-        { "type": "text", "value": "Automatic deletion of unused objects" }
+        {
+          "type": "text",
+          "value": "Automatic object duplication"
+        },
+        {
+          "type": "text",
+          "value": "A replacement for all fields"
+        },
+        {
+          "type": "text",
+          "value": "An operation accessible to permitted client code"
+        },
+        {
+          "type": "text",
+          "value": "A local variable for every class"
+        }
       ],
       "answer": 2,
-      "explanation": "Autoboxing is the automatic conversion from a primitive value to its wrapper object, like converting int to Integer automatically."
+      "explanation": "Public methods form the class’s accessible interface."
     },
     {
-      "id": 4,
+      "id": "v2-4",
       "type": "text",
-      "question": "Which method converts a String to an int?",
+      "question": "Which declaration represents per-object whole-number state?",
       "options": [
-        { "type": "text", "value": "String.toInt()" },
-        { "type": "text", "value": "convert()" },
-        { "type": "text", "value": "toInteger()" },
-        { "type": "text", "value": "Integer.parseInt()" }
+        {
+          "type": "text",
+          "value": "public void count();"
+        },
+        {
+          "type": "text",
+          "value": "import count;"
+        },
+        {
+          "type": "text",
+          "value": "return count;"
+        },
+        {
+          "type": "text",
+          "value": "private int count;"
+        }
       ],
       "answer": 3,
-      "explanation": "Integer.parseInt() is the method used to convert a String representation of a number into an int primitive value."
+      "explanation": "The declaration creates an instance field when it lacks static."
     },
     {
-      "id": 5,
+      "id": "v2-5",
       "type": "text",
-      "question": "What is the value of Integer.MAX_VALUE?",
+      "question": "What is the default initial value of an int instance field?",
       "options": [
-        { "type": "text", "value": "2147483647" },
-        { "type": "text", "value": "999999999" },
-        { "type": "text", "value": "1000000000" },
-        { "type": "text", "value": "2000000000" }
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "null"
+        },
+        {
+          "type": "text",
+          "value": "An arbitrary usable local value"
+        }
       ],
       "answer": 0,
-      "explanation": "Integer.MAX_VALUE is a constant representing the maximum value an int can hold, which is 2147483647."
+      "explanation": "Unlike uninitialized local variables, int fields receive a default zero."
     },
     {
-      "id": 6,
+      "id": "v2-6",
       "type": "text",
-      "question": "Which method converts an int to a String?",
+      "question": "What is the default initial value of a reference instance field?",
       "options": [
-        { "type": "text", "value": "int.toString()" },
-        { "type": "text", "value": "Integer.toString()" },
-        { "type": "text", "value": "String.fromInt()" },
-        { "type": "text", "value": "convert()" }
+        {
+          "type": "text",
+          "value": "The class name"
+        },
+        {
+          "type": "text",
+          "value": "null"
+        },
+        {
+          "type": "text",
+          "value": "An empty object"
+        },
+        {
+          "type": "text",
+          "value": "The number zero as int"
+        }
       ],
       "answer": 1,
-      "explanation": "Integer.toString() converts an int value to a String representation, like converting 95 to \"95\"."
+      "explanation": "No object is created merely by declaring a reference field."
     },
     {
-      "id": 7,
+      "id": "v2-7",
       "type": "text",
-      "question": "What does Integer.compare(10, 20) return?",
+      "question": "Must every class define a main method to be useful?",
       "options": [
-        { "type": "text", "value": "10" },
-        { "type": "text", "value": "20" },
-        { "type": "text", "value": "A negative number" },
-        { "type": "text", "value": "0" }
+        {
+          "type": "text",
+          "value": "Only classes with private fields need main"
+        },
+        {
+          "type": "text",
+          "value": "Only classes with constructors need main"
+        },
+        {
+          "type": "text",
+          "value": "No, other classes can construct and use its objects"
+        },
+        {
+          "type": "text",
+          "value": "Yes, all classes must run independently"
+        }
       ],
       "answer": 2,
-      "explanation": "Integer.compare() returns a negative number when the first value is less than the second (10 < 20), zero if equal, and positive if greater."
+      "explanation": "A supporting class can provide a reusable type without an entry point."
     },
     {
-      "id": 8,
+      "id": "v2-8",
       "type": "text",
-      "question": "Which method converts a String to a double?",
+      "question": "What is the purpose of accessor methods?",
       "options": [
-        { "type": "text", "value": "String.toDouble()" },
-        { "type": "text", "value": "convert()" },
-        { "type": "text", "value": "Double.toDouble()" },
-        { "type": "text", "value": "Double.parseDouble()" }
+        {
+          "type": "text",
+          "value": "Always change all fields"
+        },
+        {
+          "type": "text",
+          "value": "Compile the class"
+        },
+        {
+          "type": "text",
+          "value": "Create every object"
+        },
+        {
+          "type": "text",
+          "value": "Provide controlled observation of state"
+        }
       ],
       "answer": 3,
-      "explanation": "Double.parseDouble() converts a String representation of a decimal number into a double primitive value."
+      "explanation": "An accessor typically returns information without changing the receiver."
     },
     {
-      "id": 9,
-      "type": "text",
-      "question": "What special value does Double.NaN represent?",
+      "id": "v2-9",
+      "type": "code",
+      "question": "What does c.get() return?\nclass Counter {\n  private int count = 2;\n  public int get() { return count; }\n}\n// Counter c = new Counter();",
       "options": [
-        { "type": "text", "value": "Not-a-Number" },
-        { "type": "text", "value": "Null-and-Negative" },
-        { "type": "text", "value": "New-and-Null" },
-        { "type": "text", "value": "Negative-Number" }
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 0,
-      "explanation": "Double.NaN is a special constant representing Not-a-Number, used for undefined or unrepresentable mathematical results."
+      "explanation": "get returns the receiver’s initialized instance field."
     },
     {
-      "id": 10,
+      "id": "v2-10",
       "type": "text",
-      "question": "Which method checks if a double value is infinite?",
+      "question": "Two Counter objects each start at 2. Only the first is incremented once. What is the second object’s count?",
       "options": [
-        { "type": "text", "value": "Double.checkInfinite()" },
-        { "type": "text", "value": "Double.isInfinite()" },
-        { "type": "text", "value": "Double.infinite()" },
-        { "type": "text", "value": "Double.checkValue()" }
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        }
       ],
       "answer": 1,
-      "explanation": "Double.isInfinite() checks if a double value is positive or negative infinity and returns a boolean result."
+      "explanation": "Instance state is separate for separately constructed objects."
     },
     {
-      "id": 11,
-      "type": "text",
-      "question": "What does Boolean.parseBoolean(\"yes\") return?",
+      "id": "v2-11",
+      "type": "code",
+      "question": "What does c.get() return?\nclass Counter {\n  private int count = 4;\n  public int get() { return count; }\n}\n// Counter c = new Counter();",
       "options": [
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "1" },
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "An error" }
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 2,
-      "explanation": "Boolean.parseBoolean() only returns true if the string is \"true\" (case-insensitive). Any other string, including \"yes\", returns false."
+      "explanation": "get returns the receiver’s initialized instance field."
     },
     {
-      "id": 12,
+      "id": "v2-12",
       "type": "text",
-      "question": "What does Boolean.parseBoolean(\"TRUE\") return?",
+      "question": "Two Counter objects each start at 4. Only the first is incremented once. What is the second object’s count?",
       "options": [
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "An error" },
-        { "type": "text", "value": "null" },
-        { "type": "text", "value": "true" }
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        }
       ],
       "answer": 3,
-      "explanation": "Boolean.parseBoolean() is case-insensitive, so \"TRUE\", \"True\", or \"true\" all return true."
+      "explanation": "Instance state is separate for separately constructed objects."
     },
     {
-      "id": 13,
-      "type": "text",
-      "question": "What is unboxing in Java?",
+      "id": "v2-13",
+      "type": "code",
+      "question": "What does c.get() return?\nclass Counter {\n  private int count = 7;\n  public int get() { return count; }\n}\n// Counter c = new Counter();",
       "options": [
-        { "type": "text", "value": "Automatic conversion from wrapper object to primitive value" },
-        { "type": "text", "value": "Removing objects from memory" },
-        { "type": "text", "value": "Opening compressed files" },
-        { "type": "text", "value": "Creating new objects" }
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        }
       ],
       "answer": 0,
-      "explanation": "Unboxing is the automatic conversion from a wrapper object back to its primitive value, like converting Integer to int."
+      "explanation": "get returns the receiver’s initialized instance field."
     },
     {
-      "id": 14,
+      "id": "v2-14",
       "type": "text",
-      "question": "What exception occurs when trying to parse an invalid string like \"abc\" to an int?",
+      "question": "Two Counter objects each start at 7. Only the first is incremented once. What is the second object’s count?",
       "options": [
-        { "type": "text", "value": "NullPointerException" },
-        { "type": "text", "value": "NumberFormatException" },
-        { "type": "text", "value": "IllegalArgumentException" },
-        { "type": "text", "value": "ParseException" }
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 1,
-      "explanation": "NumberFormatException is thrown when trying to parse a string that doesn't represent a valid number, like Integer.parseInt(\"abc\")."
+      "explanation": "Instance state is separate for separately constructed objects."
     },
     {
-      "id": 15,
-      "type": "text",
-      "question": "Why are wrapper classes essential for collections?",
+      "id": "v2-15",
+      "type": "code",
+      "question": "What does c.get() return?\nclass Counter {\n  private int count = 10;\n  public int get() { return count; }\n}\n// Counter c = new Counter();",
       "options": [
-        { "type": "text", "value": "Collections are faster with wrappers" },
-        { "type": "text", "value": "Collections require less memory with wrappers" },
-        { "type": "text", "value": "Wrappers make collections private" },
-        { "type": "text", "value": "Collections can only store objects, not primitive types" }
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        }
+      ],
+      "answer": 2,
+      "explanation": "get returns the receiver’s initialized instance field."
+    },
+    {
+      "id": "v2-16",
+      "type": "text",
+      "question": "Two Counter objects each start at 10. Only the first is incremented once. What is the second object’s count?",
+      "options": [
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        }
       ],
       "answer": 3,
-      "explanation": "Collections can only store objects, not primitive types, so wrapper classes are essential for storing primitive values in collections."
-    },
-    {
-      "id": 16,
-      "type": "text",
-      "question": "What happens if you try to unbox a null wrapper object?",
-      "options": [
-        { "type": "text", "value": "NullPointerException is thrown" },
-        { "type": "text", "value": "It returns 0" },
-        { "type": "text", "value": "It returns false" },
-        { "type": "text", "value": "Nothing, it works fine" }
-      ],
-      "answer": 0,
-      "explanation": "Attempting to unbox a null wrapper object (converting null to a primitive) causes a NullPointerException because null cannot be converted to a primitive value."
+      "explanation": "Instance state is separate for separately constructed objects."
     }
   ]
 }

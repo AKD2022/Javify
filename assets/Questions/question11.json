@@ -1,214 +1,408 @@
 {
   "lessonId": 11,
-  "title": "Using Constants (final keyword)",
+  "title": "1.11 Math Class",
+  "topic": "1.11",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What keyword is used to create constants in Java?",
+      "question": "What is Math.abs(-7)?",
       "options": [
-        { "type": "text", "value": "final" },
-        { "type": "text", "value": "const" },
-        { "type": "text", "value": "constant" },
-        { "type": "text", "value": "static" }
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "-7"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "49"
+        }
       ],
       "answer": 0,
-      "explanation": "The final keyword is used to create constants in Java, preventing the variable from being reassigned."
+      "explanation": "abs returns the magnitude for this ordinary integer input."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "What naming convention is used for constants in Java?",
+      "question": "What is Math.sqrt(81.0)?",
       "options": [
-        { "type": "text", "value": "camelCase" },
-        { "type": "text", "value": "ALL_UPPERCASE_WITH_UNDERSCORES" },
-        { "type": "text", "value": "lowercase" },
-        { "type": "text", "value": "PascalCase" }
+        {
+          "type": "text",
+          "value": "6561.0"
+        },
+        {
+          "type": "text",
+          "value": "9.0"
+        },
+        {
+          "type": "text",
+          "value": "40.5"
+        },
+        {
+          "type": "text",
+          "value": "8.0"
+        }
       ],
       "answer": 1,
-      "explanation": "Constants use ALL_UPPERCASE letters with underscores separating words, making them easily identifiable."
+      "explanation": "sqrt returns the nonnegative square root for a nonnegative argument."
     },
     {
-      "id": 3,
-      "type": "code",
-      "question": "What happens if you try to reassign a final variable?",
+      "id": "v2-3",
+      "type": "text",
+      "question": "What is Math.pow(2.0, 3.0)?",
       "options": [
-        { "type": "text", "value": "Runtime error" },
-        { "type": "text", "value": "Warning message" },
-        { "type": "text", "value": "Compilation error" },
-        { "type": "text", "value": "Value changes successfully" }
+        {
+          "type": "text",
+          "value": "9.0"
+        },
+        {
+          "type": "text",
+          "value": "5.0"
+        },
+        {
+          "type": "text",
+          "value": "8.0"
+        },
+        {
+          "type": "text",
+          "value": "6.0"
+        }
       ],
       "answer": 2,
-      "explanation": "Attempting to reassign a final variable results in a compilation error, preventing the code from compiling."
+      "explanation": "pow(base, exponent) raises the first argument to the second."
     },
     {
-      "id": 4,
-      "type": "code",
-      "question": "Which declaration is correct for a constant?",
-      "options": [
-        { "type": "code", "value": "final int max_score = 100;" },
-        { "type": "code", "value": "final int MAX_SCORE = 100;" },
-        { "type": "code", "value": "final int maxScore = 100;" },
-        { "type": "code", "value": "const int MAX_SCORE = 100;" }
-      ],
-      "answer": 1,
-      "explanation": "Constants should use the final keyword with ALL_UPPERCASE naming convention."
-    },
-    {
-      "id": 5,
+      "id": "v2-4",
       "type": "text",
-      "question": "When must a final variable be initialized?",
+      "question": "Which describes Math.random()?",
       "options": [
-        { "type": "text", "value": "At declaration or in constructor" },
-        { "type": "text", "value": "Only in the main method" },
-        { "type": "text", "value": "Anytime before first use" },
-        { "type": "text", "value": "It can remain uninitialized" }
-      ],
-      "answer": 0,
-      "explanation": "Final variables must be initialized either at declaration or in the constructor - they cannot remain uninitialized."
-    },
-    {
-      "id": 6,
-      "type": "text",
-      "question": "What are class-level constants typically declared as?",
-      "options": [
-        { "type": "text", "value": "final only" },
-        { "type": "text", "value": "static final" },
-        { "type": "text", "value": "public only" },
-        { "type": "text", "value": "private final" }
-      ],
-      "answer": 1,
-      "explanation": "Class-level constants are typically declared as static final, making them belong to the class and shared by all instances."
-    },
-    {
-      "id": 7,
-      "type": "text",
-      "question": "What is a 'magic number' in programming?",
-      "options": [
-        { "type": "text", "value": "A randomly generated number" },
-        { "type": "text", "value": "A literal value without clear meaning in code" },
-        { "type": "text", "value": "A mathematical constant" },
-        { "type": "text", "value": "A number that changes automatically" }
-      ],
-      "answer": 1,
-      "explanation": "Magic numbers are literal values scattered in code without clear meaning - constants help eliminate them."
-    },
-    {
-      "id": 8,
-      "type": "code",
-      "question": "Which is a valid use of a final array?",
-      "options": [
-        { "type": "code", "value": "final int[] nums = {1,2,3}; nums[0] = 5;" },
-        { "type": "code", "value": "final int[] nums = {1,2,3}; nums = new int[5];" },
-        { "type": "code", "value": "int[] final nums = {1,2,3};" },
-        { "type": "code", "value": "final nums[] = {1,2,3};" }
-      ],
-      "answer": 0,
-      "explanation": "You can modify array contents but cannot reassign the array reference when declared as final."
-    },
-    {
-      "id": 9,
-      "type": "text",
-      "question": "What is the main benefit of using constants?",
-      "options": [
-        { "type": "text", "value": "Faster program execution" },
-        { "type": "text", "value": "Improved code readability and maintainability" },
-        { "type": "text", "value": "Reduced memory usage" },
-        { "type": "text", "value": "Automatic error detection" }
-      ],
-      "answer": 1,
-      "explanation": "Constants improve code readability by giving meaningful names to values and make maintenance easier."
-    },
-    {
-      "id": 10,
-      "type": "code",
-      "question": "Which Math constant represents pi?",
-      "options": [
-        { "type": "code", "value": "Math.PI" },
-        { "type": "code", "value": "Math.pi" },
-        { "type": "code", "value": "Math.PIE" },
-        { "type": "code", "value": "MATH.PI" }
-      ],
-      "answer": 0,
-      "explanation": "Math.PI is the built-in constant in Java's Math class that represents the value of pi."
-    },
-    {
-      "id": 11,
-      "type": "text",
-      "question": "Can local constants be declared within methods?",
-      "options": [
-        { "type": "text", "value": "No, only at class level" },
-        { "type": "text", "value": "Yes, for method-scoped constants" },
-        { "type": "text", "value": "Only in static methods" },
-        { "type": "text", "value": "Only in constructors" }
-      ],
-      "answer": 1,
-      "explanation": "Local constants can be declared within methods and have method scope, useful for values that don't change during method execution."
-    },
-    {
-      "id": 12,
-      "type": "code",
-      "question": "What's wrong with: final int VALUE;",
-      "options": [
-        { "type": "text", "value": "Wrong keyword" },
-        { "type": "text", "value": "Wrong naming convention" },
-        { "type": "text", "value": "Missing semicolon" },
-        { "type": "text", "value": "Not initialized" }
+        {
+          "type": "text",
+          "value": "An int from 0 to 1 inclusive"
+        },
+        {
+          "type": "text",
+          "value": "A double strictly greater than 1"
+        },
+        {
+          "type": "text",
+          "value": "Always exactly 0.5"
+        },
+        {
+          "type": "text",
+          "value": "A double at least 0.0 and less than 1.0"
+        }
       ],
       "answer": 3,
-      "explanation": "Final variables must be initialized - you cannot declare a final variable without giving it a value."
+      "explanation": "The lower endpoint is included; the upper endpoint is excluded."
     },
     {
-      "id": 13,
+      "id": "v2-5",
       "type": "text",
-      "question": "Where should class constants typically be placed?",
+      "question": "Why is (int) Math.random() always zero?",
       "options": [
-        { "type": "text", "value": "At the top of the class" },
-        { "type": "text", "value": "At the bottom of the class" },
-        { "type": "text", "value": "Inside methods" },
-        { "type": "text", "value": "In a separate file" }
+        {
+          "type": "text",
+          "value": "Every possible result is below 1.0 and nonnegative"
+        },
+        {
+          "type": "text",
+          "value": "random returns only int"
+        },
+        {
+          "type": "text",
+          "value": "The cast rounds up"
+        },
+        {
+          "type": "text",
+          "value": "random always returns zero"
+        }
       ],
       "answer": 0,
-      "explanation": "Class constants should be placed at the top of the class for visibility and easy reference."
+      "explanation": "Truncation of a value in [0, 1) gives zero."
     },
     {
-      "id": 14,
-      "type": "code",
-      "question": "What does this create: public static final String NAME = \"App\";",
-      "options": [
-        { "type": "text", "value": "A class-level constant accessible to all instances" },
-        { "type": "text", "value": "A private variable" },
-        { "type": "text", "value": "A method parameter" },
-        { "type": "text", "value": "A local variable" }
-      ],
-      "answer": 0,
-      "explanation": "This creates a public class-level constant that is accessible to all instances and external classes."
-    },
-    {
-      "id": 15,
+      "id": "v2-6",
       "type": "text",
-      "question": "Why are constants helpful for maintenance?",
+      "question": "Which expression produces integers from 1 through 6?",
       "options": [
-        { "type": "text", "value": "They run faster" },
-        { "type": "text", "value": "They use less memory" },
-        { "type": "text", "value": "Changes only need to be made in one place" },
-        { "type": "text", "value": "They prevent all bugs" }
+        {
+          "type": "text",
+          "value": "(int) (Math.random() * 6)"
+        },
+        {
+          "type": "text",
+          "value": "(int) (Math.random() * 6) + 1"
+        },
+        {
+          "type": "text",
+          "value": "(int) Math.random() * 6 + 1"
+        },
+        {
+          "type": "text",
+          "value": "(int) (Math.random() * 5) + 1"
+        }
+      ],
+      "answer": 1,
+      "explanation": "Multiply before casting to create six buckets, then shift their range."
+    },
+    {
+      "id": "v2-7",
+      "type": "text",
+      "question": "Which is the correct argument order for three squared?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Math.sqrt(3, 2)"
+        },
+        {
+          "type": "text",
+          "value": "Math.abs(3, 2)"
+        },
+        {
+          "type": "text",
+          "value": "Math.pow(3, 2)"
+        },
+        {
+          "type": "text",
+          "value": "Math.pow(2, 3)"
+        }
       ],
       "answer": 2,
-      "explanation": "Constants centralize important values, so changes only need to be made in the constant declaration rather than throughout the code."
+      "explanation": "The base comes before the exponent."
     },
     {
-      "id": 16,
-      "type": "code",
-      "question": "Which creates an unchangeable reference to an array?",
+      "id": "v2-8",
+      "type": "text",
+      "question": "Is every call to Math.random() guaranteed to return a different value?",
       "options": [
-        { "type": "code", "value": "static int[] array = {1,2,3};" },
-        { "type": "code", "value": "const int[] array = {1,2,3};" },
-        { "type": "code", "value": "int[] final array = {1,2,3};" },
-        { "type": "code", "value": "final int[] array = {1,2,3};" }
+        {
+          "type": "text",
+          "value": "Yes, without exception"
+        },
+        {
+          "type": "text",
+          "value": "Only in a loop"
+        },
+        {
+          "type": "text",
+          "value": "Only after casting"
+        },
+        {
+          "type": "text",
+          "value": "No"
+        }
       ],
       "answer": 3,
-      "explanation": "final int[] creates an unchangeable reference to the array, though the array contents can still be modified."
+      "explanation": "Random sampling can repeat results, particularly after conversion into a small integer range."
+    },
+    {
+      "id": "v2-9",
+      "type": "text",
+      "question": "What is the largest possible integer from (int) (Math.random() * 3)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Multiplication gives values below n, so truncation yields at most n - 1."
+    },
+    {
+      "id": "v2-10",
+      "type": "text",
+      "question": "What is the smallest possible integer from (int) (Math.random() * 4) + 3?",
+      "options": [
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        }
+      ],
+      "answer": 1,
+      "explanation": "The unshifted integer can be zero; adding n sets the minimum."
+    },
+    {
+      "id": "v2-11",
+      "type": "text",
+      "question": "What is the largest possible integer from (int) (Math.random() * 5)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
+      ],
+      "answer": 2,
+      "explanation": "Multiplication gives values below n, so truncation yields at most n - 1."
+    },
+    {
+      "id": "v2-12",
+      "type": "text",
+      "question": "What is the smallest possible integer from (int) (Math.random() * 4) + 5?",
+      "options": [
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
+      ],
+      "answer": 3,
+      "explanation": "The unshifted integer can be zero; adding n sets the minimum."
+    },
+    {
+      "id": "v2-13",
+      "type": "text",
+      "question": "What is the largest possible integer from (int) (Math.random() * 7)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Multiplication gives values below n, so truncation yields at most n - 1."
+    },
+    {
+      "id": "v2-14",
+      "type": "text",
+      "question": "What is the smallest possible integer from (int) (Math.random() * 4) + 7?",
+      "options": [
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
+      ],
+      "answer": 1,
+      "explanation": "The unshifted integer can be zero; adding n sets the minimum."
+    },
+    {
+      "id": "v2-15",
+      "type": "text",
+      "question": "What is the largest possible integer from (int) (Math.random() * 9)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
+      ],
+      "answer": 2,
+      "explanation": "Multiplication gives values below n, so truncation yields at most n - 1."
+    },
+    {
+      "id": "v2-16",
+      "type": "text",
+      "question": "What is the smallest possible integer from (int) (Math.random() * 4) + 9?",
+      "options": [
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
+      ],
+      "answer": 3,
+      "explanation": "The unshifted integer can be zero; adding n sets the minimum."
     }
   ]
 }

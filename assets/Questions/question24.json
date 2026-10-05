@@ -1,214 +1,408 @@
 {
   "lessonId": 24,
-  "title": "Calling Methods and Method Signatures",
+  "title": "2.9 Selection and Iteration Algorithms",
+  "topic": "2.9",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What components make up a method signature?",
+      "question": "What initial value works for a sum accumulator?",
       "options": [
-        { "type": "text", "value": "Method name and parameter list (types, number, order)" },
-        { "type": "text", "value": "Method name and return type" },
-        { "type": "text", "value": "Return type and parameters" },
-        { "type": "text", "value": "Method name only" }
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "1 always"
+        },
+        {
+          "type": "text",
+          "value": "-1 always"
+        },
+        {
+          "type": "text",
+          "value": "The final loop bound always"
+        }
       ],
       "answer": 0,
-      "explanation": "A method signature consists of the method name and parameter list (number, types, and order of parameters)."
+      "explanation": "Zero is the additive identity and gives the correct empty sum."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "Is the return type part of the method signature?",
+      "question": "What initial value works for a product accumulator?",
       "options": [
-        { "type": "text", "value": "Yes, it's always included" },
-        { "type": "text", "value": "No, only the method name and parameters" },
-        { "type": "text", "value": "Only for void methods" },
-        { "type": "text", "value": "Only for non-void methods" }
+        {
+          "type": "text",
+          "value": "The number of terms always"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "-1 always"
+        }
       ],
       "answer": 1,
-      "explanation": "The return type is NOT part of the method signature. Only the method name and parameter list (types, number, order) form the signature."
+      "explanation": "One is the multiplicative identity; zero would force every product to zero."
     },
     {
-      "id": 3,
+      "id": "v2-3",
       "type": "text",
-      "question": "What is method overloading?",
+      "question": "Which operation extracts the last decimal digit of nonnegative int n?",
       "options": [
-        { "type": "text", "value": "Using too many methods" },
-        { "type": "text", "value": "Methods that run too slowly" },
-        { "type": "text", "value": "Multiple methods with the same name but different signatures" },
-        { "type": "text", "value": "Methods with the same parameters" }
+        {
+          "type": "text",
+          "value": "n * 10"
+        },
+        {
+          "type": "text",
+          "value": "n + 10"
+        },
+        {
+          "type": "text",
+          "value": "n % 10"
+        },
+        {
+          "type": "text",
+          "value": "n / 10"
+        }
       ],
       "answer": 2,
-      "explanation": "Method overloading allows multiple methods with the same name but different signatures (different parameter lists) in the same class."
+      "explanation": "Remainder after division by 10 gives the units digit."
     },
     {
-      "id": 4,
-      "type": "code",
-      "question": "Which method call is correct for: public static void print(String msg, int count)",
+      "id": "v2-4",
+      "type": "text",
+      "question": "Which operation removes the last digit of nonnegative int n?",
       "options": [
-        { "type": "code", "value": "print(5, \"Hello\");" },
-        { "type": "code", "value": "print(\"Hello\", \"5\");" },
-        { "type": "code", "value": "print(\"Hello\");" },
-        { "type": "code", "value": "print(\"Hello\", 5);" }
+        {
+          "type": "text",
+          "value": "n % 10"
+        },
+        {
+          "type": "text",
+          "value": "n + 10"
+        },
+        {
+          "type": "text",
+          "value": "n * 10"
+        },
+        {
+          "type": "text",
+          "value": "n / 10"
+        }
       ],
       "answer": 3,
-      "explanation": "Arguments must match parameter types and order: String first, then int. So print(\"Hello\", 5) is correct."
+      "explanation": "Integer division by 10 truncates the units digit."
     },
     {
-      "id": 5,
+      "id": "v2-5",
       "type": "text",
-      "question": "How does Java determine which overloaded method to call?",
+      "question": "Why should a count increment only inside the match condition?",
       "options": [
-        { "type": "text", "value": "Based on the arguments provided at the call site" },
-        { "type": "text", "value": "Based on the return type needed" },
-        { "type": "text", "value": "Based on the method name only" },
-        { "type": "text", "value": "Randomly selects one" }
+        {
+          "type": "text",
+          "value": "To count matches rather than every iteration"
+        },
+        {
+          "type": "text",
+          "value": "To change its type"
+        },
+        {
+          "type": "text",
+          "value": "To avoid all comparisons"
+        },
+        {
+          "type": "text",
+          "value": "To make every result zero"
+        }
       ],
       "answer": 0,
-      "explanation": "Java determines which overloaded method to call by matching the arguments provided to the parameter signatures."
+      "explanation": "An unconditional increment counts processed items, not qualifying items."
     },
     {
-      "id": 6,
+      "id": "v2-6",
       "type": "text",
-      "question": "Can you use the result of one method call as an argument to another method?",
+      "question": "Why is max = 0 unsafe when all values may be negative?",
       "options": [
-        { "type": "text", "value": "No, this is not allowed" },
-        { "type": "text", "value": "Yes, this is called method chaining" },
-        { "type": "text", "value": "Only with void methods" },
-        { "type": "text", "value": "Only with static methods" }
+        {
+          "type": "text",
+          "value": "The loop never executes"
+        },
+        {
+          "type": "text",
+          "value": "Zero may be larger than every actual value"
+        },
+        {
+          "type": "text",
+          "value": "Negative values cannot be compared"
+        },
+        {
+          "type": "text",
+          "value": "Java changes negatives to zero"
+        }
       ],
       "answer": 1,
-      "explanation": "Yes, you can use the return value of one method as an argument for another method. This is called method chaining."
+      "explanation": "Initialize a maximum from actual data or an appropriate documented bound."
     },
     {
-      "id": 7,
-      "type": "code",
-      "question": "What's wrong with this method call? Math.sqrt(\"25\")",
+      "id": "v2-7",
+      "type": "text",
+      "question": "What should an average calculation guard against?",
       "options": [
-        { "type": "text", "value": "Nothing is wrong" },
-        { "type": "text", "value": "Missing semicolon" },
-        { "type": "text", "value": "Wrong argument type - sqrt expects double, not String" },
-        { "type": "text", "value": "Too many arguments" }
+        {
+          "type": "text",
+          "value": "All decimal results"
+        },
+        {
+          "type": "text",
+          "value": "A count of one"
+        },
+        {
+          "type": "text",
+          "value": "A zero count"
+        },
+        {
+          "type": "text",
+          "value": "Every positive sum"
+        }
       ],
       "answer": 2,
-      "explanation": "Math.sqrt() expects a double argument, but \"25\" is a String. The argument type doesn't match the parameter type."
+      "explanation": "The mean of no observations is undefined and division requires a nonzero denominator."
     },
     {
-      "id": 8,
+      "id": "v2-8",
       "type": "text",
-      "question": "How are arguments matched to parameters when calling methods?",
+      "question": "What is a useful way to test a digit-sum algorithm?",
       "options": [
-        { "type": "text", "value": "By name" },
-        { "type": "text", "value": "By position (order)" },
-        { "type": "text", "value": "By type only" },
-        { "type": "text", "value": "Randomly" }
-      ],
-      "answer": 1,
-      "explanation": "Arguments are matched to parameters by position (order), not by name. The first argument goes to the first parameter, etc."
-    },
-    {
-      "id": 9,
-      "type": "text",
-      "question": "What happens if you provide the wrong number of arguments to a method?",
-      "options": [
-        { "type": "text", "value": "Runtime error" },
-        { "type": "text", "value": "Compilation error" },
-        { "type": "text", "value": "The program uses default values" },
-        { "type": "text", "value": "The program continues normally" }
-      ],
-      "answer": 1,
-      "explanation": "Providing the wrong number of arguments causes a compilation error because no method signature matches."
-    },
-    {
-      "id": 10,
-      "type": "text",
-      "question": "Can two methods have the same signature but different return types?",
-      "options": [
-        { "type": "text", "value": "Yes, this is method overloading" },
-        { "type": "text", "value": "No, this causes a compilation error" },
-        { "type": "text", "value": "Only if one is static" },
-        { "type": "text", "value": "Only if one is void" }
-      ],
-      "answer": 1,
-      "explanation": "No, two methods cannot have the same signature (name and parameters) even with different return types. This causes compilation errors."
-    },
-    {
-      "id": 11,
-      "type": "code",
-      "question": "What does this method call do? System.out.println(Math.max(5, 8));",
-      "options": [
-        { "type": "text", "value": "Prints 13" },
-        { "type": "text", "value": "Prints 8" },
-        { "type": "text", "value": "Prints 5" },
-        { "type": "text", "value": "Causes an error" }
-      ],
-      "answer": 2,
-      "explanation": "Math.max(5, 8) returns 8 (the larger value), which is then printed by System.out.println()."
-    },
-    {
-      "id": 12,
-      "type": "text",
-      "question": "How do you call static methods from within the same class?",
-      "options": [
-        { "type": "text", "value": "Must use class name" },
-        { "type": "text", "value": "Cannot call static methods" },
-        { "type": "text", "value": "Must create an object first" },
-        { "type": "text", "value": "Can call directly by method name" }
+        {
+          "type": "text",
+          "value": "Use only one large number"
+        },
+        {
+          "type": "text",
+          "value": "Test only comments"
+        },
+        {
+          "type": "text",
+          "value": "Avoid inputs containing zeros"
+        },
+        {
+          "type": "text",
+          "value": "Include zero, one-digit, and multi-digit inputs"
+        }
       ],
       "answer": 3,
-      "explanation": "Within the same class, static methods can be called directly by name without the class name prefix."
+      "explanation": "Different digit patterns and boundary cases expose update or initialization errors."
     },
     {
-      "id": 13,
-      "type": "text",
-      "question": "What's the difference between calling void and non-void methods?",
+      "id": "v2-9",
+      "type": "code",
+      "question": "What is sum?\nint n = 12;\nint sum = 0;\nwhile (n > 0) { sum += n % 10; n /= 10; }",
       "options": [
-        { "type": "text", "value": "Void methods are called as complete statements, non-void can be used in expressions" },
-        { "type": "text", "value": "No difference in calling syntax" },
-        { "type": "text", "value": "Void methods are faster" },
-        { "type": "text", "value": "Non-void methods require more arguments" }
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 0,
-      "explanation": "Void methods are called as complete statements since they return nothing. Non-void methods return values that can be used in expressions."
+      "explanation": "Each iteration adds the current last digit and then removes it."
     },
     {
-      "id": 14,
+      "id": "v2-10",
       "type": "code",
-      "question": "Which overloaded method would be called? display(42.0)",
+      "question": "How many multiples of 3 are counted?\nint count = 0;\nfor (int i = 1; i <= 12; i++)\n  if (i % 3 == 0) count++;",
       "options": [
-        { "type": "code", "value": "display(int n)" },
-        { "type": "code", "value": "display(double n)" },
-        { "type": "code", "value": "display(String s)" },
-        { "type": "code", "value": "Compilation error" }
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
       ],
       "answer": 1,
-      "explanation": "42.0 is a double literal, so it matches the display(double n) method signature exactly."
+      "explanation": "The counted values are 3, 6, 9, and so on up to the bound."
     },
     {
-      "id": 15,
-      "type": "text",
-      "question": "What is argument type promotion?",
+      "id": "v2-11",
+      "type": "code",
+      "question": "What is sum?\nint n = 24;\nint sum = 0;\nwhile (n > 0) { sum += n % 10; n /= 10; }",
       "options": [
-        { "type": "text", "value": "Making arguments more important" },
-        { "type": "text", "value": "Automatic conversion of compatible types (like int to double)" },
-        { "type": "text", "value": "Changing the order of arguments" },
-        { "type": "text", "value": "Adding more arguments" }
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        }
       ],
       "answer": 2,
-      "explanation": "Argument type promotion is Java's automatic conversion of compatible types, such as promoting int to double when needed."
+      "explanation": "Each iteration adds the current last digit and then removes it."
     },
     {
-      "id": 16,
-      "type": "text",
-      "question": "What happens if you try to assign a void method's result to a variable?",
+      "id": "v2-12",
+      "type": "code",
+      "question": "How many multiples of 3 are counted?\nint count = 0;\nfor (int i = 1; i <= 24; i++)\n  if (i % 3 == 0) count++;",
       "options": [
-        { "type": "text", "value": "The variable becomes null" },
-        { "type": "text", "value": "The variable becomes 0" },
-        { "type": "text", "value": "Runtime error" },
-        { "type": "text", "value": "Compilation error" }
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        }
       ],
       "answer": 3,
-      "explanation": "Trying to assign a void method's result causes a compilation error because void methods don't return values."
+      "explanation": "The counted values are 3, 6, 9, and so on up to the bound."
+    },
+    {
+      "id": "v2-13",
+      "type": "code",
+      "question": "What is sum?\nint n = 35;\nint sum = 0;\nwhile (n > 0) { sum += n % 10; n /= 10; }",
+      "options": [
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Each iteration adds the current last digit and then removes it."
+    },
+    {
+      "id": "v2-14",
+      "type": "code",
+      "question": "How many multiples of 3 are counted?\nint count = 0;\nfor (int i = 1; i <= 35; i++)\n  if (i % 3 == 0) count++;",
+      "options": [
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        }
+      ],
+      "answer": 1,
+      "explanation": "The counted values are 3, 6, 9, and so on up to the bound."
+    },
+    {
+      "id": "v2-15",
+      "type": "code",
+      "question": "What is sum?\nint n = 47;\nint sum = 0;\nwhile (n > 0) { sum += n % 10; n /= 10; }",
+      "options": [
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        }
+      ],
+      "answer": 2,
+      "explanation": "Each iteration adds the current last digit and then removes it."
+    },
+    {
+      "id": "v2-16",
+      "type": "code",
+      "question": "How many multiples of 3 are counted?\nint count = 0;\nfor (int i = 1; i <= 47; i++)\n  if (i % 3 == 0) count++;",
+      "options": [
+        {
+          "type": "text",
+          "value": "16"
+        },
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "18"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        }
+      ],
+      "answer": 3,
+      "explanation": "The counted values are 3, 6, 9, and so on up to the bound."
     }
   ]
 }

@@ -1,224 +1,71 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text as RNText, ScrollView, StyleSheet, Platform } from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { CalendarProvider, ExpandableCalendar } from 'react-native-calendars';
-import { auth } from '../../config/firebase';
-import { parseISO, format } from 'date-fns';
-import { getScores } from '../utils/dataStore';
-import { loadCalendar, getCalendarItems } from '../utils/calendarstore';
-import { getStartDate, getEndDate } from '../diagnostic/datestore';
-import { useNavigation } from '@react-navigation/native';
-import colors from '../../assets/components/colors';
-import { TouchableOpacity } from 'react-native';
+import { Calendar } from 'react-native-calendars';
+import { useFocusEffect } from '@react-navigation/native';
 import { MaterialIcons } from '@expo/vector-icons';
+import { auth } from '../../config/firebase';
+import { getScores, loadScores } from '../utils/dataStore';
+import { getCalendarItems, loadCalendar, getStudyPlan, getCalendarSetup } from '../utils/calendarstore';
+import { localDateKey, parseLocalDate } from '../utils/studyLogic';
+import colors from '../../assets/components/colors';
 import GradientButton from '../../assets/components/gradientButton';
-
-export default function CalendarScreen() {
-  const user = auth.currentUser;
-  const navigation = useNavigation();
+export default function CalendarScreen({ navigation }) {
   const [items, setItems] = useState({});
-  const [diagnosticStatus, setDiagnosticStatus] = useState('');
-  const todayStr = new Date().toISOString().split('T')[0];
-  const [selectedDate, setSelectedDate] = useState(todayStr);
-
-  const Text = (props) => (
-    <RNText {...props} style={[{ fontFamily: "Poppins-Regular" }, props.style]} />
-  );
-
-
-  // Preload calendar
-  useEffect(() => {
-    const preloadCalendar = async () => {
-      if (!user) return;
-
-      const scores = getScores(); // cached scores
-      console.log('Scores loaded:', scores);
-
-      await loadCalendar(user, scores); // load/build calendar in datastore
-      const calendarData = getCalendarItems(); // get cached items after load
-      console.log('Calendar items loaded/rescheduled:', calendarData);
-
-      setItems(calendarData);
-
-      // Diagnostic check
-      setDiagnosticStatus(
-        Object.keys(calendarData).length === 0
-          ? "Take Diagnostic to create personalized calendar"
-          : ""
-      );
+  const [scores, setScores] = useState({});
+  const [selectedDate, setSelectedDate] = useState(localDateKey());
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const [plan, setPlan] = useState(null);
+  const [diagnostic, setDiagnostic] = useState(null);
+  const [retry, setRetry] = useState(0);
+  useFocusEffect(useCallback(() => {
+    let active = true;
+    const load = async () => {
+      setLoading(true); setError('');
+      try {
+        await loadScores(auth.currentUser);
+        const loadedScores = getScores();
+        const [setup] = await Promise.all([getCalendarSetup(auth.currentUser), loadCalendar(auth.currentUser, loadedScores)]);
+        if (active) { setScores(loadedScores); setItems(getCalendarItems()); setPlan(setup.hasPlan ? setup.plan || { legacy: true } : null); setDiagnostic(setup.diagnostic); }
+      } catch { if (active) setError('Could not load your calendar. Check your connection and retry.'); }
+      finally { if (active) setLoading(false); }
     };
-
-    preloadCalendar();
-  }, [user]);
-
-  // Marked dates for calendar
-  const markedDates = Object.keys(items).reduce((acc, date) => {
-    acc[date] = {
-      marked: true,
-      dotColor: '#36C0EA',
-      selected: selectedDate === date,
-      selectedColor: colors.basicButton,
-    };
-    return acc;
-  }, {});
-
-  const handleDayPress = (day) => setSelectedDate(day.dateString);
-
-  const selectedDateText = selectedDate
-    ? format(parseISO(selectedDate), "EEEE, MMMM do")
-    : null;
-
-  const getLessonStatus = (lessonId) => {
-    const score = getScores()[lessonId];
-    if (score === 4) return 'Lesson Completed';
-    if (score !== null && score <= 3) return 'In Progress';
-    return 'Not Started';
-  };
-
-
-  return (
-    <CalendarProvider
-      date={selectedDate}
-      onDateChanged={handleDayPress}
-      style={styles.container}
-    >
-
-      <SafeAreaView style={{ flex: 1 }}>
-        <View style={styles.calendarBox}>
-          <View style={styles.calendarScaler}>
-            <ExpandableCalendar
-              onDayPress={handleDayPress}
-              markedDates={markedDates}
-              initialPosition="open"
-              hideKnob={false}
-              allowShadow
-              closeOnDayPress={false}
-              renderArrow={(direction) => {
-                return (
-                  <MaterialIcons
-                    name={direction === 'left' ? 'keyboard-arrow-left' : 'keyboard-arrow-right'}
-                    size={28}
-                    color={colors.gray}
-                  />
-                );
-              }}
-              theme={{
-                calendarBackground: colors.white,
-                todayTextColor: colors.basicButton,
-                dayTextColor: colors.black,
-                monthTextColor: colors.black,
-                textSectionTitleColor: colors.black,
-                selectedDayBackgroundColor: colors.basicButton,
-                selectedDotColor: colors.basicButton,
-                dotColor: colors.redCircle,
-              }}
-            />
-
-          </View>
-        </View>
-
-
-
-
-        <ScrollView style={styles.selectedDateContainer}>
-          <Text style={styles.selectedDateText}>
-            {selectedDateText ? `${selectedDateText}` : "Select a date"}
-          </Text>
-
-          {diagnosticStatus ? (
-            <View style={styles.diagnosticContainer}>
-              <GradientButton title={diagnosticStatus} onPress={() => navigation.navigate('DiagnosticScreen')} />
-            </View>
-          ) : null}
-
-          {items[selectedDate] ? (
-            items[selectedDate].map((lesson, index) => (
-              <TouchableOpacity
-                key={index}
-                style={styles.lessonItem}
-                onPress={() => navigation.navigate('LessonScreen', { lessonId: lesson.id.replace('lesson', '') })}
-              >
-                <View style={styles.lessonContent}>
-                  <Text style={styles.lessonText}>{lesson.name}</Text>
-                  <Text style={styles.lessonStatusText}>{getLessonStatus(lesson.id)}</Text>
-                </View>
-                <MaterialIcons name="keyboard-arrow-right" size={24} color={colors.bookmark} style={{ backgroundColor: colors.bookmarkBackground, padding: 5, borderRadius: 50, }} />
-              </TouchableOpacity>
-
-            ))
-          ) : (
-            <Text style={styles.noLessonText}>No lessons scheduled for today!</Text>
-          )}
-        </ScrollView>
-      </SafeAreaView>
-    </CalendarProvider>
-  );
+    load();
+    return () => { active = false; };
+  }, [retry]));
+  const today = localDateKey();
+  const overdue = Object.entries(items).filter(([date]) => date < today).flatMap(([, lessons]) => lessons).filter(l => scores[l.id] !== 4);
+  const markedDates = Object.fromEntries(Object.entries(items).map(([date, lessons]) => [date, { marked: true, dotColor: lessons.every(l => scores[l.id] === 4) ? '#287A45' : colors.basicButton }]));
+  markedDates[selectedDate] = { ...markedDates[selectedDate], selected: true, selectedColor: colors.basicButton };
+  const renderLesson = (lesson, prefix = '') => <TouchableOpacity key={prefix + lesson.id} accessibilityRole="button" style={styles.card} onPress={() => navigation.navigate('LessonScreen', { lessonId: lesson.id.replace('lesson', '') })}>
+    <View style={{ flex: 1 }}><Text style={styles.label}>{lesson.name}</Text><Text style={styles.body}>{scores[lesson.id] === 4 ? 'Completed' : scores[lesson.id] != null ? 'In progress' : 'Not started'}</Text></View>
+    <MaterialIcons name="chevron-right" size={26} color={colors.basicButton} />
+  </TouchableOpacity>;
+  if (!loading && !error && !plan) return <SafeAreaView style={styles.container} edges={['top']}><ScrollView contentContainerStyle={{ padding: 24, gap: 24 }}>
+    <Text style={styles.title}>Your study calendar</Text>
+    <View style={{ backgroundColor: '#EFEDFF', padding: 28, borderRadius: 26, gap: 16 }}><MaterialIcons name="event-note" size={52} color={colors.basicButton} /><Text style={styles.title}>{diagnostic ? 'Ready to build your plan' : 'A plan that starts with you'}</Text><Text style={styles.body}>{diagnostic ? 'Your diagnostic is saved. Choose your study days to turn your results into a calendar.' : 'Take a 30-question diagnostic to find your starting point, then choose your study days and pace.'}</Text></View>
+    <View style={styles.cardColumn}><Text style={styles.label}>All lessons. Your priorities.</Text><Text style={styles.body}>Weaker units come first, with lessons in order within each unit. Every lesson stays in your plan—even topics you answered correctly.</Text></View>
+    <GradientButton title={diagnostic ? 'Continue calendar setup' : 'Take the diagnostic'} onPress={() => navigation.navigate(diagnostic ? 'StudyPlan' : 'DiagnosticScreen')} />
+  </ScrollView></SafeAreaView>;
+  return <SafeAreaView style={styles.container} edges={['top']}><ScrollView contentContainerStyle={{ padding: 16, gap: 14 }}>
+    <View style={styles.row}><Text style={styles.title}>Study calendar</Text><TouchableOpacity accessibilityRole="button" disabled={loading || !!error || !plan} onPress={() => navigation.navigate('StudyPlan')} style={styles.edit}><Text style={{ color: colors.basicButton }}>Edit plan</Text></TouchableOpacity></View>
+    <Calendar current={selectedDate} onDayPress={({ dateString }) => setSelectedDate(dateString)} markedDates={markedDates} style={styles.calendar} theme={{ todayTextColor: colors.basicButton, arrowColor: colors.basicButton }} />
+    {loading ? <ActivityIndicator accessibilityLabel="Loading calendar" /> : error ? <View><Text style={styles.body}>{error}</Text><GradientButton title="Retry" onPress={() => setRetry(r => r + 1)} /></View> : <>
+      {!!overdue.length && <View style={styles.cardColumn}><Text style={styles.label}>{overdue.length} overdue {overdue.length === 1 ? 'lesson' : 'lessons'}</Text><Text style={styles.body}>Continue below, or edit your plan to spread unfinished lessons across your available study days.</Text>{overdue.map(l => renderLesson(l, 'overdue-'))}</View>}
+      <View style={styles.row}><Text style={styles.label}>{parseLocalDate(selectedDate).toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}</Text><TouchableOpacity style={styles.edit} onPress={() => setSelectedDate(today)} accessibilityRole="button"><Text style={{ color: colors.basicButton }}>Today</Text></TouchableOpacity></View>
+      {items[selectedDate]?.length ? items[selectedDate].map(l => renderLesson(l)) : <Text style={styles.body}>No lessons scheduled for this date.</Text>}
+    </>}
+  </ScrollView></SafeAreaView>;
 }
-
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.defaultBackground,
-  },
-
-  calendarBox: {
-    alignItems: 'center',      // centers the scaled calendar
-    marginTop: 10,
-  },
-
-  calendarScaler: {
-    transform: [{ scale: 0.94 }],
-    borderRadius: 20,
-    borderWidth: 0.75,
-    borderColor: colors.gray,
-    overflow: 'hidden',
-    backgroundColor: colors.white,
-  },
-
-  selectedDateText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    color: colors.black,
-    marginBottom: 10,
-  },
-
-  selectedDateContainer: {
-    flex: 1,
-    padding: 20,
-  },
-
-  lessonItem: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 10,
-    padding: 15,
-    backgroundColor: colors.white,
-    borderRadius: 10,
-    borderWidth: 0.75,
-    borderColor: colors.gray,
-  },
-
-  lessonContent: {
-    flex: 1,
-  },
-
-  lessonText: {
-    color: colors.black,
-    fontFamily: "Poppins-SemiBold",
-    fontSize: 16
-  },
-
-  lessonStatusText: { color: '#bbb', fontSize: 14, marginTop: 4 },
-
-  noLessonText: { color: colors.black },
-
-  diagnosticContainer: {
-    borderRadius: 20,
-    overflow: 'hidden',
-    marginBottom: 20,
-    alignItems: 'center',
-  },
-
-  diagnosticText: { color: '#fff', fontWeight: 'bold' },
+  container: { flex: 1, backgroundColor: colors.defaultBackground },
+  title: { fontFamily: 'Poppins-Bold', fontSize: 22, color: colors.black },
+  label: { fontFamily: 'Poppins-SemiBold', fontSize: 16, color: colors.black, flexShrink: 1 },
+  body: { fontFamily: 'Poppins-Regular', color: '#50586B', fontSize: 14, lineHeight: 22 },
+  row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 8 },
+  edit: { minHeight: 44, justifyContent: 'center', paddingHorizontal: 8 },
+  calendar: { borderRadius: 16, overflow: 'hidden', paddingTop: 8, paddingBottom: 18 },
+  card: { flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: '#fff', padding: 16, borderRadius: 12, borderWidth: 1, borderColor: '#D7DBE5' },
+  cardColumn: { backgroundColor: '#fff', padding: 16, gap: 12, borderRadius: 12 },
 });

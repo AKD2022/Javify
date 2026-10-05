@@ -1,4 +1,8 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
+import { loadScores, getScores } from '../utils/dataStore';
+import { auth } from '../../config/firebase';
+import { Alert } from 'react-native';
 import { View, FlatList, StyleSheet, Platform, StatusBar } from 'react-native';
 import LessonCard from '../home/LessonCard';
 import colors from '../../assets/components/colors';
@@ -6,7 +10,14 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { Text as RNText } from 'react-native-paper';
 
 const UnitScreen = ({ route }) => {
-    const { unit, scoresState } = route.params;
+    const { unit } = route.params;
+    const [scoresState, setScoresState] = useState(route.params.scoresState || getScores());
+    useFocusEffect(useCallback(() => {
+      let active = true;
+      setScoresState(getScores());
+      loadScores(auth.currentUser).then(() => { if (active) setScoresState(getScores()); }).catch(() => { if (active) Alert.alert('Progress unavailable', 'Showing cached progress. Please check your connection.'); });
+      return () => { active = false; };
+    }, []));
 
     const Text = (props) => (
         <RNText {...props} style={[{ fontFamily: "Poppins-Regular" }, props.style]} />
@@ -19,15 +30,11 @@ const UnitScreen = ({ route }) => {
                 data={unit.lessons}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item, index }) => {
-                    const prevLesson = unit.lessons[index - 1];
-                    const isLocked =
-                        index > 0 && (scoresState[prevLesson?.id] || 0) < 4;
-
                     return (
                         <LessonCard
                             lesson={item}
                             score={scoresState[item.id] ?? null}
-                            locked={isLocked}
+                            locked={false}
                         />
                     );
                 }}
@@ -40,9 +47,9 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: colors.defaultBackground,
-        paddingTop: 50,
+        paddingTop: 8,
         paddingHorizontal: 20,
-        paddingBottom: 50,
+        paddingBottom: 16,
     },
 });
 

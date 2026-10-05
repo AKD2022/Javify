@@ -1,214 +1,408 @@
 {
   "lessonId": 31,
-  "title": "Creating Simple Objects and Constructors",
+  "title": "3.4 Constructors",
+  "topic": "3.4",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What keyword is used to create a new object?",
+      "question": "What is the name of a constructor?",
       "options": [
-        { "type": "text", "value": "new" },
-        { "type": "text", "value": "create" },
-        { "type": "text", "value": "make" },
-        { "type": "text", "value": "object" }
+        {
+          "type": "text",
+          "value": "The same as its class"
+        },
+        {
+          "type": "text",
+          "value": "Always main"
+        },
+        {
+          "type": "text",
+          "value": "Always new"
+        },
+        {
+          "type": "text",
+          "value": "Any name with void"
+        }
       ],
       "answer": 0,
-      "explanation": "The new keyword is used to create a new object, followed by a constructor call to initialize the object."
+      "explanation": "Java recognizes a constructor by its class-matching name and lack of return type."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "What is a constructor?",
+      "question": "What return type is written on a constructor?",
       "options": [
-        { "type": "text", "value": "A type of variable" },
-        { "type": "text", "value": "A special method that initializes a new object when it's created" },
-        { "type": "text", "value": "A loop structure" },
-        { "type": "text", "value": "A data type" }
+        {
+          "type": "text",
+          "value": "The class name before the method name"
+        },
+        {
+          "type": "text",
+          "value": "None"
+        },
+        {
+          "type": "text",
+          "value": "void"
+        },
+        {
+          "type": "text",
+          "value": "int"
+        }
       ],
       "answer": 1,
-      "explanation": "A constructor is a special method that runs when you create a new object, initializing its instance variables with specific values."
+      "explanation": "Constructors are not declared with a return type, including void."
     },
     {
-      "id": 3,
+      "id": "v2-3",
       "type": "text",
-      "question": "What is true about a constructor's name?",
+      "question": "When does a constructor execute?",
       "options": [
-        { "type": "text", "value": "It can be anything" },
-        { "type": "text", "value": "It must start with \"construct\"" },
-        { "type": "text", "value": "It must be the same name as the class" },
-        { "type": "text", "value": "It must be lowercase" }
+        {
+          "type": "text",
+          "value": "Only after every object is deleted"
+        },
+        {
+          "type": "text",
+          "value": "Only at compiler installation"
+        },
+        {
+          "type": "text",
+          "value": "During creation of a new object"
+        },
+        {
+          "type": "text",
+          "value": "Whenever any getter runs"
+        }
       ],
       "answer": 2,
-      "explanation": "A constructor must have the same name as the class it belongs to, which is how Java identifies it as a constructor."
+      "explanation": "The constructor initializes the newly allocated object."
     },
     {
-      "id": 4,
+      "id": "v2-4",
       "type": "text",
-      "question": "Does a constructor have a return type?",
+      "question": "Can a class define multiple constructors?",
       "options": [
-        { "type": "text", "value": "Yes, it returns the class type" },
-        { "type": "text", "value": "Yes, it returns void" },
-        { "type": "text", "value": "Yes, it returns int" },
-        { "type": "text", "value": "No, constructors don't have a return type" }
+        {
+          "type": "text",
+          "value": "No, never"
+        },
+        {
+          "type": "text",
+          "value": "Only if all parameter lists are identical"
+        },
+        {
+          "type": "text",
+          "value": "Only by changing return types"
+        },
+        {
+          "type": "text",
+          "value": "Yes, with different parameter lists"
+        }
       ],
       "answer": 3,
-      "explanation": "Constructors don't have a return type, not even void. Adding a return type would make it a regular method instead of a constructor."
+      "explanation": "Constructor overloading provides different initialization interfaces."
     },
     {
-      "id": 5,
+      "id": "v2-5",
       "type": "text",
-      "question": "What are instance variables?",
+      "question": "When does Java provide an implicit no-argument constructor?",
       "options": [
-        { "type": "text", "value": "Variables declared inside a class but outside methods that belong to each object" },
-        { "type": "text", "value": "Variables inside methods" },
-        { "type": "text", "value": "Constants" },
-        { "type": "text", "value": "Static variables" }
+        {
+          "type": "text",
+          "value": "When the class declares no constructors"
+        },
+        {
+          "type": "text",
+          "value": "Whenever one parameterized constructor exists"
+        },
+        {
+          "type": "text",
+          "value": "Always, regardless of declarations"
+        },
+        {
+          "type": "text",
+          "value": "Only when all fields are public"
+        }
       ],
       "answer": 0,
-      "explanation": "Instance variables are declared inside the class but outside any method, and each object created from the class has its own copy of these variables."
+      "explanation": "Declaring any constructor prevents the automatic no-argument constructor from being supplied."
     },
     {
-      "id": 6,
+      "id": "v2-6",
       "type": "text",
-      "question": "If you don't write a constructor, what does Java provide?",
+      "question": "What is the role of constructor parameters?",
       "options": [
-        { "type": "text", "value": "Nothing, the class won't compile" },
-        { "type": "text", "value": "A default constructor that takes no parameters" },
-        { "type": "text", "value": "An error message" },
-        { "type": "text", "value": "A main method" }
+        {
+          "type": "text",
+          "value": "Always determine the return type"
+        },
+        {
+          "type": "text",
+          "value": "Supply values or choices used to initialize the object"
+        },
+        {
+          "type": "text",
+          "value": "Automatically become fields with the same name"
+        },
+        {
+          "type": "text",
+          "value": "Replace the class name"
+        }
       ],
       "answer": 1,
-      "explanation": "If you don't write a constructor, Java automatically provides a default constructor with no parameters that initializes variables to default values."
+      "explanation": "Parameters are local values that initialization code can copy or process."
     },
     {
-      "id": 7,
+      "id": "v2-7",
       "type": "text",
-      "question": "What are the default values for instance variables if not initialized?",
+      "question": "Which is a constructor in class Ticket?",
       "options": [
-        { "type": "text", "value": "1 for numbers, true for boolean, empty string for objects" },
-        { "type": "text", "value": "-1 for all types" },
-        { "type": "text", "value": "0 for numbers, false for boolean, null for objects" },
-        { "type": "text", "value": "Random values" }
+        {
+          "type": "text",
+          "value": "public int Ticket() { ... }"
+        },
+        {
+          "type": "text",
+          "value": "public create Ticket() { ... }"
+        },
+        {
+          "type": "text",
+          "value": "public Ticket(int price) { ... }"
+        },
+        {
+          "type": "text",
+          "value": "public void Ticket(int price) { ... }"
+        }
       ],
       "answer": 2,
-      "explanation": "Default values are 0 for numeric types, false for boolean, and null for object references when instance variables are not explicitly initialized."
+      "explanation": "The constructor uses the class name and no return type."
     },
     {
-      "id": 8,
+      "id": "v2-8",
       "type": "text",
-      "question": "Can a class have multiple constructors?",
+      "question": "What should a constructor establish?",
       "options": [
-        { "type": "text", "value": "No, only one constructor allowed" },
-        { "type": "text", "value": "Only if they have different names" },
-        { "type": "text", "value": "Only static classes" },
-        { "type": "text", "value": "Yes, through constructor overloading with different parameter lists" }
+        {
+          "type": "text",
+          "value": "The result of every future method"
+        },
+        {
+          "type": "text",
+          "value": "A static version of all fields"
+        },
+        {
+          "type": "text",
+          "value": "The caller’s local variable names"
+        },
+        {
+          "type": "text",
+          "value": "A valid initial object state"
+        }
       ],
       "answer": 3,
-      "explanation": "A class can have multiple constructors with different parameter lists, which is called constructor overloading, providing different ways to create objects."
+      "explanation": "Later operations can rely on documented initialization and invariants."
     },
     {
-      "id": 9,
-      "type": "text",
-      "question": "How do you access an object's instance variable?",
+      "id": "v2-9",
+      "type": "code",
+      "question": "What is the field value after new Counter(2)?\npublic Counter(int start) { count = start + 1; }",
       "options": [
-        { "type": "text", "value": "Using dot notation: objectName.variableName" },
-        { "type": "text", "value": "Using brackets: objectName[variableName]" },
-        { "type": "text", "value": "Using parentheses: objectName(variableName)" },
-        { "type": "text", "value": "Using arrow: objectName->variableName" }
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 0,
-      "explanation": "You access an object's instance variables using dot notation, where the dot operator connects the object reference to the variable name."
+      "explanation": "The constructor expression computes start + 1 and stores it."
     },
     {
-      "id": 10,
-      "type": "text",
-      "question": "What is the purpose of constructor parameters?",
+      "id": "v2-10",
+      "type": "code",
+      "question": "What is count after new Counter(2, 3)?\npublic Counter(int first, int second) { count = first + second; }",
       "options": [
-        { "type": "text", "value": "To create methods" },
-        { "type": "text", "value": "To pass initial values into the constructor for setting instance variables" },
-        { "type": "text", "value": "To define the class name" },
-        { "type": "text", "value": "To declare static variables" }
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        }
       ],
       "answer": 1,
-      "explanation": "Constructor parameters are temporary variables used to pass initial values into the constructor, which then assigns these values to instance variables."
+      "explanation": "Constructor arguments match parameters by position and are added."
     },
     {
-      "id": 11,
-      "type": "text",
-      "question": "Are objects created from the same class independent of each other?",
+      "id": "v2-11",
+      "type": "code",
+      "question": "What is the field value after new Counter(4)?\npublic Counter(int start) { count = start + 1; }",
       "options": [
-        { "type": "text", "value": "No, they share all variables" },
-        { "type": "text", "value": "Only if marked as static" },
-        { "type": "text", "value": "Yes, each object has its own set of instance variables" },
-        { "type": "text", "value": "Only for primitive types" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 2,
-      "explanation": "Each object created from a class is independent and has its own set of instance variables. Changing one object's variables doesn't affect other objects."
+      "explanation": "The constructor expression computes start + 1 and stores it."
     },
     {
-      "id": 12,
-      "type": "text",
-      "question": "What happens if you forget the new keyword when creating an object?",
+      "id": "v2-12",
+      "type": "code",
+      "question": "What is count after new Counter(4, 3)?\npublic Counter(int first, int second) { count = first + second; }",
       "options": [
-        { "type": "text", "value": "The object is created anyway" },
-        { "type": "text", "value": "A default object is used" },
-        { "type": "text", "value": "The program runs slower" },
-        { "type": "text", "value": "You get a compilation error" }
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        }
       ],
       "answer": 3,
-      "explanation": "Forgetting the new keyword when creating an object results in a compilation error because Java requires new to allocate memory for the object."
+      "explanation": "Constructor arguments match parameters by position and are added."
     },
     {
-      "id": 13,
-      "type": "text",
-      "question": "Can constructors include validation logic?",
+      "id": "v2-13",
+      "type": "code",
+      "question": "What is the field value after new Counter(6)?\npublic Counter(int start) { count = start + 1; }",
       "options": [
-        { "type": "text", "value": "Yes, to ensure objects are created with valid data" },
-        { "type": "text", "value": "No, validation must be in separate methods" },
-        { "type": "text", "value": "Only for numeric values" },
-        { "type": "text", "value": "Only in static constructors" }
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        }
       ],
       "answer": 0,
-      "explanation": "Constructors can include validation logic to check parameters and ensure objects are created with valid data, helping prevent errors and maintain data integrity."
+      "explanation": "The constructor expression computes start + 1 and stores it."
     },
     {
-      "id": 14,
-      "type": "text",
-      "question": "What is constructor overloading?",
+      "id": "v2-14",
+      "type": "code",
+      "question": "What is count after new Counter(6, 3)?\npublic Counter(int first, int second) { count = first + second; }",
       "options": [
-        { "type": "text", "value": "Making constructors too large" },
-        { "type": "text", "value": "Having multiple constructors with different parameter lists" },
-        { "type": "text", "value": "Calling constructors multiple times" },
-        { "type": "text", "value": "Creating too many objects" }
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        }
       ],
       "answer": 1,
-      "explanation": "Constructor overloading is having multiple constructors in a class with different parameter lists, allowing objects to be created in different ways."
+      "explanation": "Constructor arguments match parameters by position and are added."
     },
     {
-      "id": 15,
-      "type": "text",
-      "question": "What is the benefit of using constructors over manually setting variables?",
+      "id": "v2-15",
+      "type": "code",
+      "question": "What is the field value after new Counter(8)?\npublic Counter(int start) { count = start + 1; }",
       "options": [
-        { "type": "text", "value": "Constructors are faster" },
-        { "type": "text", "value": "Constructors use less memory" },
-        { "type": "text", "value": "Constructors are optional" },
-        { "type": "text", "value": "Constructors ensure objects start with valid data in a clean, efficient way" }
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        }
+      ],
+      "answer": 2,
+      "explanation": "The constructor expression computes start + 1 and stores it."
+    },
+    {
+      "id": "v2-16",
+      "type": "code",
+      "question": "What is count after new Counter(8, 3)?\npublic Counter(int first, int second) { count = first + second; }",
+      "options": [
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        }
       ],
       "answer": 3,
-      "explanation": "Constructors ensure objects are initialized with valid, meaningful data in one step, which is cleaner and more efficient than manually setting each variable separately."
-    },
-    {
-      "id": 16,
-      "type": "text",
-      "question": "Where are instance variables declared?",
-      "options": [
-        { "type": "text", "value": "Inside the class but outside any method" },
-        { "type": "text", "value": "Inside the main method" },
-        { "type": "text", "value": "Inside constructors only" },
-        { "type": "text", "value": "Outside the class" }
-      ],
-      "answer": 0,
-      "explanation": "Instance variables are declared inside the class but outside any method, making them accessible to all methods in the class and unique to each object."
+      "explanation": "Constructor arguments match parameters by position and are added."
     }
   ]
 }

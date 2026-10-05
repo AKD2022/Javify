@@ -1,214 +1,408 @@
 {
   "lessonId": 7,
-  "title": "char Data Type and Characters in Java",
+  "title": "1.7 API and Libraries",
+  "topic": "1.7",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What type of quotes are used for char literals?",
+      "question": "What is an API?",
       "options": [
-        { "type": "text", "value": "Single quotes" },
-        { "type": "text", "value": "Double quotes" },
-        { "type": "text", "value": "Backticks" },
-        { "type": "text", "value": "No quotes" }
+        {
+          "type": "text",
+          "value": "A documented interface describing available operations"
+        },
+        {
+          "type": "text",
+          "value": "Only the private source of a library"
+        },
+        {
+          "type": "text",
+          "value": "A Java loop"
+        },
+        {
+          "type": "text",
+          "value": "A hardware clock"
+        }
       ],
       "answer": 0,
-      "explanation": "Character literals in Java use single quotes, like 'A' or '$'. Double quotes are used for String literals."
+      "explanation": "An API specifies how client code can use a component without knowing its implementation."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "How many characters can a char variable store?",
+      "question": "What should you consult before calling an unfamiliar method?",
       "options": [
-        { "type": "text", "value": "0" },
-        { "type": "text", "value": "1" },
-        { "type": "text", "value": "2" },
-        { "type": "text", "value": "Unlimited" }
+        {
+          "type": "text",
+          "value": "Only its author photo"
+        },
+        {
+          "type": "text",
+          "value": "Its signature, behavior, and preconditions"
+        },
+        {
+          "type": "text",
+          "value": "Only its name"
+        },
+        {
+          "type": "text",
+          "value": "Only its file size"
+        }
       ],
       "answer": 1,
-      "explanation": "A char variable stores exactly one character. For multiple characters, use String."
+      "explanation": "Types alone do not describe all valid inputs or side effects."
     },
     {
-      "id": 3,
-      "type": "code",
-      "question": "Which escape sequence represents a new line?",
-      "options": [
-        { "type": "text", "value": "\\t" },
-        { "type": "text", "value": "\\\\" },
-        { "type": "text", "value": "\\n" },
-        { "type": "text", "value": "\\'" }
-      ],
-      "answer": 2,
-      "explanation": "The \\n escape sequence represents a new line character in Java."
-    },
-    {
-      "id": 4,
-      "type": "code",
-      "question": "What is the Unicode value of 'A'?",
-      "options": [
-        { "type": "text", "value": "64" },
-        { "type": "text", "value": "66" },
-        { "type": "text", "value": "97" },
-        { "type": "text", "value": "65" }
-      ],
-      "answer": 3,
-      "explanation": "The Unicode value of uppercase 'A' is 65 in the ASCII/Unicode character set."
-    },
-    {
-      "id": 5,
-      "type": "code",
-      "question": "What is the result of: 'B' - 'A'",
-      "options": [
-        { "type": "text", "value": "1" },
-        { "type": "text", "value": "-1" },
-        { "type": "text", "value": "BA" },
-        { "type": "text", "value": "error" }
-      ],
-      "answer": 0,
-      "explanation": "Character arithmetic uses Unicode values: 'B' (66) - 'A' (65) = 1."
-    },
-    {
-      "id": 6,
-      "type": "code",
-      "question": "What does Character.isDigit('7') return?",
-      "options": [
-        { "type": "text", "value": "7" },
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "error" }
-      ],
-      "answer": 1,
-      "explanation": "Character.isDigit() returns true for digit characters like '0' through '9'."
-    },
-    {
-      "id": 7,
-      "type": "code",
-      "question": "Which represents a tab character?",
-      "options": [
-        { "type": "text", "value": "\\n" },
-        { "type": "text", "value": "\\r" },
-        { "type": "text", "value": "\\t" },
-        { "type": "text", "value": "\\s" }
-      ],
-      "answer": 2,
-      "explanation": "The \\t escape sequence represents a tab character for horizontal spacing."
-    },
-    {
-      "id": 8,
-      "type": "code",
-      "question": "What is required to convert int to char?",
-      "options": [
-        { "type": "text", "value": "Nothing, it's automatic" },
-        { "type": "text", "value": "A special method" },
-        { "type": "text", "value": "It's impossible" },
-        { "type": "text", "value": "Explicit casting" }
-      ],
-      "answer": 3,
-      "explanation": "Converting int to char requires explicit casting: (char)intValue because it's a narrowing conversion."
-    },
-    {
-      "id": 9,
-      "type": "code",
-      "question": "What does Character.toUpperCase('m') return?",
-      "options": [
-        { "type": "text", "value": "'M'" },
-        { "type": "text", "value": "'m'" },
-        { "type": "text", "value": "77" },
-        { "type": "text", "value": "109" }
-      ],
-      "answer": 0,
-      "explanation": "Character.toUpperCase() converts lowercase letters to their uppercase equivalents."
-    },
-    {
-      "id": 10,
-      "type": "code",
-      "question": "Which comparison is true?",
-      "options": [
-        { "type": "text", "value": "'A' > 'B'" },
-        { "type": "text", "value": "'A' < 'B'" },
-        { "type": "text", "value": "'A' == 'B'" },
-        { "type": "text", "value": "'A' != 'A'" }
-      ],
-      "answer": 1,
-      "explanation": "Character comparison uses Unicode values: 'A' (65) is less than 'B' (66)."
-    },
-    {
-      "id": 11,
+      "id": "v2-3",
       "type": "text",
-      "question": "How many bits does a char use in Java?",
+      "question": "A method documents that n must be positive. What is that condition?",
       "options": [
-        { "type": "text", "value": "8 bits" },
-        { "type": "text", "value": "16 bits" },
-        { "type": "text", "value": "32 bits" },
-        { "type": "text", "value": "64 bits" }
+        {
+          "type": "text",
+          "value": "A constructor call"
+        },
+        {
+          "type": "text",
+          "value": "An output value"
+        },
+        {
+          "type": "text",
+          "value": "A precondition"
+        },
+        {
+          "type": "text",
+          "value": "An import"
+        }
       ],
       "answer": 2,
-      "explanation": "Java char uses 16 bits to support Unicode characters from many languages."
+      "explanation": "A precondition describes a requirement that must hold before the call."
     },
     {
-      "id": 12,
-      "type": "code",
-      "question": "What does '5' - '0' equal?",
+      "id": "v2-4",
+      "type": "text",
+      "question": "What is a postcondition?",
       "options": [
-        { "type": "text", "value": "50" },
-        { "type": "text", "value": "-5" },
-        { "type": "text", "value": "0" },
-        { "type": "text", "value": "5" }
+        {
+          "type": "text",
+          "value": "A reserved word"
+        },
+        {
+          "type": "text",
+          "value": "The first argument type"
+        },
+        {
+          "type": "text",
+          "value": "A required file extension"
+        },
+        {
+          "type": "text",
+          "value": "A promised state or result after a valid call"
+        }
       ],
       "answer": 3,
-      "explanation": "This converts character digit '5' to integer 5 by subtracting the Unicode value of '0'."
+      "explanation": "A postcondition states the effect the method guarantees when its preconditions hold."
     },
     {
-      "id": 13,
-      "type": "code",
-      "question": "What is the result of: (char)(65)",
+      "id": "v2-5",
+      "type": "text",
+      "question": "Why can implementation details change without changing client code?",
       "options": [
-        { "type": "text", "value": "'A'" },
-        { "type": "text", "value": "65" },
-        { "type": "text", "value": "'65'" },
-        { "type": "text", "value": "error" }
+        {
+          "type": "text",
+          "value": "The public contract can remain the same"
+        },
+        {
+          "type": "text",
+          "value": "Java ignores methods"
+        },
+        {
+          "type": "text",
+          "value": "Every method is private"
+        },
+        {
+          "type": "text",
+          "value": "Arguments are never checked"
+        }
       ],
       "answer": 0,
-      "explanation": "Casting 65 to char gives 'A' since 65 is the Unicode value for uppercase A."
+      "explanation": "Abstraction separates the interface clients rely on from how it is implemented."
     },
     {
-      "id": 14,
-      "type": "code",
-      "question": "Which comparison is true?",
+      "id": "v2-6",
+      "type": "text",
+      "question": "Which class is available from java.lang without an explicit import?",
       "options": [
-        { "type": "text", "value": "'a' < 'A'" },
-        { "type": "text", "value": "'A' < 'a'" },
-        { "type": "text", "value": "'a' == 'A'" },
-        { "type": "text", "value": "'A' > 'Z'" }
+        {
+          "type": "text",
+          "value": "File"
+        },
+        {
+          "type": "text",
+          "value": "Math"
+        },
+        {
+          "type": "text",
+          "value": "Scanner"
+        },
+        {
+          "type": "text",
+          "value": "ArrayList"
+        }
       ],
       "answer": 1,
-      "explanation": "Uppercase letters have smaller Unicode values than lowercase: 'A' (65) < 'a' (97)."
+      "explanation": "Math belongs to java.lang, which Java makes available automatically."
     },
     {
-      "id": 15,
-      "type": "code",
-      "question": "What does Character.isLetter('9') return?",
+      "id": "v2-7",
+      "type": "text",
+      "question": "What does import java.util.ArrayList; do?",
       "options": [
-        { "type": "text", "value": "9" },
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "error" }
+        {
+          "type": "text",
+          "value": "Runs a sorting algorithm"
+        },
+        {
+          "type": "text",
+          "value": "Copies all data into memory"
+        },
+        {
+          "type": "text",
+          "value": "Makes the class name available without its package prefix"
+        },
+        {
+          "type": "text",
+          "value": "Creates a list object"
+        }
       ],
       "answer": 2,
-      "explanation": "Character.isLetter() returns false for '9' because it's a digit, not a letter."
+      "explanation": "An import resolves a type name; object construction is a separate step."
     },
     {
-      "id": 16,
-      "type": "code",
-      "question": "Which represents a single quote character?",
+      "id": "v2-8",
+      "type": "text",
+      "question": "Where is Scanner located?",
       "options": [
-        { "type": "text", "value": "\"'\"" },
-        { "type": "text", "value": "'''" },
-        { "type": "text", "value": "\"\\\"\"" },
-        { "type": "text", "value": "'\\''" }
+        {
+          "type": "text",
+          "value": "java.math"
+        },
+        {
+          "type": "text",
+          "value": "java.text only"
+        },
+        {
+          "type": "text",
+          "value": "java.lang"
+        },
+        {
+          "type": "text",
+          "value": "java.util"
+        }
       ],
       "answer": 3,
-      "explanation": "To represent a single quote as a char literal, you must escape it: '\\'' inside single quotes."
+      "explanation": "Scanner is a library class in java.util."
+    },
+    {
+      "id": "v2-9",
+      "type": "text",
+      "question": "A documented method returns int. Which declaration can receive it?",
+      "options": [
+        {
+          "type": "text",
+          "value": "int result = Helper.count();"
+        },
+        {
+          "type": "text",
+          "value": "boolean result = Helper.count();"
+        },
+        {
+          "type": "text",
+          "value": "String result = Helper.count();"
+        },
+        {
+          "type": "text",
+          "value": "Helper.count() = result;"
+        }
+      ],
+      "answer": 0,
+      "explanation": "The receiving variable must have a compatible type."
+    },
+    {
+      "id": "v2-10",
+      "type": "text",
+      "question": "Why are example calls useful when reading documentation?",
+      "options": [
+        {
+          "type": "text",
+          "value": "They reveal every private field"
+        },
+        {
+          "type": "text",
+          "value": "They illustrate inputs and observable effects"
+        },
+        {
+          "type": "text",
+          "value": "They replace all preconditions"
+        },
+        {
+          "type": "text",
+          "value": "They prove no errors are possible"
+        }
+      ],
+      "answer": 1,
+      "explanation": "Examples help connect a general contract to a concrete use."
+    },
+    {
+      "id": "v2-11",
+      "type": "text",
+      "question": "An API method changes an object. What should documentation explain?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Only the line count"
+        },
+        {
+          "type": "text",
+          "value": "Only the current date"
+        },
+        {
+          "type": "text",
+          "value": "The state change as well as any returned result"
+        },
+        {
+          "type": "text",
+          "value": "Only the method name"
+        }
+      ],
+      "answer": 2,
+      "explanation": "A side effect is part of observable behavior."
+    },
+    {
+      "id": "v2-12",
+      "type": "text",
+      "question": "What does a return type of void mean?",
+      "options": [
+        {
+          "type": "text",
+          "value": "The method never executes"
+        },
+        {
+          "type": "text",
+          "value": "The method accepts no arguments"
+        },
+        {
+          "type": "text",
+          "value": "The method has no side effects"
+        },
+        {
+          "type": "text",
+          "value": "The method returns no value"
+        }
+      ],
+      "answer": 3,
+      "explanation": "void methods can perform actions but cannot supply an expression value."
+    },
+    {
+      "id": "v2-13",
+      "type": "text",
+      "question": "A method has overloads with int and String parameters. Which is chosen for argument \"4\"?",
+      "options": [
+        {
+          "type": "text",
+          "value": "The String overload"
+        },
+        {
+          "type": "text",
+          "value": "The int overload"
+        },
+        {
+          "type": "text",
+          "value": "Both overloads"
+        },
+        {
+          "type": "text",
+          "value": "Neither because all literals are int"
+        }
+      ],
+      "answer": 0,
+      "explanation": "A quoted literal has type String."
+    },
+    {
+      "id": "v2-14",
+      "type": "text",
+      "question": "If the required argument is a non-null String, is null automatically valid?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Only if the method is static"
+        },
+        {
+          "type": "text",
+          "value": "No, it violates the documented precondition"
+        },
+        {
+          "type": "text",
+          "value": "Yes, every reference is valid"
+        },
+        {
+          "type": "text",
+          "value": "Yes, null is an empty String"
+        }
+      ],
+      "answer": 1,
+      "explanation": "A reference type permits null syntactically, but a method contract may exclude it."
+    },
+    {
+      "id": "v2-15",
+      "type": "text",
+      "question": "Which is good client behavior when a library contract changes?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Remove all imports"
+        },
+        {
+          "type": "text",
+          "value": "Rename unrelated fields"
+        },
+        {
+          "type": "text",
+          "value": "Review affected calls and tests"
+        },
+        {
+          "type": "text",
+          "value": "Assume old behavior forever"
+        }
+      ],
+      "answer": 2,
+      "explanation": "Clients rely on the contract, so changed requirements must be assessed."
+    },
+    {
+      "id": "v2-16",
+      "type": "text",
+      "question": "What is a library?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Only a list of errors"
+        },
+        {
+          "type": "text",
+          "value": "A primitive data type"
+        },
+        {
+          "type": "text",
+          "value": "A single numeric literal"
+        },
+        {
+          "type": "text",
+          "value": "Reusable code that provides related functionality"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Libraries organize reusable classes and operations for other programs."
     }
   ]
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   View,
   FlatList,
@@ -18,7 +18,8 @@ import { Ionicons, MaterialIcons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { parseISO, isAfter } from 'date-fns';
 import { Text as RNText, ActivityIndicator } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { localDateKey } from '../utils/studyLogic';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../config/firebase";
 import { FontAwesome } from "@expo/vector-icons";
@@ -35,6 +36,8 @@ const HomeScreen = ({ navigation }) => {
   const navigation_ = useNavigation();
   const [profileIcon, setProfileIcon] = useState("person");
   const [streak, setStreak] = useState(0);
+  const [loadError, setLoadError] = useState('');
+  const [reload, setReload] = useState(0);
   const [isLoading, setIsLoading] = useState(true); // Add loading state
 
   const Text = (props) => (
@@ -62,11 +65,13 @@ const HomeScreen = ({ navigation }) => {
     return () => unsubscribe();
   }, [user]);
 
-  useEffect(() => {
+  useFocusEffect(useCallback(() => {
     if (!user) return;
+    let active = true;
 
     const fetchAllData = async () => {
       setIsLoading(true);
+      setLoadError('');
       try {
         const userRef = doc(db, "users", user.uid);
 
@@ -77,14 +82,14 @@ const HomeScreen = ({ navigation }) => {
 
         if (userSnap.exists()) {
           const data = userSnap.data();
-          const today = new Date().toISOString().split("T")[0];
+          const today = localDateKey();
 
           const lastDate = data.lastCompletedDate;
-          const todayStr = new Date().toISOString().split("T")[0];
+          const todayStr = localDateKey();
 
           const yesterday = new Date();
           yesterday.setDate(yesterday.getDate() - 1);
-          const yStr = yesterday.toISOString().split("T")[0];
+          const yStr = localDateKey(yesterday);
 
           if (lastDate === todayStr || lastDate === yStr) {
             setStreak(data.streak || 0);
@@ -94,25 +99,27 @@ const HomeScreen = ({ navigation }) => {
 
         }
 
+        if (!active) return;
         const scores = getScores();
         setScoresState(scores);
 
         await loadCalendar(user, scores);
         const items = getCalendarItems() || {};
+        if (!active) return;
         setCalendarItems(items);
 
-        const todayStr = new Date().toISOString().split('T')[0];
+        const todayStr = localDateKey();
         let nextLesson = null;
 
         if (Object.keys(items).length > 0) {
           const futureDates = Object.keys(items)
-            .filter((date) => isAfter(parseISO(date), parseISO(todayStr)))
+            .filter(date => items[date].some(l => (scores[l.id] ?? 0) < 4))
             .sort();
 
           const nextDate = futureDates.length > 0 ? futureDates[0] : todayStr;
 
           if (items[nextDate]?.length > 0) {
-            const lessonId = items[nextDate][0].id;
+            const lessonId = items[nextDate].find(l => (scores[l.id] ?? 0) < 4)?.id;
             const lessonData = units
               .flatMap(u => u.lessons)
               .find(l => l.id === lessonId);
@@ -139,13 +146,15 @@ const HomeScreen = ({ navigation }) => {
         setCurrentLesson(nextLesson);
       } catch (error) {
         console.error("Error loading data:", error);
+        if (active) setLoadError('Unable to load your progress. Check your connection and retry.');
       } finally {
-        setIsLoading(false);
+        if (active) setIsLoading(false);
       }
     };
 
     fetchAllData();
-  }, [user]);
+    return () => { active = false; };
+  }, [user, reload]));
 
   const toggleUnit = (unitId) => {
     LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
@@ -186,11 +195,13 @@ const HomeScreen = ({ navigation }) => {
   if (isLoading) {
     return (
       <SafeAreaView style={[styles.container, { justifyContent: 'center', alignItems: 'center' }]}>
-        <Image source={require('../../assets/icon.png')} />
+        <ActivityIndicator size="large" color={colors.basicButton} accessibilityLabel="Loading lessons" />
       </SafeAreaView>
 
     );
   }
+
+  if (loadError) return <SafeAreaView style={styles.container}><Text>{loadError}</Text><TouchableOpacity accessibilityRole="button" style={{ padding: 16 }} onPress={() => setReload(n => n + 1)}><Text>Retry</Text></TouchableOpacity></SafeAreaView>;
 
   return (
     <SafeAreaView style={styles.container}>
@@ -247,7 +258,6 @@ const HomeScreen = ({ navigation }) => {
             toggleUnit={toggleUnit}
             user={user}
             scoresState={scoresState}
-            locked={isUnitLocked(index, units, scoresState)}
           />
         )}
         showsVerticalScrollIndicator={false}
@@ -325,6 +335,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between'
   },
   welcomeTextColumn: {
+    flex: 1,
     flexDirection: 'column'
   },
   welcomeTextHeader: {

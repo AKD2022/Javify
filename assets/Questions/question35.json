@@ -1,214 +1,408 @@
 {
   "lessonId": 35,
-  "title": "Recap and Mini Quiz on Unit 2 Concepts",
+  "title": "3.8 Scope and Access",
+  "topic": "3.8",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What is a class in Java?",
+      "question": "What is scope?",
       "options": [
-        { "type": "text", "value": "A blueprint for creating objects that defines structure and behavior" },
-        { "type": "text", "value": "A type of variable" },
-        { "type": "text", "value": "A loop structure" },
-        { "type": "text", "value": "A mathematical function" }
+        {
+          "type": "text",
+          "value": "The region of code where a declared name can be used"
+        },
+        {
+          "type": "text",
+          "value": "The range of possible int values"
+        },
+        {
+          "type": "text",
+          "value": "The size of a file"
+        },
+        {
+          "type": "text",
+          "value": "The number of constructors"
+        }
       ],
       "answer": 0,
-      "explanation": "A class serves as a blueprint for creating objects, defining what data (instance variables) and behaviors (methods) objects will have."
+      "explanation": "Scope determines name visibility within the program structure."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "Are strings mutable or immutable in Java?",
+      "question": "What is the scope of a method parameter?",
       "options": [
-        { "type": "text", "value": "Mutable" },
-        { "type": "text", "value": "Immutable - String methods return new String objects" },
-        { "type": "text", "value": "It depends on how they're created" },
-        { "type": "text", "value": "They can be either" }
+        {
+          "type": "text",
+          "value": "Every source file"
+        },
+        {
+          "type": "text",
+          "value": "That method’s body"
+        },
+        {
+          "type": "text",
+          "value": "Every method in the class"
+        },
+        {
+          "type": "text",
+          "value": "All subclasses automatically"
+        }
       ],
       "answer": 1,
-      "explanation": "Strings are immutable in Java. String methods like substring(), trim(), and replace() return new String objects rather than modifying the original."
+      "explanation": "A parameter is local to its method invocation."
     },
     {
-      "id": 3,
+      "id": "v2-3",
       "type": "text",
-      "question": "What is method overloading?",
+      "question": "What happens when a local variable has the same name as an instance field?",
       "options": [
-        { "type": "text", "value": "Making methods too long" },
-        { "type": "text", "value": "Calling methods too many times" },
-        { "type": "text", "value": "Having multiple methods with the same name but different parameter lists" },
-        { "type": "text", "value": "Using too many methods" }
+        {
+          "type": "text",
+          "value": "The two automatically stay synchronized"
+        },
+        {
+          "type": "text",
+          "value": "The program always fails to compile"
+        },
+        {
+          "type": "text",
+          "value": "The local name shadows the field in that scope"
+        },
+        {
+          "type": "text",
+          "value": "The field is deleted"
+        }
       ],
       "answer": 2,
-      "explanation": "Method overloading allows multiple methods with the same name but different parameter lists, providing flexibility in how methods can be called."
+      "explanation": "An unqualified name resolves to the nearer declaration; this can distinguish the field."
     },
     {
-      "id": 4,
+      "id": "v2-4",
       "type": "text",
-      "question": "What does a void method return?",
+      "question": "Which accesses the instance field when a parameter shadows it?",
       "options": [
-        { "type": "text", "value": "Zero" },
-        { "type": "text", "value": "null" },
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "Nothing - void methods don't return any value" }
+        {
+          "type": "text",
+          "value": "local.value"
+        },
+        {
+          "type": "text",
+          "value": "static.value"
+        },
+        {
+          "type": "text",
+          "value": "value.this"
+        },
+        {
+          "type": "text",
+          "value": "this.value"
+        }
       ],
       "answer": 3,
-      "explanation": "Methods declared as void perform actions but don't return any value. They execute code but produce no result to be captured."
+      "explanation": "this identifies the current receiver object."
     },
     {
-      "id": 5,
+      "id": "v2-5",
       "type": "text",
-      "question": "What does Math.ceil(4.3) return?",
+      "question": "Can client code directly read a private field of another class?",
       "options": [
-        { "type": "text", "value": "5.0" },
-        { "type": "text", "value": "4.0" },
-        { "type": "text", "value": "4.3" },
-        { "type": "text", "value": "4" }
+        {
+          "type": "text",
+          "value": "No"
+        },
+        {
+          "type": "text",
+          "value": "Yes, if the variable name matches"
+        },
+        {
+          "type": "text",
+          "value": "Only when it is int"
+        },
+        {
+          "type": "text",
+          "value": "Only after calling a getter once"
+        }
       ],
       "answer": 0,
-      "explanation": "Math.ceil() rounds up to the nearest integer, so Math.ceil(4.3) returns 5.0 (the ceiling value)."
+      "explanation": "Private access is restricted to the declaring class."
     },
     {
-      "id": 6,
+      "id": "v2-6",
       "type": "text",
-      "question": "Which method converts a String to an int?",
+      "question": "Can code in a class access a private field of another instance of that same class?",
       "options": [
-        { "type": "text", "value": "String.toInt()" },
-        { "type": "text", "value": "Integer.parseInt()" },
-        { "type": "text", "value": "convert()" },
-        { "type": "text", "value": "toInteger()" }
+        {
+          "type": "text",
+          "value": "Only if both objects are equal"
+        },
+        {
+          "type": "text",
+          "value": "Yes"
+        },
+        {
+          "type": "text",
+          "value": "No, private is restricted to one object"
+        },
+        {
+          "type": "text",
+          "value": "Only if the field is static"
+        }
       ],
       "answer": 1,
-      "explanation": "Integer.parseInt() is the method used to convert a String representation of a number into an int primitive value."
+      "explanation": "Java private access is class-based, not limited to one receiver instance."
     },
     {
-      "id": 7,
+      "id": "v2-7",
       "type": "text",
-      "question": "What is autoboxing?",
+      "question": "Is a local declared inside an if block normally visible after that block?",
       "options": [
-        { "type": "text", "value": "Compressing data" },
-        { "type": "text", "value": "Creating boxes" },
-        { "type": "text", "value": "Automatic conversion from primitive to wrapper object" },
-        { "type": "text", "value": "Deleting objects" }
+        {
+          "type": "text",
+          "value": "Only when the if was true"
+        },
+        {
+          "type": "text",
+          "value": "Only when it is final"
+        },
+        {
+          "type": "text",
+          "value": "No"
+        },
+        {
+          "type": "text",
+          "value": "Yes, always"
+        }
       ],
       "answer": 2,
-      "explanation": "Autoboxing is the automatic conversion from a primitive value to its wrapper object, like converting int to Integer automatically."
+      "explanation": "Block-local scope ends with the block."
     },
     {
-      "id": 8,
+      "id": "v2-8",
       "type": "text",
-      "question": "What is a constructor?",
+      "question": "Why initialize a local before reading it?",
       "options": [
-        { "type": "text", "value": "A type of loop" },
-        { "type": "text", "value": "A variable" },
-        { "type": "text", "value": "A comment" },
-        { "type": "text", "value": "A special method that initializes objects when they're created" }
+        {
+          "type": "text",
+          "value": "All locals start as null"
+        },
+        {
+          "type": "text",
+          "value": "All locals start as zero"
+        },
+        {
+          "type": "text",
+          "value": "It makes the local public"
+        },
+        {
+          "type": "text",
+          "value": "Java requires definite assignment"
+        }
       ],
       "answer": 3,
-      "explanation": "A constructor is a special method with the same name as the class and no return type that initializes objects when they're created using the new keyword."
+      "explanation": "Local-variable initialization rules differ from field defaults."
     },
     {
-      "id": 9,
-      "type": "text",
-      "question": "What do object variables store?",
+      "id": "v2-9",
+      "type": "code",
+      "question": "What is the field afterward, assuming it starts at 2?\nvoid set(int value) { value = 99; }\n// The field is also named value.",
       "options": [
-        { "type": "text", "value": "References to objects' locations in memory, not the objects themselves" },
-        { "type": "text", "value": "The actual object data" },
-        { "type": "text", "value": "Copies of objects" },
-        { "type": "text", "value": "Class names" }
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 0,
-      "explanation": "Object variables store references (memory addresses) to where objects are located in memory, not the objects themselves."
+      "explanation": "The parameter shadows the field, so only the local parameter is assigned."
     },
     {
-      "id": 10,
-      "type": "text",
-      "question": "What does null represent?",
+      "id": "v2-10",
+      "type": "code",
+      "question": "What is the field afterward?\nvoid set(int value) { this.value = value; }\n// Call: set(2);",
       "options": [
-        { "type": "text", "value": "Zero" },
-        { "type": "text", "value": "A reference that doesn't point to any object" },
-        { "type": "text", "value": "An empty string" },
-        { "type": "text", "value": "False" }
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        }
       ],
       "answer": 1,
-      "explanation": "null is a special reference value that means the variable doesn't point to any object. It's like an empty reference pointing to nothing."
+      "explanation": "The qualified left side names the field; the unqualified right side names the parameter."
     },
     {
-      "id": 11,
-      "type": "text",
-      "question": "What does the this keyword refer to?",
+      "id": "v2-11",
+      "type": "code",
+      "question": "What is the field afterward, assuming it starts at 4?\nvoid set(int value) { value = 99; }\n// The field is also named value.",
       "options": [
-        { "type": "text", "value": "The class" },
-        { "type": "text", "value": "A static variable" },
-        { "type": "text", "value": "The current object whose method or constructor is being called" },
-        { "type": "text", "value": "The previous object" }
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 2,
-      "explanation": "The this keyword is a special reference that refers to the current object - the object whose method or constructor is being called."
+      "explanation": "The parameter shadows the field, so only the local parameter is assigned."
     },
     {
-      "id": 12,
-      "type": "text",
-      "question": "When should you use this in constructors?",
+      "id": "v2-12",
+      "type": "code",
+      "question": "What is the field afterward?\nvoid set(int value) { this.value = value; }\n// Call: set(4);",
       "options": [
-        { "type": "text", "value": "Never" },
-        { "type": "text", "value": "Always" },
-        { "type": "text", "value": "Only for static variables" },
-        { "type": "text", "value": "To distinguish between instance variables and parameters with the same name" }
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        }
       ],
       "answer": 3,
-      "explanation": "The most common use of this is to distinguish between instance variables and parameters that have the same name, particularly in constructors."
+      "explanation": "The qualified left side names the field; the unqualified right side names the parameter."
     },
     {
-      "id": 13,
-      "type": "text",
-      "question": "What is the difference between static and instance variables?",
+      "id": "v2-13",
+      "type": "code",
+      "question": "What is the field afterward, assuming it starts at 6?\nvoid set(int value) { value = 99; }\n// The field is also named value.",
       "options": [
-        { "type": "text", "value": "Static variables belong to the class and are shared, instance variables belong to individual objects" },
-        { "type": "text", "value": "Static variables are faster" },
-        { "type": "text", "value": "Instance variables are public" },
-        { "type": "text", "value": "There is no difference" }
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
       ],
       "answer": 0,
-      "explanation": "Static variables belong to the class and are shared by all objects, while instance variables belong to individual objects and each object has its own copy."
+      "explanation": "The parameter shadows the field, so only the local parameter is assigned."
     },
     {
-      "id": 14,
-      "type": "text",
-      "question": "Can static methods access instance variables?",
+      "id": "v2-14",
+      "type": "code",
+      "question": "What is the field afterward?\nvoid set(int value) { this.value = value; }\n// Call: set(6);",
       "options": [
-        { "type": "text", "value": "Yes, always" },
-        { "type": "text", "value": "No, they can only access static variables" },
-        { "type": "text", "value": "Only with this keyword" },
-        { "type": "text", "value": "Only in constructors" }
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 1,
-      "explanation": "Static methods can only directly access static variables and other static methods because they belong to the class, not to any specific object."
+      "explanation": "The qualified left side names the field; the unqualified right side names the parameter."
     },
     {
-      "id": 15,
-      "type": "text",
-      "question": "Which is correct for comparing String content?",
+      "id": "v2-15",
+      "type": "code",
+      "question": "What is the field afterward, assuming it starts at 8?\nvoid set(int value) { value = 99; }\n// The field is also named value.",
       "options": [
-        { "type": "text", "value": "str1 == str2" },
-        { "type": "text", "value": "str1.compare(str2)" },
-        { "type": "text", "value": "str1.same(str2)" },
-        { "type": "text", "value": "str1.equals(str2)" }
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
+      ],
+      "answer": 2,
+      "explanation": "The parameter shadows the field, so only the local parameter is assigned."
+    },
+    {
+      "id": "v2-16",
+      "type": "code",
+      "question": "What is the field afterward?\nvoid set(int value) { this.value = value; }\n// Call: set(8);",
+      "options": [
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        }
       ],
       "answer": 3,
-      "explanation": "You should always use the equals() method to compare String content, not == which compares references to see if they point to the same object."
-    },
-    {
-      "id": 16,
-      "type": "text",
-      "question": "What keyword is required to create a new object?",
-      "options": [
-        { "type": "text", "value": "new" },
-        { "type": "text", "value": "create" },
-        { "type": "text", "value": "make" },
-        { "type": "text", "value": "object" }
-      ],
-      "answer": 0,
-      "explanation": "The new keyword is required to create a new object, allocating memory and calling the constructor to initialize the object."
+      "explanation": "The qualified left side names the field; the unqualified right side names the parameter."
     }
   ]
 }

@@ -1,214 +1,406 @@
 {
   "lessonId": 4,
-  "title": "int Data Type and Integer Operations",
+  "title": "Assignment Statements and Input",
   "questions": [
     {
       "id": 1,
-      "type": "text",
-      "question": "What is the range of values that an int can store in Java?",
+      "type": "code",
+      "question": "What is b?\nint a = 3;\nint b = a;\na = a + 5;",
       "options": [
-        { "type": "text", "value": "-2,147,483,648 to 2,147,483,647" },
-        { "type": "text", "value": "0 to 4,294,967,295" },
-        { "type": "text", "value": "-32,768 to 32,767" },
-        { "type": "text", "value": "0 to 2,147,483,647" }
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 0,
-      "explanation": "Java int is a 32-bit signed integer with range from -2,147,483,648 to 2,147,483,647."
+      "explanation": "Assignment copies the current primitive value, not a live connection to the source variable."
     },
     {
       "id": 2,
       "type": "code",
-      "question": "What is the result of: 15 / 4",
+      "question": "What is x?\nint x = 3;\nx = x + 4;",
       "options": [
-        { "type": "text", "value": "3.75" },
-        { "type": "text", "value": "3" },
-        { "type": "text", "value": "4" },
-        { "type": "text", "value": "3.0" }
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 1,
-      "explanation": "Integer division truncates the decimal portion, so 15 / 4 = 3, not 3.75."
+      "explanation": "Evaluate x + 4 with the old value, then store the result."
     },
     {
       "id": 3,
       "type": "code",
-      "question": "What is the result of: 17 % 5",
+      "question": "What is total if readCount() returns 3?\nint count = readCount();\nint total = count * 2;",
       "options": [
-        { "type": "text", "value": "3" },
-        { "type": "text", "value": "12" },
-        { "type": "text", "value": "2" },
-        { "type": "text", "value": "0" }
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        }
       ],
       "answer": 2,
-      "explanation": "The modulus operator returns the remainder: 17 ÷ 5 = 3 remainder 2, so 17 % 5 = 2."
+      "explanation": "A returning method supplies a value used in the assignment and later expression."
     },
     {
       "id": 4,
-      "type": "code",
-      "question": "What is the result of: 2 + 3 * 4",
+      "type": "text",
+      "question": "Which declaration can store 3.5 without losing the fractional part?",
       "options": [
-        { "type": "text", "value": "20" },
-        { "type": "text", "value": "24" },
-        { "type": "text", "value": "9" },
-        { "type": "text", "value": "14" }
+        {
+          "type": "text",
+          "value": "int value = 3.5;"
+        },
+        {
+          "type": "text",
+          "value": "boolean value = 3.5;"
+        },
+        {
+          "type": "text",
+          "value": "String value = 3.5;"
+        },
+        {
+          "type": "text",
+          "value": "double value = 3.5;"
+        }
       ],
       "answer": 3,
-      "explanation": "Multiplication has higher precedence: 3 * 4 = 12, then 2 + 12 = 14."
+      "explanation": "A decimal literal has type double and cannot be assigned directly to int, boolean, or String."
     },
     {
       "id": 5,
       "type": "code",
-      "question": "If int x = 10; and x += 5; what is the value of x?",
+      "question": "What is b?\nint a = 6;\nint b = a;\na = a + 5;",
       "options": [
-        { "type": "text", "value": "15" },
-        { "type": "text", "value": "10" },
-        { "type": "text", "value": "5" },
-        { "type": "text", "value": "50" }
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
       ],
       "answer": 0,
-      "explanation": "The += operator adds 5 to x: x = x + 5 = 10 + 5 = 15."
+      "explanation": "Assignment copies the current primitive value, not a live connection to the source variable."
     },
     {
       "id": 6,
       "type": "code",
-      "question": "What happens to int x = 7; after x++?",
+      "question": "What is x?\nint x = 6;\nx = x + 4;",
       "options": [
-        { "type": "text", "value": "x becomes 6" },
-        { "type": "text", "value": "x becomes 8" },
-        { "type": "text", "value": "x stays 7" },
-        { "type": "text", "value": "x becomes 14" }
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
       ],
       "answer": 1,
-      "explanation": "The increment operator (++) adds 1 to the variable, so x becomes 8."
+      "explanation": "Evaluate x + 4 with the old value, then store the result."
     },
     {
       "id": 7,
       "type": "code",
-      "question": "What is the result of: (10 - 6) / 2",
+      "question": "What is total if readCount() returns 6?\nint count = readCount();\nint total = count * 2;",
       "options": [
-        { "type": "text", "value": "7" },
-        { "type": "text", "value": "1" },
-        { "type": "text", "value": "2" },
-        { "type": "text", "value": "4" }
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        }
       ],
       "answer": 2,
-      "explanation": "Parentheses first: (10 - 6) = 4, then 4 / 2 = 2."
+      "explanation": "A returning method supplies a value used in the assignment and later expression."
     },
     {
       "id": 8,
       "type": "text",
-      "question": "What does integer division do with the decimal portion?",
+      "question": "Which declaration can store 6.5 without losing the fractional part?",
       "options": [
-        { "type": "text", "value": "Rounds to nearest integer" },
-        { "type": "text", "value": "Rounds up" },
-        { "type": "text", "value": "Rounds down" },
-        { "type": "text", "value": "Truncates (cuts off) the decimal portion" }
+        {
+          "type": "text",
+          "value": "int value = 6.5;"
+        },
+        {
+          "type": "text",
+          "value": "boolean value = 6.5;"
+        },
+        {
+          "type": "text",
+          "value": "String value = 6.5;"
+        },
+        {
+          "type": "text",
+          "value": "double value = 6.5;"
+        }
       ],
       "answer": 3,
-      "explanation": "Integer division truncates the decimal portion, always rounding toward zero."
+      "explanation": "A decimal literal has type double and cannot be assigned directly to int, boolean, or String."
     },
     {
       "id": 9,
       "type": "code",
-      "question": "What is the result of: 20 % 4",
+      "question": "What is b?\nint a = 9;\nint b = a;\na = a + 5;",
       "options": [
-        { "type": "text", "value": "0" },
-        { "type": "text", "value": "4" },
-        { "type": "text", "value": "5" },
-        { "type": "text", "value": "1" }
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        }
       ],
       "answer": 0,
-      "explanation": "20 divides evenly by 4 (20 ÷ 4 = 5 remainder 0), so 20 % 4 = 0."
+      "explanation": "Assignment copies the current primitive value, not a live connection to the source variable."
     },
     {
       "id": 10,
-      "type": "text",
-      "question": "Which operator has higher precedence?",
+      "type": "code",
+      "question": "What is x?\nint x = 9;\nx = x + 4;",
       "options": [
-        { "type": "text", "value": "Addition (+)" },
-        { "type": "text", "value": "Multiplication (*)" },
-        { "type": "text", "value": "Subtraction (-)" },
-        { "type": "text", "value": "All have equal precedence" }
+        {
+          "type": "text",
+          "value": "16"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        }
       ],
       "answer": 1,
-      "explanation": "Multiplication (*) has higher precedence than addition (+) and subtraction (-)."
+      "explanation": "Evaluate x + 4 with the old value, then store the result."
     },
     {
       "id": 11,
       "type": "code",
-      "question": "What is the result of: 7 % 10",
+      "question": "What is total if readCount() returns 9?\nint count = readCount();\nint total = count * 2;",
       "options": [
-        { "type": "text", "value": "0" },
-        { "type": "text", "value": "3" },
-        { "type": "text", "value": "7" },
-        { "type": "text", "value": "1" }
+        {
+          "type": "text",
+          "value": "17"
+        },
+        {
+          "type": "text",
+          "value": "21"
+        },
+        {
+          "type": "text",
+          "value": "18"
+        },
+        {
+          "type": "text",
+          "value": "19"
+        }
       ],
       "answer": 2,
-      "explanation": "When the dividend is smaller than divisor, the result is the dividend: 7 ÷ 10 = 0 remainder 7."
+      "explanation": "A returning method supplies a value used in the assignment and later expression."
     },
     {
       "id": 12,
       "type": "text",
-      "question": "What happens when an int calculation exceeds the maximum value?",
+      "question": "Which declaration can store 9.5 without losing the fractional part?",
       "options": [
-        { "type": "text", "value": "Java throws an error" },
-        { "type": "text", "value": "The program crashes" },
-        { "type": "text", "value": "The result becomes infinity" },
-        { "type": "text", "value": "Integer overflow occurs and wraps around" }
+        {
+          "type": "text",
+          "value": "int value = 9.5;"
+        },
+        {
+          "type": "text",
+          "value": "boolean value = 9.5;"
+        },
+        {
+          "type": "text",
+          "value": "String value = 9.5;"
+        },
+        {
+          "type": "text",
+          "value": "double value = 9.5;"
+        }
       ],
       "answer": 3,
-      "explanation": "Integer overflow causes the value to wrap around to the negative range without error."
+      "explanation": "A decimal literal has type double and cannot be assigned directly to int, boolean, or String."
     },
     {
       "id": 13,
       "type": "code",
-      "question": "If int y = 12; and y -= 4; what is y?",
+      "question": "What is b?\nint a = 12;\nint b = a;\na = a + 5;",
       "options": [
-        { "type": "text", "value": "8" },
-        { "type": "text", "value": "16" },
-        { "type": "text", "value": "12" },
-        { "type": "text", "value": "4" }
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        }
       ],
       "answer": 0,
-      "explanation": "The -= operator subtracts 4 from y: y = y - 4 = 12 - 4 = 8."
+      "explanation": "Assignment copies the current primitive value, not a live connection to the source variable."
     },
     {
       "id": 14,
       "type": "code",
-      "question": "What is the result of: -7 / 2",
+      "question": "What is x?\nint x = 12;\nx = x + 4;",
       "options": [
-        { "type": "text", "value": "-4" },
-        { "type": "text", "value": "-3" },
-        { "type": "text", "value": "-3.5" },
-        { "type": "text", "value": "3" }
+        {
+          "type": "text",
+          "value": "19"
+        },
+        {
+          "type": "text",
+          "value": "16"
+        },
+        {
+          "type": "text",
+          "value": "17"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        }
       ],
       "answer": 1,
-      "explanation": "Integer division truncates toward zero: -7 / 2 = -3 (not -4)."
+      "explanation": "Evaluate x + 4 with the old value, then store the result."
     },
     {
       "id": 15,
-      "type": "text",
-      "question": "Which symbol represents the modulus operator?",
+      "type": "code",
+      "question": "What is total if readCount() returns 12?\nint count = readCount();\nint total = count * 2;",
       "options": [
-        { "type": "text", "value": "/" },
-        { "type": "text", "value": "*" },
-        { "type": "text", "value": "%" },
-        { "type": "text", "value": "//" }
+        {
+          "type": "text",
+          "value": "23"
+        },
+        {
+          "type": "text",
+          "value": "27"
+        },
+        {
+          "type": "text",
+          "value": "24"
+        },
+        {
+          "type": "text",
+          "value": "25"
+        }
       ],
       "answer": 2,
-      "explanation": "The percent symbol (%) is the modulus operator that returns the remainder of division."
+      "explanation": "A returning method supplies a value used in the assignment and later expression."
     },
     {
       "id": 16,
-      "type": "code",
-      "question": "What does int count = 5; count--; result in?",
+      "type": "text",
+      "question": "Which declaration can store 12.5 without losing the fractional part?",
       "options": [
-        { "type": "text", "value": "count = 6" },
-        { "type": "text", "value": "count = 5" },
-        { "type": "text", "value": "count = 0" },
-        { "type": "text", "value": "count = 4" }
+        {
+          "type": "text",
+          "value": "int value = 12.5;"
+        },
+        {
+          "type": "text",
+          "value": "boolean value = 12.5;"
+        },
+        {
+          "type": "text",
+          "value": "String value = 12.5;"
+        },
+        {
+          "type": "text",
+          "value": "double value = 12.5;"
+        }
       ],
       "answer": 3,
-      "explanation": "The decrement operator (--) subtracts 1 from the variable, so count becomes 4."
+      "explanation": "A decimal literal has type double and cannot be assigned directly to int, boolean, or String."
     }
   ]
 }

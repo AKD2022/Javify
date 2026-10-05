@@ -1,3 +1,18 @@
 {
-    "search.useIgnoreFiles": true
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/android/**": true,
+    "**/ios/**": true
+  },
+
+  "search.exclude": {
+    "**/node_modules/**": true,
+    "**/android/**": true,
+    "**/ios/**": true
+  },
+
+  "java.configuration.updateBuildConfiguration": "disabled",
+  "java.import.exclusions": [
+    "**/node_modules/**"
+  ]
 }

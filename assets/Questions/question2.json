@@ -1,214 +1,408 @@
 {
   "lessonId": 2,
-  "title": "Setting Up Development Environment & Hello World",
+  "title": "1.2 Variables and Data Types",
+  "topic": "1.2",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What does JDK stand for?",
+      "question": "Which primitive type stores a true/false value?",
       "options": [
-        { "type": "text", "value": "Java Development Kit" },
-        { "type": "text", "value": "Java Deployment Kit" },
-        { "type": "text", "value": "Java Design Kit" },
-        { "type": "text", "value": "Java Documentation Kit" }
+        {
+          "type": "text",
+          "value": "boolean"
+        },
+        {
+          "type": "text",
+          "value": "int"
+        },
+        {
+          "type": "text",
+          "value": "double"
+        },
+        {
+          "type": "text",
+          "value": "String"
+        }
       ],
       "answer": 0,
-      "explanation": "JDK stands for Java Development Kit, which contains all tools needed to develop Java applications."
+      "explanation": "boolean has exactly two values: true and false."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "Which command compiles a Java source file?",
+      "question": "Which is a reference type?",
       "options": [
-        { "type": "text", "value": "java" },
-        { "type": "text", "value": "javac" },
-        { "type": "text", "value": "compile" },
-        { "type": "text", "value": "run" }
+        {
+          "type": "text",
+          "value": "boolean"
+        },
+        {
+          "type": "text",
+          "value": "String"
+        },
+        {
+          "type": "text",
+          "value": "int"
+        },
+        {
+          "type": "text",
+          "value": "double"
+        }
       ],
       "answer": 1,
-      "explanation": "javac is the Java compiler command that converts .java source files into .class bytecode files."
+      "explanation": "String variables refer to objects; the other choices are primitive types."
     },
     {
-      "id": 3,
+      "id": "v2-3",
       "type": "text",
-      "question": "What file extension do compiled Java programs have?",
+      "question": "Which declaration stores a decimal measurement?",
       "options": [
-        { "type": "text", "value": ".java" },
-        { "type": "text", "value": ".exe" },
-        { "type": "text", "value": ".class" },
-        { "type": "text", "value": ".compile" }
+        {
+          "type": "text",
+          "value": "boolean length = 2.75;"
+        },
+        {
+          "type": "text",
+          "value": "String length = 2.75;"
+        },
+        {
+          "type": "text",
+          "value": "double length = 2.75;"
+        },
+        {
+          "type": "text",
+          "value": "int length = 2.75;"
+        }
       ],
       "answer": 2,
-      "explanation": "Compiled Java programs have the .class extension, containing bytecode that runs on the JVM."
+      "explanation": "The decimal literal has type double."
     },
     {
-      "id": 4,
+      "id": "v2-4",
       "type": "text",
-      "question": "What does the static keyword mean in the main method?",
+      "question": "Which declaration is valid?",
       "options": [
-        { "type": "text", "value": "The method cannot be changed" },
-        { "type": "text", "value": "The method is slow" },
-        { "type": "text", "value": "The method is private" },
-        { "type": "text", "value": "The method belongs to the class itself, not individual objects" }
+        {
+          "type": "text",
+          "value": "int 12count = 0;"
+        },
+        {
+          "type": "text",
+          "value": "int class = 0;"
+        },
+        {
+          "type": "text",
+          "value": "int count = \"12\";"
+        },
+        {
+          "type": "text",
+          "value": "int count = 12;"
+        }
       ],
       "answer": 3,
-      "explanation": "static means the method belongs to the class itself rather than to individual object instances."
+      "explanation": "Identifiers cannot begin with a digit or be reserved keywords, and the assigned type must be compatible."
     },
     {
-      "id": 5,
+      "id": "v2-5",
+      "type": "text",
+      "question": "What does a variable type determine?",
+      "options": [
+        {
+          "type": "text",
+          "value": "The kind of value and permitted operations"
+        },
+        {
+          "type": "text",
+          "value": "Its only possible name"
+        },
+        {
+          "type": "text",
+          "value": "The number of comments"
+        },
+        {
+          "type": "text",
+          "value": "The program goal"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Types constrain values and operations such as arithmetic or method calls."
+    },
+    {
+      "id": "v2-6",
+      "type": "text",
+      "question": "Can a local int variable be read before it is initialized?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Only if its name is short"
+        },
+        {
+          "type": "text",
+          "value": "No, Java reports a compile-time error"
+        },
+        {
+          "type": "text",
+          "value": "Yes, it always contains zero"
+        },
+        {
+          "type": "text",
+          "value": "Yes, it contains null"
+        }
+      ],
+      "answer": 1,
+      "explanation": "Local variables must be definitely assigned before use."
+    },
+    {
+      "id": "v2-7",
+      "type": "text",
+      "question": "Which is a boolean literal?",
+      "options": [
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "False"
+        },
+        {
+          "type": "text",
+          "value": "false"
+        },
+        {
+          "type": "text",
+          "value": "\"false\""
+        }
+      ],
+      "answer": 2,
+      "explanation": "Java boolean literals are lowercase true and false; quoted text is a String."
+    },
+    {
+      "id": "v2-8",
+      "type": "text",
+      "question": "What is the effect of final on an initialized primitive variable?",
+      "options": [
+        {
+          "type": "text",
+          "value": "It becomes a String"
+        },
+        {
+          "type": "text",
+          "value": "It is automatically zero"
+        },
+        {
+          "type": "text",
+          "value": "It cannot be read"
+        },
+        {
+          "type": "text",
+          "value": "It cannot be assigned a new value"
+        }
+      ],
+      "answer": 3,
+      "explanation": "A final variable may be read but cannot be reassigned after initialization."
+    },
+    {
+      "id": "v2-9",
       "type": "code",
-      "question": "What is the output of this code?\nSystem.out.println(\"Hello\");\nSystem.out.println(\"World\");",
+      "question": "What is a?\nint a = 2;\nint b = a;\nb = b + 2;",
       "options": [
-        { "type": "text", "value": "Hello\nWorld" },
-        { "type": "text", "value": "HelloWorld" },
-        { "type": "text", "value": "Hello World" },
-        { "type": "text", "value": "World\nHello" }
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 0,
-      "explanation": "println prints each string on a separate line, so \"Hello\" appears on the first line and \"World\" on the second."
+      "explanation": "The assignment copied a primitive value. Changing b does not change a."
     },
     {
-      "id": 6,
-      "type": "text",
-      "question": "What does void mean in the main method signature?",
+      "id": "v2-10",
+      "type": "code",
+      "question": "What is b?\nint a = 2;\nint b = a + 3;\na = 0;",
       "options": [
-        { "type": "text", "value": "The method is empty" },
-        { "type": "text", "value": "The method returns no value" },
-        { "type": "text", "value": "The method is broken" },
-        { "type": "text", "value": "The method is optional" }
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        }
       ],
       "answer": 1,
-      "explanation": "void indicates that the method does not return any value when it completes execution."
+      "explanation": "b receives the expression value when the assignment executes; it is not a live formula."
     },
     {
-      "id": 7,
-      "type": "text",
-      "question": "Which symbol ends every Java statement?",
+      "id": "v2-11",
+      "type": "code",
+      "question": "What is a?\nint a = 5;\nint b = a;\nb = b + 2;",
       "options": [
-        { "type": "text", "value": "." },
-        { "type": "text", "value": "," },
-        { "type": "text", "value": ";" },
-        { "type": "text", "value": ":" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 2,
-      "explanation": "Every Java statement must end with a semicolon (;) to indicate the end of the statement."
+      "explanation": "The assignment copied a primitive value. Changing b does not change a."
     },
     {
-      "id": 8,
-      "type": "text",
-      "question": "What must match exactly between the class name and filename?",
+      "id": "v2-12",
+      "type": "code",
+      "question": "What is b?\nint a = 5;\nint b = a + 3;\na = 0;",
       "options": [
-        { "type": "text", "value": "The size" },
-        { "type": "text", "value": "The creation date" },
-        { "type": "text", "value": "The location" },
-        { "type": "text", "value": "The spelling and capitalization" }
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        }
       ],
       "answer": 3,
-      "explanation": "The class name must exactly match the filename including capitalization. HelloWorld class must be in HelloWorld.java."
+      "explanation": "b receives the expression value when the assignment executes; it is not a live formula."
     },
     {
-      "id": 9,
-      "type": "text",
-      "question": "What does String[] args represent in the main method?",
+      "id": "v2-13",
+      "type": "code",
+      "question": "What is a?\nint a = 8;\nint b = a;\nb = b + 2;",
       "options": [
-        { "type": "text", "value": "Command-line arguments" },
-        { "type": "text", "value": "The program output" },
-        { "type": "text", "value": "Error messages" },
-        { "type": "text", "value": "The class name" }
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        }
       ],
       "answer": 0,
-      "explanation": "String[] args represents command-line arguments that can be passed to the program when it starts."
+      "explanation": "The assignment copied a primitive value. Changing b does not change a."
     },
     {
-      "id": 10,
-      "type": "text",
-      "question": "Which IDE is commonly used for Java development?",
+      "id": "v2-14",
+      "type": "code",
+      "question": "What is b?\nint a = 8;\nint b = a + 3;\na = 0;",
       "options": [
-        { "type": "text", "value": "Notepad" },
-        { "type": "text", "value": "Eclipse" },
-        { "type": "text", "value": "Paint" },
-        { "type": "text", "value": "Calculator" }
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        }
       ],
       "answer": 1,
-      "explanation": "Eclipse is a popular IDE for Java development, along with IntelliJ IDEA and Visual Studio Code."
+      "explanation": "b receives the expression value when the assignment executes; it is not a live formula."
     },
     {
-      "id": 11,
-      "type": "text",
-      "question": "What symbols define code blocks in Java?",
+      "id": "v2-15",
+      "type": "code",
+      "question": "What is a?\nint a = 11;\nint b = a;\nb = b + 2;",
       "options": [
-        { "type": "text", "value": "( )" },
-        { "type": "text", "value": "[ ]" },
-        { "type": "text", "value": "{ }" },
-        { "type": "text", "value": "< >" }
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        }
       ],
       "answer": 2,
-      "explanation": "Curly braces { } define code blocks in Java, grouping statements together within methods and classes."
+      "explanation": "The assignment copied a primitive value. Changing b does not change a."
     },
     {
-      "id": 12,
-      "type": "text",
-      "question": "What happens when you compile a Java program with syntax errors?",
+      "id": "v2-16",
+      "type": "code",
+      "question": "What is b?\nint a = 11;\nint b = a + 3;\na = 0;",
       "options": [
-        { "type": "text", "value": "It runs anyway" },
-        { "type": "text", "value": "It creates a warning" },
-        { "type": "text", "value": "It deletes the file" },
-        { "type": "text", "value": "Compilation fails and displays error messages" }
+        {
+          "type": "text",
+          "value": "15"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "17"
+        },
+        {
+          "type": "text",
+          "value": "14"
+        }
       ],
       "answer": 3,
-      "explanation": "If there are syntax errors, compilation fails and the compiler displays error messages indicating what needs to be fixed."
-    },
-    {
-      "id": 13,
-      "type": "text",
-      "question": "What does System.out.println() do?",
-      "options": [
-        { "type": "text", "value": "Prints text to the console followed by a new line" },
-        { "type": "text", "value": "Deletes text from the console" },
-        { "type": "text", "value": "Saves text to a file" },
-        { "type": "text", "value": "Sends text over the internet" }
-      ],
-      "answer": 0,
-      "explanation": "System.out.println() prints the specified text to the console and then moves to the next line."
-    },
-    {
-      "id": 14,
-      "type": "text",
-      "question": "Is Java case-sensitive?",
-      "options": [
-        { "type": "text", "value": "No, all letters are treated the same" },
-        { "type": "text", "value": "Yes, System and system are different" },
-        { "type": "text", "value": "Only for class names" },
-        { "type": "text", "value": "Only for method names" }
-      ],
-      "answer": 1,
-      "explanation": "Java is case-sensitive, meaning System and system are completely different identifiers."
-    },
-    {
-      "id": 15,
-      "type": "text",
-      "question": "What component is part of the JDK?",
-      "options": [
-        { "type": "text", "value": "Web browser" },
-        { "type": "text", "value": "Music player" },
-        { "type": "text", "value": "Java compiler (javac)" },
-        { "type": "text", "value": "Photo editor" }
-      ],
-      "answer": 2,
-      "explanation": "The Java compiler (javac) is a key component of the JDK, used to compile .java files into bytecode."
-    },
-    {
-      "id": 16,
-      "type": "text",
-      "question": "What should you do before running a Java program?",
-      "options": [
-        { "type": "text", "value": "Restart your computer" },
-        { "type": "text", "value": "Delete old files" },
-        { "type": "text", "value": "Check the weather" },
-        { "type": "text", "value": "Compile the .java file using javac" }
-      ],
-      "answer": 3,
-      "explanation": "You must first compile the .java source file using javac to create the .class bytecode file before running it."
+      "explanation": "b receives the expression value when the assignment executes; it is not a live formula."
     }
   ]
 }

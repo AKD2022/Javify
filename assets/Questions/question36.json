@@ -1,214 +1,408 @@
 {
   "lessonId": 36,
-  "title": "Introduction to Boolean Expressions",
+  "title": "3.9 this Keyword",
+  "topic": "3.9",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What is a boolean expression?",
+      "question": "What does this refer to inside an instance method?",
       "options": [
-        { "type": "text", "value": "Any expression that evaluates to true or false" },
-        { "type": "text", "value": "A mathematical equation" },
-        { "type": "text", "value": "A type of loop" },
-        { "type": "text", "value": "A string comparison" }
+        {
+          "type": "text",
+          "value": "The object receiving that method call"
+        },
+        {
+          "type": "text",
+          "value": "The class object automatically"
+        },
+        {
+          "type": "text",
+          "value": "The previous caller’s local variables"
+        },
+        {
+          "type": "text",
+          "value": "Every object of the class"
+        }
       ],
       "answer": 0,
-      "explanation": "A boolean expression is any expression that evaluates to a boolean value - either true or false. These expressions are fundamental to decision-making in programs."
+      "explanation": "this is the current receiver reference."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "What are the two possible values of the boolean primitive type?",
+      "question": "Where is this also available?",
       "options": [
-        { "type": "text", "value": "0 and 1" },
-        { "type": "text", "value": "true and false" },
-        { "type": "text", "value": "yes and no" },
-        { "type": "text", "value": "on and off" }
+        {
+          "type": "text",
+          "value": "Only in comments"
+        },
+        {
+          "type": "text",
+          "value": "Inside an instance constructor"
+        },
+        {
+          "type": "text",
+          "value": "Inside every static method"
+        },
+        {
+          "type": "text",
+          "value": "Only in imports"
+        }
       ],
       "answer": 1,
-      "explanation": "The boolean primitive type stores only two possible values: true or false. Java uses these explicit keywords, not numbers."
+      "explanation": "During construction this refers to the object being initialized."
     },
     {
-      "id": 3,
+      "id": "v2-3",
       "type": "text",
-      "question": "What does the expression (5 > 3) evaluate to?",
+      "question": "Can a static method use this directly?",
       "options": [
-        { "type": "text", "value": "5" },
-        { "type": "text", "value": "3" },
-        { "type": "text", "value": "true" },
-        { "type": "text", "value": "2" }
+        {
+          "type": "text",
+          "value": "Yes, if the class has a constructor"
+        },
+        {
+          "type": "text",
+          "value": "Only when it has parameters"
+        },
+        {
+          "type": "text",
+          "value": "No"
+        },
+        {
+          "type": "text",
+          "value": "Yes, if it returns int"
+        }
       ],
       "answer": 2,
-      "explanation": "The expression (5 > 3) is a boolean expression that evaluates to true because 5 is indeed greater than 3."
+      "explanation": "There is no instance receiver for a static method."
     },
     {
-      "id": 4,
+      "id": "v2-4",
       "type": "text",
-      "question": "What are boolean expressions used for in programming?",
+      "question": "Why write this.name = name in a constructor?",
       "options": [
-        { "type": "text", "value": "Storing large numbers" },
-        { "type": "text", "value": "Creating loops only" },
-        { "type": "text", "value": "Printing output" },
-        { "type": "text", "value": "Controlling program flow and making decisions" }
+        {
+          "type": "text",
+          "value": "To create a static field"
+        },
+        {
+          "type": "text",
+          "value": "To copy every object"
+        },
+        {
+          "type": "text",
+          "value": "To make the parameter global"
+        },
+        {
+          "type": "text",
+          "value": "To distinguish the field from a same-named parameter"
+        }
       ],
       "answer": 3,
-      "explanation": "Boolean expressions are used to control program flow because they determine which code executes and which code is skipped based on conditions."
+      "explanation": "The qualified field receives the local parameter value."
     },
     {
-      "id": 5,
+      "id": "v2-5",
       "type": "text",
-      "question": "Can you store the result of a boolean expression in a variable?",
+      "question": "Can this be passed as a method argument?",
       "options": [
-        { "type": "text", "value": "Yes, in a boolean variable" },
-        { "type": "text", "value": "No, never" },
-        { "type": "text", "value": "Only in String variables" },
-        { "type": "text", "value": "Only in int variables" }
+        {
+          "type": "text",
+          "value": "Yes, when the parameter type is compatible"
+        },
+        {
+          "type": "text",
+          "value": "No, it is not a reference"
+        },
+        {
+          "type": "text",
+          "value": "Only to a void method"
+        },
+        {
+          "type": "text",
+          "value": "Only after casting to int"
+        }
       ],
       "answer": 0,
-      "explanation": "You can store the result of a boolean expression in a boolean variable, which can make your code more readable and reusable."
+      "explanation": "this can supply the current object’s reference to another operation."
     },
     {
-      "id": 6,
+      "id": "v2-6",
       "type": "text",
-      "question": "When does a boolean expression evaluate?",
+      "question": "What does this.getCount() invoke?",
       "options": [
-        { "type": "text", "value": "Never" },
-        { "type": "text", "value": "Completely before being used" },
-        { "type": "text", "value": "After the program ends" },
-        { "type": "text", "value": "Only when printed" }
+        {
+          "type": "text",
+          "value": "A method on null"
+        },
+        {
+          "type": "text",
+          "value": "getCount on the current object"
+        },
+        {
+          "type": "text",
+          "value": "The constructor of every object"
+        },
+        {
+          "type": "text",
+          "value": "Only a class method"
+        }
       ],
       "answer": 1,
-      "explanation": "Boolean expressions evaluate completely before being used. Java computes the entire expression and determines whether it's true or false, then uses that result."
+      "explanation": "The receiver is explicitly the current object."
     },
     {
-      "id": 7,
+      "id": "v2-7",
       "type": "text",
-      "question": "In boolean expressions, which operations are performed first?",
+      "question": "Does this create a new object?",
       "options": [
-        { "type": "text", "value": "Comparisons" },
-        { "type": "text", "value": "Boolean operations" },
-        { "type": "text", "value": "Arithmetic operations" },
-        { "type": "text", "value": "String operations" }
+        {
+          "type": "text",
+          "value": "Only in setters"
+        },
+        {
+          "type": "text",
+          "value": "Only when used as an argument"
+        },
+        {
+          "type": "text",
+          "value": "No"
+        },
+        {
+          "type": "text",
+          "value": "Yes, on every access"
+        }
       ],
       "answer": 2,
-      "explanation": "The order of operations applies to boolean expressions - arithmetic operations are performed before comparisons."
+      "explanation": "this is an existing receiver reference, not a constructor call."
     },
     {
-      "id": 8,
+      "id": "v2-8",
       "type": "text",
-      "question": "Can boolean variables be reassigned new values?",
+      "question": "In a method called on a, which expression explicitly identifies a itself?",
       "options": [
-        { "type": "text", "value": "No, they're constants" },
-        { "type": "text", "value": "Only once" },
-        { "type": "text", "value": "Only to false" },
-        { "type": "text", "value": "Yes, just like any other variable" }
+        {
+          "type": "text",
+          "value": "new A()"
+        },
+        {
+          "type": "text",
+          "value": "null"
+        },
+        {
+          "type": "text",
+          "value": "static"
+        },
+        {
+          "type": "text",
+          "value": "this"
+        }
       ],
       "answer": 3,
-      "explanation": "Boolean variables can be reassigned new values just like any other variable. The value can change throughout your program based on conditions."
+      "explanation": "The receiver of that invocation is a."
     },
     {
-      "id": 9,
-      "type": "text",
-      "question": "What are boolean expressions essential for?",
+      "id": "v2-9",
+      "type": "code",
+      "question": "What does get return after new Counter(2)?\nCounter(int count) { this.count = count; }\nint get() { return this.count; }",
       "options": [
-        { "type": "text", "value": "Validation and checking conditions" },
-        { "type": "text", "value": "Creating classes" },
-        { "type": "text", "value": "Declaring variables" },
-        { "type": "text", "value": "Importing packages" }
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 0,
-      "explanation": "Boolean expressions are essential for validation and checking conditions, helping determine if data meets requirements or if specific conditions are met."
+      "explanation": "The constructor assigns the parameter to the receiver field."
     },
     {
-      "id": 10,
+      "id": "v2-10",
       "type": "text",
-      "question": "What naming convention is often used for methods that return boolean values?",
+      "question": "The receiver has count = 2. What is count after this.count = this.count + 2;",
       "options": [
-        { "type": "text", "value": "Starting with \"get\"" },
-        { "type": "text", "value": "Starting with \"is\" or \"has\"" },
-        { "type": "text", "value": "Ending with \"Method\"" },
-        { "type": "text", "value": "All uppercase" }
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
       ],
       "answer": 1,
-      "explanation": "Boolean methods often have names that start with \"is\" or \"has\" to indicate they return true or false, making the code more readable."
+      "explanation": "Both qualified field accesses refer to the same receiver state."
     },
     {
-      "id": 11,
-      "type": "text",
-      "question": "What kind of questions do boolean expressions represent?",
+      "id": "v2-11",
+      "type": "code",
+      "question": "What does get return after new Counter(4)?\nCounter(int count) { this.count = count; }\nint get() { return this.count; }",
       "options": [
-        { "type": "text", "value": "Open-ended questions" },
-        { "type": "text", "value": "Multiple choice questions" },
-        { "type": "text", "value": "Yes-or-no questions with definitive answers" },
-        { "type": "text", "value": "Math problems" }
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 2,
-      "explanation": "Boolean expressions represent yes-or-no questions that have a definitive answer: true (yes) or false (no)."
+      "explanation": "The constructor assigns the parameter to the receiver field."
     },
     {
-      "id": 12,
+      "id": "v2-12",
       "type": "text",
-      "question": "What programming structures rely on boolean expressions?",
+      "question": "The receiver has count = 4. What is count after this.count = this.count + 2;",
       "options": [
-        { "type": "text", "value": "Only if statements" },
-        { "type": "text", "value": "Only loops" },
-        { "type": "text", "value": "Only methods" },
-        { "type": "text", "value": "All conditional structures including if statements and loops" }
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 3,
-      "explanation": "Every if statement, while loop, and conditional structure relies on boolean expressions to determine what code should execute."
+      "explanation": "Both qualified field accesses refer to the same receiver state."
     },
     {
-      "id": 13,
-      "type": "text",
-      "question": "What is a common mistake with boolean expressions?",
+      "id": "v2-13",
+      "type": "code",
+      "question": "What does get return after new Counter(6)?\nCounter(int count) { this.count = count; }\nint get() { return this.count; }",
       "options": [
-        { "type": "text", "value": "Using assignment = instead of comparison ==" },
-        { "type": "text", "value": "Using too many variables" },
-        { "type": "text", "value": "Making them too short" },
-        { "type": "text", "value": "Using parentheses" }
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
       ],
       "answer": 0,
-      "explanation": "A common mistake is using assignment (=) instead of comparison (==), which assigns a value instead of comparing it."
+      "explanation": "The constructor assigns the parameter to the receiver field."
     },
     {
-      "id": 14,
+      "id": "v2-14",
       "type": "text",
-      "question": "What does the expression (10 == 20) evaluate to?",
+      "question": "The receiver has count = 6. What is count after this.count = this.count + 2;",
       "options": [
-        { "type": "text", "value": "10" },
-        { "type": "text", "value": "false" },
-        { "type": "text", "value": "20" },
-        { "type": "text", "value": "30" }
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        }
       ],
       "answer": 1,
-      "explanation": "The expression (10 == 20) evaluates to false because 10 is not equal to 20."
+      "explanation": "Both qualified field accesses refer to the same receiver state."
     },
     {
-      "id": 15,
-      "type": "text",
-      "question": "Can you use boolean expressions directly in conditional statements?",
+      "id": "v2-15",
+      "type": "code",
+      "question": "What does get return after new Counter(8)?\nCounter(int count) { this.count = count; }\nint get() { return this.count; }",
       "options": [
-        { "type": "text", "value": "No, you must store them in variables first" },
-        { "type": "text", "value": "Only with certain operators" },
-        { "type": "text", "value": "Only in loops" },
-        { "type": "text", "value": "Yes, or you can store them in variables first" }
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
+      ],
+      "answer": 2,
+      "explanation": "The constructor assigns the parameter to the receiver field."
+    },
+    {
+      "id": "v2-16",
+      "type": "text",
+      "question": "The receiver has count = 8. What is count after this.count = this.count + 2;",
+      "options": [
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        }
       ],
       "answer": 3,
-      "explanation": "You can use boolean expressions directly in conditional statements or store them in variables first. Both approaches work depending on readability needs."
-    },
-    {
-      "id": 16,
-      "type": "text",
-      "question": "What makes boolean expressions fundamental to programming?",
-      "options": [
-        { "type": "text", "value": "They are the foundation for all decision-making in programs" },
-        { "type": "text", "value": "They make programs run faster" },
-        { "type": "text", "value": "They reduce memory usage" },
-        { "type": "text", "value": "They simplify variable names" }
-      ],
-      "answer": 0,
-      "explanation": "Boolean expressions are the foundation for all decision-making in programming, enabling programs to respond to conditions and make intelligent choices."
+      "explanation": "Both qualified field accesses refer to the same receiver state."
     }
   ]
 }

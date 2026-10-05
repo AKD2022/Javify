@@ -1,214 +1,408 @@
 {
   "lessonId": 26,
-  "title": "Return Values and void Methods",
+  "title": "2.11 Nested Iteration",
+  "topic": "2.11",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What does a method with a return value produce?",
+      "question": "What is nested iteration?",
       "options": [
-        { "type": "text", "value": "A result that can be used by the calling code" },
-        { "type": "text", "value": "An error message" },
-        { "type": "text", "value": "A printed output" },
-        { "type": "text", "value": "A method signature" }
+        {
+          "type": "text",
+          "value": "A loop inside another loop"
+        },
+        {
+          "type": "text",
+          "value": "Two unrelated methods"
+        },
+        {
+          "type": "text",
+          "value": "Only a long loop condition"
+        },
+        {
+          "type": "text",
+          "value": "A loop without an update"
+        }
       ],
       "answer": 0,
-      "explanation": "A method with a return value produces a result that the calling code can store in a variable, use in calculations, or pass to other methods."
+      "explanation": "The inner repetition occurs during each relevant outer iteration."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "Which keyword is used to send a result back from a method?",
+      "question": "When is an inner loop’s header initialization executed?",
       "options": [
-        { "type": "text", "value": "send" },
-        { "type": "text", "value": "return" },
-        { "type": "text", "value": "give" },
-        { "type": "text", "value": "output" }
+        {
+          "type": "text",
+          "value": "Never"
+        },
+        {
+          "type": "text",
+          "value": "Each time control enters that inner loop"
+        },
+        {
+          "type": "text",
+          "value": "Only once for the entire program"
+        },
+        {
+          "type": "text",
+          "value": "After all outer iterations"
+        }
       ],
       "answer": 1,
-      "explanation": "The return keyword is used to send a result back to whoever called the method and immediately exit the method."
+      "explanation": "A newly entered inner loop initializes again."
     },
     {
-      "id": 3,
+      "id": "v2-3",
       "type": "text",
-      "question": "What happens after a return statement executes in a method?",
+      "question": "How do counts combine for independent n-by-m nested loops?",
       "options": [
-        { "type": "text", "value": "The method continues to the next line" },
-        { "type": "text", "value": "The method pauses temporarily" },
-        { "type": "text", "value": "The method immediately exits and no code after it runs" },
-        { "type": "text", "value": "The method restarts from the beginning" }
+        {
+          "type": "text",
+          "value": "Subtract m from n"
+        },
+        {
+          "type": "text",
+          "value": "Always use n only"
+        },
+        {
+          "type": "text",
+          "value": "Multiply n by m"
+        },
+        {
+          "type": "text",
+          "value": "Add n and m"
+        }
       ],
       "answer": 2,
-      "explanation": "Once a return statement executes, the method immediately exits and sends the value back to the caller. No code after the return statement will execute."
+      "explanation": "Each of n outer iterations performs m inner iterations."
     },
     {
-      "id": 4,
+      "id": "v2-4",
       "type": "text",
-      "question": "What does the void keyword indicate about a method?",
+      "question": "Why may triangular nested loops have a different count?",
       "options": [
-        { "type": "text", "value": "The method is empty" },
-        { "type": "text", "value": "The method has parameters" },
-        { "type": "text", "value": "The method is private" },
-        { "type": "text", "value": "The method returns nothing" }
+        {
+          "type": "text",
+          "value": "Java skips all nested loops"
+        },
+        {
+          "type": "text",
+          "value": "The inner initialization is ignored"
+        },
+        {
+          "type": "text",
+          "value": "Multiplication is illegal"
+        },
+        {
+          "type": "text",
+          "value": "The inner bound depends on the outer index"
+        }
       ],
       "answer": 3,
-      "explanation": "The void keyword indicates that the method performs actions but doesn't return any value back to the calling code."
+      "explanation": "A changing bound requires summing the inner iteration counts."
     },
     {
-      "id": 5,
+      "id": "v2-5",
       "type": "text",
-      "question": "Can you assign the result of a void method to a variable?",
+      "question": "What is the usual visitation order?",
       "options": [
-        { "type": "text", "value": "No, because void methods don't return any value" },
-        { "type": "text", "value": "Yes, it will store null" },
-        { "type": "text", "value": "Yes, but only to int variables" },
-        { "type": "text", "value": "Yes, but it causes a warning" }
+        {
+          "type": "text",
+          "value": "Finish the inner loop before the next outer iteration"
+        },
+        {
+          "type": "text",
+          "value": "Finish all outer iterations before any inner body"
+        },
+        {
+          "type": "text",
+          "value": "Alternate randomly"
+        },
+        {
+          "type": "text",
+          "value": "Execute only the first pair"
+        }
       ],
       "answer": 0,
-      "explanation": "You cannot assign the result of a void method to a variable because void methods don't return any value - there's nothing to assign."
+      "explanation": "The inner loop completes during one outer-body execution."
     },
     {
-      "id": 6,
+      "id": "v2-6",
       "type": "text",
-      "question": "Can void methods use the return statement?",
+      "question": "How many inner executions occur if the outer loop executes zero times?",
       "options": [
-        { "type": "text", "value": "No, never" },
-        { "type": "text", "value": "Yes, but without any value after it to exit early" },
-        { "type": "text", "value": "Yes, but only with null" },
-        { "type": "text", "value": "Only in the main method" }
+        {
+          "type": "text",
+          "value": "Infinite"
+        },
+        {
+          "type": "text",
+          "value": "Zero"
+        },
+        {
+          "type": "text",
+          "value": "One"
+        },
+        {
+          "type": "text",
+          "value": "The inner bound"
+        }
       ],
       "answer": 1,
-      "explanation": "Void methods can use return statements without any value to exit the method early based on certain conditions."
+      "explanation": "The inner loop is never reached."
     },
     {
-      "id": 7,
+      "id": "v2-7",
       "type": "text",
-      "question": "What types of data can methods return in Java?",
+      "question": "Where should a per-row total be reset in a nested traversal?",
       "options": [
-        { "type": "text", "value": "Only primitive types" },
-        { "type": "text", "value": "Only reference types" },
-        { "type": "text", "value": "Any data type that exists in Java" },
-        { "type": "text", "value": "Only int and String" }
+        {
+          "type": "text",
+          "value": "After the entire traversal"
+        },
+        {
+          "type": "text",
+          "value": "Inside each inner iteration"
+        },
+        {
+          "type": "text",
+          "value": "Inside the outer loop before the inner loop"
+        },
+        {
+          "type": "text",
+          "value": "Only once before both loops"
+        }
       ],
       "answer": 2,
-      "explanation": "Methods can return any data type that exists in Java, including primitive types (int, double, boolean, char) and reference types (String, objects)."
+      "explanation": "Reset once per row to preserve that row’s accumulated values."
     },
     {
-      "id": 8,
+      "id": "v2-8",
       "type": "text",
-      "question": "What must match between a method's declaration and its return statement?",
+      "question": "What can happen if the inner loop updates the outer index by mistake?",
       "options": [
-        { "type": "text", "value": "The parameter names" },
-        { "type": "text", "value": "The method name" },
-        { "type": "text", "value": "The access modifier" },
-        { "type": "text", "value": "The return type" }
+        {
+          "type": "text",
+          "value": "Java always fixes the index"
+        },
+        {
+          "type": "text",
+          "value": "The output is guaranteed unchanged"
+        },
+        {
+          "type": "text",
+          "value": "Only a comment is affected"
+        },
+        {
+          "type": "text",
+          "value": "Rows may be skipped or the inner loop may fail to terminate"
+        }
       ],
       "answer": 3,
-      "explanation": "The return type declared in the method signature must match the type of value actually returned by the return statement."
+      "explanation": "The wrong update disrupts both loop-control states."
     },
     {
-      "id": 9,
-      "type": "text",
-      "question": "What happens if a non-void method doesn't have a return statement on all execution paths?",
+      "id": "v2-9",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 2; i++)\n  for (int j = 0; j < 3; j++) work();",
       "options": [
-        { "type": "text", "value": "The compiler reports an error" },
-        { "type": "text", "value": "The method returns null automatically" },
-        { "type": "text", "value": "The method returns 0 automatically" },
-        { "type": "text", "value": "The program crashes at runtime" }
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
       ],
       "answer": 0,
-      "explanation": "The compiler will report an error if there's any execution path through a non-void method that doesn't encounter a return statement."
+      "explanation": "The inner loop runs three times for each outer iteration."
     },
     {
-      "id": 10,
-      "type": "text",
-      "question": "How many return statements can execute during a single method call?",
+      "id": "v2-10",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 1; i <= 2; i++)\n  for (int j = 0; j < i; j++) work();",
       "options": [
-        { "type": "text", "value": "All of them" },
-        { "type": "text", "value": "Only one" },
-        { "type": "text", "value": "At least two" },
-        { "type": "text", "value": "It depends on the method length" }
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        }
       ],
       "answer": 1,
-      "explanation": "Only one return statement can execute during any single method call, as the method exits immediately when a return statement is encountered."
+      "explanation": "Add the inner counts 1 + 2 + ... + n."
     },
     {
-      "id": 11,
-      "type": "text",
-      "question": "Which type of method is best for calculating and producing data?",
+      "id": "v2-11",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 3; i++)\n  for (int j = 0; j < 3; j++) work();",
       "options": [
-        { "type": "text", "value": "void methods" },
-        { "type": "text", "value": "static methods only" },
-        { "type": "text", "value": "Methods with return values" },
-        { "type": "text", "value": "private methods only" }
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        }
       ],
       "answer": 2,
-      "explanation": "Methods with return values are best for calculating and producing data because they can send the calculated result back to the calling code."
+      "explanation": "The inner loop runs three times for each outer iteration."
     },
     {
-      "id": 12,
-      "type": "text",
-      "question": "Which type of method is best for performing actions like printing?",
+      "id": "v2-12",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 1; i <= 3; i++)\n  for (int j = 0; j < i; j++) work();",
       "options": [
-        { "type": "text", "value": "Methods that return String" },
-        { "type": "text", "value": "Methods that return int" },
-        { "type": "text", "value": "Methods that return boolean" },
-        { "type": "text", "value": "void methods" }
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 3,
-      "explanation": "void methods are best for performing actions like printing, updating variables, or other tasks that don't need to return a value."
+      "explanation": "Add the inner counts 1 + 2 + ... + n."
     },
     {
-      "id": 13,
-      "type": "text",
-      "question": "Can a method have multiple return statements?",
+      "id": "v2-13",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 4; i++)\n  for (int j = 0; j < 3; j++) work();",
       "options": [
-        { "type": "text", "value": "Yes, but only one will execute per method call" },
-        { "type": "text", "value": "No, only one return statement is allowed" },
-        { "type": "text", "value": "Yes, and all will execute" },
-        { "type": "text", "value": "Only in void methods" }
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        }
       ],
       "answer": 0,
-      "explanation": "A method can have multiple return statements for handling different cases, but only one will execute during any single method call."
+      "explanation": "The inner loop runs three times for each outer iteration."
     },
     {
-      "id": 14,
-      "type": "text",
-      "question": "How do you capture the returned value from a method call?",
+      "id": "v2-14",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 1; i <= 4; i++)\n  for (int j = 0; j < i; j++) work();",
       "options": [
-        { "type": "text", "value": "Use System.out.println()" },
-        { "type": "text", "value": "Store it in a variable or use it directly in an expression" },
-        { "type": "text", "value": "Use the capture keyword" },
-        { "type": "text", "value": "It's automatically saved" }
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
       ],
       "answer": 1,
-      "explanation": "You capture a returned value by storing it in a variable of the appropriate type or using it directly in an expression or method call."
+      "explanation": "Add the inner counts 1 + 2 + ... + n."
     },
     {
-      "id": 15,
-      "type": "text",
-      "question": "What determines whether a method should return a value or be void?",
+      "id": "v2-15",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 5; i++)\n  for (int j = 0; j < 3; j++) work();",
       "options": [
-        { "type": "text", "value": "The method name" },
-        { "type": "text", "value": "The number of parameters" },
-        { "type": "text", "value": "The length of the method" },
-        { "type": "text", "value": "Whether the method produces data that other parts of the program need" }
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "18"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        },
+        {
+          "type": "text",
+          "value": "16"
+        }
+      ],
+      "answer": 2,
+      "explanation": "The inner loop runs three times for each outer iteration."
+    },
+    {
+      "id": "v2-16",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 1; i <= 5; i++)\n  for (int j = 0; j < i; j++) work();",
+      "options": [
+        {
+          "type": "text",
+          "value": "16"
+        },
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "18"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        }
       ],
       "answer": 3,
-      "explanation": "If a method calculates, finds, or produces data that other parts of the program need, it should return a value. If it primarily performs actions, it should be void."
-    },
-    {
-      "id": 16,
-      "type": "text",
-      "question": "What can you do with the return value from a method?",
-      "options": [
-        { "type": "text", "value": "Store it in a variable, use it in calculations, or pass it to other methods" },
-        { "type": "text", "value": "Only print it to the console" },
-        { "type": "text", "value": "Only store it in a variable" },
-        { "type": "text", "value": "Nothing, it's automatically discarded" }
-      ],
-      "answer": 0,
-      "explanation": "Return values are versatile - you can store them in variables, use them in calculations, pass them to other methods, or use them directly in expressions."
+      "explanation": "Add the inner counts 1 + 2 + ... + n."
     }
   ]
 }

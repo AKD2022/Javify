@@ -1,214 +1,406 @@
 {
   "lessonId": 45,
-  "title": "Using break and default in switch",
+  "title": "ArrayList Traversals",
   "questions": [
     {
       "id": 1,
-      "type": "text",
-      "question": "What does the break statement do in a switch?",
+      "type": "code",
+      "question": "What is sum if a contains [2, 3, 5]?\nint sum = 0;\nfor (int i = 0; i < a.size(); i++) sum += a.get(i);",
       "options": [
-        { "type": "text", "value": "Exits the switch block immediately" },
-        { "type": "text", "value": "Skips the next case" },
-        { "type": "text", "value": "Ends the program" },
-        { "type": "text", "value": "Restarts the switch from the beginning" }
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        }
       ],
       "answer": 0,
-      "explanation": "The break statement causes the program to exit the entire switch block immediately and continue execution after the closing brace."
+      "explanation": "Visit each valid list index once."
     },
     {
       "id": 2,
-      "type": "text",
-      "question": "What happens when you forget to include break in a switch case?",
+      "type": "code",
+      "question": "What is a.get(0) afterward if a contains [2, 3]?\nfor (Integer x : a) x++;",
       "options": [
-        { "type": "text", "value": "The program crashes" },
-        { "type": "text", "value": "Fall-through occurs and subsequent cases execute" },
-        { "type": "text", "value": "The switch statement is skipped" },
-        { "type": "text", "value": "A compilation error occurs" }
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        }
       ],
       "answer": 1,
-      "explanation": "Without break, fall-through occurs - the program continues executing code in subsequent cases until it encounters a break or reaches the end of the switch."
+      "explanation": "Assigning a new boxed value to the loop variable does not replace a list element."
     },
     {
       "id": 3,
-      "type": "text",
-      "question": "What is the purpose of the default case in a switch statement?",
+      "type": "code",
+      "question": "What is a.get(0) afterward if a contains [2, 3]?\nfor (int i = 0; i < a.size(); i++) a.set(i, a.get(i) + 1);",
       "options": [
-        { "type": "text", "value": "It executes first before all other cases" },
-        { "type": "text", "value": "It prevents fall-through" },
-        { "type": "text", "value": "It handles values that don't match any explicit case" },
-        { "type": "text", "value": "It makes the switch run faster" }
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        }
       ],
       "answer": 2,
-      "explanation": "The default case acts as a catch-all that executes when none of the other cases match the switch expression, similar to an else clause."
+      "explanation": "set replaces the value at each list position."
     },
     {
       "id": 4,
-      "type": "text",
-      "question": "Where is the default case typically placed in a switch statement?",
+      "type": "code",
+      "question": "What is a.size() afterward if a contains [2, 2, 3]?\nfor (int i = a.size() - 1; i >= 0; i--)\n  if (a.get(i) == 2) a.remove(i);",
       "options": [
-        { "type": "text", "value": "At the beginning" },
-        { "type": "text", "value": "In the middle" },
-        { "type": "text", "value": "Before the first case" },
-        { "type": "text", "value": "At the end" }
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        }
       ],
       "answer": 3,
-      "explanation": "The default case is typically placed at the end of the switch statement, though Java allows it anywhere within the switch block."
+      "explanation": "Backward traversal safely removes both matching entries without skipping shifted elements."
     },
     {
       "id": 5,
-      "type": "text",
-      "question": "Is a break statement required after the default case when it's at the end?",
+      "type": "code",
+      "question": "What is sum if a contains [4, 3, 5]?\nint sum = 0;\nfor (int i = 0; i < a.size(); i++) sum += a.get(i);",
       "options": [
-        { "type": "text", "value": "No, it's optional since there are no more cases to fall through to" },
-        { "type": "text", "value": "Yes, it's always required" },
-        { "type": "text", "value": "Only if there are more than 5 cases" },
-        { "type": "text", "value": "Only if the default contains multiple statements" }
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        }
       ],
       "answer": 0,
-      "explanation": "When the default case is positioned last, the break statement is optional because there are no remaining cases to fall through to."
+      "explanation": "Visit each valid list index once."
     },
     {
       "id": 6,
       "type": "code",
-      "question": "What prints when this code runs?\n\nint x = 2;\nswitch (x) {\n    case 1:\n        System.out.println(\"One\");\n    case 2:\n        System.out.println(\"Two\");\n    case 3:\n        System.out.println(\"Three\");\n        break;\n}",
+      "question": "What is a.get(0) afterward if a contains [4, 3]?\nfor (Integer x : a) x++;",
       "options": [
-        { "type": "text", "value": "One" },
-        { "type": "text", "value": "Two\nThree" },
-        { "type": "text", "value": "Two" },
-        { "type": "text", "value": "Three" }
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
       ],
       "answer": 1,
-      "explanation": "Since case 2 has no break, fall-through occurs. The program prints \"Two\", then continues to case 3 and prints \"Three\" before hitting the break."
+      "explanation": "Assigning a new boxed value to the loop variable does not replace a list element."
     },
     {
       "id": 7,
-      "type": "text",
-      "question": "What is intentional fall-through useful for?",
+      "type": "code",
+      "question": "What is a.get(0) afterward if a contains [4, 3]?\nfor (int i = 0; i < a.size(); i++) a.set(i, a.get(i) + 1);",
       "options": [
-        { "type": "text", "value": "Making code run faster" },
-        { "type": "text", "value": "Reducing memory usage" },
-        { "type": "text", "value": "Grouping multiple cases that execute the same code" },
-        { "type": "text", "value": "Creating infinite loops" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 2,
-      "explanation": "Intentional fall-through allows multiple cases to execute the same code block, useful when several different values should trigger identical behavior."
+      "explanation": "set replaces the value at each list position."
     },
     {
       "id": 8,
       "type": "code",
-      "question": "What prints when this code runs?\n\nchar grade = 'F';\nswitch (grade) {\n    case 'A':\n        System.out.println(\"Excellent\");\n        break;\n    case 'B':\n        System.out.println(\"Good\");\n        break;\n    default:\n        System.out.println(\"Try harder\");\n}",
+      "question": "What is a.size() afterward if a contains [4, 4, 3]?\nfor (int i = a.size() - 1; i >= 0; i--)\n  if (a.get(i) == 4) a.remove(i);",
       "options": [
-        { "type": "text", "value": "Excellent" },
-        { "type": "text", "value": "Good" },
-        { "type": "text", "value": "Nothing prints" },
-        { "type": "text", "value": "Try harder" }
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        }
       ],
       "answer": 3,
-      "explanation": "Since grade is 'F' and no case matches, the default case executes, printing \"Try harder\"."
+      "explanation": "Backward traversal safely removes both matching entries without skipping shifted elements."
     },
     {
       "id": 9,
-      "type": "text",
-      "question": "Is the default case required in a switch statement?",
+      "type": "code",
+      "question": "What is sum if a contains [6, 3, 5]?\nint sum = 0;\nfor (int i = 0; i < a.size(); i++) sum += a.get(i);",
       "options": [
-        { "type": "text", "value": "No, but it's highly recommended for handling unexpected inputs" },
-        { "type": "text", "value": "Yes, the code won't compile without it" },
-        { "type": "text", "value": "Only when using char types" },
-        { "type": "text", "value": "Only when using int types" }
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "17"
+        }
       ],
       "answer": 0,
-      "explanation": "The default case isn't strictly required, but it's highly recommended as it provides a safety net for unexpected inputs and makes code more robust."
+      "explanation": "Visit each valid list index once."
     },
     {
       "id": 10,
       "type": "code",
-      "question": "What prints when this code runs?\n\nint day = 5;\nswitch (day) {\n    case 1:\n    case 2:\n    case 3:\n    case 4:\n    case 5:\n        System.out.println(\"Weekday\");\n        break;\n    default:\n        System.out.println(\"Weekend\");\n}",
+      "question": "What is a.get(0) afterward if a contains [6, 3]?\nfor (Integer x : a) x++;",
       "options": [
-        { "type": "text", "value": "Weekend" },
-        { "type": "text", "value": "Weekday" },
-        { "type": "text", "value": "Nothing prints" },
-        { "type": "text", "value": "Compilation error" }
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 1,
-      "explanation": "Since day is 5, it matches case 5. All cases 1-5 fall through to print \"Weekday\", demonstrating intentional fall-through for grouping cases."
+      "explanation": "Assigning a new boxed value to the loop variable does not replace a list element."
     },
     {
       "id": 11,
-      "type": "text",
-      "question": "What is the most common mistake when writing switch statements?",
+      "type": "code",
+      "question": "What is a.get(0) afterward if a contains [6, 3]?\nfor (int i = 0; i < a.size(); i++) a.set(i, a.get(i) + 1);",
       "options": [
-        { "type": "text", "value": "Using too many cases" },
-        { "type": "text", "value": "Placing default at the wrong position" },
-        { "type": "text", "value": "Forgetting to include break statements" },
-        { "type": "text", "value": "Using the wrong data type" }
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        }
       ],
       "answer": 2,
-      "explanation": "Forgetting break statements is the most common mistake, leading to unintended fall-through behavior that can be difficult to debug."
+      "explanation": "set replaces the value at each list position."
     },
     {
       "id": 12,
       "type": "code",
-      "question": "What prints when this code runs?\n\nint num = 10;\nswitch (num / 5) {\n    case 1:\n        System.out.println(\"A\");\n        break;\n    case 2:\n        System.out.println(\"B\");\n        break;\n    default:\n        System.out.println(\"C\");\n}",
+      "question": "What is a.size() afterward if a contains [6, 6, 3]?\nfor (int i = a.size() - 1; i >= 0; i--)\n  if (a.get(i) == 6) a.remove(i);",
       "options": [
-        { "type": "text", "value": "C" },
-        { "type": "text", "value": "B" },
-        { "type": "text", "value": "A" },
-        { "type": "text", "value": "Nothing prints" }
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        }
       ],
-      "answer": 2,
-      "explanation": "The expression num / 5 evaluates to 10 / 5 which equals 2. This matches case 2, so \"B\" is printed."
+      "answer": 3,
+      "explanation": "Backward traversal safely removes both matching entries without skipping shifted elements."
     },
     {
       "id": 13,
-      "type": "text",
-      "question": "When using intentional fall-through, what should you do?",
+      "type": "code",
+      "question": "What is sum if a contains [8, 3, 5]?\nint sum = 0;\nfor (int i = 0; i < a.size(); i++) sum += a.get(i);",
       "options": [
-        { "type": "text", "value": "Nothing special is needed" },
-        { "type": "text", "value": "Avoid using it entirely" },
-        { "type": "text", "value": "Use double break statements" },
-        { "type": "text", "value": "Add a comment indicating it's intentional" }
+        {
+          "type": "text",
+          "value": "16"
+        },
+        {
+          "type": "text",
+          "value": "17"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        },
+        {
+          "type": "text",
+          "value": "19"
+        }
       ],
-      "answer": 3,
-      "explanation": "When using intentional fall-through, it's good practice to add a comment indicating the fall-through is deliberate, so other programmers know it wasn't a mistake."
+      "answer": 0,
+      "explanation": "Visit each valid list index once."
     },
     {
       "id": 14,
       "type": "code",
-      "question": "What prints when this code runs?\n\nchar letter = 'b';\nswitch (letter) {\n    case 'a':\n    case 'e':\n    case 'i':\n        System.out.println(\"Vowel\");\n        break;\n    default:\n        System.out.println(\"Consonant\");\n}",
+      "question": "What is a.get(0) afterward if a contains [8, 3]?\nfor (Integer x : a) x++;",
       "options": [
-        { "type": "text", "value": "Vowel" },
-        { "type": "text", "value": "Consonant" },
-        { "type": "text", "value": "Nothing prints" },
-        { "type": "text", "value": "Compilation error" }
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        }
       ],
       "answer": 1,
-      "explanation": "Since letter is 'b' and doesn't match any of the vowel cases (a, e, i), the default case executes and prints \"Consonant\"."
+      "explanation": "Assigning a new boxed value to the loop variable does not replace a list element."
     },
     {
       "id": 15,
-      "type": "text",
-      "question": "What does fall-through mean in a switch statement?",
+      "type": "code",
+      "question": "What is a.get(0) afterward if a contains [8, 3]?\nfor (int i = 0; i < a.size(); i++) a.set(i, a.get(i) + 1);",
       "options": [
-        { "type": "text", "value": "The switch statement fails to execute" },
-        { "type": "text", "value": "The program crashes" },
-        { "type": "text", "value": "Execution continues into subsequent cases without break" },
-        { "type": "text", "value": "The default case always executes" }
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        }
       ],
       "answer": 2,
-      "explanation": "Fall-through occurs when execution continues into subsequent cases because there's no break statement to exit the switch block."
+      "explanation": "set replaces the value at each list position."
     },
     {
       "id": 16,
       "type": "code",
-      "question": "What prints when this code runs?\n\nint month = 15;\nswitch (month) {\n    case 1:\n        System.out.println(\"Jan\");\n        break;\n    case 2:\n        System.out.println(\"Feb\");\n        break;\n    default:\n        System.out.println(\"Invalid\");\n}",
+      "question": "What is a.size() afterward if a contains [8, 8, 3]?\nfor (int i = a.size() - 1; i >= 0; i--)\n  if (a.get(i) == 8) a.remove(i);",
       "options": [
-        { "type": "text", "value": "Jan" },
-        { "type": "text", "value": "Feb" },
-        { "type": "text", "value": "Nothing prints" },
-        { "type": "text", "value": "Invalid" }
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        }
       ],
       "answer": 3,
-      "explanation": "Since month is 15 and doesn't match case 1 or 2, the default case executes and prints \"Invalid\", demonstrating how default handles invalid input."
+      "explanation": "Backward traversal safely removes both matching entries without skipping shifted elements."
     }
   ]
 }

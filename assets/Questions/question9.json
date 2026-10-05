@@ -1,214 +1,408 @@
 {
   "lessonId": 9,
-  "title": "Arithmetic Operators and Expressions",
+  "title": "1.9 Method Signatures",
+  "topic": "1.9",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
-      "type": "code",
-      "question": "What is the result of: 15 + 25",
-      "options": [
-        { "type": "text", "value": "40" },
-        { "type": "text", "value": "1525" },
-        { "type": "text", "value": "10" },
-        { "type": "text", "value": "50" }
-      ],
-      "answer": 0,
-      "explanation": "The addition operator (+) adds the two numbers: 15 + 25 = 40."
-    },
-    {
-      "id": 2,
-      "type": "code",
-      "question": "What is the result of: 20 - 8",
-      "options": [
-        { "type": "text", "value": "28" },
-        { "type": "text", "value": "12" },
-        { "type": "text", "value": "160" },
-        { "type": "text", "value": "-12" }
-      ],
-      "answer": 1,
-      "explanation": "The subtraction operator (-) subtracts the second operand from the first: 20 - 8 = 12."
-    },
-    {
-      "id": 3,
-      "type": "code",
-      "question": "What is the result of: 6 * 7",
-      "options": [
-        { "type": "text", "value": "13" },
-        { "type": "text", "value": "-1" },
-        { "type": "text", "value": "42" },
-        { "type": "text", "value": "67" }
-      ],
-      "answer": 2,
-      "explanation": "The multiplication operator (*) multiplies the two operands: 6 * 7 = 42."
-    },
-    {
-      "id": 4,
-      "type": "code",
-      "question": "What is the result of: 21 / 4 (integer division)",
-      "options": [
-        { "type": "text", "value": "5.25" },
-        { "type": "text", "value": "6" },
-        { "type": "text", "value": "5" },
-        { "type": "text", "value": "5" }
-      ],
-      "answer": 3,
-      "explanation": "Integer division truncates the decimal portion: 21 / 4 = 5 (not 5.25)."
-    },
-    {
-      "id": 5,
-      "type": "code",
-      "question": "What is the result of: 17 % 5",
-      "options": [
-        { "type": "text", "value": "2" },
-        { "type": "text", "value": "3" },
-        { "type": "text", "value": "12" },
-        { "type": "text", "value": "85" }
-      ],
-      "answer": 0,
-      "explanation": "The modulus operator returns the remainder: 17 ÷ 5 = 3 remainder 2, so 17 % 5 = 2."
-    },
-    {
-      "id": 6,
-      "type": "code",
-      "question": "What is the result of: 3 + 4 * 2",
-      "options": [
-        { "type": "text", "value": "14" },
-        { "type": "text", "value": "11" },
-        { "type": "text", "value": "24" },
-        { "type": "text", "value": "10" }
-      ],
-      "answer": 1,
-      "explanation": "Multiplication has higher precedence than addition: 4 * 2 = 8, then 3 + 8 = 11."
-    },
-    {
-      "id": 7,
-      "type": "code",
-      "question": "What is the result of: (8 + 2) * 3",
-      "options": [
-        { "type": "text", "value": "14" },
-        { "type": "text", "value": "26" },
-        { "type": "text", "value": "30" },
-        { "type": "text", "value": "24" }
-      ],
-      "answer": 2,
-      "explanation": "Parentheses have highest precedence: (8 + 2) = 10, then 10 * 3 = 30."
-    },
-    {
-      "id": 8,
-      "type": "code",
-      "question": "If int x = 10; and x += 5; what is x?",
-      "options": [
-        { "type": "text", "value": "10" },
-        { "type": "text", "value": "5" },
-        { "type": "text", "value": "50" },
-        { "type": "text", "value": "15" }
-      ],
-      "answer": 3,
-      "explanation": "The compound assignment operator += adds 5 to x: x = x + 5 = 10 + 5 = 15."
-    },
-    {
-      "id": 9,
-      "type": "code",
-      "question": "What is the result of: ++count if count starts at 7?",
-      "options": [
-        { "type": "text", "value": "8" },
-        { "type": "text", "value": "7" },
-        { "type": "text", "value": "6" },
-        { "type": "text", "value": "14" }
-      ],
-      "answer": 0,
-      "explanation": "Pre-increment (++count) adds 1 to count and returns the new value: 7 becomes 8."
-    },
-    {
-      "id": 10,
-      "type": "code",
-      "question": "What is the result of: 18.0 / 4",
-      "options": [
-        { "type": "text", "value": "4" },
-        { "type": "text", "value": "4.5" },
-        { "type": "text", "value": "4.0" },
-        { "type": "text", "value": "18" }
-      ],
-      "answer": 1,
-      "explanation": "Since 18.0 is a double, this becomes floating-point division: 18.0 / 4 = 4.5."
-    },
-    {
-      "id": 11,
-      "type": "code",
-      "question": "What is the result of: 25 % 6",
-      "options": [
-        { "type": "text", "value": "4" },
-        { "type": "text", "value": "1" },
-        { "type": "text", "value": "19" },
-        { "type": "text", "value": "150" }
-      ],
-      "answer": 2,
-      "explanation": "The modulus operator finds the remainder: 25 ÷ 6 = 4 remainder 1, so 25 % 6 = 1."
-    },
-    {
-      "id": 12,
-      "type": "code",
-      "question": "What is the result of: 12 - 8 / 2",
-      "options": [
-        { "type": "text", "value": "2" },
-        { "type": "text", "value": "4" },
-        { "type": "text", "value": "8" },
-        { "type": "text", "value": "8" }
-      ],
-      "answer": 3,
-      "explanation": "Division has higher precedence: 8 / 2 = 4, then 12 - 4 = 8."
-    },
-    {
-      "id": 13,
-      "type": "code",
-      "question": "If int y = 20; and y *= 3; what is y?",
-      "options": [
-        { "type": "text", "value": "60" },
-        { "type": "text", "value": "23" },
-        { "type": "text", "value": "17" },
-        { "type": "text", "value": "6" }
-      ],
-      "answer": 0,
-      "explanation": "The compound assignment operator *= multiplies y by 3: y = y * 3 = 20 * 3 = 60."
-    },
-    {
-      "id": 14,
+      "id": "v2-1",
       "type": "text",
-      "question": "Which operator has the highest precedence?",
+      "question": "In public int add(int a, int b), what is the return type?",
       "options": [
-        { "type": "text", "value": "Parentheses ()" },
-        { "type": "text", "value": "Addition +" },
-        { "type": "text", "value": "Multiplication *" },
-        { "type": "text", "value": "Subtraction -" }
+        {
+          "type": "text",
+          "value": "int"
+        },
+        {
+          "type": "text",
+          "value": "public"
+        },
+        {
+          "type": "text",
+          "value": "add"
+        },
+        {
+          "type": "text",
+          "value": "a"
+        }
       ],
       "answer": 0,
-      "explanation": "Parentheses have the highest precedence and are evaluated first in any expression."
+      "explanation": "The type before the method name describes the returned value."
     },
     {
-      "id": 15,
-      "type": "code",
-      "question": "What is the result of: 5 + 3 * 2 - 1",
+      "id": "v2-2",
+      "type": "text",
+      "question": "What is a parameter?",
       "options": [
-        { "type": "text", "value": "15" },
-        { "type": "text", "value": "10" },
-        { "type": "text", "value": "13" },
-        { "type": "text", "value": "9" }
+        {
+          "type": "text",
+          "value": "A class instance"
+        },
+        {
+          "type": "text",
+          "value": "A named variable declared in a method header"
+        },
+        {
+          "type": "text",
+          "value": "Only a return statement"
+        },
+        {
+          "type": "text",
+          "value": "A printed message"
+        }
+      ],
+      "answer": 1,
+      "explanation": "A parameter receives an argument value when the method is called."
+    },
+    {
+      "id": "v2-3",
+      "type": "text",
+      "question": "What is an argument?",
+      "options": [
+        {
+          "type": "text",
+          "value": "A private field declaration"
+        },
+        {
+          "type": "text",
+          "value": "A compiler option"
+        },
+        {
+          "type": "text",
+          "value": "An expression supplied in a method call"
+        },
+        {
+          "type": "text",
+          "value": "Only a method name"
+        }
       ],
       "answer": 2,
-      "explanation": "Following precedence: 3 * 2 = 6, then 5 + 6 - 1 = 11 - 1 = 10."
+      "explanation": "Arguments provide values for the corresponding parameters."
     },
     {
-      "id": 16,
-      "type": "code",
-      "question": "What happens with: count-- if count is 9?",
+      "id": "v2-4",
+      "type": "text",
+      "question": "Which call matches void show(String text, int count)?",
       "options": [
-        { "type": "text", "value": "count becomes 10" },
-        { "type": "text", "value": "count stays 9" },
-        { "type": "text", "value": "count becomes 0" },
-        { "type": "text", "value": "count becomes 8" }
+        {
+          "type": "text",
+          "value": "show(2, \"Hi\");"
+        },
+        {
+          "type": "text",
+          "value": "show(\"Hi\");"
+        },
+        {
+          "type": "text",
+          "value": "show(true, 2);"
+        },
+        {
+          "type": "text",
+          "value": "show(\"Hi\", 2);"
+        }
       ],
       "answer": 3,
-      "explanation": "Post-decrement (count--) subtracts 1 from count: 9 becomes 8."
+      "explanation": "Argument count, order, and compatible types must match."
+    },
+    {
+      "id": "v2-5",
+      "type": "text",
+      "question": "What distinguishes overloaded methods?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Their parameter lists"
+        },
+        {
+          "type": "text",
+          "value": "Only their return types"
+        },
+        {
+          "type": "text",
+          "value": "Only local variable names"
+        },
+        {
+          "type": "text",
+          "value": "Only comments"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Overloads must differ in parameter number, types, or order."
+    },
+    {
+      "id": "v2-6",
+      "type": "text",
+      "question": "Can return type alone distinguish two Java overloads?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Only for static methods"
+        },
+        {
+          "type": "text",
+          "value": "No"
+        },
+        {
+          "type": "text",
+          "value": "Yes, always"
+        },
+        {
+          "type": "text",
+          "value": "Only for int"
+        }
+      ],
+      "answer": 1,
+      "explanation": "Java cannot overload methods solely by changing the return type."
+    },
+    {
+      "id": "v2-7",
+      "type": "text",
+      "question": "Which may call a method expecting double x?",
+      "options": [
+        {
+          "type": "text",
+          "value": "A call supplying \"3\""
+        },
+        {
+          "type": "text",
+          "value": "A call with no argument"
+        },
+        {
+          "type": "text",
+          "value": "A call supplying the int literal 3"
+        },
+        {
+          "type": "text",
+          "value": "A call supplying true"
+        }
+      ],
+      "answer": 2,
+      "explanation": "An int can widen to double for the parameter."
+    },
+    {
+      "id": "v2-8",
+      "type": "text",
+      "question": "A method returns void. Which use is invalid?",
+      "options": [
+        {
+          "type": "text",
+          "value": "display();"
+        },
+        {
+          "type": "text",
+          "value": "Calling it on a valid receiver"
+        },
+        {
+          "type": "text",
+          "value": "Calling it with its required arguments"
+        },
+        {
+          "type": "text",
+          "value": "int result = display();"
+        }
+      ],
+      "answer": 3,
+      "explanation": "A void call cannot provide a value for an assignment."
+    },
+    {
+      "id": "v2-9",
+      "type": "text",
+      "question": "Given int plus(int x, int y) returns x + y, what is plus(2, 3)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Arguments are assigned to the corresponding parameters before the sum is evaluated."
+    },
+    {
+      "id": "v2-10",
+      "type": "text",
+      "question": "Given int difference(int first, int second) returns first - second, what is difference(2, 1)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        }
+      ],
+      "answer": 1,
+      "explanation": "Argument order matters for subtraction."
+    },
+    {
+      "id": "v2-11",
+      "type": "text",
+      "question": "Given int plus(int x, int y) returns x + y, what is plus(4, 3)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        }
+      ],
+      "answer": 2,
+      "explanation": "Arguments are assigned to the corresponding parameters before the sum is evaluated."
+    },
+    {
+      "id": "v2-12",
+      "type": "text",
+      "question": "Given int difference(int first, int second) returns first - second, what is difference(4, 1)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Argument order matters for subtraction."
+    },
+    {
+      "id": "v2-13",
+      "type": "text",
+      "question": "Given int plus(int x, int y) returns x + y, what is plus(6, 3)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Arguments are assigned to the corresponding parameters before the sum is evaluated."
+    },
+    {
+      "id": "v2-14",
+      "type": "text",
+      "question": "Given int difference(int first, int second) returns first - second, what is difference(6, 1)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        }
+      ],
+      "answer": 1,
+      "explanation": "Argument order matters for subtraction."
+    },
+    {
+      "id": "v2-15",
+      "type": "text",
+      "question": "Given int plus(int x, int y) returns x + y, what is plus(8, 3)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        }
+      ],
+      "answer": 2,
+      "explanation": "Arguments are assigned to the corresponding parameters before the sum is evaluated."
+    },
+    {
+      "id": "v2-16",
+      "type": "text",
+      "question": "Given int difference(int first, int second) returns first - second, what is difference(8, 1)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Argument order matters for subtraction."
     }
   ]
 }

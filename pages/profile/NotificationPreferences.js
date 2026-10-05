@@ -1,5 +1,5 @@
-import { View, Text as RNText, StyleSheet, Switch, Alert, Platform } from 'react-native';
-import React, { useState, useEffect } from 'react';
+import { View, Text as RNText, StyleSheet, Switch, Alert, Platform, ScrollView } from 'react-native';
+import React, { useState, useEffect, useRef } from 'react';
 import * as Notifications from 'expo-notifications';
 import * as Device from 'expo-device';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -13,6 +13,8 @@ export default function NotificationPreferences() {
         <RNText {...props} style={[{ fontFamily: 'Poppins-Regular' }, props.style]} />
     );
 
+    const lock = useRef(false);
+    const [busy, setBusy] = useState(true);
     const [isEnabled, setIsEnabled] = useState(false);
     const [calendarEnabled, setCalendarEnabled] = useState(false);
     const [streakEnabled, setStreakEnabled] = useState(false);
@@ -41,8 +43,8 @@ export default function NotificationPreferences() {
                 const time = await AsyncStorage.getItem('reminderTime');
                 if (time) setReminderTime(time);
             } catch (e) {
-                console.error('Failed to load preferences', e);
-            }
+                Alert.alert('Preferences unavailable', 'Please reopen this screen and retry.');
+            } finally { setBusy(false); }
         };
         loadPreferences();
     }, []);
@@ -57,84 +59,66 @@ export default function NotificationPreferences() {
         }
     };
 
-    const parseTime = (timeStr) => {
-        const [hour, minute] = timeStr.split(':').map(Number);
-        return { hour, minute };
-    };
-
-    const scheduleNotification = async (title, body) => {
-        const { hour, minute } = parseTime(reminderTime);
-        await Notifications.scheduleNotificationAsync({
-            content: {
-                title,
-                body,
-                sound: deliveryMethod === 'sound' ? true : undefined,
-                vibrate: deliveryMethod === 'vibration' ? [0, 250, 250, 250] : undefined,
-            },
-            trigger: { hour, minute, repeats: true },
+    const reconcileReminders = async prefs => {
+        const [hour, minute] = prefs.reminderTime.split(':').map(Number);
+        if (!Number.isInteger(hour) || hour < 0 || hour > 23 || !Number.isInteger(minute) || minute < 0 || minute > 59) throw new Error('Choose a valid reminder time.');
+        const channelId = `study-${prefs.deliveryMethod}`;
+        if (Platform.OS === 'android') await Notifications.setNotificationChannelAsync(channelId, {
+            name: `Study reminders (${prefs.deliveryMethod})`, importance: Notifications.AndroidImportance.DEFAULT,
+            sound: prefs.deliveryMethod === 'sound' ? 'default' : null,
+            enableVibrate: prefs.deliveryMethod === 'vibration', vibrationPattern: [0, 250, 250, 250],
         });
-    };
-
-    const cancelNotifications = async () => {
-        await Notifications.cancelAllScheduledNotificationsAsync();
-    };
-
-    const toggleNotifications = async () => {
-        if (!isEnabled) {
-            const granted = await requestPermissions();
-            if (granted) {
-                setIsEnabled(true);
-                await AsyncStorage.setItem('notificationsEnabled', 'true');
-            } else {
-                Alert.alert('Permission required', 'Enable notifications in settings');
+        const pending = await Notifications.getAllScheduledNotificationsAsync();
+        // Remove our reminders, including the two titles used before identifiers existed.
+        for (const item of pending) {
+            if (item.identifier.startsWith('javify-study-') || ['📅 Calendar Reminder', '🔥 Streak Reminder'].includes(item.content.title)) {
+                await Notifications.cancelScheduledNotificationAsync(item.identifier);
             }
-        } else {
-            await cancelNotifications();
-            setIsEnabled(false);
-            setCalendarEnabled(false);
-            setStreakEnabled(false);
-            await AsyncStorage.setItem('notificationsEnabled', 'false');
-            await AsyncStorage.setItem('calendarEnabled', 'false');
-            await AsyncStorage.setItem('streakEnabled', 'false');
+        }
+        if (!prefs.isEnabled) return;
+        for (const [enabled, id, title, body] of [
+            [prefs.calendarEnabled, 'calendar', '📅 Calendar Reminder', 'Check your study calendar for today!'],
+            [prefs.streakEnabled, 'streak', '🔥 Streak Reminder', 'Make time for Java practice today!'],
+        ]) {
+            if (enabled) await Notifications.scheduleNotificationAsync({
+                identifier: `javify-study-${id}`,
+                content: { title, body, sound: prefs.deliveryMethod === 'sound' ? 'default' : false,
+                    vibrate: prefs.deliveryMethod === 'vibration' ? [0, 250, 250, 250] : [] },
+                trigger: { type: Notifications.SchedulableTriggerInputTypes.DAILY, hour, minute, ...(Platform.OS === 'android' ? { channelId } : {}) },
+            });
         }
     };
-
-    const toggleCalendar = async (value) => {
-        setCalendarEnabled(value);
-        await AsyncStorage.setItem('calendarEnabled', value ? 'true' : 'false');
-        if (value) await scheduleNotification('📅 Calendar Reminder', 'Check your study calendar for today!');
-        else {
-            await cancelNotifications();
-            if (streakEnabled) await scheduleNotification('🔥 Streak Reminder', 'Don’t break your streak today!');
-        }
+    const updatePreferences = async patch => {
+        if (lock.current || busy) return;
+        lock.current = true; setBusy(true);
+        const previous = { isEnabled, calendarEnabled, streakEnabled, deliveryMethod, reminderTime };
+        const next = { ...previous, ...patch };
+        try {
+            if (next.isEnabled && !(await requestPermissions())) {
+                Alert.alert('Permission required', 'Enable notifications in your device settings.'); return;
+            }
+            await reconcileReminders(next);
+            await AsyncStorage.multiSet([
+                ['notificationsEnabled', String(next.isEnabled)], ['calendarEnabled', String(next.calendarEnabled)],
+                ['streakEnabled', String(next.streakEnabled)], ['deliveryMethod', next.deliveryMethod], ['reminderTime', next.reminderTime],
+            ]);
+            setIsEnabled(next.isEnabled); setCalendarEnabled(next.calendarEnabled); setStreakEnabled(next.streakEnabled);
+            setDeliveryMethod(next.deliveryMethod); setReminderTime(next.reminderTime);
+        } catch {
+            try { await reconcileReminders(previous); } catch { /* The visible error prompts a retry. */ }
+            Alert.alert('Reminders not updated', 'Please check notification permissions and retry.');
+        } finally { lock.current = false; setBusy(false); }
     };
-
-    const toggleStreak = async (value) => {
-        setStreakEnabled(value);
-        await AsyncStorage.setItem('streakEnabled', value ? 'true' : 'false');
-        if (value) await scheduleNotification('🔥 Streak Reminder', 'Don’t break your streak today!');
-        else {
-            await cancelNotifications();
-            if (calendarEnabled) await scheduleNotification('📅 Calendar Reminder', 'Check your study calendar for today!');
-        }
-    };
-
-    const setDelivery = async (method) => {
-        setDeliveryMethod(method);
-        await AsyncStorage.setItem('deliveryMethod', method);
-        setDeliveryMenuVisible(false);
-    };
-
-    const setTime = async (time) => {
-        setReminderTime(time);
-        await AsyncStorage.setItem('reminderTime', time);
-        setTimeMenuVisible(false);
-    };
+    const toggleNotifications = () => updatePreferences({ isEnabled: !isEnabled });
+    const toggleCalendar = value => updatePreferences({ calendarEnabled: value });
+    const toggleStreak = value => updatePreferences({ streakEnabled: value });
+    const setDelivery = method => { setDeliveryMenuVisible(false); updatePreferences({ deliveryMethod: method }); };
+    const setTime = time => { setTimeMenuVisible(false); updatePreferences({ reminderTime: time }); };
 
     const notificationIcon = isEnabled ? 'notifications-on' : 'notifications-off';
 
     return (
-        <SafeAreaView style={styles.container} edges={['left', 'right', 'bottom']}>
+        <SafeAreaView style={styles.container} edges={['left', 'right', 'bottom']}><ScrollView>
             {/* Master Notifications Toggle */}
             <View style={[styles.row, styles.card]}>
                 <MaterialIcons name={notificationIcon} color={colors.gradientButtonStart} size={25} />
@@ -144,6 +128,7 @@ export default function NotificationPreferences() {
                     thumbColor={isEnabled ? colors.gradientButtonStart : '#f4f3f4'}
                     ios_backgroundColor={colors.gray}
                     style={Platform.OS === 'ios' ? { transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }] } : {}}
+                    disabled={busy}
                     onValueChange={toggleNotifications}
                     value={isEnabled}
                 />
@@ -163,7 +148,7 @@ export default function NotificationPreferences() {
                         ios_backgroundColor={colors.gray}
                         onValueChange={toggleCalendar}
                         value={calendarEnabled}
-                        disabled={!isEnabled}
+                        disabled={!isEnabled || busy}
                         style={Platform.OS === 'ios' ? { transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }] } : {}}
                     />
                 </View>
@@ -177,7 +162,7 @@ export default function NotificationPreferences() {
                         ios_backgroundColor={colors.gray}
                         onValueChange={toggleStreak}
                         value={streakEnabled}
-                        disabled={!isEnabled}
+                        disabled={!isEnabled || busy}
                         style={Platform.OS === 'ios' ? { transform: [{ scaleX: 0.7 }, { scaleY: 0.7 }] } : {}}
                     />
                 </View>
@@ -197,7 +182,7 @@ export default function NotificationPreferences() {
                             <Button
                                 mode="outlined"
                                 onPress={() => setDeliveryMenuVisible(true)}
-                                disabled={!isEnabled}
+                                disabled={!isEnabled || busy}
                                 style={{ borderColor: isEnabled ? '#000' : colors.gray }}
                                 labelStyle={{ color: isEnabled ? '#000' : colors.gray }}
                             >
@@ -221,7 +206,7 @@ export default function NotificationPreferences() {
                             <Button
                                 mode="outlined"
                                 onPress={() => setTimeMenuVisible(true)}
-                                disabled={!isEnabled}
+                                disabled={!isEnabled || busy}
                                 style={{ borderColor: isEnabled ? '#000' : colors.gray }}
                                 labelStyle={{ color: isEnabled ? '#000' : colors.gray }}
                             >
@@ -236,7 +221,7 @@ export default function NotificationPreferences() {
                     </Menu>
                 </View>
             </View>
-        </SafeAreaView>
+        </ScrollView></SafeAreaView>
     );
 }
 

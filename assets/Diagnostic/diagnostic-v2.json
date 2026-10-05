@@ -1,0 +1,1542 @@
+{
+  "version": 2,
+  "questions": [
+    {
+      "id": "diagnostic-v2-1.1",
+      "type": "text",
+      "question": "Which is a logic error?",
+      "options": [
+        {
+          "type": "text",
+          "value": "A valid program uses addition where multiplication was intended"
+        },
+        {
+          "type": "text",
+          "value": "A missing semicolon"
+        },
+        {
+          "type": "text",
+          "value": "An undeclared identifier"
+        },
+        {
+          "type": "text",
+          "value": "Unmatched braces"
+        }
+      ],
+      "answer": 0,
+      "explanation": "A logic error can compile and run while producing the wrong result.",
+      "topic": "1.1",
+      "unitId": "unit1",
+      "lessonId": "1",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-1.2",
+      "type": "text",
+      "question": "Can a local int variable be read before it is initialized?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Only if its name is short"
+        },
+        {
+          "type": "text",
+          "value": "No, Java reports a compile-time error"
+        },
+        {
+          "type": "text",
+          "value": "Yes, it always contains zero"
+        },
+        {
+          "type": "text",
+          "value": "Yes, it contains null"
+        }
+      ],
+      "answer": 1,
+      "explanation": "Local variables must be definitely assigned before use.",
+      "topic": "1.2",
+      "unitId": "unit1",
+      "lessonId": "2",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-1.3",
+      "type": "code",
+      "question": "What is printed?\nSystem.out.println(\"N=\" + 15 + 2);",
+      "options": [
+        {
+          "type": "text",
+          "value": "N=17"
+        },
+        {
+          "type": "text",
+          "value": "N=215"
+        },
+        {
+          "type": "text",
+          "value": "17"
+        },
+        {
+          "type": "text",
+          "value": "N=152"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Once the left operand is a String, + concatenates the later values from left to right.",
+      "topic": "1.3",
+      "unitId": "unit1",
+      "lessonId": "3",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-1.4",
+      "type": "code",
+      "question": "What is total if readCount() returns 6?\nint count = readCount();\nint total = count * 2;",
+      "options": [
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        }
+      ],
+      "answer": 2,
+      "explanation": "A returning method supplies a value used in the assignment and later expression.",
+      "topic": "1.4",
+      "unitId": "unit1",
+      "lessonId": "4",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-1.5",
+      "type": "text",
+      "question": "Which preserves the fraction when int a = 7 and b = 2?",
+      "options": [
+        {
+          "type": "text",
+          "value": "a / b"
+        },
+        {
+          "type": "text",
+          "value": "(int) (a / b)"
+        },
+        {
+          "type": "text",
+          "value": "(double) a / b"
+        },
+        {
+          "type": "text",
+          "value": "(double) (a / b)"
+        }
+      ],
+      "answer": 2,
+      "explanation": "Cast before division so the arithmetic uses double.",
+      "topic": "1.5",
+      "unitId": "unit1",
+      "lessonId": "5",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-1.6",
+      "type": "code",
+      "question": "What is x?\nint x = 11;\nx %= 3;\nx++;",
+      "options": [
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
+      ],
+      "answer": 3,
+      "explanation": "First store the remainder after division by 3, then increment once.",
+      "topic": "1.6",
+      "unitId": "unit1",
+      "lessonId": "6",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-1.7",
+      "type": "text",
+      "question": "What is a postcondition?",
+      "options": [
+        {
+          "type": "text",
+          "value": "A reserved word"
+        },
+        {
+          "type": "text",
+          "value": "The first argument type"
+        },
+        {
+          "type": "text",
+          "value": "A required file extension"
+        },
+        {
+          "type": "text",
+          "value": "A promised state or result after a valid call"
+        }
+      ],
+      "answer": 3,
+      "explanation": "A postcondition states the effect the method guarantees when its preconditions hold.",
+      "topic": "1.7",
+      "unitId": "unit1",
+      "lessonId": "7",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-1.8",
+      "type": "code",
+      "question": "What is printed?\nint x = 2;\n/* x += 20; */\nx++;\nSystem.out.println(x);",
+      "options": [
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        }
+      ],
+      "answer": 1,
+      "explanation": "The block comment does not run; only x++ changes the value.",
+      "topic": "1.8",
+      "unitId": "unit1",
+      "lessonId": "8",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-1.9",
+      "type": "text",
+      "question": "Which call matches void show(String text, int count)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "show(2, \"Hi\");"
+        },
+        {
+          "type": "text",
+          "value": "show(\"Hi\");"
+        },
+        {
+          "type": "text",
+          "value": "show(true, 2);"
+        },
+        {
+          "type": "text",
+          "value": "show(\"Hi\", 2);"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Argument count, order, and compatible types must match.",
+      "topic": "1.9",
+      "unitId": "unit1",
+      "lessonId": "9",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-1.10",
+      "type": "text",
+      "question": "Helpers.plusOne(int x) returns x + 1. What is Helpers.plusOne(Helpers.plusOne(4))?",
+      "options": [
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
+      ],
+      "answer": 3,
+      "explanation": "The inner call returns first, and its result is passed to the outer call.",
+      "topic": "1.10",
+      "unitId": "unit1",
+      "lessonId": "10",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-1.11",
+      "type": "text",
+      "question": "Which expression produces integers from 1 through 6?",
+      "options": [
+        {
+          "type": "text",
+          "value": "(int) (Math.random() * 6)"
+        },
+        {
+          "type": "text",
+          "value": "(int) (Math.random() * 6) + 1"
+        },
+        {
+          "type": "text",
+          "value": "(int) Math.random() * 6 + 1"
+        },
+        {
+          "type": "text",
+          "value": "(int) (Math.random() * 5) + 1"
+        }
+      ],
+      "answer": 1,
+      "explanation": "Multiply before casting to create six buckets, then shift their range.",
+      "topic": "1.11",
+      "unitId": "unit1",
+      "lessonId": "11",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-1.12",
+      "type": "text",
+      "question": "Given Counter a = new Counter(); and Counter b = a;, what is the relationship?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Two constructors run"
+        },
+        {
+          "type": "text",
+          "value": "a and b refer to the same object"
+        },
+        {
+          "type": "text",
+          "value": "b is automatically a deep copy"
+        },
+        {
+          "type": "text",
+          "value": "a is set to null"
+        }
+      ],
+      "answer": 1,
+      "explanation": "Reference assignment copies the reference, creating an alias.",
+      "topic": "1.12",
+      "unitId": "unit1",
+      "lessonId": "12",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-1.13",
+      "type": "code",
+      "question": "Assume Counter(int n) stores n and add(int x) increases it by x. What does a.get() return?\nCounter a = new Counter(4);\nCounter b = a;\nb.add(2);",
+      "options": [
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Both references identify the same mutable Counter.",
+      "topic": "1.13",
+      "unitId": "unit1",
+      "lessonId": "13",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-1.14",
+      "type": "text",
+      "question": "Counter c begins at 3. get() only returns the count. What is the count after two calls to c.get()? ",
+      "options": [
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        }
+      ],
+      "answer": 1,
+      "explanation": "An accessor that only reads state does not change it.",
+      "topic": "1.14",
+      "unitId": "unit1",
+      "lessonId": "14",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-1.15",
+      "type": "text",
+      "question": "What does \"code\".substring(1, 3) return?",
+      "options": [
+        {
+          "type": "text",
+          "value": "d"
+        },
+        {
+          "type": "text",
+          "value": "od"
+        },
+        {
+          "type": "text",
+          "value": "ode"
+        },
+        {
+          "type": "text",
+          "value": "co"
+        }
+      ],
+      "answer": 1,
+      "explanation": "The start index is included and the end index is excluded.",
+      "topic": "1.15",
+      "unitId": "unit1",
+      "lessonId": "15",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-2.1",
+      "type": "text",
+      "question": "A robot moves one square per repetition. Starting at position 0, where is it after 8 repetitions?",
+      "options": [
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
+      ],
+      "answer": 2,
+      "explanation": "Each repetition adds one to the position.",
+      "topic": "2.1",
+      "unitId": "unit2",
+      "lessonId": "16",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-2.2",
+      "type": "text",
+      "question": "What does == compare for object references?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Whether they refer to the same object or are both null"
+        },
+        {
+          "type": "text",
+          "value": "Always their field values"
+        },
+        {
+          "type": "text",
+          "value": "Their class names only"
+        },
+        {
+          "type": "text",
+          "value": "Their String lengths"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Reference equality is identity comparison, not general content comparison.",
+      "topic": "2.2",
+      "unitId": "unit2",
+      "lessonId": "17",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-2.3",
+      "type": "code",
+      "question": "What is x?\nint x = 3;\nif (x < 6) x *= 2;\nelse x--;",
+      "options": [
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
+      ],
+      "answer": 1,
+      "explanation": "Exactly one branch executes after the test.",
+      "topic": "2.3",
+      "unitId": "unit2",
+      "lessonId": "18",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-2.4",
+      "type": "code",
+      "question": "What is result?\nint x = 6;\nint result;\nif (x >= 9) result = 3;\nelse if (x >= 6) result = 2;\nelse result = 1;",
+      "options": [
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Only the first matching branch runs.",
+      "topic": "2.4",
+      "unitId": "unit2",
+      "lessonId": "19",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-2.5",
+      "type": "text",
+      "question": "Why can x != 0 && 10 / x > 1 safely handle x = 0?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Division by zero is always allowed"
+        },
+        {
+          "type": "text",
+          "value": "&& evaluates only the right operand"
+        },
+        {
+          "type": "text",
+          "value": "x is automatically changed to one"
+        },
+        {
+          "type": "text",
+          "value": "The right operand is skipped when the left is false"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Short-circuit AND avoids evaluating an unnecessary right side.",
+      "topic": "2.5",
+      "unitId": "unit2",
+      "lessonId": "20",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-2.6",
+      "type": "text",
+      "question": "Which is equivalent to !(x >= 1 && x <= 5)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "x < 1 || x > 5"
+        },
+        {
+          "type": "text",
+          "value": "x < 1 && x > 5"
+        },
+        {
+          "type": "text",
+          "value": "x >= 1 || x <= 5"
+        },
+        {
+          "type": "text",
+          "value": "x == 1"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Being outside an inclusive interval means below its lower bound or above its upper bound.",
+      "topic": "2.6",
+      "unitId": "unit2",
+      "lessonId": "21",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-2.7",
+      "type": "code",
+      "question": "What is sum?\nint i = 1, sum = 0;\nwhile (i <= 5) { sum += i; i++; }",
+      "options": [
+        {
+          "type": "text",
+          "value": "16"
+        },
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "18"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        }
+      ],
+      "answer": 3,
+      "explanation": "The body adds every integer from 1 through the inclusive upper bound.",
+      "topic": "2.7",
+      "unitId": "unit2",
+      "lessonId": "22",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-2.8",
+      "type": "code",
+      "question": "How many body executions?\nfor (int i = 1; i <= 5; i += 2) { work(); }",
+      "options": [
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
+      ],
+      "answer": 3,
+      "explanation": "The loop visits the odd integers from 1 through this odd inclusive bound.",
+      "topic": "2.8",
+      "unitId": "unit2",
+      "lessonId": "23",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-2.9",
+      "type": "code",
+      "question": "What is sum?\nint n = 12;\nint sum = 0;\nwhile (n > 0) { sum += n % 10; n /= 10; }",
+      "options": [
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Each iteration adds the current last digit and then removes it.",
+      "topic": "2.9",
+      "unitId": "unit2",
+      "lessonId": "24",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-2.10",
+      "type": "code",
+      "question": "What is count?\nString s = \"abracadabra\";\nint count = 0;\nfor (int i = 0; i < s.length(); i++)\n  if (s.substring(i, i + 1).equals(\"a\")) count++;",
+      "options": [
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Visit every character position once and increment only for an a.",
+      "topic": "2.10",
+      "unitId": "unit2",
+      "lessonId": "25",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-2.11",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 1; i <= 2; i++)\n  for (int j = 0; j < i; j++) work();",
+      "options": [
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        }
+      ],
+      "answer": 1,
+      "explanation": "Add the inner counts 1 + 2 + ... + n.",
+      "topic": "2.11",
+      "unitId": "unit2",
+      "lessonId": "26",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-2.12",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 5; i++)\n  for (int j = 0; j < i; j++) work();",
+      "options": [
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        }
+      ],
+      "answer": 3,
+      "explanation": "The inner counts are 0 + 1 + ... + (n - 1).",
+      "topic": "2.12",
+      "unitId": "unit2",
+      "lessonId": "27",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-3.1",
+      "type": "text",
+      "question": "Which is an example invariant for a capacity-limited container?",
+      "options": [
+        {
+          "type": "text",
+          "value": "size must always be negative"
+        },
+        {
+          "type": "text",
+          "value": "Every method is static"
+        },
+        {
+          "type": "text",
+          "value": "The class has no constructor"
+        },
+        {
+          "type": "text",
+          "value": "0 <= size && size <= capacity"
+        }
+      ],
+      "answer": 3,
+      "explanation": "The logical size must remain within the stated capacity limits.",
+      "topic": "3.1",
+      "unitId": "unit3",
+      "lessonId": "28",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-3.2",
+      "type": "text",
+      "question": "A predictive tool performs poorly for a minority group. What is the best response?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Hide group results"
+        },
+        {
+          "type": "text",
+          "value": "Collect less evaluation data"
+        },
+        {
+          "type": "text",
+          "value": "Assume the users are wrong"
+        },
+        {
+          "type": "text",
+          "value": "Investigate data and outcomes for that group"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Evaluate impacts across affected groups and address unequal errors.",
+      "topic": "3.2",
+      "unitId": "unit3",
+      "lessonId": "29",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-3.3",
+      "type": "text",
+      "question": "Two Counter objects each start at 2. Only the first is incremented once. What is the second object\u2019s count?",
+      "options": [
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        }
+      ],
+      "answer": 1,
+      "explanation": "Instance state is separate for separately constructed objects.",
+      "topic": "3.3",
+      "unitId": "unit3",
+      "lessonId": "30",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-3.4",
+      "type": "text",
+      "question": "When does Java provide an implicit no-argument constructor?",
+      "options": [
+        {
+          "type": "text",
+          "value": "When the class declares no constructors"
+        },
+        {
+          "type": "text",
+          "value": "Whenever one parameterized constructor exists"
+        },
+        {
+          "type": "text",
+          "value": "Always, regardless of declarations"
+        },
+        {
+          "type": "text",
+          "value": "Only when all fields are public"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Declaring any constructor prevents the automatic no-argument constructor from being supplied.",
+      "topic": "3.4",
+      "unitId": "unit3",
+      "lessonId": "31",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-3.5",
+      "type": "code",
+      "question": "What does f(2) return?\nint f(int x) {\n  if (x > 5) return x * 2;\n  return x + 1;\n}",
+      "options": [
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
+      ],
+      "answer": 0,
+      "explanation": "A true branch returns immediately; otherwise execution reaches the fallback return.",
+      "topic": "3.5",
+      "unitId": "unit3",
+      "lessonId": "32",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-3.6",
+      "type": "code",
+      "question": "Counter(int n) stores n; increment() adds 1; getCount() returns it. What does a.getCount() return?\nCounter same(Counter item) { return item; }\n// caller:\nCounter a = new Counter(2);\nCounter b = same(a);\nb.increment();",
+      "options": [
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "99"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
+      ],
+      "answer": 2,
+      "explanation": "The returned reference aliases the original Counter; increment through b changes that shared object.",
+      "topic": "3.6",
+      "unitId": "unit3",
+      "lessonId": "33",
+      "contentVersion": 3
+    },
+    {
+      "id": "diagnostic-v2-3.7",
+      "type": "text",
+      "question": "A class field static int created starts at 0. Each constructor increments it once. What is created after 2 new objects?",
+      "options": [
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Every constructor call updates the same shared counter.",
+      "topic": "3.7",
+      "unitId": "unit3",
+      "lessonId": "34",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-3.8",
+      "type": "code",
+      "question": "What is the field afterward?\nvoid set(int value) { this.value = value; }\n// Call: set(2);",
+      "options": [
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        }
+      ],
+      "answer": 1,
+      "explanation": "The qualified left side names the field; the unqualified right side names the parameter.",
+      "topic": "3.8",
+      "unitId": "unit3",
+      "lessonId": "35",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-3.9",
+      "type": "text",
+      "question": "Can this be passed as a method argument?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Yes, when the parameter type is compatible"
+        },
+        {
+          "type": "text",
+          "value": "No, it is not a reference"
+        },
+        {
+          "type": "text",
+          "value": "Only to a void method"
+        },
+        {
+          "type": "text",
+          "value": "Only after casting to int"
+        }
+      ],
+      "answer": 0,
+      "explanation": "this can supply the current object\u2019s reference to another operation.",
+      "topic": "3.9",
+      "unitId": "unit3",
+      "lessonId": "36",
+      "contentVersion": 2
+    },
+    {
+      "id": "diagnostic-v2-4.1",
+      "type": "text",
+      "question": "A survey samples only app users to estimate all students' access to phones. What is the concern?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Selection bias"
+        },
+        {
+          "type": "text",
+          "value": "Integer overflow"
+        },
+        {
+          "type": "text",
+          "value": "A guaranteed random sample"
+        },
+        {
+          "type": "text",
+          "value": "Duplicate variable names"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Students without app access are excluded from the sample.",
+      "topic": "4.1",
+      "unitId": "unit4",
+      "lessonId": "37",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.2",
+      "type": "text",
+      "question": "Before combining temperatures, what should be checked?",
+      "options": [
+        {
+          "type": "text",
+          "value": "That file names have equal length"
+        },
+        {
+          "type": "text",
+          "value": "That all values are positive"
+        },
+        {
+          "type": "text",
+          "value": "That every column is a String"
+        },
+        {
+          "type": "text",
+          "value": "That units are compatible"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Fahrenheit and Celsius values cannot be averaged meaningfully without conversion.",
+      "topic": "4.2",
+      "unitId": "unit4",
+      "lessonId": "38",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.3",
+      "type": "code",
+      "question": "What happens?\nint[] a = new int[3];\na[3] = 5;",
+      "options": [
+        {
+          "type": "text",
+          "value": "The array grows"
+        },
+        {
+          "type": "text",
+          "value": "The last element changes"
+        },
+        {
+          "type": "text",
+          "value": "The first element changes"
+        },
+        {
+          "type": "text",
+          "value": "ArrayIndexOutOfBoundsException"
+        }
+      ],
+      "answer": 3,
+      "explanation": "The index equal to length is outside the array.",
+      "topic": "4.3",
+      "unitId": "unit4",
+      "lessonId": "39",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.4",
+      "type": "code",
+      "question": "What is a[0]?\nint[] a = {3, 2, 5};\nfor (int x : a) x++;",
+      "options": [
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        }
+      ],
+      "answer": 1,
+      "explanation": "For primitive elements, x is a copy; assigning x does not update the array.",
+      "topic": "4.4",
+      "unitId": "unit4",
+      "lessonId": "40",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.5",
+      "type": "code",
+      "question": "What is max?\nint[] a = {-4, -2, -8};\nint max = a[0];\nfor (int x : a) if (x > max) max = x;",
+      "options": [
+        {
+          "type": "text",
+          "value": "-2"
+        },
+        {
+          "type": "text",
+          "value": "-1"
+        },
+        {
+          "type": "text",
+          "value": "-3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Initialize to an actual element so all-negative arrays are handled.",
+      "topic": "4.5",
+      "unitId": "unit4",
+      "lessonId": "41",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.6",
+      "type": "text",
+      "question": "What does hasNext() do?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Reads and deletes a token"
+        },
+        {
+          "type": "text",
+          "value": "Closes the file"
+        },
+        {
+          "type": "text",
+          "value": "Returns the file name"
+        },
+        {
+          "type": "text",
+          "value": "Checks whether another token is available without consuming it"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Use hasNext as a loop condition before reading.",
+      "topic": "4.6",
+      "unitId": "unit4",
+      "lessonId": "42",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.7",
+      "type": "text",
+      "question": "What can happen when a null Integer is unboxed?",
+      "options": [
+        {
+          "type": "text",
+          "value": "It creates a new array"
+        },
+        {
+          "type": "text",
+          "value": "NullPointerException"
+        },
+        {
+          "type": "text",
+          "value": "It always becomes zero"
+        },
+        {
+          "type": "text",
+          "value": "It becomes an empty String"
+        }
+      ],
+      "answer": 1,
+      "explanation": "There is no wrapper object from which to extract a value.",
+      "topic": "4.7",
+      "unitId": "unit4",
+      "lessonId": "43",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.8",
+      "type": "code",
+      "question": "What is a.get(1)?\n// a initially contains [2, 7]\na.add(1, 12);",
+      "options": [
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        }
+      ],
+      "answer": 2,
+      "explanation": "Indexed add inserts at the index and shifts later elements right.",
+      "topic": "4.8",
+      "unitId": "unit4",
+      "lessonId": "44",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.9",
+      "type": "code",
+      "question": "What is a.size() afterward if a contains [2, 2, 3]?\nfor (int i = a.size() - 1; i >= 0; i--)\n  if (a.get(i) == 2) a.remove(i);",
+      "options": [
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Backward traversal safely removes both matching entries without skipping shifted elements.",
+      "topic": "4.9",
+      "unitId": "unit4",
+      "lessonId": "45",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.10",
+      "type": "text",
+      "question": "At which zero-based index should 5 be inserted into [2, 4, 6] to keep ascending order, before any equal value?",
+      "options": [
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Count the entries strictly smaller than 5; insertion shifts the remaining entries right.",
+      "topic": "4.10",
+      "unitId": "unit4",
+      "lessonId": "46",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.11",
+      "type": "text",
+      "question": "Which accesses the bottom-right element of new int[2][3] stored in grid?",
+      "options": [
+        {
+          "type": "text",
+          "value": "grid[2][3]"
+        },
+        {
+          "type": "text",
+          "value": "grid[1][3]"
+        },
+        {
+          "type": "text",
+          "value": "grid[2][2]"
+        },
+        {
+          "type": "text",
+          "value": "grid[1][2]"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Both row and column indices start at zero.",
+      "topic": "4.11",
+      "unitId": "unit4",
+      "lessonId": "47",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.12",
+      "type": "code",
+      "question": "What is the visitation order?\nint[][] a = {{2, 3}, {4, 5}};\nfor (int r = 0; r < a.length; r++)\n  for (int c = 0; c < a[r].length; c++)\n    System.out.print(a[r][c] + \" \");",
+      "options": [
+        {
+          "type": "text",
+          "value": "2 3 4 5 "
+        },
+        {
+          "type": "text",
+          "value": "2 4 3 5 "
+        },
+        {
+          "type": "text",
+          "value": "5 4 3 2 "
+        },
+        {
+          "type": "text",
+          "value": "3 2 5 4 "
+        }
+      ],
+      "answer": 0,
+      "explanation": "Row-major traversal visits every column in a row before moving to the next row.",
+      "topic": "4.12",
+      "unitId": "unit4",
+      "lessonId": "48",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.13",
+      "type": "text",
+      "question": "What is the main-diagonal sum of {{1, 2}, {3, 4}}?",
+      "options": [
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        }
+      ],
+      "answer": 1,
+      "explanation": "The main diagonal consists of positions [0][0] and [1][1].",
+      "topic": "4.13",
+      "unitId": "unit4",
+      "lessonId": "49",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.14",
+      "type": "text",
+      "question": "In ascending [2, 4, 6, 8, 10], the midpoint value is 6. For target 2, what happens next?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Return the midpoint"
+        },
+        {
+          "type": "text",
+          "value": "Search the upper half"
+        },
+        {
+          "type": "text",
+          "value": "Reverse the list"
+        },
+        {
+          "type": "text",
+          "value": "Search the lower half"
+        }
+      ],
+      "answer": 3,
+      "explanation": "Compare target with the midpoint and discard the half that cannot contain it.",
+      "topic": "4.14",
+      "unitId": "unit4",
+      "lessonId": "50",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.15",
+      "type": "text",
+      "question": "After the first insertion-sort step (inserting index 1 into the sorted prefix), what is [4, 2, 7, 1]?",
+      "options": [
+        {
+          "type": "text",
+          "value": "[1, 7, 2, 4]"
+        },
+        {
+          "type": "text",
+          "value": "[2, 4, 7, 1]"
+        },
+        {
+          "type": "text",
+          "value": "[4, 2, 7, 1]"
+        },
+        {
+          "type": "text",
+          "value": "[1, 2, 4, 7]"
+        }
+      ],
+      "answer": 1,
+      "explanation": "Shift the previous larger value right and insert the saved value into the prefix.",
+      "topic": "4.15",
+      "unitId": "unit4",
+      "lessonId": "51",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.16",
+      "type": "code",
+      "question": "What is printed by f(2)?\nvoid f(int n) {\n  if (n == 0) return;\n  f(n - 1);\n  System.out.print(n + \" \");\n}",
+      "options": [
+        {
+          "type": "text",
+          "value": "2 1 "
+        },
+        {
+          "type": "text",
+          "value": "0 2 "
+        },
+        {
+          "type": "text",
+          "value": "2 "
+        },
+        {
+          "type": "text",
+          "value": "1 2 "
+        }
+      ],
+      "answer": 3,
+      "explanation": "Printing happens after the recursive call, so the values appear while calls unwind.",
+      "topic": "4.16",
+      "unitId": "unit4",
+      "lessonId": "52",
+      "contentVersion": 1
+    },
+    {
+      "id": "diagnostic-v2-4.17",
+      "type": "text",
+      "question": "For a sorted array of 4 elements, recursive binary search has low > high. What should it return?",
+      "options": [
+        {
+          "type": "text",
+          "value": "The value at low"
+        },
+        {
+          "type": "text",
+          "value": "The value at high"
+        },
+        {
+          "type": "text",
+          "value": "Another identical recursive call"
+        },
+        {
+          "type": "text",
+          "value": "A not-found result such as -1"
+        }
+      ],
+      "answer": 3,
+      "explanation": "An empty candidate interval is the unsuccessful base case.",
+      "topic": "4.17",
+      "unitId": "unit4",
+      "lessonId": "53",
+      "contentVersion": 1
+    }
+  ]
+}

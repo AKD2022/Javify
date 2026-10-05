@@ -1,214 +1,408 @@
 {
   "lessonId": 10,
-  "title": "Operator Precedence and Parentheses",
+  "title": "1.10 Calling Class Methods",
+  "topic": "1.10",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "Which operator has the highest precedence?",
+      "question": "Which modifier identifies a class method?",
       "options": [
-        { "type": "text", "value": "Parentheses ()" },
-        { "type": "text", "value": "Multiplication *" },
-        { "type": "text", "value": "Addition +" },
-        { "type": "text", "value": "Assignment =" }
+        {
+          "type": "text",
+          "value": "static"
+        },
+        {
+          "type": "text",
+          "value": "private only"
+        },
+        {
+          "type": "text",
+          "value": "final only"
+        },
+        {
+          "type": "text",
+          "value": "void only"
+        }
       ],
       "answer": 0,
-      "explanation": "Parentheses have the highest precedence and are always evaluated first, forcing the order of operations."
+      "explanation": "A static method belongs to the class rather than a particular receiver object."
     },
     {
-      "id": 2,
-      "type": "code",
-      "question": "What is the result of: 5 + 2 * 3",
+      "id": "v2-2",
+      "type": "text",
+      "question": "Which is the conventional way to call Math.sqrt?",
       "options": [
-        { "type": "text", "value": "21" },
-        { "type": "text", "value": "11" },
-        { "type": "text", "value": "9" },
-        { "type": "text", "value": "16" }
+        {
+          "type": "text",
+          "value": "Math = sqrt(9.0)"
+        },
+        {
+          "type": "text",
+          "value": "Math.sqrt(9.0)"
+        },
+        {
+          "type": "text",
+          "value": "new Math().sqrt(9.0)"
+        },
+        {
+          "type": "text",
+          "value": "sqrt.Math(9.0)"
+        }
       ],
       "answer": 1,
-      "explanation": "Multiplication has higher precedence than addition: 2 * 3 = 6, then 5 + 6 = 11."
+      "explanation": "Class methods are called using the class name and method name."
     },
     {
-      "id": 3,
-      "type": "code",
-      "question": "What is the result of: (4 + 6) / 2",
+      "id": "v2-3",
+      "type": "text",
+      "question": "Does calling a static method require creating an instance first?",
       "options": [
-        { "type": "text", "value": "7" },
-        { "type": "text", "value": "8" },
-        { "type": "text", "value": "5" },
-        { "type": "text", "value": "10" }
+        {
+          "type": "text",
+          "value": "Only if it returns int"
+        },
+        {
+          "type": "text",
+          "value": "Only if it has parameters"
+        },
+        {
+          "type": "text",
+          "value": "No"
+        },
+        {
+          "type": "text",
+          "value": "Yes, always"
+        }
       ],
       "answer": 2,
-      "explanation": "Parentheses are evaluated first: (4 + 6) = 10, then 10 / 2 = 5."
+      "explanation": "A class method can be invoked through its class name."
     },
     {
-      "id": 4,
-      "type": "code",
-      "question": "What is the result of: 20 - 8 - 4",
+      "id": "v2-4",
+      "type": "text",
+      "question": "What happens to the value returned by Helper.count() in int n = Helper.count();?",
       "options": [
-        { "type": "text", "value": "16" },
-        { "type": "text", "value": "12" },
-        { "type": "text", "value": "8" },
-        { "type": "text", "value": "4" }
+        {
+          "type": "text",
+          "value": "It is always printed"
+        },
+        {
+          "type": "text",
+          "value": "It is ignored"
+        },
+        {
+          "type": "text",
+          "value": "It becomes the method name"
+        },
+        {
+          "type": "text",
+          "value": "It is assigned to n"
+        }
+      ],
+      "answer": 3,
+      "explanation": "A method call with a return value can be used as an expression."
+    },
+    {
+      "id": "v2-5",
+      "type": "text",
+      "question": "Which call is valid for public static void printLabel(String text) in Labels?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Labels.printLabel(\"Ready\");"
+        },
+        {
+          "type": "text",
+          "value": "Labels.printLabel();"
+        },
+        {
+          "type": "text",
+          "value": "int n = Labels.printLabel(\"Ready\");"
+        },
+        {
+          "type": "text",
+          "value": "Labels.printLabel(7);"
+        }
+      ],
+      "answer": 0,
+      "explanation": "The call supplies the required String and does not try to use a void result."
+    },
+    {
+      "id": "v2-6",
+      "type": "text",
+      "question": "What is evaluated before the called method begins?",
+      "options": [
+        {
+          "type": "text",
+          "value": "The caller’s next statement"
+        },
+        {
+          "type": "text",
+          "value": "The argument expressions"
+        },
+        {
+          "type": "text",
+          "value": "Only comments"
+        },
+        {
+          "type": "text",
+          "value": "All future methods"
+        }
+      ],
+      "answer": 1,
+      "explanation": "The values from argument expressions are supplied to parameters."
+    },
+    {
+      "id": "v2-7",
+      "type": "text",
+      "question": "A static method returns int. Can its call be part of arithmetic?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Only if it prints"
+        },
+        {
+          "type": "text",
+          "value": "Only in a constructor"
+        },
+        {
+          "type": "text",
+          "value": "Yes, where an int value is valid"
+        },
+        {
+          "type": "text",
+          "value": "No, all methods are statements only"
+        }
       ],
       "answer": 2,
-      "explanation": "Left-to-right associativity: (20 - 8) - 4 = 12 - 4 = 8."
+      "explanation": "A non-void call can supply an expression value."
     },
     {
-      "id": 5,
-      "type": "code",
-      "question": "What is the result of: 18 / 3 / 2",
+      "id": "v2-8",
+      "type": "text",
+      "question": "Why use the class name for a static call?",
       "options": [
-        { "type": "text", "value": "3" },
-        { "type": "text", "value": "12" },
-        { "type": "text", "value": "9" },
-        { "type": "text", "value": "6" }
-      ],
-      "answer": 0,
-      "explanation": "Left-to-right associativity for division: (18 / 3) / 2 = 6 / 2 = 3."
-    },
-    {
-      "id": 6,
-      "type": "code",
-      "question": "What is the result of: 15 % 4 + 1",
-      "options": [
-        { "type": "text", "value": "4" },
-        { "type": "text", "value": "0" },
-        { "type": "text", "value": "16" },
-        { "type": "text", "value": "3" }
-      ],
-      "answer": 0,
-      "explanation": "Modulus has higher precedence: 15 % 4 = 3, then 3 + 1 = 4."
-    },
-    {
-      "id": 7,
-      "type": "code",
-      "question": "What is the result of: 2 * 3 + 4 * 5",
-      "options": [
-        { "type": "text", "value": "70" },
-        { "type": "text", "value": "26" },
-        { "type": "text", "value": "50" },
-        { "type": "text", "value": "14" }
-      ],
-      "answer": 1,
-      "explanation": "Multiplication before addition: (2 * 3) + (4 * 5) = 6 + 20 = 26."
-    },
-    {
-      "id": 8,
-      "type": "code",
-      "question": "What is the result of: (10 - 6) * (3 + 2)",
-      "options": [
-        { "type": "text", "value": "9" },
-        { "type": "text", "value": "1" },
-        { "type": "text", "value": "11" },
-        { "type": "text", "value": "20" }
+        {
+          "type": "text",
+          "value": "It makes the return type String"
+        },
+        {
+          "type": "text",
+          "value": "It bypasses type checking"
+        },
+        {
+          "type": "text",
+          "value": "It initializes all fields to zero"
+        },
+        {
+          "type": "text",
+          "value": "It makes clear that no object receiver is needed"
+        }
       ],
       "answer": 3,
-      "explanation": "Parentheses first: (10 - 6) = 4 and (3 + 2) = 5, then 4 * 5 = 20."
+      "explanation": "Class-qualified syntax communicates the method’s relationship to the class."
     },
     {
-      "id": 9,
+      "id": "v2-9",
       "type": "text",
-      "question": "Which operators have equal precedence to multiplication?",
+      "question": "Helpers.doubleIt(int x) is static and returns 2 * x. What is Helpers.doubleIt(2)?",
       "options": [
-        { "type": "text", "value": "Division (/) and modulus (%)" },
-        { "type": "text", "value": "Addition (+) and subtraction (-)" },
-        { "type": "text", "value": "Assignment (=) and increment (++" },
-        { "type": "text", "value": "Parentheses () and brackets []" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        }
       ],
       "answer": 0,
-      "explanation": "Multiplication (*), division (/), and modulus (%) all have the same precedence level."
+      "explanation": "The supplied argument is doubled by the class method."
     },
     {
-      "id": 10,
-      "type": "code",
-      "question": "What is the result of: 12 / 4 * 3",
+      "id": "v2-10",
+      "type": "text",
+      "question": "Helpers.plusOne(int x) returns x + 1. What is Helpers.plusOne(Helpers.plusOne(2))?",
       "options": [
-        { "type": "text", "value": "1" },
-        { "type": "text", "value": "9" },
-        { "type": "text", "value": "16" },
-        { "type": "text", "value": "4" }
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
       ],
       "answer": 1,
-      "explanation": "Equal precedence, left-to-right: (12 / 4) * 3 = 3 * 3 = 9."
+      "explanation": "The inner call returns first, and its result is passed to the outer call."
     },
     {
-      "id": 11,
-      "type": "code",
-      "question": "What is the result of: 8 - 2 * 3 + 1",
+      "id": "v2-11",
+      "type": "text",
+      "question": "Helpers.doubleIt(int x) is static and returns 2 * x. What is Helpers.doubleIt(4)?",
       "options": [
-        { "type": "text", "value": "19" },
-        { "type": "text", "value": "3" },
-        { "type": "text", "value": "15" },
-        { "type": "text", "value": "7" }
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
       ],
       "answer": 2,
-      "explanation": "Multiplication first: 8 - (2 * 3) + 1 = 8 - 6 + 1 = 3."
+      "explanation": "The supplied argument is doubled by the class method."
     },
     {
-      "id": 12,
-      "type": "code",
-      "question": "What is the result of: (8 + 4) / (3 - 1)",
+      "id": "v2-12",
+      "type": "text",
+      "question": "Helpers.plusOne(int x) returns x + 1. What is Helpers.plusOne(Helpers.plusOne(4))?",
       "options": [
-        { "type": "text", "value": "4" },
-        { "type": "text", "value": "6" },
-        { "type": "text", "value": "12" },
-        { "type": "text", "value": "6" }
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 3,
-      "explanation": "Parentheses evaluated first: (8 + 4) / (3 - 1) = 12 / 2 = 6."
+      "explanation": "The inner call returns first, and its result is passed to the outer call."
     },
     {
-      "id": 13,
+      "id": "v2-13",
       "type": "text",
-      "question": "What is the associativity of arithmetic operators?",
+      "question": "Helpers.doubleIt(int x) is static and returns 2 * x. What is Helpers.doubleIt(6)?",
       "options": [
-        { "type": "text", "value": "Left-to-right" },
-        { "type": "text", "value": "Right-to-left" },
-        { "type": "text", "value": "No associativity" },
-        { "type": "text", "value": "Random order" }
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        }
       ],
       "answer": 0,
-      "explanation": "Arithmetic operators use left-to-right associativity when they have equal precedence."
+      "explanation": "The supplied argument is doubled by the class method."
     },
     {
-      "id": 14,
-      "type": "code",
-      "question": "What is the result of: 16 / (2 + 2)",
-      "options": [
-        { "type": "text", "value": "6" },
-        { "type": "text", "value": "4" },
-        { "type": "text", "value": "8" },
-        { "type": "text", "value": "2" }
-      ],
-      "answer": 1,
-      "explanation": "Parentheses force addition first: 16 / (2 + 2) = 16 / 4 = 4."
-    },
-    {
-      "id": 15,
-      "type": "code",
-      "question": "What is the result of: 5 * (3 + 2) - 10",
-      "options": [
-        { "type": "text", "value": "5" },
-        { "type": "text", "value": "15" },
-        { "type": "text", "value": "25" },
-        { "type": "text", "value": "35" }
-      ],
-      "answer": 1,
-      "explanation": "Parentheses first: 5 * (3 + 2) - 10 = 5 * 5 - 10 = 25 - 10 = 15."
-    },
-    {
-      "id": 16,
+      "id": "v2-14",
       "type": "text",
-      "question": "Why should you use parentheses even when not required?",
+      "question": "Helpers.plusOne(int x) returns x + 1. What is Helpers.plusOne(Helpers.plusOne(6))?",
       "options": [
-        { "type": "text", "value": "They make code run faster" },
-        { "type": "text", "value": "They reduce memory usage" },
-        { "type": "text", "value": "They prevent compilation errors" },
-        { "type": "text", "value": "They make code clearer and more readable" }
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        }
+      ],
+      "answer": 1,
+      "explanation": "The inner call returns first, and its result is passed to the outer call."
+    },
+    {
+      "id": "v2-15",
+      "type": "text",
+      "question": "Helpers.doubleIt(int x) is static and returns 2 * x. What is Helpers.doubleIt(8)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "15"
+        },
+        {
+          "type": "text",
+          "value": "19"
+        },
+        {
+          "type": "text",
+          "value": "16"
+        },
+        {
+          "type": "text",
+          "value": "17"
+        }
+      ],
+      "answer": 2,
+      "explanation": "The supplied argument is doubled by the class method."
+    },
+    {
+      "id": "v2-16",
+      "type": "text",
+      "question": "Helpers.plusOne(int x) returns x + 1. What is Helpers.plusOne(Helpers.plusOne(8))?",
+      "options": [
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        }
       ],
       "answer": 3,
-      "explanation": "Parentheses improve code clarity and readability by making the intended order of operations explicit."
+      "explanation": "The inner call returns first, and its result is passed to the outer call."
     }
   ]
 }

@@ -1,214 +1,407 @@
 {
   "lessonId": 33,
-  "title": "The this Keyword and Instance Variables",
+  "title": "Passing and Returning Object References",
   "questions": [
     {
-      "id": 1,
-      "type": "text",
-      "question": "What does the this keyword refer to?",
+      "id": "v3-1",
+      "type": "code",
+      "question": "Counter(int n) stores n; increment() adds 1; getCount() returns it. What does a.getCount() return?\nvoid change(Counter x) { x.increment(); }\n// caller:\nCounter a = new Counter(2);\nchange(a);",
       "options": [
-        { "type": "text", "value": "The current object whose method or constructor is being called" },
-        { "type": "text", "value": "The previous object" },
-        { "type": "text", "value": "The class itself" },
-        { "type": "text", "value": "A static variable" }
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "99"
+        }
       ],
       "answer": 0,
-      "explanation": "The this keyword is a special reference that refers to the current object - the object whose method or constructor is being called."
+      "explanation": "The copied reference points to the same Counter, so increment changes the object visible through a."
     },
     {
-      "id": 2,
-      "type": "text",
-      "question": "What is the most common use of the this keyword?",
+      "id": "v3-2",
+      "type": "code",
+      "question": "Counter(int n) stores n; getCount() returns it. What does a.getCount() return?\nvoid change(Counter x) { x = new Counter(99); }\n// caller:\nCounter a = new Counter(2);\nchange(a);",
       "options": [
-        { "type": "text", "value": "To create new objects" },
-        { "type": "text", "value": "To distinguish between instance variables and parameters with the same name" },
-        { "type": "text", "value": "To delete objects" },
-        { "type": "text", "value": "To call static methods" }
+        {
+          "type": "text",
+          "value": "99"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 1,
-      "explanation": "The most common use of this is to distinguish between instance variables and parameters that have the same name, particularly in constructors."
+      "explanation": "Reassigning the local parameter does not reassign the caller reference."
     },
     {
-      "id": 3,
-      "type": "text",
-      "question": "In the statement this.name = name, what does this.name refer to?",
+      "id": "v3-3",
+      "type": "code",
+      "question": "Counter(int n) stores n; increment() adds 1; getCount() returns it. What does a.getCount() return?\nCounter same(Counter item) { return item; }\n// caller:\nCounter a = new Counter(2);\nCounter b = same(a);\nb.increment();",
       "options": [
-        { "type": "text", "value": "The parameter" },
-        { "type": "text", "value": "A local variable" },
-        { "type": "text", "value": "The instance variable" },
-        { "type": "text", "value": "A static variable" }
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "99"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        }
       ],
       "answer": 2,
-      "explanation": "In this.name = name, this.name refers to the instance variable of the current object, while name (without this) refers to the parameter."
+      "explanation": "The returned reference aliases the original Counter; increment through b changes that shared object."
     },
     {
-      "id": 4,
-      "type": "text",
-      "question": "What happens if you write name = name instead of this.name = name in a constructor?",
+      "id": "v3-4",
+      "type": "code",
+      "question": "What is a after change(a)?\nvoid change(int x) { x += 8; }\n// caller:\nint a = 2;\nchange(a);",
       "options": [
-        { "type": "text", "value": "It works perfectly" },
-        { "type": "text", "value": "It creates a new variable" },
-        { "type": "text", "value": "It deletes the instance variable" },
-        { "type": "text", "value": "The parameter is assigned to itself, instance variable remains unchanged" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "99"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        }
       ],
       "answer": 3,
-      "explanation": "Without this, you'd be assigning the parameter to itself. The instance variable would remain unchanged because Java looks for the closest variable with that name."
+      "explanation": "A primitive argument is copied. Updating x does not update a."
     },
     {
-      "id": 5,
-      "type": "text",
-      "question": "Can you use this to call other constructors in the same class?",
+      "id": "v3-5",
+      "type": "code",
+      "question": "Counter(int n) stores n; increment() adds 1; getCount() returns it. What does a.getCount() return?\nvoid change(Counter x) { x.increment(); }\n// caller:\nCounter a = new Counter(4);\nchange(a);",
       "options": [
-        { "type": "text", "value": "Yes, using this() to enable constructor chaining" },
-        { "type": "text", "value": "No, never" },
-        { "type": "text", "value": "Only in static constructors" },
-        { "type": "text", "value": "Only in abstract classes" }
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "99"
+        }
       ],
       "answer": 0,
-      "explanation": "You can use this() to call other constructors in the same class. This is called constructor chaining and helps reduce code duplication."
+      "explanation": "The copied reference points to the same Counter, so increment changes the object visible through a."
     },
     {
-      "id": 6,
-      "type": "text",
-      "question": "Where must the this() constructor call be placed in a constructor?",
+      "id": "v3-6",
+      "type": "code",
+      "question": "Counter(int n) stores n; getCount() returns it. What does a.getCount() return?\nvoid change(Counter x) { x = new Counter(99); }\n// caller:\nCounter a = new Counter(4);\nchange(a);",
       "options": [
-        { "type": "text", "value": "Anywhere in the constructor" },
-        { "type": "text", "value": "As the first statement in the constructor" },
-        { "type": "text", "value": "As the last statement" },
-        { "type": "text", "value": "In the middle" }
+        {
+          "type": "text",
+          "value": "99"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        }
       ],
       "answer": 1,
-      "explanation": "When using this() to call another constructor, it must be the first statement in the constructor. You cannot have any code before the this() call."
+      "explanation": "Reassigning the local parameter does not reassign the caller reference."
     },
     {
-      "id": 7,
-      "type": "text",
-      "question": "Can you use this to pass the current object as a parameter to another method?",
+      "id": "v3-7",
+      "type": "code",
+      "question": "Counter(int n) stores n; increment() adds 1; getCount() returns it. What does a.getCount() return?\nCounter same(Counter item) { return item; }\n// caller:\nCounter a = new Counter(4);\nCounter b = same(a);\nb.increment();",
       "options": [
-        { "type": "text", "value": "No, this cannot be passed" },
-        { "type": "text", "value": "Only to static methods" },
-        { "type": "text", "value": "Yes, to provide a reference to the current object" },
-        { "type": "text", "value": "Only in constructors" }
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "99"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        }
       ],
       "answer": 2,
-      "explanation": "The this keyword can be used to pass the current object as a parameter to another method, which is useful when you need to provide a reference to the current object."
+      "explanation": "The returned reference aliases the original Counter; increment through b changes that shared object."
     },
     {
-      "id": 8,
-      "type": "text",
-      "question": "What is method chaining?",
+      "id": "v3-8",
+      "type": "code",
+      "question": "What is a after change(a)?\nvoid change(int x) { x += 8; }\n// caller:\nint a = 4;\nchange(a);",
       "options": [
-        { "type": "text", "value": "Calling multiple methods one after another" },
-        { "type": "text", "value": "Linking classes together" },
-        { "type": "text", "value": "Creating method loops" },
-        { "type": "text", "value": "Returning this from methods to enable multiple calls in one statement" }
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "99"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        }
       ],
       "answer": 3,
-      "explanation": "Method chaining is enabled by returning this from methods, allowing multiple method calls to be strung together in a single statement."
+      "explanation": "A primitive argument is copied. Updating x does not update a."
     },
     {
-      "id": 9,
-      "type": "text",
-      "question": "Is this required when there's no naming conflict between parameters and instance variables?",
+      "id": "v3-9",
+      "type": "code",
+      "question": "Counter(int n) stores n; increment() adds 1; getCount() returns it. What does a.getCount() return?\nvoid change(Counter x) { x.increment(); }\n// caller:\nCounter a = new Counter(7);\nchange(a);",
       "options": [
-        { "type": "text", "value": "No, it's optional but can improve clarity" },
-        { "type": "text", "value": "Yes, always required" },
-        { "type": "text", "value": "Only in constructors" },
-        { "type": "text", "value": "Only in methods" }
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "99"
+        }
       ],
       "answer": 0,
-      "explanation": "The this keyword is required when there's a naming conflict, but it's optional (though often helpful for clarity) when there's no conflict."
+      "explanation": "The copied reference points to the same Counter, so increment changes the object visible through a."
     },
     {
-      "id": 10,
-      "type": "text",
-      "question": "Can you use this in static methods?",
+      "id": "v3-10",
+      "type": "code",
+      "question": "Counter(int n) stores n; getCount() returns it. What does a.getCount() return?\nvoid change(Counter x) { x = new Counter(99); }\n// caller:\nCounter a = new Counter(7);\nchange(a);",
       "options": [
-        { "type": "text", "value": "Yes, always" },
-        { "type": "text", "value": "No, because static methods belong to the class, not to any specific object" },
-        { "type": "text", "value": "Only for static variables" },
-        { "type": "text", "value": "Yes, but only in constructors" }
+        {
+          "type": "text",
+          "value": "99"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        }
       ],
       "answer": 1,
-      "explanation": "The this keyword cannot be used in static methods because static methods belong to the class, not to any specific object instance."
+      "explanation": "Reassigning the local parameter does not reassign the caller reference."
     },
     {
-      "id": 11,
-      "type": "text",
-      "question": "What is shadowing in the context of instance variables?",
+      "id": "v3-11",
+      "type": "code",
+      "question": "Counter(int n) stores n; increment() adds 1; getCount() returns it. What does a.getCount() return?\nCounter same(Counter item) { return item; }\n// caller:\nCounter a = new Counter(7);\nCounter b = same(a);\nb.increment();",
       "options": [
-        { "type": "text", "value": "Making variables private" },
-        { "type": "text", "value": "Deleting variables" },
-        { "type": "text", "value": "When a parameter hides an instance variable with the same name" },
-        { "type": "text", "value": "Copying variables" }
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "99"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        }
       ],
       "answer": 2,
-      "explanation": "Shadowing occurs when a parameter hides an instance variable with the same name, which can cause subtle bugs if this is not used."
+      "explanation": "The returned reference aliases the original Counter; increment through b changes that shared object."
     },
     {
-      "id": 12,
-      "type": "text",
-      "question": "Does using this improve code clarity?",
+      "id": "v3-12",
+      "type": "code",
+      "question": "What is a after change(a)?\nvoid change(int x) { x += 8; }\n// caller:\nint a = 7;\nchange(a);",
       "options": [
-        { "type": "text", "value": "No, it makes code confusing" },
-        { "type": "text", "value": "Only for beginners" },
-        { "type": "text", "value": "It slows down programs" },
-        { "type": "text", "value": "Yes, it makes it explicitly clear when referring to instance variables" }
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "99"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        }
       ],
       "answer": 3,
-      "explanation": "Using this consistently improves code clarity by making it explicitly clear when you're referring to an instance variable, even when there's no naming conflict."
+      "explanation": "A primitive argument is copied. Updating x does not update a."
     },
     {
-      "id": 13,
-      "type": "text",
-      "question": "What benefit does constructor chaining with this() provide?",
+      "id": "v3-13",
+      "type": "code",
+      "question": "Counter(int n) stores n; increment() adds 1; getCount() returns it. What does a.getCount() return?\nvoid change(Counter x) { x.increment(); }\n// caller:\nCounter a = new Counter(9);\nchange(a);",
       "options": [
-        { "type": "text", "value": "It reduces code duplication" },
-        { "type": "text", "value": "It makes programs faster" },
-        { "type": "text", "value": "It uses less memory" },
-        { "type": "text", "value": "It creates more objects" }
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "99"
+        }
       ],
       "answer": 0,
-      "explanation": "Constructor chaining with this() helps reduce code duplication by allowing one constructor to call another, avoiding repeated initialization code."
+      "explanation": "The copied reference points to the same Counter, so increment changes the object visible through a."
     },
     {
-      "id": 14,
-      "type": "text",
-      "question": "In method chaining, what does returning this accomplish?",
+      "id": "v3-14",
+      "type": "code",
+      "question": "Counter(int n) stores n; getCount() returns it. What does a.getCount() return?\nvoid change(Counter x) { x = new Counter(99); }\n// caller:\nCounter a = new Counter(9);\nchange(a);",
       "options": [
-        { "type": "text", "value": "Deletes the object" },
-        { "type": "text", "value": "Allows multiple method calls to be strung together on the same object" },
-        { "type": "text", "value": "Creates a copy of the object" },
-        { "type": "text", "value": "Makes the method static" }
+        {
+          "type": "text",
+          "value": "99"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        }
       ],
       "answer": 1,
-      "explanation": "Returning this from a method allows multiple method calls to be chained together in a single statement, with each method operating on the same object."
+      "explanation": "Reassigning the local parameter does not reassign the caller reference."
     },
     {
-      "id": 15,
-      "type": "text",
-      "question": "What happens if you forget to use this when there's a naming conflict?",
+      "id": "v3-15",
+      "type": "code",
+      "question": "Counter(int n) stores n; increment() adds 1; getCount() returns it. What does a.getCount() return?\nCounter same(Counter item) { return item; }\n// caller:\nCounter a = new Counter(9);\nCounter b = same(a);\nb.increment();",
       "options": [
-        { "type": "text", "value": "The program crashes" },
-        { "type": "text", "value": "A compilation error occurs" },
-        { "type": "text", "value": "The code runs faster" },
-        { "type": "text", "value": "The parameter is assigned to itself, leaving the instance variable unchanged" }
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "99"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        }
+      ],
+      "answer": 2,
+      "explanation": "The returned reference aliases the original Counter; increment through b changes that shared object."
+    },
+    {
+      "id": "v3-16",
+      "type": "code",
+      "question": "What is a after change(a)?\nvoid change(int x) { x += 8; }\n// caller:\nint a = 9;\nchange(a);",
+      "options": [
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "99"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
       ],
       "answer": 3,
-      "explanation": "Forgetting to use this when there's a naming conflict results in the parameter being assigned to itself, and the instance variable remains unchanged, causing a subtle bug."
-    },
-    {
-      "id": 16,
-      "type": "text",
-      "question": "Why is using this considered good practice in constructors?",
-      "options": [
-        { "type": "text", "value": "It allows intuitive parameter names that match instance variables while preventing bugs" },
-        { "type": "text", "value": "It makes code run faster" },
-        { "type": "text", "value": "It's required by Java syntax" },
-        { "type": "text", "value": "It uses less memory" }
-      ],
-      "answer": 0,
-      "explanation": "Using this in constructors is good practice because it allows you to use intuitive parameter names that match instance variables while preventing shadowing bugs."
+      "explanation": "A primitive argument is copied. Updating x does not update a."
     }
-  ]
+  ],
+  "contentVersion": 3
 }

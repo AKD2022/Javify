@@ -1,214 +1,408 @@
 {
   "lessonId": 15,
-  "title": "Comments and Code Style",
+  "title": "1.15 String Manipulation",
+  "topic": "1.15",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What symbol starts a single-line comment in Java?",
+      "question": "What does \"code\".length() return?",
       "options": [
-        { "type": "text", "value": "//" },
-        { "type": "text", "value": "/*" },
-        { "type": "text", "value": "#" },
-        { "type": "text", "value": "--" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        }
       ],
       "answer": 0,
-      "explanation": "Single-line comments in Java begin with // and extend to the end of the line."
+      "explanation": "length counts all characters, while the last valid position is one less."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "How do multi-line comments begin and end?",
+      "question": "What does \"code\".substring(1, 3) return?",
       "options": [
-        { "type": "text", "value": "Start with // and end with //" },
-        { "type": "text", "value": "Start with /* and end with */" },
-        { "type": "text", "value": "Start with # and end with #" },
-        { "type": "text", "value": "Start with <!-- and end with -->" }
+        {
+          "type": "text",
+          "value": "d"
+        },
+        {
+          "type": "text",
+          "value": "od"
+        },
+        {
+          "type": "text",
+          "value": "ode"
+        },
+        {
+          "type": "text",
+          "value": "co"
+        }
       ],
       "answer": 1,
-      "explanation": "Multi-line comments start with /* and end with */, allowing comments to span multiple lines."
+      "explanation": "The start index is included and the end index is excluded."
     },
     {
-      "id": 3,
+      "id": "v2-3",
       "type": "text",
-      "question": "What naming convention is used for Java class names?",
+      "question": "What does \"code\".substring(2) return?",
       "options": [
-        { "type": "text", "value": "camelCase" },
-        { "type": "text", "value": "snake_case" },
-        { "type": "text", "value": "PascalCase" },
-        { "type": "text", "value": "ALL_UPPERCASE" }
+        {
+          "type": "text",
+          "value": "od"
+        },
+        {
+          "type": "text",
+          "value": "code"
+        },
+        {
+          "type": "text",
+          "value": "de"
+        },
+        {
+          "type": "text",
+          "value": "d"
+        }
       ],
       "answer": 2,
-      "explanation": "Java class names use PascalCase, where each word starts with a capital letter (e.g., StudentRecord)."
+      "explanation": "The one-argument form returns from its index through the end."
     },
     {
-      "id": 4,
+      "id": "v2-4",
       "type": "text",
-      "question": "What naming convention is used for Java variable names?",
+      "question": "What does \"banana\".indexOf(\"na\") return?",
       "options": [
-        { "type": "text", "value": "PascalCase" },
-        { "type": "text", "value": "camelCase" },
-        { "type": "text", "value": "ALL_UPPERCASE" },
-        { "type": "text", "value": "snake_case" }
-      ],
-      "answer": 1,
-      "explanation": "Java variable names use camelCase, starting with lowercase and capitalizing subsequent words (e.g., studentName)."
-    },
-    {
-      "id": 5,
-      "type": "text",
-      "question": "What naming convention is used for Java constants?",
-      "options": [
-        { "type": "text", "value": "camelCase" },
-        { "type": "text", "value": "PascalCase" },
-        { "type": "text", "value": "lowercase" },
-        { "type": "text", "value": "ALL_UPPERCASE_WITH_UNDERSCORES" }
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "-1"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        }
       ],
       "answer": 3,
-      "explanation": "Java constants use ALL_UPPERCASE letters with underscores separating words (e.g., MAX_SCORE)."
+      "explanation": "indexOf returns the position of the first matching substring."
     },
     {
-      "id": 6,
+      "id": "v2-5",
       "type": "text",
-      "question": "How much indentation is conventionally used for each level in Java?",
+      "question": "What does indexOf return when a substring is absent?",
       "options": [
-        { "type": "text", "value": "2 spaces" },
-        { "type": "text", "value": "4 spaces or 1 tab" },
-        { "type": "text", "value": "8 spaces" },
-        { "type": "text", "value": "No indentation needed" }
+        {
+          "type": "text",
+          "value": "-1"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "The length"
+        },
+        {
+          "type": "text",
+          "value": "null"
+        }
+      ],
+      "answer": 0,
+      "explanation": "The sentinel -1 distinguishes absence from a match at position zero."
+    },
+    {
+      "id": "v2-6",
+      "type": "text",
+      "question": "Which compares String contents?",
+      "options": [
+        {
+          "type": "text",
+          "value": "a.length = b.length"
+        },
+        {
+          "type": "text",
+          "value": "a.equals(b)"
+        },
+        {
+          "type": "text",
+          "value": "a = b"
+        },
+        {
+          "type": "text",
+          "value": "a == b always"
+        }
       ],
       "answer": 1,
-      "explanation": "Java conventionally uses 4 spaces or 1 tab for each level of indentation to show code structure."
+      "explanation": "equals compares the sequence of characters, whereas == compares references."
     },
     {
-      "id": 7,
+      "id": "v2-7",
       "type": "text",
-      "question": "What do Javadoc comments start with?",
+      "question": "If a.compareTo(b) is negative, what follows?",
       "options": [
-        { "type": "text", "value": "//" },
-        { "type": "text", "value": "/*" },
-        { "type": "text", "value": "/**" },
-        { "type": "text", "value": "///" }
+        {
+          "type": "text",
+          "value": "a equals b"
+        },
+        {
+          "type": "text",
+          "value": "b is null"
+        },
+        {
+          "type": "text",
+          "value": "a precedes b lexicographically"
+        },
+        {
+          "type": "text",
+          "value": "a must be shorter"
+        }
       ],
       "answer": 2,
-      "explanation": "Javadoc comments start with /** and can be processed to generate professional documentation."
+      "explanation": "The sign indicates lexicographic ordering, not simply length."
     },
     {
-      "id": 8,
+      "id": "v2-8",
       "type": "text",
-      "question": "What makes a good comment?",
+      "question": "What does String immutability mean?",
       "options": [
-        { "type": "text", "value": "Explains what the code does" },
-        { "type": "text", "value": "Explains why the code does something" },
-        { "type": "text", "value": "Repeats the code in English" },
-        { "type": "text", "value": "Makes the code longer" }
+        {
+          "type": "text",
+          "value": "A String variable can never be reassigned"
+        },
+        {
+          "type": "text",
+          "value": "Every String is null"
+        },
+        {
+          "type": "text",
+          "value": "String methods never return values"
+        },
+        {
+          "type": "text",
+          "value": "A String object’s characters cannot be changed in place"
+        }
       ],
-      "answer": 1,
-      "explanation": "Good comments explain why code does something, providing context and reasoning rather than just restating what's obvious."
+      "answer": 3,
+      "explanation": "Operations produce results rather than modifying the original String object."
     },
     {
-      "id": 9,
+      "id": "v2-9",
       "type": "code",
-      "question": "Which variable name follows Java conventions?",
+      "question": "What is printed?\nString s = \"planet\";\ns.substring(1, 3);\nSystem.out.println(s);",
       "options": [
-        { "type": "code", "value": "student_name" },
-        { "type": "code", "value": "StudentName" },
-        { "type": "code", "value": "STUDENTNAME" },
-        { "type": "code", "value": "studentName" }
-      ],
-      "answer": 3,
-      "explanation": "Java variables use camelCase: studentName starts lowercase with subsequent words capitalized."
-    },
-    {
-      "id": 10,
-      "type": "text",
-      "question": "Where should spaces be placed around operators?",
-      "options": [
-        { "type": "text", "value": "No spaces needed" },
-        { "type": "text", "value": "Spaces around binary operators like + and =" },
-        { "type": "text", "value": "Spaces only before operators" },
-        { "type": "text", "value": "Spaces only after operators" }
-      ],
-      "answer": 1,
-      "explanation": "Java style includes spaces around binary operators for readability: a + b, x = 5."
-    },
-    {
-      "id": 11,
-      "type": "text",
-      "question": "What should you avoid in comments?",
-      "options": [
-        { "type": "text", "value": "Explaining complex logic" },
-        { "type": "text", "value": "Stating the obvious" },
-        { "type": "text", "value": "Providing context" },
-        { "type": "text", "value": "Warning about potential issues" }
-      ],
-      "answer": 1,
-      "explanation": "Avoid comments that state the obvious, like 'x = 5; // Set x to 5'. Focus on explaining why, not what."
-    },
-    {
-      "id": 12,
-      "type": "text",
-      "question": "What is the recommended maximum line length?",
-      "options": [
-        { "type": "text", "value": "50 characters" },
-        { "type": "text", "value": "No limit" },
-        { "type": "text", "value": "200 characters" },
-        { "type": "text", "value": "80-120 characters" }
-      ],
-      "answer": 3,
-      "explanation": "Lines should generally not exceed 80-120 characters for readability across different screen sizes."
-    },
-    {
-      "id": 13,
-      "type": "text",
-      "question": "Where do opening braces typically go in Java style?",
-      "options": [
-        { "type": "text", "value": "At the end of the line that starts the block" },
-        { "type": "text", "value": "On their own line" },
-        { "type": "text", "value": "At the beginning of the file" },
-        { "type": "text", "value": "Wherever you want" }
+        {
+          "type": "text",
+          "value": "planet"
+        },
+        {
+          "type": "text",
+          "value": "la"
+        },
+        {
+          "type": "text",
+          "value": "lanet"
+        },
+        {
+          "type": "text",
+          "value": "pla"
+        }
       ],
       "answer": 0,
-      "explanation": "Java convention places opening braces at the end of the line that starts the block: if (condition) {"
+      "explanation": "The returned substring is ignored; the original String is unchanged."
     },
     {
-      "id": 14,
+      "id": "v2-10",
       "type": "text",
-      "question": "What should header comments include?",
+      "question": "What is s after s = s.substring(0, 2), starting with \"planet\"?",
       "options": [
-        { "type": "text", "value": "Only the author's name" },
-        { "type": "text", "value": "File name, author, date, and purpose" },
-        { "type": "text", "value": "Only the date" },
-        { "type": "text", "value": "Only the file name" }
+        {
+          "type": "text",
+          "value": "planet"
+        },
+        {
+          "type": "text",
+          "value": "pl"
+        },
+        {
+          "type": "text",
+          "value": "anet"
+        },
+        {
+          "type": "text",
+          "value": "pla"
+        }
       ],
       "answer": 1,
-      "explanation": "Header comments should include file name, author, date, purpose, and other relevant information for context."
+      "explanation": "The variable is reassigned to the returned two-character String."
     },
     {
-      "id": 15,
-      "type": "text",
-      "question": "Why are blank lines important in code?",
+      "id": "v2-11",
+      "type": "code",
+      "question": "What is printed?\nString s = \"silver\";\ns.substring(1, 3);\nSystem.out.println(s);",
       "options": [
-        { "type": "text", "value": "They make the file larger" },
-        { "type": "text", "value": "They separate logical sections for readability" },
-        { "type": "text", "value": "They are required by the compiler" },
-        { "type": "text", "value": "They slow down execution" }
+        {
+          "type": "text",
+          "value": "ilver"
+        },
+        {
+          "type": "text",
+          "value": "sil"
+        },
+        {
+          "type": "text",
+          "value": "silver"
+        },
+        {
+          "type": "text",
+          "value": "il"
+        }
       ],
-      "answer": 1,
-      "explanation": "Blank lines organize code into logical sections, making it easier to read and understand the structure."
+      "answer": 2,
+      "explanation": "The returned substring is ignored; the original String is unchanged."
     },
     {
-      "id": 16,
+      "id": "v2-12",
       "type": "text",
-      "question": "Why is consistent code style important?",
+      "question": "What is s after s = s.substring(0, 2), starting with \"silver\"?",
       "options": [
-        { "type": "text", "value": "It makes programs run faster" },
-        { "type": "text", "value": "It makes code look professional and easier to understand" },
-        { "type": "text", "value": "It reduces memory usage" },
-        { "type": "text", "value": "It prevents all bugs" }
+        {
+          "type": "text",
+          "value": "lver"
+        },
+        {
+          "type": "text",
+          "value": "sil"
+        },
+        {
+          "type": "text",
+          "value": "silver"
+        },
+        {
+          "type": "text",
+          "value": "si"
+        }
+      ],
+      "answer": 3,
+      "explanation": "The variable is reassigned to the returned two-character String."
+    },
+    {
+      "id": "v2-13",
+      "type": "code",
+      "question": "What is printed?\nString s = \"coding\";\ns.substring(1, 3);\nSystem.out.println(s);",
+      "options": [
+        {
+          "type": "text",
+          "value": "coding"
+        },
+        {
+          "type": "text",
+          "value": "od"
+        },
+        {
+          "type": "text",
+          "value": "oding"
+        },
+        {
+          "type": "text",
+          "value": "cod"
+        }
+      ],
+      "answer": 0,
+      "explanation": "The returned substring is ignored; the original String is unchanged."
+    },
+    {
+      "id": "v2-14",
+      "type": "text",
+      "question": "What is s after s = s.substring(0, 2), starting with \"coding\"?",
+      "options": [
+        {
+          "type": "text",
+          "value": "coding"
+        },
+        {
+          "type": "text",
+          "value": "co"
+        },
+        {
+          "type": "text",
+          "value": "ding"
+        },
+        {
+          "type": "text",
+          "value": "cod"
+        }
       ],
       "answer": 1,
-      "explanation": "Consistent code style makes programs look professional and helps other programmers understand your code quickly."
+      "explanation": "The variable is reassigned to the returned two-character String."
+    },
+    {
+      "id": "v2-15",
+      "type": "code",
+      "question": "What is printed?\nString s = \"rocket\";\ns.substring(1, 3);\nSystem.out.println(s);",
+      "options": [
+        {
+          "type": "text",
+          "value": "ocket"
+        },
+        {
+          "type": "text",
+          "value": "roc"
+        },
+        {
+          "type": "text",
+          "value": "rocket"
+        },
+        {
+          "type": "text",
+          "value": "oc"
+        }
+      ],
+      "answer": 2,
+      "explanation": "The returned substring is ignored; the original String is unchanged."
+    },
+    {
+      "id": "v2-16",
+      "type": "text",
+      "question": "What is s after s = s.substring(0, 2), starting with \"rocket\"?",
+      "options": [
+        {
+          "type": "text",
+          "value": "cket"
+        },
+        {
+          "type": "text",
+          "value": "roc"
+        },
+        {
+          "type": "text",
+          "value": "rocket"
+        },
+        {
+          "type": "text",
+          "value": "ro"
+        }
+      ],
+      "answer": 3,
+      "explanation": "The variable is reassigned to the returned two-character String."
     }
   ]
 }

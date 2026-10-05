@@ -26,12 +26,8 @@ const UnitItem = ({ unit, scoresState, unitIndex, units }) => {
     (lesson) => !scoresState[lesson.id] || scoresState[lesson.id] < 4
   ) || unit.lessons?.[0];
 
-  // Lock logic with null checks
-  const isLocked = unitIndex > 0
-    ? !(units[unitIndex - 1]?.lessons?.every(
-        (lesson) => (scoresState[lesson.id] || 0) >= 4  // Changed: Added || 0
-      ) || false)
-    : false;
+  // Topics can be opened directly from search, checklist, calendar, or units.
+  const isLocked = false;
 
   // Icon setup
   let iconName = 'menu-book';

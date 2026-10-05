@@ -1,214 +1,408 @@
 {
   "lessonId": 14,
-  "title": "Common Syntax Errors and Debugging",
+  "title": "1.14 Calling Instance Methods",
+  "topic": "1.14",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What punctuation mark must end every Java statement?",
+      "question": "What is the receiver in account.deposit(5)?",
       "options": [
-        { "type": "text", "value": "Semicolon (;)" },
-        { "type": "text", "value": "Comma (,)" },
-        { "type": "text", "value": "Period (.)" },
-        { "type": "text", "value": "Colon (:)" }
+        {
+          "type": "text",
+          "value": "account"
+        },
+        {
+          "type": "text",
+          "value": "deposit"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "The semicolon"
+        }
       ],
       "answer": 0,
-      "explanation": "Every Java statement must end with a semicolon (;). This is a fundamental syntax requirement."
+      "explanation": "The expression before the dot supplies the object receiving the instance-method call."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "What happens when opening and closing braces don't match?",
+      "question": "What can an instance method access through its receiver?",
       "options": [
-        { "type": "text", "value": "Runtime error" },
-        { "type": "text", "value": "Compilation error" },
-        { "type": "text", "value": "Warning message" },
-        { "type": "text", "value": "Program runs normally" }
+        {
+          "type": "text",
+          "value": "Every other object automatically"
+        },
+        {
+          "type": "text",
+          "value": "That object’s instance state"
+        },
+        {
+          "type": "text",
+          "value": "Only static variables"
+        },
+        {
+          "type": "text",
+          "value": "Only the caller’s local variables"
+        }
       ],
       "answer": 1,
-      "explanation": "Mismatched braces cause compilation errors because the compiler cannot determine the code structure."
+      "explanation": "The method operates in the context of the receiver object."
     },
     {
-      "id": 3,
-      "type": "code",
-      "question": "What's wrong with: int 2score = 95;",
+      "id": "v2-3",
+      "type": "text",
+      "question": "Which is valid for public void deposit(double amount)?",
       "options": [
-        { "type": "text", "value": "Missing semicolon" },
-        { "type": "text", "value": "Wrong data type" },
-        { "type": "text", "value": "Variable name starts with digit" },
-        { "type": "text", "value": "Nothing is wrong" }
+        {
+          "type": "text",
+          "value": "account.deposit();"
+        },
+        {
+          "type": "text",
+          "value": "account.deposit(\"5\");"
+        },
+        {
+          "type": "text",
+          "value": "account.deposit(5.0);"
+        },
+        {
+          "type": "text",
+          "value": "double x = account.deposit(5.0);"
+        }
       ],
       "answer": 2,
-      "explanation": "Variable names cannot start with a digit. They must begin with a letter, underscore, or dollar sign."
+      "explanation": "The call supplies a compatible argument and does not try to use a void result."
     },
     {
-      "id": 4,
-      "type": "code",
-      "question": "What's wrong with: String message = \"Hello World;",
-      "options": [
-        { "type": "text", "value": "Wrong variable name" },
-        { "type": "text", "value": "Missing closing quote" },
-        { "type": "text", "value": "Wrong data type" },
-        { "type": "text", "value": "Missing semicolon" }
-      ],
-      "answer": 1,
-      "explanation": "The string literal is missing its closing double quote. It should be \"Hello World\"."
-    },
-    {
-      "id": 5,
+      "id": "v2-4",
       "type": "text",
-      "question": "Is Java case-sensitive?",
+      "question": "Which is valid for public double getBalance()?",
       "options": [
-        { "type": "text", "value": "Yes, System and system are different" },
-        { "type": "text", "value": "No, all letters are treated the same" },
-        { "type": "text", "value": "Only for variable names" },
-        { "type": "text", "value": "Only for class names" }
-      ],
-      "answer": 0,
-      "explanation": "Java is case-sensitive throughout. System and system are completely different identifiers."
-    },
-    {
-      "id": 6,
-      "type": "code",
-      "question": "What's wrong with: String name = 'Alice';",
-      "options": [
-        { "type": "text", "value": "Wrong variable name" },
-        { "type": "text", "value": "Single quotes instead of double quotes for String" },
-        { "type": "text", "value": "Missing semicolon" },
-        { "type": "text", "value": "Wrong assignment operator" }
-      ],
-      "answer": 1,
-      "explanation": "String literals must use double quotes. Single quotes are for char literals: char letter = 'A'."
-    },
-    {
-      "id": 7,
-      "type": "code",
-      "question": "What's wrong with: class student = \"Bob\";",
-      "options": [
-        { "type": "text", "value": "Missing semicolon" },
-        { "type": "text", "value": "Wrong quotes" },
-        { "type": "text", "value": "'class' is a reserved keyword" },
-        { "type": "text", "value": "Nothing is wrong" }
-      ],
-      "answer": 2,
-      "explanation": "The word 'class' is a reserved keyword in Java and cannot be used as a variable name."
-    },
-    {
-      "id": 8,
-      "type": "code",
-      "question": "What's missing in: System.out.println \"Hello\";",
-      "options": [
-        { "type": "text", "value": "Parentheses around the parameter" },
-        { "type": "text", "value": "Semicolon" },
-        { "type": "text", "value": "Double quotes" },
-        { "type": "text", "value": "Import statement" }
-      ],
-      "answer": 0,
-      "explanation": "Method calls require parentheses around parameters: System.out.println(\"Hello\");"
-    },
-    {
-      "id": 9,
-      "type": "text",
-      "question": "What import is needed to use Scanner?",
-      "options": [
-        { "type": "text", "value": "import java.lang.Scanner;" },
-        { "type": "text", "value": "import java.util.Scanner;" },
-        { "type": "text", "value": "import java.io.Scanner;" },
-        { "type": "text", "value": "No import needed" }
-      ],
-      "answer": 1,
-      "explanation": "Scanner is in the java.util package, so you need: import java.util.Scanner;"
-    },
-    {
-      "id": 10,
-      "type": "code",
-      "question": "What's wrong with: int age = \"17\";",
-      "options": [
-        { "type": "text", "value": "Type mismatch - String assigned to int" },
-        { "type": "text", "value": "Missing semicolon" },
-        { "type": "text", "value": "Wrong variable name" },
-        { "type": "text", "value": "Wrong quotes" }
-      ],
-      "answer": 0,
-      "explanation": "You cannot assign a String (\"17\") to an int variable. Use: int age = 17; without quotes."
-    },
-    {
-      "id": 11,
-      "type": "text",
-      "question": "Where do compiler error messages usually point you?",
-      "options": [
-        { "type": "text", "value": "The end of the program" },
-        { "type": "text", "value": "The line number where the error occurs" },
-        { "type": "text", "value": "The beginning of the program" },
-        { "type": "text", "value": "Random locations" }
-      ],
-      "answer": 1,
-      "explanation": "Compiler error messages include line numbers to help you locate the problem in your code."
-    },
-    {
-      "id": 12,
-      "type": "code",
-      "question": "What's wrong with: System.Out.Println(\"Hi\");",
-      "options": [
-        { "type": "text", "value": "Missing semicolon" },
-        { "type": "text", "value": "Wrong quotes" },
-        { "type": "text", "value": "Incorrect capitalization - should be 'out' and 'println'" },
-        { "type": "text", "value": "Missing import" }
-      ],
-      "answer": 2,
-      "explanation": "Java is case-sensitive. It should be System.out.println() with lowercase 'o' and 'p'."
-    },
-    {
-      "id": 13,
-      "type": "text",
-      "question": "What's a good debugging strategy when you have multiple errors?",
-      "options": [
-        { "type": "text", "value": "Fix the last error first" },
-        { "type": "text", "value": "Fix all errors at once" },
-        { "type": "text", "value": "Fix the first error first" },
-        { "type": "text", "value": "Ignore the error messages" }
-      ],
-      "answer": 2,
-      "explanation": "Fix the first error first, as later errors often cascade from earlier ones and may resolve automatically."
-    },
-    {
-      "id": 14,
-      "type": "code",
-      "question": "What's wrong with: int result = (10 + 5 * 2;",
-      "options": [
-        { "type": "text", "value": "Missing closing parenthesis" },
-        { "type": "text", "value": "Wrong operator" },
-        { "type": "text", "value": "Missing semicolon" },
-        { "type": "text", "value": "Wrong variable name" }
-      ],
-      "answer": 0,
-      "explanation": "The expression is missing a closing parenthesis: int result = (10 + 5) * 2;"
-    },
-    {
-      "id": 15,
-      "type": "text",
-      "question": "What do IDEs help with regarding syntax errors?",
-      "options": [
-        { "type": "text", "value": "They fix errors automatically" },
-        { "type": "text", "value": "They highlight errors as you type" },
-        { "type": "text", "value": "They prevent all errors" },
-        { "type": "text", "value": "They hide error messages" }
-      ],
-      "answer": 1,
-      "explanation": "IDEs help by highlighting syntax errors as you type, often before you compile the program."
-    },
-    {
-      "id": 16,
-      "type": "text",
-      "question": "Why is it important to fix syntax errors?",
-      "options": [
-        { "type": "text", "value": "They make programs run slowly" },
-        { "type": "text", "value": "They use extra memory" },
-        { "type": "text", "value": "They make code look messy" },
-        { "type": "text", "value": "They prevent the program from compiling" }
+        {
+          "type": "text",
+          "value": "account.getBalance(5);"
+        },
+        {
+          "type": "text",
+          "value": "getBalance.account();"
+        },
+        {
+          "type": "text",
+          "value": "boolean b = account.getBalance();"
+        },
+        {
+          "type": "text",
+          "value": "double b = account.getBalance();"
+        }
       ],
       "answer": 3,
-      "explanation": "Syntax errors prevent compilation, so your program cannot run until all syntax errors are fixed."
+      "explanation": "The method takes no arguments and supplies a double."
+    },
+    {
+      "id": "v2-5",
+      "type": "text",
+      "question": "What happens after a method returns to its caller?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Execution resumes after the call"
+        },
+        {
+          "type": "text",
+          "value": "The whole program always ends"
+        },
+        {
+          "type": "text",
+          "value": "The object is always destroyed"
+        },
+        {
+          "type": "text",
+          "value": "The caller restarts"
+        }
+      ],
+      "answer": 0,
+      "explanation": "Returning transfers control back to the point of invocation."
+    },
+    {
+      "id": "v2-6",
+      "type": "text",
+      "question": "Can a void instance method modify its receiver?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Only if it has zero parameters"
+        },
+        {
+          "type": "text",
+          "value": "Yes"
+        },
+        {
+          "type": "text",
+          "value": "No, void means immutable"
+        },
+        {
+          "type": "text",
+          "value": "Only when the receiver is null"
+        }
+      ],
+      "answer": 1,
+      "explanation": "void describes the absence of a return value, not the absence of side effects."
+    },
+    {
+      "id": "v2-7",
+      "type": "text",
+      "question": "When is a chained call valid?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Only after a void result"
+        },
+        {
+          "type": "text",
+          "value": "Never in Java"
+        },
+        {
+          "type": "text",
+          "value": "When the first returned value supports the next method"
+        },
+        {
+          "type": "text",
+          "value": "Whenever both names are short"
+        }
+      ],
+      "answer": 2,
+      "explanation": "The type of each intermediate result must provide the next operation."
+    },
+    {
+      "id": "v2-8",
+      "type": "text",
+      "question": "Which call has no valid receiver object?",
+      "options": [
+        {
+          "type": "text",
+          "value": "Calling a method on a constructed object"
+        },
+        {
+          "type": "text",
+          "value": "Calling a getter with empty parentheses"
+        },
+        {
+          "type": "text",
+          "value": "Calling a mutator with a valid argument"
+        },
+        {
+          "type": "text",
+          "value": "Calling an instance method through null"
+        }
+      ],
+      "answer": 3,
+      "explanation": "A null receiver causes a NullPointerException."
+    },
+    {
+      "id": "v2-9",
+      "type": "text",
+      "question": "Counter begins at 3. add(2) adds two, and get() returns the count. What does c.get() return after c.add(2)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        }
+      ],
+      "answer": 0,
+      "explanation": "The mutator changes receiver state before the accessor reads it."
+    },
+    {
+      "id": "v2-10",
+      "type": "text",
+      "question": "Counter c begins at 3. get() only returns the count. What is the count after two calls to c.get()? ",
+      "options": [
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        }
+      ],
+      "answer": 1,
+      "explanation": "An accessor that only reads state does not change it."
+    },
+    {
+      "id": "v2-11",
+      "type": "text",
+      "question": "Counter begins at 6. add(2) adds two, and get() returns the count. What does c.get() return after c.add(2)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        }
+      ],
+      "answer": 2,
+      "explanation": "The mutator changes receiver state before the accessor reads it."
+    },
+    {
+      "id": "v2-12",
+      "type": "text",
+      "question": "Counter c begins at 6. get() only returns the count. What is the count after two calls to c.get()? ",
+      "options": [
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
+      ],
+      "answer": 3,
+      "explanation": "An accessor that only reads state does not change it."
+    },
+    {
+      "id": "v2-13",
+      "type": "text",
+      "question": "Counter begins at 9. add(2) adds two, and get() returns the count. What does c.get() return after c.add(2)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "14"
+        }
+      ],
+      "answer": 0,
+      "explanation": "The mutator changes receiver state before the accessor reads it."
+    },
+    {
+      "id": "v2-14",
+      "type": "text",
+      "question": "Counter c begins at 9. get() only returns the count. What is the count after two calls to c.get()? ",
+      "options": [
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        }
+      ],
+      "answer": 1,
+      "explanation": "An accessor that only reads state does not change it."
+    },
+    {
+      "id": "v2-15",
+      "type": "text",
+      "question": "Counter begins at 12. add(2) adds two, and get() returns the count. What does c.get() return after c.add(2)?",
+      "options": [
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "17"
+        },
+        {
+          "type": "text",
+          "value": "14"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        }
+      ],
+      "answer": 2,
+      "explanation": "The mutator changes receiver state before the accessor reads it."
+    },
+    {
+      "id": "v2-16",
+      "type": "text",
+      "question": "Counter c begins at 12. get() only returns the count. What is the count after two calls to c.get()? ",
+      "options": [
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "15"
+        },
+        {
+          "type": "text",
+          "value": "12"
+        }
+      ],
+      "answer": 3,
+      "explanation": "An accessor that only reads state does not change it."
     }
   ]
 }

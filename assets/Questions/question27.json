@@ -1,214 +1,406 @@
 {
   "lessonId": 27,
-  "title": "Method Overloading Intro",
+  "title": "Informal Run-Time Analysis",
   "questions": [
     {
       "id": 1,
-      "type": "text",
-      "question": "What is method overloading?",
+      "type": "code",
+      "question": "How many times does work() run?\nfor (int i = 0; i < 3; i++) work();",
       "options": [
-        { "type": "text", "value": "Creating multiple methods with the same name but different parameters" },
-        { "type": "text", "value": "Calling a method too many times" },
-        { "type": "text", "value": "Making a method too long" },
-        { "type": "text", "value": "Using too many variables in a method" }
+        {
+          "type": "text",
+          "value": "3"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        }
       ],
       "answer": 0,
-      "explanation": "Method overloading allows you to create multiple methods with the same name but different parameter lists, providing flexibility in how the method can be called."
+      "explanation": "One call occurs per index from zero through n - 1."
     },
     {
       "id": 2,
-      "type": "text",
-      "question": "How does the compiler determine which overloaded method to call?",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 3; i++)\n  for (int j = 0; j < 3; j++) work();",
       "options": [
-        { "type": "text", "value": "By the method name only" },
-        { "type": "text", "value": "By matching the arguments with the method's parameter list" },
-        { "type": "text", "value": "By the return type" },
-        { "type": "text", "value": "By the order methods are defined in the code" }
+        {
+          "type": "text",
+          "value": "12"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        }
       ],
       "answer": 1,
-      "explanation": "The compiler uses method resolution to automatically select the appropriate overloaded method by matching the arguments you provide with the method's parameter list."
+      "explanation": "The inner loop runs n times for each of n outer iterations."
     },
     {
       "id": 3,
-      "type": "text",
-      "question": "What must be different for methods to be properly overloaded?",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 3; i++) work();\nfor (int j = 0; j < 3; j++) work();",
       "options": [
-        { "type": "text", "value": "The method name" },
-        { "type": "text", "value": "The return type" },
-        { "type": "text", "value": "The parameter list (number, types, or order)" },
-        { "type": "text", "value": "The access modifier" }
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        }
       ],
       "answer": 2,
-      "explanation": "For methods to be properly overloaded, they must differ in their parameter lists through number of parameters, types of parameters, or order of parameter types."
+      "explanation": "Sequential loop counts add; they do not multiply."
     },
     {
       "id": 4,
-      "type": "text",
-      "question": "Can two methods differ only by their return types and still be overloaded?",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 3; i++)\n  for (int j = 0; j < i; j++) work();",
       "options": [
-        { "type": "text", "value": "Yes, always" },
-        { "type": "text", "value": "Yes, but only for void methods" },
-        { "type": "text", "value": "Only if they're static" },
-        { "type": "text", "value": "No, they must have different parameter lists" }
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "2"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "3"
+        }
       ],
       "answer": 3,
-      "explanation": "Return type alone is NOT enough to overload methods. Two methods cannot differ only by return types - they must have different parameter lists."
+      "explanation": "The inner counts are 0 + 1 + ... + (n - 1)."
     },
     {
       "id": 5,
-      "type": "text",
-      "question": "Which of these is valid method overloading?",
+      "type": "code",
+      "question": "How many times does work() run?\nfor (int i = 0; i < 5; i++) work();",
       "options": [
-        { "type": "text", "value": "Methods with the same name and same parameters but different return types" },
-        { "type": "text", "value": "Methods with different names but same parameters" },
-        { "type": "text", "value": "Methods with the same name but different variable names in parameters" },
-        { "type": "text", "value": "Methods with the same name but different number of parameters" }
+        {
+          "type": "text",
+          "value": "5"
+        },
+        {
+          "type": "text",
+          "value": "6"
+        },
+        {
+          "type": "text",
+          "value": "4"
+        },
+        {
+          "type": "text",
+          "value": "8"
+        }
       ],
       "answer": 0,
-      "explanation": "Valid overloading occurs when methods have the same name but different parameter lists, which can include different numbers of parameters."
+      "explanation": "One call occurs per index from zero through n - 1."
     },
     {
       "id": 6,
-      "type": "text",
-      "question": "Can methods be overloaded by having different parameter types with the same number of parameters?",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 5; i++)\n  for (int j = 0; j < 5; j++) work();",
       "options": [
-        { "type": "text", "value": "No, they must have different numbers of parameters" },
-        { "type": "text", "value": "Yes, different parameter types is valid overloading" },
-        { "type": "text", "value": "Only if the return type is also different" },
-        { "type": "text", "value": "Only for primitive types" }
+        {
+          "type": "text",
+          "value": "28"
+        },
+        {
+          "type": "text",
+          "value": "25"
+        },
+        {
+          "type": "text",
+          "value": "26"
+        },
+        {
+          "type": "text",
+          "value": "24"
+        }
       ],
       "answer": 1,
-      "explanation": "Methods can be overloaded by having different parameter types even if the number of parameters is the same. The type difference is enough to distinguish them."
+      "explanation": "The inner loop runs n times for each of n outer iterations."
     },
     {
       "id": 7,
-      "type": "text",
-      "question": "Does the order of parameter types matter for method overloading?",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 5; i++) work();\nfor (int j = 0; j < 5; j++) work();",
       "options": [
-        { "type": "text", "value": "No, order doesn't matter" },
-        { "type": "text", "value": "Only for primitive types" },
-        { "type": "text", "value": "Yes, methods with same types in different orders are considered different" },
-        { "type": "text", "value": "Only if there are more than three parameters" }
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        }
       ],
       "answer": 2,
-      "explanation": "The order of parameter types matters for overloading. Methods with the same types in different orders are considered different and valid overloads."
+      "explanation": "Sequential loop counts add; they do not multiply."
     },
     {
       "id": 8,
-      "type": "text",
-      "question": "Which standard Java method is commonly overloaded to accept many different types?",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 5; i++)\n  for (int j = 0; j < i; j++) work();",
       "options": [
-        { "type": "text", "value": "main()" },
-        { "type": "text", "value": "equals()" },
-        { "type": "text", "value": "length()" },
-        { "type": "text", "value": "System.out.println()" }
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        },
+        {
+          "type": "text",
+          "value": "10"
+        }
       ],
       "answer": 3,
-      "explanation": "System.out.println() is overloaded to accept many different types of arguments including int, double, String, boolean, and char."
+      "explanation": "The inner counts are 0 + 1 + ... + (n - 1)."
     },
     {
       "id": 9,
-      "type": "text",
-      "question": "What is the main benefit of method overloading?",
+      "type": "code",
+      "question": "How many times does work() run?\nfor (int i = 0; i < 8; i++) work();",
       "options": [
-        { "type": "text", "value": "It provides flexibility by allowing the same operation to work with different types of data" },
-        { "type": "text", "value": "It makes programs run faster" },
-        { "type": "text", "value": "It reduces memory usage" },
-        { "type": "text", "value": "It prevents errors" }
+        {
+          "type": "text",
+          "value": "8"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "7"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        }
       ],
       "answer": 0,
-      "explanation": "Method overloading provides flexibility and convenience, allowing the same method name to work with different types or amounts of data without remembering different names."
+      "explanation": "One call occurs per index from zero through n - 1."
     },
     {
       "id": 10,
-      "type": "text",
-      "question": "What happens if there's no exact match for an overloaded method call?",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 8; i++)\n  for (int j = 0; j < 8; j++) work();",
       "options": [
-        { "type": "text", "value": "The program crashes" },
-        { "type": "text", "value": "The compiler may perform automatic type conversion to find a compatible method" },
-        { "type": "text", "value": "The first method defined is always used" },
-        { "type": "text", "value": "A random overloaded method is selected" }
+        {
+          "type": "text",
+          "value": "67"
+        },
+        {
+          "type": "text",
+          "value": "64"
+        },
+        {
+          "type": "text",
+          "value": "65"
+        },
+        {
+          "type": "text",
+          "value": "63"
+        }
       ],
       "answer": 1,
-      "explanation": "If there's no exact match, the compiler may perform automatic type conversion to find a compatible overloaded method to call."
+      "explanation": "The inner loop runs n times for each of n outer iterations."
     },
     {
       "id": 11,
-      "type": "text",
-      "question": "What is another name for a method's parameter list?",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 8; i++) work();\nfor (int j = 0; j < 8; j++) work();",
       "options": [
-        { "type": "text", "value": "Return specification" },
-        { "type": "text", "value": "Method declaration" },
-        { "type": "text", "value": "Method signature" },
-        { "type": "text", "value": "Parameter definition" }
+        {
+          "type": "text",
+          "value": "15"
+        },
+        {
+          "type": "text",
+          "value": "19"
+        },
+        {
+          "type": "text",
+          "value": "16"
+        },
+        {
+          "type": "text",
+          "value": "17"
+        }
       ],
       "answer": 2,
-      "explanation": "The parameter list is also called the method's signature, which is what the compiler uses to distinguish between overloaded methods."
+      "explanation": "Sequential loop counts add; they do not multiply."
     },
     {
       "id": 12,
-      "type": "text",
-      "question": "When designing overloaded methods, what should each version do?",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 8; i++)\n  for (int j = 0; j < i; j++) work();",
       "options": [
-        { "type": "text", "value": "Completely different tasks" },
-        { "type": "text", "value": "Return different types" },
-        { "type": "text", "value": "Have different names" },
-        { "type": "text", "value": "Perform a similar task but adapt to different input types or amounts" }
+        {
+          "type": "text",
+          "value": "29"
+        },
+        {
+          "type": "text",
+          "value": "27"
+        },
+        {
+          "type": "text",
+          "value": "31"
+        },
+        {
+          "type": "text",
+          "value": "28"
+        }
       ],
       "answer": 3,
-      "explanation": "When designing overloaded methods, each version should perform a similar task but adapt to different input types or amounts to maintain consistency."
+      "explanation": "The inner counts are 0 + 1 + ... + (n - 1)."
     },
     {
       "id": 13,
-      "type": "text",
-      "question": "How can method overloading provide default values for parameters?",
+      "type": "code",
+      "question": "How many times does work() run?\nfor (int i = 0; i < 10; i++) work();",
       "options": [
-        { "type": "text", "value": "By creating a version with fewer parameters that calls the full version with defaults" },
-        { "type": "text", "value": "By using the default keyword" },
-        { "type": "text", "value": "By setting parameters to null" },
-        { "type": "text", "value": "Default values aren't possible with overloading" }
+        {
+          "type": "text",
+          "value": "10"
+        },
+        {
+          "type": "text",
+          "value": "11"
+        },
+        {
+          "type": "text",
+          "value": "9"
+        },
+        {
+          "type": "text",
+          "value": "13"
+        }
       ],
       "answer": 0,
-      "explanation": "Method overloading can provide default values by creating a version with fewer parameters that calls the fuller version with default values for the missing parameters."
+      "explanation": "One call occurs per index from zero through n - 1."
     },
     {
       "id": 14,
-      "type": "text",
-      "question": "Can parameter variable names alone distinguish overloaded methods?",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 10; i++)\n  for (int j = 0; j < 10; j++) work();",
       "options": [
-        { "type": "text", "value": "Yes, different variable names create different methods" },
-        { "type": "text", "value": "No, only parameter types, number, or order matter" },
-        { "type": "text", "value": "Only if they're static methods" },
-        { "type": "text", "value": "Only in certain cases" }
+        {
+          "type": "text",
+          "value": "103"
+        },
+        {
+          "type": "text",
+          "value": "100"
+        },
+        {
+          "type": "text",
+          "value": "101"
+        },
+        {
+          "type": "text",
+          "value": "99"
+        }
       ],
       "answer": 1,
-      "explanation": "Parameter variable names do not distinguish overloaded methods. Only the parameter types, number of parameters, or order of types matter for overloading."
+      "explanation": "The inner loop runs n times for each of n outer iterations."
     },
     {
       "id": 15,
-      "type": "text",
-      "question": "What process does the compiler use to select the appropriate overloaded method?",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 10; i++) work();\nfor (int j = 0; j < 10; j++) work();",
       "options": [
-        { "type": "text", "value": "Method execution" },
-        { "type": "text", "value": "Method compilation" },
-        { "type": "text", "value": "Method initialization" },
-        { "type": "text", "value": "Method resolution" }
+        {
+          "type": "text",
+          "value": "19"
+        },
+        {
+          "type": "text",
+          "value": "23"
+        },
+        {
+          "type": "text",
+          "value": "20"
+        },
+        {
+          "type": "text",
+          "value": "21"
+        }
       ],
-      "answer": 3,
-      "explanation": "The compiler uses method resolution to automatically select the appropriate overloaded method by matching the provided arguments with parameter lists."
+      "answer": 2,
+      "explanation": "Sequential loop counts add; they do not multiply."
     },
     {
       "id": 16,
-      "type": "text",
-      "question": "Why is method overloading important in object-oriented programming?",
+      "type": "code",
+      "question": "How many calls?\nfor (int i = 0; i < 10; i++)\n  for (int j = 0; j < i; j++) work();",
       "options": [
-        { "type": "text", "value": "It makes code more flexible and user-friendly by allowing the same operation to work with different data" },
-        { "type": "text", "value": "It's required by Java syntax" },
-        { "type": "text", "value": "It improves performance" },
-        { "type": "text", "value": "It reduces the number of classes needed" }
+        {
+          "type": "text",
+          "value": "46"
+        },
+        {
+          "type": "text",
+          "value": "44"
+        },
+        {
+          "type": "text",
+          "value": "48"
+        },
+        {
+          "type": "text",
+          "value": "45"
+        }
       ],
-      "answer": 0,
-      "explanation": "Method overloading is essential in object-oriented programming because it makes code more flexible and intuitive by allowing the same operation to work with different types of data."
+      "answer": 3,
+      "explanation": "The inner counts are 0 + 1 + ... + (n - 1)."
     }
   ]
 }

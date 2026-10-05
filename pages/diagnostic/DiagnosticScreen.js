@@ -1,293 +1,78 @@
-import React, { useState, useEffect } from 'react';
-import { View, Text as RNText, TouchableOpacity, StyleSheet, Platform } from 'react-native';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import { db, auth } from '../../config/firebase';
-import { doc, setDoc } from 'firebase/firestore';
-import { useNavigation } from '@react-navigation/native';
-import colors from '../../assets/components/colors';
-import { ProgressBar } from 'react-native-paper';
+import { getCalendarSetup } from '../utils/calendarstore';
+import QuizLayout from '../components/QuizLayout';
+import React, { useEffect, useRef, useState } from 'react';
+import { ActivityIndicator, Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-
-const diagnosticData = require('../../assets/Diagnostic/Diagnostic.json');
-
-export default function DiagnosticScreen() {
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [selectedAnswers, setSelectedAnswers] = useState({});
-    const [timeTaken, setTimeTaken] = useState(0);
-    const [questions, setQuestions] = useState([]);
-
-    const navigation = useNavigation();
-    const user = auth.currentUser;
-
-    const Text = (props) => (
-        <RNText {...props} style={[{ fontFamily: 'Poppins-Regular' }, props.style]} />
-    );
-
-    // Timer
-    useEffect(() => {
-        const interval = setInterval(() => setTimeTaken(prev => prev + 1), 1000);
-        return () => clearInterval(interval);
-    }, []);
-
-    // Load and shuffle questions
-    useEffect(() => {
-        // Flatten all questions across units
-        let allQuestions = [];
-        diagnosticData.forEach(unit => {
-            unit.questions.forEach(q => {
-                // ensure 4 options
-                if (q.options.length < 4) {
-                    while (q.options.length < 4) q.options.push({ type: 'text', value: 'N/A' });
-                }
-                allQuestions.push({ ...q, unitId: unit.unitId });
-            });
-        });
-
-        // Shuffle the questions
-        allQuestions.sort(() => Math.random() - 0.5);
-
-        // Take the first 30 questions
-        setQuestions(allQuestions.slice(0, 30));
-    }, []);
-
-    const currentQuestion = questions[currentQuestionIndex];
-    const totalQuestions = questions.length;
-
-    const handleSelectOption = (optionIndex) => {
-        setSelectedAnswers(prev => ({ ...prev, [currentQuestion.id]: optionIndex }));
-    };
-
-    const handleNext = async () => {
-        if (currentQuestionIndex < totalQuestions - 1) {
-            setCurrentQuestionIndex(currentQuestionIndex + 1);
-        } else {
-            // Save results
-            if (user) {
-                for (const q of questions) {
-                    const unitResultRef = doc(db, 'users', user.uid, 'diagnosticResults', q.unitId);
-                    await setDoc(unitResultRef, {
-                        [q.id]: selectedAnswers[q.id] ?? null
-                    }, { merge: true });
-                }
-            }
-            alert('Diagnostic complete!');
-            navigation.navigate('DateSelectionScreen');
-        }
-    };
-
-    const handleBack = () => {
-        if (currentQuestionIndex > 0) setCurrentQuestionIndex(currentQuestionIndex - 1);
-    };
-
-    if (!questions.length) {
-        return (
-            <SafeAreaView style={styles.centered}>
-                <Text style={styles.loadingText}>Loading...</Text>
-            </SafeAreaView>
-        );
-    }
-
-    return (
-        <SafeAreaView style={styles.container}>
-            <View style={styles.progressContainer}>
-                <Text style={styles.timerText}>
-                    <MaterialIcons name="timer" size={12} /> {Math.floor(timeTaken / 60)}:{(timeTaken % 60).toString().padStart(2, '0')}
-                </Text>
-                <ProgressBar
-                    progress={currentQuestionIndex / totalQuestions}
-                    color={colors.basicButton}
-                    style={styles.progressBar}
-                    theme={{ colors: { surfaceVariant: colors.unfilledProgressBar } }}
-                />
-            </View>
-
-            <View style={styles.questionContainer}>
-                <Text style={currentQuestion.type === 'code' ? styles.codeText : styles.questionText}>
-                    {currentQuestion.question}
-                </Text>
-
-                {currentQuestion.options.map((option, idx) => {
-                    const isSelected = selectedAnswers[currentQuestion.id] === idx;
-                    return (
-                        <TouchableOpacity
-                            key={idx}
-                            style={styles.optionButton}
-                            onPress={() => handleSelectOption(idx)}
-                        >
-                            <View style={[styles.circle, isSelected && styles.circleSelected]} />
-                            <Text style={option.type === 'code' ? styles.codeText : styles.optionText}>
-                                {option.value}
-                            </Text>
-                        </TouchableOpacity>
-                    );
-                })}
-            </View>
-
-            <View style={styles.buttonContainer}>
-                <TouchableOpacity style={styles.backButton} onPress={handleBack} disabled={currentQuestionIndex === 0}>
-                    <MaterialIcons name="keyboard-arrow-left" size={24} color={currentQuestionIndex === 0 ? '#aaa' : colors.black} />
-                    <Text style={{ color: currentQuestionIndex === 0 ? '#aaa' : colors.black }}>Back</Text>
-                </TouchableOpacity>
-
-                <TouchableOpacity style={styles.nextButton} onPress={handleNext} disabled={selectedAnswers[currentQuestion.id] == null}>
-                    <Text style={{ color: colors.white }}>
-                        {currentQuestionIndex === totalQuestions - 1 ? 'Submit' : 'Next'}
-                    </Text>
-                    <MaterialIcons name="keyboard-arrow-right" size={24} color={colors.white} />
-                </TouchableOpacity>
-            </View>
-        </SafeAreaView>
-    );
+import { useIsFocused, usePreventRemove } from '@react-navigation/native';
+import { collection, doc, writeBatch } from 'firebase/firestore';
+import { auth, db } from '../../config/firebase';
+import { selectDiagnosticQuestions, scoreDiagnostic } from '../utils/diagnosticLogic';
+import bank from '../../assets/Diagnostic/diagnostic-v2.json';
+import colors from '../../assets/components/colors';
+import GradientButton from '../../assets/components/gradientButton';
+export default function DiagnosticScreen({ navigation }) {
+  const [checking, setChecking] = useState(true), [setupError, setSetupError] = useState('');
+  useEffect(() => {
+    let active = true;
+    getCalendarSetup(auth.currentUser).then(setup => {
+      if (!active) return;
+      if (setup.hasPlan) { navigation.replace('MainTabs', { screen: 'Calendar' }); return; }
+      if (setup.diagnostic) { navigation.replace('StudyPlan'); return; }
+      setChecking(false);
+    }).catch(() => { if (active) { setSetupError('Unable to check calendar setup. Return to Calendar and retry.'); setChecking(false); } });
+    return () => { active = false; };
+  }, [navigation]);
+  const [questions] = useState(() => selectDiagnosticQuestions(bank.questions));
+  const [started, setStarted] = useState(false), [index, setIndex] = useState(0), [answers, setAnswers] = useState({});
+  const [elapsed, setElapsed] = useState(0), [saving, setSaving] = useState(false), [frozen, setFrozen] = useState(false);
+  const focused = useIsFocused();
+  const finished = useRef(false);
+  const lock = useRef(false), savedTime = useRef(null), scroll = useRef(null);
+  const attemptId = useRef(doc(collection(db, '_ids')).id);
+  useEffect(() => {
+    if (!started || frozen || !focused) return;
+    const timer = setInterval(() => setElapsed(n => n + 1), 1000);
+    return () => clearInterval(timer);
+  }, [started, frozen, focused]);
+  useEffect(() => { scroll.current?.scrollTo({ y: 0, animated: false }); }, [index]);
+  usePreventRemove(started && Object.keys(answers).length > 0, ({ data }) => {
+    if (finished.current) { navigation.dispatch(data.action); return; }
+    Alert.alert('Leave diagnostic?', 'Unsubmitted answers will be lost.', [{ text: 'Keep working', style: 'cancel' }, { text: 'Leave', style: 'destructive', onPress: () => navigation.dispatch(data.action) }]);
+  });
+  const submit = async () => {
+    if (lock.current) return;
+    let result;
+    try { result = scoreDiagnostic(questions, answers); }
+    catch (e) { Alert.alert('Incomplete diagnostic', e.message); return; }
+    lock.current = true; setSaving(true); setFrozen(true);
+    if (savedTime.current == null) savedTime.current = elapsed;
+    try {
+      const user = auth.currentUser;
+      if (!user) throw new Error('Sign in to save your diagnostic.');
+      const batch = writeBatch(db);
+      for (const unit of result.units) {
+        const selected = questions.filter(q => q.unitId === unit.unitId);
+        batch.set(doc(db, 'users', user.uid, 'diagnosticResults', unit.unitId), { ...unit, version: bank.version, attemptId: attemptId.current, answers: Object.fromEntries(selected.map(q => [q.id, answers[q.id]])) });
+      }
+      batch.set(doc(db, 'users', user.uid, 'diagnosticResults', 'latest'), { ...result, version: bank.version, questionIds: questions.map(q => q.id), answers, timeTaken: savedTime.current, attemptId: attemptId.current });
+      await batch.commit();
+      finished.current = true;
+      navigation.replace('DiagnosticResults', { questions, answers, result, timeTaken: savedTime.current });
+    } catch (e) { Alert.alert('Diagnostic not saved', 'Your answers are still here. Check your connection and tap Submit to retry.'); }
+    finally { lock.current = false; setSaving(false); }
+  };
+  if (checking) return <View style={{ flex: 1, padding: 24 }}><ActivityIndicator color={colors.basicButton} /></View>;
+  if (setupError) return <View style={{ padding: 24 }}><Text>{setupError}</Text><GradientButton title="Return to Calendar" onPress={() => navigation.navigate('MainTabs', { screen: 'Calendar' })} /></View>;
+  const q = questions[index];
+  if (!started) return <SafeAreaView style={styles.container} edges={['bottom']}><ScrollView contentContainerStyle={styles.content}>
+    <Text style={styles.title}>Find your starting point</Text><Text style={styles.body}>Answer 30 questions across all four AP CSA units. You can move back to revise answers before submitting.</Text>
+    <Text style={styles.body}>The diagnostic samples 6 questions from Unit 1, 9 from Unit 2, 4 from Unit 3, and 11 from Unit 4. These proportions fall within College Board's multiple-choice weighting ranges.</Text>
+    <Text style={styles.body}>This is a study check, not an AP score prediction. It prioritizes weaker units in your study calendar while keeping every lesson. It does not change your lesson scores. Allow about 30–45 minutes. Answers are held in this session until submitted.</Text>
+    <GradientButton title="Start diagnostic" onPress={() => setStarted(true)} />
+  </ScrollView></SafeAreaView>;
+  return <QuizLayout question={q} index={index} total={questions.length} elapsed={elapsed}
+    selected={answers[q.id]} onSelect={i => setAnswers(a => ({ ...a, [q.id]: i }))}
+    onBack={() => setIndex(n => n - 1)} onNext={index === questions.length - 1 ? submit : () => setIndex(n => n + 1)}
+    saving={saving} frozen={frozen} onReport={() => navigation.navigate('QuestionIssue', { source: 'diagnostic', lessonId: q.lessonId, question: q })} />;
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        paddingBottom: 50,
-        justifyContent: "center",
-        ...Platform.select({
-            ios: { margin: 20 },
-            android: { padding: 20 },
-        }),
-    },
-
-
-    centered: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: colors.quizLessonBackground,
-    },
-
-    loadingText: {
-        color: colors.white,
-        fontSize: 18,
-    },
-
-    questionContainer: {
-        justifyContent: 'left',
-        alignItems: 'left',
-        backgroundColor: colors.white,
-        padding: 20,
-        borderRadius: 10,
-    },
-
-    questionText: {
-        fontSize: 20,
-        color: colors.black,
-        marginBottom: 12,
-        paddingVertical: 10, 
-        textAlign: 'left',
-        fontFamily: 'Poppins-Bold',
-    },
-
-    optionButton: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: colors.white,
-        paddingVertical: 15,
-        paddingHorizontal: 15,
-        borderRadius: 10,
-        borderWidth: 1,
-        borderColor: '#ccc',
-        marginBottom: 10,
-        flexWrap: 'wrap',
-        width: '100%',
-    },
-
-    circle: {
-        width: 20,
-        height: 20,
-        borderRadius: 10,
-        borderWidth: 2,
-        borderColor: colors.selectedOptionButton,
-        marginRight: 12,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
-
-    circleSelected: {
-        backgroundColor: colors.selectedOptionButton,
-    },
-
-    optionText: {
-        fontSize: 16,
-        color: colors.black,
-        flex: 1,
-        flexWrap: 'wrap',
-    },
-
-    progressContainer: {
-        marginBottom: 20,
-    },
-
-    progressBar: {
-        height: 10,
-        borderRadius: 10,
-        width: '100%',
-    },
-
-    progressText: {
-        marginTop: 5,
-        fontSize: 14,
-        color: colors.black,
-        fontFamily: 'Poppins-Bold',
-    },
-
-    progressTopRow: {
-        flexDirection: 'row',
-        justifyContent: 'flex-start',
-        marginBottom: 5,
-        width: '100%',
-    },
-
-    timerText: {
-        fontSize: 14,
-        fontFamily: 'Poppins-Bold',
-        color: colors.black,
-    },
-
-
-    buttonContainer: {
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginTop: 20,
-        width: '100%',
-    },
-
-    backButton: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        borderRadius: 10,
-        backgroundColor: colors.bookmarkBackground,
-        flex: 1,
-        marginRight: 10,
-        paddingVertical: 12,
-    },
-
-    nextButton: {
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        borderRadius: 10,
-        backgroundColor: colors.startQuizBackground,
-        flex: 2,
-        paddingVertical: 12,
-    },
-
-    buttonIcon: { marginRight: 6 },
-
-    codeText: {
-        fontSize: 14,
-        backgroundColor: 'rgba(54, 54, 54, 0.1)',
-        color: '#333',
-        padding: 10,
-        borderRadius: 10,
-        flexWrap: 'wrap',
-        textAlign: 'left',
-        marginVertical: 5,
-        fontFamily: 'Poppins-Medium',
-    },
-
-});
+const styles = StyleSheet.create({ container: { flex: 1, backgroundColor: '#F5F7FB' }, content: { padding: 20, gap: 16 }, title: { fontFamily: 'Poppins-Bold', fontSize: 24 }, heading: { fontFamily: 'Poppins-SemiBold', fontSize: 18 }, body: { fontFamily: 'Poppins-Regular', fontSize: 16, lineHeight: 25, color: '#26334A' }, question: { fontFamily: 'Poppins-Medium', fontSize: 17, lineHeight: 27 }, option: { padding: 16, backgroundColor: '#fff', borderRadius: 14, borderWidth: 1, borderColor: '#B7C3D8', minHeight: 48 } });

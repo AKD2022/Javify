@@ -1,214 +1,408 @@
 {
   "lessonId": 20,
-  "title": "Recap and Mini Quiz on Unit 1 Concepts",
+  "title": "2.5 Compound Boolean Expressions",
+  "topic": "2.5",
+  "contentVersion": 2,
   "questions": [
     {
-      "id": 1,
+      "id": "v2-1",
       "type": "text",
-      "question": "What does JVM stand for?",
+      "question": "When is a && b true?",
       "options": [
-        { "type": "text", "value": "Java Virtual Machine" },
-        { "type": "text", "value": "Java Variable Manager" },
-        { "type": "text", "value": "Java Version Manager" },
-        { "type": "text", "value": "Java Verification Module" }
+        {
+          "type": "text",
+          "value": "When both operands are true"
+        },
+        {
+          "type": "text",
+          "value": "When either is false"
+        },
+        {
+          "type": "text",
+          "value": "Whenever a is true regardless of b"
+        },
+        {
+          "type": "text",
+          "value": "Only when both are false"
+        }
       ],
       "answer": 0,
-      "explanation": "JVM stands for Java Virtual Machine, which executes Java bytecode and enables platform independence."
+      "explanation": "Logical AND requires both conditions."
     },
     {
-      "id": 2,
+      "id": "v2-2",
       "type": "text",
-      "question": "Which primitive type stores decimal numbers?",
+      "question": "When is a || b false?",
       "options": [
-        { "type": "text", "value": "int" },
-        { "type": "text", "value": "double" },
-        { "type": "text", "value": "boolean" },
-        { "type": "text", "value": "char" }
+        {
+          "type": "text",
+          "value": "When both are true"
+        },
+        {
+          "type": "text",
+          "value": "When both operands are false"
+        },
+        {
+          "type": "text",
+          "value": "Whenever either is false"
+        },
+        {
+          "type": "text",
+          "value": "Whenever a is true"
+        }
       ],
       "answer": 1,
-      "explanation": "The double primitive type stores decimal (floating-point) numbers with high precision."
+      "explanation": "Logical OR is false only if neither operand is true."
     },
     {
-      "id": 3,
-      "type": "code",
-      "question": "What is the result of: 15 / 4 (integer division)",
+      "id": "v2-3",
+      "type": "text",
+      "question": "What does ! do to a boolean value?",
       "options": [
-        { "type": "text", "value": "3.75" },
-        { "type": "text", "value": "4" },
-        { "type": "text", "value": "3" },
-        { "type": "text", "value": "3.0" }
+        {
+          "type": "text",
+          "value": "Compares it with zero"
+        },
+        {
+          "type": "text",
+          "value": "Assigns true"
+        },
+        {
+          "type": "text",
+          "value": "Negates it"
+        },
+        {
+          "type": "text",
+          "value": "Converts it to int"
+        }
       ],
       "answer": 2,
-      "explanation": "Integer division truncates the decimal portion: 15 / 4 = 3, not 3.75."
+      "explanation": "Logical negation switches true and false."
     },
     {
-      "id": 4,
+      "id": "v2-4",
       "type": "text",
-      "question": "What keyword creates constants in Java?",
+      "question": "Why can x != 0 && 10 / x > 1 safely handle x = 0?",
       "options": [
-        { "type": "text", "value": "const" },
-        { "type": "text", "value": "constant" },
-        { "type": "text", "value": "static" },
-        { "type": "text", "value": "final" }
+        {
+          "type": "text",
+          "value": "Division by zero is always allowed"
+        },
+        {
+          "type": "text",
+          "value": "&& evaluates only the right operand"
+        },
+        {
+          "type": "text",
+          "value": "x is automatically changed to one"
+        },
+        {
+          "type": "text",
+          "value": "The right operand is skipped when the left is false"
+        }
       ],
       "answer": 3,
-      "explanation": "The final keyword creates constants in Java, preventing variables from being reassigned after initialization."
+      "explanation": "Short-circuit AND avoids evaluating an unnecessary right side."
     },
     {
-      "id": 5,
-      "type": "code",
-      "question": "What is the result of: Math.pow(3, 2)",
+      "id": "v2-5",
+      "type": "text",
+      "question": "When does || skip its right operand?",
       "options": [
-        { "type": "text", "value": "9.0" },
-        { "type": "text", "value": "6.0" },
-        { "type": "text", "value": "5.0" },
-        { "type": "text", "value": "8.0" }
+        {
+          "type": "text",
+          "value": "When the left operand is true"
+        },
+        {
+          "type": "text",
+          "value": "When the left operand is false"
+        },
+        {
+          "type": "text",
+          "value": "Never"
+        },
+        {
+          "type": "text",
+          "value": "Only for numeric literals"
+        }
       ],
       "answer": 0,
-      "explanation": "Math.pow(3, 2) calculates 3 raised to the power of 2, which is 3² = 9.0."
+      "explanation": "A true left side already determines the OR result."
     },
     {
-      "id": 6,
+      "id": "v2-6",
       "type": "text",
-      "question": "What does the return keyword do?",
+      "question": "Which tests that x is between 1 and 5 inclusive?",
       "options": [
-        { "type": "text", "value": "Starts the program over" },
-        { "type": "text", "value": "Sends a value back from a method and ends method execution" },
-        { "type": "text", "value": "Creates a new variable" },
-        { "type": "text", "value": "Prints output to the console" }
+        {
+          "type": "text",
+          "value": "x > 1 && x < 5"
+        },
+        {
+          "type": "text",
+          "value": "x >= 1 && x <= 5"
+        },
+        {
+          "type": "text",
+          "value": "1 <= x <= 5"
+        },
+        {
+          "type": "text",
+          "value": "x >= 1 || x <= 5"
+        }
       ],
       "answer": 1,
-      "explanation": "The return keyword sends a value back from a method to the calling code and immediately ends the method execution."
+      "explanation": "Both inclusive bounds must hold; chained numeric comparisons are not valid Java range syntax."
     },
     {
-      "id": 7,
-      "type": "code",
-      "question": "What is the result of: \"Score: \" + 4 + 5",
+      "id": "v2-7",
+      "type": "text",
+      "question": "Which safely calls length on a possibly null String s?",
       "options": [
-        { "type": "text", "value": "Score: 9" },
-        { "type": "text", "value": "Score: 45" },
-        { "type": "text", "value": "Score: 4 + 5" },
-        { "type": "text", "value": "9 Score:" }
+        {
+          "type": "text",
+          "value": "s == null && s.length() > 0"
+        },
+        {
+          "type": "text",
+          "value": "s != null || s.length() > 0"
+        },
+        {
+          "type": "text",
+          "value": "s != null && s.length() > 0"
+        },
+        {
+          "type": "text",
+          "value": "s.length() > 0 && s != null"
+        }
       ],
       "answer": 2,
-      "explanation": "String concatenation proceeds left-to-right: \"Score: \" + 4 = \"Score: 4\", then \"Score: 4\" + 5 = \"Score: 45\"."
+      "explanation": "The null check must protect the instance-method call with short-circuit AND."
     },
     {
-      "id": 8,
+      "id": "v2-8",
       "type": "text",
-      "question": "What naming convention do Java variables use?",
+      "question": "Which operator binds first among negation, AND, and OR?",
       "options": [
-        { "type": "text", "value": "PascalCase" },
-        { "type": "text", "value": "snake_case" },
-        { "type": "text", "value": "ALL_UPPERCASE" },
-        { "type": "text", "value": "camelCase" }
+        {
+          "type": "text",
+          "value": "AND"
+        },
+        {
+          "type": "text",
+          "value": "OR"
+        },
+        {
+          "type": "text",
+          "value": "They all bind equally"
+        },
+        {
+          "type": "text",
+          "value": "Negation"
+        }
       ],
       "answer": 3,
-      "explanation": "Java variables use camelCase: start with lowercase, capitalize subsequent words (e.g., studentName)."
+      "explanation": "Logical negation has higher precedence than AND and OR."
     },
     {
-      "id": 9,
+      "id": "v2-9",
       "type": "text",
-      "question": "What type is String in Java?",
+      "question": "What is true && true?",
       "options": [
-        { "type": "text", "value": "Reference type (class)" },
-        { "type": "text", "value": "Primitive type" },
-        { "type": "text", "value": "Keyword" },
-        { "type": "text", "value": "Operator" }
+        {
+          "type": "text",
+          "value": "true"
+        },
+        {
+          "type": "text",
+          "value": "false"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "A compiler error"
+        }
       ],
       "answer": 0,
-      "explanation": "String is a reference type (class) in Java, not a primitive type like int or boolean."
+      "explanation": "AND is true exactly when both inputs are true."
     },
     {
-      "id": 10,
+      "id": "v2-10",
       "type": "text",
-      "question": "What symbol starts single-line comments?",
+      "question": "What is !(true || true)?",
       "options": [
-        { "type": "text", "value": "#" },
-        { "type": "text", "value": "//" },
-        { "type": "text", "value": "/*" },
-        { "type": "text", "value": "--" }
+        {
+          "type": "text",
+          "value": "A compiler error"
+        },
+        {
+          "type": "text",
+          "value": "false"
+        },
+        {
+          "type": "text",
+          "value": "true"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        }
       ],
       "answer": 1,
-      "explanation": "Single-line comments in Java start with // and continue to the end of the line."
+      "explanation": "Evaluate OR, then negate its result."
     },
     {
-      "id": 11,
-      "type": "code",
-      "question": "What does Math.sqrt(36) return?",
+      "id": "v2-11",
+      "type": "text",
+      "question": "What is true && false?",
       "options": [
-        { "type": "text", "value": "18.0" },
-        { "type": "text", "value": "6.0" },
-        { "type": "text", "value": "1296.0" },
-        { "type": "text", "value": "72.0" }
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "A compiler error"
+        },
+        {
+          "type": "text",
+          "value": "false"
+        },
+        {
+          "type": "text",
+          "value": "true"
+        }
       ],
       "answer": 2,
-      "explanation": "Math.sqrt(36) calculates the square root of 36, which is 6.0."
+      "explanation": "AND is true exactly when both inputs are true."
     },
     {
-      "id": 12,
+      "id": "v2-12",
       "type": "text",
-      "question": "What happens with explicit type casting from double to int?",
+      "question": "What is !(true || false)?",
       "options": [
-        { "type": "text", "value": "Compilation error" },
-        { "type": "text", "value": "The number rounds to nearest integer" },
-        { "type": "text", "value": "The number rounds up" },
-        { "type": "text", "value": "The decimal portion is truncated (cut off)" }
+        {
+          "type": "text",
+          "value": "true"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "A compiler error"
+        },
+        {
+          "type": "text",
+          "value": "false"
+        }
       ],
       "answer": 3,
-      "explanation": "When casting double to int, the decimal portion is truncated (cut off), always rounding toward zero."
+      "explanation": "Evaluate OR, then negate its result."
     },
     {
-      "id": 13,
-      "type": "code",
-      "question": "What is the result of: 20 % 6",
+      "id": "v2-13",
+      "type": "text",
+      "question": "What is false && true?",
       "options": [
-        { "type": "text", "value": "2" },
-        { "type": "text", "value": "3.33" },
-        { "type": "text", "value": "14" },
-        { "type": "text", "value": "120" }
+        {
+          "type": "text",
+          "value": "false"
+        },
+        {
+          "type": "text",
+          "value": "true"
+        },
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "A compiler error"
+        }
       ],
       "answer": 0,
-      "explanation": "The modulus operator returns the remainder: 20 ÷ 6 = 3 remainder 2, so 20 % 6 = 2."
+      "explanation": "AND is true exactly when both inputs are true."
     },
     {
-      "id": 14,
+      "id": "v2-14",
       "type": "text",
-      "question": "What does void mean as a return type?",
+      "question": "What is !(false || true)?",
       "options": [
-        { "type": "text", "value": "The method returns nothing" },
-        { "type": "text", "value": "The method returns zero" },
-        { "type": "text", "value": "The method returns a string" },
-        { "type": "text", "value": "The method is broken" }
+        {
+          "type": "text",
+          "value": "A compiler error"
+        },
+        {
+          "type": "text",
+          "value": "false"
+        },
+        {
+          "type": "text",
+          "value": "true"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        }
       ],
-      "answer": 0,
-      "explanation": "The void return type means the method performs actions but does not return any value to the calling code."
+      "answer": 1,
+      "explanation": "Evaluate OR, then negate its result."
     },
     {
-      "id": 15,
+      "id": "v2-15",
       "type": "text",
-      "question": "What are parameters in a method?",
+      "question": "What is false && false?",
       "options": [
-        { "type": "text", "value": "The method's output" },
-        { "type": "text", "value": "Input variables that receive data when the method is called" },
-        { "type": "text", "value": "The method's name" },
-        { "type": "text", "value": "Variables outside the method" }
+        {
+          "type": "text",
+          "value": "1"
+        },
+        {
+          "type": "text",
+          "value": "A compiler error"
+        },
+        {
+          "type": "text",
+          "value": "false"
+        },
+        {
+          "type": "text",
+          "value": "true"
+        }
       ],
       "answer": 2,
-      "explanation": "Parameters are input variables that receive data (arguments) when the method is called, allowing methods to work with different values."
+      "explanation": "AND is true exactly when both inputs are true."
     },
     {
-      "id": 16,
+      "id": "v2-16",
       "type": "text",
-      "question": "What is the entry point of a Java program?",
+      "question": "What is !(false || false)?",
       "options": [
-        { "type": "text", "value": "start() method" },
-        { "type": "text", "value": "begin() method" },
-        { "type": "text", "value": "run() method" },
-        { "type": "text", "value": "main() method" }
+        {
+          "type": "text",
+          "value": "false"
+        },
+        {
+          "type": "text",
+          "value": "0"
+        },
+        {
+          "type": "text",
+          "value": "A compiler error"
+        },
+        {
+          "type": "text",
+          "value": "true"
+        }
       ],
       "answer": 3,
-      "explanation": "The main() method serves as the entry point where Java programs begin execution."
+      "explanation": "Evaluate OR, then negate its result."
     }
   ]
 }

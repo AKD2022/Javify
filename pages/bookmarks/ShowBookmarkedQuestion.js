@@ -1,5 +1,6 @@
+import { storageKeyForLesson } from '../utils/content';
 import React, { useState, useLayoutEffect } from 'react';
-import { View, Text as RNText, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { View, Text as RNText, TouchableOpacity, StyleSheet, Alert, ScrollView } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import colors from '../../assets/components/colors';
@@ -12,8 +13,8 @@ export default function ShowBookmarkedQuestionScreen() {
   const navigation = useNavigation();
   const question = route.params?.question;
 
-  const [selectedAnswer, setSelectedAnswer] = useState(question.selectedAnswer ?? null);
-  const [submitted, setSubmitted] = useState(question.selectedAnswer != null);
+  const [selectedAnswer, setSelectedAnswer] = useState(question?.selectedAnswer ?? null);
+  const [submitted, setSubmitted] = useState(question?.selectedAnswer != null);
 
   const Text = (props) => (
     <RNText {...props} style={[{ fontFamily: "Poppins-Regular" }, props.style]} />
@@ -48,8 +49,7 @@ export default function ShowBookmarkedQuestionScreen() {
     try {
       const user = auth.currentUser;
       if (!user) {
-        Alert.alert('Error', 'User not logged in');
-        return;
+        throw new Error('Sign in to save this answer.');
       }
 
       // Use the lesson ID and question key from the original bookmark
@@ -59,44 +59,11 @@ export default function ShowBookmarkedQuestionScreen() {
       // If questionKey doesn't exist, fall back to originalId or id
       const questionKey = question.questionKey || question.originalId || question.id;
 
-      const bookmarkRef = doc(db, 'users', user.uid, 'bookmarks', `lesson${safeLessonId}`);
+      const bookmarkRef = doc(db, 'users', user.uid, 'bookmarks', storageKeyForLesson(safeLessonId));
 
-      // Fetch existing bookmarks
       const docSnap = await getDoc(bookmarkRef);
-      let bookmarksData = {};
-      if (docSnap.exists()) {
-        bookmarksData = docSnap.data();
-      }
-
-      // Update the EXISTING question instead of creating a new one
-      if (bookmarksData[questionKey]) {
-        // Update the existing bookmark
-        bookmarksData[questionKey] = {
-          ...bookmarksData[questionKey],
-          selectedAnswer, // Add the selected answer
-        };
-      } else {
-        // Fallback: if for some reason the key doesn't exist, find by question text
-        const existingKey = Object.keys(bookmarksData).find(key => 
-          bookmarksData[key].question === question.question
-        );
-        
-        if (existingKey) {
-          bookmarksData[existingKey] = {
-            ...bookmarksData[existingKey],
-            selectedAnswer,
-          };
-        } else {
-          // Last resort: create new entry (this shouldn't happen in normal flow)
-          bookmarksData[questionKey] = {
-            ...question,
-            selectedAnswer,
-            id: question.originalId || questionKey, // Use original ID
-          };
-        }
-      }
-
-      await setDoc(bookmarkRef, bookmarksData, { merge: true });
+      if (!docSnap.exists() || !docSnap.data()[questionKey]) throw new Error('This bookmark was removed.');
+      await setDoc(bookmarkRef, { [questionKey]: { selectedAnswer } }, { merge: true });
 
     } catch (error) {
       console.error('Error saving answer:', error);
@@ -108,206 +75,52 @@ export default function ShowBookmarkedQuestionScreen() {
   const isCorrect = selectedAnswer === question.answer;
 
   return (
-    <SafeAreaView style={styles.container}>
-      {/* Question Card */}
-      <View style={styles.questionContainer}>
+    <SafeAreaView style={styles.container} edges={['bottom', 'left', 'right']}>
+      <ScrollView contentContainerStyle={styles.content}>
         <View style={styles.questionContainer}>
-          {/* Question */}
-          <View style={styles.questionHeader}>
-            <Text style={styles.questionText}>{displayValue(question.question)}</Text>
+          <View style={styles.savedLabel}><MaterialIcons name="bookmark" size={18} color="#675CFF" /><Text style={styles.savedText}>SAVED QUESTION</Text></View>
+          <Text selectable style={styles.questionText}>{displayValue(question.question)}</Text>
+          <View style={{ gap: 10 }}>
+            {question.options.map((option, idx) => {
+              const selected = selectedAnswer === idx;
+              const correct = submitted && idx === question.answer;
+              const incorrect = submitted && selected && !correct;
+              const tint = correct ? '#218357' : incorrect ? '#B83A4B' : selected ? '#675CFF' : '#9C99AB';
+              return <TouchableOpacity key={idx} accessibilityRole="radio" accessibilityState={{ checked: selected, disabled: submitted }} disabled={submitted} onPress={() => handleSelectOption(idx)} style={[styles.optionButton, (selected || correct) && { borderColor: tint, backgroundColor: correct ? '#EFFAF4' : incorrect ? '#FFF2F4' : '#F2F0FF' }]}>
+                <MaterialIcons name={correct ? 'check-circle' : incorrect ? 'cancel' : selected ? 'radio-button-checked' : 'radio-button-unchecked'} size={22} color={tint} />
+                <View style={{ flex: 1, gap: 3 }}><Text style={styles.optionText}>{displayValue(option)}</Text>{submitted && (correct || selected) && <Text style={[styles.answerLabel, { color: tint }]}>{correct ? selected ? 'Your answer · Correct' : 'Correct answer' : 'Your answer'}</Text>}</View>
+              </TouchableOpacity>;
+            })}
           </View>
-
-          {/* Options (formatted properly) */}
-          {question.options.map((option, idx) => {
-            const isSelected = selectedAnswer === idx;
-            return (
-              <TouchableOpacity
-                key={idx}
-                style={styles.optionButton}
-                onPress={() => handleSelectOption(idx)}
-                disabled={submitted}
-              >
-                <View style={[styles.circle, isSelected && styles.circleSelected]} />
-                <Text style={styles.optionText}>{displayValue(option)}</Text>
-              </TouchableOpacity>
-            );
-          })}
         </View>
-
-        {/* Feedback */}
-        {submitted && (
-          <View style={styles.feedbackContainer}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', marginBottom: 12 }}>
-              <MaterialIcons
-                name={isCorrect ? "check" : "cancel"}
-                size={24}
-                color={isCorrect ? colors.completedCheckmark : colors.redCircle}
-                style={{
-                  marginRight: 8,
-                  backgroundColor: isCorrect ? colors.completedCheckmarkBackground : colors.redCheckmarkBackground,
-                  padding: 5,
-                  borderRadius: 20,
-                }}
-              />
-              <Text style={[styles.feedbackText, isCorrect ? styles.correctText : styles.incorrectText]}>
-                {isCorrect ? "Correct!" : "Incorrect"}
-              </Text>
-            </View>
-
-            <Text style={styles.explanationTitle}>Explanation:</Text>
-            <Text style={styles.explanationText}>{question.explanation || "No explanation provided."}</Text>
-          </View>
-        )}
-      </View>
-
-      {/* Submit Button */}
-      {!submitted && (
-        <TouchableOpacity
-          style={[styles.submitButton, selectedAnswer == null && styles.submitButtonDisabled]}
-          onPress={handleSubmit}
-          disabled={selectedAnswer == null}
-        >
-          <Text style={styles.submitButtonText}>Submit Answer</Text>
-        </TouchableOpacity>
-      )}
+        {submitted && <View style={styles.feedbackContainer}>
+          <View style={styles.feedbackHeader}><MaterialIcons name={isCorrect ? 'check-circle' : 'lightbulb-outline'} size={24} color="#675CFF" /><Text style={styles.feedbackTitle}>{isCorrect ? 'Nicely done!' : 'Let’s break it down'}</Text></View>
+          <Text style={styles.explanationTitle}>Why this answer works</Text>
+          <Text selectable style={styles.explanationText}>{question.explanation || 'No explanation provided.'}</Text>
+        </View>}
+        {!submitted && <TouchableOpacity accessibilityRole="button" style={[styles.submitButton, selectedAnswer == null && { opacity: 0.45 }]} onPress={handleSubmit} disabled={selectedAnswer == null}><Text style={styles.submitButtonText}>Check answer</Text></TouchableOpacity>}
+      </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: colors.quizLessonBackground,
-    paddingBottom: 50,
-    justifyContent: "center",
-  },
-
-  centered: {
-    flex: 1,
-    backgroundColor: colors.quizLessonBackground,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  errorText: {
-    color: '#fff',
-    fontSize: 16,
-    textAlign: 'center',
-    marginHorizontal: 20,
-  },
-
-  questionContainer: {
-    display: "flex",
-    backgroundColor: colors.white,
-    borderRadius: 10,
-    margin: 20,
-    padding: 5,
-    marginBottom: 20,
-    justifyContent: "center"
-  },
-
-  questionHeader: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 20,
-    paddingRight: 10,
-  },
-
-  questionText: {
-    fontSize: 20,
-    color: colors.black,
-    fontFamily: 'Poppins-Bold',
-    flex: 1,
-    flexWrap: 'wrap',
-  },
-
-  optionButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: colors.white,
-    paddingVertical: 15,
-    paddingHorizontal: 15,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: '#ccc',
-    marginBottom: 10,
-    flexWrap: 'wrap',
-  },
-
-  circle: {
-    width: 20,
-    height: 20,
-    borderRadius: 10,
-    borderWidth: 2,
-    borderColor: colors.selectedOptionButton,
-    marginRight: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  circleSelected: {
-    backgroundColor: colors.selectedOptionButton,
-  },
-
-  optionText: {
-    fontSize: 16,
-    color: colors.black,
-    flex: 1,
-    flexWrap: 'wrap',
-  },
-
-  submitButton: {
-    backgroundColor: colors.startQuizBackground,
-    padding: 15,
-    borderRadius: 10,
-    alignItems: 'center',
-    marginHorizontal: 20,
-    marginBottom: 30,
-  },
-
-  submitButtonDisabled: {
-    backgroundColor: 'gray',
-  },
-
-  submitButtonText: {
-    color: colors.white,
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-
-  feedbackContainer: {
-    marginTop: 30,
-    backgroundColor: colors.lessonIconBackground,
-    padding: 20,
-    borderRadius: 12,
-  },
-
-  feedbackText: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-
-  correctText: {
-    color: colors.completedCheckmark,
-  },
-
-  incorrectText: {
-    color: colors.redCircle,
-  },
-
-  explanationTitle: {
-    fontSize: 16,
-    fontWeight: "Poppins-Bold",
-    marginBottom: 5,
-    color: colors.lessonIcon,
-  },
-
-  explanationText: {
-    fontSize: 14,
-    color: colors.lessonIcon,
-    textAlign: 'left',
-    marginTop: 5,
-  }
+  container: { flex: 1, backgroundColor: colors.defaultBackground },
+  content: { padding: 20, paddingBottom: 32, gap: 16 },
+  centered: { flex: 1, backgroundColor: colors.defaultBackground, justifyContent: 'center', alignItems: 'center' },
+  errorText: { color: '#625C74', fontSize: 16, textAlign: 'center', marginHorizontal: 20 },
+  questionContainer: { backgroundColor: '#fff', borderRadius: 22, padding: 20, gap: 20, borderWidth: 1, borderColor: '#EAE8F5' },
+  savedLabel: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  savedText: { fontFamily: 'Poppins-SemiBold', fontSize: 11, letterSpacing: 1, color: '#675CFF' },
+  questionText: { fontSize: 19, lineHeight: 29, color: '#29263D', fontFamily: 'Poppins-SemiBold' },
+  optionButton: { flexDirection: 'row', alignItems: 'center', gap: 12, padding: 14, minHeight: 58, borderRadius: 14, borderWidth: 1.5, borderColor: '#E0DDEB' },
+  optionText: { fontSize: 15, lineHeight: 23, color: '#29263D' },
+  answerLabel: { fontSize: 11, fontFamily: 'Poppins-Medium' },
+  feedbackContainer: { backgroundColor: '#EFEDFF', padding: 20, borderRadius: 22, gap: 10 },
+  feedbackHeader: { flexDirection: 'row', alignItems: 'center', gap: 10, marginBottom: 4 },
+  feedbackTitle: { flex: 1, color: '#443B77', fontFamily: 'Poppins-SemiBold', fontSize: 18 },
+  explanationTitle: { color: '#443B77', fontFamily: 'Poppins-SemiBold', fontSize: 13 },
+  explanationText: { color: '#59516F', fontSize: 14, lineHeight: 23 },
+  submitButton: { backgroundColor: '#675CFF', padding: 16, borderRadius: 16, alignItems: 'center' },
+  submitButtonText: { color: '#fff', fontFamily: 'Poppins-SemiBold', fontSize: 15 },
 });
