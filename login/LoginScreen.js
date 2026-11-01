@@ -1,3 +1,4 @@
+import formStyles from '../assets/components/formStyles';
 import { useNavigation } from "@react-navigation/native";
 import React, { useEffect, useState } from "react";
 import { View, Text as RNText, StyleSheet, TouchableOpacity, TextInput, Platform } from "react-native";
@@ -5,7 +6,7 @@ import { auth } from "../config/firebase";
 import { signInWithEmailAndPassword, onAuthStateChanged } from "firebase/auth";
 import colors from "../assets/components/colors";
 import { FontAwesome, Ionicons, MaterialIcons } from "@expo/vector-icons";
-import GradientIconBackground from "../assets/components/gradientBackgroundIcon";
+
 import GradientButton from "../assets/components/gradientButton";
 import * as Google from "expo-auth-session/providers/google";
 import * as WebBrowser from "expo-web-browser";
@@ -87,7 +88,6 @@ export default function LoginScreen() {
 
 
               <View style={styles.headerBox}>
-                <GradientIconBackground icon={<Ionicons name="person" size={21} color={colors.white} />} />
                 <Text style={styles.headerText}>Welcome Back</Text>
                 <Text style={styles.headerSubtext}>Sign in to your account</Text>
               </View>
@@ -100,7 +100,7 @@ export default function LoginScreen() {
                 <TextInput
                   style={styles.inputWithIcon}
                   placeholder="Enter your email"
-                  placeholderTextColor={"#ADAEBC"}
+                  placeholderTextColor={colors.bookmark}
                   value={email}
                   onChangeText={setEmail}
                   keyboardType="email-address"
@@ -117,7 +117,7 @@ export default function LoginScreen() {
                 <TextInput
                   style={styles.inputWithIcon}
                   placeholder="Enter your password"
-                  placeholderTextColor={"#ADAEBC"}
+                  placeholderTextColor={colors.bookmark}
                   value={password}
                   onChangeText={setPassword}
                   secureTextEntry
@@ -152,128 +152,4 @@ export default function LoginScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.loginBackground,
-    flex: 1,
-  },
-
-  loginContainer: {
-    backgroundColor: colors.white,
-    flex: 1,
-    margin: 25,
-    alignItems: "center",
-    justifyContent: "center",
-    textAlign: "center",
-    borderRadius: 25,
-    elevation: 10,
-    padding: 25,
-    ...Platform.select({
-      ios: {
-        marginTop: 30,
-        marginBottom: 75,
-        shadowColor: colors.black,
-        shadowOffset: { height: 10 },
-        shadowOpacity: 0.25,
-        shadowRadius: 5,
-      },
-      android: {
-        marginTop: 50, 
-        marginBottom: 100,
-      }
-    })
-  },
-
-  inputContainer: {
-    width: "100%",
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: colors.white,
-    borderRadius: 10,
-    borderWidth: 1.5,
-    borderColor: colors.gray,
-    paddingHorizontal: 15,
-    margin: 10,
-    marginHorizontal: 20,
-  },
-
-  inputWithIcon: {
-    flex: 1,
-    paddingVertical: 15,
-    fontSize: 16,
-    color: colors.black,
-  },
-
-  inputTitle: {
-    width: "100%",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignSelf: "flex-start",
-  },
-
-  inputTitleText: {
-    fontSize: 15,
-  },
-
-  headerText: {
-    paddingTop: 10,
-    paddingBottom: 2,
-    fontSize: 24,
-    fontFamily: "Poppins-Bold",
-    textAlign: "center",
-  },
-
-  headerSubtext: {
-    textAlign: "center",
-    fontSize: 16,
-  },
-
-  headerBox: {
-    marginBottom: 50,
-    alignItems: "center",
-  },
-
-  loginButton: {
-    marginTop: 10,
-    borderRadius: 8,
-    width: "100%",
-    overflow: "hidden",
-    fontSize: 16,
-  },
-
-  forgotPasswordText: {
-    textAlign: "right",
-    fontSize: 14,
-    color: colors.linkColor,
-  },
-
-  forgotPasswordContainer: {
-    width: "100%",
-    padding: 5,
-  },
-
-  bottomLinks: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 20,
-  },
-
-  signUpText: {
-    color: colors.linkColor,
-    marginLeft: 5,
-    lineHeight: 20,
-    fontSize: 16,
-  },
-
-  newPages: {
-    fontSize: 16,
-    lineHeight: 20,
-  },
-
-  signInWithGoogle: {
-    marginTop: 15,
-    borderRadius: 50,
-  },
-
-});
+const styles = StyleSheet.create(formStyles);

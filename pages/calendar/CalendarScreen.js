@@ -1,3 +1,4 @@
+import { palette } from '../../assets/components/theme';
 import React, { useCallback, useState } from 'react';
 import { View, Text, ScrollView, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -36,7 +37,7 @@ export default function CalendarScreen({ navigation }) {
   }, [retry]));
   const today = localDateKey();
   const overdue = Object.entries(items).filter(([date]) => date < today).flatMap(([, lessons]) => lessons).filter(l => scores[l.id] !== 4);
-  const markedDates = Object.fromEntries(Object.entries(items).map(([date, lessons]) => [date, { marked: true, dotColor: lessons.every(l => scores[l.id] === 4) ? '#287A45' : colors.basicButton }]));
+  const markedDates = Object.fromEntries(Object.entries(items).map(([date, lessons]) => [date, { marked: true, dotColor: lessons.every(l => scores[l.id] === 4) ? palette.success : colors.basicButton }]));
   markedDates[selectedDate] = { ...markedDates[selectedDate], selected: true, selectedColor: colors.basicButton };
   const renderLesson = (lesson, prefix = '') => <TouchableOpacity key={prefix + lesson.id} accessibilityRole="button" style={styles.card} onPress={() => navigation.navigate('LessonScreen', { lessonId: lesson.id.replace('lesson', '') })}>
     <View style={{ flex: 1 }}><Text style={styles.label}>{lesson.name}</Text><Text style={styles.body}>{scores[lesson.id] === 4 ? 'Completed' : scores[lesson.id] != null ? 'In progress' : 'Not started'}</Text></View>
@@ -44,13 +45,13 @@ export default function CalendarScreen({ navigation }) {
   </TouchableOpacity>;
   if (!loading && !error && !plan) return <SafeAreaView style={styles.container} edges={['top']}><ScrollView contentContainerStyle={{ padding: 24, gap: 24 }}>
     <Text style={styles.title}>Your study calendar</Text>
-    <View style={{ backgroundColor: '#EFEDFF', padding: 28, borderRadius: 26, gap: 16 }}><MaterialIcons name="event-note" size={52} color={colors.basicButton} /><Text style={styles.title}>{diagnostic ? 'Ready to build your plan' : 'A plan that starts with you'}</Text><Text style={styles.body}>{diagnostic ? 'Your diagnostic is saved. Choose your study days to turn your results into a calendar.' : 'Take a 30-question diagnostic to find your starting point, then choose your study days and pace.'}</Text></View>
+    <View style={{ paddingVertical: 24, borderBottomWidth: 1, borderColor: palette.border, gap: 16 }}><Text style={styles.title}>{diagnostic ? 'Ready to build your plan' : 'A plan that starts with you'}</Text><Text style={styles.body}>{diagnostic ? 'Your diagnostic is saved. Choose your study days to turn your results into a calendar.' : 'Take a 30-question diagnostic to find your starting point, then choose your study days and pace.'}</Text></View>
     <View style={styles.cardColumn}><Text style={styles.label}>All lessons. Your priorities.</Text><Text style={styles.body}>Weaker units come first, with lessons in order within each unit. Every lesson stays in your plan—even topics you answered correctly.</Text></View>
     <GradientButton title={diagnostic ? 'Continue calendar setup' : 'Take the diagnostic'} onPress={() => navigation.navigate(diagnostic ? 'StudyPlan' : 'DiagnosticScreen')} />
   </ScrollView></SafeAreaView>;
-  return <SafeAreaView style={styles.container} edges={['top']}><ScrollView contentContainerStyle={{ padding: 16, gap: 14 }}>
+  return <SafeAreaView style={styles.container} edges={['top']}><ScrollView contentContainerStyle={{ padding: 20, gap: 20 }}>
     <View style={styles.row}><Text style={styles.title}>Study calendar</Text><TouchableOpacity accessibilityRole="button" disabled={loading || !!error || !plan} onPress={() => navigation.navigate('StudyPlan')} style={styles.edit}><Text style={{ color: colors.basicButton }}>Edit plan</Text></TouchableOpacity></View>
-    <Calendar current={selectedDate} onDayPress={({ dateString }) => setSelectedDate(dateString)} markedDates={markedDates} style={styles.calendar} theme={{ todayTextColor: colors.basicButton, arrowColor: colors.basicButton }} />
+    <Calendar current={selectedDate} onDayPress={({ dateString }) => setSelectedDate(dateString)} markedDates={markedDates} style={styles.calendar} theme={{ todayTextColor: colors.basicButton, arrowColor: colors.basicButton, calendarBackground: palette.surface, dayTextColor: palette.ink, monthTextColor: palette.ink, textSectionTitleColor: palette.muted, textDayFontFamily: 'Poppins-Regular', textMonthFontFamily: 'Poppins-SemiBold', textDayHeaderFontFamily: 'Poppins-Regular' }} />
     {loading ? <ActivityIndicator accessibilityLabel="Loading calendar" /> : error ? <View><Text style={styles.body}>{error}</Text><GradientButton title="Retry" onPress={() => setRetry(r => r + 1)} /></View> : <>
       {!!overdue.length && <View style={styles.cardColumn}><Text style={styles.label}>{overdue.length} overdue {overdue.length === 1 ? 'lesson' : 'lessons'}</Text><Text style={styles.body}>Continue below, or edit your plan to spread unfinished lessons across your available study days.</Text>{overdue.map(l => renderLesson(l, 'overdue-'))}</View>}
       <View style={styles.row}><Text style={styles.label}>{parseLocalDate(selectedDate).toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' })}</Text><TouchableOpacity style={styles.edit} onPress={() => setSelectedDate(today)} accessibilityRole="button"><Text style={{ color: colors.basicButton }}>Today</Text></TouchableOpacity></View>
@@ -62,10 +63,10 @@ const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.defaultBackground },
   title: { fontFamily: 'Poppins-Bold', fontSize: 22, color: colors.black },
   label: { fontFamily: 'Poppins-SemiBold', fontSize: 16, color: colors.black, flexShrink: 1 },
-  body: { fontFamily: 'Poppins-Regular', color: '#50586B', fontSize: 14, lineHeight: 22 },
+  body: { fontFamily: 'Poppins-Regular', color: palette.muted, fontSize: 14, lineHeight: 22 },
   row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 8 },
-  edit: { minHeight: 44, justifyContent: 'center', paddingHorizontal: 8 },
+  edit: { minHeight: 48, justifyContent: 'center', paddingHorizontal: 8 },
   calendar: { borderRadius: 16, overflow: 'hidden', paddingTop: 8, paddingBottom: 18 },
-  card: { flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: '#fff', padding: 16, borderRadius: 12, borderWidth: 1, borderColor: '#D7DBE5' },
+  card: { flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: '#fff', padding: 16, borderRadius: 12, borderWidth: 1, borderColor: palette.border },
   cardColumn: { backgroundColor: '#fff', padding: 16, gap: 12, borderRadius: 12 },
 });

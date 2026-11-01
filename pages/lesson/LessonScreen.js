@@ -1,3 +1,4 @@
+import { palette } from '../../assets/components/theme';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { storageKeyForLesson } from '../utils/content';
 import LessonContent from '../components/LessonContent';
@@ -69,19 +70,13 @@ export default function LessonScreen() {
 
     return (
         <View style={styles.container}>
-            <ScrollView style={{ flex: 1 }} contentContainerStyle={{ padding: 20, paddingBottom: 28 }} showsVerticalScrollIndicator={false}>
+            <ScrollView style={{ flex: 1 }} contentContainerStyle={{ paddingHorizontal: 20, paddingBottom: 32 }} showsVerticalScrollIndicator={false}>
                 <View style={styles.lessonContentContainer}>
                 <View style={styles.lessonHeader}>
-                    <MaterialIcons
-                        name="menu-book"
-                        style={styles.icon}
-                        size={24}
-                        color={colors.lessonIcon}
-                    />
                     <Text style={styles.lessonTitle}>{lessonData.title}</Text>
                 </View>
 
-                <TouchableOpacity accessibilityRole="button" onPress={() => navigation.navigate('JavaReference')} style={{ flexDirection: 'row', alignItems: 'center', gap: 8, padding: 12, marginBottom: 18, borderRadius: 12, backgroundColor: '#EFEDFF' }}><MaterialIcons name="code" size={21} color={colors.basicButton} /><Text style={{ color: colors.basicButton, flexShrink: 1 }}>Java quick reference</Text></TouchableOpacity>
+                <TouchableOpacity accessibilityRole="button" onPress={() => navigation.navigate('JavaReference')} style={{ flexDirection: 'row', alignItems: 'center', gap: 8, padding: 12, marginBottom: 18, borderRadius: 12, backgroundColor: palette.accentSoft }}><MaterialIcons name="code" size={21} color={colors.basicButton} /><Text style={{ color: colors.basicButton, flexShrink: 1 }}>Java quick reference</Text></TouchableOpacity>
                 <LessonContent blocks={lessonData.content} />
                 </View>
 
@@ -119,9 +114,9 @@ const styles = StyleSheet.create({
     },
 
     lessonContentContainer: {
-        backgroundColor: colors.white,
-        borderRadius: 10,
-        padding: 20,
+        backgroundColor: colors.defaultBackground,
+        borderRadius: 16,
+        padding: 0,
         paddingBottom: 24,
     },
 
@@ -139,41 +134,11 @@ const styles = StyleSheet.create({
     },
 
     lessonTitle: {
-        fontSize: 20,
-        fontFamily: "Poppins-Bold",
+        fontSize: 26,
+        lineHeight: 36,
+        fontFamily: "Poppins-SemiBold",
         color: colors.black,
         flexShrink: 1,
-    },
-
-    lessonText: {
-        fontSize: 15,
-        color: colors.black,
-        marginBottom: 15,
-        flexWrap: "wrap",
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-
-    lessonText: {
-        fontSize: 15,
-        color: colors.black,
-        marginBottom: 15,
-        lineHeight: 26,
-    },
-
-    inlineCode: {
-        fontSize: 15,
-        color: '#c7254e',
-        fontFamily: 'monospace',
-    },
-
-    codeText: {
-        fontSize: 14,
-        backgroundColor: 'rgba(54, 54, 54, 0.1)',
-        color: '#333',
-        padding: 10,
-        borderRadius: 8,
-        marginVertical: 10,
     },
 
     center: {

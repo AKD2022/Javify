@@ -14,5 +14,5 @@ const sections = [
 ];
 export default function JavaReferenceScreen() {
   const blocks = sections.flatMap(([title, text, code]) => [{ type: 'heading', value: title }, { type: 'text', value: text }, { type: 'code', value: code }]);
-  return <SafeAreaView edges={['bottom']} style={{ flex: 1, backgroundColor: '#fff' }}><ScrollView contentContainerStyle={{ padding: 20 }}><Text style={{ fontFamily: 'Poppins-Regular', lineHeight: 23, marginBottom: 12 }}>Javify study reference with original examples. These expressions illustrate results; they are not all standalone Java statements. This is not the official exam reference sheet.</Text><LessonContent blocks={blocks} /></ScrollView></SafeAreaView>;
+  return <SafeAreaView edges={['bottom']} style={{ flex: 1, backgroundColor: '#fff' }}><ScrollView contentContainerStyle={{ padding: 20 }}><Text style={{ fontFamily: 'Poppins-SemiBold', fontSize: 26, marginBottom: 16 }}>Java reference</Text><Text style={{ fontFamily: 'Poppins-Regular', lineHeight: 23, marginBottom: 12 }}>Javify study reference with original examples. These expressions illustrate results; they are not all standalone Java statements. This is not the official exam reference sheet.</Text><LessonContent blocks={blocks} /></ScrollView></SafeAreaView>;
 }

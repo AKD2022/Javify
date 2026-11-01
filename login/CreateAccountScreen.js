@@ -1,3 +1,4 @@
+import formStyles from '../assets/components/formStyles';
 import React, { useState } from "react";
 import {
   View,
@@ -22,9 +23,9 @@ import { useNavigation } from "@react-navigation/native";
 import colors from "../assets/components/colors";
 import GradientButton from "../assets/components/gradientButton";
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
-import GradientIconBackground from "../assets/components/gradientBackgroundIcon";
+
 import { SafeAreaView } from "react-native-safe-area-context";
-import { FloatingAction } from "react-native-floating-action";
+
 
 export default function CreateAccountScreen() {
   const [email, setEmail] = useState("");
@@ -87,12 +88,9 @@ export default function CreateAccountScreen() {
             keyboardShouldPersistTaps="handled"
           >
             <View style={styles.headerBox}>
-              <GradientIconBackground
-                icon={<Ionicons name="person-add" size={21} color={colors.white} />}
-              />
               <Text style={styles.headerText}>Create Account</Text>
               <Text style={styles.headerSubtext}>
-                Join others in the path to passing the AP Computer Science A Test
+                Study Java, save your progress, and plan your AP CSA practice.
               </Text>
             </View>
 
@@ -199,118 +197,4 @@ export default function CreateAccountScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: colors.defaultBackground,
-    flex: 1,
-    padding: 5,
-  },
-
-  inner: {
-    flexGrow: 1,
-    alignItems: "center",
-    marginHorizontal: 20,
-    justifyContent: "center",
-  },
-
-  inputContainer: {
-    width: "100%",
-    flexDirection: "row-reverse",
-    alignItems: "center",
-    backgroundColor: colors.signUpInputBackgroundColor,
-    borderRadius: 10,
-    paddingHorizontal: 15,
-    marginBottom: 20,
-  },
-
-  inputWithIcon: {
-    flex: 1,
-    paddingVertical: 20,
-    paddingHorizontal: 10,
-    fontSize: 16,
-  },
-
-
-  input: {
-    backgroundColor: colors.signUpInputBackgroundColor,
-    padding: 20,
-    borderRadius: 10,
-    width: "100%",
-    fontSize: 16,
-    marginTop: 5,
-    marginBottom: 20,
-  },
-
-  signUpButton: {
-    marginTop: 10,
-    borderRadius: 8,
-    width: "100%",
-    overflow: "hidden",
-  },
-
-  inputTitle: {
-    width: "100%",
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    alignSelf: "flex-start",
-    marginBottom: 2,
-  },
-
-  inputTitleText: {
-    fontSize: 15,
-    marginLeft: 2
-  },
-
-  headerText: {
-    paddingTop: 10,
-    paddingBottom: 2,
-    fontSize: 24,
-    fontFamily: "Poppins-Bold",
-    textAlign: "center",
-  },
-
-  headerSubtext: {
-    textAlign: "center",
-    fontSize: 16,
-  },
-
-  headerBox: {
-    marginBottom: 50,
-    alignItems: "center",
-  },
-
-  bottomLinks: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 20,
-  },
-
-  signUpText: {
-    color: colors.linkColor,
-    marginLeft: 5,
-    lineHeight: 20,
-    fontSize: 16,
-  },
-
-  newPages: {
-    fontSize: 16,
-    lineHeight: 20,
-  },
-
-  floatingButton: {
-    position: "absolute",
-    top: 60,
-    left: 20,
-    backgroundColor: colors.white,
-    borderRadius: 30,
-    padding: 12,
-    elevation: 5,
-    shadowColor: "#000", 
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.3,
-    shadowRadius: 3,
-  },
-
-
-});
+const styles = StyleSheet.create(formStyles);

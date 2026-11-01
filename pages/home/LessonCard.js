@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, Platform, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { db } from '../../config/firebase';
-import { doc, onSnapshot, getDoc } from 'firebase/firestore';
+
+
 import { MaterialIcons } from '@expo/vector-icons';
 import colors from '../../assets/components/colors';
-import { ScrollView } from 'react-native-gesture-handler';
+
 import { Text as RNText } from 'react-native'
 import { ProgressBar } from 'react-native-paper';
 
@@ -90,35 +90,14 @@ const LessonCard = ({ lesson, score, locked, description }) => {
     >
       <View style={styles.card}>
         <View style={styles.row}>
-          {locked ? (
-            <View style={[styles.iconContainer, { backgroundColor: colors.notStartedIconBackground}]}>
-              <MaterialIcons name="lock" size={24} color={colors.notStartedIcon} />
-            </View>
-          ) : score === 4 ? (
-            <View style={[styles.iconContainer, { backgroundColor: colors.completedCheckmarkBackground }]}>
-              <MaterialIcons name="check" size={24} color={colors.completedCheckmark} />
-            </View>
-          ) : (
-            <View style={[styles.iconContainer, { backgroundColor: colors.notStartedIconBackground }]}>
-              <MaterialIcons name="menu-book" size={24} color={colors.notStartedIcon} />
-            </View>
-          )}
-
+          <Text style={styles.number}>{String(lesson.number).padStart(2, '0')}</Text>
           <View style={styles.cardContent}>
-            <View>
-              <Text style={styles.title}>{`Lesson ${lesson.number}: ${lesson.title}`}</Text>
-              <Text style={styles.description}>{lesson.description}</Text>
-            </View>
-            <Text style={[styles.indicator, { color: statusColor }]}>{status}</Text>
-
-            <ProgressBar
-              progress={Math.max(0, Math.min(1, (score ?? 0) / 4))}
-              color={colors.incompleteLessonProgressBar}
-              style={{ height: 8, borderRadius: 20, marginTop: 5 }}
-              theme={{ colors: { surfaceVariant: colors.unfilledProgressBar } }}
-              visible={visibility}
-            />
+            <Text style={styles.title}>{lesson.title}</Text>
+            <Text style={styles.description}>{lesson.description}</Text>
+            <View style={{ flexDirection: 'row', gap: 8, alignItems: 'center', marginTop: 8 }}><MaterialIcons name={locked ? 'lock' : score === 4 ? 'check-circle' : 'radio-button-unchecked'} size={16} color={statusColor} /><Text style={[styles.indicator, { color: statusColor }]}>{status}</Text></View>
+            {visibility && <ProgressBar progress={Math.max(0, Math.min(1, (score ?? 0) / 4))} color={colors.incompleteLessonProgressBar} style={{ height: 3, marginTop: 12 }} theme={{ colors: { surfaceVariant: colors.gray } }} />}
           </View>
+          <MaterialIcons name="chevron-right" size={22} color={colors.bookmark} />
         </View>
       </View>
     </TouchableOpacity>
@@ -127,79 +106,12 @@ const LessonCard = ({ lesson, score, locked, description }) => {
 
 
 const styles = StyleSheet.create({
-  card: {
-    marginBottom: 10,
-    padding: 20,
-    borderColor: colors.gray,
-    borderWidth: 1,
-    borderRadius: 15,
-    backgroundColor: colors.white,
-    flexDirection: 'row',
-  },
-
-  row: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-  },
-
-  cardContent: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-  },
-
-  column: {
-    flexDirection: 'column',
-  },
-
-  indicator: {
-    fontSize: 12,
-    marginTop: 5,
-  },
-
-  iconContainer: {
-    width: 40,
-    height: 40,
-    borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 10,
-  },
-
-  card: {
-    marginBottom: 10,
-    padding: 20,
-    borderColor: colors.gray,
-    borderWidth: 1,
-    borderRadius: 15,
-    backgroundColor: colors.white,
-  },
-
-  title: {
-    fontSize: 16,
-    color: colors.black,
-    fontFamily: "Poppins-Bold",
-  },
-
-  description: {
-    fontSize: 14,
-    marginTop: 5,
-  },
-
-  buttonRow: {
-    alignItems: 'flex-start',
-  },
-
-  notStartedIconBackground: {
-    width: 40,
-    height: 40,
-    borderRadius: 8,
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginRight: 10,
-    backgroundColor: colors.notStartedIconBackground
-  },
-
+  card: { paddingVertical: 24, borderBottomWidth: 1, borderColor: colors.gray },
+  row: { flexDirection: 'row', alignItems: 'flex-start', gap: 12 },
+  number: { fontFamily: 'Poppins-Medium', color: colors.bookmark, fontSize: 14, width: 26, paddingTop: 2 },
+  cardContent: { flex: 1, gap: 4 },
+  title: { fontFamily: 'Poppins-SemiBold', fontSize: 17, lineHeight: 26, color: colors.black },
+  description: { fontFamily: 'Poppins-Regular', fontSize: 14, lineHeight: 22, color: colors.bookmark },
+  indicator: { fontFamily: 'Poppins-Medium', fontSize: 12 },
 });
-
 export default LessonCard;

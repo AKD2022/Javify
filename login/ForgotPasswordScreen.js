@@ -1,3 +1,5 @@
+import { ScrollView } from 'react-native';
+import formStyles from '../assets/components/formStyles';
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Text as RNText } from "react-native";
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -13,7 +15,7 @@ import { Keyboard } from "react-native";
 import colors from "../assets/components/colors";
 import { MaterialIcons } from "@expo/vector-icons";
 import GradientButton from "../assets/components/gradientButton";
-import GradientIconBackground from "../assets/components/gradientBackgroundIcon";
+
 import { Ionicons } from "@expo/vector-icons";
 import { Alert } from "react-native";
 
@@ -48,12 +50,11 @@ export default function ForgotPasswordScreen() {
             >
                 <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
 
-                    <View style={styles.inner}>
+                    <ScrollView contentContainerStyle={styles.inner} keyboardShouldPersistTaps="handled">
 
                         <View style={styles.headerBox}>
-                            <GradientIconBackground icon={<MaterialIcons name="lock-person" size={21} color={colors.white} />} />
                             <Text style={styles.headerText}>Forgot Password?</Text>
-                            <Text style={styles.headerSubtext}>Don't worry! It happens. Please enter the email address associated with your account </Text>
+                            <Text style={styles.headerSubtext}>Enter your account email to receive a password reset link. </Text>
                         </View>
 
                         <View style={styles.inputTitle}>
@@ -63,7 +64,7 @@ export default function ForgotPasswordScreen() {
                             <TextInput
                                 style={styles.inputWithIcon}
                                 placeholder="Enter your email"
-                                placeholderTextColor={"#ADAEBC"}
+                                placeholderTextColor={colors.bookmark}
                                 value={email}
                                 onChangeText={setEmail}
                                 keyboardType="email-address"
@@ -85,7 +86,7 @@ export default function ForgotPasswordScreen() {
                         <TouchableOpacity onPress={() => navigation.replace("Login")}>
                             <Text style={styles.link}>Back to Sign In</Text>
                         </TouchableOpacity>
-                    </View>
+                    </ScrollView>
 
 
                 </TouchableWithoutFeedback>
@@ -103,98 +104,4 @@ export default function ForgotPasswordScreen() {
     );
 }
 
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor: colors.forgotPasswordBackground,
-        flex: 1,
-    },
-
-    inner: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        padding: 20,
-    },
-
-    inputContainer: {
-        width: "100%",
-        flexDirection: "row",
-        alignItems: "center",
-        backgroundColor: colors.white,
-        borderRadius: 10,
-        borderWidth: 1.5,
-        borderColor: colors.gray,
-        paddingHorizontal: 15,
-        margin: 10,
-        marginHorizontal: 20,
-    },
-
-    inputWithIcon: {
-        flex: 1,
-        paddingVertical: 15,
-        fontSize: 16,
-    },
-
-    inputTitle: {
-        width: "100%",
-        flexDirection: "row",
-        justifyContent: "flex-start",
-        alignSelf: "flex-start",
-    },
-
-    inputTitleText: {
-        fontSize: 15,
-        marginLeft: 2
-    },
-
-    sendResetButton: {
-        marginTop: 10,
-        borderRadius: 8,
-        width: "100%",
-        overflow: "hidden",
-        fontSize: 16,
-    },
-
-    headerText: {
-        paddingTop: 10,
-        paddingBottom: 2,
-        fontSize: 24,
-        fontFamily: "Poppins-Bold",
-        textAlign: "center",
-    },
-
-    headerSubtext: {
-        textAlign: "center",
-        fontSize: 14,
-
-    },
-
-    headerBox: {
-        marginBottom: 50,
-        alignItems: "center",
-    },
-
-    link: {
-        color: colors.linkColor,
-        marginTop: 10,
-    },
-
-    message: {
-        marginTop: 20,
-    },
-
-    floatingButton: {
-        position: "absolute",
-        top: 60,
-        left: 20,
-        backgroundColor: colors.white,
-        borderRadius: 30,
-        padding: 12,
-        elevation: 5,
-        shadowColor: "#000",
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.3,
-        shadowRadius: 3,
-    },
-
-});
+const styles = StyleSheet.create(formStyles);

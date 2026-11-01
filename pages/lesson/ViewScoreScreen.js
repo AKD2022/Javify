@@ -1,4 +1,4 @@
-import ScoreRing from '../components/ScoreRing';
+import { palette } from '../../assets/components/theme';
 import { storageKeyForLesson } from '../utils/content';
 import React, { useEffect, useState } from "react";
 import { View, Text as RNText, StyleSheet, ActivityIndicator, ScrollView } from "react-native";
@@ -78,16 +78,15 @@ export default function ViewScoreScreen() {
       <View style={styles.toolbar}>
         <Text style={styles.toolbarTitle}>Your results</Text>
         <TouchableOpacity accessibilityRole="button" accessibilityLabel="Return home" style={styles.homeButton} onPress={() => navigation.navigate('MainTabs')}>
-          <MaterialIcons name="home" size={24} color="#675CFF" />
+          <MaterialIcons name="home" size={24} color={palette.accent} />
         </TouchableOpacity>
       </View>
       <ScrollView contentContainerStyle={styles.content} style={{ flex: 1, width: '100%' }}>
       <View style={styles.summaryCard}>
-        <Text style={styles.eyebrow}>QUIZ COMPLETE</Text>
         <Text style={styles.lessonName}>{lessonData?.title}</Text>
-        <ScoreRing score={scoreData.score} total={4} />
-        <Text style={styles.resultTitle}>{scoreData.score === 4 ? 'Excellent work!' : scoreData.score === 3 ? 'Almost there!' : 'Keep practicing'}</Text>
-        <Text style={styles.supporting}>{scoreData.score} of 4 correct · Every attempt builds understanding.</Text>
+        <View style={styles.scoreLine}><Text style={styles.scoreValue}>{scoreData.score}<Text style={styles.scoreTotal}> / 4</Text></Text><Text style={styles.scoreCaption}>correct this attempt</Text></View>
+        <View style={styles.segments}>{Array.from({ length: 4 }, (_, i) => <View key={i} style={[styles.segment, { backgroundColor: i < scoreData.score ? palette.accent : palette.border }]} />)}</View>
+        <Text style={styles.supporting}>{scoreData.score === 4 ? 'All four answers correct. Review the explanations or try another set.' : `Review ${4 - scoreData.score === 1 ? 'the missed answer' : 'the missed answers'} and the explanation for each.`}</Text>
       </View>
 
       <View style={styles.performanceBreakdown}>
@@ -124,7 +123,7 @@ export default function ViewScoreScreen() {
       </ScrollView>
       <View style={[styles.buttonContainer, { paddingBottom: Math.max(insets.bottom, 20) + 10 }]}>
         <TouchableOpacity
-          style={[styles.button, { backgroundColor: colors.basicButton, elevation: 4 }]}
+          style={[styles.button, { backgroundColor: colors.basicButton }]}
           onPress={() => navigation.navigate('ExplanationScreen', {
             lessonId: lessonId,
             questionId1: questionId1,
@@ -141,7 +140,7 @@ export default function ViewScoreScreen() {
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={[styles.button, { backgroundColor: "#EAE8FF" }]}
+          style={[styles.button, { backgroundColor: palette.accentSoft }]}
           onPress={() => navigation.replace('QuizScreen', {
             lessonId: lessonId,
             lessonTitle: lessonData?.title,
@@ -157,21 +156,27 @@ export default function ViewScoreScreen() {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.defaultBackground },
   toolbar: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingHorizontal: 20, paddingTop: 12, paddingBottom: 16, gap: 12 },
-  toolbarTitle: { flex: 1, fontFamily: 'Poppins-Bold', fontSize: 23, color: '#29263D' },
+  toolbarTitle: { flex: 1, fontFamily: 'Poppins-Bold', fontSize: 23, color: palette.ink },
   homeButton: { width: 48, height: 48, borderRadius: 24, backgroundColor: '#fff', alignItems: 'center', justifyContent: 'center', elevation: 2, shadowColor: '#31304B', shadowOpacity: 0.08, shadowRadius: 6, shadowOffset: { width: 0, height: 2 } },
   content: { paddingHorizontal: 20, paddingBottom: 32, gap: 20 },
-  summaryCard: { alignItems: 'center', backgroundColor: '#EFEDFF', borderRadius: 26, paddingHorizontal: 22, paddingVertical: 24, gap: 12 },
-  eyebrow: { color: '#675CFF', fontFamily: 'Poppins-SemiBold', fontSize: 11, letterSpacing: 1.5 },
-  lessonName: { color: '#59516F', fontFamily: 'Poppins-Medium', fontSize: 14, lineHeight: 22, textAlign: 'center' },
-  resultTitle: { fontFamily: 'Poppins-Bold', fontSize: 24, lineHeight: 32, color: '#29263D', textAlign: 'center' },
-  supporting: { fontSize: 13, color: '#625C74', textAlign: 'center', lineHeight: 21 },
-  performanceBreakdown: { backgroundColor: '#fff', borderRadius: 24, borderWidth: 1, borderColor: '#EAE8F5', padding: 20, gap: 16 },
+  summaryCard: { paddingVertical: 12, gap: 20 },
+  scoreLine: { flexDirection: 'row', alignItems: 'baseline', flexWrap: 'wrap', gap: 12 },
+  scoreValue: { fontFamily: 'Poppins-SemiBold', fontSize: 44, color: palette.ink },
+  scoreTotal: { fontSize: 24, color: palette.muted },
+  scoreCaption: { fontSize: 14, color: palette.muted },
+  segments: { flexDirection: 'row', gap: 6 },
+  segment: { flex: 1, height: 5, borderRadius: 3 },
+  eyebrow: { color: palette.accent, fontFamily: 'Poppins-SemiBold', fontSize: 11, letterSpacing: 1.5 },
+  lessonName: { color: palette.muted, fontFamily: 'Poppins-Medium', fontSize: 14, lineHeight: 22, textAlign: 'left' },
+  resultTitle: { fontFamily: 'Poppins-Bold', fontSize: 24, lineHeight: 32, color: palette.ink, textAlign: 'center' },
+  supporting: { fontSize: 15, color: palette.muted, textAlign: 'left', lineHeight: 24 },
+  performanceBreakdown: { backgroundColor: '#fff', borderRadius: 16, borderWidth: 1, borderColor: palette.border, padding: 20, gap: 20 },
   row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 16, minHeight: 44 },
   rowLeft: { flexDirection: 'row', alignItems: 'center', gap: 12, flex: 1 },
-  iconCheck: { color: '#218357', backgroundColor: '#E4F7EC', padding: 10, borderRadius: 22, overflow: 'hidden' },
-  iconX: { color: '#B83A4B', backgroundColor: '#FCECEF', padding: 10, borderRadius: 22, overflow: 'hidden' },
-  iconTimer: { color: '#675CFF', backgroundColor: '#EFEDFF', padding: 10, borderRadius: 22, overflow: 'hidden' },
-  title: { fontFamily: 'Poppins-Medium', fontSize: 14, lineHeight: 21, color: '#494358', flexShrink: 1 },
+  iconCheck: { color: palette.success, backgroundColor: palette.successSoft, padding: 10, borderRadius: 22, overflow: 'hidden' },
+  iconX: { color: palette.danger, backgroundColor: palette.dangerSoft, padding: 10, borderRadius: 22, overflow: 'hidden' },
+  iconTimer: { color: palette.accent, backgroundColor: palette.accentSoft, padding: 10, borderRadius: 22, overflow: 'hidden' },
+  title: { fontFamily: 'Poppins-Medium', fontSize: 14, lineHeight: 21, color: palette.muted, flexShrink: 1 },
   buttonContainer: { borderTopLeftRadius: 28, borderTopRightRadius: 28, elevation: 8, shadowColor: '#31304B', shadowOpacity: 0.1, shadowRadius: 12, paddingTop: 24, width: '100%', gap: 12, backgroundColor: '#fff', paddingHorizontal: 20 },
   button: { paddingVertical: 16, paddingHorizontal: 18, minHeight: 54, justifyContent: 'center', borderRadius: 10 },
   buttonText: { textAlign: 'center', color: '#fff', fontFamily: 'Poppins-Bold' },

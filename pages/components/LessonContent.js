@@ -1,3 +1,4 @@
+import { palette } from '../../assets/components/theme';
 import React from 'react';
 import { Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { splitJavaTerms } from '../utils/lessonFormatting';
@@ -31,10 +32,10 @@ export default function LessonContent({ blocks = [] }) {
 }
 const styles = StyleSheet.create({
   paragraphRow: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'baseline' },
-  paragraph: { fontFamily: 'Poppins-Regular', fontSize: 15, lineHeight: 28, color: '#25324A' },
-  heading: { fontFamily: 'Poppins-SemiBold', fontSize: 18, lineHeight: 26, marginTop: 10, color: '#172747' },
-  pill: { borderRadius: 999, overflow: 'hidden', backgroundColor: '#E7EDFF', borderWidth: 1, borderColor: '#CDD8F6', justifyContent: 'center', alignItems: 'center', paddingHorizontal: 7, paddingVertical: 1, marginHorizontal: 2, maxWidth: '100%' },
+  paragraph: { fontFamily: 'Poppins-Regular', fontSize: 16, lineHeight: 29, color: palette.ink },
+  heading: { fontFamily: 'Poppins-SemiBold', fontSize: 18, lineHeight: 26, marginTop: 24, color: palette.ink },
+  pill: { borderRadius: 999, overflow: 'hidden', backgroundColor: palette.accentSoft, borderWidth: 1, borderColor: palette.border, justifyContent: 'center', alignItems: 'center', paddingHorizontal: 7, paddingVertical: 1, marginHorizontal: 2, maxWidth: '100%' },
   pillText: { fontFamily: mono, fontSize: 14, lineHeight: 24, color: '#203E7B', includeFontPadding: false, textAlign: 'center' },
-  codeBlock: { backgroundColor: '#F1F4FA', borderRadius: 14, borderColor: '#D7DFED', borderWidth: 1 },
-  code: { fontFamily: mono, fontSize: 14, lineHeight: 23, color: '#20324F' },
+  codeBlock: { backgroundColor: palette.subtle, borderRadius: 12, borderColor: palette.border, borderWidth: 1 },
+  code: { fontFamily: mono, fontSize: 14, lineHeight: 23, color: palette.ink },
 });

@@ -1,3 +1,4 @@
+import { palette } from '../../assets/components/theme';
 import { View, Text as RNText, TouchableOpacity, Alert, FlatList, ScrollView } from 'react-native'
 import React, { useState, useEffect, useRef } from 'react'
 import { StyleSheet } from 'react-native'
@@ -163,7 +164,7 @@ export default function Profile() {
                     <Text style={{ fontFamily: "Poppins-SemiBold", marginVertical: 10, fontSize: 14, }}>Account</Text>
                     <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("ChangeUsername")}>
                         <View style={styles.groupLeftCard}>
-                            <MaterialIcons name="person" size={20} color={colors.linkColor} />
+                            <MaterialIcons name="person" size={20} color={palette.muted} />
                             <Text style={{ fontFamily: "Poppins-Medium", fontSize: 16 }}>Change Username</Text>
                         </View>
                         <MaterialIcons name="keyboard-arrow-right" size={25} color={colors.bookmark} />
@@ -171,7 +172,7 @@ export default function Profile() {
 
                     <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("ChangePassword")}>
                         <View style={styles.groupLeftCard}>
-                            <MaterialIcons name="lock" size={20} color={colors.linkColor} />
+                            <MaterialIcons name="lock" size={20} color={palette.muted} />
                             <Text style={{ fontFamily: "Poppins-Medium", fontSize: 16 }}>Change Password</Text>
                         </View>
                         <MaterialIcons name="keyboard-arrow-right" size={25} color={colors.bookmark} />
@@ -182,12 +183,12 @@ export default function Profile() {
                 <View style={styles.learningSection}>
                     <Text style={{ fontFamily: "Poppins-SemiBold", marginVertical: 10, fontSize: 14, }}>Learning</Text>
                     <TouchableOpacity style={styles.card} onPress={() => navigation.navigate('QuestionIssue')}>
-                      <View style={styles.groupLeftCard}><MaterialIcons name="outlined-flag" size={20} color={colors.purpleIcon} /><Text style={{ fontFamily: 'Poppins-Medium', fontSize: 16 }}>Question reports</Text></View>
+                      <View style={styles.groupLeftCard}><MaterialIcons name="outlined-flag" size={20} color={palette.muted} /><Text style={{ fontFamily: 'Poppins-Medium', fontSize: 16 }}>Question reports</Text></View>
                       <MaterialIcons name="keyboard-arrow-right" size={25} color={colors.bookmark} />
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("ProgressReport")}>
                         <View style={styles.groupLeftCard}>
-                            <MaterialIcons name="bar-chart" size={20} color={colors.goldIcon} />
+                            <MaterialIcons name="bar-chart" size={20} color={palette.muted} />
                             <Text style={{ fontFamily: "Poppins-Medium", fontSize: 16 }}>Progress Report</Text>
                         </View>
                         <MaterialIcons name="keyboard-arrow-right" size={25} color={colors.bookmark} />
@@ -198,7 +199,7 @@ export default function Profile() {
                         onPress={() => navigation.navigate("MainTabs", { screen: "Bookmarks" })}
                     >
                     <View style={styles.groupLeftCard}>
-                        <MaterialIcons name="bookmark" size={20} color={colors.goldIcon} />
+                        <MaterialIcons name="bookmark" size={20} color={palette.muted} />
                         <Text style={{ fontFamily: "Poppins-Medium", fontSize: 16 }}>Saved Lessons</Text>
                     </View>
                     <MaterialIcons name="keyboard-arrow-right" size={25} color={colors.bookmark} />
@@ -210,7 +211,7 @@ export default function Profile() {
                 <Text style={{ fontFamily: "Poppins-SemiBold", marginVertical: 10, fontSize: 14, }}>Preferences</Text>
                 <TouchableOpacity style={styles.card} onPress={() => navigation.navigate("NotificationPreferences")}>
                     <View style={styles.groupLeftCard}>
-                        <MaterialIcons name="notifications" size={20} color={colors.purpleIcon} />
+                        <MaterialIcons name="notifications" size={20} color={palette.muted} />
                         <Text style={{ fontFamily: "Poppins-Medium", fontSize: 16 }}>Notifications</Text>
                     </View>
                     <MaterialIcons name="keyboard-arrow-right" size={25} color={colors.bookmark} />
@@ -264,20 +265,25 @@ const styles = StyleSheet.create({
         marginBottom: 5,
         borderRadius: 10,
         alignItems: "center",
-        padding: 10,
-        backgroundColor: colors.defaultBackground,
+        paddingVertical: 18,
+        paddingHorizontal: 0,
+        minHeight: 56,
+        borderBottomWidth: 1,
+        borderColor: palette.border,
+        backgroundColor: colors.white,
     },
 
     groupLeftCard: {
         flexDirection: "row",
         alignItems: "center",
-        gap: 15,
+        gap: 12,
+        flex: 1,
     },
 
     buttonContainer: {
         marginTop: "auto",
         paddingBottom: 20,
-        paddingTop: 50,
+        paddingTop: 24,
     },
 
     trashButton: {
@@ -285,12 +291,12 @@ const styles = StyleSheet.create({
         alignItems: "center",
         justifyContent: "center",
         padding: 15,
-        gap: 15,
-        backgroundColor: colors.redTrashButtonBackground,
+        gap: 12,
+        backgroundColor: palette.surface,
         borderRadius: 10,
         borderWidth: 1,
         borderColor: colors.redCircle,
-        margin: 10,
+        marginVertical: 8,
     },
 
     logoutButton: {
@@ -301,6 +307,6 @@ const styles = StyleSheet.create({
         gap: 10,
         backgroundColor: colors.black,
         borderRadius: 10,
-        margin: 10,
+        marginVertical: 8,
     },
 });

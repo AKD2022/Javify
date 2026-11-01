@@ -45,7 +45,7 @@ import ProgressReport from './pages/profile/ProgressReport';
 import NotificationPreferences from './pages/profile/NotificationsPaused';
 import ChangeUsername from './pages/profile/ChangeUsername';
 import ChangePassword from './pages/profile/ChangePassword';
-import UnitHeader from './assets/components/unitHeader';
+
 import colors from './assets/components/colors';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
@@ -60,9 +60,11 @@ function MainTabs() {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         headerShown: false,
-        tabBarStyle: { backgroundColor: colors.white },
+        tabBarStyle: { backgroundColor: colors.white, borderTopColor: colors.gray, elevation: 0 },
+        tabBarLabelStyle: { fontFamily: 'Poppins-Medium', fontSize: 11 },
+        tabBarItemStyle: { paddingTop: 6, paddingBottom: 4 },
         tabBarActiveTintColor: colors.basicButton,
-        tabBarInactiveTintColor: '#bbb',
+        tabBarInactiveTintColor: colors.bookmark,
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           if (route.name === 'Home') iconName = focused ? 'home' : 'home-outline';

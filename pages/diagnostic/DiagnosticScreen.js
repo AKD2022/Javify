@@ -1,3 +1,4 @@
+import { palette } from '../../assets/components/theme';
 import { getCalendarSetup } from '../utils/calendarstore';
 import QuizLayout from '../components/QuizLayout';
 import React, { useEffect, useRef, useState } from 'react';
@@ -75,4 +76,4 @@ export default function DiagnosticScreen({ navigation }) {
     onBack={() => setIndex(n => n - 1)} onNext={index === questions.length - 1 ? submit : () => setIndex(n => n + 1)}
     saving={saving} frozen={frozen} onReport={() => navigation.navigate('QuestionIssue', { source: 'diagnostic', lessonId: q.lessonId, question: q })} />;
 }
-const styles = StyleSheet.create({ container: { flex: 1, backgroundColor: '#F5F7FB' }, content: { padding: 20, gap: 16 }, title: { fontFamily: 'Poppins-Bold', fontSize: 24 }, heading: { fontFamily: 'Poppins-SemiBold', fontSize: 18 }, body: { fontFamily: 'Poppins-Regular', fontSize: 16, lineHeight: 25, color: '#26334A' }, question: { fontFamily: 'Poppins-Medium', fontSize: 17, lineHeight: 27 }, option: { padding: 16, backgroundColor: '#fff', borderRadius: 14, borderWidth: 1, borderColor: '#B7C3D8', minHeight: 48 } });
+const styles = StyleSheet.create({ container: { flex: 1, backgroundColor: palette.canvas }, content: { padding: 20, gap: 16 }, title: { fontFamily: 'Poppins-Bold', fontSize: 24 }, heading: { fontFamily: 'Poppins-SemiBold', fontSize: 18 }, body: { fontFamily: 'Poppins-Regular', fontSize: 16, lineHeight: 25, color: '#26334A' }, question: { fontFamily: 'Poppins-Medium', fontSize: 17, lineHeight: 27 }, option: { padding: 16, backgroundColor: '#fff', borderRadius: 14, borderWidth: 1, borderColor: '#B7C3D8', minHeight: 48 } });

@@ -1,3 +1,4 @@
+import { palette } from '../../assets/components/theme';
 import { currentKeyFromStorage } from '../utils/content';
 import React, { useCallback, useState } from 'react';
 import { ActivityIndicator, Alert, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
@@ -64,9 +65,9 @@ export default function ReviewScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.defaultBackground }, content: { padding: 20, gap: 16 },
   title: { fontFamily: 'Poppins-Bold', fontSize: 23 }, label: { fontFamily: 'Poppins-SemiBold', fontSize: 16 },
-  body: { fontFamily: 'Poppins-Regular', fontSize: 15, lineHeight: 23, color: '#343D50' },
+  body: { fontFamily: 'Poppins-Regular', fontSize: 15, lineHeight: 23, color: palette.muted },
   link: { fontFamily: 'Poppins-SemiBold', color: colors.basicButton, paddingVertical: 12 },
   card: { backgroundColor: '#fff', borderRadius: 12, padding: 16, gap: 12 }, question: { fontSize: 17, lineHeight: 26 },
   option: { padding: 14, borderWidth: 1, borderColor: '#B8C0D0', borderRadius: 10, minHeight: 48 },
-  selected: { borderColor: colors.basicButton, borderWidth: 2, backgroundColor: '#EDF2FF' },
+  selected: { borderColor: colors.basicButton, borderWidth: 2, backgroundColor: palette.accentSoft },
 });

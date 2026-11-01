@@ -1,54 +1,16 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
-import colors from './colors';
 import { FontAwesome } from '@expo/vector-icons';
-
-const GradientButton = ({ title, onPress, style, textStyle, icon, disabled = false }) => {
-  return (
-    <TouchableOpacity accessibilityRole="button" disabled={disabled} onPress={onPress} style={[styles.buttonContainer, disabled && { opacity: 0.5 }]}>
-      <LinearGradient
-        colors={[colors.gradientButtonStart, colors.gradientButtonEnd]}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 0 }}
-        style={[styles.gradient, style]}
-      >
-        {icon ? <View style={styles.icon}>
-          <FontAwesome name={icon} size={24} color={colors.white}/>
-        </View> : null}
-        <Text style={[styles.buttonText, textStyle]}>{title}</Text>
-      </LinearGradient>
-    </TouchableOpacity>
-  );
-};
-
-const styles = StyleSheet.create({
-  buttonContainer: {
-    overflow: 'hidden',
-    borderRadius: 16,
-  },
-
-  gradient: {
-    borderRadius: 16,
-    minHeight: 52,
-    paddingVertical: 15,
-    paddingHorizontal: 25,
-    alignItems: 'center',
-    justifyContent: 'center',
-    flexDirection: "row"
-  },
-
-  buttonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    fontSize: 16,
-  },
-
-  icon: {
-    alignItems: "center",
-    display: "flex"
-  }
-
+import { palette, radius, type } from './theme';
+// Keep the existing public API so forms and navigation retain their behavior.
+export default function GradientButton({ title, onPress, style, textStyle, icon, disabled = false }) {
+  return <TouchableOpacity accessibilityRole="button" accessibilityState={{ disabled }} disabled={disabled} activeOpacity={0.75} onPress={onPress} style={[s.button, style, disabled && s.disabled]}>
+    {icon ? <View><FontAwesome name={icon} size={20} color={palette.surface} /></View> : null}
+    <Text style={[s.label, textStyle]}>{title}</Text>
+  </TouchableOpacity>;
+}
+const s = StyleSheet.create({
+  button: { borderRadius: radius.control, minHeight: 52, paddingVertical: 14, paddingHorizontal: 20, alignItems: 'center', justifyContent: 'center', flexDirection: 'row', gap: 8, backgroundColor: palette.accent },
+  label: { ...type.action, color: palette.surface, textAlign: 'center', flexShrink: 1 },
+  disabled: { opacity: 0.45 },
 });
-
-export default GradientButton;

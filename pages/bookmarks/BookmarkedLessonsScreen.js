@@ -1,3 +1,4 @@
+import { palette } from '../../assets/components/theme';
 import SavedCard from './SavedCard';
 import React, { useCallback, useEffect, useState } from 'react';
 import { ActivityIndicator, Alert, FlatList, Text, TouchableOpacity, View } from 'react-native';
@@ -28,8 +29,8 @@ export default function BookmarkedLessonsScreen({ navigation }) {
     catch { Alert.alert('Not removed', 'Check your connection and try again.'); }
   } }]);
   if (loading) return <ActivityIndicator style={{ padding: 24 }} />;
-  return <FlatList style={{ backgroundColor: '#F7F7FB' }} contentContainerStyle={{ padding: 16, gap: 12 }} data={items} keyExtractor={item => item.id}
-    ListHeaderComponent={error ? <Text style={{ color: '#A32121' }}>{error}</Text> : null}
+  return <FlatList style={{ backgroundColor: palette.canvas }} contentContainerStyle={{ paddingHorizontal: 20, paddingBottom: 32, gap: 0 }} data={items} keyExtractor={item => item.id}
+    ListHeaderComponent={error ? <Text style={{ color: palette.danger }}>{error}</Text> : null}
     ListEmptyComponent={<Text style={{ color: colors.black }}>No lessons bookmarked yet.</Text>}
     renderItem={({ item }) => <SavedCard topic={item.entry?.topic} title={item.entry?.title || 'This lesson was replaced'}
       detail={item.entry ? scores[item.entry.id] == null ? 'Ready to study' : `Best current score: ${scores[item.entry.id]}/4` : 'Open the current curriculum to choose its replacement.'}

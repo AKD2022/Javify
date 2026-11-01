@@ -1,3 +1,4 @@
+import { palette, type } from '../../assets/components/theme';
 import React, { useCallback, useEffect, useState } from 'react';
 import {
   View,
@@ -13,19 +14,19 @@ import { auth } from '../../config/firebase';
 import { loadScores, getScores } from '../utils/dataStore';
 import { loadCalendar, getCalendarItems } from '../utils/calendarstore';
 import colors from '../../assets/components/colors';
-import { ProgressBar } from 'react-native-paper';
+
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient';
-import { parseISO, isAfter } from 'date-fns';
+
+
 import { Text as RNText, ActivityIndicator } from 'react-native';
 import { localDateKey } from '../utils/studyLogic';
 import { useFocusEffect, useNavigation } from '@react-navigation/native';
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../config/firebase";
-import { FontAwesome } from "@expo/vector-icons";
+
 import { onSnapshot } from 'firebase/firestore';
 import { units } from '../utils/units';
-import { Image } from 'react-native-svg';
+
 
 const HomeScreen = ({ navigation }) => {
   const [user, setUser] = useState(null);
@@ -203,191 +204,34 @@ const HomeScreen = ({ navigation }) => {
 
   if (loadError) return <SafeAreaView style={styles.container}><Text>{loadError}</Text><TouchableOpacity accessibilityRole="button" style={{ padding: 16 }} onPress={() => setReload(n => n + 1)}><Text>Retry</Text></TouchableOpacity></SafeAreaView>;
 
-  return (
-    <SafeAreaView style={styles.container}>
-      {/* Welcome Header */}
-      <View style={styles.welcomeTextContainer}>
-        <View style={styles.welcomeTextSubcontainer}>
-          <View style={styles.welcomeTextColumn}>
-            <Text style={styles.welcomeTextHeader}>
-              Welcome, {user?.displayName || user?.email || 'Guest'}!
-            </Text>
-            <Text style={styles.welcomeTextSubheader}>
-              Let's continue our journey!
-            </Text>
-
-            <View style={{ flexDirection: "row", alignItems: "center" }}>
-              <MaterialIcons name='local-fire-department' size={16} color={fireColor} style={{ marginRight: 2 }} />
-              <Text style={{ fontSize: 16, color: colors.white }}>{streak}</Text>
-            </View>
-          </View>
-          <TouchableOpacity onPress={() => navigation_.navigate("Profile")}>
-            <MaterialIcons
-              name={profileIcon}
-              color={colors.white}
-              size={25}
-              style={styles.profileIcon}
-            />
-          </TouchableOpacity>
-        </View>
-
-        {/* Progress Bar */}
-        <View style={styles.progressBarContainer}>
-          <View style={styles.progressBarTextContainer}>
-            <Text style={styles.progressBarText}>{currentUnit.title}: </Text>
-            <Text style={styles.progressBarPercentage}>{unitProgressPercentage}%</Text>
-          </View>
-          <ProgressBar
-            progress={unitProgress}
-            color={colors.white}
-            style={{ height: 8, borderRadius: 20 }}
-            theme={{ colors: { surfaceVariant: colors.unfilledProgressBar } }}
-          />
-        </View>
-      </View>
-
-      {/* Unit List */}
-      <FlatList
-        data={units}
-        keyExtractor={(item) => item.id}
-        extraData={{ openUnits, scoresState }}
-        renderItem={({ item, index, description }) => (
-          <UnitItem
-            unit={item}
-            isOpen={!!openUnits[item.id]}
-            toggleUnit={toggleUnit}
-            user={user}
-            scoresState={scoresState}
-          />
-        )}
-        showsVerticalScrollIndicator={false}
-      />
-
-      {/* Continue Learning */}
-      <Text style={{ fontSize: 18, fontFamily: 'Poppins-Bold', marginTop: 20 }}>
-        Continue Learning
-      </Text>
-
-      <TouchableOpacity
-        style={{ borderRadius: 10, overflow: 'hidden', marginTop: 10 }}
-        disabled={!currentLesson}
-        onPress={() => {
+  return <SafeAreaView style={styles.container} edges={['top']}>
+    <FlatList data={units} keyExtractor={item => item.id} contentContainerStyle={styles.content}
+      ListHeaderComponent={<>
+        <View style={styles.header}><View style={{ flex: 1, gap: 4 }}><Text style={type.title}>Javify</Text><Text style={type.meta}>AP Computer Science A</Text></View><TouchableOpacity accessibilityRole="button" accessibilityLabel="Open profile" style={styles.profile} onPress={() => navigation_.navigate('Profile')}><MaterialIcons name={profileIcon} color={palette.ink} size={24} /></TouchableOpacity></View>
+        <Text style={[type.body, { marginBottom: 24 }]}>Welcome back, {user?.displayName || user?.email || 'Guest'}.</Text>
+        <TouchableOpacity accessibilityRole="button" style={styles.continueLesson} disabled={!currentLesson} onPress={() => {
           if (!currentLesson?.id) return;
-          navigation.navigate('LessonScreen', {
-            lessonId: (currentLesson.id || '').replace('lesson', ''),
-            lessonTitle: currentLesson.title || '',
-          });
-        }}
-      >
-        <LinearGradient
-          colors={[colors.gradientButtonStart, colors.gradientButtonEnd]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }}
-          style={styles.currentLesson}
-        >
-          {currentLesson ? (
-            <View style={styles.row}>
-              <View style={{ flexDirection: 'column' }}>
-                <Text
-                  style={{
-                    fontSize: 16,
-                    color: colors.white,
-                    marginBottom: 4,
-                    fontFamily: 'Poppins-Bold',
-                    flexWrap: "wrap",
-                    flexShrink: 1,
-                  }}
-                >
-                  {currentLesson.unitTitle}
-                </Text>
-                <Text style={{ fontSize: 14, color: colors.white, flexShrink: 1, flexWrap: "wrap", maxWidth: "85%" }}>
-                  {currentLesson.title}
-                </Text>
-              </View>
-
-              <MaterialIcons
-                name={currentLesson.locked ? 'lock' : 'arrow-forward'}
-                size={22}
-                color={colors.white}
-                style={[styles.icon]}
-              />
-            </View>
-          ) : (
-            <Text>🎉 All lessons completed!</Text>
-          )}
-        </LinearGradient>
-      </TouchableOpacity>
-    </SafeAreaView>
-  );
+          navigation.navigate('LessonScreen', { lessonId: currentLesson.id.replace('lesson', ''), lessonTitle: currentLesson.title || '' });
+        }}>
+          <Text style={[type.meta, { color: palette.accent, fontFamily: 'Poppins-Medium' }]}>{currentLesson ? 'Continue learning' : 'Course complete'}</Text>
+          <Text style={[type.heading, { marginTop: 8 }]}>{currentLesson?.title || 'All lessons completed'}</Text>
+          <View style={styles.continueBottom}><Text style={type.meta}>{currentLesson?.unitTitle || 'You can revisit any unit below.'}</Text>{currentLesson && <MaterialIcons name="arrow-forward" size={22} color={palette.accent} />}</View>
+        </TouchableOpacity>
+        <View style={styles.streak}><MaterialIcons name="local-fire-department" color={palette.muted} size={19} /><Text style={type.meta}>{streak} day study streak</Text></View>
+        <View style={styles.courseHeader}><Text style={type.heading}>Course units</Text><Text style={type.meta}>{units.flatMap(u => u.lessons).filter(l => (scoresState[l.id] || 0) >= 4).length} / {units.flatMap(u => u.lessons).length} completed</Text></View>
+      </>}
+      renderItem={({ item }) => <UnitItem unit={item} scoresState={scoresState} />}
+      showsVerticalScrollIndicator={false} />
+  </SafeAreaView>;
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: colors.white, padding: 20 },
-  welcomeTextContainer: {
-    backgroundColor: colors.basicButton,
-    marginBottom: 20,
-    padding: 20,
-    borderRadius: 20,
-  },
-  welcomeTextSubcontainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between'
-  },
-  welcomeTextColumn: {
-    flex: 1,
-    flexDirection: 'column'
-  },
-  welcomeTextHeader: {
-    fontSize: 20,
-    color: colors.white,
-    fontFamily: 'Poppins-Bold',
-    paddingBottom: 2
-  },
-  welcomeTextSubheader: {
-    fontSize: 16,
-    color: colors.white,
-    marginBottom: 15
-  },
-  profileIcon: {
-    backgroundColor: colors.semiTransparentBackground,
-    borderRadius: 50,
-    padding: 10
-  },
-  progressBarContainer: {
-    marginTop: 10,
-    padding: 10,
-    backgroundColor: colors.semiTransparentBackground,
-    borderRadius: 10
-  },
-  progressBarTextContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: 5
-  },
-  progressBarText: {
-    color: colors.white
-  },
-  progressBarPercentage: {
-    color: colors.white
-  },
-  currentLesson: {
-    marginTop: 10,
-    padding: 20,
-    borderRadius: 10,
-    width: '100%'
-  },
-  row: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center'
-  },
-  icon: {
-    backgroundColor: colors.semiTransparentBackground,
-    borderRadius: 50,
-    padding: 10
-  },
+  container: { flex: 1, backgroundColor: palette.canvas }, content: { padding: 20, paddingBottom: 32 },
+  header: { flexDirection: 'row', alignItems: 'center', gap: 16, marginTop: 8, marginBottom: 24 },
+  profile: { width: 48, height: 48, borderRadius: 24, borderWidth: 1, borderColor: palette.border, backgroundColor: palette.surface, alignItems: 'center', justifyContent: 'center' },
+  continueLesson: { backgroundColor: palette.surface, borderRadius: 16, borderWidth: 1, borderColor: palette.border, borderLeftWidth: 4, borderLeftColor: palette.accent, padding: 20 },
+  continueBottom: { marginTop: 16, gap: 12, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' },
+  streak: { flexDirection: 'row', alignItems: 'center', gap: 8, marginTop: 16, marginBottom: 32 },
+  courseHeader: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', gap: 8, flexWrap: 'wrap', paddingBottom: 8 },
 });
-
 export default HomeScreen;

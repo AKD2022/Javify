@@ -1,3 +1,4 @@
+import { palette } from '../../assets/components/theme';
 import SavedCard from './SavedCard';
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Alert, FlatList, Text, TouchableOpacity, View } from 'react-native';
@@ -26,7 +27,7 @@ export default function BookmarkedQuestionsScreen({ navigation }) {
     catch { Alert.alert('Not removed', 'Check your connection and retry.'); }
   };
   if (loading) return <ActivityIndicator style={{ padding: 24 }} />;
-  return <FlatList style={{ backgroundColor: '#F7F7FB' }} contentContainerStyle={{ padding: 16, gap: 12 }} data={items} keyExtractor={item => item.id}
+  return <FlatList style={{ backgroundColor: palette.canvas }} contentContainerStyle={{ paddingHorizontal: 20, paddingBottom: 32, gap: 0 }} data={items} keyExtractor={item => item.id}
     ListHeaderComponent={error ? <Text>{error}</Text> : null} ListEmptyComponent={<Text style={{ color: colors.black }}>No questions bookmarked yet.</Text>}
     renderItem={({ item }) => <SavedCard topic={item.entry?.topic} title={item.entry?.title || 'Retired lesson'}
       detail={item.question?.question || 'This question was replaced. Browse the current lessons for new practice.'}
